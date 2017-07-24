@@ -1,0 +1,251 @@
+\chapter{The ATLAS Detector}
+\label{chap:det}
+
+\section{ATLAS and the LHC}
+
+High-energy particle colliders have a rich history of discovery of new particles,
+including the discovery of the Z and W bosons using the Super Proton Synchotron at CERN in 1983~\cite{det-Wdisc_UA1, det-Zdisc_UA1, det-Wdisc_UA2, det-Zdisc_UA2} 
+and the discovery of the  top-quark at Tevatron in 1995~\cite{det-tdisc_CDF, det-tdisc_D0}.
+The Large Hadron Collider (LHC) is the highest-energy collider ever built,
+hosted by the \textit{Conseil Europ\'een pour la Recherche Nucl\'eaire (CERN)}.
+Lying in a tunnel 100m beneath the Swiss/French border near Geneva,
+the LHC is a 27km circumference ring of superconducting magnets and accelerating structures,
+which in 2015 and 2016, accelerated bunches protons to a maximum energy of 6.5 TeV.
+These protons are collided in four different locations on the LHC ring,
+creating 13 TeV proton-proton collisions, the highest energy particle collisions every achieved by a particle accelerator.
+Around each collision point a different detector is constructed to observe these collisions,
+and at one of these collision points is the ATLAS detector.
+
+
+\section{ATLAS Detector Description}
+
+The ATLAS (\textbf{A} \textbf{T}oroidal \textbf{L}arge Hadron Collider \textbf{A}pparatu\textbf{S}) detector
+design, construction and performance has been described in detail previously
+\cite{det-ATLAS_Exp, det-ATLAS_TDR, det-ATLAS_Perf},
+so what follows in this chapter is a general description of the detector with a focus on the
+needs of the analysis that is being presented.
+The ATLAS detector is effectively a large closed-cylindrical detector,
+made up of four key components which sit in concentric rings around the interaction point, where the proton bunches collide.
+These parts are the Inner Detector, Calorimeters, Muon Spectrometer and the Magnets; each of which are described in further detail below.
+An outline of the detector is shown in Figure~\ref{fig:det-ATLAS_schem}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/ATLAS_schem.jpg}
+  \end{center}
+  \caption{ A cut-away schematic of the ATLAS detector.}
+  \label{fig:det-ATLAS_schem}
+\end{figure}
+
+
+
+\subsection{ATLAS Co-ordinate System}
+
+Firstly, to describe the detail of the ATLAS detector there must be a description of the co-ordinate system that is used.
+ATLAS uses a right-handed coordinate system, in which the origin lies at the interaction point.
+The x-axis points to the centre of the LHC ring parallel to the surface of the earth,
+the y-axis points towards the surface of the earth
+and the z-axis runs along the beam-pipe, pointing anti-clockwise along the LHC.
+The azimuthal angle, $\phi$, is defined right-handedly around the z-axis starting at the x-axis.
+%Figure~\ref{fig:det_coordinate} illustrates this co-ordinate system.
+\\
+
+The polar angle, $\theta$, is defined as the angle measured from the z-axis,
+such that along the z-axis corresponds to $\theta = 0$
+and anti-aligned with the z-axis corresponds to $\theta = \pi$.
+However, this is not typically used, instead the ATLAS co-ordinate system uses pseudo-rapidity,
+$\eta$, which is defined as a function of $\theta$,
+\begin{equation}
+ \eta = -\ln\left[\tan\left( \frac{\theta}{2} \right) \right]
+\end{equation}
+Hence, $\eta = 0$ corresponds to a particle travelling perpendicular to the beam-pipe,
+where a positive value of $\eta$ corresponds to a particle travelling with a tilt towards the z-axis.
+The quantity is called pseudo-rapidity as in the massless limit ($\lim_{E\to|\vec{p}|}$)
+it can be shown that $\eta$ converges to rapidity, $y$, where rapidity is defined as,
+\begin{equation}
+  y = \frac{1}{2} \ln \left( \frac{E+p_{z}}{E-p_{z}} \right)
+\end{equation}
+A key property of rapidity is that the differences in rapidity are invariant against Lorentz boosts along the z-axis.
+Hence, due to the relation of $\eta$ with both $\theta$ and $y$ and the above mentioned property of $y$
+mean that $\eta$ is the final variable used in the ATLAS co-ordinate system.
+One final quantity commonly used with in ATLAS is the variable $\Delta R$, which is defined as
+\begin{equation}
+  \Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}
+\end{equation}
+\Delta R represents an angular separation between two vectors within the ATLAS co-ordinate system.\\
+
+
+Now that we have discussed the ATLAS co-ordinate system, we can provide a description of the components of the ATLAS detector.
+
+\subsection{Inner Detector}
+
+The Inner Detector (ID), the innermost sub-detector on ATLAS,
+measures the trajectory, momentum and charge of charged particles passing through the detector.
+The ID is constructed form many concentric layers of detector,
+and as the particle passes through the detector each of the layers provides a position measurement, known as a hit.
+Then using the hits from the many layers, the trajectory of each of the charged particles can be determined;
+the measured trajectory is known as a track.
+The ID is immersed in a 2~T magnetic field which bends the particle's trajectories;
+from the sign and magnitude of the track's curvature the charge and momentum of the particle can be inferred.
+The ID is made of three main component parts; the pixel detector, the Semi-Conductor Tracker
+(SCT) and the Transition Radiation Tracker (TRT), as visualised in Figure~\ref{fig:det-ID_schem}.
+The ID is made up of both barrel, which lies perpendicular to the beam-pipe and covers low absolute values of $\eta$,
+and the end-caps, which lie perpendicular to beam-pipe and cover large values of absolute $\eta$:
+here the description focuses on the barrel as this covers the $\eta$ range considered by the analysis.\\
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
+  \end{center}
+  \caption{
+    A cut-away schematic of the ATLAS Inner Detector (ID).}
+  \label{fig:det-ID_schem}
+\end{figure}
+
+The innermost component of the ID is the silicon pixel detector;
+in the barrel this detector consists of 4 high-granularity layers of silicon based pixel modules surrounding the beam pipe,
+covering a range of $-2.5 < \eta < 2.5$ and a radial distance of \SI{33}{mm} to \SI{122.5}{mm}.
+The high-granularity of the pixel layers, allows for high precision measurements,
+with an intrinsic resolution of approximately resolution of $\sim$ \SI{10}{\micro\metre} in $R-\phi$ plane
+and $\sim$ \SI{115}{\micro\metre} in the z-direction \cite{det-IBL_TDR, det-IBL_Talk}.
+These precision tracking measurements close to the beam-pipe are vital for identification of vertices,
+which in turn are used for the identification of long-lived B and C hadrons.\\
+
+Moving radial outwards the next component of the ID is the Semi-Conductor Tracker;
+which, in the barrel, comprises of 4 cylindrical layers of silicon microstrips
+covering a range of $-2.5 < \eta < 2.5$ and a radial distance of 299 mm to 514 mm.
+The SCT has an intrinsic resolution of $\sim$\SI{17}{\micro\metre} in $R-\phi$ plane
+and $\sim$\SI{580}{\micro\metre} in the z-direction. \\
+
+The outermost component of the ID is the Transition Radiation Tracker (TRT),
+which, in the barrel, comprises of many 4mm radius tubes filled with xenon.
+As a charged particle passes through the gas,
+it will ionise allowing a measurement of its position using drift-time.
+Each tube provides a measurement in the $R-\phi$ plane with an intrinsic resolution of ~\SI{130}{\micro\metre}
+and the TRT will typically provide 36 hits per track.
+In addition to a position measurement, due to the choice of the material between the tubes,
+a particle passing through the detector will radiate photons
+at an intensity inversely correlated to the mass of that particle,
+providing additional information for particle identification. \\
+
+
+\subsection{Calorimeters}
+
+The ATLAS calorimeter is the next sub-detector after the ID,
+located on the outside of the magnet solenoid.
+The ATLAS calorimeter is designed to provide an energy measurement of the traversing particles,
+which is essential for reconstructing the mass from two decay products of a mediator particle.
+The calorimeter at ATLAS is made up of two different systems that are built in concentric rings;
+the inner-most is the Electromagnetic Calorimeter system (ECAL), which is used to measure electromagnetic objects such as photons and electrons.
+Outside of that is the Hadronic Calorimeter system (HCAL), designed to provide an energy measurement of hadronic material.
+The HCAL is built from the Tile and Hadronic Endcap calorimeters.
+Both the ECAL and HCAL have barrel and end-cap components to make energy measurements at a large range of $\eta$ values.
+Figure \ref{fig:det-calo_schem} shows a cut-away of the ATLAS calorimeter.\\
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/Calo_schem.png}
+  \end{center}
+  \caption{
+    A cut-away schematic of the ATLAS calorimeter system.}
+  \label{fig:det-calo_schem}
+\end{figure}
+
+Below I provide a more detailed description of the calorimeter components;
+however, the principle behind each detector is common so is described first.
+The calorimeters at ATLAS are sampling calorimeters, which means they consist of alternating layers of absorber and active material.
+The role of the of the absorber layer is to force the particle, whose energy we want to measure, to emit secondary particles.
+These secondary particles will again emit further particles and so on meaning a ``particle cascade'' is formed.
+The role of the active material layer is to measure the energy of the resulting many particles from the cascade.
+The ATLAS detector is built such that the initial particle will cascade within the volume of the calorimeter system
+and then, from a measurement of the energy of all the cascade particles,
+the energy of the initial particle can be inferred. \\
+
+\subsubsection{Electromagnetic Calorimeter (ECAL)}
+
+For the electromagnetic interaction, at high-energy ($\sim \geq$ 1 GeV) the particle cascade process is mainly caused by two processes;
+bremsstrahlung, ($e^{+/-} \to e^{+/-} + \gamma$) and pair production ($\gamma \to e^{+} + e^{-}$).
+The electromagnetic calorimeter at ATLAS is known as the Liquid Argon (LAr) calorimeter.
+The absorber material used in the LAr calorimeter is lead, due to its large density of atoms which increases the rate of the cascade processes.
+The active material is liquid argon;
+when a cascade particle passes through the liquid argon it causes ionisation,
+and the released electrons are captured using an electric field.
+The number of released electrons is proportional to the energy of the cascade particle,
+meaning that the energy of the cascade particle can be measured. \\
+
+As discussed above the LAr is split up into two sections;
+the barrel section covers a region of $|\eta| < 1.475$ and two end-cap components cover $1.375 < |\eta| < 3.2$.
+The depth of an electromagnetic calorimeter is often expressed in terms of the radiation length, $X_{0}$,
+which is the distance that an electron's energy reduces by a factor of $e^{-1}$ through bremsstrahlung,
+or 7/9 of the mean free path for a photon to pair produce electrons.
+The LAr calorimeter has a depth of $>$ 22 $X_{0}$ in the barrel and $>$ 24 $X_{0}$ in the end-caps,
+meaning that almost all of the particle shower from a high-energy photon
+or an electron can be contained within electromagnetic calorimeter. \\
+
+\subsubsection{Hadronic Calorimeter (HCAL)}
+
+If a particle can also interact through strong interactions, such as the components of a hadronic jet,
+then the particle cascade is a more complicated process.
+In addition to the electromagnetic processes,
+there is a contribution to the cascade from strong interaction processes such as
+ionisation \textbf{isn't this an EM process}, nuclear spallation and neutron generation \cite{det-nuclearInt_book}.
+During these strong interaction processes many $\pi_0$ mesons are made,
+which can decay to a pair of photons and thus form electromagnetic cascade as described above. \\
+
+For hadronic interactions, the size of detector is measured by the interaction length, $\lambda$,
+defined as the distance required to reduce the number of relativistic hadrons by $e^{-1}$.
+Due to the nature of hadronic interactions, the interaction length is larger by an order of magnitude than the radiation length
+\textbf{Do I need more justification of this sentence}.
+This means that by the end of the LAr calorimeter there is 2.3 $\lambda$ of active material \textbf{check logic with AK} in the barrel,
+so the full hadronic shower cannot be captured by the LAr calorimeter alone.
+For a full measurement of the hadronic energy, the Hadronic Calorimeter system (HCAL) is required. \\
+
+The Tile Calorimeter is constructed from absorber layers of steel and active material layers of scintillating tiles,
+and has a depth of 7.4 $\lambda$, meaning the majority of the hadronic shower can be captured by either the LAr calorimeter or the Tile calorimeter.
+The Tile Calorimeter is split up into the barrel and the extended barrel components;
+the barrel covers the region $|\eta| <$ 1.0 and the extended barrel covers the region $0.8 < |\eta| < 1.7$. \\
+
+To cover the more forward regions there are two more calorimeter detectors.
+The Hadronic Endcap Calorimeter (HEC) is housed in two large wheels at either end of the ATLAS detector
+and covers a region of $1.5 < ∣\eta∣ < 3.2$.
+The HEC is a sampling calorimeter built using copper as the absorber layers and liquid argon as the active material.
+In addition the Forward Calorimeter (FCAL) covers the region $3.1 < ∣\eta∣ < 4.9$, which is outside the range used in this analysis.
+
+\subsection{Muon Spectrometer}
+
+The only standard model particle visible to ATLAS which can pass through the calorimeter is the muon;
+hence to identify and obtain the momentum of muons an additional detector, the Muon Spectrometer (MS), is used.
+The MS is a detector which surrounds the the hadronic calorimeter,
+measuring the momentum of muons by observing the curvature of the trajectories of muons in magnetic fields,
+analogous to what is done in the ID.
+In the barrel region ($|\eta| < 1.4$) the large barrel toroid provides the magnetic field,
+in the end-cap region $1.6 < |\eta| < 2.7$ the two smaller end-cap magnets  provide the magnetic field.
+and finally in the transition region, ($1.4 < |\eta| < 1.6$) both sets of magnets contribute to the magnetic field.
+Muon chambers are the detector tasked with measuring the muon trajectories.
+In the barrel region, muon chambers are arranged in three concentric cylindrical layers of chambers formed around the beam-pipe,
+whilst in the transition and end-cap regions there are three layers of chambers either side of the barrel lying in disks perpendicular to the beam-pipe.
+In the region $|\eta| < 2.0$, the muon chambers are made from Monitored Drift Tubes (MDTs),
+whilst at large pseudo-rapidities ($2.0 < |\eta| < 2.7$), Cathode Strip Chambers (CSCs) are used. \\
+
+\subsection{Magnets}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/Magnet_schem.png}
+  \end{center}
+  \caption{
+    The layout of the ATLAS magnets.}
+  \label{fig:det-magnet_schem}
+\end{figure}
+
+
+In ATLAS magnetic fields are important for obtaining the momentum and charge of particles from their observed trajectories in the ID and Muon Spectrometer.
+ATLAS is made up of four large superconducting magnets;
+the inner solenoid which surrounds the inner detector and provides a 2~T magnetic field within the ID,
+the barrel toroid magnet which provides the a magnetic field of up to 2.5~T in the central regions of the muon spectrometer,
+and the two end-cap toroid magnets which produce a magnetic field of up to 3.5~T in the forward regions of the MS.
+Figure~\ref{fig:det-magnet_schem} shows the layout of the magnets in ATLAS \cite{det-magnet_fig}.\\
+
+
+\section{Data Acquisition and Trigger}
+

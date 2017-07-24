@@ -1,0 +1,137 @@
+File: Appendices.tex
+Encoding: ascii
+Words in text: 46
+Words in headers: 9
+Words outside text (captions, etc.): 0
+Number of headers: 3
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  1+4+0 (1/0/0/0) Chapter: An Appendix About Stuff
+  1+4+0 (1/0/0/0) Chapter: Another Appendix About Things
+  44+1+0 (1/0/0/0) Chapter: Colophon
+
+File: BibSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: Conclusions.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: Detector.tex
+Encoding: utf8
+Words in text: 83
+Words in headers: 27
+Words outside text (captions, etc.): 0
+Number of headers: 11
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+3+0 (1/0/0/0) Chapter: The ATLAS Detector
+  83+4+0 (1/0/0/0) Section: ATLAS and the LHC
+  0+2+0 (1/0/0/0) Section: Inner Detector
+  0+1+0 (1/0/0/0) Subsection: Pixels
+  0+3+0 (1/0/0/0) Subsection: Semi-Conductor Tracker (SCT)
+  0+3+0 (1/0/0/0) Subsection: Transition-Radiation Tracker (TRT)
+  0+1+0 (1/0/0/0) Section: Calorimeters
+  0+2+0 (1/0/0/0) Subsection: Electromagnetic Calorimeter
+  0+2+0 (1/0/0/0) Subsection: Tile Calorimeter
+  0+2+0 (1/0/0/0) Section: Muon Detector
+  0+4+0 (1/0/0/0) Section: Data Aquisition and Trigger
+
+File: FloatSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: Introduction.tex
+Encoding: ascii
+Words in text: 10
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: LinksAndMetadata.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: MainPackages.tex
+Encoding: ascii
+Words in text: 1
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: Preamble.tex
+Encoding: ascii
+Words in text: 32
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File: Thesis.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 3
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Total
+Words in text: 172
+Words in headers: 44
+Words outside text (captions, etc.): 0
+Number of headers: 18
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Files: 10
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  46+9+0 (3/0/0/0) File(s) total: Appendices.tex
+  0+2+0 (1/0/0/0) File(s) total: Conclusions.tex
+  83+27+0 (11/0/0/0) File(s) total: Detector.tex
+  10+2+0 (1/0/0/0) File(s) total: Introduction.tex
+  1+0+0 (0/0/0/0) File(s) total: MainPackages.tex
+  32+1+0 (1/0/0/0) File(s) total: Preamble.tex
+  0+3+0 (1/0/0/0) File(s) total: Thesis.tex
+
