@@ -1,0 +1,136 @@
+File: Thesis.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 3
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/MainPackages.tex
+Encoding: ascii
+Words in text: 5
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/LinksAndMetadata.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/FloatSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/BibSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/Preamble.tex
+Encoding: ascii
+Words in text: 32
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Introduction.tex
+Encoding: ascii
+Words in text: 10
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Detector.tex
+Encoding: utf8
+Words in text: 3070
+Words in headers: 33
+Words outside text (captions, etc.): 189
+Number of headers: 12
+Number of floats/tables/figures: 7
+Number of math inlines: 80
+Number of math displayed: 3
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+3+0 (1/0/0/0) Chapter: The ATLAS Detector
+  154+4+0 (1/0/0/0) Section: The Large Hadron Collider
+  87+7+54 (1/1/1/0) Subsection: LHC running conditions in 2015 and 2016
+  182+3+92 (1/2/0/0) Section: ATLAS Detector Description
+  289+3+0 (1/0/29/3) Subsection: ATLAS Co-ordinate System
+  500+2+9 (1/1/14/0) Subsection: Inner Detector
+  1004+7+8 (3/1/23/0) Subsection: Calorimeters
+  378+2+0 (1/0/9/0) Subsection: Muon Spectrometer
+  104+1+6 (1/1/0/0) Subsection: Magnets
+  372+1+20 (1/1/4/0) Section: Trigger
+
+Included file: ./Chapters/Conclusions.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Appendices.tex
+Encoding: ascii
+Words in text: 46
+Words in headers: 9
+Words outside text (captions, etc.): 0
+Number of headers: 3
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  1+4+0 (1/0/0/0) Chapter: An Appendix About Stuff
+  1+4+0 (1/0/0/0) Chapter: Another Appendix About Things
+  44+1+0 (1/0/0/0) Chapter: Colophon
+
+File(s) total: Thesis.tex
+Words in text: 3163
+Words in headers: 50
+Words outside text (captions, etc.): 189
+Number of headers: 19
+Number of floats/tables/figures: 7
+Number of math inlines: 80
+Number of math displayed: 3
+Files: 10
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+3+0 (1/0/0/0) File: Thesis.tex
+  5+0+0 (0/0/0/0) Included file: ./Aux/MainPackages.tex
+  32+1+0 (1/0/0/0) Included file: ./Aux/Preamble.tex
+  10+2+0 (1/0/0/0) Included file: ./Chapters/Introduction.tex
+  3070+33+189 (12/7/80/3) Included file: ./Chapters/Detector.tex
+  0+2+0 (1/0/0/0) Included file: ./Chapters/Conclusions.tex
+  46+9+0 (3/0/0/0) Included file: ./Chapters/Appendices.tex
+

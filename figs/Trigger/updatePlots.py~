@@ -1,0 +1,27 @@
+import os
+import sys, string, commands
+from datetime import datetime
+import argparse
+from argparse import RawTextHelpFormatter
+
+
+parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter)
+parser.add_argument('--doTest',     dest="doTest",     action="store_true", default=False,  help="do you want to run")
+parser.add_argument('--fullUpdate', dest="fullUpdate", action="store_true", default=False,  help="Do you want to do this if file already exists")
+parser.add_argument('--doEff',      dest="doEff",      action="store_true", default=False,  help="doEff")
+parser.add_argument('--dobPerfEff', dest="dobPerfEff", action="store_true", default=False,  help="dobPerfEff")
+parser.add_argument('--doPurity',   dest="doPurity",   action="store_true", default=False,  help="doPurity")
+parser.add_argument('--doSampleD',   dest="doSampleD",   action="store_true", default=False,  help="doSampleD")
+
+
+laurieURL="http://www.hep.ucl.ac.uk/~mcclymont/bTrigger/Systematics2016/"
+
+def run(cmd):
+    print cmd
+    if not args.doTest:
+        os.system(cmd)
+
+def getPlot(inFolder,inPlot, outPlot):
+
+    wget_cmd="wget "+laurieURL+inFolder+inPlot+";"
+    wget_cmd="mv inPlot outPlot"
