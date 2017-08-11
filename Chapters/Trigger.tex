@@ -2,7 +2,7 @@
 \label{sec:trig}
 
 As described in Section~\ref{sec:det-trig},
-ATLAS does not have the resources to process or store all the data from the 40~MHz of collisions delivered by the LHC.
+ATLAS does not have the resources to process and store all the data from the 40~MHz of collisions delivered by the LHC.
 To solve this problem the ATLAS trigger system performs the vital role of
 reducing the rate of data-taking to 1~kHz by selecting events containing a high-$p_T$ object. 
 
@@ -19,7 +19,7 @@ and finally Section~\ref{sec:trig-bjet_eff} presents the measurement of the $b$-
 \label{sec:trig-jet}
 
 Jet-triggers are tasked with selecting events with one or more jets from the deposits in the ATLAS calorimeter system,
-this is one of most challenging triggers in any hadron-hadron collider due to extremely high cross-sections of hadronic jet production~\cite{trig-run2_proc}.
+this is one of most challenging triggers in any hadron-hadron collider due to the extremely high cross-sections of hadronic jet production~\cite{trig-run2_proc}.
 In Run-2 the jet-triggers are used at both L1 and HLT level; each using different levels of information and different algorithms,
 so are described separately within this section.
 
@@ -31,7 +31,7 @@ where a trigger tower is the measured energy deposit in a cell of the ECAL or HC
 In the L1 trigger hadronic jet algorithms search for a neighbouring group of 4x4 trigger towers containing energy deposits above some pre-set threshold.
 Our analysis uses the L1 trigger known as \verb|L1_J100|, which requires that at least one trigger tower group with an energy deposit of \SI{100}{\GeV} has been found.
 Other L1 triggers that search for multiple clusters are also possible to reduce the energy thresholds required.
-The L1 trigger can then seed the HLT trigger.
+The L1 trigger then seeds the HLT trigger.
 It is also worth noting that at L1 there is no tracking information, meaning that electron and taus
 are also triggered on using similar techniques as hadronic jet algorithms, except using narrower groups of trigger towers.
 
@@ -44,8 +44,8 @@ At the HLT level jets are reconstructed using topoclusters (TCs) constructed fro
 TCs are seeded from cells with $E/\sigma > 4$, then neighbouring cells with $E/\sigma > 2$ are added
 and finally all neighbouring cells around are also added.
 Jets are then reconstructed from the topoclusters;
-in this analysis jets that have been reconstructed using
-the anti-$k_T$ algorithm with an $R = 0.4$ \footnote{Section~\ref{sec:obj-jets} \textit{(sec:obj-jets)} defines these terms} are used. 
+in this analysis jets have been reconstructed using
+the anti-$k_T$ algorithm with an $R = 0.4$ \footnote{Section~\ref{sec:obj-jets} \textit{(sec:obj-jets)} defines these terms}. 
 
 \subsection{High-mass trigger selection}
 
@@ -57,11 +57,11 @@ Due to the exponential increase in jet production cross-section at low jet-$p_T$
 the $p_T$ threshold is set to keep the acceptance rates low enough such that the HLT trigger is within its output rate budget of 1~kHz.
 
 However, as will be discussed further in Section~\ref{sec:evtSel}\textit{(sec:evtSel)},
-this $p_T$ threshold limits the high-mass di-$b$-jet analysis to only select events with $m_{jj} >$ 1.2~TeV,
-otherwise the $m_{jj}$ range will enter a kinematic region where
+this $p_T$ threshold limits the high-mass di-$b$-jet analysis to only select events with $m_{jj} >$ 1.2~TeV.
+Otherwise the $m_{jj}$ range will enter a kinematic region where
 trigger acceptance is less than 1 in such a way that the QCD background is sculpted
 in a manner that the background modelling can not adapt to.
-To reach to lower masses a different trigger strategy is required.
+To reach lower masses a different trigger strategy is required.
 
 \section{$b$-Jet Triggers}
 \label{sec:trig-bjet}
@@ -69,11 +69,11 @@ To reach to lower masses a different trigger strategy is required.
 This analysis searches for pairs of $b$-jets,
 which, as described in Section~\ref{sec:obj-bjets}\textit{(sec:obj-bjets)},
 can be identified from the topology of tracks in the inner detector indicating that a $B$-hadron was within the jet.
-This additional selection at the trigger level reduces rates significantly
+The same techniques can be used at the trigger level to reduce rates significantly
 \footnote{It is known that the QCD background is dominated by light-jets, see Figure~\ref{fig-dibjet_backgroundFlav}\textit{Plot of background flav comp}}
 allowing a lower jet-$p_T$ threshold than was used by the single jet-$p_T$ trigger, and hence lower $m_{jj}$ values to be accessed.
-$b$-jet triggers have been used in a range of previous ATLAS analyses,
-including for HH to 4 $b$-jets~\cite{trig-H4b}.
+$b$-jet triggers have been used in a range of previous ATLAS analyses
+including for searches for exotic particle decaying into a pair of Higgs bosons, which then decay to 4 $b$-jets~\cite{trig-H4b}.
 
 \subsection{General description}
 
@@ -87,7 +87,7 @@ Finally, these tracks are the input to the multi-variate $b$-tagging algorithm d
 Section~\ref{sec:obj-bjets_MV2}\textit{(sec:obj-bjets\_MV2)} to identify $b$-jets.
 There are several $b$-jet triggers available in the ATLAS trigger menu;
 with a variety of requirements on the jet multiplicity, number of tagged jets and $b$-tag operating point used.
-Figure~\ref{fig:trig-bTrig_perf} shows ROC curves representing the expected performance of Run-2 $b$-trigger.
+Figure~\ref{fig:trig-bTrig_perf} shows ROC curves representing the expected performance of the Run-2 $b$-jet trigger.
 
 
 \begin{figure}[!ht]
@@ -100,13 +100,13 @@ Figure~\ref{fig:trig-bTrig_perf} shows ROC curves representing the expected perf
   \label{fig:trig-bTrig_perf}
 \end{figure}
 
-There are few subtleties worth commenting on the $b$-jet trigger configuration, which affect decisions taken in this analysis.
+There are few subtleties worth commenting on the $b$-jet trigger configuration which affect decisions taken in this analysis.
 One is that on this figure there are two lines corresponding to different $b$-tagging algorithms used in $b$-jet trigger;
 IP3D+SV1 was used in 2015 data-taking,
 whilst the MV2c20 was used in 2016 data-taking.
 Another difference between 2015 and 2016 is the primary vertex finding algorithm used;
-2016 data-taking employed a more complicated algorithm based on what is used offline, know as \verb|xPrmVtx|,
-whilst in 2015 an algorithm using a simple histogram based approach was employed, known as \verb|EFHist|. 
+2016 data-taking employed an algorithm based on offline primary vertex finding, know as \verb|xPrmVtx|,
+whilst in 2015 an algorithm using a simpler histogram based approach was employed, known as \verb|EFHist|. 
 
 Finally it is worth noting that there are  differences between online and offline $b$-tagging that will have an impact on what is to follow.
 Firstly, coarser tracking information is available online, notably online tracks are not reconstructed from the whole range of the detector.
@@ -115,7 +115,7 @@ Secondly, a slightly different training setup is used for the multi-variate algo
 
 In this analysis a double $b$-jet trigger is used,
 \begin{center}
-\verb|HLT_j150_bmc2c2060_split_j50_bmv2c2060_split|
+\verb|HLT_j150_bmv2c2060_split_j50_bmv2c2060_split|
 \end{center}
 which triggers on two jets with $p_T >$ 150 and 50 GeV respectively,
 which have been $b$-tagged at the 60\% efficiency working point.
@@ -136,6 +136,7 @@ offline refers to algorithms run after events have passed the trigger at the dat
 
 \subsection{Strategy}
 The $b$-jet trigger is always used in tandem with offline $b$-tagging which is calibrated independently of the $b$-trigger.
+As mentioned before, there are many differences between offline and online $b$-tagging.
 Hence, to do this measurement whilst making use of the offline $b$-tagging calibrations already available,
 $b$-jet trigger efficiency with respect to offline $b$-tagging, $\epsilon_{bTrig}$, is measured.
 This is defined as the number of offline-tagged true $b$-jets that match an online-tagged trigger-jet
@@ -147,8 +148,8 @@ Or to put this in an equation;
 This quantity can be interpreted as the probability that a true $b$-jet is tagged at the trigger-level,
 given that it there is a jet at the trigger level and that it would be $b$-tagged at the offline stage.
 
-To measure $\epsilon_{bTrig}$ sample that has high $b$-jet purity is required,
-such that jets uses to calculate this ratio are true $b$-jets.
+To measure $\epsilon_{bTrig}$ a sample that has high $b$-jet purity is required,
+such that jets used to calculate this ratio are true $b$-jets.
 It is also necessary to trigger on this sample in such a way that there is no bias from using $b$-tagging online;
 or simply put the $b$-jet trigger cannot be used to select events.
 The sample used to fill these criteria is a di-lepton $t\bar{t}$ sample containing a muon and an electron.
@@ -175,7 +176,7 @@ a $b$-jet trigger aware Good Run List (GRL)
 \footnote{A GRL is effectively a list of lumi-blocks that pass certain data-quality requirements.
  As mentioned in the text a further discussion is held here in Section~\ref{sec:evtSel_GRL}\textit{(sec:evtSel\_GRL)}}
 applies the requirement that the online beamspot $z$-position is within 2mm of the origin in Periods A-I of the data.
-This means that the data-set contains 24.5~\ifb of data.
+This means that the data-set contains 24.5~\ifb~of data.
 A discussion of the requirement for this GRL is in Section~\ref{sec:trig-inv}. 
 
 For the simulated $t\bar{t}$ sample, the generation is performed with
@@ -223,9 +224,9 @@ and \ref{sec:object_bjet}\textit{(sec:object\_bjet)} respectively.
 Online trigger jets are matched exclusively to offline jets using $\Delta R$ matching, requiring for a match the jets must have $\Delta R<0.6$.
 
 The triggers used are bperf trigger, which are special triggers used in data-taking specifically for monitoring the $b$-jet trigger performance.
-They fire if a muon or an electron with $\pT > 26$~\GeV is reconstructed at the trigger level.
+They fire if a muon or an electron with $\pT > 26$~\GeV~is reconstructed at the trigger level.
 The bperf triggers then run the online $b$-tagging algorithm on all trigger jets with $|\eta|<2.5$ and
-$p_{T}>35$~\GeV without performing any cuts on the output of the multi-variate algorithm; ensuring there is no bias in the efficiency measurement. 
+$p_{T}>35$~\GeV~without performing any cuts on the output of the multi-variate algorithm; ensuring there is no bias in the efficiency measurement. 
 
 
 \newpage
@@ -235,7 +236,7 @@ $p_{T}>35$~\GeV without performing any cuts on the output of the multi-variate a
 
 To give context to the following section;
 the first discussion will be what was first observed when measuring the $b$-jet efficiency.
-To show the problems observed clearly, in this section original event selection is replicated;
+To show the problems observed clearly, in this section the initial event selection is replicated;
 hence  no $b$-jet trigger aware GRL is applied, offline jets are not required to match a trigger jet in the denominator
 and the triggers required are single lepton triggers without the additional $b$-perf functionality
 \footnote{Specifically HLT\_mu26\_imedium, HLT\_e26\_tight\_iloose and HLT\_e26\_lhtight\_iloose. }.
@@ -244,7 +245,7 @@ but it will be shown later that the effect of single-top production is small so 
 
 Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch} shows $\epsilon_{bTrig}$ against jet-\pT~and jet-$\eta$;
 the efficiency in data is substantially below the efficiency expected from simulation and shows a clear shape in jet-$\eta$ distributions.
-This substantial difference need to be investigated and understood. 
+This substantial differences need to be investigated and understood. 
 
 \begin{figure}[!ht]
   \begin{center}
@@ -267,21 +268,21 @@ including checking for performance dependence on period,
 detector performance, pile-up conditions and online beamspot position.
 In this section, I summarise the results of the investigation
 and our understanding of the $b$-trigger performance in 2016 data.
-For this, set-up as described in \ref{sec:trig-evtSel} is used
-with the exception that $b$-jet aware GRL is not applied to allow us to see the problems clearly.
+For this, the set-up as described in \ref{sec:trig-evtSel} is used
+with the exception that the $b$-jet aware GRL is not applied to allow us to see the problems clearly.
 
-The major problem that was discovered to be causing the large discrepancies was related to Primary Vertex finding.
+The major problem that was discovered to be causing the large discrepancies was related to primary vertex finding.
 As described above, in 2016 data an algorithm known as \verb|xPrmVtx| was used to find the primary vertex.
 It has since been uncovered that there was a bug in the code used to implement this algorithm;
 effectively different co-ordinates were used by different components of the code.
 Online tracks passed to \verb|xPrmVtx| use position with respect to online beam-spot position,
 where the \verb|xPrmVtx| algorithm assumed track position with respect to the origin.
 This means that when the online beamspot $z$-position is far from from the origin,
-a vertex with position at the origin is passed to the $b$-tagging algorithms,
+a dummy vertex with position at the origin is passed to the $b$-tagging algorithms.
 This leads to sub-optimal performance, as will be shown below.
 For ease of reading online beamspot $z$-position is henceforth referred to as $z_{bs}^{online}$.  
 
-The exact setup for the $b$-jet trigger has changed as data has taken, to respond to performance issues as they are noticed and patches are applied
+The exact setup for the $b$-jet trigger has changed as data has been taken, to respond to performance issues as they are noticed and patches are applied.
 As such the relevant conditions of the $b$-jet trigger can be split into three regions of data-taking, which I will refer to as epochs.
 The effect of \verb|xPrmVtx| returning a dummy vertex on $b$-jet trigger performance is different in each of these epochs,
 the details are summarised Table~\ref{tab:trig-epochs}.
@@ -312,11 +313,11 @@ but as $|z_{bs}^{online}|$ increases efficiency falls off steeply.
 To understand this performance the variable `vertex class' is studied, which is defined as 0 when a valid \verb|xPrmVtx| vertex is found and 1 if not.
 Figure~\ref{fig:Epoch1_vtxClass}(a) shows that when an \verb|xPrmVtx| vertex is found $\epsilon_{bTrig}$ is reasonably high ($\sim$ 0.8) and is comparable between data and simulation (within 5\%),
 whilst if no valid \verb|xPrmVtx| vertex is found then efficiency is very low in both simulation and data.
-However, Figure~\ref{fig:Epoch1_vtxClass}(b) shows that a \verb|xPrmVtx| is found in simulation in $> 99$ \% of the jets,
-whilst in data there is $\sim$ 16\% of events where no \verb|xPrmVtx| is found.
+However, Figure~\ref{fig:Epoch1_vtxClass}(b) shows that a valid \verb|xPrmVtx| vertex is found in simulation in $> 99$ \% of the jets,
+whilst in data there is $\sim$ 16\% of events where no valid \verb|xPrmVtx| vertex is found.
 Hence, combining the information in Table~\ref{tab:trig-epochs}, Figure~\ref{fig:Epoch1_eff} and Figure~\ref{fig:Epoch1_vtxClass}
 it can be concluded that in Epoch 1 in events where the  $|z_{bs}^{online}|$ is far from 0
-then \verb|xPrmVx| returns an invalid vertex which results in a low $\epsilon_{bTrig}$, explaining the data/simulation differences in Epoch 1. 
+then \verb|xPrmVx| returns an dummy vertex which results in a low $\epsilon_{bTrig}$, explaining the data/simulation differences in Epoch 1. 
 
 \begin{figure}[!ht]
   \begin{center}
@@ -361,7 +362,7 @@ However, the additional complication compared to Epoch 1 is this means that the 
 are also not fired when no valid \verb|xPrmVtx| PV is available.
 Hence, measuring $\epsilon_{bTrig}$ using the set-up as described will not capture the cases where a valid \verb|xPrmVtx| PV is found
 and thus $\epsilon_{bTrig}$ should be consistent in data and simulation;
-Figure~\ref{fig:Epoch2_eff} shows the $\epsilon_{bTrig}$ is measured in data to be in agreement with simulation within 5\%.
+Figure~\ref{fig:Epoch2_eff} shows that the $\epsilon_{bTrig}$ measured in data to be in agreement with simulation within 5\%.
 
 
 For Epoch 2, in addition to measuring $\epsilon_{bTrig}$ it is necessary
@@ -371,14 +372,14 @@ the efficiency that there is a valid primary vertex in the event.
 $\epsilon_{bPerf}$ is calculated by dividing the number of events that pass the trigger
 \verb|HLT_mu26_imedium_2j35_bperf| by the number that pass the trigger \verb|HLT_mu26_imedium|,
 such that the denominator has no $b$-trigger dependency so is unaffected by \verb|xPrmVtx| PV.
-This is an event level quantity and as such is measured with respect other event level quantity, such as leading jet-\pT.
+This is an event level quantity and as such is measured with respect to other event level quantities, such as leading jet-\pT.
 Figure~\ref{fig:Epoch2_bperf} shows that:
 $\epsilon_{bPerf}$ has a data/simulation ratio of around 80\%  which is similar to that in Section~\ref{sec:trig-initProb} and
 $\epsilon_{bPerf}$ shows similar behaviour with respect to  $z_{bs}^{online}$ as observed in Epoch 1.
 Finally it is observed that $\epsilon_{bPerf}$ has a lower efficiency at smaller values of absolute leading jet-$\eta$;
 this is due to the fact that at high-$\eta$ tracks have a larger error on the longitudinal impact parameter, $z_0$,
 meaning that the mis-match of co-ordinates can in the \verb|xPrmVtx| algorithm is covered by the errors, mitigating this issue.
-This effect must be accounted for in the final efficiency measurement.
+This effect must be accounted for in the final efficiency measurement.\textbf{This last two sentances are dodgy}
 
 \begin{figure}[!ht]
 \begin{center}
@@ -406,7 +407,7 @@ Figure~\ref{fig:Epoch3_eff} shows $\epsilon_{bTrig}$ for Epoch 3 for jet-\pT, je
 In Epoch 3 $\epsilon_{bTrig}$ measured in data is within 5\% of simulation and there is no shape difference between the two with respect to jet-$\eta$.
 In addition it is shown that in Epoch 3 there is no strong dependence on  $z_{bs}^{online}$,
 and that efficiency in data is consistent if a valid \verb|xPrmVtx| vertex or not (vertex class = 0 or 1 respectively).
-This demonstrates that the success of the backup vertex approach.
+This demonstrates the success of the backup vertex approach.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -432,7 +433,7 @@ the measured $\epsilon_{bTrig}$ in Epoch 1 and $\epsilon_{bPerf}$ in Epoch 2 is 
 In Epoch 3 there is reasonable data/simulation agreement due to the use of a backup vertex finding algorithm. 
 
 The solution employed is to apply a $b$-jet trigger aware GRL 
-that removes events where the  absolute  $z_{bs}^{online}$ of greater than 2mm in Epoch 1 and 2,
+that removes events with an absolute  $z_{bs}^{online}$ greater than 2mm in Epoch 1 and 2,
 such that the events with low efficiency are removed.
 The cost of this approach is the luminosity of our data-set is reduced, specifically the data-set falls from  32.9~\ifb to 24.3~\ifb.
 However there are three key reasons why use of a $b$-jet trigger GRL was chosen over simply applying an overall efficiency.
@@ -444,8 +445,8 @@ and finally the use of a GRL means a more realistic estimate of the actual lumin
 
 For the choice of which value of beamspot $z$ position to use for in the GRL,
 it was required to select the widest cut where the efficiency had not significantly declined,
-such that as much luminosity as possible is retained, while removing most of the affected region.
-This \SI{2}{\mm} cut was chosen from examining Figure~\ref{fig:Epoch1_eff}(b) and Figure~\ref{fig:Epoch2_bperf}(b),
+such that as much luminosity as possible is retained while removing most of the affected region.
+This \SI{2}{\mm} cut was chosen from examining Figure~\ref{fig:Epoch1_eff}(b) and Figure~\ref{fig:Epoch2_bperf}(b)
 and from studying a variety of cuts from \SI{2}{\mm} to \SI{1}{\mm}.
 
 After the GRL is applied, $\epsilon_{bTrig}$ for Region 1 becomes approximately 90-95\% of the efficiency measured in simulation,
@@ -475,7 +476,7 @@ as shown in Figure~\ref{fig:Epoch2_bslt2mm_bperf}.
 
 \newpage
 
-Figure~\ref{fig:Full_bslt2mm_bperf} and ~\ref{fig:Full_bslt2mm_eff} shows measured
+Figures~\ref{fig:Full_bslt2mm_eff} and ~\ref{fig:Full_bslt2mm_bperf}  shows measured
 $\epsilon_{bPerf}$ and $\epsilon_{bTrig}$
 for the full 2016 data-set, combining Regions 1, 2 and 3,
 with the $b$-jet trigger aware GRL applied.
@@ -509,7 +510,7 @@ This represents the raw observed data/simulation efficiencies when the full even
 \subsection{Efficiency Measurement and Systematic Derivation}
 In the previous two sections it has been shown that when applying a $b$-jet aware GRL,
 the $b$-jet trigger performance is understood and the data/simulation agreement is within 5\%.
-In this section the measurement of data efficiency and data/simulation scale factors (SFs)
+In this section the measurement of data efficiency, data/simulation scale factors (SFs)
 and associated systematics to account for the 5\% are described.
 
 As discussed above, there are two factors considered in this section.
@@ -542,7 +543,7 @@ and the full event selection from Section~\ref{sec:trig-evtSel} is applied.
 
 It is known that despite the strict event selection there will inevitably be non b-jet contamination in our sample.
 To estimate the b-jet purity simulation is used, where the true flavour of the jet is available.
-Jets as categorised as true $b$-jets, meaning that a $B$-hadron was found with in a cone of R = 0.4, or true non-b-jets if not.
+Jets as categorised as true $b$-jets, meaning that a $B$-hadron was found within a cone of R = 0.4, or true non-b-jets if not.
 Then distributions for inclusive jets to the truth matched b-jets in the simulation sample are compared.
 Figure~\ref{fig:Purity} shows the b-jet purity for jet-\pT~and jet-$\eta$;
 showing that the b-jet purity is $>$ 95\% up to jet-\pT$\sim$300~\GeV~and $>$ 90\% for higher values of jet-\pT.
@@ -552,7 +553,7 @@ Firstly, the efficiency in our nominal inclusive simulation is compared
 to the efficiencies if only true-b-jets or true non-b-jets are selected,
 this is shown if Figure~\ref{fig:Eff_Purity}(a).
 The ratio is applied as a correction to the final efficiency measurement.
-Then any mismodelling of the  $b$-jet fraction is simulation is also considered,
+Then any mismodelling of the  $b$-jet fraction in simulation is also considered,
 to account for this the efficiency for the simulated inclusive sample is compared to the efficiency when the non b-jet content has been doubled, as shown in Figure~\ref{fig:Eff_Purity}(b).
 The maximum difference from the efficiency measured in the inclusive simulated sample and the cases
 where there is only true b-jets and where the non b-jet content has been doubled,
@@ -584,7 +585,7 @@ shown in the two ratio plots in Figure~\ref{fig:Eff_Purity}, is taken as a symme
 \label{sec:trig-lightTrigEff}
 
 As one would expect and as shown in left plot of Figure~\ref{fig:Eff_Purity}, non b-jets (shown in blue) have a different b-jet trigger efficiency to that of b-jets.
-However the exact efficiency is not known well in data and could be mismodelled in simulation.
+However the exact efficiency is not known well and could be mismodelled in simulation.
 To account for this uncertainty the nominal efficiency in simulation is compared
 to the cases where the non-b-jet efficiency has been halved and doubled in simulation, as shown in Figure~\ref{fig:Eff_LTrigEff}.
 When doubling the non-b-jet trigger efficiency this is limited at the upper end to being no greater than the true b-jet trigger efficiency.
@@ -614,7 +615,7 @@ so the shape from simulation will be used to extrapolate the efficiency for jet-
 The point from which to extrapolate from was chosen as this is when data statistic error starts to become large. 
 
 The procedure is made of two sequential fits (normalisation and correction) to the data/simulation ratio,
-which are used to create a ``corrected  $\epsilon_{bTrig}$'' distribution.
+which are used to create a ``corrected simulation'' $\epsilon_{bTrig}$ distribution.
 For jet-$pT$ $>$ 240 GeV, the corrected $\epsilon_{bTrig}$ is used in place of data when measuring the data $\epsilon_{bTrig}$ efficiency
 and when calculating data/MC scale factors.
 A final quadratic fit is used to assign a systematic. 
@@ -710,10 +711,10 @@ Table~\ref{tab:bTrig_jetSys} summarises the errors on the jet-level scale factor
 These errors are taken as a symmetric error in each jet-\pT~bin and the scale factors are applied to each b-tagged jet.\\
 
 As a final sanity check Figure~\ref{fig:bTrig_jetSys_effComp} shows $\epsilon_{bTrig}$ measured in data to
-that from corrected simulation, in the lower panel a ratio of data to corrected simulation is shown
+that from the corrected simulation, in the lower panel a ratio of data to corrected simulation is shown
 and the extrapolation and total errors are overlaid in red and green respectively.
 The derivation of the corrected simulation and associated extrapolation errors is described in Section~\ref{sec:trig-highPtExtrap}
-This shows that the corrected simulation lies within the total errors for the whole range of jet-\pT
+This shows that the corrected simulation lies within the total errors for the whole range of jet-\pT~
 and at high-\pT, as one might expect, the error is dominated by the extrapolation uncertainties.
 Note that the corrected simulation is only used to represent data for jet-\pT $>$ 240 \GeV.
 
@@ -781,7 +782,7 @@ Note that the corrected simulation is only used to represent data for jet-\pT $>
 \subsubsection{Event-Level Efficiency and Systematic}
 \label{sec:trig-eventLevelEff}
 
-As is discussed in some regions of data-taking the performance
+As alread discussed, in some regions of data-taking the performance
 b-jet trigger efficiency itself
 depends on the online beamspot position.
 Hence, a b-jet trigger aware GRL is applied to remove a large fraction of
@@ -795,12 +796,12 @@ This efficiency is measured differently in each epoch,
 in Epoch 1 it can be found as the number of events with vertex class = 0 divided by the number of events,
 in Epoch 2 it is defined as the dividing the number of events that pass the trigger
 \verb|HLT_mu26_imedium_2j35_bperf| by the number that pass the trigger \verb|HLT_mu26_imedium|
-and in Epoch 3, due to the back-up vertex 
+and in Epoch 3, due to the back-up vertex.
 It should be noted that this measurement made in each of the three regions separately and is then combined with each region weighted by its luminosity.
 
 The value of $\epsilon_{bPerf}$ is extremely close to 1 in simulation, in this case the efficiency in data and the scale factor are the same.
 To assign a systematic for this correction the statistical error in data and simulation in addition to a shape systematic are used.
-The shape systematic,to account for possible variations of the shape with respect to jet-$\eta$,
+The shape systematic, to account for possible variations of the shape with respect to jet-$\eta$,
 is defined as half of the difference between the maximum efficiency and the minimum efficiency in any jet-$\eta$ bin,
 which effectively covers a flat distribution with respect to jet-$\eta$ to one where the shape is twice is extreme as observed.
 
@@ -852,3 +853,14 @@ Leading Jet $\eta$ & SF & Total Error (\%) & Data Stat. (\%) & MC Stat. (\%) & S
 Any others that are good?
 
 Cross-checks can be moved to appendix
+
+\section{To Do}
+
+These can be considered on my list.
+\noindent
+- Cite in plot caption\\
+- Uncertainty instead of error\\
+- Update plots to most current version (and label those that are not)\\
+- In caption I want (a) befor plot i.e. (a) jet-pT, (b) jet-eta.
+- Always use data/simulation instead of data/MC\\
+- use Epoch instead of epoch\\
