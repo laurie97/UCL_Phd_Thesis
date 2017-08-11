@@ -228,7 +228,8 @@
 %  appearing before and after lists.
 %    \begin{macrocode}
 \setlength \parindent{2em}
-\setlength \parskip  {\z@ \@plus 1\p@}
+%\setlength \parskip  {\z@ \@plus 1\p@}
+\setlength \parskip {2 em}
 \setlength \headsep  {16\p@}
 \ifcase \@ptsize
     \setlength \footskip{26\p@}
@@ -360,7 +361,7 @@
     \thispagestyle{plain}%
     \small%
     \parindent \z@%
-    \parskip \z@ \@plus .3\p@%
+    \parskip 0.1em%
     \relax%
 %%%
 %%% It appears that there is an error in the definition of \@idxitem which causes horrid
@@ -521,7 +522,7 @@
 \renewcommand \subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                         {-.5ex\@plus -.2ex \@minus -.2ex}%
                                         {.3ex \@plus .1ex}%
-                                        {\reset@font \large}}
+                                        {\reset@font \large \bfseries}}
 \renewcommand \paragraph{\@startsection{paragraph}{4}{\z@}%
                                        {.5ex \@plus .1ex \@minus .2ex}%
                                        {-.2em}%
@@ -530,7 +531,7 @@
                                           {-.3ex \@plus .1ex \@minus .2ex}%
                                           {-.2em}%
                                           {\reset@font \normalsize \bfseries}}
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 %    \end{macrocode}
 %
 %  \subsection{Obscure Environments}
