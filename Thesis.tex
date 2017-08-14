@@ -1,5 +1,70 @@
 % UCL Thesis LaTeX Template
-% 
+%  See below for info
+
+%%%%%%%%%%%%% Preamble/Setup %%%%%%%%%%%%%%%%%
+% This package goes first
+\RequirePackage[l2tabu, orthodox]{nag}
+
+
+% ------ Main document class specification ------
+% The draft option here prevents images being inserted,
+% Option = phd : )
+%\documentclass[12pt,phd,draft,a4paper,oneside]{ucl_thesis}
+\documentclass[11pt,phd,a4paper,oneside]{ucl_thesis}
+\setlength \parskip {1em}
+
+% Package configuration:
+\input{Aux/MainPackages}
+% Sets up links within your document
+\input{Aux/LinksAndMetadata}
+% And then some settings in separate files.
+\input{Aux/FloatSettings} % For things like figures and tables
+\input{Aux/BibSettings}   % For bibliographies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%% Content starts here %%%%%%%%%%%%%%%%%
+% Title Settings
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\title{A Thesis Title}
+\author{Author Name}
+\department{Department of Something}
+
+\begin{document}
+
+\nobibliography*
+% Lets you put bibliography entries whereever you like.
+ 
+
+% If you haven't finished making your full BibTex file yet, you
+%  might find this useful -- it'll just replace all your
+%  citations with little superscript notes.
+% Uncomment to use.
+%\renewcommand{\cite}[1]{\emph{\textsuperscript{[#1]}}}
+
+% At last, content! Remember filenames are case-sensitive and 
+%  *must not* include spaces.
+\include{Aux/Preamble}
+\include{Chapters/Introduction}
+\include{Chapters/Detector}
+\include{Chapters/Trigger}
+\include{Chapters/Conclusions}
+\include{Chapters/Appendices} 
+
+% This line manually adds the Bibliography to the table of contents.
+\addcontentsline{toc}{chapter}{Bibliography}
+
+% Actually generates your bibliography.
+%\bibliography{references-det}
+\bibliography{References/Detector,References/Trigger}
+\end{document}
+%%%%%%%%%%%%% Document ends here %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%  Info  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 % This is a template/skeleton for PhD/MPhil/MRes theses.
 %
 % It uses a rather split-up file structure because this tends to
@@ -17,103 +82,14 @@
 % If you do that, it also means you can use the \includeonly statement
 %  to only compile up the section you're currently interested in.
 % You might also want to put figures into their own files to be \input.
-
+%
 % For more information on \input and \include, see:
 %  http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
-
-
+%
 % Formatting rules for theses are here: 
 %  http://www.ucl.ac.uk/current-students/research_degrees/thesis_formatting
 % Binding and submitting guidelines are here:
 %  http://www.ucl.ac.uk/current-students/research_degrees/thesis_binding_submission
-
-% This package goes first and foremost, because it checks all 
-%  your syntax for mistakes and some old-fashioned LaTeX commands.
-% Note that normally you should load your documentclass before 
-%  packages, because some packages change behaviour based on
-%  your document settings.
-% Also, for those confused by the RequirePackage here vs usepackage
-%  elsewhere, usepackage cannot be used before the documentclass
-%  command, while RequirePackage can. That's the only functional
-%  difference.
-\RequirePackage[l2tabu, orthodox]{nag}
-
-
-% ------ Main document class specification ------
-% The draft option here prevents images being inserted,
-%  and adds chunky black bars to boxes that are exceeding 
-%  the page width (to show that they are).
-% The oneside option can optionally be replaced by twoside if
-%  you intend to print double-sided. Note that this is
-%  *specifically permitted* by the UCL thesis formatting
-%  guidelines.
 %
-% Valid options in terms of type are:
-%  phd
-%  mres
-%  mphil
-%\documentclass[12pt,phd,draft,a4paper,oneside]{ucl_thesis}
-\documentclass[11pt,phd,a4paper,oneside]{ucl_thesis}
-\setlength \parskip {1 em}
-
-% Package configuration:
-%  LaTeX uses "packages" to add extra commands and features.
-%  There are quite a few useful ones, so we've put them in a 
-%   separate file.
-\input{Aux/MainPackages}
-
-% Sets up links within your document, for e.g. contents page entries
-%  and references, and also PDF metadata.
-% You should edit this!
-\input{Aux/LinksAndMetadata}
-
-% And then some settings in separate files.
-\input{Aux/FloatSettings} % For things like figures and tables
-\input{Aux/BibSettings}   % For bibliographies
-
-% Title Settings
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
-\title{A Thesis Title}
-\author{Author Name}
-\department{Department of Something}
-
-
-\begin{document}
-
-\nobibliography*
-% This is a dumb trick that works with the bibentry package to let
-%  you put bibliography entries whereever you like.
-% I used this to put references to papers a chapter's work was 
-%  published in at the end of that chapter.
-% For more information, see: http://stefaanlippens.net/bibentry
-
-% If you haven't finished making your full BibTex file yet, you
-%  might find this useful -- it'll just replace all your
-%  citations with little superscript notes.
-% Uncomment to use.
-%\renewcommand{\cite}[1]{\emph{\textsuperscript{[#1]}}}
-
-% At last, content! Remember filenames are case-sensitive and 
-%  *must not* include spaces.
-\include{Aux/Preamble}
-\include{Chapters/Introduction}
-\include{Chapters/Detector}
-\include{Chapters/Trigger}
-\include{Chapters/Conclusions}
-\include{Chapters/Appendices} 
-
-% You could separate these out into different files if you have
-%  particularly large appendices.
-% This line manually adds the Bibliography to the table of contents.
-% The fact that \include is the last thing before this ensures that it
-% is on a clear page, and adding it like this means that it doesn't
-% get a chapter or appendix number.
-\addcontentsline{toc}{chapter}{Bibliography}
-
-% Actually generates your bibliography.
-\bibliography{references-det}
-%\bibliography{example}
-
-% All done. \o/
-\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

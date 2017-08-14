@@ -1,0 +1,13 @@
+## What should git be ignoring
+
+# Pesky ~ files
+*~
+# Ignore auto-made files
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.toc
