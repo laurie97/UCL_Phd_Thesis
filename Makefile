@@ -17,6 +17,17 @@ Thesis.pdf: $(LaTeXSources)
 	lualatex --halt-on-error $(basename $@).tex
 	lualatex --halt-on-error $(basename $@).tex
 
+Chapter:
+	echo "Making chapter ${chap}"
+	lualatex --halt-on-error  -jobname="${chap}" "\includeonly{Chapters/${chap}}\input{Thesis.tex}"
+	lualatex --halt-on-error  -jobname="${chap}" "\includeonly{Chapters/${chap}}\input{Thesis.tex}"	
+	#bibtex Chapters/${chap}
+	#lualatex --halt-on-error  -jobname="${chap}" "\includeonly{Chapters/${chap}}\input{Thesis.tex}"
+	mv ${chap}.pdf Output/.
+
+
+
+
 TestCases=phd,a4paper,oneside.pdf phd,a4paper,twoside.pdf mres,a4paper,oneside.pdf mres,a4paper,twoside.pdf mphil,a4paper,oneside.pdf mphil,a4paper,twoside.pdf
 
 test: $(TestCases)
