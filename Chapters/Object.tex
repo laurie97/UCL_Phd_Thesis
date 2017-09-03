@@ -14,41 +14,53 @@
    \section{Identification of $b$-jets}
    \label{sec:obj-bjets}
 
-   Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categorised into three seperate categories based on the flavour of the constituent quarks;
-   \textit{b}-jets, \textit{c}-jets and light-flavoured jets, are defined as jets containing a \textit{b}-hadron, 
-   a charmed-hadron or only light hadrons (only containing \textit{u},\textit{d} and \textit{s} quarks) respectively.
-   \footnote{A more precise description of how this defined in a practice is given in Section~\ref{sec:obj-bjets_label}}
-  
-   The ability to identify $b$-jets is essential for a number of analyses within the ATLAS collaboration
-   for example analyses that utilise the $t\bar{t}$ decay \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-sys} contains a concrete example of this.}
-   and the first direct evidence of the Higgs boson decaying to fermions \cite{obj-Hbb}.
-   %In the former, as the top decays to a \textit{W}-boson and a \textit{b}-quark with a branching ratio close to 100\%, 
+   Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categorised into three separate categories based on the flavour of the constituent quarks.
+   $b$-jets are defined as jets containing one or more $b$-hadrons,
+   $c$-jets are defined as jets containing one or more $c$-hadrons but no $b$-hadrons
+   and finally light-flavoured jets comprise of only light hadrons (\textit{u}, \textit{d} and \textit{s} quarks).
+   A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjets_label}.
+
+   The identification $b$-jets, known as $b$-tagging, has been an essential tool in a range of ATLAS collaboration results;
+   for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-sys} contains a concrete example of this.}
+   and the first direct evidence of the Higgs boson coupling to the quark-sector \cite{obj-Hbb}.
+   %In the former, as the top decays to a \textit{W}-boson and a $b$-quark with a branching ratio close to 100\%, 
    %the application of $b$-tagging can be used increase purity, this is used in the study described in Section~\ref{sec:trig-sys}.
    %In the latter, the Higgs boson coupling is proportional to mass squared, hence the large mass of the
-   %\textit{b}-quark means that $H\to b\bar{b}$ is the decay of the Higgs boson with the largest branching-ratio
+   %$b$-quark means that $H\to b\bar{b}$ is the decay of the Higgs boson with the largest branching-ratio
    %which means that it is the best channel to make the first direct observation of the Higgs boson coupling to fermions.
    In the same sense, identification of $b$-jets is an essential part of the analysis being presented here;
    by selecting $b$-jets we increase our sensitivity to BSM models that decay to 1 or 2 $b$-jets in their final state.
-    \textbf{Laurie Fix, reference where I explain why this is good, maybe Intro}.
+   \textbf{Laurie Fix, link to where I explain why this is good, maybe Intro}.
+
+   \subsection{Assigning a Flavour Label}
+   \label{sec:obj-bjets_label}
+
+   In simulation, the particle-level truth information is known, and hence a truth flavour label of a jet can be defined.
+   Flavour is assigned to jets by matching truth-level heavy-hadrons with $p_{T} >$ 5 GeV and $\Delta R <$ 0.3 between the hadron and the jet.
+   If a $b$-hadron is matched to a jet, the jet is then declared a $b$-jet;
+   this process is then repeated for $c$-hadrons and then $\tau$ leptons.
+   If no match between $b$, $c$ or $\tau$ is achieved then the jet is assigned as a light-flavour jet.
+   The matching is exclusive, which means that each hadron is only assigned to one jet. \textbf{Add a reference, possibly performance}
+   This definition of truth flavour in simulation is used generally within this thesis.
    
    \subsection{Algorithm descriptions}
 
-   The identification of $b$-jets, known as $b$-tagging,
-   is performed by algorithms that utilise the long lifetimes (of the order ps) \textbf{Laurie Fix: Reference PDF?}
-   of the heavy-hadrons that decay through the flavour changing weak interaction,
-   A \textit{b}-jet decay chain  will typically contain two of these flavour changing interactions, 
-   as at the quark level, the \textit{b}-quark contained in the jet will decay to a $c$-quark, which will then decay into a $u$ or $d$ quark.
+   To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction
+   \footnote{A $B_{0}$ meson, the most common heavy hadron found in a $b$-jet, has a life time of \SI{-999}{\pico\second} \textbf{Laurie Fix: PDG ref, ref B0 meson, replace time}}.
+   A $b$-jet decay chain  will typically contain two of these flavour changing interactions, 
+   as at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $u$ or $d$ quark.
    The long lifetimes of the heavy flavour hadrons means that they will decay a measurable distance from the 
-   primary vertex, the point where the hard-scatter collision occurs, and hence the flavour can be inferred from the presence of particles 
+   primary vertex, the point where the hard-scatter collision occurs.
+   Hence, the flavour of a jet can be inferred from the presence of particles
    that originate from a point offset from the primary vertex.
-   This is done using measurements from the tracks formed by the inner detector, in particular the precision silicon tracker,
-   and the calorimter, which have been described in Section~\ref{sec:det-ID} and \ref{sec:det-calo}.
+   In practice this is performed using the topology of tracks formed by the inner detector
+   and measurements from the calorimeter, which have been described in Section~\ref{sec:det-ID} and \ref{sec:det-calo} respectively.
    
-   There are three base $b$-tagging algorithms utilised to produce discriminating variables, which are described in the Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
+   There are three base $b$-tagging algorithms utilised to produce discriminating variables, which are described in the next three sections.
+   %Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
    The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
-   Figure~\ref{fig:obj_bjet_schem} shows a schematic illustrating how the tracks from the detector
-   are used by the three $b$-tagging algorithms
-   to identify the prescence of $B$-hadron in the jet.
+   Figure~\ref{fig:obj_bjet_schem} shows a schematic illustrating how the tracks from the inner detector
+   are used by the three $b$-tagging algorithms to identify a $b$-jet, which will be refered to during the individual algorithm descriptions.
    
    \begin{figure}[!htb]
      \begin{center}
@@ -62,14 +74,15 @@
    \subsubsection{Impact parameter based}
    \label{sec:obj-bjets_IP}
  
-   The IP3D algorithm is an impact parameter based flavour tagging tool. 
-   A track corresponding to a particle coming from the offset decay vertex in a \textit{b}- or \textit{c}-jet is likely to have a large distance of 
-   closest approach to the primary vertex, known as the impact parameter, meaning that the distribution of track impact parameter is different for each of the jet-flavours.
+   The IP3D algorithm is utilises the impact parameter, which is defined as the shortest distance between a specific track and the primary vertex.
+   A track corresponding to a particle coming from the offset decay vertex of a heavy-hadron is likely to have a large impact parameter,
+   meaning that the distribution of track impact parameter is different for each of the jet-flavours.
+   The impact parameter of a track coming from the decay of a heavy hadron is indicated in Figure~\ref{fig:obj_bjet_schem}.
    In this algorithm, for all tracks associated to a jet, the impact parameter is calculated in both the transverse (perpendicular to beam-line)
    and longitudinal (parallel to beam-line) direction, which are referred to as $d_{0}$ and $z_{0}$.
    Then the IP3D algorithm calculates a likelihood of the jet having a specific flavour, 
-   based on the distributions of the impact parameters ($d_{0}$, $z_{0}$), and the distributions of their significances 
-   ($d_{0}/\sigma _{d0}$ and  $z_{0}/\sigma_{z0}$) of tracks inside the jet. 
+   based on the distributions of the impact parameters ($d_{0}$, $z_{0}$) and their significances 
+   ($d_{0}/\sigma _{d0}$ and  $z_{0}/\sigma_{z0}$) for tracks within the jet. 
    Another similar algorithm, IP2D, also calculates the jet flavour likelihood from just the transverse distributions, ($d_{0}$ and $d_{0}$ significance), which is more
    robust to pile-up, as tracks from pile-up jets are likely to have a large $z_{0}$ significance value.
    
@@ -77,43 +90,68 @@
    \label{sec:obj-bjets_SV}
 
    
-   The SV1 algorithm aims to reconstruct a secondary vertex of two or more intersecting tracks, corresponding to the decay of a heavy-flavour hadron. 
-   Properties of the reconstructed secondary vertex that show flavour discrimination are, for example; the vertex 
-   invariant mass and energy fraction (fraction of jet energy contained in the secondary vertex) which will be large for 
-   \textit{b}-jets due to the heavy mass of the \textit{b}-hadron 
-   \footnote{Mass of a B-meson $\sim$ 5 GeV and the mass of a D-meson $\sim$ 1.9 GeV, which are the most common heavy hadrons in a \textit{b}- and \textit{c}-jet respectively.}, 
-   the distance in the transverse plane between the 
-   primary vertex and the secondary vertex (2D flight path $L_{XY}$), which will be large for \textit{b}-jets due to the long lifetime of the \textit{b}-hadron,
-   and the number of tracks at the secondary vertex, which will be large for well constructed secondary vertices, which are more likely in \textit{b}-jets.
+   The SV1 algorithm aims to reconstruct a secondary vertex of two or more intersecting tracks, corresponding to the decay of a heavy-flavour hadron;
+   the secondary vertex within a $b$-jet's decay chain is illustrated in Figure~\ref{fig:obj_bjet_schem}.
+   The SV1 algorithm then calculates many variables that are associated with properties of the reconstructed secondary vertex that show flavour discrimination;
+   some example variables are the vertex invariant mass,
+   which will be larger for $b$-jets due to the heavy mass of the $b$-hadron
+   \footnote{Mass of a B-meson $\sim$ 5 GeV and the mass of a D-meson $\sim$ 1.9 GeV, which are the most common heavy hadrons in a $b$- and $c$-jet respectively.}, 
+   the distance in the transverse plane between the primary vertex and the secondary vertex, % (2D flight path $L_{XY}$),
+   which will be larger for $b$-jets due to the long lifetime of the $b$-hadron,
+   and the number of tracks at the secondary vertex, which will be larger for reliable secondary vertices.
    
    \subsubsection{Jet Fitter}
    \label{sec:obj-bjets_JF}
 
-   The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the \textit{b}-hadron into a charmed-hadron and then into light-hadrons. 
-   This is done by assuming that all vertices lie on a common \textit{b}-flight axis, and then constructing vertices from the intersection of
+   The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the $b$-hadron into a charmed-hadron and then into light-hadrons. 
+   This is done by assuming that all vertices lie on a common $b$-flight axis, and then constructing vertices from the intersection of
    one or more tracks and the flight axis.
-   Reconstructed secondary and tertiary vertices correspond to the decays of the \textit{b}-hadron and charmed-hadron, as seen in Figure \ref{B-Tagging_Diagram}.
-   Discriminating variables of JF, similarly to SV1, are vertex mass, energy fraction, number of vertices with two or more tracks and number of one track vertices.
+   The aim of this is to reconstruct the secondary and tertiary vertices which correspond to the decays of the $b$-hadron and charmed-hadron,
+   as illustrated in Figure \ref{fig:obj_bjet_schem}.
+   Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
+   for example vertex mass and number of vertices with two or more tracks.
    
    \subsubsection{Multi-variate}
    \label{sec:obj-bjets_MV2}
 
-   
-   The three base algorithms are combined in a boosted decision tree (BDT), which is a machine-learning technique for combining the many flavour-discriminating variables.
-   As shown in Figure \ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D, with the discriminating variables of SV1 and JF discussed above.
-   This is in contrast to the previous multivariate tagger used in Run-1, MV1, which inputted
-   the likelihood of a jet having a certain flavour from each of the three base algorithms separately.
-   For Run-2 the recommended \textit{b}-tagging tool is MV2c20 which has been trained on a sample containing 20\% charm, to give strong light- and \textit{c}-rejection rates.
- 
+   The three base algorithms are combined in a boosted decision tree (BDT), a machine-learning technique for combining the many flavour-discriminating variables,
+   resulting in an algorithm that is known in MV2
+   As shown in Figure \ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
+   with the discriminating variables of SV1 and JF discussed in the preceeding sections,
+   resulting in an output between -1 and 1, where 1 indicates that the jet is likely to be a $b$-jet and -1 indicates the inverse.
+
+   A cut is then applied to this MV2 output in order to select jets that are likely to $b$-jets.
+   The cut can be varied to create different working points which vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection
+   \footnote{$b$-jet efficiency is defined as the probablitity of accepting a true $b$-jet.
+     Light-jet rejection is defined as 1 divided by the probablity of accepting a true light-jet.
+     A similar definition applies for $c$-jet rejection.}.
+   Looser working points have a relatively low cut on MV2, meaning that the $b$-jet efficiency is higher at the cost of worse light- and $c$-jet rejections,
+   and the inverse is true for tighter working points.
+   Table~\ref{tab:obj-MV2_WPs} shows the list of fixed cut working points that are used in ATLAS defined by their $b$-jet efficiencies;
+   the corresponding $c$-jet rejection rate, light-jet rejection rate and MV2 cut are also shown.
+   \footnote{In this thesis only the fixed-cut working points shown obove will be used,
+     however, there also exists a set of flat efficiency working points where the MV2 cut depends on jet-\pT}
+   %This is in contrast to the previous multivariate tagger used in Run-1, MV1, which inputted
+   %the likelihood of a jet having a certain flavour from each of the three base algorithms separately.
+
    \begin{figure}[!htb]
      \begin{center}
        \includegraphics[width=1.0\textwidth]{figs/Objects/MV2_schem.pdf}
-       \caption{A diagram to show the how the three base flavour tagging algorithms are combined in the MV2 algorithm.}
+       \caption{A diagram showing how the three base flavour tagging algorithms are combined in the MV2 algorithm.}
        \label{fig:obj-MV2_schem}
      \end{center}
      \vspace{-1cm}
    \end{figure}
    
+   The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets
+   as well as a sample containing $Z'$ boson decaying to $b$-quarks.
+   The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjets_label}.
+   A training sample with known truth labels is required as this allows the BDT to be optimised
+   such that it uses the complex correlations between the input variables to allow for high $b$-jet efficiencies
+   whilst still obtaining a large $c$- and light-jet rejection.
+   The recommended $b$-tagging tool is MV2c10 which has been trained on a sample containing 10\% charm-jets, to give strong light- and $c$-rejection rates.
+   
+ 
    
    \subsection{Calibration/performance}
    \subsection{bTagging: Validation in Dijet Events}
