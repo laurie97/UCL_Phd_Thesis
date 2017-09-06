@@ -24,15 +24,55 @@ This process of hadronic jet formation and energy deposition in the calorimeter 
 This section containts a description of the procedure utilised by ATLAS
 to go from energy deposits in calorimeter cells to well defined and calibrated hadronic jets.
 This procedure can be split up into three seperate steps that are described in the following sections;
-firstly topoclusters are formed as described in Section~\ref{sec:obj-jets_topo} ,
-then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jets_reco}
-and finally Section~\ref{sec:obj-jets_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
+firstly topoclusters are formed as described in Section~\ref{sec:obj-jet_topo},
+then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jet_reco}
+and finally Section~\ref{sec:obj-jet_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
 
 \subsection{Hadronic topocluster reconstruction}
-\label{sec:obj-jets_topo}
+\label{sec:obj-jet_topo}
+
+The first step of jet building at ATLAS builds 3D clusters, known as topoclusters, from neighbouring groups of energy deposits in cells~\cite{obj-jet_topo}.
+The calorimter cells can be from either the EM or hadronic calorimeter systems,
+which have a dimensions given in Tables~\textbf{LM fix, need to make tables, then reference here}.
+The algorithm employed makes use of the variable cell signal significance defined as, 
+\begin{equation}
+  \Large{S_{\text{cell}}^{EM} = \frac{E_{\text{cell}}^{EM}}{\sigma_{\text{noise,cell}}^{EM}}}
+\end{equation}
+where $E_{\text{cell}}^{EM}$ is the energy deposited in a cell at the EM-scale \textbf{Laurie fix, check EM scale is defined possibily in detector}
+and $\sigma_{\text{noise,cell}}^{EM}$ is the uncertainty due to noise in that cell.
+The sources of noise in a calorimeter cell are described in Section \textbf{LM fix, need to have a noise section somewhere...}.
+A large value of $S_{\text{cell}}^{EM}$ ( $>$ 1 ) indicates that the energy deposit is likely due to a particle
+depositing energy in the calorimeter rather than noise within the calorimeter.
+
+\noindent
+Using the value of $S_{\text{cell}}^{EM}$, each calorimeter cell is labelled as follows
+\begin{itemize}
+\item If $|S_{\text{cell}}^{EM}| > 4$: the cell is labelled a \textbf{seed} cell.
+\item If $|S_{\text{cell}}^{EM}| > 2$: the cell is labelled a \textbf{growth} cell.
+\item If $|S_{\text{cell}}^{EM}| > 0$: the cell is labelled a \textbf{boundry} cell.
+\end{itemize}
+Then the algorithms builds clusters as in the following steps,
+\begin{enumerate}
+\item A seed cell forms the centre of a new topocluster.
+\item Neighbouring seed cells are added together to the form one topocluster seed.
+\item Then, growth cells neighbouring the topocluster are added.
+\item Finally, boundry cells neighbouring the topocluster are added.
+\end{enumerate}
+Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm would form a topocluster and an example where it wouldn't.
+
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.6\linewidth, angle=0]{figs/Objects/topo_schem.png}
+  \end{center}
+  \caption[A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster.]
+          {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster
+            ~\cite{det-magnet_fig}.}
+  \label{fig:obj-topo_schem}
+\end{figure}
+
 
 \subsection{Jet Reconstruction}
-\label{sec:obj-jets_reco}
+\label{sec:obj-jet_reco}
 
 anti-$k_T$
 \subsection{Jet calibration}
@@ -45,7 +85,7 @@ Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categoris
 $b$-jets are defined as jets containing one or more $b$-hadrons,
 $c$-jets are defined as jets containing one or more $c$-hadrons but no $b$-hadrons
 and finally light-flavoured jets comprise of only light hadrons (\textit{u}, \textit{d} and \textit{s} quarks).
-A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjets_label}.
+A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjet_label}.
 
 The identification $b$-jets, known as $b$-tagging, has been an essential tool in a range of ATLAS collaboration results;
 for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-sys} contains a concrete example of this.}
@@ -60,11 +100,11 @@ by selecting $b$-jets we increase our sensitivity to BSM models that decay to 1 
 \textbf{Laurie Fix, link to where I explain why this is good, maybe Intro}.
 
 The process of $b$-tagging at ATLAS in Run-2 has been previously described in great
-detail~\cite{obj-bjets_algo_2015,obj-bjets_algo_2016},
+detail~\cite{obj-bjet_algo_2015,obj-bjet_algo_2016},
 so what follows is a summary of the key features of the process.
 
 \subsection{Assigning a Flavour Label}
-\label{sec:obj-bjets_label}
+\label{sec:obj-bjet_label}
 
 In simulation, the particle-level truth information is known, and hence a truth flavour label of a jet can be defined.
 Flavour is assigned to jets by matching truth-level heavy-hadrons with $p_{T} >$ 5 GeV and $\Delta R <$ 0.3 between the hadron and the jet.
@@ -77,7 +117,7 @@ This definition of truth flavour in simulation is used generally within this the
 \subsection{Algorithm descriptions}
 
 To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction,
-a hadron containing a $b$-quark has a lifetime of the order \SI{1.5}{\pico\second} %\cite{obj-bjets_algo_2015}.
+a hadron containing a $b$-quark has a lifetime of the order \SI{1.5}{\pico\second} %\cite{obj-bjet_algo_2015}.
 A $b$-jet decay chain  will typically contain two of these flavour changing interactions, 
 as at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $u$ or $d$ quark.
 The long lifetimes of the heavy flavour hadrons means that they will decay a measurable distance from the 
@@ -87,9 +127,9 @@ that originate from a point offset from the primary vertex.
 In practice this is performed using the topology of tracks formed by the inner detector
 and measurements from the calorimeter, which have been described in Section~\ref{sec:det-ID} and \ref{sec:det-calo} respectively.
    
-There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjets_algo_2016}, which are described in the next three sections .
-%Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
-The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
+There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjet_algo_2016}, which are described in the next three sections .
+%Sections~\ref{sec:obj-bjet_IP}~to~\ref{sec:obj-bjet_JF}.
+The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjet_MV2}.
 Figure~\ref{fig:obj_bjet_schem} shows a schematic illustrating how the tracks from the inner detector
 are used by the three $b$-tagging algorithms to identify a $b$-jet, the details of this figure are referred to in the following three sections.
 
@@ -103,7 +143,7 @@ are used by the three $b$-tagging algorithms to identify a $b$-jet, the details 
 \end{figure}
 
 \subsubsection{Impact parameter based}
-\label{sec:obj-bjets_IP}
+\label{sec:obj-bjet_IP}
 
 The IP3D algorithm is utilises the impact parameter, which is defined as the shortest distance between a specific track and the primary vertex.
 A track corresponding to a particle coming from the offset decay vertex of a heavy-hadron is likely to have a large impact parameter,
@@ -118,7 +158,7 @@ Another similar algorithm, IP2D, also calculates the jet flavour likelihood from
 robust to pile-up, as tracks from pile-up jets are likely to have a large $z_{0}$ significance value.
 
 \subsubsection{Secondary vertex}
-\label{sec:obj-bjets_SV}
+\label{sec:obj-bjet_SV}
 
 
 The SV1 algorithm aims to reconstruct a secondary vertex of two or more intersecting tracks, corresponding to the decay of a heavy-flavour hadron;
@@ -132,7 +172,7 @@ which will be larger for $b$-jets due to the long lifetime of the $b$-hadron,
 and the number of tracks at the secondary vertex, which will be larger for reliable secondary vertices.
 
 \subsubsection{Jet Fitter}
-\label{sec:obj-bjets_JF}
+\label{sec:obj-bjet_JF}
 
 The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the $b$-hadron into a charmed-hadron and then into light-hadrons. 
 This is done by assuming that all vertices lie on a common $b$-flight axis, and then constructing vertices from the intersection of
@@ -143,7 +183,7 @@ Similar to SV1, the JetFitter algorithm then calculates a number of flavour disc
 for example vertex mass and number of vertices with two or more tracks.
 
 \subsubsection{Multi-variate}
-\label{sec:obj-bjets_MV2}
+\label{sec:obj-bjet_MV2}
 
 The three base algorithms are combined in a boosted decision tree (BDT), a machine-learning technique for combining the many flavour-discriminating variables,
 resulting in an algorithm that is known in MV2
@@ -188,7 +228,7 @@ For the remainder of this thesis, the operating points will be referred
     \end{tabular}
     \caption[The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.]
             {The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.
-              This table is taken from reference~\cite{obj-bjets_algo_2016}.}
+              This table is taken from reference~\cite{obj-bjet_algo_2016}.}
             \label{fig:obj-MV2_schem}
   \end{center}
   \vspace{-1cm}
@@ -196,7 +236,7 @@ For the remainder of this thesis, the operating points will be referred
 
 The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets
 as well as a sample containing $Z'$ boson decaying to $b$-quarks.
-The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjets_label}.
+The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjet_label}.
 A training sample with known truth labels is required as this allows the BDT to be optimised
 such that it uses the complex correlations between the input variables to allow for high $b$-jet efficiencies
 whilst still obtaining a large $c$- and light-jet rejection.
