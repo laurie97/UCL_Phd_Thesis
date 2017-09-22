@@ -28,6 +28,13 @@ firstly topoclusters are formed as described in Section~\ref{sec:obj-jet_topo},
 then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jet_reco}
 and finally Section~\ref{sec:obj-jet_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
 
+What is described above are hadronic jets constructed from calorimeter cells.
+But, it is worth noting, that there are other types of jets used at ATLAS.
+Jets are used to observe electrons and taus and 
+jets can also be constucted from tracks formed in the inner detector, which can be useful in dense environments.
+However this chapter will describe hadronic jets constructed from calorimeter cells,
+as these are the objects used in the context of the analysis.
+
 \subsection{Hadronic topocluster reconstruction}
 \label{sec:obj-jet_topo}
 
@@ -51,7 +58,7 @@ Using the value of $S_{\text{cell}}^{EM}$, each calorimeter cell is labelled as 
 \item If $|S_{\text{cell}}^{EM}| > 2$: the cell is labelled a \textbf{growth} cell.
 \item If $|S_{\text{cell}}^{EM}| > 0$: the cell is labelled a \textbf{boundry} cell.
 \end{itemize}
-Then the algorithms builds clusters as in the following steps,
+Then the algorithms builds topoclusters as in the following steps,
 \begin{enumerate}
 \item A seed cell forms the centre of a new topocluster.
 \item Neighbouring seed cells are added together to the form one topocluster seed.
@@ -60,9 +67,14 @@ Then the algorithms builds clusters as in the following steps,
 \end{enumerate}
 Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm would form a topocluster and an example where it wouldn't.
 
+In the addition process the energy deposits are treated as massless objects,
+hence a 4-momentum can be calculated using the energy deposited and the $\eta-\phi$ position of the calorimeter cell.
+During the topoclusters building proceedure, the 4-momentum of the energy deposits are added to calculate the 4-momentum of the topocluster.
+The constructed topoclusters and their 4-momentums are then used as the inputs to the next step of jet reconstruction.
+
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.6\linewidth, angle=0]{figs/Objects/topo_schem.png}
+    \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
   \caption[A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster.]
           {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster
@@ -70,11 +82,98 @@ Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm wo
   \label{fig:obj-topo_schem}
 \end{figure}
 
-
+\FloatBarrier
 \subsection{Jet Reconstruction}
 \label{sec:obj-jet_reco}
 
-anti-$k_T$
+This section describes how jets are formed from the topoclusters described in the previous section.
+To form a jet a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
+to define the jets, with each jet having a well defined four momentum and known set of constiuents.
+Using this technique jets become experimentally well-defined model-independant observables.
+A more detailed discussion of all of the jet reconstruction algorithms
+and relevant issues discussed in this section can be found in~\cite{obj-jet_reco_salam}.
+
+In ATLAS the subset of jet reconstruction algorithms used are sequential recombination algorithms,
+which selectively add together the calorimeter topoclusters to form the jet;
+these are specifically the $k_t$,  anti-$k_t$ and Cambridge-Aachen (CA) algorithms.
+
+The three algorithms uses a set of 4-vectors (clusters), which are initially the topoclusters formed in the calorimeter.
+One then introduces an inter-jet distance between clusters $i$ and $j$ defined as,
+\begin{equation}
+  d_{ij} = \text{min}
+  [(p_{ Ti})^a, (p_{ Tj})^a]  \left(\frac{\Delta  R_{ij}}{R}\right) ^2, \hspace{1cm} \Delta R_{ij} = \sqrt{(y_{i} - y_{j})^2 + (\phi_{i} - \phi_{j})^2} \label{dij}
+\end{equation}
+\noindent and a particle-beam distance for cluster $i$ defined as,
+\begin{equation}
+  d_{iB} = (p_{Ti})^a \label{diB}
+\end{equation}
+where $y$  is rapidity (as defined in Section~\ref{sec:det-coordinate}), $\phi$ is azimuthal angle,
+$p_T$ is transverse momentum (component of momentum perpendicular to the beam-pipe of colliding particles)
+and $p_z$ is the component of momentum that is parallel to the beam-pipe of colliding particles.
+$R$ is the jet width parameter, a free parameter of the algorithm.
+The parameter $a$ in Eq. \eqref{dij} and \eqref{diB} takes the value $a = 2$ for the $k_t$ algorithm, $a = -2$ for the anti-$k_t$ algorithm 
+and  $a = 0$ for the Cambridge-Aachen algorithm.
+
+The inter-jet and particle-beam distances are not physical distances as such, but can instead be thought of as dimensionful measures of how likely it is that
+clusters $i$ and $j$ represent clusters caused by hadrons from the same jet.
+If the inter-jet distance for a pair of clusters is smaller than the particle-beam distances for the two clusters ($d_{ij} < d_{iB}$) 
+then it is likely that the two clusters are from the same jet. 
+In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are from the same jet.
+ 
+\noindent The algorithm then procedes using the following steps:
+\vspace{-1em}
+\begin{enumerate}[nolistsep]
+  \item Calculate $d_{ij}$ and $d_{iB}$ for all combinations of clusters.  
+  \item Find the minimum of the $d_{ij}$ and $d_{iB}$. 
+  \item If the minimum is a $d_{ij}$ combine cluster $i$ and $j$ to form a new cluster and return to step 1. 
+  \item If the minimum is a $d_{iB}$ then call cluster $i$ a final-state jet, remove it from the set and return to step 1.  
+  \item Stop when all clusters have been declared as jets. 
+\end{enumerate} 
+The final jet has a 4-momentum equal to the addition of all the topoclusters assigned to that jet.
+It can now be seen that the jet width parameter, $R$, effectively gives the scale of the width of a reconstructed jet.
+This is because when $\Delta R_{ij} > R$ for a pair of clusters,
+$d_{iB} < d_{ij}$ for the cluster with the smaller value of ${p_T}$,
+and thus the algorithm will not merge the two clusters.
+
+The sequential reclustering algorithms described above are used as they satisfy two important theoretically motivated criteria;
+specifically infrared and collinear safety.
+Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emmission \footnote{Soft means a low momentum}
+and collinear safety requires that the jet reconstruction algorithm result should be invariant against a parton splitting into two partons with small angular seperation.
+These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
+two identical hard-scatter processes could be observed entirely differently due to an additional emmission process in the parton shower or hadronisation process.
+The above sequential reclustering algorithms are infrared and collinear safe
+whilst cone-based algorithms used at previous collider experiments, such as UA2 ~\cite{obj-jet_reco_UA2}, do not satisfy this property.
+
+Anti-$k_T$ is the jet reconstruction algorithm used for the analyses being presented in this thesis, which is typical of analyses at ATLAS.
+This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet,
+due to the fact that the algorithm reconstructs the high-$p_T$ core of the jets first and then adds in the lower $p_T$ suburbs in later steps.
+Figure~\ref{fig:obj-jet_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm performed to the same set of input clusters;
+the figure illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
+
+\textbf{LM Fix : Why R = 0.4?}
+
+\begin{figure}[!ht]
+  \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
+  \begin{center}
+    \subcaptionbox{Cambridge-Aachen} {
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_ca.png}
+    }
+    \subcaptionbox{$k_T$} {
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_kt.png}
+    }\\
+    \subcaptionbox{Anti-$k_T$} {
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_akt.png}
+    }
+
+  \end{center}
+  \caption[A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
+    The consituent clusters of each of the jets formed is indicated using various colours.]
+          {A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
+            The consituent clusters of each of the jets formed is indicated using various colours \cite{obj-jet_reco_salam}.}
+  \label{fig:obj-jet_reco_shapes}
+\end{figure}
+
+
 \subsection{Jet calibration}
 (JES, JER, BJES) description
 
