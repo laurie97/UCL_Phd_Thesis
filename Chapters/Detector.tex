@@ -242,6 +242,7 @@ meaning that almost all of the particle shower from a high-energy photon
 or electron can be contained within electromagnetic calorimeter. 
 
 \subsubsection{Hadronic Calorimeter (HCAL)}
+\label{sec:det-calo_HCAL}
 
 If a particle can also interact through strong interactions, such as the components of a hadronic jet,
 then the particle cascade is a more complicated process.
@@ -283,9 +284,10 @@ mainly due to the energy required to release nucleons from calorimeter nuclei du
 but also from the recoil energy given to the calorimeter nuclei
 and neutrinos created during strong processes that can escape the calorimeter \cite{det-comp_calo, det-thesis_lene}.
 To account for the fact that the ATLAS calorimeter is non-compensation,
-calorimeters are calibrated to the EM-scale
-and then a jet energy scale correction is applied,
-this process is described further in Section~\ref{sec:obj-jets}\textit{(object definition and selection)}. 
+calorimeters are calibrated to the EM-scale,
+which means that the inital energy measurement of a calorimeter assumes that the particle EM-interacting.
+Then for a hadronic object a jet energy scale correction is applied in the jet calibration processs,
+which is described further in Section~\ref{sec:obj-jet_calib}.
 
 \subsection{Muon Spectrometer}
 \label{sec:det-MS}

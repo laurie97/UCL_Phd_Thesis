@@ -4,13 +4,15 @@
 \section{Jets}
 \label{sec:obj-jets}
 
-If a collision results in a free quark or gluon in its final state then a stream of high-energy hadrons is known as a hadronic jet is formed,
-the formation of a hadronic jet has been described in described in  in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}/
-To summarise the process; firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
-then these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
+If a collision results in a free quark or gluon in its final state then a stream of high-energy hadrons is created,
+which is known as a hadronic jet.
+The underlying processes in hadronic jet formation can be summarised as follows;
+firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
+these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
+A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
 The components of the hadronic jet deposit energy in the cells of the ATLAS calorimeter, through the processes described in Section~\ref{sec:det-calo},
-such that the ATLAS calorimeter has an energy measurement of the components of the hadronic jet, within the spatial limits from the granularity detector.
-This process of hadronic jet formation and energy deposition in the calorimeter is illustrated in Figure~\ref{obj-jet_schem}. \\
+such that the ATLAS calorimeter has an energy measurement of the components of the hadronic jet, within the spatial limits from the granularity of the detector.
+The process of parton shower, hadronisation and energy deposition in the calorimeter  described above is illustrated in Figure~\ref{fig:obj-jet_schem}. \\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -28,57 +30,55 @@ firstly topoclusters are formed as described in Section~\ref{sec:obj-jet_topo},
 then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jet_reco}
 and finally Section~\ref{sec:obj-jet_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
 
-What is described above are hadronic jets constructed from calorimeter cells.
-But, it is worth noting, that there are other types of jets used at ATLAS.
-Jets are used to observe electrons and taus and 
-jets can also be constucted from tracks formed in the inner detector, which can be useful in dense environments.
-However this chapter will describe hadronic jets constructed from calorimeter cells,
-as these are the objects used in the context of the analysis.
+In this section the formation of hadronic jets constructed from calorimeter cells is described,
+as this is the only jet object used in the context of the analyses presented in this thesis.
+However, it is worth noting, that there are other types of jets used at ATLAS;
+jets are used to observe electrons and taus whilst
+hadronic jets can also be constucted from tracks formed in the inner detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
 
 \subsection{Hadronic topocluster reconstruction}
 \label{sec:obj-jet_topo}
 
-The first step of jet building at ATLAS builds 3D clusters, known as topoclusters, from neighbouring groups of energy deposits in cells~\cite{obj-jet_topo}.
+The first step of jet building at ATLAS is the formation of 3D clusters, known as topoclusters, from groups of energy deposits in neighbouring calorimeter cells~\cite{obj-jet_topo}.
 The calorimter cells can be from either the EM or hadronic calorimeter systems,
-which have a dimensions given in Tables~\textbf{LM fix, need to make tables, then reference here}.
-The algorithm employed makes use of the variable cell signal significance defined as, 
+which have a granularity given in Tables~\textbf{LM fix, need to make tables, then reference here}.
+The algorithm employed makes use of the variable ``cell signal significance'' defined as, 
 \begin{equation}
-  \Large{S_{\text{cell}}^{EM} = \frac{E_{\text{cell}}^{EM}}{\sigma_{\text{noise,cell}}^{EM}}}
+  \Large{S_{\text{cell}} = \frac{E_{\text{cell}}}{\sigma_{\text{noise,cell}}}}
 \end{equation}
-where $E_{\text{cell}}^{EM}$ is the energy deposited in a cell at the EM-scale \textbf{Laurie fix, check EM scale is defined possibily in detector}
-and $\sigma_{\text{noise,cell}}^{EM}$ is the uncertainty due to noise in that cell.
+where $E_{\text{cell}}$ is the energy deposited in a cell
+and $\sigma_{\text{noise,cell}}$ is the uncertainty due to noise in that cell.
 The sources of noise in a calorimeter cell are described in Section \textbf{LM fix, need to have a noise section somewhere...}.
-A large value of $S_{\text{cell}}^{EM}$ ( $>$ 1 ) indicates that the energy deposit is likely due to a particle
+A large value of $S_{\text{cell}}$ ( $>$ 1 ) indicates that the energy deposit is likely due to a particle
 depositing energy in the calorimeter rather than noise within the calorimeter.
 
 \noindent
-Using the value of $S_{\text{cell}}^{EM}$, each calorimeter cell is labelled as follows
+Using the value of $S_{\text{cell}}$, each calorimeter cell is labelled as follows
 \begin{itemize}
-\item If $|S_{\text{cell}}^{EM}| > 4$: the cell is labelled a \textbf{seed} cell.
-\item If $|S_{\text{cell}}^{EM}| > 2$: the cell is labelled a \textbf{growth} cell.
-\item If $|S_{\text{cell}}^{EM}| > 0$: the cell is labelled a \textbf{boundry} cell.
+\item If $|S_{\text{cell}}| > 4$: the cell is labelled a \textbf{seed} cell.
+\item If $|S_{\text{cell}}| > 2$: the cell is labelled a \textbf{growth} cell.
+\item If $|S_{\text{cell}}| > 0$: the cell is labelled a \textbf{boundry} cell.
 \end{itemize}
 Then the algorithms builds topoclusters as in the following steps,
 \begin{enumerate}
 \item A seed cell forms the centre of a new topocluster.
-\item Neighbouring seed cells are added together to the form one topocluster seed.
+\item Neighbouring seed cells are added together to form one topocluster seed.
 \item Then, growth cells neighbouring the topocluster are added.
 \item Finally, boundry cells neighbouring the topocluster are added.
 \end{enumerate}
 Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm would form a topocluster and an example where it wouldn't.
 
-In the addition process the energy deposits are treated as massless objects,
-hence a 4-momentum can be calculated using the energy deposited and the $\eta-\phi$ position of the calorimeter cell.
-During the topoclusters building proceedure, the 4-momentum of the energy deposits are added to calculate the 4-momentum of the topocluster.
+The topooclusters are treated as massless objects,
+such that a 4-momentum of each deposit can be calculated using the sum of energy deposited in the topoclusters
+and the $\eta-\phi$ position of the topocluster.
 The constructed topoclusters and their 4-momentums are then used as the inputs to the next step of jet reconstruction.
 
 \begin{figure}[!hbt]
   \begin{center}
     \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
-  \caption[A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster.]
-          {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}^{EM}|$ and the colours represent the cell label and formed topocluster
-            ~\cite{det-magnet_fig}.}
+  \caption[A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label.]
+          {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label~\cite{det-magnet_fig}.}
   \label{fig:obj-topo_schem}
 \end{figure}
 
@@ -86,16 +86,18 @@ The constructed topoclusters and their 4-momentums are then used as the inputs t
 \subsection{Jet Reconstruction}
 \label{sec:obj-jet_reco}
 
-This section describes how jets are formed from the topoclusters described in the previous section.
-To form a jet a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
-to define the jets, with each jet having a well defined four momentum and known set of constiuents.
-Using this technique jets become experimentally well-defined model-independant observables.
-A more detailed discussion of all of the jet reconstruction algorithms
-and relevant issues discussed in this section can be found in~\cite{obj-jet_reco_salam}.
+The next step in the process is to form jets from the topoclusters described in the previous section;
+to this end a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
+to form a set of jets, with each resulting jet having a well defined four-momentum and set of constiuents.
+Using a jet reconstruction algorithm to define a jet means that jets are experimentally well-defined model-independant observables,
+which is required if measurments using jets are to be re-useable by the wider particle physics community.
+A detailed discussion of jet reconstruction algorithms
+and their related issues is found in~\cite{obj-jet_reco_salam};
+as such this section provides a summary relevant to the analyses being presented in this thesis.
 
-In ATLAS the subset of jet reconstruction algorithms used are sequential recombination algorithms,
+ATLAS analyses use a type of jet reconstruction algorithms known as sequential recombination algorithms,
 which selectively add together the calorimeter topoclusters to form the jet;
-these are specifically the $k_t$,  anti-$k_t$ and Cambridge-Aachen (CA) algorithms.
+these are specifically the $k_t$, anti-$k_t$ and Cambridge-Aachen (CA) algorithms.
 
 The three algorithms uses a set of 4-vectors (clusters), which are initially the topoclusters formed in the calorimeter.
 One then introduces an inter-jet distance between clusters $i$ and $j$ defined as,
@@ -135,22 +137,22 @@ This is because when $\Delta R_{ij} > R$ for a pair of clusters,
 $d_{iB} < d_{ij}$ for the cluster with the smaller value of ${p_T}$,
 and thus the algorithm will not merge the two clusters.
 
-The sequential reclustering algorithms described above are used as they satisfy two important theoretically motivated criteria;
-specifically infrared and collinear safety.
+The sequential reclustering algorithms described above are used as they satisfy two important theoretically motivated criteria:
+infrared and collinear safety.
 Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emmission \footnote{Soft means a low momentum}
 and collinear safety requires that the jet reconstruction algorithm result should be invariant against a parton splitting into two partons with small angular seperation.
 These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
 two identical hard-scatter processes could be observed entirely differently due to an additional emmission process in the parton shower or hadronisation process.
-The above sequential reclustering algorithms are infrared and collinear safe
-whilst cone-based algorithms used at previous collider experiments, such as UA2 ~\cite{obj-jet_reco_UA2}, do not satisfy this property.
+The sequential reclustering algorithms described above are infrared and collinear safe.
+\footnote{Whilst cone-based algorithms jet reconstuction algorithms used at some previous collider experiements,
+  such as UA2 ~\cite{obj-jet_reco_UA2}, do not satisfy this infrared and collinear safety.}.
 
 Anti-$k_T$ is the jet reconstruction algorithm used for the analyses being presented in this thesis, which is typical of analyses at ATLAS.
 This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet,
 due to the fact that the algorithm reconstructs the high-$p_T$ core of the jets first and then adds in the lower $p_T$ suburbs in later steps.
-Figure~\ref{fig:obj-jet_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm performed to the same set of input clusters;
-the figure illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
-
-\textbf{LM Fix : Why R = 0.4?}
+Figure~\ref{fig:obj-jet_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm using the same set of input clusters;
+this illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
+Further to this, the value of the jet width parameter is chosen as $R$=0.4, which is the standard value used in ATLAS analyses.
 
 \begin{figure}[!ht]
   \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
@@ -173,9 +175,42 @@ the figure illustrates that anti-$k_T$ algorithm creates more regular jet shapes
   \label{fig:obj-jet_reco_shapes}
 \end{figure}
 
+\subsection{Jet Calibration and Uncertainties}
+\label{sec:obj-jet_calib}
 
-\subsection{Jet calibration}
-(JES, JER, BJES) description
+The jets initally formed by the jet reclustering algorithms from the topoclusters
+will not represent the energy of the initial parton
+and as such will not give an accurate dijet mass reconstruction which is required for the analyses presented in this thesis.
+As a result, a hadronic jet calibration is required to map the inital reconstructed jet
+to a more representative calibrated jet that can be used in an analysis.
+
+\noindent
+The key factors for the unrepresentative hadronic jet energy measurement are~\cite{obj-bjets_algo_2015,det-thesis_kate}:
+\begin{itemize}
+\item\textbf{Jet energy scale}:\\
+  As discussed in Section~\ref{sec:det-calo_HCAL}, the ATLAS calorimeter is non-compensting which means that
+  the calorimeter response is different for an EM-object and a hadronic object.
+  The calorimeter response is calibrated at the EM-scale such that the energy measurements from a calorimeter cell
+  are correct for an EM-object;
+  as a result the inital energy measurement for a hadronic jet will be incorrect.
+  To account for this a correction is required to take the jet energy measurement from the EM-scale to the hadronic-scale.\\
+\item\textbf{Dead Material}:\\
+  The hadronic jet may overlap with an unresponsive region of the detector,
+  resulting in energy deposits not being correctly measured.\\
+\item\textbf{Leakage}:\\
+  Some energy from the jet will be distributed outside the angular acceptance of the calorimeter
+  and some energy will pass through the calorimeter in a process known as `punch-through', as discussed in Section~\ref{sec:det-MS}.\\
+\item\textbf{Reconstruction Issues}:\\
+  There are two issues with the jet reconstruction that require correction:
+  firstly, some energy deposits coming from the inital parton may not be constructed as topoclusters due to the cell signal significance thresholds required in topocluster formation.
+  Secondly, some topoclusters that belong to the jet may not included in the reconstructed jet.\\
+\item\textbf{Pile-up and Underlying Event}:\\
+  Energy from collisions other than the hard-scatted can also be included by the reclustering algorithm.\\
+\end{itemize}
+
+Next for laurie: (Truth jets, then the calibration steps. Uncertainites (JES and JER)
+Be concise here, this is not your work!!)
+Also one should comment that LCW exists.
 
 \section{Identification of $b$-jets}
 \label{sec:obj-bjets}
@@ -188,7 +223,7 @@ A description of how this definition is practically used in simulation is given 
 
 The identification $b$-jets, known as $b$-tagging, has been an essential tool in a range of ATLAS collaboration results;
 for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-sys} contains a concrete example of this.}
-and the first direct evidence of the Higgs boson coupling to the quark-sector \cite{obj-Hbb}.
+and the first direct evidence of the Higgs boson coupling to the quark-sector~\cite{obj-Hbb}.
 %In the former, as the top decays to a \textit{W}-boson and a $b$-quark with a branching ratio close to 100\%, 
 %the application of $b$-tagging can be used increase purity, this is used in the study described in Section~\ref{sec:trig-sys}.
 %In the latter, the Higgs boson coupling is proportional to mass squared, hence the large mass of the
