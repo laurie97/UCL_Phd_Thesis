@@ -12,35 +12,35 @@ these gluons and quarks will then undergo hadronisation to form hadrons which ar
 A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
 The components of the hadronic jet deposit energy in the cells of the ATLAS calorimeter, through the processes described in Section~\ref{sec:det-calo},
 such that the ATLAS calorimeter has an energy measurement of the components of the hadronic jet, within the spatial limits from the granularity of the detector.
-The process of parton shower, hadronisation and energy deposition in the calorimeter  described above is illustrated in Figure~\ref{fig:obj-jet_schem}. \\
+The process of parton shower, hadronisation and energy deposition in the calorimeter  described above is illustrated in Figure~\ref{fig:obj-jets_schem}.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=1\linewidth, angle=0]{figs/Objects/jet_schem.png}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Objects/jets_schem.png}
   \end{center}
   \caption[A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter.]
-          {A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter~\cite{obj-jet_schem}.}
-  \label{fig:obj-jet_schem}
+          {A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter~\cite{obj-jets_schem}.}
+  \label{fig:obj-jets_schem}
 \end{figure}
 
-This section containts a description of the procedure utilised by ATLAS
+This section contains a description of the procedure utilised by ATLAS
 to go from energy deposits in calorimeter cells to well defined and calibrated hadronic jets.
-This procedure can be split up into three seperate steps that are described in the following sections;
-firstly topoclusters are formed as described in Section~\ref{sec:obj-jet_topo},
-then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jet_reco}
-and finally Section~\ref{sec:obj-jet_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
+This procedure can be split up into three separate steps that are described in the following sections;
+firstly topoclusters are formed as described in Section~\ref{sec:obj-jets_topo},
+then jets are formed from topoclusters using reclustering algorithms described in Section~\ref{sec:obj-jets_reco}
+and finally Section~\ref{sec:obj-jets_reco} describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
 
 In this section the formation of hadronic jets constructed from calorimeter cells is described,
 as this is the only jet object used in the context of the analyses presented in this thesis.
 However, it is worth noting, that there are other types of jets used at ATLAS;
 jets are used to observe electrons and taus whilst
-hadronic jets can also be constucted from tracks formed in the inner detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
+hadronic jets can also be constructed from tracks formed in the inner detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
 
 \subsection{Hadronic topocluster reconstruction}
-\label{sec:obj-jet_topo}
+\label{sec:obj-jets_topo}
 
-The first step of jet building at ATLAS is the formation of 3D clusters, known as topoclusters, from groups of energy deposits in neighbouring calorimeter cells~\cite{obj-jet_topo}.
-The calorimter cells can be from either the EM or hadronic calorimeter systems,
+The first step of jet building at ATLAS is the formation of 3D clusters, known as topoclusters, from groups of energy deposits in neighbouring calorimeter cells~\cite{obj-jets_topo}.
+The calorimeter cells can be from either the EM or hadronic calorimeter systems,
 which have a granularity given in Tables~\textbf{LM fix, need to make tables, then reference here}.
 The algorithm employed makes use of the variable ``cell signal significance'' defined as, 
 \begin{equation}
@@ -57,18 +57,18 @@ Using the value of $S_{\text{cell}}$, each calorimeter cell is labelled as follo
 \begin{itemize}
 \item If $|S_{\text{cell}}| > 4$: the cell is labelled a \textbf{seed} cell.
 \item If $|S_{\text{cell}}| > 2$: the cell is labelled a \textbf{growth} cell.
-\item If $|S_{\text{cell}}| > 0$: the cell is labelled a \textbf{boundry} cell.
+\item If $|S_{\text{cell}}| > 0$: the cell is labelled a \textbf{boundary} cell.
 \end{itemize}
 Then the algorithms builds topoclusters as in the following steps,
 \begin{enumerate}
 \item A seed cell forms the centre of a new topocluster.
 \item Neighbouring seed cells are added together to form one topocluster seed.
 \item Then, growth cells neighbouring the topocluster are added.
-\item Finally, boundry cells neighbouring the topocluster are added.
+\item Finally, boundary cells neighbouring the topocluster are added.
 \end{enumerate}
 Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm would form a topocluster and an example where it wouldn't.
 
-The topooclusters are treated as massless objects,
+The topoclusters are treated as massless objects,
 such that a 4-momentum of each deposit can be calculated using the sum of energy deposited in the topoclusters
 and the $\eta-\phi$ position of the topocluster.
 The constructed topoclusters and their 4-momentums are then used as the inputs to the next step of jet reconstruction.
@@ -84,15 +84,15 @@ The constructed topoclusters and their 4-momentums are then used as the inputs t
 
 \FloatBarrier
 \subsection{Jet Reconstruction}
-\label{sec:obj-jet_reco}
+\label{sec:obj-jets_reco}
 
 The next step in the process is to form jets from the topoclusters described in the previous section;
 to this end a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
-to form a set of jets, with each resulting jet having a well defined four-momentum and set of constiuents.
-Using a jet reconstruction algorithm to define a jet means that jets are experimentally well-defined model-independant observables,
-which is required if measurments using jets are to be re-useable by the wider particle physics community.
+to form a set of jets, with each resulting jet having a well defined four-momentum and set of constituents.
+Using a jet reconstruction algorithm to define a jet means that jets are experimentally well-defined model-independent observables,
+which is required if measurements using jets are to be re-usable by the wider particle physics community.
 A detailed discussion of jet reconstruction algorithms
-and their related issues is found in~\cite{obj-jet_reco_salam};
+and their related issues is found in~\cite{obj-jets_reco_salam};
 as such this section provides a summary relevant to the analyses being presented in this thesis.
 
 ATLAS analyses use a type of jet reconstruction algorithms known as sequential recombination algorithms,
@@ -122,7 +122,7 @@ If the inter-jet distance for a pair of clusters is smaller than the particle-be
 then it is likely that the two clusters are from the same jet. 
 In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are from the same jet.
  
-\noindent The algorithm then procedes using the following steps:
+\noindent The algorithm then proceeds using the following steps:
 \vspace{-1em}
 \begin{enumerate}[nolistsep]
   \item Calculate $d_{ij}$ and $d_{iB}$ for all combinations of clusters.  
@@ -139,18 +139,18 @@ and thus the algorithm will not merge the two clusters.
 
 The sequential reclustering algorithms described above are used as they satisfy two important theoretically motivated criteria:
 infrared and collinear safety.
-Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emmission \footnote{Soft means a low momentum}
-and collinear safety requires that the jet reconstruction algorithm result should be invariant against a parton splitting into two partons with small angular seperation.
+Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emission \footnote{Soft means a low momentum}
+and collinear safety requires that the jet reconstruction algorithm result should be invariant against a parton splitting into two partons with small angular separation.
 These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
-two identical hard-scatter processes could be observed entirely differently due to an additional emmission process in the parton shower or hadronisation process.
+two identical hard-scatter processes could be observed entirely differently due to an additional emission process in the parton shower or hadronisation process.
 The sequential reclustering algorithms described above are infrared and collinear safe.
-\footnote{Whilst cone-based algorithms jet reconstuction algorithms used at some previous collider experiements,
-  such as UA2 ~\cite{obj-jet_reco_UA2}, do not satisfy this infrared and collinear safety.}.
+\footnote{Whilst cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
+  such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy this infrared and collinear safety.}.
 
 Anti-$k_T$ is the jet reconstruction algorithm used for the analyses being presented in this thesis, which is typical of analyses at ATLAS.
 This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet,
 due to the fact that the algorithm reconstructs the high-$p_T$ core of the jets first and then adds in the lower $p_T$ suburbs in later steps.
-Figure~\ref{fig:obj-jet_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm using the same set of input clusters;
+Figure~\ref{fig:obj-jets_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm using the same set of input clusters;
 this illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
 Further to this, the value of the jet width parameter is chosen as $R$=0.4, which is the standard value used in ATLAS analyses.
 
@@ -158,60 +158,137 @@ Further to this, the value of the jet width parameter is chosen as $R$=0.4, whic
   \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
   \begin{center}
     \subcaptionbox{Cambridge-Aachen} {
-      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_ca.png}
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_ca.png}
     }
     \subcaptionbox{$k_T$} {
-      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_kt.png}
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_kt.png}
     }\\
     \subcaptionbox{Anti-$k_T$} {
-      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jet_reco_shapes_akt.png}
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_akt.png}
     }
 
   \end{center}
   \caption[A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
-    The consituent clusters of each of the jets formed is indicated using various colours.]
+    The constituent clusters of each of the jets formed is indicated using various colours.]
           {A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
-            The consituent clusters of each of the jets formed is indicated using various colours \cite{obj-jet_reco_salam}.}
-  \label{fig:obj-jet_reco_shapes}
+            The constituent clusters of each of the jets formed is indicated using various colours \cite{obj-jets_reco_salam}.}
+  \label{fig:obj-jets_reco_shapes}
 \end{figure}
 
 \subsection{Jet Calibration and Uncertainties}
-\label{sec:obj-jet_calib}
+\label{sec:obj-jets_calib}
 
-The jets initally formed by the jet reclustering algorithms from the topoclusters
+The jets initially formed by the jet reclustering algorithms from the topoclusters
 will not represent the energy of the initial parton
 and as such will not give an accurate dijet mass reconstruction which is required for the analyses presented in this thesis.
-As a result, a hadronic jet calibration is required to map the inital reconstructed jet
+As a result, a hadronic jet calibration is required to map the initial reconstructed jet
 to a more representative calibrated jet that can be used in an analysis.
 
 \noindent
-The key factors for the unrepresentative hadronic jet energy measurement are~\cite{obj-bjets_algo_2015,det-thesis_kate}:
+The key factors for the unrepresentative hadronic jet energy measurement are~\cite{det-thesis_kate,obj-bjets_algo_2015}:
 \begin{itemize}
-\item\textbf{Jet energy scale}:\\
-  As discussed in Section~\ref{sec:det-calo_HCAL}, the ATLAS calorimeter is non-compensting which means that
+\item\textbf{Jet energy scale}:
+  As discussed in Section~\ref{sec:det-calo_HCAL}, the ATLAS calorimeter is non-compensating which means that
   the calorimeter response is different for an EM-object and a hadronic object.
   The calorimeter response is calibrated at the EM-scale such that the energy measurements from a calorimeter cell
   are correct for an EM-object;
-  as a result the inital energy measurement for a hadronic jet will be incorrect.
-  To account for this a correction is required to take the jet energy measurement from the EM-scale to the hadronic-scale.\\
-\item\textbf{Dead Material}:\\
+  as a result the initial energy measurement for a hadronic jet will be incorrect.
+  To account for this a correction is required to take the jet energy measurement from the EM-scale to the hadronic-scale.
+\item\textbf{Dead Material}:
   The hadronic jet may overlap with an unresponsive region of the detector,
-  resulting in energy deposits not being correctly measured.\\
-\item\textbf{Leakage}:\\
+  resulting in some energy deposits being incorrectly measured.
+\item\textbf{Leakage}:
   Some energy from the jet will be distributed outside the angular acceptance of the calorimeter
-  and some energy will pass through the calorimeter in a process known as `punch-through', as discussed in Section~\ref{sec:det-MS}.\\
-\item\textbf{Reconstruction Issues}:\\
-  There are two issues with the jet reconstruction that require correction:
-  firstly, some energy deposits coming from the inital parton may not be constructed as topoclusters due to the cell signal significance thresholds required in topocluster formation.
-  Secondly, some topoclusters that belong to the jet may not included in the reconstructed jet.\\
-\item\textbf{Pile-up and Underlying Event}:\\
-  Energy from collisions other than the hard-scatted can also be included by the reclustering algorithm.\\
+  whilst some energy will pass through the calorimeter in a process known as `punch-through', as discussed in Section~\ref{sec:det-MS}.
+\item\textbf{Reconstruction Issues}:
+  There are two issues with jet reconstruction that require correction:
+  firstly, some energy deposits coming from the initial parton may not be constructed as topoclusters due to the cell signal significance thresholds required in topocluster formation.
+  Secondly, some topoclusters that should be clustered to the jet may not included in the reconstructed jet or maybe instead included in a different jet.
+\item\textbf{Pile-up}:
+  Energy from collisions other than the hard-scatter collision can also be included by the reclustering algorithm.
+  This includes in-time and out-of-time pile-up.
+  A  definition of pile-up can be found in Section~\cite{}. \textbf{LM Fix: Need a description of pile-up, probably in LHC running conditions}
 \end{itemize}
 
-Next for laurie: (Truth jets, then the calibration steps. Uncertainites (JES and JER)
-Be concise here, this is not your work!!)
-Also one should comment that LCW exists.
+As a result of the factors listed above a correction to the jets must be applied;
+which is done using the procedure described in~\cite{obj-jets_calib_run2}.
+An executive summary of the procedure is found below.
 
+An important input of applying a calibration is deciding what one is correcting with respect to.
+In ATLAS jets are corrected with respect to a `truth jet';
+where a truth jet is defined as a jet formed in a simulated event from running the anti-$k_T$ algorithm on the set of stable truth particles in a simulated event.
+A stable particle is required to have a lifetime $c\tau >$ \SI{10}{\milli\metre} and muons, neutrinos, and particles from pile-up collisions are ignored.
+Truth jets are well-defined and model-independent objects representing the jets that would have been reconstructed if one had a perfect detector;
+therefore they are a good choice for jet corrections.
+
+
+The calibration process uses Monte-Carlo simulation and data to correct reconstructed jets to data using a number of steps;
+starting from the initially formed EM-scale jets.
+These steps are outlined in Figure~\ref{fig:obj-jets_calib_schem}.
+
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{figs/Objects/jets_calib_schem.png}
+    \caption[Calibration stages for EM-scale jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet.]
+            {Calibration stages for EM-scale jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet~\cite{obj-jets_calib_run2}}
+    \label{fig:obj-jets_calib_schem}
+  \end{center}
+  \vspace{-0.5cm}
+\end{figure}
+
+\noindent
+To discuss each step in a little more detail:
+\begin{itemize}
+\item\textbf{Origin Correction}:
+  This step changes the direction of the jets such the four-momentum points to the hard-scatter primary vertex
+  rather than the centre of the detector.
+  This calculation conserves the jet energy.
+\item\textbf{Jet Area-Based Pile-up Correction}:
+  This step removes unwanted energy contributions from pile-up.
+  This correction subtracts the area of the jet, $A$, multiplied by the average energy density due to pile-up, $\rho$.
+\item\textbf{Residual Pile-up Correction}:
+  This step further reduces effects from pile-up utilising the linear dependence of pile-up effects on
+  the number of primary verticies, $N_{PV}$
+  and the mean number of additional $pp$ collisions per bunch crossing of the event, $\mu$.
+\item\textbf{Absolute JES Correction}:
+  This step corrects the jet four-momentum from the EM-scale, at which they were initially formed,
+  to the hadronic-scale, which is defined in terms of the truth jets in simulation.
+  This correction is derived using truth jets and reconstructed detector-level jets in dijet Monte-Carlo events.
+\item\textbf{Global Sequential Calibration}:
+  This step uses information from the calorimeter, muon spectrometer and track-based variables
+  to reduce the reconstructed energy and the reduce the overall uncertainties\footnote{Jet energy uncertainties are discussed in the next step}.
+\item\textbf{In-situ calibration}:
+  Previous steps to this calibration have been done using simulation to correct
+  detector-level jets to truth jets, whilst this step accounts for any differences between simulation and data.
+  Conservation of momentum and well-measured reference objects, including photons, Z bosons, and calibrated jets,
+  are used derive a data/MC correction with respect to $p_T$ to jets in data.
+  This correction is only applied to data and is not used for simulation.
+\end{itemize}
+
+This jet calibration scheme is known as EM-Topo, as the topoclusters are at the EM-scale,
+as is the  scheme used for all analyses presented in this thesis.
+Here, I should note that there are other schemes used for calibrating jets,
+for example some analyses~\cite{obj-VVjj} correct each topocluster to the hadronic scale
+before clustering the jet, in a scheme called Local Cluster Weighted (LCW)~\cite{obj-jets_topo}.
+
+Jet energy measurements separate the associated uncertainties into two sections;
+jet energy resolution and jet energy scale.
+These are discussed in separate sections below.
+
+\subsubsection{Jet Energy Resolution (JER) uncertainties}
+\subsubsection{Jet Energy Scale (JES) uncertainties}
+
+Next for laurie: (Uncertainties (JES and JER)
+
+
+The end result of the processes described in this section is a jet,
+reconstructed from EM-scale topoclusters using an anti-$k_T$ algorithm with a jet width parameter $R$=0.4,
+which has been calibrated using simulation and an data-drive in-situ step.
+The result of this process is what is known as an anti-$k_T$ R=0.4 EM-Topo jet,
+and is the definition for a jet in this thesis.
+
+
+\newpage
 \section{Identification of $b$-jets}
 \label{sec:obj-bjets}
 
@@ -219,10 +296,10 @@ Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categoris
 $b$-jets are defined as jets containing one or more $b$-hadrons,
 $c$-jets are defined as jets containing one or more $c$-hadrons but no $b$-hadrons
 and finally light-flavoured jets comprise of only light hadrons (\textit{u}, \textit{d} and \textit{s} quarks).
-A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjet_label}.
+A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjets_label}.
 
 The identification $b$-jets, known as $b$-tagging, has been an essential tool in a range of ATLAS collaboration results;
-for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-sys} contains a concrete example of this.}
+for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-bjet_eff} contains a concrete example of this.}
 and the first direct evidence of the Higgs boson coupling to the quark-sector~\cite{obj-Hbb}.
 %In the former, as the top decays to a \textit{W}-boson and a $b$-quark with a branching ratio close to 100\%, 
 %the application of $b$-tagging can be used increase purity, this is used in the study described in Section~\ref{sec:trig-sys}.
@@ -234,11 +311,11 @@ by selecting $b$-jets we increase our sensitivity to BSM models that decay to 1 
 \textbf{Laurie Fix, link to where I explain why this is good, maybe Intro}.
 
 The process of $b$-tagging at ATLAS in Run-2 has been previously described in great
-detail~\cite{obj-bjet_algo_2015,obj-bjet_algo_2016},
+detail~\cite{obj-bjets_algo_2015,obj-bjets_algo_2016},
 so what follows is a summary of the key features of the process.
 
 \subsection{Assigning a Flavour Label}
-\label{sec:obj-bjet_label}
+\label{sec:obj-bjets_label}
 
 In simulation, the particle-level truth information is known, and hence a truth flavour label of a jet can be defined.
 Flavour is assigned to jets by matching truth-level heavy-hadrons with $p_{T} >$ 5 GeV and $\Delta R <$ 0.3 between the hadron and the jet.
@@ -251,7 +328,7 @@ This definition of truth flavour in simulation is used generally within this the
 \subsection{Algorithm descriptions}
 
 To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction,
-a hadron containing a $b$-quark has a lifetime of the order \SI{1.5}{\pico\second} %\cite{obj-bjet_algo_2015}.
+a hadron containing a $b$-quark has a lifetime of the order \SI{1.5}{\pico\second} %\cite{obj-bjets_algo_2015}.
 A $b$-jet decay chain  will typically contain two of these flavour changing interactions, 
 as at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $u$ or $d$ quark.
 The long lifetimes of the heavy flavour hadrons means that they will decay a measurable distance from the 
@@ -261,28 +338,28 @@ that originate from a point offset from the primary vertex.
 In practice this is performed using the topology of tracks formed by the inner detector
 and measurements from the calorimeter, which have been described in Section~\ref{sec:det-ID} and \ref{sec:det-calo} respectively.
    
-There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjet_algo_2016}, which are described in the next three sections .
-%Sections~\ref{sec:obj-bjet_IP}~to~\ref{sec:obj-bjet_JF}.
-The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjet_MV2}.
-Figure~\ref{fig:obj_bjet_schem} shows a schematic illustrating how the tracks from the inner detector
+There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjets_algo_2016}, which are described in the next three sections .
+%Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
+The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
+Figure~\ref{fig:obj_bjets_schem} shows a schematic illustrating how the tracks from the inner detector
 are used by the three $b$-tagging algorithms to identify a $b$-jet, the details of this figure are referred to in the following three sections.
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{figs/Objects/bjet_schem.pdf}
+    \includegraphics[width=0.9\textwidth]{figs/Objects/bjets_schem.pdf}
     \caption{A diagram to illustrate the key features of a $b$-jet that are utilised by the base $b$-tagging algorithms.}
-    \label{fig:obj_bjet_schem}
+    \label{fig:obj_bjets_schem}
   \end{center}
   \vspace{-0.5cm}
 \end{figure}
 
 \subsubsection{Impact parameter based}
-\label{sec:obj-bjet_IP}
+\label{sec:obj-bjets_IP}
 
 The IP3D algorithm is utilises the impact parameter, which is defined as the shortest distance between a specific track and the primary vertex.
 A track corresponding to a particle coming from the offset decay vertex of a heavy-hadron is likely to have a large impact parameter,
 meaning that the distribution of track impact parameter is different for each of the jet-flavours.
-The impact parameter of a track coming from the decay of a heavy hadron is indicated in Figure~\ref{fig:obj_bjet_schem}.
+The impact parameter of a track coming from the decay of a heavy hadron is indicated in Figure~\ref{fig:obj_bjets_schem}.
 In this algorithm, for all tracks associated to a jet, the impact parameter is calculated in both the transverse (perpendicular to beam-line)
 and longitudinal (parallel to beam-line) direction, which are referred to as $d_{0}$ and $z_{0}$.
 Then the IP3D algorithm calculates a likelihood of the jet having a specific flavour, 
@@ -292,11 +369,11 @@ Another similar algorithm, IP2D, also calculates the jet flavour likelihood from
 robust to pile-up, as tracks from pile-up jets are likely to have a large $z_{0}$ significance value.
 
 \subsubsection{Secondary vertex}
-\label{sec:obj-bjet_SV}
+\label{sec:obj-bjets_SV}
 
 
 The SV1 algorithm aims to reconstruct a secondary vertex of two or more intersecting tracks, corresponding to the decay of a heavy-flavour hadron;
-the secondary vertex within a $b$-jet's decay chain is illustrated in Figure~\ref{fig:obj_bjet_schem}.
+the secondary vertex within a $b$-jet's decay chain is illustrated in Figure~\ref{fig:obj_bjets_schem}.
 The SV1 algorithm then calculates many variables that are associated with properties of the reconstructed secondary vertex that show flavour discrimination;
 some example variables are the vertex invariant mass,
 which will be larger for $b$-jets due to the heavy mass of the $b$-hadron
@@ -306,18 +383,18 @@ which will be larger for $b$-jets due to the long lifetime of the $b$-hadron,
 and the number of tracks at the secondary vertex, which will be larger for reliable secondary vertices.
 
 \subsubsection{Jet Fitter}
-\label{sec:obj-bjet_JF}
+\label{sec:obj-bjets_JF}
 
 The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the $b$-hadron into a charmed-hadron and then into light-hadrons. 
 This is done by assuming that all vertices lie on a common $b$-flight axis, and then constructing vertices from the intersection of
 one or more tracks and the flight axis.
 The aim of this is to reconstruct the secondary and tertiary vertices which correspond to the decays of the $b$-hadron and charmed-hadron,
-as illustrated in Figure \ref{fig:obj_bjet_schem}.
+as illustrated in Figure \ref{fig:obj_bjets_schem}.
 Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
 for example vertex mass and number of vertices with two or more tracks.
 
 \subsubsection{Multi-variate}
-\label{sec:obj-bjet_MV2}
+\label{sec:obj-bjets_MV2}
 
 The three base algorithms are combined in a boosted decision tree (BDT), a machine-learning technique for combining the many flavour-discriminating variables,
 resulting in an algorithm that is known in MV2
@@ -362,7 +439,7 @@ For the remainder of this thesis, the operating points will be referred
     \end{tabular}
     \caption[The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.]
             {The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.
-              This table is taken from reference~\cite{obj-bjet_algo_2016}.}
+              This table is taken from reference~\cite{obj-bjets_algo_2016}.}
             \label{fig:obj-MV2_schem}
   \end{center}
   \vspace{-1cm}
@@ -370,7 +447,7 @@ For the remainder of this thesis, the operating points will be referred
 
 The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets
 as well as a sample containing $Z'$ boson decaying to $b$-quarks.
-The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjet_label}.
+The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjets_label}.
 A training sample with known truth labels is required as this allows the BDT to be optimised
 such that it uses the complex correlations between the input variables to allow for high $b$-jet efficiencies
 whilst still obtaining a large $c$- and light-jet rejection.
@@ -379,7 +456,7 @@ The recommended $b$-tagging tool is MV2c10 which has been trained on a sample co
 \subsection{Performance}
 
 I have a couple of options here.
-=> Put peformance in event selection (tagging efficiency plot)
+=> Put performance in event selection (tagging efficiency plot)
 => Describe performance here with some discussion of high pT b-Tagging
 
 \section{bTagging: Validation in Dijet Events}
