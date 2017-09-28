@@ -274,9 +274,23 @@ which is outside the range considered within this analysis.
 It is constructed from absorber layers of
 copper (for EM interactions)
 and tungsten (for hadronic interactions)
-with liquid argon for the active material layers. 
+with liquid argon for the active material layers.
 
-Another important point about the ATLAS calorimeter is that it is non-compensating calorimeter;
+Table~\ref{tab:det-calo_granularity} shows the key parameters of the ATLAS calorimeter system, including the ECAL and HCAL.
+The table outlines the coverage in $\eta$,
+the granularity in $\eta$-$\phi$ space
+and the number of readouts of each component of the ATLAS calorimeter system.
+
+\begin{table}[!ht]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/tab_calo_granularity.pdf}
+  \end{center}
+  \caption[The key spatial coverage, granularity and readout parameters of the ATLAS calorimeter.]
+          {The key spatial coverage, granularity and readout parameters of the ATLAS calorimeter~\cite{det-ATLAS_Exp}.}
+  \label{tab:det-calo_granularity}
+\end{table}
+
+Another important point about the ATLAS calorimeter is that it is a non-compensating calorimeter;
 that is to say that the response of the detector to an electromagnetic particle (such as an electron)
 is larger than the response of a hadronic particle (for example a pion).
 The reason for this is some energy is lost in hadronic cascade process;
@@ -287,7 +301,7 @@ To account for the fact that the ATLAS calorimeter is non-compensation,
 calorimeters are calibrated to the EM-scale,
 which means that the inital energy measurement of a calorimeter assumes that the particle EM-interacting.
 Then for a hadronic object a jet energy scale correction is applied in the jet calibration processs,
-which is described further in Section~\ref{sec:obj-jet_calib}.
+which is described further in Section~\ref{sec:obj-jets_calib}.
 
 \subsection{Muon Spectrometer}
 \label{sec:det-MS}
