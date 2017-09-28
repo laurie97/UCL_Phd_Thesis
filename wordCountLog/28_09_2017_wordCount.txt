@@ -1,0 +1,225 @@
+File: Thesis.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 3
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/MainPackages.tex
+Encoding: ascii
+Words in text: 6
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/LinksAndMetadata.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/FloatSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/BibSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/Preamble.tex
+Encoding: ascii
+Words in text: 32
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Introduction.tex
+Encoding: ascii
+Words in text: 10
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Detector.tex
+Encoding: utf8
+Words in text: 3088
+Words in headers: 33
+Words outside text (captions, etc.): 104
+Number of headers: 12
+Number of floats/tables/figures: 7
+Number of math inlines: 80
+Number of math displayed: 3
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+3+0 (1/0/0/0) Chapter: The ATLAS Detector
+  154+4+0 (1/0/0/0) Section: The Large Hadron Collider
+  87+7+54 (1/1/1/0) Subsection: LHC running conditions in 2015 and 2016
+  182+3+7 (1/2/0/0) Section: ATLAS Detector Description
+  289+3+0 (1/0/29/3) Subsection: ATLAS Co-ordinate System
+  500+2+9 (1/1/14/0) Subsection: Inner Detector
+  1022+7+8 (3/1/23/0) Subsection: Calorimeters
+  378+2+0 (1/0/9/0) Subsection: Muon Spectrometer
+  104+1+6 (1/1/0/0) Subsection: Magnets
+  372+1+20 (1/1/4/0) Section: Trigger
+
+Included file: ./Chapters/Object.tex
+Encoding: ascii
+Words in text: 3709
+Words in headers: 41
+Words outside text (captions, etc.): 253
+Number of headers: 18
+Number of floats/tables/figures: 9
+Number of math inlines: 149
+Number of math displayed: 4
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+4+0 (1/0/0/0) Chapter: Object Definition and Reconstruction
+  326+1+17 (1/1/0/0) Section: Jets
+  285+3+23 (1/1/10/1) Subsection: Hadronic Topocluster Reconstruction
+  726+2+27 (1/1/41/2) Subsection: Jet Reconstruction
+  941+2+32 (1/1/13/1) Subsection: Jet Calibration
+  166+3+0 (1/2/5/0) Subsection: Jet Energy Uncertainties
+  190+3+7 (1/0/13/0) Section: Identification of $b$-jets
+  114+4+0 (1/0/9/0) Subsection: Assigning a Flavour Label
+  936+10+147 (5/3/58/0) Subsection: Algorithm descriptions
+  25+1+0 (1/0/0/0) Subsection: Performance
+  0+5+0 (1/0/0/0) Section: bTagging: Validation in Dijet Events
+  0+1+0 (1/0/0/0) Section: Leptons
+  0+1+0 (1/0/0/0) Subsection: Electron
+  0+1+0 (1/0/0/0) Subsection: Muon
+
+Included file: ./Chapters/Trigger.tex
+Encoding: ascii
+Words in text: 5090
+Words in headers: 80
+Words outside text (captions, etc.): 937
+Number of headers: 26
+Number of floats/tables/figures: 17
+Number of math inlines: 255
+Number of math displayed: 1
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  175+6+0 (1/0/6/0) Chapter: Triggering in the di-$b$-jet analysis
+  68+1+0 (1/0/0/0) Section: Jet-Triggers
+  158+2+0 (1/0/1/0) Subsection: Level 1
+  90+1+6 (1/0/5/0) Subsection: HLT
+  159+3+0 (1/0/8/0) Subsection: High-mass trigger selection
+  99+2+18 (1/0/8/0) Section: $b$-Jet Triggers
+  341+2+0 (1/1/15/0) Subsection: General description
+  106+6+0 (1/0/3/0) Section: Efficiency Measurement of the $b$-Jet Trigger
+  370+1+0 (1/0/27/1) Subsection: Strategy
+  190+1+29 (1/0/4/0) Subsection: Datasets
+  186+2+0 (1/0/18/0) Subsection: Event Selection
+  139+3+52 (1/1/10/0) Subsection: The Initial Problem
+  981+1+211 (1/4/61/0) Subsection: Investigation
+  363+4+125 (1/2/30/0) Subsection: Solution: $b$-Jet Trigger GRL
+  1560+23+496 (6/9/57/0) Subsection: Efficiency Measurement and Systematic Derivation
+  53+20+0 (5/0/2/0) Subsection: Cross-checks
+  52+2+0 (1/0/0/0) Section: To Do
+
+Included file: ./Chapters/Conclusions.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Chapters/Appendices.tex
+Encoding: ascii
+Words in text: 46
+Words in headers: 9
+Words outside text (captions, etc.): 0
+Number of headers: 3
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  1+4+0 (1/0/0/0) Chapter: An Appendix About Stuff
+  1+4+0 (1/0/0/0) Chapter: Another Appendix About Things
+  44+1+0 (1/0/0/0) Chapter: Colophon
+
+Included file: ./Chapters/app_plan.tex
+Encoding: ascii
+Words in text: 959
+Words in headers: 71
+Words outside text (captions, etc.): 0
+Number of headers: 19
+Number of floats/tables/figures: 0
+Number of math inlines: 5
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  54+2+0 (1/0/0/0) Chapter: Contents Plan
+  15+1+0 (1/0/0/0) Section: Introduction
+  61+2+0 (1/0/0/0) Section: Theoretical Background
+  63+2+0 (1/0/0/0) Section: ATLAS Detector
+  67+4+0 (1/0/1/0) Section: Object Reconstruction And Calibration
+  92+1+0 (1/0/0/0) Section: Trigger
+  49+2+0 (1/0/3/0) Section: Event Selection
+  58+5+0 (1/0/0/0) Section: Background Estimation and Search Phase
+  60+4+0 (1/0/0/0) Section: Systematics and Limits Setting
+  64+7+0 (1/0/0/0) Section: Looking Forward - What more can be done?
+  18+7+0 (1/0/0/0) Section: Rough list of things I have done
+  63+4+0 (1/0/1/0) Section: 2014/15 - High $p_{T}$ b-tagging
+  42+7+0 (1/0/0/0) Section: 2015 - Validation of b-tagging in dijet events
+  36+3+0 (1/0/0/0) Section: 2015 Di-b-jet - Moriond
+  66+5+0 (1/0/0/0) Section: 2015 low mass Di-b-jet - LHCP
+  21+6+0 (1/0/0/0) Section: Half 2016 high mass Di-b-jet - ICHEP
+  66+2+0 (1/0/0/0) Section: 2017 - bTrigger
+  57+5+0 (1/0/0/0) Section: Full 2016 low mass Di-b-jet
+  7+2+0 (1/0/0/0) Section: Event Display
+
+File(s) total: Thesis.tex
+Words in text: 12940
+Words in headers: 242
+Words outside text (captions, etc.): 1294
+Number of headers: 82
+Number of floats/tables/figures: 33
+Number of math inlines: 489
+Number of math displayed: 8
+Files: 13
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+3+0 (1/0/0/0) File: Thesis.tex
+  6+0+0 (0/0/0/0) Included file: ./Aux/MainPackages.tex
+  32+1+0 (1/0/0/0) Included file: ./Aux/Preamble.tex
+  10+2+0 (1/0/0/0) Included file: ./Chapters/Introduction.tex
+  3088+33+104 (12/7/80/3) Included file: ./Chapters/Detector.tex
+  3709+41+253 (18/9/149/4) Included file: ./Chapters/Object.tex
+  5090+80+937 (26/17/255/1) Included file: ./Chapters/Trigger.tex
+  0+2+0 (1/0/0/0) Included file: ./Chapters/Conclusions.tex
+  46+9+0 (3/0/0/0) Included file: ./Chapters/Appendices.tex
+  959+71+0 (19/0/5/0) Included file: ./Chapters/app_plan.tex
+

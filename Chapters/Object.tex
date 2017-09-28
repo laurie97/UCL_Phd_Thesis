@@ -36,7 +36,7 @@ However, it is worth noting, that there are other types of jets used at ATLAS;
 jets are used to observe electrons and taus whilst
 hadronic jets can also be constructed from tracks formed in the inner detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
 
-\subsection{Hadronic topocluster reconstruction}
+\subsection{Hadronic Topocluster Reconstruction}
 \label{sec:obj-jets_topo}
 
 The first step of jet building at ATLAS is the formation of 3D clusters, known as topoclusters, from groups of energy deposits in neighbouring calorimeter cells~\cite{obj-jets_topo}.
@@ -69,13 +69,13 @@ Then the algorithms builds topoclusters as in the following steps,
 Figure~\ref{fig:obj-topo_schem} illustrates an example of where the algorithm would form a topocluster and an example where it wouldn't.
 
 The topoclusters are treated as massless objects,
-such that a 4-momentum of each deposit can be calculated using the sum of energy deposited in the topoclusters
+such that the four-momentum of each deposit can be calculated using the sum of energy deposited in the topoclusters
 and the $\eta-\phi$ position of the topocluster.
-The constructed topoclusters and their 4-momentums are then used as the inputs to the next step of jet reconstruction.
+The constructed topoclusters and their four-momentums are then used as the inputs to the next step of jet reconstruction.
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/topo_schem.png}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
   \caption[A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label.]
           {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label~\cite{det-magnet_fig}.}
@@ -83,13 +83,15 @@ The constructed topoclusters and their 4-momentums are then used as the inputs t
 \end{figure}
 
 \FloatBarrier
+\newpage
 \subsection{Jet Reconstruction}
 \label{sec:obj-jets_reco}
 
-The next step in the process is to form jets from the topoclusters described in the previous section;
-to this end a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
-to form a set of jets, with each resulting jet having a well defined four-momentum and set of constituents.
-Using a jet reconstruction algorithm to define a jet means that jets are experimentally well-defined model-independent observables,
+The next step in the process is to form jets from the topoclusters described in the previous section.
+To do this a jet reconstruction algorithm is defined, that uses the spatial and energy information of the topoclusters in an event
+to form a set of jets.
+Each jet formed by the algorithm has a well defined four-momentum and set of constituents.
+Jet reconstruction algorithms are used to define jets as this means that jets are experimentally well-defined model-independent observables,
 which is required if measurements using jets are to be re-usable by the wider particle physics community.
 A detailed discussion of jet reconstruction algorithms
 and their related issues is found in~\cite{obj-jets_reco_salam};
@@ -99,7 +101,7 @@ ATLAS analyses use a type of jet reconstruction algorithms known as sequential r
 which selectively add together the calorimeter topoclusters to form the jet;
 these are specifically the $k_t$, anti-$k_t$ and Cambridge-Aachen (CA) algorithms.
 
-The three algorithms uses a set of 4-vectors (clusters), which are initially the topoclusters formed in the calorimeter.
+The three algorithms use a set of four-momentums (clusters), which are initially the topoclusters formed in the calorimeter.
 One then introduces an inter-jet distance between clusters $i$ and $j$ defined as,
 \begin{equation}
   d_{ij} = \text{min}
@@ -131,7 +133,7 @@ In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are 
   \item If the minimum is a $d_{iB}$ then call cluster $i$ a final-state jet, remove it from the set and return to step 1.  
   \item Stop when all clusters have been declared as jets. 
 \end{enumerate} 
-The final jet has a 4-momentum equal to the addition of all the topoclusters assigned to that jet.
+The final jet has a four-momentum equal to the addition of all the topoclusters assigned to that jet.
 It can now be seen that the jet width parameter, $R$, effectively gives the scale of the width of a reconstructed jet.
 This is because when $\Delta R_{ij} > R$ for a pair of clusters,
 $d_{iB} < d_{ij}$ for the cluster with the smaller value of ${p_T}$,
@@ -144,7 +146,7 @@ and collinear safety requires that the jet reconstruction algorithm result shoul
 These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
 two identical hard-scatter processes could be observed entirely differently due to an additional emission process in the parton shower or hadronisation process.
 The sequential reclustering algorithms described above are infrared and collinear safe.
-\footnote{Whilst cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
+\footnote{Cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
   such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy this infrared and collinear safety.}.
 
 Anti-$k_T$ is the jet reconstruction algorithm used for the analyses being presented in this thesis, which is typical of analyses at ATLAS.
@@ -153,12 +155,13 @@ due to the fact that the algorithm reconstructs the high-$p_T$ core of the jets 
 Figure~\ref{fig:obj-jets_reco_shapes} shows the jets formed by the Cambridge-Aachen, $k_T$ and anti-$k_T$ algorithm using the same set of input clusters;
 this illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
 Further to this, the value of the jet width parameter is chosen as $R$=0.4, which is the standard value used in ATLAS analyses.
+\textbf{LM: I think this part needs a bit more on why R=0.4}
 
 \begin{figure}[!ht]
   \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
   \begin{center}
     \subcaptionbox{Cambridge-Aachen} {
-      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_ca.png}
+      \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_ca.pdf}
     }
     \subcaptionbox{$k_T$} {
       \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/jets_reco_shapes_kt.png}
@@ -171,11 +174,11 @@ Further to this, the value of the jet width parameter is chosen as $R$=0.4, whic
   \caption[A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
     The constituent clusters of each of the jets formed is indicated using various colours.]
           {A comparison of the jets formed using the (a) Cambridge-Aachen, (b) $k_T$ and (c) anti-$k_T$ algorithm from the same simulated event.
-            The constituent clusters of each of the jets formed is indicated using various colours \cite{obj-jets_reco_salam}.}
+            The constituent clusters of each of the jets formed is indicated using various colours \cite{obj-jets_reco_akt}.}
   \label{fig:obj-jets_reco_shapes}
 \end{figure}
 
-\subsection{Jet Calibration and Uncertainties}
+\subsection{Jet Calibration}
 \label{sec:obj-jets_calib}
 
 The jets initially formed by the jet reclustering algorithms from the topoclusters
@@ -203,7 +206,7 @@ The key factors for the unrepresentative hadronic jet energy measurement are~\ci
 \item\textbf{Reconstruction Issues}:
   There are two issues with jet reconstruction that require correction:
   firstly, some energy deposits coming from the initial parton may not be constructed as topoclusters due to the cell signal significance thresholds required in topocluster formation.
-  Secondly, some topoclusters that should be clustered to the jet may not included in the reconstructed jet or maybe instead included in a different jet.
+  Secondly, some topoclusters that should be clustered to the jet may not included in the reconstructed jet or included in a different jet instead.
 \item\textbf{Pile-up}:
   Energy from collisions other than the hard-scatter collision can also be included by the reclustering algorithm.
   This includes in-time and out-of-time pile-up.
@@ -215,12 +218,14 @@ which is done using the procedure described in~\cite{obj-jets_calib_run2}.
 An executive summary of the procedure is found below.
 
 An important input of applying a calibration is deciding what one is correcting with respect to.
-In ATLAS jets are corrected with respect to a `truth jet';
+The truth initial parton seems at first like a good choice,
+however this correction depends strongly on the theoretical modelling of the parton shower and hadronisation process,
+hence, this would mean that the calibrated jets are not model-independent.
+Instead, in ATLAS jets are corrected with respect to a `truth jet';
 where a truth jet is defined as a jet formed in a simulated event from running the anti-$k_T$ algorithm on the set of stable truth particles in a simulated event.
 A stable particle is required to have a lifetime $c\tau >$ \SI{10}{\milli\metre} and muons, neutrinos, and particles from pile-up collisions are ignored.
 Truth jets are well-defined and model-independent objects representing the jets that would have been reconstructed if one had a perfect detector;
 therefore they are a good choice for jet corrections.
-
 
 The calibration process uses Monte-Carlo simulation and data to correct reconstructed jets to data using a number of steps;
 starting from the initially formed EM-scale jets.
@@ -228,7 +233,7 @@ These steps are outlined in Figure~\ref{fig:obj-jets_calib_schem}.
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{figs/Objects/jets_calib_schem.png}
+    \includegraphics[width=0.9\textwidth]{figs/Objects/jets_calib_schem.pdf}
     \caption[Calibration stages for EM-scale jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet.]
             {Calibration stages for EM-scale jets. Other than the origin correction, each stage of the calibration is applied to the four-momentum of the jet~\cite{obj-jets_calib_run2}}
     \label{fig:obj-jets_calib_schem}
@@ -240,7 +245,7 @@ These steps are outlined in Figure~\ref{fig:obj-jets_calib_schem}.
 To discuss each step in a little more detail:
 \begin{itemize}
 \item\textbf{Origin Correction}:
-  This step changes the direction of the jets such the four-momentum points to the hard-scatter primary vertex
+  This step changes the direction of the jets such that the four-momentum points to the hard-scatter primary vertex
   rather than the centre of the detector.
   This calculation conserves the jet energy.
 \item\textbf{Jet Area-Based Pile-up Correction}:
@@ -256,37 +261,78 @@ To discuss each step in a little more detail:
   This correction is derived using truth jets and reconstructed detector-level jets in dijet Monte-Carlo events.
 \item\textbf{Global Sequential Calibration}:
   This step uses information from the calorimeter, muon spectrometer and track-based variables
-  to reduce the reconstructed energy and the reduce the overall uncertainties\footnote{Jet energy uncertainties are discussed in the next step}.
+  to reduce the reconstructed energy and the reduce the overall uncertainties\footnote{Jet energy uncertainties are discussed in the next Section~\ref{obj-jets_uncert}.}.
 \item\textbf{In-situ calibration}:
-  Previous steps to this calibration have been done using simulation to correct
-  detector-level jets to truth jets, whilst this step accounts for any differences between simulation and data.
-  Conservation of momentum and well-measured reference objects, including photons, Z bosons, and calibrated jets,
-  are used derive a data/MC correction with respect to $p_T$ to jets in data.
-  This correction is only applied to data and is not used for simulation.
+  All previous steps in this calibration have been done using simulation to correct
+  detector-level jets to truth jets. This step accounts for any differences between simulation and data.
+  This step uses events containing a jet to be calibrated and a well-measured reference objects, including photons, Z bosons, and calibrated jets.
+  Then conservation of momentum gives us information on the true $p_T$ of the jet to be calibrated.
+  One can calculate a double ratio with respect to jet-$p_T$;
+  \begin{equation}
+    \text{Correction} = \frac{1}{R(p_T, \eta)} = \frac{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{MC}} }{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{Data}} }
+  \end{equation}
+  which is applied as a correction to jet $p_T$ in data; this correction is not applied in simulation.
 \end{itemize}
 
-This jet calibration scheme is known as EM-Topo, as the topoclusters are at the EM-scale,
-as is the  scheme used for all analyses presented in this thesis.
-Here, I should note that there are other schemes used for calibrating jets,
+A jet formed by this calibration scheme is known as an EM-Topo jet, as the topoclusters are at the EM-scale.
+Here, I should note that there are other schemes used for calibrating jets at ATLAS,
 for example some analyses~\cite{obj-VVjj} correct each topocluster to the hadronic scale
 before clustering the jet, in a scheme called Local Cluster Weighted (LCW)~\cite{obj-jets_topo}.
-
-Jet energy measurements separate the associated uncertainties into two sections;
-jet energy resolution and jet energy scale.
-These are discussed in separate sections below.
-
-\subsubsection{Jet Energy Resolution (JER) uncertainties}
-\subsubsection{Jet Energy Scale (JES) uncertainties}
-
-Next for laurie: (Uncertainties (JES and JER)
-
+\textbf{LM Fix, why use EM-Topo, smaller errors...}
 
 The end result of the processes described in this section is a jet,
 reconstructed from EM-scale topoclusters using an anti-$k_T$ algorithm with a jet width parameter $R$=0.4,
-which has been calibrated using simulation and an data-drive in-situ step.
+which has been calibrated using simulation and an data-driven in-situ step.
 The result of this process is what is known as an anti-$k_T$ R=0.4 EM-Topo jet,
 and is the definition for a jet in this thesis.
 
+\subsection{Jet Energy Uncertainties}
+\label{obj-jets_uncert}
+
+All measurements have uncertainties, and this section investigates the uncertainties of jet energy measurement.
+Jet energy measurements separate the associated uncertainties into two components;
+jet energy resolution and jet energy scale.
+
+Jet energy resolution (JER) is defined as $\sigma(E)/E$, and JER uncertainties
+come from an imperfect simulation of detector resolution in Monte-Carlo simulation.
+This uncertainty is measured using an in-situ technique from the balancing of jets in 8 TeV collision data
+which is extrapolated for 13 TeV data; the final uncertainty accounts for this extrapolation.
+Figure~\ref{fig:obj-jets_calib_JER} shows the fractional JER uncertainty as a function of jet-$p_T$ and jet-$\eta$.
+Full details on the derivation of this uncertainty can be found in~\cite{obj-jets_calib_2015}~and~\cite{obj-jets_calib_JER_8TeV}.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{Jet-\pT} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/jets_uncert_JER_pt.pdf} }
+    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/jets_uncert_JER_eta.pdf} }
+  \end{center}
+  \caption[The fractional jet energy resolution uncertainty as a function of jet-\pT and \eta.
+    The total uncertainty is shown as are the contributions from the various sources of uncertainty.]
+          {The fractional jet energy resolution uncertainty as a function of jet-\pT and \eta.
+            The total uncertainty is shown as are the contributions from the various sources of uncertainty ~\cite{obj-jets_calib_2015}.}
+  \label{fig:obj-jets_calib_JER}
+\end{figure}
+
+Jet energy scale (JES) uncertainties arise from the calibration procedure
+to correct jets from the EM-scale to the hadronic-scale, outline above.
+80 separate uncertainties are derived to cover each step of the calibration.
+Figure~\ref{fig:obj-jets_calib_JES} shows the fractional JES uncertainty as a function of jet-$p_T$ and jet-$\eta$.
+Full details on the uncertainty derivation can be found in~\cite{obj-jets_calib_run2}.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{Jet-\pT} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/jets_uncert_JES_pt.png} }
+    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/jets_uncert_JES_eta.png} }
+  \end{center}
+  \caption[The fractional jet energy scale uncertainty as a function of jet-\pT and \eta.
+    The total uncertainty is shown as are the contributions from the various sources of uncertainty.]
+          {The fractional jet energy scale uncertainty as a function of jet-\pT and \eta.
+            The total uncertainty is shown as are the contributions from the various sources of uncertainty ~\cite{obj-jets_calib_run2}.}
+  \label{fig:obj-jets_calib_JES}
+\end{figure}
+
+\FloatBarrier
 
 \newpage
 \section{Identification of $b$-jets}
