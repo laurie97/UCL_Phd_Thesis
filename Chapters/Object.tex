@@ -1,6 +1,54 @@
 \chapter{Object Definition and Reconstruction}
 \label{sec:obj}
 
+\section{Tracks}
+\label{sec:obj-tracks}
+
+The ATLAS detector is able to reconstruct the trajectory of charged particles produced
+in the proton-proton collision as they pass through the Inner Detector;
+the reconstructed trajectories are known as tracks.
+Track reconstruction is essential for a number of important areas of ATLAS analyses:
+for example; primary vertex reconstruction, identification of $b$-hadrons (see Section~\ref{sec:obj-bjets})
+and particle identification and measurement (such as the electrons and muons as described in Section~\ref{sec:obj-electron} and~\ref{sec:obj-muon}).
+
+Track reconstruction uses hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
+The track reconstruction is performed using an 'inside-out' approach,
+which entails using the higher precision Pixel and SCT hits initially
+and then adding in the TRT hits to improve track quality.
+The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps:
+\vspace{-0.5em}
+\begin{itemize}[leftmargin=*]
+\item\textbf{Clustering:}
+  \footnote{In the above reference this step is referred to as 'clusterization', which is not an actual word.}
+  Neighbouring hits in a layer of the Pixel or SCT detector are converted into a 3D `space-point'
+  that represents the point where the charged particle traversed the active material of the ID.
+  In the Pixel detector one cluster of hits can form a space-point,
+  whilst in the SCT hits from both sides of a strip layer are used to create a 3D space-point.\vspace{0.5em}
+\item\textbf{Track Seeding:}
+  Track seeds are formed from three space-points in consecutive layers of the Inner Detector
+  that are consistent with the trajectory of a particle with $p_T >$ 500 MeV.\vspace{0.5em}
+\item\textbf{Track Candidates:}
+  From the track seeds, track candidates are built by iteratively adding space-points with a particle trajectory
+  from the remaining Pixel and SCT detector layers using an combinatorial Kalman filter~\cite{obj-tracks_kal}.
+  There can be multiple track candidates per seed.\vspace{0.5em}
+\item\textbf{Track selection / Ambiguity resolving:}
+  Each track is assigned a `track-score' that is based a number of variables of the track candidate;
+  the $p_T$, $\eta$, $\chi^{2}$ fit and the hit pattern.
+  Tracks must also pass some track quality requirements, that are again based on the track's $p_T$, $\eta$ and the hit pattern.
+  The hit pattern refers to the number of Pixel or SCT hits,
+  the number of holes (missing hits where one was expected)
+  and the quality of the hits.
+  The self-consistent set of tracks that have the highest `track-score' and that pass track quality requirements are then selected.
+  Exact details of the track-scoring, track requirements and algorithm is described in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
+\item\textbf{Add TRT Information:}
+  Tracks from the previous step are extrapolated into the TRT and all hits within \SI{10}{\milli\metre} are added.
+  The tracks are then refitted using Pixel, SCT and TRT hits to make use of the full tracking detector.
+\end{itemize}
+
+The tracks resulting from the above track reconstruction process will be referred to as tracks in the remainder of this thesis.
+Also it is important to note that, as discussed in Section~~\ref{sec:det-ID}, the tracks are curved by a known magnetic field in the Inner Detector,
+therefore the tracks contain information on the charge and the momentum of the particles whose trajectory they are describing.
+
 \section{Jets}
 \label{sec:obj-jets}
 
@@ -34,7 +82,7 @@ In this section the formation of hadronic jets constructed from calorimeter cell
 as this is the only jet object used in the context of the analyses presented in this thesis.
 However, it is worth noting, that there are other types of jets used at ATLAS;
 jets are used to observe electrons and taus whilst
-hadronic jets can also be constructed from tracks formed in the inner detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
+hadronic jets can also be constructed from tracks formed in the Inner Detector, a technique that has been useful in dense environments~\cite{obj-Hbb}.
 
 \subsection{Hadronic Topocluster Reconstruction}
 \label{sec:obj-jets_topo}
@@ -189,24 +237,24 @@ to a more representative calibrated jet that can be used in an analysis.
 
 \noindent
 The key factors for the unrepresentative hadronic jet energy measurement are~\cite{det-thesis_kate,obj-bjets_algo_2015}:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item\textbf{Jet energy scale}:
   As discussed in Section~\ref{sec:det-calo_HCAL}, the ATLAS calorimeter is non-compensating which means that
   the calorimeter response is different for an EM-object and a hadronic object.
   The calorimeter response is calibrated at the EM-scale such that the energy measurements from a calorimeter cell
   are correct for an EM-object;
   as a result the initial energy measurement for a hadronic jet will be incorrect.
-  To account for this a correction is required to take the jet energy measurement from the EM-scale to the hadronic-scale.
+  To account for this a correction is required to take the jet energy measurement from the EM-scale to the hadronic-scale.\vspace{0.5em}
 \item\textbf{Dead Material}:
   The hadronic jet may overlap with an unresponsive region of the detector,
-  resulting in some energy deposits being incorrectly measured.
+  resulting in some energy deposits being incorrectly measured.\vspace{0.5em}
 \item\textbf{Leakage}:
   Some energy from the jet will be distributed outside the angular acceptance of the calorimeter
-  whilst some energy will pass through the calorimeter in a process known as `punch-through', as discussed in Section~\ref{sec:det-MS}.
+  whilst some energy will pass through the calorimeter in a process known as `punch-through', as discussed in Section~\ref{sec:det-MS}.\vspace{0.5em}
 \item\textbf{Reconstruction Issues}:
   There are two issues with jet reconstruction that require correction:
   firstly, some energy deposits coming from the initial parton may not be constructed as topoclusters due to the cell signal significance thresholds required in topocluster formation.
-  Secondly, some topoclusters that should be clustered to the jet may not included in the reconstructed jet or included in a different jet instead.
+  Secondly, some topoclusters that should be clustered to the jet may not included in the reconstructed jet or included in a different jet instead.\vspace{0.5em}
 \item\textbf{Pile-up}:
   Energy from collisions other than the hard-scatter collision can also be included by the reclustering algorithm.
   This includes in-time and out-of-time pile-up.
@@ -243,25 +291,25 @@ These steps are outlined in Figure~\ref{fig:obj-jets_calib_schem}.
 
 \noindent
 To discuss each step in a little more detail:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item\textbf{Origin Correction}:
   This step changes the direction of the jets such that the four-momentum points to the hard-scatter primary vertex
   rather than the centre of the detector.
-  This calculation conserves the jet energy.
+  This calculation conserves the jet energy.\vspace{0.5em}
 \item\textbf{Jet Area-Based Pile-up Correction}:
   This step removes unwanted energy contributions from pile-up.
-  This correction subtracts the area of the jet, $A$, multiplied by the average energy density due to pile-up, $\rho$.
+  This correction subtracts the area of the jet, $A$, multiplied by the average energy density due to pile-up, $\rho$.\vspace{0.5em}
 \item\textbf{Residual Pile-up Correction}:
   This step further reduces effects from pile-up utilising the linear dependence of pile-up effects on
   the number of primary verticies, $N_{PV}$
-  and the mean number of additional $pp$ collisions per bunch crossing of the event, $\mu$.
+  and the mean number of additional $pp$ collisions per bunch crossing of the event, $\mu$.\vspace{0.5em}
 \item\textbf{Absolute JES Correction}:
   This step corrects the jet four-momentum from the EM-scale, at which they were initially formed,
   to the hadronic-scale, which is defined in terms of the truth jets in simulation.
-  This correction is derived using truth jets and reconstructed detector-level jets in dijet Monte-Carlo events.
+  This correction is derived using truth jets and reconstructed detector-level jets in dijet Monte-Carlo events.\vspace{0.5em}
 \item\textbf{Global Sequential Calibration}:
   This step uses information from the calorimeter, muon spectrometer and track-based variables
-  to reduce the reconstructed energy and the reduce the overall uncertainties\footnote{Jet energy uncertainties are discussed in the next Section~\ref{obj-jets_uncert}.}.
+  to reduce the reconstructed energy and the reduce the overall uncertainties\footnote{Jet energy uncertainties are discussed in the next Section~\ref{sec:obj-jets_uncert}.}.\vspace{0.5em}
 \item\textbf{In-situ calibration}:
   All previous steps in this calibration have been done using simulation to correct
   detector-level jets to truth jets. This step accounts for any differences between simulation and data.
@@ -287,7 +335,7 @@ The result of this process is what is known as an anti-$k_T$ R=0.4 EM-Topo jet,
 and is the definition for a jet in this thesis.
 
 \subsection{Jet Energy Uncertainties}
-\label{obj-jets_uncert}
+\label{sec:obj-jets_uncert}
 
 All measurements have uncertainties, and this section investigates the uncertainties of jet energy measurement.
 Jet energy measurements separate the associated uncertainties into two components;
@@ -381,13 +429,13 @@ The long lifetimes of the heavy flavour hadrons means that they will decay a mea
 primary vertex, the point where the hard-scatter collision occurs.
 Hence, the flavour of a jet can be inferred from the presence of particles
 that originate from a point offset from the primary vertex.
-In practice this is performed using the topology of tracks formed by the inner detector
-and measurements from the calorimeter, which have been described in Section~\ref{sec:det-ID} and \ref{sec:det-calo} respectively.
+In practice this is performed using the topology of tracks by the Inner Detector
+and measurements from the calorimeter, which have been described in Section~\ref{sec:det-tracks} and \ref{sec:det-calo} respectively.
    
 There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjets_algo_2016}, which are described in the next three sections .
 %Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
 The variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
-Figure~\ref{fig:obj_bjets_schem} shows a schematic illustrating how the tracks from the inner detector
+Figure~\ref{fig:obj_bjets_schem} shows a schematic illustrating how the tracks from the Inner Detector
 are used by the three $b$-tagging algorithms to identify a $b$-jet, the details of this figure are referred to in the following three sections.
 
 \begin{figure}[!htb]
@@ -500,16 +548,44 @@ whilst still obtaining a large $c$- and light-jet rejection.
 The recommended $b$-tagging tool is MV2c10 which has been trained on a sample containing 10\% charm-jets, to give strong light- and $c$-rejection.
 
 \subsection{Performance}
+\label{sec:obj-bjets_calib}
 
-I have a couple of options here.
-=> Put performance in event selection (tagging efficiency plot)
-=> Describe performance here with some discussion of high pT b-Tagging
+I have a couple of options here.\\
+- Put performance in event selection (tagging efficiency plot)\\
+- Describe performance here with some discussion of high pT b-Tagging
 
 \section{bTagging: Validation in Dijet Events}
 
-\section{Leptons}   
+\section{Leptons: Muons and Electrons}   
+
+Reconstruction of electrons and muons is important for a number of analyses at ATLAS;
+including the selection of di-lepton $t\bar{t}$ events
+which are used in the calibration of $b$-tagging and the $b$-jet trigger,
+described in Sections~\label{sec:obj-bjets_calib} and~\label{sec:trig-bjet_eff} respectively.
+In addition taus can be identified by the ATLAS detector.
+As these objects are not used in the analysis presented in this thesis,
+they are described below in less detail than has been given to jets and $b$-jets.
+
 \subsection{Electron}
 \label{sec:obj-electron}
+
+Electron reconstruction at ATLAS (which includes positrons) uses
+the matching of energy deposits in the calorimeter to
+to a track from the inner detector~\cite{obj-electron}.
+Information such as the calorimeter shower shape,
+properties of the matched track
+and TRT transition radiation (described in Section~\ref{sec:det-ID})
+allows for identification of electrons with respect to other physics objects described in this section.
+
 \subsection{Muon}
 \label{sec:obj-muon}
+
+Muon reconstruction at ATLAS begins uses muon tracks reconstructed using the Muon Spectrometer (MS).
+Muon tracks are then extrapolated inwards towards match tracks formed by the Inner Detector (ID).
+A global fit is then performed on the combined muon and Inner Detector track,
+at which point hits in the MS can be added or removed to improve muon quality.
+Muons constructed using this technique are referred to as combined muons
+Further details on combined muon reconstruction along with
+other muon reconstruction techniques can be found in~\ref{obj-muons}.
+
 
