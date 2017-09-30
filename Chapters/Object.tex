@@ -9,7 +9,7 @@ in the proton-proton collision as they pass through the Inner Detector;
 the reconstructed trajectories are known as tracks.
 Track reconstruction is essential for a number of important areas of ATLAS analyses:
 for example; primary vertex reconstruction, identification of $b$-hadrons (see Section~\ref{sec:obj-bjets})
-and particle identification and measurement (such as the electrons and muons as described in Section~\ref{sec:obj-electron} and~\ref{sec:obj-muon}).
+and particle identification and measurement (such as the electrons and muons as described in Section~\ref{sec:obj-electrons} and~\ref{sec:obj-muons}).
 
 Track reconstruction uses hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
 The track reconstruction is performed using an 'inside-out' approach,
@@ -46,7 +46,7 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
 \end{itemize}
 
 The tracks resulting from the above track reconstruction process will be referred to as tracks in the remainder of this thesis.
-Also it is important to note that, as discussed in Section~~\ref{sec:det-ID}, the tracks are curved by a known magnetic field in the Inner Detector,
+Also it is important to note that, as discussed in Section~\ref{sec:det-ID}, the tracks are curved by a known magnetic field in the Inner Detector,
 therefore the tracks contain information on the charge and the momentum of the particles whose trajectory they are describing.
 
 \section{Jets}
@@ -236,7 +236,7 @@ As a result, a hadronic jet calibration is required to map the initial reconstru
 to a more representative calibrated jet that can be used in an analysis.
 
 \noindent
-The key factors for the unrepresentative hadronic jet energy measurement are~\cite{det-thesis_kate,obj-bjets_algo_2015}:
+The key factors for the unrepresentative hadronic jet energy measurement are~\cite{det-thesis_kate,obj-jets_calib_2015}:
 \begin{itemize}[leftmargin=*]
 \item\textbf{Jet energy scale}:
   As discussed in Section~\ref{sec:det-calo_HCAL}, the ATLAS calorimeter is non-compensating which means that
@@ -416,10 +416,10 @@ Flavour is assigned to jets by matching truth-level heavy-hadrons with $p_{T} >$
 If a $b$-hadron is matched to a jet, the jet is then declared a $b$-jet;
 this process is then repeated for $c$-hadrons and then $\tau$ leptons.
 If no match between $b$, $c$ or $\tau$ is achieved then the jet is assigned as a light-flavour jet.
-The matching is exclusive, which means that each particle is only assigned to one jet. \textbf{Add a reference, possibly performance}
+The matching is exclusive, which means that each particle is only assigned to one jet.
 This definition of truth flavour in simulation is used generally within this thesis.
    
-\subsection{Algorithm descriptions}
+\subsection{Baseline $b$-tagging Algorithms}
 
 To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction,
 a hadron containing a $b$-quark has a lifetime of the order \SI{1.5}{\pico\second} %\cite{obj-bjets_algo_2015}.
@@ -487,11 +487,11 @@ as illustrated in Figure \ref{fig:obj_bjets_schem}.
 Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
 for example vertex mass and number of vertices with two or more tracks.
 
-\subsubsection{Multi-variate}
+\subsection{Multi-Variate $b$-tagging Algorithm}
 \label{sec:obj-bjets_MV2}
 
 The three base algorithms are combined in a boosted decision tree (BDT), a machine-learning technique for combining the many flavour-discriminating variables,
-resulting in an algorithm that is known in MV2
+resulting in an algorithm that is known as MV2.
 As shown in Figure \ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
 with the discriminating variables of SV1 and JF discussed in the preceding sections,
 resulting in an output between -1 and 1, where 1 indicates that the jet is likely to be a $b$-jet and -1 indicates the inverse.
@@ -505,16 +505,46 @@ resulting in an output between -1 and 1, where 1 indicates that the jet is likel
   \vspace{-1cm}
 \end{figure}
 
+
+The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets
+as well as a sample containing $Z'$ boson decaying to $b$-quarks.
+The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjets_label}.
+A training sample with known truth labels is required as this allows the BDT to be optimised
+such that it uses the complex correlations between the input variables to allow for high $b$-jet efficiencies
+whilst still obtaining a large $c$- and light-jet rejection.
+Subtly different algorithms can be obtained using samples containing different fractions of light and $c$-jet,
+the fraction of $c$-jets used is labelled in the algorithm name;
+for example the MV2c10 algorithm has been trained on a sample containing 10\% charm-jets, which gives strong light- and $c$-rejection.
+
 A cut is then applied to this MV2 output in order to select jets that are likely to $b$-jets.
-The cut can be varied to create different operating points which vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection
-\footnote{$b$-jet efficiency is defined as the probability of accepting a true $b$-jet.
-  Light-jet rejection is defined as 1 divided by the probability of accepting a true light-jet.
-  A similar definition applies for $c$-jet rejection.}.
-Looser operating points have a relatively low cut on MV2, meaning that the $b$-jet efficiency is higher at the cost of worse light- and $c$-jet rejections,
+The choice of cut will vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection
+Where $b$-jet efficiency is defined as the probability of accepting a true $b$-jet,
+light-jet rejection is defined as 1 divided by the probability of accepting a true light-jet, and a similar definition applies for $c$-jet rejection.
+Figure~\ref{fig:obj-bjets_perf} shows the $b$-jet efficiency against (a) light and (b) $c$-jet rejection of the MV2 algorithm for a continuous range of cuts.
+The different the lines show the performance of the algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}
+and in the 2016 configuration~\cite{obj-bjets_algo_2016} where a range of different fraction of $c$-jets are used in the training;
+2016 MV2c10 is the configuration used generally in this thesis.
+    
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_light}}
+    \subcaptionbox{} { \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_charm}}
+  \end{center}
+  \caption[The expected $b$-jet efficiency of $b$-tagging algorithm, MV2, with respect to
+    (a) light-jet and (b) $c$-jet rejection in simulated $t\bar{t}$ events.
+    The various lines show the performance of the algorithm for different configurations and training setups.]
+    {The expected $b$-jet efficiency of $b$-tagging algorithm, MV2, with respect to
+    (a) light-jet and (b) $c$-jet rejection in simulated $t\bar{t}$ events.
+    The various lines show the performance of the algorithm for different configurations and training setups~\cite{obj-bjets_algo_2016}.}
+  \label{fig:obj-bjets_perf}
+\end{figure}
+
+ATLAS has a set of common pre-set cuts used, known as operating points, such that work required to calibrate $b$-tagging in each analysis is shared.
+Looser operating points have a relatively low cut on MV2 output, meaning that the $b$-jet efficiency is higher at the cost of worse light- and $c$-jet rejections,
 and the inverse is true for tighter operating points.
-Table~\ref{tab:obj-MV2_WPs} shows the list of fixed cut operating points that are used in ATLAS with a given cut on MV2 output;
+Table~\ref{tab:obj-MV2_WPs} shows the list of fixed cut operating points that are used in ATLAS with a given cut on MV2c10 output;
 shown with the corresponding benchmark $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection.
-For the remainder of this thesis, the operating points will be referred
 \footnote{In this thesis only the fixed-cut operating points shown above will be used,
   however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT}
 %This is in contrast to the previous multivariate tagger used in Run-1, MV1, which inputted
@@ -534,58 +564,99 @@ For the remainder of this thesis, the operating points will be referred
     \caption[The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.]
             {The Mv2c10 b-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.
               This table is taken from reference~\cite{obj-bjets_algo_2016}.}
-            \label{fig:obj-MV2_schem}
+            \label{tab:obj-MV2_WPs}
   \end{center}
   \vspace{-1cm}
 \end{table}
 
-The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets
-as well as a sample containing $Z'$ boson decaying to $b$-quarks.
-The training makes use of the truth flavour labels assigned to jets using the process described in Section~\ref{sec:obj-bjets_label}.
-A training sample with known truth labels is required as this allows the BDT to be optimised
-such that it uses the complex correlations between the input variables to allow for high $b$-jet efficiencies
-whilst still obtaining a large $c$- and light-jet rejection.
-The recommended $b$-tagging tool is MV2c10 which has been trained on a sample containing 10\% charm-jets, to give strong light- and $c$-rejection.
-
-\subsection{Performance}
+\subsection{Calibration and Uncertainties}
 \label{sec:obj-bjets_calib}
 
-I have a couple of options here.\\
-- Put performance in event selection (tagging efficiency plot)\\
-- Describe performance here with some discussion of high pT b-Tagging
+As with any part of a measurement, the process of $b$-tagging must be calibrated in data.
+$b$-tagging calibration~\cite{obj-bjets_calib} a pure sample of $b$-jets is found using a di-lepton $t\bar{t}$,
+using similar selection to the analysis described in Section~\ref{sec:trig-bjet_eff}.
+With the pure $b$-jet sample one can calculate the $b$-jet efficiency, $\epsilon_{\text{bTag}}$, defined as:
+\begin{equation}
+ \epsilon_{\text{bTag}} = \frac{N(\text{$b$-tagged true $b$-jets)}}{N(\text{True $b$-jets)}}
+\end{equation}
+where $b$-tagged means above the cut on MV2 output for that operating point.
+By measuring  $\epsilon_{\text{bTag}}$ in both data and in Monte-Carlo simulation one can derive
+a correction to simulation, known as a data/MC scale factor ($SF_\text{bTag}$), defined as:
+\begin{equation}
+ SF_{\text{bTag}} = \frac{\epsilon_{\text{bTag}}^{\text{Data}}}{\epsilon_{\text{bTag}}^{\text{MC}}}
+\end{equation}
+
+\textbf{LM Fix} Extrapolation to high pT....
+
+Uncertainties are derived for the scale factor,
+the dominant of which account for uncertainties in $t\bar{t}$ modelling in simulation
+and the procedure to high-$p_T$ \textbf{LM Fix}
+
+Figure ?? shows the data/MC scale factor measured in 2015 and 2016 data, as a function of jet $p_T$ and $\eta$.
+The scale factor is close to 1 everywhere, showing the $b$-tagging is well generally well-modelled in simulation. \textbf{LM Fix}
+
 
 \section{bTagging: Validation in Dijet Events}
 
-\section{Leptons: Muons and Electrons}   
+\newpage
+\section{Electrons and Muons}
+\label{sec:obj-leptons}
 
-Reconstruction of electrons and muons is important for a number of analyses at ATLAS;
+Reconstruction of electrons and muons
+is important for a number of analyses at ATLAS;
 including the selection of di-lepton $t\bar{t}$ events
 which are used in the calibration of $b$-tagging and the $b$-jet trigger,
-described in Sections~\label{sec:obj-bjets_calib} and~\label{sec:trig-bjet_eff} respectively.
-In addition taus can be identified by the ATLAS detector.
-As these objects are not used in the analysis presented in this thesis,
+described in Sections~\ref{sec:obj-bjets_calib} and~\ref{sec:trig-bjet_eff} respectively.
+As these objects are not used in the final analysis presented in this thesis,
 they are described below in less detail than has been given to jets and $b$-jets.
 
-\subsection{Electron}
-\label{sec:obj-electron}
-
-Electron reconstruction at ATLAS (which includes positrons) uses
-the matching of energy deposits in the calorimeter to
-to a track from the inner detector~\cite{obj-electron}.
+Electron\footnote{For the purposes of reconstruction positrons are included as a subset of electrons}
+reconstruction at ATLAS ~\cite{obj-electrons} uses
+the matching of narrow clusters of energy deposits in the calorimeter to
+to a track from the inner detector,
+from which the four-momentum of the electron can be determined.
 Information such as the calorimeter shower shape,
 properties of the matched track
 and TRT transition radiation (described in Section~\ref{sec:det-ID})
 allows for identification of electrons with respect to other physics objects described in this section.
+Three different operating points are typically provided for electron identification:
+which are, in order of increasing background rejection
+\textit{Loose}, \textit{Medium}, and \textit{Tight}. 
 
-\subsection{Muon}
-\label{sec:obj-muon}
+Muon\footnote{Similar to positrons, in reconstruction anti-muons are included as a subset of muons}
+reconstruction at ATLAS  uses muon tracks reconstructed using the Muon Spectrometer (MS) and tracks constructed by the Inner Detector (ID).
+There are several types of muon reconstruction techniques
+and different muon identification working points available~\cite{obj-muons}.
 
-Muon reconstruction at ATLAS begins uses muon tracks reconstructed using the Muon Spectrometer (MS).
-Muon tracks are then extrapolated inwards towards match tracks formed by the Inner Detector (ID).
-A global fit is then performed on the combined muon and Inner Detector track,
-at which point hits in the MS can be added or removed to improve muon quality.
-Muons constructed using this technique are referred to as combined muons
-Further details on combined muon reconstruction along with
-other muon reconstruction techniques can be found in~\ref{obj-muons}.
+Two of the techniques for reconstruction are combined muons and extrapolated muons.
+Combined muons are reconstructed by extrapolating muon tracks inwards to match tracks formed by the ID.
+Extrapolated muons are formed from muon tracks alone,
+with a loose requirement on the track pointing to the primary vertex;
+this extrapolated muons are important in the range $2.5 < \eta < 2.7$ for which there is no ID coverage.
+Again for reconstructed muons the four-momentum can be determined.
 
+Four muon identification working points have been defined \textit{Loose}, \textit{Medium}, \textit{Tight}, and \textit{High-$p_T$}.
+Medium muons, as used in Section~\ref{sec:trig-bjet_eff}, are made up of combined and extrapolated muons that pass a quality criteria based on
+number of MS hits, track fit quality and, where relevant, compatibility between the ID and MS tracks.
 
+\section{Further objects}
+
+In the previous sections of this chapter all objects used in the analyses presented in this analysis have been described.
+However this is not an exhaustive list of the range of objects that ATLAS can reconstruct.
+In this section I will briefly outline some of the many other objects of interest that are used elsewhere in ATLAS analyses.
+
+\begin{itemize}[leftmargin=*]
+\item\textbf{Photons:}
+  Photons can be identified from using narrow clusters of energy deposits in the calorimeter similar to that of electrons,
+  except with no track associated~\cite{obj-photons}.
+  Shower shape can also be used to differentiate photons and electrons.\vspace{0.5em}
+\item\textbf{Taus:}
+  Taus, in their most common decay mode, can be identified and reconstructed using narrow calorimeter jets
+  associated to a topologies of tracks that match their known decay chain~\cite{obj-taus}.\vspace{0.5em}
+\item\textbf{Missing Transverse Momentum:}
+  It is known that the momentum in the transverse plane is conserved,
+  hence from the negative sum of the momentums of objects that we reconstruct from the detector
+  one can determine the presence of missing transverse momentum (MET)~\cite{obj-met}.
+  MET can be used to identify the presence of particles that interact weekly with the ATLAS detector,
+  such as neutrinos~\cite{obj-Hbb} or even dark matter~\cite{obj-met_monoJet}.
+\end{itemize}
