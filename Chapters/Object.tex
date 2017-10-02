@@ -3,11 +3,11 @@
 
 The previous chapter described how the ATLAS detector collects information on 
 final state particles produced in the $p-p$ collisions provided by the LHC in the form of,
-for example, hits in the Inner Detectror and Muon Spectrometer,
+for example, hits in the Inner Detector and Muon Spectrometer,
 or energy deposits in the calorimeter.
 This chapter defines important physics objects
 and describes how they are identified, and their 4-momentums and trajectories are reconstructed using the information provided by the ATLAS detector;
-the physics objecs will then form the basis of the physics analyses in future chapters.
+the physics objects will then form the basis of the physics analyses in future chapters.
 Specifically this chapter will define and describe the reconstruction of objects important to the analyses in this thesis:
 tracks will be the subject in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
 $b$-jets in Section~\ref{sec:obj-bjets}, and electrons and muons in Section~\ref{sec:obj-leptons}.
@@ -396,7 +396,7 @@ Full details on the uncertainty derivation can be found in~\cite{obj-jets_calib_
 \FloatBarrier
 
 \newpage
-\section{$b$-jets}
+\section{$b$-Jets}
 \label{sec:obj-bjets}
 
 Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categorised into three separate categories based on the flavour of the constituent quarks.
@@ -622,14 +622,92 @@ The scale factor is consistent with unity within uncertainties everywhere, showi
 
 The $b$-tagging calibration using di-lepton $t\bar{t}$ events described above
 is unable to measure a data/MC scale factor for jets with $p_T$ greater than 300 GeV, due to low data statistics in the high-$p_T$ region.
-Thus, the measured scale factors are extrapolated to cover the high jet-$p_T$ region, and this extrapolation procedure introduces additional uncertainties.
+Thus, the measured scale factors are extrapolated to cover the high jet-$p_T$ region, and this extrapolation procedure introduces additional uncertainties~\cite{obj-bjets_calib_highPt}.
 The extrapolation and uncertainty is calculated from simulated events by considering variations on the quantities affecting the b-tagging performance
 such as the resolution of the impact parameter, quality of reconstructed tracks, description of the detector material, and number of tracks per jet.
 The dominant effect on the uncertainty when extrapolating to the high jet-$p_T$ region is related to the different tagging efficiencies
-when varying the track impact parameters. \\
-\textbf{Question for AK; this paragraph inspired from flag tag recomondation on a twiki, no reference offered, I haven't found numbers. :/}
+when varying the track impact parameters. 
+\textbf{Question for AK; this paragraph inspired from flag tag recommendation on a twiki; referenc is internal. :/}
 
-\section{bTagging: Validation in Dijet Events}
+\clearpage
+\subsection{$b$-Jet Energy Scale}
+\label{sec:obj-bjets_bjes}
+
+In Sections~\ref{sec:obj-jets_calib} and \ref{sec:obj-jets_uncert} it was described that one
+must apply a correction to correct the energy of a jet from the detector-level to the true particle-level jet energy
+and this correction had an associated uncertainty.
+For $b$-jets this correction may be different to light jets due to differences in the jet formation in a $b$-jet;
+for example during the decay of the $b$-hadron muons and neutrinos are produced which will not deposit all/any of their energy in the calorimeter
+which could affect the scale of the correction. This effect is know as the $b$-jet energy scale ($b$JES) and is accounted for with an additional uncertainty.
+
+The $b$JES uncertainty is derived and validated in data by comparing the measured jet energy with respect to a independent well calibrated object,
+in this case tracks, using the procedure is described in Appendix H of~\cite{dibjet-int_mori16}.
+We perform this comparison for $b$-jets and inclusive jets for a dijet sample in simulation and data,
+where a $b$-jet means it has been $b$-tagged at the 85\% operating point and inclusive means no requirement on $b$-tagging has been applied. 
+To do the track-jet comparison tracks are associated to jets using ghost association.
+Ghost association re-runs the jet clustering algorithm used to form the jets in an event using
+tracks with $p_T$ manually set to 0 used as inputs in addition to the usual calorimeter topoclusters.
+As the tracks have $p_T$ set to 0, the jet reconstruction algorithm will form the same jets as before,
+except that all tracks will now be associated to the various jets.
+
+The measured jet-$p_T$ is compared to the sum of the tracks associated to the jet, $\Sigma p_T^{trk}$
+using the observable, $r_{trk}$, defined as
+\begin{equation} 
+  r_{trk} = \Sigma p_{T}^{trk}/p_{T}^{jet}
+\end{equation}
+One can split up the expected value of the observable $r_{trk}$ into three components.
+\begin{equation} 
+  <r_{trk}> = <\frac{\Sigma p_{T}^{trk,truth}}{\Sigma p_{T}^{trk,reco}}> <\frac{p_{T}^{jet,truth}}{\Sigma p_{T}^{trk,truth}}> <\frac{p_{T}^{jet,reco}}{p_{T}^{jet,truth}}> 
+\end{equation}
+The first term describes the track energy response, the second term is the mean charged fraction of the jet, $<f_{charge}>$ and 
+the third term is the jet energy response, which is the jet energy scale correction. 
+The systematic uncertainties that cover the measurement of $r_{trk}$
+arise from the jet and $b$-jet modelling in simulation (referred to as fragmentation),
+$b$-tagging calibration, jet resolution and tracking efficiency.
+In addition, the uncertainties from a bias observed in $<f_{charge}>$ for $b$-tagged jets relative to inclusive jets is added to the relative systematic uncertainty.
+The uncertainty on the $r_{trk}$ measurement are used as the $b$JES uncertainty, which varies between 1-4\% depending on jet-$p_T$.
+Figure~\ref{fig:obj-bjets_bJES_uncert} shows the derived total $b$JES uncertainty with respect to jet-$p_T$,
+the components that contribute to the uncertainty are also shown.
+
+\begin{figure}[!ht]
+  \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
+  \begin{center}
+    \includegraphics[width=0.6\linewidth, angle=0]{figs/Objects/bjets_bJES_uncert_edit.pdf}
+  \end{center}
+  \caption[The total fractional $b$JES uncertainty shown with the various contributions.]
+          {The total fractional $b$JES uncertainty shown with the various contributions~\cite{dibjet-int_mori16}.}
+          \label{fig:obj-bjets_bJES_uncert}
+\end{figure}
+
+Then one can can test the derived $b$JES uncertainties in data using a double ratio approach.
+The first ratio compares the observable in data and Monte-Carlo;
+\begin{equation} 
+  R_{trk} = r_{trk}^{Data}/r_{trk}^{MC}
+\end{equation}
+And then the double ratio, $R'_{trk}$ compares the $R_{trk}$ for $b$-jets and inclusive jets;
+\begin{equation} 
+  R'_{trk} = R_{trk}^{b-\text{jet}}/R_{trk}^{\text{incl.}}
+\end{equation}
+The double-ratio approach means that many of the uncertainties unrelated to $b$JES are cancelled in the ratios.
+
+Figure~\ref{fig:obj-bjets_bJES_Rprime} shows the double ratio $R'_{trk}$ with the $b$JES uncertainty applied.
+The ratio is almost consistent with unity within uncertainties validating our $b$JES uncertainty in data.
+
+  \begin{figure}[!ht]
+  \begin{center}
+      \includegraphics[width=0.6\linewidth, angle=0]{figs/Objects/bjets_bJES_Rprime_edit.pdf}
+  \end{center}
+  \caption[The validation of the $b$JES uncertainty in data using the double-ratio $R'_{trk}$.]
+          {The validation of the $b$JES uncertainty in data using the double-ratio $R'_{trk}$~\cite{dibjet-int_mori16}.}
+  \label{fig:obj-bjets_bJES_Rprime}
+\end{figure}
+
+
+
+
+
+
+%\section{bTagging: Validation in Dijet Events}
 
 \newpage
 \section{Electrons and Muons}
