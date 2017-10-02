@@ -1,6 +1,19 @@
 \chapter{Object Definition and Reconstruction}
 \label{sec:obj}
 
+The previous chapter described how the ATLAS detector collects information on 
+final state particles produced in the $p-p$ collisions provided by the LHC in the form of,
+for example, hits in the Inner Detectror and Muon Spectrometer,
+or energy deposits in the calorimeter.
+This chapter defines important physics objects
+and describes how they are identified, and their 4-momentums and trajectories are reconstructed using the information provided by the ATLAS detector;
+the physics objecs will then form the basis of the physics analyses in future chapters.
+Specifically this chapter will define and describe the reconstruction of objects important to the analyses in this thesis:
+tracks will be the subject in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
+$b$-jets in Section~\ref{sec:obj-bjets}, and electrons and muons in Section~\ref{sec:obj-leptons}.
+Finally, Section~\ref{sec:obj-further} will briefly describe some further physics objects
+widely used in the ATLAS physics program that are outside of the analyses being presented here.
+
 \section{Tracks}
 \label{sec:obj-tracks}
 
@@ -8,8 +21,8 @@ The ATLAS detector is able to reconstruct the trajectory of charged particles pr
 in the proton-proton collision as they pass through the Inner Detector;
 the reconstructed trajectories are known as tracks.
 Track reconstruction is essential for a number of important areas of ATLAS analyses:
-for example; primary vertex reconstruction, identification of $b$-hadrons (see Section~\ref{sec:obj-bjets})
-and particle identification and measurement (such as the electrons and muons as described in Section~\ref{sec:obj-electrons} and~\ref{sec:obj-muons}).
+for example; primary vertex reconstruction, identification of $b$-jets (Section~\ref{sec:obj-bjets})
+and particle identification and reconstruction, such as the electrons and muons (Section~\ref{sec:obj-leptons}).
 
 Track reconstruction uses hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
 The track reconstruction is performed using an 'inside-out' approach,
@@ -19,7 +32,7 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
 \vspace{-0.5em}
 \begin{itemize}[leftmargin=*]
 \item\textbf{Clustering:}
-  \footnote{In the above reference this step is referred to as 'clusterization', which is not an actual word.}
+  \footnote{In the associated reference this step is referred to as 'clusterization', but here I will use clustering for consistency with the English language.}
   Neighbouring hits in a layer of the Pixel or SCT detector are converted into a 3D `space-point'
   that represents the point where the charged particle traversed the active material of the ID.
   In the Pixel detector one cluster of hits can form a space-point,
@@ -383,7 +396,7 @@ Full details on the uncertainty derivation can be found in~\cite{obj-jets_calib_
 \FloatBarrier
 
 \newpage
-\section{Identification of $b$-jets}
+\section{$b$-jets}
 \label{sec:obj-bjets}
 
 Hadronic jets, described in Section~\ref{sec:obj-jets}, can be further categorised into three separate categories based on the flavour of the constituent quarks.
@@ -393,7 +406,8 @@ and finally light-flavoured jets comprise of only light hadrons (\textit{u}, \te
 A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjets_label}.
 
 The identification $b$-jets, known as $b$-tagging, has been an essential tool in a range of ATLAS collaboration results;
-for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar} \footnote{Section~\ref{sec:trig-bjet_eff} contains a concrete example of this.}
+for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar}
+\footnote{Section~\ref{sec:trig-bjet_eff} contains an analysis utilising $b$-tagging in the $t\bar{t}$ final state.}
 and the first direct evidence of the Higgs boson coupling to the quark-sector~\cite{obj-Hbb}.
 %In the former, as the top decays to a \textit{W}-boson and a $b$-quark with a branching ratio close to 100\%, 
 %the application of $b$-tagging can be used increase purity, this is used in the study described in Section~\ref{sec:trig-sys}.
@@ -430,7 +444,7 @@ primary vertex, the point where the hard-scatter collision occurs.
 Hence, the flavour of a jet can be inferred from the presence of particles
 that originate from a point offset from the primary vertex.
 In practice this is performed using the topology of tracks by the Inner Detector
-and measurements from the calorimeter, which have been described in Section~\ref{sec:det-tracks} and \ref{sec:det-calo} respectively.
+and measurements from the calorimeter, which have been described in Section~\ref{sec:obj-tracks} and \ref{sec:det-calo} respectively.
    
 There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjets_algo_2016}, which are described in the next three sections .
 %Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
@@ -572,29 +586,48 @@ shown with the corresponding benchmark $b$-jet efficiency, $c$-jet rejection, li
 \subsection{Calibration and Uncertainties}
 \label{sec:obj-bjets_calib}
 
-As with any part of a measurement, the process of $b$-tagging must be calibrated in data.
-$b$-tagging calibration~\cite{obj-bjets_calib} a pure sample of $b$-jets is found using a di-lepton $t\bar{t}$,
-using similar selection to the analysis described in Section~\ref{sec:trig-bjet_eff}.
+As with any part of a measurement, the process of $b$-tagging must be calibrated using data.
+$b$-tagging calibration is performed using a pure sample of $b$-jets extracted from di-lepton $t\bar{t}$ events
+using the probability distribution function method~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}.
 With the pure $b$-jet sample one can calculate the $b$-jet efficiency, $\epsilon_{\text{bTag}}$, defined as:
 \begin{equation}
  \epsilon_{\text{bTag}} = \frac{N(\text{$b$-tagged true $b$-jets)}}{N(\text{True $b$-jets)}}
 \end{equation}
-where $b$-tagged means above the cut on MV2 output for that operating point.
-By measuring  $\epsilon_{\text{bTag}}$ in both data and in Monte-Carlo simulation one can derive
-a correction to simulation, known as a data/MC scale factor ($SF_\text{bTag}$), defined as:
+where $b$-tagged means above the cut on the MV2 output for a given operating point.
+By measuring $\epsilon_{\text{bTag}}$ in both data and in Monte-Carlo simulation one can derive
+a correction to simulation, known as a data/MC scale factor ($SF_{\text{bTag}}$), defined as:
 \begin{equation}
- SF_{\text{bTag}} = \frac{\epsilon_{\text{bTag}}^{\text{Data}}}{\epsilon_{\text{bTag}}^{\text{MC}}}
+ SF_{\text{bTag}} = \epsilon_{\text{bTag}}^{\text{Data}}/\epsilon_{\text{bTag}}^{\text{MC}}
 \end{equation}
 
-\textbf{LM Fix} Extrapolation to high pT....
+Uncertainties are derived for the scale factors 
+to account for factors such as
+uncertainties in the modelling of the backgrounds in simulation and
+uncertainties in the modelling of the detector response to electrons, muons and jets.
+The dominant uncertainty comes from modelling of $t\bar{t}$ in simulation.
+Figure~\ref{fig:obj-bjets_calib} shows the data/MC scale factor measured in 2015 and 2016 data, as a function of jet $p_T$ and $\eta$.
+The scale factor is consistent with unity within uncertainties everywhere, showing that $b$-tagging is well generally well-modelled in simulation.
 
-Uncertainties are derived for the scale factor,
-the dominant of which account for uncertainties in $t\bar{t}$ modelling in simulation
-and the procedure to high-$p_T$ \textbf{LM Fix}
+\begin{figure}[!ht]
+  \captionsetup[subfigure]{aboveskip=-5pt,justification=centering}
+  \begin{center}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
+  \end{center}
+  \caption[Ratio of b-tagging efficiency in data and Monte Carlo for the MV2c10 b-tagging algorithm at the 77\% working point as a function of jet-$p_T$,
+    extracted using di-lepton $t\bar{t}$ events. Statistical uncertainties (black lines) and total uncertainties (green shaded region) are shown.]
+          {Ratio of b-tagging efficiency in data and Monte Carlo for the MV2c10 b-tagging algorithm at the 77\% working point as a function of jet-$p_T$,
+    extracted using di-lepton $t\bar{t}$ events. Statistical uncertainties (black lines) and total uncertainties (green shaded region) are shown \cite{obj-bjets_calib_plots}.}
+  \label{fig:obj-bjets_calib}
+\end{figure}
 
-Figure ?? shows the data/MC scale factor measured in 2015 and 2016 data, as a function of jet $p_T$ and $\eta$.
-The scale factor is close to 1 everywhere, showing the $b$-tagging is well generally well-modelled in simulation. \textbf{LM Fix}
-
+The $b$-tagging calibration using di-lepton $t\bar{t}$ events described above
+is unable to measure a data/MC scale factor for jets with $p_T$ greater than 300 GeV, due to low data statistics in the high-$p_T$ region.
+Thus, the measured scale factors are extrapolated to cover the high jet-$p_T$ region, and this extrapolation procedure introduces additional uncertainties.
+The extrapolation and uncertainty is calculated from simulated events by considering variations on the quantities affecting the b-tagging performance
+such as the resolution of the impact parameter, quality of reconstructed tracks, description of the detector material, and number of tracks per jet.
+The dominant effect on the uncertainty when extrapolating to the high jet-$p_T$ region is related to the different tagging efficiencies
+when varying the track impact parameters. \\
+\textbf{Question for AK; this paragraph inspired from flag tag recomondation on a twiki, no reference offered, I haven't found numbers. :/}
 
 \section{bTagging: Validation in Dijet Events}
 
@@ -640,6 +673,7 @@ Medium muons, as used in Section~\ref{sec:trig-bjet_eff}, are made up of combine
 number of MS hits, track fit quality and, where relevant, compatibility between the ID and MS tracks.
 
 \section{Further objects}
+\label{sec:obj-further}
 
 In the previous sections of this chapter all objects used in the analyses presented in this analysis have been described.
 However this is not an exhaustive list of the range of objects that ATLAS can reconstruct.
