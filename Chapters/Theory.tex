@@ -1,5 +1,5 @@
 \chapter{An Incomplete Theory}
-\label{sec:theory}
+\label{sec:theo}
 
 One of the great questions that humans have always tried to answer is
 what is the world made up of and what are the rules that govern them?
@@ -12,9 +12,9 @@ a mathematical description of a finite set of fundamental particles and their in
 %The Standard Model's abilty to describe data is formidable
 %and as such it is the foundation of the field of particle physics 
 However, it is known that this is not a complete theory and there must be
-a deeper underlying theory that lies beyond the standard model.
+a deeper underlying theory that lies beyond the Standard Model.
 
-This chapter firstly aims to describe the standard model and its key predicitions
+This chapter firstly aims to describe the Standard Model and its key predicitions
 with respect to the analyses within the context of this thesis.
 Section~\ref{theo-sm} briefly describes the Standard Model and
 Section~\ref{theo-qcd} describes QCD and jet formation,
@@ -30,34 +30,101 @@ and what are some of the possible models that one can search for.
 
 \subsection{Particles}
 
-The standard model is made up of 18 fundamental particles,
+The Standard Model is made up of 18 fundamental particles,
 which are grouped into three families of particles with similar properties;
 known as quarks, leptons and bosons.
 
 \begin{itemize}[leftmargin=*]
-
 \item\textbf{Quarks:}
   Quarks are fermions, meaning they are spin-$\frac{1}{2}$ particles,
   that iteract with the strong force, which is described below.
-  There are 6 different types of quarks, known as flavours,
-  arranged in 3 generations, each containing a charge $+\frac{2}{3}$ and a charge $-\frac{1}{3}$ quark.
-  %Due to the nature of the strong force, quarks are rarely observed in isolation,
-  %instead they form groups of 2 or 3 quarks to form a hadron.
-  Table~\ref{tab:theo-sm_quarks} summarises the flavours of quark and their key properties.
-  For each quark there is also an anti-quark, which has identical spin and mass, but opposite charge.\vspace{0.5em}
+  There are 6 different types of quarks, known as flavours, arranged in 3 generations.
+  Table~\ref{tab:theo-sm_quarks} summarises the flavours of quark and their key properties,
+  the values are taken from~\cite{obj-bjets_PDG}.
+  For each quark there is also an anti-quark, which has identical mass and spin, but opposite charge and quantum numbers.
+  %\end{itemize}
+  {\renewcommand{\arraystretch}{1.5}
+  \begin{table}[!ht]
+  \begin{center}
+    \begin{tabular}{|c||c|c|c|c|}
+      \hline
+    Quark Flavour & Symbol & Charge            &  Spin           &  Mass [GeV]\\
+    \hline
+    Up            &   $u$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  0.02\\
+    Down          &   $d$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.05\\
+    \hline                                                   
+    Charm         &   $c$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  1.3 \\
+    Strange       &   $s$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.1 \\
+    \hline                                                      
+    Top           &   $t$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  173  \\
+    Bottom        &   $b$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  4.2  \\
+    \hline  
+  \end{tabular}
+    \caption{The key properties of the 6 flavours of quark in the Standard Model,
+    organised into the three generations of quarks.}
+  \label{tab:theo-sm_quarks}
+  \end{center}
+  \end{table}}
+
 \item\textbf{Leptons:}
   Leptons are fermions that, unlike the quarks, do not interact with the strong force
   There are 6 different types of leptons,
   arranged into  3 generations, each containing a charge $-1$ particle and a charge 0 neutrino.
   Table~\ref{tab:theo-sm_leptons} summarises the leptons and their key properties.
-  As for quarks, for each lepton there is also an anti-lepton.\vspace{0.5em}
+  The mass of the neutrino is not well known, but it is known to be non-zero and the sum of the three is less than a few eV ~\cite{theo-nu_mass}.
+  As for quarks, for each lepton there is also an anti-lepton.
+\newpage
+  {\renewcommand{\arraystretch}{1.5}
+  \begin{table}[!ht]
+  \begin{center}
+    \begin{tabular}{|c||c|c|c|c|}
+      \hline
+    Lepton            & Symbol        & Charge  &  Spin           &  Mass [GeV]\\
+    \hline
+    Electron          &   $e$         &  -1    &  $\frac{1}{2}$   &  \num{5.1e-4}\\
+    Electron Neutrino &   $\nu_e$     &  0     &  $\frac{1}{2}$   &  -\\
+    \hline                                   
+    Muon              &   $\mu$       &  -1    &  $\frac{1}{2}$   &  0.106 \\
+    Muon Neutrino     &   $\nu_{\mu}$  &  0     &  $\frac{1}{2}$   &  -\\
+    \hline                                      
+    Tau               &   $\tau$       &  -1   &  $\frac{1}{2}$   &  1.8\\
+    Tau Neutrino      &   $\nu_{\tau}$  &  0    &  $\frac{1}{2}$   &  -\\
+    \hline  
+  \end{tabular}
+    \caption{The 6 types of lepton in the Standard Model and their key properties,
+    organised into the three generations of leptons. Neutrino masses are not well known. }
+  \label{tab:theo-sm_leptons}
+  \end{center}
+  \end{table}}
+ 
 \item\textbf{Bosons:}
   The bosons are the set of spin-0 or spin-1 particles in the SM,
   which act as the mediators of the forces that will be described below.
   Table~\ref{tab:theo-sm_bosons} summarises the bosons and their key properties.
   The bosons are their own anti-particle, with the exception of the $W^{+}$ and $W^{-}$
   which are each others anti-particle.
+
+  {\renewcommand{\arraystretch}{1.5}
+  \begin{table}[!ht]
+  \begin{center}
+    \begin{tabular}{|c||c|c|c|c|}
+      \hline
+    Boson            & Symbol        & Charge  &  Spin  &  Mass [GeV]\\
+    \hline
+    Photon           &   $\gamma$    &  0      &  1     &  0 \\
+    W-boson          &   $W^{\pm}$    & $\pm$1  &  1     &  80 \\
+    Z-boson          &   $Z_0$       &  0      &  1     &  91\\
+    Gluon            &   $g$         &  0      &  1     &  0 \\
+    Higgs Boson      &   $H$         &  0      &  0     &  125\\
+    \hline  
+  \end{tabular}
+    \caption{The key properties of the bosons of the  Standard Model. }
+  \label{tab:theo-sm_bosons}
+  \end{center}
+  \end{table}}
+    
 \end{itemize}
+
   
 \subsection{Forces}
 
