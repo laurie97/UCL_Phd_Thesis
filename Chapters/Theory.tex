@@ -175,7 +175,7 @@ Each interaction is discussed in greater detail below:
   in particular those from the 3rd generation  are highly suppressed.
   This feature will prove important for identifying the presence of $b$-quarks at the ATLAS detector.
   Both interactions of the weak force are much weaker than the EM force due to the large masses of the mediating particles
-  (\text{Weak}/\text{EM} \sim 10^{-4}$).\\ %\vspace{0.5em}
+  ($\text{Weak}/\text{EM} \sim 10^{-4}$).\\ %\vspace{0.5em}
   
 \item\textbf{Strong Force:}
 
@@ -184,7 +184,7 @@ Each interaction is discussed in greater detail below:
   If an object contains all three colour charges then it is a colour neutral object.
   The strong force is mediated by the gluon and interacts with particles that have colour charge; which are quarks and gluons.
   The fact that the gluon has colour charge means that the gluon is self interacting.
-  QCD is important in terms of understanding jet formation and the production of the
+  QCD is important in terms of understanding hadronic jet formation and the production of the
   largest background in a dijet search, so further details can be found in section in Section~\ref{theo-qcd}.\\
 
 \item\textbf{Higgs Mechanism:}
@@ -199,18 +199,18 @@ Each interaction is discussed in greater detail below:
   in 2012 appears to confirm the Higgs mechanism, which would be a great triumph of the Standard Model.
 \end{itemize}
 
-\section{QCD: Jet Formation and Dijet Production}
+\section{QCD: Hadronic Jet Formation and Dijet Production}
 \label{theo-qcd}
 
 As described above Quantum Chromodynamics (QCD) is a theory that describes the strong interaction between
 quarks and gluons.
 QCD therefore describes two elements that are critical to the analysis being presented in this thesis;
-specifically the formation of jets and the production of dijet events through QCD in proton-proton collisions,
+specifically the formation of hadronic jets and the production of dijet events through QCD in proton-proton collisions,
 which will be the dominant background in the analysis.
 
 This section will firstly describe renormalisation of QCD, which is important for understanding how QCD works,
-and will then describe the process of jet formation and dijet production in hadron collisions.
-Quarks and gluons can often fill similar roles in jet formation and dijet production, hence I will refer to them collectively as `partons' in this section.
+and will then describe the process of hadronic jet formation and dijet production in hadron collisions.
+Quarks and gluons can often fill similar roles in hadronic jet formation and dijet production, hence I will refer to them collectively as `partons' in this section.
 
 \subsection{Renormalisation and the Running of $\alpha_S$}
 \label{sec:theo-qcd_dijet_running}
@@ -259,57 +259,67 @@ Firstly that the size of the coupling constant, $\alpha_S$, is large compared to
 $\alpha_{EM} \sim 1/137$;
 this means that the strong force is stronger than the $EM$ force by at least an order of magnitude.
 Secondly, at high-energies/low-distance scales the strong force becomes weak, such the quarks and gluons barely interact, this phenomenon is known as
-\textit{`assymptotic freedom'}.
-At these energy scales, pertubative expansions of QCD are possible.
+\textit{`asymptotic freedom'}.
+At these energy scales, perturbative expansions of QCD are possible.
 Finally, at low-energies/large-distance scales the strong force is exceptionally strong.
-As a result, if two interacting quarks become seperated by a large distance then it becomes energetically favourable to
+As a result, if two interacting quarks become separated by a large distance then it becomes energetically favourable to
 pair-produce a $q\bar{q}$ pairs from the vacuum until a colour neutral object can be formed.
 Therefore quarks will never be observed in isolation but instead quarks form colour neutral hadrons, this feature of QCD is known as \textit{`confinement'}.
 
-\subsection{Jet Formation}
+\subsection{Hadronic Jet Formation}
 \label{sec:theo-qcd_jets}
 
 It is common in hadronic colliders that a high-momentum quark or gluon will be produced in the final-state,
-an example of this is the dijet production described in Section~\ref{sec:theo-qcd_dijet}.
+an example of this is dijet production, as described in Section~\ref{sec:theo-qcd_dijet}.
 However, as described in Section~\ref{sec:theo-qcd_dijet_running},
 the large values of $\alpha_S$ at large distance-scales require quark confinement, meaning that an isolated quark or gluon will not be observed.
-Instead a jet of energetic hadrons, known as hadronic jet, will be formed.
-Hadronic formation is described by two distinct processes; parton-shower and hadronisation.
+Instead a stream of energetic, collimated hadrons will be formed, known as a hadronic jet.
+Hadronic jet formation is described by two distinct processes; parton-shower and hadronisation.
 
 \begin{itemize}[leftmargin=*]
+  
 \item\textbf{Parton Shower:}
 
-  The high-energy final-state quark or gluon has a finite probability of splitting into a quark-gluon or quark-quark pair.
-  The resulting quarks and gluons will also undergo splitting to form more partons and this process repeats to form a shower.
-  Due to relativistic effects, each splitting will generally be at a small angle in the lab-frame
-  and as such the partons will highly collimated to the direction of the intial parton.
-  The parton shower process is at high energy such that the value of $\alpha_S$ is small
-  and thus pertubative expansions of QCD can be used to perform calculations.
-  However, at each step of the splitting the energy of the partons decreases such that $\alpha_S$ increases.
+  The high-energy final-state quark or gluon has a finite probability of splitting into a quark-gluon or quark-quark pair respectively.
+  The resulting quarks and gluons will also undergo splitting to form more partons,
+  which in turn can split. This process continues to form the parton shower.
+  Due to relativistic effects, each splitting will generally be at a small opening angle in the lab-frame
+  and as such the partons will be highly collimated in the direction of the initial parton.
+  The parton shower process occurs at high energy such that the value of $\alpha_S$ is small
+  and thus perturbative expansions of QCD can be used to perform calculations.
+  However, at each step of the splitting the energy of the partons decreases
+  and thus the value of $\alpha_S$ increases.\\
   
 \item\textbf{Hadronisation:}
   
-  When $\alpha_S$ becomes large, confinement becomes the dominant effect in a QCD interaction.
-  Therefore, the quarks resulting from the parton shower will form baryons which are colour netural objects.
-  The colour neutral baryons will not interact though QCD and hence will be relatively stable.
-  \footnote{Weak interactions can still occur; such that not all baryons formed are totally stable}
-  The hadronisation process occurs at large values of $\alpha_S$ so cannot be calculated using pertubative expansions;
-  to simulate QCD models such as the string model~\cite{theo-qcd_jet_string} and the
-  cluster model~\cite{theo-qcd_jet_cluster} are used to approximate the hadronisation step.
+  When the energy scale becomes small
+  \footnote{This is generally defined as small relative to the hadronic scale, $\Lambda$, which is typically a few hundred MeV},
+  $\alpha_S$ becomes large such that the dominant QCD effect is quark confinement.
+  Therefore, $q\bar{q}$ pairs are produced until the quarks resulting from the parton shower can form hadrons.
+  The hadrons are colour neutral objects, meaning that stable hadrons that do not interact through QCD will be formed
+  \footnote{Some unstable hadrons, such as a $\Delta^{++}$, may be initially formed in the process but these will decay rapidly through the strong interaction.
+    In addition, some hadrons might not be stable under the weak interaction, such as a Kaon, but the time-scale of their decays will be much larger.}.
+  The hadronisation process occurs at large values of $\alpha_S$ so cannot be calculated using perturbative expansions;
+  to simulate hadronisation models such as the string model~\cite{theo-qcd_jet_string} and the
+  cluster model~\cite{theo-qcd_jet_cluster} are used.
 
 \end{itemize}
   
-The end result of the hadronisation process is a set of highly collimated stable baryons,
+The end result of the hadronisation process is a set of collimated stable hadrons,
 known as a hadronic jet, which can be observed in an experiment.
-Note that our understanding of how one goes from an initial parton to a hadronic is model dependant,
-for example your choice of hadronisation model;
-hence in experiment we remove this dependance by defining a jet in terms of observables.
-The jet observables and the experimental definition of a jet used is discussed in~\ref{sec:obj-jets}.
+Note that our understanding of how one goes from an initial parton to a hadronic jet is model dependant,
+for example there is a choice of hadronisation model.
+Hence, in experiment we remove this dependence by defining a jet in terms of observables,
+such that the experimental results are model-independent and results can be reinterpreted when improved models become available
+\footnote{A good explanation of why model-independent jets is desirable is found here \url{https://www.theguardian.com/science/life-and-physics/2015/jan/10/this-is-not-a-measurement}}.
+The details of the experimental definition of a hadronic jet is discussed in Section~\ref{sec:obj-jets}.
 
 %\subsection{Parton shower}
 %\subsection{Hadronisation}
 
 \subsection{Dijet Production in $pp$ Collisions}
+\label{sec:theo-qcd_dijet}
+
 
 Dijet production is one of the most common process that occurs in any hadron collider.
 The first step of dijet production in $pp$ colliders is the two protons interacting through QCD to give two quarks or gluons in the final state;
@@ -489,10 +499,42 @@ which can lead to additional jets in an event, creating a multi-jet event.
 One should also consider the Underlying Event (UE) which effectively comprises of the remnants of the proton not used in the hard-scatter.
 The UE will mostly be hadronic activity and as a result can lead to additional jets in the event, again giving us a multi-jet event.
 
-
-
 \subsection{A Special Case: $t\bar{t}$}
+\label{sec:theo-ttbar}
 
+The top-quark is a special case when discussing the formation of jets from quarks
+resulting in the unique topology of $t\bar{t}$, which is often exploited by analyses.
+
+There are two theoretically motivated features of the top quark which are distinctive.
+Firstly, due to the large suppression of decays from the 3rd generation in the CKM matrix,
+the top quark decays to a $b$-quark and a $W$-boson with a branching ratio of close to~1.
+Secondly, the top quark is much heavier than the bottom quark
+meaning that the decay to a $b$-quark is very energetically favourable.
+Therefore, the flavour changing weak decay occurs on a shorter time-scale than parton shower process
+and thus the $W$-boson and hadronic jet from the $b$-quark will form separate observables
+\footnote{If the top-quark has a large-$p_T$ then the resulting $W$-boson and jet will merge.}.
+
+As in dijet production, $t\bar{t}$ pairs can be produced in proton-proton collisions through QCD interactions.
+The two top quarks will decay into two $W$-bosons and two jets containing $b$-quarks.
+One mode of $t\bar{t}$ decay is when one $W$ decays into a $e~\nu_e$ pair and the other into a $\mu~\nu_\mu$ pair.
+This is known as a di-lepton $t\bar{t}$ event, a Feynman diagram showing an example of a di-lepton $t\bar{t}$ event is shown in
+Figure~\ref{fig:theo-ttbar}\footnote{This figure shows the $q\bar{q}$ mode of $t\bar{t}$ production. It should be noted that the $gg$ mode is the dominant at the LHC}.
+
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/ttbar.pdf}
+  \end{center}
+  \caption[A Feynman diagram showing an example of a di-lepton $t\bar{t}$ event.]
+  {A Fenian diagram showing an example of a di-lepton $t\bar{t}$ event~\cite{theo-ttbar_feyn}.}
+  \label{fig:theo-ttbar}
+\end{figure}
+
+Di-lepton $t\bar{t}$ forms a distinct experimental signature.
+Two different flavour leptons in an event signifies that there has likely been two separate weak-decays which would typically be suppressed,
+but here the large mass of the top overcomes this suppression.
+In addition we have two jets formed from $b$-quarks, which can be identified in a detector.
+The distinct signature of di-lepton $t\bar{t}$ events and the fact that they always contain $b$-jets
+means that this decay topology is often used to obtain a pure sample of $b$-jets, such as in Section~\ref{sec:obj-bjets_calib}~and~\ref{sec:trig-bjet_eff}. 
 
 
 \section{Beyond the Standard Model}
