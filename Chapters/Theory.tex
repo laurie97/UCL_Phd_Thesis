@@ -15,12 +15,12 @@ However, it is known that this is not a complete theory and there must be
 a deeper underlying theory that lies beyond the Standard Model.
 
 This chapter firstly aims to describe the Standard Model and its key predictions
-with respect to the analyses within the context of this thesis.
+with respect to the analyses presented in this thesis.
 Section~\ref{sec:theo-sm} briefly describes the Standard Model and
 Section~\ref{sec:theo-qcd} outlines the QCD description of jet formation and dijet production in proton-proton collisions.
 Then, Section~\ref{sec:theo-bsm} will discuss Beyond the Standard Model (BSM) physics;
-specifically what are the problems in the Standard Model that require BSM physics
-and how many proposed BSM models predict resonances decaying to one or two $b$-quarks.
+specifically the problems in the Standard Model that require BSM physics
+and proposed BSM models that predict resonances decaying to one or two $b$-quarks.
 
 \newpage
 \section{The Standard Model}
@@ -47,8 +47,8 @@ Details on the particles in the Standard Model is taken from~\cite{obj-bjets_PDG
 
 \begin{itemize}[leftmargin=*]
 \item\textbf{Quarks:}
-  Quarks are fermions, meaning they are spin-$\frac{1}{2}$ particles,
-  that interact with the strong force; a description of the strong force is in the next section.
+  Quarks are fermions that interact with the strong force;
+  a description of the strong force is in the next section.
   There are 6 different types of quarks, known as flavours, arranged in 3 generations.
   Table~\ref{tab:theo-sm_quarks} summarises the flavours of quark and their key properties.
   For each quark there is also an anti-quark, which has identical mass and spin, but opposite charge and quantum numbers.
@@ -82,9 +82,10 @@ Details on the particles in the Standard Model is taken from~\cite{obj-bjets_PDG
   arranged into  3 generations, each containing a charge $-1$ particle and a charge 0 neutrino.
   Table~\ref{tab:theo-sm_leptons} summarises the leptons and their key properties.
   Neutrinos masses are not well known, but they are known to be non-zero
-  and the sum of the masses of the three flavours of neutrino is less than a few eV~\cite{theo-nu_mass}
-  \footnote{The upper constraint on neutrino mass means that neutrinos are much lighter than the other particles
-  in the Standard Model and the energy scale considered in this thesis; so they will be treated as massless here.}
+  and the sum of the masses of the three flavours of neutrino is less than a few eV~\cite{theo-nu_mass},
+  hence are neglible compared the other particles of the Standard Model.
+  %\footnote{The upper constraint on neutrino mass means that neutrinos are much lighter than the other particles
+  %in the Standard Model and the energy scale considered in this thesis; so they will be treated as massless here.}
   For each lepton there is also an anti-lepton.
   
   {\renewcommand{\arraystretch}{1.5}
@@ -166,30 +167,29 @@ Each interaction is discussed in greater detail below:
   the neutral current interaction and the charged current interaction.
   
   The neutral current interaction is mediated by the $Z_0$ boson, has a universal interaction to all fermions,
-  and does not allow for flavour change within the interactions.
+  and does not allow flavour changing interactions.
 
   The charged current interaction is mediated by the $W^+$ and $W^-$ boson, has a universal interaction with all fermions,
   and flavour changing interactions are allowed.
-  In the quark sector, the fact that the charged current interaction couples with weak eigenstates of fermions rather than
-  their flavour eigenstates,
-  the charged current interaction allows for interactions that change generation of the quark's flavour.
-  The relative amplitudes of each flavour changing interactions is described by the CKM matrix;
-  the structure of this matrix suppresses generational changing interactions,
-  in particular those from the 3rd generation  are highly suppressed.
-  This feature will prove important for identifying the presence of $b$-quarks at the ATLAS detector, which will be discussed in Section~\ref{sec:obj-bjets}.
+  In the quark sector, the charged current interaction
+  couples with weak eigenstates of fermions rather than their flavour eigenstates,
+  allowing for interactions that change generation of the quark's flavour.
+  The relative amplitudes of each flavour changing interaction is described by the CKM matrix;
+  the values of this matrix highly suppresses generational changing interactions involving the 3rd generation of quarks.
+  %This high supprestion will prove important for identifying the presence of $b$-quarks at the ATLAS detector, which will be discussed in Section~\ref{sec:obj-bjets}.
   Both interactions of the weak force are much weaker than the EM force
-  % due to the large masses of the mediating particles
+  due to the large masses of the mediating particles
   ($\text{Weak}/\text{EM} \sim 10^{-4}$).\\ %\vspace{0.5em}
   
 \item\textbf{Strong Force:}
 
-  Quantum Chromodynamics (QCD) is a theory described by a SU(3) gauge symmetry that describes the interactions between quarks and gluons.
-  The symmetry leads to 3 colour charges: known as red, green and blue.
+  Quantum Chromodynamics (QCD) is a theory based on a $SU(3)$ gauge symmetry that describes the strong force.
+  The strong force is mediated by the gluon and interacts with particles that have colour charge; which are quarks and gluons.
+  The fact that the gluon has colour charge means that the gluon is self interacting.
+  The $SU(3)$ symmetry results in 3 colour charges: known as red, green and blue.
   An anti-quark has colour charge anti-red, anti-blue or anti-green.
   A colour neutral object can be formed if all three colour charges are present (i.e. in a baryon containing three quarks)
   or if a colour and the corresponding anti-colour is present (i.e. in a meson that contains $q\bar{q}$).
-  The strong force is mediated by the gluon and interacts with particles that have colour charge; which are quarks and gluons.
-  The fact that the gluon has colour charge means that the gluon is self interacting.
   QCD is important in terms of understanding hadronic jet formation and the production of the
   largest background in a dijet search, so further details can be found in section in Section~\ref{sec:theo-qcd}.\\
 
@@ -262,14 +262,14 @@ the strong coupling constant, $\alpha_S$ as a function of the energy scale, $Q$,
 \end{figure}
 
 There are three features of Figure~\ref{fig:theo-qcd_running} that can be noted.
-Firstly that the size of the coupling constant, $\alpha_S$, is generally large compared to the $\alpha_{EM} \sim 1/137$;
+Firstly that the size of the coupling constant, $\alpha_S$, is generally large compared to $\alpha_{EM} \sim 1/137$;
 this means that, depending on the energy scale $Q$, the strong force is typically stronger than the $EM$ force by one or two orders of magnitude.
 Secondly, at high-energies/low-distance scales the strong force becomes relatively weak, this phenomenon is known as
 \textit{`asymptotic freedom'}.
 At these energy scales, perturbative expansions of QCD are possible.
 Finally, at low-energies/large-distance scales the strong force is exceptionally strong.
 As a result, if two interacting quarks become separated by a large distance then it becomes energetically favourable to
-pair-produce a $q\bar{q}$ pairs from the vacuum until a colour neutral object can be formed.
+pair-produce $q\bar{q}$ pairs from the vacuum until a colour neutral object can be formed.
 Therefore quarks will never be observed in isolation but instead quarks form colour neutral hadrons, this feature of QCD is known as \textit{`confinement'}.
 
 \subsection{Hadronic Jet Formation}
@@ -351,11 +351,11 @@ To calculate the hadronic cross-section, $\sigma_{had}$, in a proton-proton coll
 two elements are separated out in a process called factorisation.
 
 The first element is the parton-level cross-section, $\hat{\sigma}$, which is the cross-section of
-two partons from the proton ($p_a$ and $p_b$) scattering to give two final state partons ($p_i$ and $p_j$).
+two partons from the proton ($p_i$ and $p_j$) scattering to give two final state partons ($p_k$ and $p_l$).
 This is effectively the central part of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_feynman}.
 
-The second element is the Parton Density Functions (PDFs), $f_a(x_a)$, which describes the number density of
-a specific parton, $p_a$, with momentum fraction, $x_a$, in a proton.
+The second element is the Parton Density Functions (PDFs), $f_i(x_i)$, which describes the number density of
+a specific parton, $p_i$, with momentum fraction, $x_i$, in a proton.
 Momentum fraction is defined as the fraction of the protons total momentum that the parton is carrying, $x = p_{\text{parton}}/p_{\text{proton}}$.
 The number density affects the overall cross-section, as it changes the probability that a specific parton
 can form the initial parton propagators.
@@ -364,10 +364,10 @@ top and bottom left of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_fey
 
 The elements are combined to calculate the total $\sigma_{had}$;
 \begin{equation}
-%  \sigma(p_1p_2\to q/g_i q/g_j) = \int dx_1 dx_2 f_1(x_1,\mu^2_F)f_2(x_2\mu^2_F) \sigma(q/g_1,q/g_2, \alpha_s(\mu^2_R),Q^2/\mu^2_F,Q^2/\mu^2_R)
-  \sigma_{had} = \sum_{a,b,i,j} \int dx_a dx_b f_a(x_a,Q^2)f_b(x_b,Q^2) \hat{\sigma}(p_a, p_b\to p_i p_j)
+%  \sigma(p_1p_2\to q/g_k q/g_l) = \int dx_1 dx_2 f_1(x_1,\mu^2_F)f_2(x_2\mu^2_F) \sigma(q/g_1,q/g_2, \alpha_s(\mu^2_R),Q^2/\mu^2_F,Q^2/\mu^2_R)
+  \sigma_{had} = \sum_{a,b,i,j} \int dx_i dx_j f_i(x_i,Q^2)f_j(x_j,Q^2) \hat{\sigma}(p_i, p_j\to p_k p_l)
 \end{equation}
-where there is an integral over all possible values of momentum fractions $x_a$ and $x_b$,
+where there is an integral over all possible values of momentum fractions $x_i$ and $x_j$,
 a sum over all possible partons from the two protons labelled $a$ and $b$,
 and a sum over all possible final-state partons labelled by $i$ and $j$.
 $Q^2$ is the energy scale of the collision.
@@ -378,15 +378,15 @@ With the two elements separated we can discuss each separately.
 \label{sec:theo-qcd_dijet_xs}
 
 To describe the parton-level cross-section we must first define a few variables.
-The first is the invariant mass of the outgoing partons, $m_{ij}$, which is given in terms of the four-momentum of the two partons by;
+The first is the invariant mass of the outgoing partons, $m_{kl}$, which is given in terms of the four-momentum of the two partons by;
 \begin{equation}
-  m_{ij}^2 = (p^\mu_i + p^\mu_j)^2  
+  m_{kl}^2 = (p^\mu_k + p^\mu_l)^2  
 \end{equation}
 \noindent
 Then there are two related angular variables, $y^*$ and $\theta^*$,
-defined in terms of $y_i$, the rapidity of the outgoing parton $p_i$;
+defined in terms of $y_k$, the rapidity of the outgoing parton $p_k$;
 \begin{equation}
-  y^* = (\frac{y_i - y_j}{2}),
+  y^* = (\frac{y_k - y_l}{2}),
 \end{equation}
 \begin{equation}
   cos(\theta^*) = \tanh(y^*)
@@ -394,14 +394,14 @@ defined in terms of $y_i$, the rapidity of the outgoing parton $p_i$;
 \noindent
 Finally the Mandelstam variables, generally used to describe a 2$\to$2 particle scatter event, are defined as 
 \begin{equation}
-  \hat{s} = m_{ij}^2, \hspace{3mm}  \hat{t} = -\hat{s}\hspace{1mm}(1 - \cos{\theta^*}), \hspace{3mm} \hat{u} = - \hat{s}\hspace{1mm}(1+\cos{\theta^*})
+  \hat{s} = m_{kl}^2, \hspace{3mm}  \hat{t} = -\hat{s}\hspace{1mm}(1 - \cos{\theta^*}), \hspace{3mm} \hat{u} = - \hat{s}\hspace{1mm}(1+\cos{\theta^*})
 \end{equation}
 
 \noindent
 The parton-level cross-section of incoming partons $a$ and $b$ scattering to give
-outgoing partons $i$ and $j$ is given in terms of the variables $\theta^*$ and $m_{ij}$~\cite{theo-dijet_harris};
+outgoing partons $i$ and $j$ is given in terms of the variables $\theta^*$ and $m_{kl}$~\cite{theo-dijet_harris};
 \begin{equation}
-  \frac{d\hat{\sigma}(p_a, p_b \to p_i p_j)}{dm_{ij}\hspace{1mm}d\cos{\theta^*}} = \frac{ \pi \alpha_s}{m_{ij}}\hspace{1mm} \text{S}(ab \to ij) \hspace{1mm} \frac{1}{1+\delta_{ij}}
+  \frac{d\hat{\sigma}(p_i, p_j \to p_k p_l)}{dm_{kl}\hspace{1mm}d\cos{\theta^*}} = \frac{ \pi \alpha_s}{m_{kl}}\hspace{1mm} \text{S}(ab \to ij) \hspace{1mm} \frac{1}{1+\delta_{kl}}
   \label{eq:theo-qcd_dijet_xs}
 \end{equation}
 Where $\text{S}(ab \to ij)$ gives the process dependant kinematics of a $ab \to ij$  parton scatter.
@@ -447,8 +447,8 @@ and $q\bar{q}$ pairs can be produced.
 This means that in reality the proton is made up of the three valence quarks, typically carrying a large fraction of the proton's momentum,
 in addition to a sea of quarks and gluons from higher-order QCD effects, that will typically carry a lower fraction of the proton's momentum.
 
-Parton Density Functions (PDFs) give the number density of a specific parton $p_a$ in a proton $P_a$
-for a given momentum fraction $x_a$ and energy scale, $Q$.
+Parton Density Functions (PDFs) give the number density of a specific parton $p_i$ in a proton $P_i$
+for a given momentum fraction $x_i$ and energy scale, $Q$.
 As QCD is not perturbative in the proton due to the large $\alpha_S$ the PDFs cannot be calculated directly.
 Instead the PDFs can be measured by combining a range of experimental scattering results.
 In particular, strong constraints on the PDFs come from deep inelastic scattering using $ep$ colliders, such as HERA~\cite{theo-qcd_hera};
@@ -495,14 +495,14 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   As a result dijet production through QCD is one of the most common events at hadron colliders
   and will be the strongly dominant background in any dijet search.\vspace{0.5em}
   
-\item\textbf{Behaviour with respect to $m_{ij}$ :}\\
+\item\textbf{Behaviour with respect to $m_{kl}$ :}\\
   It can be seen that the hadronic cross-section causes
   a smooth and monotonically decreasing spectrum
-  with respect to $m_{ij}$ as a result of three factors.
-  Firstly the cross section has a $1/m_{ij}$ term.
+  with respect to $m_{kl}$ as a result of three factors.
+  Firstly the cross section has a $1/m_{kl}$ term.
   Secondly, as shown in Section~\ref{sec:theo-qcd_dijet_running},
-  $\alpha_S$ will smoothly decrease with increasing $Q$, which in this case is linked to $m_{ij}$.
-  Finally, as $m_{ij}$ increases then the momentum fraction of the proton, $x$, required to create
+  $\alpha_S$ will smoothly decrease with increasing $Q$, which in this case is linked to $m_{kl}$.
+  Finally, as $m_{kl}$ increases then the momentum fraction of the proton, $x$, required to create
   the dijet event will also increase.
   As shown in Figure~\ref{fig:theo-qcd_pdf}, the parton density functions are generally falling 
   with respect to $x$, which will lead to falling behaviour in the hadronic cross-section.
@@ -510,17 +510,18 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   
 \item\textbf{Behaviour with respect to $y^*$ :}\\
   In all but one of the $\text{S}(ab \to ij)$ terms shown in Table~\ref{tab:theo-qcd_dijet_s},
-  we see that, due to the $t$-channel diagram, there is a $1/\hat{t}$ term that will become large when $\cos{\theta^*} \to 1$.
-  Hence, we find that there is a larger dijet cross-section at large values of $\cos{\theta^*}$ and $y^*$.
+  we see that there is a $1/\hat{t}$ term, which originates from the t-channel Feynman diagrm.
+  This term will become large when $\cos{\theta^*} \to 1$
+  causing a larger dijet cross-section at large values of $\cos{\theta^*}$ and $y^*$.
   \vspace{0.5em}
 
 \item\textbf{Flavour Preference:}\\
   Table~\ref{tab:theo-qcd_dijet_s} shows that all the processes that would produce heavy flavour quarks ($c$ or $b$),
   with the exception of $q_1 \bar{q_1} \to q_2 \bar{q_2}$ and $g g \to q \bar{q}$,
   require a heavy flavour quark to be one of the initial partons.
-  However, Figure~\ref{fig:theo-qcd_pdf} shows the heavy flavour quarks are supressed in
+  However, Figure~\ref{fig:theo-qcd_pdf} shows the heavy flavour quarks are suppressed in
   the PDFs relative to the other partons.
-  Therefore, dijet events will be dominated by jets initated by gluons or light-quarks ($u$, $d$ or $s$).
+  Therefore, dijet events will be dominated by jets initiated by gluons or light-quarks ($u$, $d$ or $s$).
   
   
 \end{itemize}
@@ -582,9 +583,9 @@ and some of its successes,
 such as the prediction of the Higgs boson and the ability to describe complex phenomena such as di-jet production.
 
 However, the Standard Model is known to be an incomplete picture of the universe;
-in this section I will discuss some of the key deficiencies of the Standard Model as it stands
-and why Beyond Standard Model (BSM) physics is required.
-I will then discuss some proposed models that motivate the analyses shown in this thesis.
+in this section I will discuss some of the key deficiencies of the Standard Model demonstrating
+that Beyond Standard Model (BSM) physics is required.
+I will then discuss some proposed BSM models that motivate the analyses shown in this thesis.
 
 \subsection{Motivations for Beyond the Standard Model}
 
@@ -638,7 +639,7 @@ gravitational rotation curves,
 colliding galaxies known as bullet clusters,
 and the cosmic microwave background.
 %and galaxies using gravitataional lensing.
-A wider summary of the evidence for Dark Matter can be found here~\cite{theo-bsm_dm_evidence}
+A wider summary of the evidence for Dark Matter can be found here~\cite{theo-bsm_dm_evidence}.
 
 %\begin{figure}[!b]
 %  \begin{center}
@@ -704,24 +705,25 @@ When calculating the Higgs boson mass one must consider
 %the bare mass of the Higgs boson from the Lagrangian in addition to
 radiative contributions from additional loop diagrams,
 similar to what was done for the gluon propagator in Section~\ref{sec:theo-qcd_dijet_running}.
-However, these contributions are found to be of the order $\delta m_H^2 \sim \frac{1}{16\pi^2} M_{Plank}^2$,
- much larger than the observed mass of the Higgs boson.
+However, these contributions are found to be of the order $\delta m_H^2 \sim \frac{1}{16\pi^2} M_{Plank}^2$\hspace{0.2mm},
+orders of magnitude larger than the observed mass of the Higgs boson.
 This means that in reality some mechanism must either cancel the contributions or reduce their size.
 Whilst the parameters from the Standard Model can be chosen such that these different contributions approximately cancel out,
 such fine-tuning of the parameters is hard to believe without some underlying explanation.
 
 Instead there are two solutions typically proposed to reduce the effect of the loop corrections.
-Firstly, one can introduce BSM physics through a new symmetry such that Standard Model contributions are cancelled by the BSM contributions.
+Firstly, one can introduce BSM physics such that the Standard Model contributions are cancelled by the BSM contributions.
 Secondly, one can introduce some BSM physics at a new energy scale
 such that the loop diagram contributions are cut off at $\delta m_H^2 \sim \frac{1}{16\pi^2} M_{BSM}^2$.
-If the BSM physics is on the TeV scale then this would reduce to size of the contributions to the scale of the Higgs boson's mass.
+If the BSM physics is on the TeV scale then this would reduce to size of the contributions to the scale of the Higgs boson's mass,
+giving some prior belief that new physics could be found at this energy scale.
 %Both solutions could result in BSM physics around the TeV scale.
 
 \subsubsection{Quarks Generational Structure}
 \label{sec:theo-bsm_3g}
 
-The quarks of the standard model have a well ordered generational symmetry,
-three generations of quarks that are in a pair of $+\frac{2}{3}$ and $-\frac{1}{3}$ quarks.
+The quarks of the standard model have a well ordered generational symmetry;
+three generations of quarks each containing a pair of $+\frac{2}{3}$ and $-\frac{1}{3}$ charged quarks.
 However the generational symmetry is not perfect;
 each generation is heavier than the previous one
 and within the generations quarks can have different masses.
@@ -748,17 +750,22 @@ searches for particles decaying to the third generation of quarks.
 \subsection{Beyond Standard Model Theories}
 
 The previous section discussed a list of deficiencies of the Standard Model,
-which makes us confident that there must exist physics Beyond the Standard Model.
+which makes us confident that Beyond the Standard Model physics must exist.
+This leads us to ask what the new theory of physics could be
+and, crucially for an experimentalist,
+how can one obtain evidence of BSM physics.
 
 Many proposed theories of BSM physics include the addition of a new particle and,
 in particular, the special nature of the third generation
 \footnote{Discussed in Section~\ref{sec:theo-bsm_3g}}
 means that some models of BSM predict new particles
-that decay to one or two $b$-quarks.
+that preferentially decay to one or two $b$-quarks.
+Hence, these resonances could provide evidence of BSM physics.
 Further to this the Hierarchy Problem provides motivation to believe
-that any new physics may be at the TeV scale.
+that any new physics, and thus the resonances, may be found at the TeV scale.
 
-Two such models that predict resonances at the TeV scale with preferential decays to $b$-quarks
+Two such models that predict resonances at the TeV
+scale with preferential decays to $b$-quarks
 are discussed below.
 These are used as `benchmark models' in the analysis presented in this thesis,
 where a benchmark model is a plausible signal model 
@@ -768,13 +775,21 @@ that is used to form and optimise a search strategy.
 
 One of the most simple additions to the Standard model is that of a $U(1)'$ gauge symmetry
 which would result in an additional $Z'$ boson.
-The $Z'$ model can decay to a pair of $b$-quarks, as shown in Figure~\ref{fig:theo-bsm_zprime}.
 An additional $U(1)'$ symmetry appears in many different BSM models and is therefore a well motivated BSM extension~\cite{theo-bsm_zprime}.
+The $Z'$ model can decay to a pair of $b$-quarks, as shown in Figure~\ref{fig:theo-bsm_zprime}.
 %Often theses models use the breaking of some higher gauge symmetry to give $G_{SM}~\text{x}~U'(1)^n$ gauge symmetry group,
 %and thus giving additional predicting the existence of new gauge bosons in addition to the Standard Model
 %\footnote{$G_{SM} = SU(3)~\text{x}~SU(2)~\text{x}~U(1)$, which is the gauge symmetry group of the Standard Model discussed in Section~\ref{sec:theo-sm}}.
 
-In this thesis we will consider three different models of $Z'$ boson.
+\begin{figure}[!hbt]
+  \begin{center}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_zprime.png}
+  \end{center}
+  \caption{The leading-order Feynman of the process $q\bar{q} \to Z' \to b\bar{b}$.}
+  \label{fig:theo-bsm_zprime}
+\end{figure}
+
+In this thesis we will consider three different models predicting a $Z'$ boson with different couplings.
 The first is known as the Sequential Standard Model (SSM) $Z'$ in which the couplings
 of the new $Z'$ boson are set to match those of the Standard Model, leading to universal coupling to all fermions.
 The strongest limits on the SSM $Z'$ boson at the TeV scale are set by searching for $Z'$ decaying to lepton pairs~\cite{theo-bsm_dilep}
@@ -786,22 +801,12 @@ this model is therefore not strongly constrained by di-lepton searches.
 The final $Z'$ model considered acts as a Dark Matter mediator which can couple to both the Dark Matter sector and the Standard Model quark sector~\cite{theo_bsm-zprime_dm};
 the motivation for such a model was discussed in Section~\ref{sec:theo_bsm_dm}.
 This model introduces an additional $U(1)'$ symmetry and a Dirac fermion Dark Matter particle that only interacts through the new gauge group.
-The resulting $Z'$ couples to the DM fermion with a coupling $g_\chi$\vspace{0.1mm},
-couples to the Standard Model quark sector with a coupling $g_q$\vspace{0.1mm},
-and is leptophobic such that it does not couple to the lepton sector.
-
-\begin{figure}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_zprime.png}
-  \end{center}
-  \caption{The leading-order Feynman of the process $q\bar{q} \to Z' \to b\bar{b}$.}
-  \label{fig:theo-bsm_zprime}
-\end{figure}
-
+The resulting $Z'$ couples with the DM fermion and the Standard Model quark sector with coupling $g_\chi$\hspace{0.1mm} and $g_q$\hspace{0.1mm}, respectively,
+and is leptophobic so does not couple with the lepton sector.
 
 It is worth noting that the $Z'$ models considered do not preferentially decay to 3rd generation quarks but rather with equal branching ratio.
-This is still advantageous as the dominant dijet background produces jets preferentially
-initiated by gluons or quarks from the first two generations, as discussed in Section~\ref{sec:theo-qcd_dijet}.
+However this can still be considered as preferential decay to $b$-quarks with respect to the dijet background,
+which is dominated by gluons and quarks from the first two generations, as discussed in Section~\ref{sec:theo-qcd_dijet}.
 Furthermore, there exists $Z'$ models that do not couple to all generations equally~\cite{theo-bsm_zprime_3g},
 such that a $Z'$-boson preferably decaying to $b$-quarks is possible.
 %For example; attempts to merge the electro-weak and strong interactions in a so-called 'Grand Unified Theory'
@@ -833,10 +838,9 @@ A Feynman diagram showing the  dominant production and decay mode of a $b^*$ qua
 
 The two benchmark models demonstrate that searching for particles decaying to one or two $b$-quarks
 is well motivated.
-However, it is important to note that the prior expectation in any specific model of BSM is quite low.
+However, it is important to note that the prior belief in any specific model of BSM is small.
 This is because there are many BSM theories proposed
-which can explain some of the problems explained in the previous section and
-there is little evidence to prefer one model over another.
+and there is little evidence to prefer one model over another.
 In addition, one must also consider that the true theory may not have been anticipated,
 such that experiments might see evidence of something truly unexpected.
 
