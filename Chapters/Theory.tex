@@ -20,7 +20,7 @@ Section~\ref{sec:theo-sm} briefly describes the Standard Model and
 Section~\ref{sec:theo-qcd} outlines the QCD description of jet formation and dijet production in proton-proton collisions.
 Then, Section~\ref{sec:theo-bsm} will discuss Beyond the Standard Model (BSM) physics;
 specifically the problems in the Standard Model that require BSM physics
-and proposed BSM models that predict resonances decaying to one or two $b$-quarks.
+and proposed BSM models that predict resonances preferentially decaying to one or two $b$-quarks.
 
 \newpage
 \section{The Standard Model}
@@ -83,7 +83,7 @@ Details on the particles in the Standard Model is taken from~\cite{obj-bjets_PDG
   Table~\ref{tab:theo-sm_leptons} summarises the leptons and their key properties.
   Neutrinos masses are not well known, but they are known to be non-zero
   and the sum of the masses of the three flavours of neutrino is less than a few eV~\cite{theo-nu_mass},
-  hence are neglible compared the other particles of the Standard Model.
+  hence are negligible compared to the other particles of the Standard Model.
   %\footnote{The upper constraint on neutrino mass means that neutrinos are much lighter than the other particles
   %in the Standard Model and the energy scale considered in this thesis; so they will be treated as massless here.}
   For each lepton there is also an anti-lepton.
@@ -152,7 +152,7 @@ The second is Quantum Chromodynamics (QCD)~\cite{theo-qcd} which describes the s
 Finally, the Brout-Englert-Higgs Mechanism~\cite{theo-be,theo-higgs} describes the origin of mass in the Standard Model.
 
 \noindent
-Each interaction is discussed in greater detail below:
+The properties of each force are discussed below:
 \begin{itemize}[leftmargin=*]
 \item\textbf{Electro-magnetic (EM):}
 
@@ -173,7 +173,7 @@ Each interaction is discussed in greater detail below:
   and flavour changing interactions are allowed.
   In the quark sector, the charged current interaction
   couples with weak eigenstates of fermions rather than their flavour eigenstates,
-  allowing for interactions that change generation of the quark's flavour.
+  allowing for interactions that change the generation of the quark's flavour.
   The relative amplitudes of each flavour changing interaction is described by the CKM matrix;
   the values of this matrix highly suppresses generational changing interactions involving the 3rd generation of quarks.
   %This high supprestion will prove important for identifying the presence of $b$-quarks at the ATLAS detector, which will be discussed in Section~\ref{sec:obj-bjets}.
@@ -191,7 +191,7 @@ Each interaction is discussed in greater detail below:
   A colour neutral object can be formed if all three colour charges are present (i.e. in a baryon containing three quarks)
   or if a colour and the corresponding anti-colour is present (i.e. in a meson that contains $q\bar{q}$).
   QCD is important in terms of understanding hadronic jet formation and the production of the
-  largest background in a dijet search, so further details can be found in section in Section~\ref{sec:theo-qcd}.\\
+  largest background in a di-$b$-jet search, so further details can be found in section in Section~\ref{sec:theo-qcd}.\\
 
 \item\textbf{Higgs Mechanism:}
   The Higgs Mechanism \footnote{Also known as the Higgs-Englert-Brout mechanism}
@@ -201,7 +201,7 @@ Each interaction is discussed in greater detail below:
   In addition, a Yukawa coupling term between the scalar field and the fermions gives rise to the mass of the fermions
   \footnote{With the exception of the neutrinos, whose mass is not described by the Standard Model}.
   A final prediction of the Higgs mechanism is the existence of a spin-0 boson, known as the Higgs boson.
-  The first observation of the Higgs boson like object by the ATLAS~\cite{theo-higgs_atlas} and CMS~\cite{theo-higgs_cms} experiments
+  The first observation of a Higgs boson like object by the ATLAS~\cite{theo-higgs_atlas} and CMS~\cite{theo-higgs_cms} experiments
   in 2012 appears to confirm the Higgs mechanism, which is seen as a great triumph of the Standard Model.
 \end{itemize}
 
@@ -223,7 +223,7 @@ Quarks and gluons can often fill similar roles in hadronic jet formation and dij
 
 For any calculation in QCD, or indeed any quantum field theory, one must consider the higher order loop diagrams;
 for example for a simple gluon propagator there are additional first-order loops as shown in Figure~\ref{fig:theo-qcd_gluon}.
-These additional loops lead to divergences in calculations of scattering events in QCD.
+The summation over all higher-order loops lead to divergences in calculations of scattering events in QCD.
 
 \begin{figure}[!hbt]
   \begin{center}
@@ -236,7 +236,7 @@ These additional loops lead to divergences in calculations of scattering events 
 
 To avoid these divergences, there is a well accepted mathematical tool known as renormalisation,
 where one effectively re-scales the fields in the Lagrangian.
-This is done such that the divergences are removed
+Renormalisation is done is done such that the divergences are removed
 and one can perform calculations of QCD in a perturbative expansion.
 This leads to a dependence of the strong coupling, $\alpha_S$, on the renormalisation scaled used, $\mu_R$,
 an effect known as the running of $\alpha_S$.
@@ -262,7 +262,7 @@ the strong coupling constant, $\alpha_S$ as a function of the energy scale, $Q$,
 \end{figure}
 
 There are three features of Figure~\ref{fig:theo-qcd_running} that can be noted.
-Firstly that the size of the coupling constant, $\alpha_S$, is generally large compared to $\alpha_{EM} \sim 1/137$;
+Firstly, the size of the coupling constant, $\alpha_S$, is generally large compared to $\alpha_{EM}$;
 this means that, depending on the energy scale $Q$, the strong force is typically stronger than the $EM$ force by one or two orders of magnitude.
 Secondly, at high-energies/low-distance scales the strong force becomes relatively weak, this phenomenon is known as
 \textit{`asymptotic freedom'}.
@@ -270,17 +270,17 @@ At these energy scales, perturbative expansions of QCD are possible.
 Finally, at low-energies/large-distance scales the strong force is exceptionally strong.
 As a result, if two interacting quarks become separated by a large distance then it becomes energetically favourable to
 pair-produce $q\bar{q}$ pairs from the vacuum until a colour neutral object can be formed.
-Therefore quarks will never be observed in isolation but instead quarks form colour neutral hadrons, this feature of QCD is known as \textit{`confinement'}.
+Therefore quarks are not observed in isolation but instead quarks form colour neutral hadrons, this feature of QCD is known as \textit{`confinement'}.
 
 \subsection{Hadronic Jet Formation}
 \label{sec:theo-qcd_jets}
 
-It is common in hadronic colliders that a high-momentum quark or gluon will be produced in the final-state,
-an example of this is dijet production, as described in Section~\ref{sec:theo-qcd_dijet}.
+It is common in hadronic colliders that a high-momentum quark or gluon will be produced in the final-state
+\footnote{an example of this is dijet production, as will be described in Section~\ref{sec:theo-qcd_dijet}.}.
 However, as described in Section~\ref{sec:theo-qcd_dijet_running},
 the large values of $\alpha_S$ at large distance-scales require quark confinement, meaning that an isolated quark or gluon will not be observed.
 Instead a stream of energetic, collimated hadrons will be formed, known as a hadronic jet.
-Hadronic jet formation is described by two distinct processes; parton-shower and hadronisation.
+Hadronic jet formation occurs through two distinct processes; parton-shower and hadronisation.
 
 \begin{itemize}[leftmargin=*]
   
@@ -306,8 +306,8 @@ Hadronic jet formation is described by two distinct processes; parton-shower and
   \footnote{Some unstable hadrons, such as a $\Delta^{++}$, may be initially formed in the process but these will decay rapidly through the strong interaction.
     In addition, some hadrons might not be stable under the weak interaction, such as a Kaon, but the time-scale of their decays will be much larger.}.
   The hadronisation process occurs at large values of $\alpha_S$ so cannot be calculated using perturbative expansions;
-  to simulate hadronisation models such as the string model~\cite{theo-qcd_jet_string} and the
-  cluster model~\cite{theo-qcd_jet_cluster} are used.
+  models such as the string model~\cite{theo-qcd_jet_string} and the
+  cluster model~\cite{theo-qcd_jet_cluster} are used to simulate hadronisation.
 
 \end{itemize}
   
@@ -332,7 +332,7 @@ The first step of dijet production in $pp$ colliders is the two protons interact
 the frequency of this interaction is described by the hadronic cross-section, $\sigma_{had}$.
 The free partons will then form hadronic jets through the processes described in Section~\ref{sec:theo-qcd_jets}, which can be observed.
 As an example, Figure~\ref{fig:theo-qcd_dijet_feynman} shows the Feynman diagram of
-dijet production in a proton-proton collision through the qg$\to$qg channel.
+dijet production in a proton-proton collision through the $qg \to qg$ channel.
 
 \begin{figure}[!hbt]
   \begin{center}
@@ -340,8 +340,8 @@ dijet production in a proton-proton collision through the qg$\to$qg channel.
   \end{center}
 %  \caption[Three feynman diagrams illustrating the parton level scatter process in dijet production at the LHC.]
 %          {Three feynman diagrams illustrating the parton level scatter process in dijet production at the LHC~\cite{theo-qcd_dijet_feynman}.}
-  \caption[A Feynman diagram showing dijet production in a proton-proton collision through the qg$\to$qg channel.]
-          {A Feynman diagram showing dijet production in a proton-proton collision through the qg$\to$qg channel. Adapted from~\cite{theo-qcd_dijet_feynman}.}
+  \caption[A Feynman diagram showing dijet production in a proton-proton collision through the $qg \to qg$ channel.]
+          {A Feynman diagram showing dijet production in a proton-proton collision through the $qg \to qg$ channel. Adapted from~\cite{theo-qcd_dijet_feynman}.}
   \label{fig:theo-qcd_dijet_feynman}
 \end{figure}
 
@@ -354,9 +354,9 @@ The first element is the parton-level cross-section, $\hat{\sigma}$, which is th
 two partons from the proton ($p_i$ and $p_j$) scattering to give two final state partons ($p_k$ and $p_l$).
 This is effectively the central part of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_feynman}.
 
-The second element is the Parton Density Functions (PDFs), $f_i(x_i)$, which describes the number density of
+The second element is the Parton Density Functions (PDFs), $f_i(x_i)$, which give the number density of
 a specific parton, $p_i$, with momentum fraction, $x_i$, in a proton.
-Momentum fraction is defined as the fraction of the protons total momentum that the parton is carrying, $x = p_{\text{parton}}/p_{\text{proton}}$.
+Momentum fraction is defined as the fraction of the proton's total momentum that the parton is carrying, $x = p_{\text{parton}}/p_{\text{proton}}$.
 The number density affects the overall cross-section, as it changes the probability that a specific parton
 can form the initial parton propagators.
 This part of the interaction is indicated by the circles in the
@@ -365,26 +365,29 @@ top and bottom left of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_fey
 The elements are combined to calculate the total $\sigma_{had}$;
 \begin{equation}
 %  \sigma(p_1p_2\to q/g_k q/g_l) = \int dx_1 dx_2 f_1(x_1,\mu^2_F)f_2(x_2\mu^2_F) \sigma(q/g_1,q/g_2, \alpha_s(\mu^2_R),Q^2/\mu^2_F,Q^2/\mu^2_R)
-  \sigma_{had} = \sum_{a,b,i,j} \int dx_i dx_j f_i(x_i,Q^2)f_j(x_j,Q^2) \hat{\sigma}(p_i, p_j\to p_k p_l)
+  \sigma_{had} = \sum_{i,j,k,l} \int dx_i\hspace{0.3mm} dx_j \hspace{1mm} f_i(x_i,Q^2)\hspace{1mm}f_j(x_j,Q^2)\hspace{1mm}\hat{\sigma}(p_i, p_j\to p_k p_l)
 \end{equation}
 where there is an integral over all possible values of momentum fractions $x_i$ and $x_j$,
-a sum over all possible partons from the two protons labelled $a$ and $b$,
-and a sum over all possible final-state partons labelled by $i$ and $j$.
+a sum over all possible partons from the two protons labelled $i$ and $j$,
+and a sum over all possible final-state partons labelled by $k$ and $l$
+\footnote{The final state sums do not include top-quarks because, as will be discussed in Section~\ref{sec:theo-ttbar}, they do not form regular jets. 
+  In addition, due to its heavy mass, the top-quark is heavily supressed in the PDFs so can be ignored in the sum over initial partons.}.
 $Q^2$ is the energy scale of the collision.
 
+\noindent
 With the two elements separated we can discuss each separately.
 
 \subsubsection{Parton-level Cross-Section}
 \label{sec:theo-qcd_dijet_xs}
 
 To describe the parton-level cross-section we must first define a few variables.
-The first is the invariant mass of the outgoing partons, $m_{kl}$, which is given in terms of the four-momentum of the two partons by;
+The first is the invariant mass of the outgoing partons, $m_{kl}$, which is given in terms of the four-momentum of the two partons;
 \begin{equation}
   m_{kl}^2 = (p^\mu_k + p^\mu_l)^2  
 \end{equation}
 \noindent
 Then there are two related angular variables, $y^*$ and $\theta^*$,
-defined in terms of $y_k$, the rapidity of the outgoing parton $p_k$;
+defined in terms of the rapidities of the outgoing partons, $y_k$ and $y_l$;
 \begin{equation}
   y^* = (\frac{y_k - y_l}{2}),
 \end{equation}
@@ -398,14 +401,14 @@ Finally the Mandelstam variables, generally used to describe a 2$\to$2 particle 
 \end{equation}
 
 \noindent
-The parton-level cross-section of incoming partons $a$ and $b$ scattering to give
-outgoing partons $i$ and $j$ is given in terms of the variables $\theta^*$ and $m_{kl}$~\cite{theo-dijet_harris};
+The parton-level cross-section of incoming partons $i$ and $j$ scattering to give
+outgoing partons $k$ and $l$ is given in terms of the variables $\theta^*$ and $m_{kl}$~\cite{theo-dijet_harris};
 \begin{equation}
   \frac{d\hat{\sigma}(p_i, p_j \to p_k p_l)}{dm_{kl}\hspace{1mm}d\cos{\theta^*}} = \frac{ \pi \alpha_s}{m_{kl}}\hspace{1mm} \text{S}(ab \to ij) \hspace{1mm} \frac{1}{1+\delta_{kl}}
   \label{eq:theo-qcd_dijet_xs}
 \end{equation}
 Where $\text{S}(ab \to ij)$ gives the process dependant kinematics of a $ab \to ij$  parton scatter.
-$\text{S}(ab \to ij)$ for each process is described in Table~\ref{tab:theo-qcd_dijet_s}.
+$\text{S}(ab \to ij)$ for each process is given in Table~\ref{tab:theo-qcd_dijet_s}.
 
 %  {\renewcommand{\arraystretch}{1.5}
 %  \begin{table}[!ht]
@@ -431,8 +434,10 @@ $\text{S}(ab \to ij)$ for each process is described in Table~\ref{tab:theo-qcd_d
   \begin{center}
     \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/qcd_dijet_stable.pdf}
   \end{center}
-  \caption[A table showing the process dependant part of the parton cross-section, $\text{S}(ab \to ij)$, for each of the processes in dijet production.]
-  {A table showing the process dependant part of the parton cross-section, $\text{S}(ab \to ij)$, for each of the processes in dijet production. Taken from Table 1 of~\cite{theo-dijet_harris}.}
+  \caption[A table showing $\text{S}(ab \to ij)$, the process dependant part of the parton cross-section, for all possible processes.
+    The indicies refer to quark flavour, if no indicies are used then the same flavour is used for all quarks in that process.]
+          {A table showing $\text{S}(ab \to ij)$, the process dependant part of the parton cross-section, for all possible processes.
+            The indicies refer to quark flavour, if no indicies are used then the same flavour is used for all quarks in that process. Taken from Table 1 of~\cite{theo-dijet_harris}.}
   \label{tab:theo-qcd_dijet_s}
 \end{table}
 
@@ -442,14 +447,14 @@ $\text{S}(ab \to ij)$ for each process is described in Table~\ref{tab:theo-qcd_d
 
 A naive model of the proton contains two up-quarks and a down-quark,
 known as valence quarks, each carrying $\frac{1}{3}$ of the proton's momentum.
-However, QCD interactions within the proton mean that a gluons can be emitted from the valence quarks
-and $q\bar{q}$ pairs can be produced.
-This means that in reality the proton is made up of the three valence quarks, typically carrying a large fraction of the proton's momentum,
-in addition to a sea of quarks and gluons from higher-order QCD effects, that will typically carry a lower fraction of the proton's momentum.
+However, QCD interactions within the proton mean that gluons can be emitted from the valence quarks
+and $q\bar{q}$ pairs can be produced from the emitted gluons.
+This means that, in reality, the proton is made up of the three valence quarks, typically carrying a large fraction of the proton's momentum,
+in addition to a sea of quarks and gluons from QCD effects, that will typically carry a lower fraction of the proton's momentum.
 
 Parton Density Functions (PDFs) give the number density of a specific parton $p_i$ in a proton $P_i$
 for a given momentum fraction $x_i$ and energy scale, $Q$.
-As QCD is not perturbative in the proton due to the large $\alpha_S$ the PDFs cannot be calculated directly.
+Due to the large value of $\alpha_S$ in the proton, QCD cannot be considered in pertubative expansions and as such the PDFs cannot be calculated directly.
 Instead the PDFs can be measured by combining a range of experimental scattering results.
 In particular, strong constraints on the PDFs come from deep inelastic scattering using $ep$ colliders, such as HERA~\cite{theo-qcd_hera};
 the strong constraints are due, in part, to there only being one parton in the collision allowing direct access to the PDFs in a cross-section measurement.
@@ -461,7 +466,7 @@ the strong constraints are due, in part, to there only being one parton in the c
 
 Figure~\ref{fig:theo-qcd_pdf} shows the $x\hspace{0.3mm}F(x,Q^2)$ for a $Q^2$ of 10 and $10^4$ $\text{GeV}^2$
 from the MMHT2014 PDF set~\cite{theo-qcd_pdf}.
-The various colours lines represent the PDF for each of the different partons.
+The various coloured lines represent the PDF for each of the different partons.
 
 \begin{table}[!hbt]
   \begin{center}
@@ -474,18 +479,18 @@ The various colours lines represent the PDF for each of the different partons.
 
 One can note that as $x$ increases the values of the PDF for the sea quarks and gluons will fall smoothly;
 this is because it is energetically unfavourable to emit a high momentum gluon or $q\bar{q}$ pair.
-The fall in the PDFs with respect to $x$ is particularly notable for the gluon which is the dominant contribution at low values of $x$.
+The fall in the PDFs with respect to $x$ is particularly notable for the gluon which is the dominant contribution at large values of $Q^2$.
 
 The PDFs of the valence quarks, $u_v$ and $d_v$, have a peak value around $x \sim \frac{1}{3}$, and then fall off rapidly at higher $x$.
 If one considered the proton in the initial naive model of the proton then we find the PDFs of valence quarks as delta peaks at exactly $\frac{1}{3}$
 with amplitude of $\frac{2}{3}$ and $\frac{1}{3}$ for the $u$ and $d$ quark respectively;
-however, the higher-order QCD effects (which are non-perturbative) have smeared this peak to what is observed.
+however, QCD interactions have smeared this peak to what is observed.
 
 \subsubsection{Features of the Hadronic Cross-section}
 
 There are four important features that one can qualitatively describe about the dijet hadronic cross-section
 from the two factorised elements shown in Section~\ref{sec:theo-qcd_dijet_xs}~and~\ref{sec:theo-qcd_pdf}.
-These important features will have significance when forming the dijet search analysis strategy in
+These important features will have significance when forming the di-$b$-jet search analysis strategy in
 Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Event selection chapter}.
 
 \begin{itemize}[leftmargin=*]
@@ -493,13 +498,13 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   The strong coupling constant $\alpha_s$ is much larger than the other forces,
   meaning that the dijet cross-section is large.
   As a result dijet production through QCD is one of the most common events at hadron colliders
-  and will be the strongly dominant background in any dijet search.\vspace{0.5em}
+  and will be the strongly dominant background in any di-$b$-jet search.\vspace{0.5em}
   
 \item\textbf{Behaviour with respect to $m_{kl}$ :}\\
   It can be seen that the hadronic cross-section causes
   a smooth and monotonically decreasing spectrum
   with respect to $m_{kl}$ as a result of three factors.
-  Firstly the cross section has a $1/m_{kl}$ term.
+  Firstly, the cross section has a $1/m_{kl}$ term.
   Secondly, as shown in Section~\ref{sec:theo-qcd_dijet_running},
   $\alpha_S$ will smoothly decrease with increasing $Q$, which in this case is linked to $m_{kl}$.
   Finally, as $m_{kl}$ increases then the momentum fraction of the proton, $x$, required to create
@@ -510,13 +515,13 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   
 \item\textbf{Behaviour with respect to $y^*$ :}\\
   In all but one of the $\text{S}(ab \to ij)$ terms shown in Table~\ref{tab:theo-qcd_dijet_s},
-  we see that there is a $1/\hat{t}$ term, which originates from the t-channel Feynman diagrm.
+  we see that there is a $1/\hat{t}$ term, which originates from the t-channel Feynman diagram.
   This term will become large when $\cos{\theta^*} \to 1$
-  causing a larger dijet cross-section at large values of $\cos{\theta^*}$ and $y^*$.
+  causing the dijet cross-section to peak at large values of $\cos{\theta^*}$ and $y^*$.
   \vspace{0.5em}
 
 \item\textbf{Flavour Preference:}\\
-  Table~\ref{tab:theo-qcd_dijet_s} shows that all the processes that would produce heavy flavour quarks ($c$ or $b$),
+  Table~\ref{tab:theo-qcd_dijet_s} shows that all the processes that produce heavy flavour quarks ($c$ or $b$),
   with the exception of $q_1 \bar{q_1} \to q_2 \bar{q_2}$ and $g g \to q \bar{q}$,
   require a heavy flavour quark to be one of the initial partons.
   However, Figure~\ref{fig:theo-qcd_pdf} shows the heavy flavour quarks are suppressed in
@@ -526,34 +531,32 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   
 \end{itemize}
 
-Finally it should be noted that the above description of the dijet cross-section is
-not a full description; I have only considered the tree-level diagrams where
-one needs to consider higher orders of QCD to give a fuller description of dijet production.
+Finally, it should be noted that the above description of the dijet cross-section is
+not a full description; I have only considered the tree-level diagrams, 
+but one needs to consider higher orders of QCD to give a complete description of dijet production.
 Related to that issue is the occurrence of initial state and final state radiation, known as ISR and FSR respectively.
-ISR is when an additional parton is radiated off the incoming parton where FSR is when an additional parton is radiated off the outgoing parton.
+ISR is when an additional parton is radiated off the incoming parton and FSR is when an additional parton is radiated off the outgoing parton to form a separate jet.
 This can lead to additional jets in an event, creating a multi-jet event.
 
-One should also consider the Underlying Event (UE) which effectively comprises of the remnants of the proton not used in the hard-scatter.
-The UE will mostly be hadronic activity and as a result can lead to additional jets in the event, again giving us a multi-jet event.
+In addition, there is also the Underlying Event (UE) which effectively comprises of the remnants of the proton not used in the hard-scatter.
+The UE will mostly be hadronic activity and as a result can lead to additional jets in the event, again creating a multi-jet event.
 
 \subsection{A Special Case: $t\bar{t}$}
 \label{sec:theo-ttbar}
 
-The top-quark is a special case when discussing the formation of jets from quarks.
-This results in the unique topology when top-quark pair production occurs, known as $t\bar{t}$ events, which is often exploited by analyses.
-
-There are two theoretically motivated features of the top quark which are distinctive.
+The top-quark is a special case when discussing the formation of jets from quarks,
+due to two properties of the top quark which are distinctive.
 Firstly, due to the large suppression of decays from the 3rd generation in the CKM matrix,
 the top quark decays to a $b$-quark and a $W$-boson with a branching ratio of close to~1.
 Secondly, the top quark is much heavier than the bottom quark
-meaning that the decay to a $b$-quark is very energetically favourable.
-Therefore, the flavour changing weak decay occurs on a shorter time-scale than parton shower process
-and thus the $W$-boson and hadronic jet from the $b$-quark will form separate observables
+meaning that the decay to a $b$-quark is very energetically favourable,
+such that top-quark decays a shorter time-scale than parton shower process.
+Therefore, the top-quark results in two separate objects; the $W$-boson and the hadronic jet.
 \footnote{If the top-quark has a large-$p_T$ then the resulting $W$-boson and jet can merge.}.
 
-As in dijet production, $t\bar{t}$ pairs can be produced in proton-proton collisions through QCD interactions.
+As in dijet production, $t\bar{t}$ pairs can be pair-produced in proton-proton collisions through QCD interactions.
 The two top quarks will decay into two $W$-bosons and two jets containing $b$-quarks.
-One mode of $t\bar{t}$ decay is when the $W$ decays into a $l^+~\nu_l$ pair and the other into a $l^{-}~\bar{\nu_l}$ pair.
+One mode of $t\bar{t}$ decay is when one $W$-boson decays into a $l^+~\nu_l$ pair and the other into a $l^{-}~\bar{\nu_l}$ pair.
 This is known as a di-lepton $t\bar{t}$ event, a Feynman diagram showing an example of a di-lepton $t\bar{t}$ event is shown in
 Figure~\ref{fig:theo-ttbar}\footnote{This figure shows the $q\bar{q}$ mode of $t\bar{t}$ production. It should be noted that the $gg$ mode is the dominant at the LHC}.
 
@@ -567,12 +570,13 @@ Figure~\ref{fig:theo-ttbar}\footnote{This figure shows the $q\bar{q}$ mode of $t
 \end{figure}
 
 Di-lepton $t\bar{t}$ forms a distinct experimental signature.
-In particular two leptons of different flavours in an event signifies
-that there has likely been two separate weak-decays which would typically be suppressed,
+In particular, the case of opposite flavour di-lepton $t\bar{t}$, where the two leptons have different flavours, is very distinct
+because this has been caused by two separate weak-decays which would typically be suppressed,
 but here the large mass of the top overcomes this suppression.
 In addition we have two jets formed from $b$-quarks, which can be observed.
 The distinct signature of di-lepton $t\bar{t}$ events and the fact that they always contain $b$-jets
-means that this decay topology is often used to obtain a pure sample of $b$-jets, such as in Section~\ref{sec:obj-bjets_calib}~and~\ref{sec:trig-bjet_eff}. 
+means that this decay topology is often used to obtain a pure sample of $b$-jets,
+such as in Section~\ref{sec:obj-bjets_calib}~and~\ref{sec:trig-bjet_eff}. 
 
 \clearpage
 \section{Beyond the Standard Model}
@@ -635,7 +639,7 @@ and that Dark Matter must be massive, otherwise it would not interact through gr
 
 The evidence for Dark Matter comes from many separate astronomical observations:
 such as studies of
-gravitational rotation curves,
+galaxy rotation curves,
 colliding galaxies known as bullet clusters,
 and the cosmic microwave background.
 %and galaxies using gravitataional lensing.
@@ -761,11 +765,10 @@ in particular, the special nature of the third generation
 means that some models of BSM predict new particles
 that preferentially decay to one or two $b$-quarks.
 Hence, these resonances could provide evidence of BSM physics.
-Further to this the Hierarchy Problem provides motivation to believe
-that any new physics, and thus the resonances, may be found at the TeV scale.
+Further to this, the Hierarchy Problem provides motivation to believe
+that any new physics may be found at the TeV scale.
 
-Two such models that predict resonances at the TeV
-scale with preferential decays to $b$-quarks
+Two such models that predict resonances with preferential decays to $b$-quarks
 are discussed below.
 These are used as `benchmark models' in the analysis presented in this thesis,
 where a benchmark model is a plausible signal model 
@@ -785,7 +788,7 @@ The $Z'$ model can decay to a pair of $b$-quarks, as shown in Figure~\ref{fig:th
   \begin{center}
     \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_zprime.png}
   \end{center}
-  \caption{The leading-order Feynman of the process $q\bar{q} \to Z' \to b\bar{b}$.}
+  \caption{The leading-order Feynman diagram of the process $q\bar{q} \to Z' \to b\bar{b}$.}
   \label{fig:theo-bsm_zprime}
 \end{figure}
 
@@ -804,8 +807,8 @@ This model introduces an additional $U(1)'$ symmetry and a Dirac fermion Dark Ma
 The resulting $Z'$ couples with the DM fermion and the Standard Model quark sector with coupling $g_\chi$\hspace{0.1mm} and $g_q$\hspace{0.1mm}, respectively,
 and is leptophobic so does not couple with the lepton sector.
 
-It is worth noting that the $Z'$ models considered do not preferentially decay to 3rd generation quarks but rather with equal branching ratio.
-However this can still be considered as preferential decay to $b$-quarks with respect to the dijet background,
+It is worth noting that the $Z'$ models considered do not preferentially decay to $b$-quarks but rather with equal branching ratio.
+However, this can still be considered as preferential decay to $b$-quarks with respect to the dijet background,
 which is dominated by gluons and quarks from the first two generations, as discussed in Section~\ref{sec:theo-qcd_dijet}.
 Furthermore, there exists $Z'$ models that do not couple to all generations equally~\cite{theo-bsm_zprime_3g},
 such that a $Z'$-boson preferably decaying to $b$-quarks is possible.
@@ -828,7 +831,7 @@ A Feynman diagram showing the  dominant production and decay mode of a $b^*$ qua
   \begin{center}
     \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_bstar.png}
   \end{center}
-  \caption{The leading-order Feynman of the process $bg \to b^* \to bg$}
+  \caption{The leading-order Feynman diagram of the process $bg \to b^* \to bg$}
   %\caption{A Feynman diagram showing the dominant production and decay mode of a $b^{*}$ quark.}
   \label{fig:theo-bsm_bstar}
 \end{figure}
