@@ -1,0 +1,92 @@
+\chapter{Di-$b$-jet Search: Outline and Event Selection}
+\label{sec:evt}
+
+In Section~\ref{sec:theo-bsm} it was shown that there are many deficiencies to the Standard Model
+providing strong evidence that Beyond Standard Model (BSM) physics must exist; and motivations that this new physics could be at the TeV scale.
+Many BSM models predict the existence of resonances decaying to one or two $b$-quarks that could be produced at the ATLAS experiement.
+In Section~\ref{sec:theo-qcd-jets} it was described that free quarks would not be observed directly but instead as jets
+and Section~\ref{sec:obj-jets}and~\ref{sec:obj-bjets} it was described how we can observe these jets and identify if they contain $b$-quarks.
+Hence, so far we have motivated and broadly described the reconstruction techniques for
+a search for resonances decaying to one or two $b$-jets,
+an analysis that is called a di-$b$-jet search.
+
+This chapter and the next two chapters will describe 
+three such di-$b$-jet searches which are based on three different data-sets.
+In this chapter, Section~\ref{sec:evt-outline} will give an outline of the
+overall analysis strategy
+and state how the analysis description has been split into three chapters.
+Section~\ref{sec:evt-datasets}
+describes the three different data-sets, motivating their use
+and clearly labelling them for reference in future sections.
+
+The remainder of the chapter will focus on event selection;
+Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
+that we will consider in this analysis.
+Section~\ref{sec:evt-sel} will describe
+the event selection used to analyse each of the data-sets
+
+\section{Analysis Outline}
+\label{sec:evt-outline}
+
+The strategy used for the di-$b$-jet analysis can be split up into broadly 3 parts,
+which will be described in this chapter and the two following chapters.
+A brief outline of these three parts is given here,
+which will be substatiated in the following chapters.
+
+\begin{itemize}[leftmargin=*]
+\item\textbf{Di-$b$-jet Event Selection:}
+  The first step is to select events that could come from a resonance decaying to one or two $b$-quarks;
+  and as such we will require two high-momentum jets, where either at least one jet has been $b$-tagged been $b$-tagged.
+  Full details and motivations of the selections applied are found in Section~\ref{sec:evt-sel}.
+  The dominant background of this selection will be QCD multi-jet, which is discussed in Section~\ref{sec:evt-s+b}.
+  \vspace{0.5em}
+\item\textbf{Search Phase:}
+  Once events have been selected the next part of the analysis aims to determine if there is
+  any evidence of any resonances in the selected events, this step is known as the search phase.
+  For this we will use the $m_{jj}$ spectrum, where $m_{jj}$ is the invariant mass of the two leading jets.
+  It is known that the $m_{jj}$ distibution from QCD multi-jet will be smoothly falling,
+  and as such we use a fit function to describe background.
+  Any new particle will appear as a resonance or `bump' on the background; 
+  Figure~\ref{fig:evt-dijet_schem} illustrates how such a resonance would look on top of a smoothly falling background.
+  A model-independant search for such a feature is done using the bumpHunter algorithm.
+  Chapter~\label{sec:bkg} contains a full description of the fitting and the bumpHunter strategy,
+  along with the relevant tests of such a strategy and the results of the search-phase in the data-sets considered.  
+  \vspace{0.5em}
+\item\textbf{Limit Setting:}
+
+  If, in the search phase stage of the analysis, no significant evidence of signal is
+  found then we attempt to quantify the the level of confidence of that no signal has been found.
+  We set 95\% confidence exclusion limits on our two benchmark signals (described in Section~\ref{sec:evt-s+b}
+  and a generic gaussian signal.
+  The limit-setting methodology, description of systematics considered
+  and final limit results in the data sets considered is contained in Chapter~\ref{sec:lim}.
+
+
+\end{itemize}
+
+
+
+
+
+
+
+\section{Datasets}
+\label{sec:evt-datasets}
+
+\section{Signal and Backgrounds}
+\label{sec:evt-s+b}
+
+\section{Event Selection}
+\label{sec:evt-sel}
+
+\subsection{Jet Selection}
+\label{sec:evt-sel-jet}
+
+\subsection{Event Kinematics}
+\label{sec:evt-sel-event}
+
+\subsection{$b$-Tagging}
+\label{sec:evt-sel-btag}
+
+\subsection{Acceptance}
+\label{sec:evt-sel-acc}
