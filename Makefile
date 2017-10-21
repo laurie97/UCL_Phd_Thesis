@@ -12,10 +12,10 @@ all: Thesis.pdf
 
 
 Thesis.pdf: $(LaTeXSources)
-	lualatex --halt-on-error $(basename $@).tex
+	lualatex --halt-on-error $(basename $@).tex References/*bib
 	bibtex $(basename $@)
-	lualatex --halt-on-error $(basename $@).tex
-	lualatex --halt-on-error $(basename $@).tex
+	lualatex --halt-on-error $(basename $@).tex References/*bib
+	lualatex --halt-on-error $(basename $@).tex References/*bib
 
 Chapter:
 	echo "Making chapter ${chap}"

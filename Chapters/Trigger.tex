@@ -173,13 +173,13 @@ as this is set of working points used in this analysis.
 \subsection{Datasets}
 The data used for this analysis is the full 2016 ATLAS data-set.
 In addition to the usual data-quality requirements applied,
-as discussed in Section~\ref{sec:evtSel_GRL}\textit{(sec:evtSel\_GRL)},
+as discussed in Section~\ref{sec:evtSel_datasets}
 a $b$-jet trigger aware Good Run List (GRL)
 \footnote{A GRL is effectively a list of lumi-blocks that pass certain data-quality requirements.
- As mentioned in the text a further discussion is held here in Section~\ref{sec:evtSel_GRL}\textit{(sec:evtSel\_GRL)}}
+ As mentioned in the text a further discussion is held here in Section~\ref{sec:evt_datasets}}
 applies the requirement that the online beamspot $z$-position is within 2mm of the origin in Periods A-I of the data.
-This means that the data-set contains 24.5~\ifb~of data.
-A discussion of the requirement for this GRL is in Section~\ref{sec:trig-inv}. 
+This means that the data-set contains 24.3~\ifb~of data.
+A discussion of the requirement for this GRL is in Section~\ref{sec:trig-grl}. 
 
 For the simulated $t\bar{t}$ sample, the generation is performed with
 a Powheg-Box v2~\cite{trig-powheg} generator with the CT10 PDF sets in the matrix element calculations.
@@ -428,7 +428,7 @@ This demonstrates the success of the backup vertex approach.
 \FloatBarrier
 
 \subsection{Solution: $b$-Jet Trigger GRL}
-\label{sec:trig-inv}
+\label{sec:trig-grl}
 
 To summarise, in the previous section it is shown that at large values of absolute online beamspot $z$-position
 the measured $\epsilon_{bTrig}$ in Epoch 1 and $\epsilon_{bPerf}$ in Epoch 2 is lower in data than in MC, due to poor \verb|xPrmVtx| PV finding performance.
