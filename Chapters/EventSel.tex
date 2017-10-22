@@ -39,9 +39,9 @@ and full detail can be fround in the relevant chapter.
 \item\textbf{Search Phase:} (\textit{Chapter~\ref{sec:bkg}})\\
   Once events have been selected the next part of the analysis aims to determine if there is
   is a new particle in the selected events; this step is known as the `search phase'.
-  For this we will use the $m_{jj}$ spectrum, where $m_{jj}$ is the invariant mass of the two highest $p_T$ jets.
+  For this we will use the \mjj~spectrum, where \mjj~is the invariant mass of the two highest \pT~jets.
   A new particle will appear as a resonance (or `bump') on the smoothy falling
-  $m_{jj}$ distibution from QCD multi-jet, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
+  \mjj~distibution from QCD multi-jet, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
   A fit function is used to model the smoothly falling QCD background and a
   a model-independant search for for resonances is performed using the BumpHunter algorithm.
   Chapter~\ref{sec:bkg} contains a full description of the search phase strategy.
@@ -52,10 +52,10 @@ and full detail can be fround in the relevant chapter.
   \begin{center}
     \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/Gen/dijet_schem.pdf}
   \end{center}
-  \caption[A cartoon illustrating the use of dijet invariant mass ($m_{jj}$) distribution in the search phase of the di-$b$-jet analysis.
+  \caption[A cartoon illustrating the use of dijet invariant mass (\mjj) distribution in the search phase of the di-$b$-jet analysis.
     Shown is the expected smoothly falling  distribution of multijet QCD (labelled as SM)
     and a resonance shape due to Beyond Standard Model particle (labelled as BSM)]
-          {A cartoon illustrating the use of the dijet invariant mass ($m_{jj}$) distribution in the search phase of the di-$b$-jet analysis.
+          {A cartoon illustrating the use of the dijet invariant mass (\mjj) distribution in the search phase of the di-$b$-jet analysis.
             Shown is the smoothly falling distribution from multijet QCD (SM)
             and a resonance shape caused by a Beyond Standard Model particle (BSM)~\textit{Reference Lene}.}
           \label{fig:evt-dijet_schem}
@@ -125,8 +125,8 @@ The data-sets are:
   which requires two trigger-level jets with $p_T >$ 150 GeV and $p_T >$ 50 GeV
   where both jets have been $b$-tagged at the trigger level
   \footnote{Further details of $b$-jet triggers and this particular trigger used in this analysis is in Section~\ref{sec:trig-bjet}.}.
-  The \verb|Full16_LowMass| uses a $b$-jet trigger as the lower $p_T$ thresholds allow
-  the analysis to probe a lower range of $m_{jj}$.
+  The \verb|Full16_LowMass| uses a $b$-jet trigger as the lower \pT~thresholds allow
+  the analysis to probe a lower range of \mjj.
   This analysis did not combine data from 2015 as this used a significatly different $b$-trigger configuration.
   the \verb|Full16_LowMass| uses a $b$-jet trigger aware GRL, which in addition to the normal GRL,
   removed periods of data where the $b$-jet trigger was performing in a sub-optimal way,
@@ -166,7 +166,7 @@ the signal and backgrounds considered here.
   The first is the Sequential Standard Model (SSM) $Z'$ where couplings to fermions
   are the same as the Standard Model and a leptophobic $Z'$ which couples to quarks
   as the Standard Model $Z'$, but does not couple to leptons.
-  Monte-Carlo simulation is used to produce $m_{jj}$ signal templates;
+  Monte-Carlo simulation is used to produce \mjj~signal templates;
   this is done using \textsc{Pythia8} ~\cite{dibjet-pythia8} with the A14~\cite{dibjet-a14} tune and the NNPDF23LO PDF set~\cite{dibjet-nnpdf}.
   Only decays to $b\bar{b}$ are simulated;
   other decays of the  $Z'$  are ignored such that our
@@ -190,7 +190,7 @@ the signal and backgrounds considered here.
   
   In the \verb|Summer16+15| and \verb|Full16+15_HighMass|
   data-sets the same $b^*$ model is considered.
-  Monte-Carlo simulation is used to produce a $b^*$ $m_{jj}$ signal template;
+  Monte-Carlo simulation is used to produce a $b^*$ \mjj~signal template;
   again \textsc{Pythia8}~\cite{dibjet-pythia8} with the A14~\cite{dibjet-a14} tune and the NNPDF23LO PDF set~\cite{dibjet-nnpdf} is used.
   Decays to $bg$, $b\gamma$, $bZ_0$ and $tW^{-}$ are simulated.
   In the \verb|Full16+15_LowMass| data-set
@@ -232,25 +232,25 @@ and calibrated using the EM+JES scheme;
 a full description of this is found in Section~\ref{sec:obj-jets}.
 
 At least two jets are required in an event.
-The two highest $p_T$ jets, referred to as the leading and subleading jet,
+The two highest \pT~jets, referred to as the leading and subleading jet,
 are the jets used throughout this analysis.
 To reduce the number of fake jets from sources such as calorimeter noise
 both jets are required to pass \textit{loose} jet cleaning cuts
 based on the properties and distributions of the energy deposits in the calorimeter associated to the jet;
 details can be found in~\cite{evt-jet_cleaning}.
 
-Cuts are applied to the leading and subleading jet-$p_T$ such that events are on the trigger plateau;
-the region where all events passing the offline jet-$p_T$ selection
-would also pass the online jet-$p_T$ requriements of the trigger
+Cuts are applied to the leading and subleading jet-\pT~such that events are on the trigger plateau;
+the region where all events passing the offline jet-\pT~selection
+would also pass the online jet-\pT~requriements of the trigger
 \footnote{Using the definition from Section~\ref{sec:trig-bjet_eff}. Online refers to reconstructed objects used in the trigger decision,
   whilst offline refers to algorithms run after events have passed the trigger at the data-processing level. }.
 
-For the \verb|Summer16+15| data-set; it is required that the leading jet has $p_T >$ 440 GeV to be on the trigger plateau of \verb|HLT_j380|.
-This cut is derived by comparing the leading jet-$p_T$ distibutions of jets that pass the trigger, \verb|HLT_j380|,
-relative to a benchmark trigger with a lower jet-$p_T$ threshold, \verb|L1_J75|.
+For the \verb|Summer16+15| data-set; it is required that the leading jet has $p_T >$ 430 GeV to be on the trigger plateau of \verb|HLT_j380|.
+This cut is derived by comparing the leading jet-\pT~distibutions of jets that pass the trigger, \verb|HLT_j380|,
+relative to a benchmark trigger with a lower jet-\pT~threshold, \verb|L1_J75|.
 Figure~\ref{fig:evt-jet_pt} shows this comparison in one run of data where \verb|L1_J75| was un-prescaled
 \footnote{Un-prescaled means that the trigger accepts every event passing the trigger criteria};
-in the ratio plot it is shown that for leading jet-$p_T >$ 440 GeV events are on the trigger plateau.
+in the ratio plot it is shown that for leading jet-$p_T >$ 430 GeV events are on the trigger plateau.
 The subleading jet is required to have jet-$p_T >$ 60 GeV,
 to avoid contamination from pile-up jets.
 Both jets  are required to have $|\eta| <$ 2.4
@@ -261,17 +261,74 @@ which is essential for optimal $b$-tagging performance.
   \begin{center}
     \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}
   \end{center}
-\caption[The comparisions of the leading jet-$p_T$ using unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
+\caption[The comparisions of the leading jet-\pT~using unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
   HLT\_J380 trigger (green dots) and HLT\_J400 trigger (blue dots) in one run of 2016 data.
   The ratio with respect to L1\_J75 is shown in the lower panel.]
-        {The comparisions of the leading jet-$p_T$ using an unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
+        {The comparisions of the leading jet-\pT~using an unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
           HLT\_J380 trigger (green dots) and HLT\_J400 trigger (blue dots) in one run of 2016 data.
           The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
   \label{fig:evt-jet_pt}
 \end{figure}
 
-\subsection{Event Kinematics}
+\subsection{Event Level Cuts}
 \label{sec:evt-sel-event}
+
+With two jets selected we can now consider event-level cuts,
+which are in three parts.
+Firstly, events are required to have good reconstruction quality;
+specifically the primary vertex must have at least two tracks associated with it
+and events with problematic reconstruction in the Tile calorimeter, LAr calorimeter or SCT are rejected.
+
+\noindent
+Secondly, we increase sensitivy to signal using the 
+variable $y^*$, defined as
+\begin{equation}
+  y^* = \frac{(y_1-y_2)}{2}
+\end{equation}
+where $y_1$ and $y_2$ are the rapidities of the leading and subleading jet respectively.
+As discussed in Section~\ref{sec:theo-qcd-dijet_features}, QCD dijet production can occur through $t$-channel and $u$-channel processes leading to more background events at large values of $|y^*|$,
+whilst signal production occurs only through $s$-channel processes so will have no dependence on $y^*$.
+Therefore, requiring $|y^*|$ below some threshold value will lead to an increased $S/\sqrt{B}$.
+
+In the \verb|Summer16+15| data-set we require $|y^*| <$ 0.6.
+This value has been shown to maximise $S/\sqrt{B}$ when no $b$-tagging is applied
+at previous inclusive dijet searches at ATLAS~\ref{dijet_mori16_paper}
+\footnote{Inclusive dijet analysis means a dijet analysis where no $b$-tagging is applied}.
+The effect of $b$-tagging on the optimal value of this cut is likely to be small,
+as $t$-channel processes still dominate the background.
+
+Thirdly, there is a lower bound on the invariant mass of the two leading jets, \mjj.
+This cut ensures that there is no kinematic bias on the \mjj~distribution
+from the trigger or jet-\pT~requirements described in Section~\ref{sec:evt-sel-jets}.
+In addition, it is also required that the background is smooth in the \mjj~region chosen
+such that it can be described using our background modelling strategy.
+
+In the \verb|Summer16+15| data-set we require \mjj~\gt~1378 GeV;
+which ensures the two conditions listed above are met.
+Firstly, Figure~\ref{fig:evt-mjj} shows the comparison of \mjj~distributions for events
+that pass the analysis jet-\pT~requirements and  trigger, \verb|HLT_j380|, compared to events that pass a reference trigger, \verb|L1_J75|
+in one run of data where \verb|L1_J75| was un-prescaled.
+The ratio plot demonstrates that for \mjj~\gt~1100 GeV there is no kinematic bias from the trigger or jet-\pT~cuts.
+%therefore we conclude that for \mjj~\gt~1378 GeV there is also no kinematic bias.
+Secondly, it has been shown using simulated events that
+\mjj~\gt~1378 GeV is required such that the \mjj~distribution from QCD dijet production
+can be described by our background modelling strategy;
+this study is presented in Section~\ref{sec:bkg-ichep_fitRegion}.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-mjj.pdf}
+  \end{center}
+  \caption[The comparisions of the \mjj~distribution of events that pass an unprescaled L1\_J75 trigger (black dots) to the
+    events that pass the HLT\_J380 trigger with leading jet-\pT~\gt~430 GeV (red dots) and 
+    the HLT\_J400 trigger with a leading jet-\pT~\gt~450 GeV (green dots) in one run of 2016 data.
+    The ratio with respect to L1\_J75 is shown in the lower panel.]
+        {The comparisions of the \mjj~distribution of events that pass an unprescaled L1\_J75 trigger (black dots) to the
+    events that pass the HLT\_J380 trigger with leading jet-\pT~\gt~430 GeV (red dots) and 
+    the HLT\_J400 trigger with a leading jet-\pT~\gt~450 GeV (green dots) in one run of 2016 data.
+    The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
+  \label{fig:evt-mjj}
+\end{figure}
 
 \subsection{$b$-Tagging}
 \label{sec:evt-sel-btag}
@@ -285,14 +342,16 @@ which is essential for optimal $b$-tagging performance.
 \thead{Cut}              &  \thead{Summer16+15} & \thead{Full16+15\_HighMass} & \thead{Full16+15\_LowMass} \\
 \hline
 %Trigger          & HLT\_380 & HLT\_380 & \makecell{ HLT\_j150\_bmv2c2060\_split\\\_j50\_bmv2c2060\_split} \\
-Trigger          & Single-jet & Single-jet & \makecell{ Double $b$-jet} \\
+Trigger                 & Single-jet       & Single-jet       & Double $b$-jet (60\% OP) \\
+Online LJ Req.          & \pT~\gt~380 GeV  & \pT~\gt~380 GeV  & \pT~\gt~150 GeV  \\
+Online SLJ Req.          & -  & -  & \pT~\gt~50 GeV \\
 
 \hline
-Leading Jet-$p_T >$    &  440 GeV &  GeV &  GeV\\
+Leading Jet-$p_T >$    &  430 GeV & 430 GeV &  GeV\\
 Subleading Jet-$p_T >$ & 60 GeV & 60 GeV  &  GeV\\
 Jet-$|\eta| <$   & 2.4 & 2.0 & 2.0 \\
 \hline
-$m_{jj} >$  & 1341 GeV & GeV & 500 GeV \\
+$m_{jj} >$  & 1378 GeV & \makecell{1200 GeV (2 $b$-tag)\\ 1341 GeV ($\geq1$ $b$-tag)} & 500 GeV \\
 $|y^*| <$ & 0.6 & 0.8 & 0.6  \\
 \hline
 $b$-Tagging OP & 85\% & 85\% & 70\%\\
