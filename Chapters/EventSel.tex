@@ -333,6 +333,65 @@ this study is presented in Section~\ref{sec:bkg-ichep_fitRegion}.
 \subsection{$b$-Tagging}
 \label{sec:evt-sel-btag}
 
+The selection of $b$-jets, known as $b$-tagging,
+and forms an essential technique in the di-$b$-jet event selection.
+A detailed description of $b$-tagging is found in Section~\ref{sec:obj-bjets}.
+$b$-tagging is performed using a multi-variate algorithm known as MV2c10 which has been described in~\ref{sec:obj-bjets_MV2}.
+
+Two $b$-tagging categories are used for the two different types of signal model considered.
+The 2 $b$-tag category requires that the both jets are $b$-tagged,
+and is used to search for resonances decaying to 2 $b$-quarks such as the $Z'$ boson.
+The $\geq 1$ $b$-tag category requires that at least one jet is tagged,
+and is used to search for resonances decaying to 1 $b$-quark such as the $b^*$ quark.
+The exclusive 1 $b$-tag category was also considered but was found to be less sensitive to the $b^*$ model.
+
+In the \verb|Summer16+15| and \verb|Full16+15_HighMass| data-sets
+$b$-tagging is performed using the fixed cut 85\% operating point of the MV2c10 algorithm
+\footnote{Details on the operating points of MV2c10 are found in~\ref{sec:obj-bjets_MV2}}.
+This operating point was chosen to maximise $S/\sqrt{B}$ for a range of signal mass points in the 2 $b$-tag category.
+
+Below are details of the $b$-tagging optimisation study for the \verb|Full16+15_HighMass| data-set are shown,
+the results validate the \verb|Summer16+15| data-set event selection.
+The number of background events, $B$, is estimated in
+a narrow mass window around
+each mass point considered using a
+18.9~\ifb~subset of data for the 2 $b$-tag category.
+The number of signal events, $S$, is estimated
+in the same narrow mass windows using 
+the simulated SSM $Z'$-boson signal template
+described in Section~\ref{sec:evt-bkg} scaled to 18.9~\ifb.
+The full \verb|Full16+15_HighMass| event selection has been applied.
+Table~\ref{tab:evt-btag_hm} summarises the $S/\sqrt{B}$ for each operating point;
+the 85\% operating point is selected as it performs well across the full range of mass points considered.
+The conclusions of this study are luminosity independant
+as $S/\sqrt{B} \propto 1/\sqrt{L}$ such that the relative sensitivity
+between operating points will be the same for all luminosites.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|c||c|c|c|}
+  \hline
+  Mass of $Z'$ boson [GeV]        &  1500  &   2000  &  2500  \\
+  \hline
+  Mass window [GeV]               & 1378-1573       &  1785-2114   &  2267-2659 \\
+  \hline
+  $S/\sqrt{B}$ for 85\% OP        &  2.02           &  0.72        &  0.21          \\
+  $S/\sqrt{B}$ for 77\% OP        &  2.12           &  0.64        &  0.17          \\
+  $S/\sqrt{B}$ for 70\% OP        &  1.73           &  0.47        &  0.12          \\
+  $S/\sqrt{B}$ for 60\% OP        &  0.96           &  0.21        &  0.07          \\ \hline
+\end{tabular}
+\caption{The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
+  $S$ is estimated using a SSM $Z'$-boson and $B$ is estimated using a 18.9~\ifb~subset of 2 $b$-tag category data.
+  The \textit{Full16+15\_HighMass} data-set event selection has been applied.
+  Three different mass points are considered and the mass windows used
+  to estimate $S$ and $B$ for each mass point are shown in the table~\cite{dibjet-ichep_conf}.}
+\label{tab:evt-btag_hm}
+\end{center}
+\end{table}
+
+
+
+
 \subsection{Acceptance}
 \label{sec:evt-sel-acc}
 
@@ -359,6 +418,7 @@ $b$-Tag Categories & 2 and $\geq$1 & 2 and $\geq$1 & 2 \\
 \hline
 \end{tabular}
 \centering
-\caption{A summary of the key event selections applied in the di-$b$-jet analysis for each of the data-sets considered.}
+\caption{A summary of the key event selections applied in the di-$b$-jet analysis for each of the data-sets considered.
+For full details refer to the text.}
 \label{tab:evt}
 \end{table}
