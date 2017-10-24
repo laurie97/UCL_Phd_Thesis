@@ -1,8 +1,112 @@
 \chapter{Di-$b$-jet Search: Search Phase}
 \label{sec:bkg}
 
-\section{Search Phase Strategy}
-\label{sec:bkg-strat}
+The role of the search phase is to identify
+if there is signal present in the~\mjj~spectra
+of the selected events.
+This is carred out in two parts;
+firstly a background fit is used to estimate
+the~\mjj~distribution of the background QCD.
+Then, using the difference between the data
+and the background estimation we can search
+for excesses that are evidence of a resonance
+using the bumpHunter algorithm.
+
+In this chapter I will describe
+the fit functions used to describe the background
+(Section~\ref{sec:bkg-fit})
+the technique used to search for excesses
+(Section~\ref{sec:bkg-bh})
+and then I will present the search phase
+validation and results from each of the data sets.
+
+\section{Background Estimation}
+\label{sec:bkg-fit}
+
+Many analyses at ATLAS use Monte-Carlo simulation
+to model backgrounds~\ref{obj-Hbb}.
+However, in the case of modelling the background in the di-$b$-jet search
+simulation is not used due to three problems;
+firstly it is difficult to produce Monte-Carlo simulation at high-enough statistical precision,
+secondly there are large theoretical uncertainties for Monte-Carlo QCD
+(such as PDF uncertainties and choice of renormalisation scale)
+and finally there are large experimental uncertainties affecting
+data-simulation comparisons (such as jet energy scale).
+
+Instead the background is described using a fit function
+where one uses the data to determine the parameters of the fit function.
+This approach utilises the fact that the QCD dijet spectrum
+is smoothly falling with respect to~\mjj,
+as discussed in Section~\ref{sec:theo-qcd-dijet_features}.
+Fit functions have been widely used
+in a wide range of searches for resonances on smoothly falling backgrounds
+including previous dijet and di-$b$-jet searches~\cite{}
+The fit function used must also be contrained enough
+such that they will not be biased when signal is present in the dijet spectrum.
+Such a bias would reduce the sensitivity to signal.
+The fit functions considered in this analysis will be described below.
+
+For any given fit function the parameters are optimised
+by minimising the negative log likelihood where
+the likelihood is calculated from comparing
+the binned data \textbf{LM fix: binning discussion} to the fit function
+under the assumption of poisson-like errors.
+
+\subsection{Dijet Fit Functions}
+\label{sec:bkg-bkg_func}
+
+The di-$b$-jet mass spectrum is described by the di-jet fit function:
+\begin{equation}
+  f(x)=p_1(1-x)^{p_2}(x)^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}
+  %p_6(\ln{x})^{3}%},
+\label{eqn:bkg-fit}
+\end{equation}
+where $p_i$ are fit parameters, and $x=m_{jj}/\sqrt{s}$.
+
+Degrees of freedom can be removed to give a family of dijet fit-functions which have an number of parameter ranging from 3 to 6.
+The 3 parameter di-jet fit function is defined by setting $p_{i} = 0$ for $i > 3$ in Equation~\ref{eqn:bkg-fit},
+and the definition is equivalent for the 4 and 5 parameter di-jet fit function.
+There is in addition a 6 parameter di-jet fit function where $x=m_{jj}/p_6$.
+
+The choice of the function described by Equation~\ref{eqn:bkg-fit}
+is motivated using a theoretical understanding of the QCD dijet production
+and from previous dijet searches.
+The three parameter equation has been used in dijet searches beginning with CDF~\ref{dijet-CDF_3par}
+and the three components are motivated as follows:
+the $p_1$ term gives the normalisation,
+the $(1-x)^{p_2}$ term is a common parameterisation for the behaviour of the PDFs with the property of vanishing as $x$ approaches unity,
+and the $x^{p_3}$ term is motivated by the $1/m_{jj}$ term in the matrix element (shown in equation~\ref{}).
+Additional parameters of $x^{p_4\ln{x}}$ and $x^{p_5\ln{x}}$ and have been considered in dijet searches to give an adequete discription of the tail
+when large mass ranges are considered~\ref{dijet-CDF_4par,dijet-mori16_paper}.
+Finally a $x=m_{jj}/p_6$ is added as an additional degree of freedom.
+This function has been found to provide a satisfactory fit to the leading and next-to-leading-order QCD MC.\\
+
+Adding additional parameters may be required to describe the di-$b$-jet mass spectrum;
+especially at larger data-sets where small statistical errors reveal finer details of the QCD background shape
+and large mass ranges where larger constraints are applied to the fit in each mass range.
+However, additional parameters also allow for more flexibility in the background shape
+which can cause a fit bias when signal is introduced.
+Hence, the goal is to use the fewest parameters that can adequetely describe the background,
+such that we maximise sensitivity to signal.
+
+\subsection{Wilks' Statistic}
+\label{sec:bkg-bkg_wilks}
+
+To decide whether a fit function has adequete number of parameters the Wilks' test statistic is used,
+as used in previous iterations of both the inclusive and $b$-tagged di-jet search~\ref{dijet-mori16_paper,dibjet-mori16_paper}.
+The Wilks' test statistic tests the null hypothesis that the nominal fit function contains enough parameters to describe the data
+by  comparing the nominal to an alternate fit that has 1 extra parameter.
+One can calculate the Wilks' test statistic, which is defined as $-\log{(\Lambda)}$, where $\Lambda$ is the likelihood ratio of the nominal and alternate function.
+Using Wilks' theorem it is known that for a nested function, such as the function in Equation~\ref{eqn:bkg-fit},
+the Wilks' test statistic will follow a $\chi^2$ distribution with 1 degree of freedom\textbf{LM Fix; wilks reference}.
+Using this a $p$-value can be calculated for our null hypotheses that the nominal function has sufficient number of parameters.
+Such a $p$-value will be referred to as the Wilks' $p$-value throughout this section.
+
+%\subsection{Parameter Optimsation}
+%\label{sec:bkg-bkg_param}
+
+\section{BumpHunter Algorithm}
+\label{sec:bkg-bh}
 
 \section{Summer\_2016 Search Phase}
 \label{sec:bkg-summer}
@@ -10,12 +114,16 @@
 \subsection{Global Fit Strategy}
 \label{sec:bkg-summer_global}
 
+The strategy employed then runs as follows:
+the 3-parameter di-jet function is used as the initial nominal function and hence the 4 parameter di-jet function is the initial alternate.
+Then, if the Wilks' $p$-value is less than 0.05, the nominal fit function is rejected and the alternative function would then become the nominal.
+The process is iteratively run until a fit function is selected with a stable Wilks' $p$-value.
+
 \subsection{Fit Tests: Background Only Sample}
 \label{sec:bkg-summer_fitCR}
 
 \subsection{Fit Tests: Mass Range Studies}
 \label{sec:bkg-summer_range}
-
 
 \subsection{Fit Tests: Spurious Signal}
 \label{sec:bkg-summer_spusig}
@@ -25,3 +133,5 @@
 
 \section{Full\_2016 Search Phase}
 \label{sec:bkg-full}
+
+SWiFt and ect...
