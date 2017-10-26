@@ -4,7 +4,7 @@
 The role of the search phase is to identify
 if there is any evidence of a resonance
 in the~\mjj~spectra of the di-$b$-jet events events selected.
-This is carried out in two parts;
+This is carred out in two parts;
 firstly a background fit is used to estimate
 the~\mjj~distribution of the QCD dijet background.
 Then, the difference between the data
@@ -38,7 +38,7 @@ and are shown in Appendix~\ref{app:dijet_bins}.
 
 There is a different~\mjj~spectrum for each
 $b$-tagging category considered,
-and an independent search phase will be performed for both.
+and an independant search phase will be performed for both.
 
 %Which is defined as;
 %begin{equation}
@@ -51,7 +51,7 @@ and an independent search phase will be performed for both.
 \label{sec:bkg-fit}
 
 Many analyses at ATLAS use Monte-Carlo simulation
-to model backgrounds~\ref{obj-Hbb}.
+to model backgrounds~\cite{obj-Hbb}.
 However, simulation is not used to model the
 background in the di-$b$-jet search due to three problems;
 firstly it is difficult to produce Monte-Carlo simulation at high-enough statistical precision,
@@ -60,7 +60,7 @@ secondly there are large theoretical uncertainties for Monte-Carlo QCD
 and finally there are large experimental uncertainties affecting
 data-simulation comparisons (such as jet energy scale).
 
-Instead the background is described using a smooth fit function.
+Instead, the background is described using a smooth fit function.
 This approach utilises the fact that the QCD dijet spectrum
 is smoothly falling with respect to~\mjj,
 as discussed in Section~\ref{sec:theo-qcd-dijet_features}.
@@ -70,10 +70,10 @@ including previous dijet and di-$b$-jet searches~\cite{dijet-mori16_paper,dibjet
 
 This approach gives two requirements on a fit function;
 firstly the fit function must be able to describe the di-$b$-jet spectrum from QCD,
-including the convolutions of any detector effects such as $b$-tagging.
-Secondly,  the fit function used must be constrained enough
-such that there is not a bias if there is a resonance present in the di-$b$-jet spectrum.
-As evidence of such a resonance is found when the data diverges from the fit
+including any contributions caused by detector effects such as $b$-tagging.
+Secondly,  the fit function used must be contrained enough
+such that there is no bias if there is a resonance present in the di-$b$-jet spectrum.
+As evidence of such a resonance is found when the data diverges from the fit,
 such a bias would reduce the sensitivity to signal.
 The fit functions considered in this analysis will be described in the following section.
 
@@ -82,57 +82,78 @@ data is used to determine the parameters of the fit function.
 This is done by minimising the negative log likelihood,
 where the likelihood is calculated from comparing
 the binned data to the fit function
-under the assumption of Poisson-like errors.
+under the assumption of poisson-like errors.
 
 \subsection{Dijet Fit Functions}
 \label{sec:bkg-bkg_func}
 
-The di-$b$-jet mass spectrum is described by the dijet fit function:
-\begin{equation}
-  f(x)=p_1(1-x)^{p_2}(x)^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}
-  %p_6(\ln{x})^{3}%},
-\label{eqn:bkg-fit}
-\end{equation}
-where $p_i$ are fit parameters, and $x=m_{jj}/\sqrt{s}$.
 
-Degrees of freedom can be removed to give a family of dijet fit functions which have a number of parameters ranging from 3 to 6.
-The 3 parameter dijet fit function is defined by setting $p_{i} = 0$ for $i > 3$ in Equation~\ref{eqn:bkg-fit},
-and the definition is equivalent for the 4 and 5 parameter dijet fit function.
-There is in addition a 6 parameter dijet fit function where $x=m_{jj}/p_6$.
+%\begin{equation}
+%  f(x)=p_1(1-x)^{p_2}(x)^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}
+%  %p_6(\ln{x})^{3}%},
+%\label{eqn:bkg-fit}
+%\end{equation}
+%where $p_i$ are fit parameters, and $x=m_{jj}/\sqrt{s}$.
 
-The choice of the function described by Equation~\ref{eqn:bkg-fit}
-is motivated using a theoretical understanding of the QCD dijet production
-and from previous dijet searches.
-The three parameter equation has been used in dijet searches beginning with CDF~\cite{dijet-CDF_3par}
+%Degrees of freedom can be removed to give a family of dijet fit functions which have a number of parameters ranging from 3 to 6.
+%The 3 parameter dijet fit function is defined by setting $p_{i} = 0$ for $i > 3$ in Table~\ref{tab:bkg-fit}
+%and the definition is equivalent for the 4 and 5 parameter dijet fit function.
+%There is in addition a 6 parameter dijet fit function where $x=m_{jj}/p_6$.
+
+The di-$b$-jet mass spectrum will be described by the dijet fit functions,
+which are a family of functions with a varying number of parameters.
+The dijet fit functions are listed in Table~\ref{tab:bkg-fit}.
+The dijet fit functions are motivated using a theoretical understanding of the QCD dijet production
+and experience from previous dijet searches~\cite{theo-dijet_harris}.
+The three parameter dijet fit function has been used in dijet searches beginning with CDF~\cite{dijet-CDF_3par}
 and the three components are motivated as follows:
 the $p_1$ term gives the normalisation,
 the $(1-x)^{p_2}$ term is a common parameterisation for the behaviour of the PDFs with the property of vanishing as $x$ approaches unity,
 and the $x^{p_3}$ term is motivated by the $1/m_{kl}$ term in the matrix element (shown in Equation~\ref{eq:theo-qcd_dijet_xs}).
-Additional parameters of $x^{p_4\ln{x}}$ and $x^{p_5\ln{x}^{2}}$ have been considered in dijet searches to give an adequate description of the tail
+Additional parameters of $x^{p_4\ln{x}}$ and $x^{p_5\ln{x}^{2}}$ have been considered in dijet searches to give an adequete discription of the tail
 when large mass ranges are considered~\cite{dijet-CDF_4par,dijet-mori16_int}.
 Finally, the $x=m_{jj}/p_6$ term is added as an additional degree of freedom.
 This function has been found to provide a satisfactory fit to the leading and next-to-leading-order QCD Monte-Carlo simulation.
+
+{\renewcommand{\arraystretch}{1.2}
+\begin{table}[!thb]
+\centering
+\begin{tabular}{|c||c|c|}
+  \hline
+  Function Name & Equation                                          & $x$ \\
+  \hline
+  3 parameter   & $f(x)=p_1(1-x)^{p_2}x^{p_3}$                         & $m_{jj}/\sqrt{s}$ \\
+  4 parameter   & $f(x)=p_1(1-x)^{p_2}x^{p_3+p_4\ln{x}}$                &$m_{jj}/\sqrt{s}$\\
+  5 parameter   & $f(x)=p_1(1-x)^{p_2}x^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}$   & $m_{jj}/\sqrt{s}$\\ 
+  6 parameter   & $f(x)=p_1(1-x)^{p_2}x^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}$   &  $m_{jj}/p_6$\\ 
+  \hline
+\end{tabular}
+\caption{The dijet fit function equations. The fit functions are named by the number of free parameters used. $p_{i}$ are the free parameters of the fit function}
+\label{tab:bkg-fit}
+\end{table}}
 
 Adding additional parameters to the 3-parameter dijet fit function may be required to describe the di-$b$-jet mass spectrum;
 especially in large data-sets where small statistical errors reveal finer details of the QCD background shape
 and large mass ranges where larger constraints are applied to the fit in each mass range.
 However, additional parameters also allow for more flexibility in the background shape
-which can cause a fit bias if a resonance is present.
+which might cause a fit bias if a resonance is present.
 Hence, there is an overall strategy to use the fewest parameters
-that can adequately describe the background,
+that can adequetely describe the background,
 such that we maximise sensitivity to signal.
 
 \subsection{Wilks' Statistic}
 \label{sec:bkg-bkg_wilks}
 
-To decide whether a fit function has adequate number of parameters the Wilks' test statistic is used,
-following previous iterations of both the inclusive and $b$-tagged dijet search~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
-\textbf{Add dibjet mori paper to references}.
+To decide whether a fit function has adequete number of parameters the Wilks' test statistic is used,
+as done in previous iterations of both the inclusive and $b$-tagged dijet search~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
 The Wilks' test statistic tests the null hypothesis that the nominal fit function contains enough parameters to describe the data
 by comparing the nominal to an alternate fit that has 1 extra parameter.
 One can calculate the Wilks' test statistic, which is defined as $-\log{(\Lambda)}$, where $\Lambda$ is the likelihood ratio of the nominal and alternate function.
-Using Wilks' theorem it is known that for a nested function, such as the function in Equation~\ref{eqn:bkg-fit},
-the Wilks' test statistic will follow a $\chi^2$ distribution with 1 degree of freedom\textbf{LM Fix; Wilks reference}.
+Using Wilks' theorem it is known that for nested functions
+\footnote{Nested functions occur when the simpler function can be taken from a more complex function by setting one parameter to a specific value.
+  For example the 3 parameter function can be taken from the 4 parameter function when $p_4$ = 0 and so on},
+such as the functions in Table~\ref{tab:bkg-fit},
+the Wilks' test statistic will follow a $\chi^2$ distribution with 1 degree of freedom~\cite{dibjet-wilks}.
 Using this a $p$-value can be calculated for our null hypotheses that the nominal function has sufficient number of parameters.
 Such a $p$-value will be referred to as the Wilks' $p$-value throughout this section.
 
@@ -142,23 +163,26 @@ Such a $p$-value will be referred to as the Wilks' $p$-value throughout this sec
 \section{BumpHunter Algorithm}
 \label{sec:bkg-bh}
 
-Using the  background model from the fit, the next step is to determine if there is evidence of a resonance in our di-$b$-jet spectrum.
+Once the background has been modelled using a fit, the next step is to determine
+if there is evidence of a resonance in our di-$b$-jet invariant mass spectrum.
 As shown in Figure~\ref{fig:evt-dijet_schem} such a resonance would appear as a bump on the smoothly falling background distribution.
-In practice, this means that we would see a discrepant excess in the dijet spectrum;
-where an excess is defined as any set of consecutive~\mjj~bins that contain more entries in data than the background prediction,
+This can be observed as a discrepant excess in the~\mjj~spectrum;
+where an excess is defined as any set of consecutive bins that contain
+more events in data than the background prediction,
 and discrepant describes how inconsistent an excess is with the background estimation.
-To set this up in terms of hypothesis testing,
-our null hypothesis, $H_0$, states that there is only QCD dijet events described by our background function,
-whilst the alternate hypothesis, $H_1$, is that there is an additional resonance at some
+To set this up in terms of hypothesis testing, the null hypothesis, $H_0$,
+states that there is only QCD dijet events described by our background function,
+whilst the alternate hypothesis, $H_1$, proposes that there is a resonance at some
 unknown mass point in the di-$b$-jet spectrum causing a discrepant excess.
 
-Due to the statistical fluctuations in the background,
-it is expected that excesses will occur in data even if there is no new physics occurring.
-Therefore, we must find a significant excess, which is, broadly speaking, an excess that is unlikely to have occurred from such a fluctuation.
+Due to statistical fluctuations in the background,
+it is expected that excesses will occur in data even if there is no new physics occuring.
+Therefore, to claim evidence of a new resonance a significant excess is required,
+which is an excess that is highly unlikely to have occured from such a fluctuation.
 To quantify how significant any excess is a $p$-value is used,
-where a $p$-value is defined as the probability of finding an excess which is at least as discrepant as the excess found in data
+where a $p$-value is defined as the probablity of finding an excess which is at least as discrepant as the excess found in data
 under the assumption of $H_0$.
-Therefore, a small $p$-value indicates the excess is inconsistent with the null hypothesis and that new physics is present;
+Hence, a small $p$-value indicates the excess is inconsistent with the null hypothesis and that new physics is present;
 in particle physics it is conventional to consider that a $p$-value below 0.0027 (3 \sigma) is considered as evidence of new physics
 whilst a $p$-value below 1 in $\sim$3.5 million (5 \sigma) is considered as the discovery of new physics.
 
@@ -166,46 +190,50 @@ In this analysis the BumpHunter algorithm~\cite{dibjet-bh} is employed;
 this algorithm uses a test-statistic to 
 search for the most discrepant excess in our data-set
 and calculate the $p$-value of such an excess.
-The bumpHunter test statistic gives a quantitative measure of how discrepant any given excess in data is
+The bumpHunter test statistic gives a quantitive measure of how discrepant any given excess in data is
 under the assumption of $H_0$.
 To derive the test statistic let's consider $N$ consecutive bins for which
-a total of $d$ data events are found and a total of $b$ background events are expected,
-and as this is a search for excesses we will consider the cases where $d > b$.
-Using Poisson statistics one can calculate the probability of seeing an excess which is at least that discrepant
-under the null hypothesis,
+a total of $d$ data events are found and a total of $b$ background events are expected.
+As this is a search for excesses we will consider the case where $d > b$.
+Using poisson statitics one can calculate the probability of seeing an excess which is at least that discrepant
+under the assumption of the null hypothesis:
 \begin{equation}
-  P(d,b) = \sum_{n=d}^{\infty} \frac{b^ne^{-b}}{n!}
+  P(d,b) = \sum_{n=d}^{\infty} \frac{b^n~e^{-b}}{n!}
 \end{equation}
-From this probability, the BumpHunter test statistic, $t_{\text{BH}}$ is defined as
+From this probablity, the BumpHunter test statistic, $t$, is defined as
 \begin{equation}
- t_{\text{BH}} = -\log{[P(b,d)]}
+ t = -\log{\big(P(b,d)\big)}
 \end{equation}
-If the test statistic is large then this indicates that the excess is discrepant and vice versa.
-Note here that at this point we could have searched for a deficit using the same logic except for requiring that $ d < b$.
+The size of the test statistic represents how discrepant an excess is,
+with a large $t$ indicating a discrepant excess.
+%Note here that at this point we could have searched for a deficit using the same logic except for requiring that $ d < b$.
 
-Then, the algorithm finds the excess in data with the largest $t_{\text{BH}}$ in the~\mjj~spectrum by scanning over all
-possible combinations of consecutive bins that have at least 2 bins and no more than half the bins used.
-This excess will be referred to as the most discrepant excess and the value of of $t_{\text{BH}}$ observed is labelled $t_{obs}$.
+The bumpHunter algorithm will find the excess in data with the largest $t$ in the~\mjj~spectrum
+by scanning over all possible combinations of consecutive bins.
+The narrowest excess considered is 2 bins and the widest excess considered has half the number of bins in the spectrum.
+This excess found will be refered to as the most discrepant excess and the value of of $t$ observed is labelled $t_{obs}$.
 
-Then to calculate the $p$-value of the discrepant excess, we compare the value of $t_{obs}$ to the equivalents in a set of pseudo-experiments.
-Poisson fluctuations are applied to the background model to create pseudo-experiments, which are effectively representations of data under the null hypothesis.
-In each pseudo-experiment the bumpHunter algorithm is run to find the most discrepant excess and corresponding value of $t_{\text{BH}}$.
-This is done for many pseudo-experiments to estimate the probability density function of $t_{\text{BH}}$ under the assumption of the null hypothesis,
-which I will label as $f_{PE}(t_{\text{BH}}| H_0)$.
-By comparing the observed value of $t_{obs}$ to the distribution in the pseudo-experiments
+To calculate the $p$-value of the discrepant excess
+Poisson fluctuations are applied to the background model to create pseudo-experients,
+which give data-like spectra that are consistent with the null hypothesis.
+In each pseudo-experiment the bumpHunter scan is performed to find the most discrepant excess and corresponding value of $t$.
+This is done for many pseudo-experiments to estimate the probability density function of $t$ under the assumption of the null hypothesis,
+which I will label as $f_{PE}(t| H_0)$.
+By comparing the observed test-statistic in data, $t_{obs}$,
+to the distribtution in the pseudo-experiments,
 the BumpHunter $p$-value of the most discrepant excess in data is calculated using
 \begin{equation}
-  \text{BumpHunter}~p\text{-value} = \int_{t_{obs}}^\infty f_{PE}(t_{\text{BH}}| H_0)
+  \text{BumpHunter}~p\text{-value} = \int_{t_{obs}}^\infty f_{PE}(t | H_0)
 \end{equation}
 
-The bumpHunter algorithm is chosen due to two important features.
-Firstly, the bumpHunter $p$-value is model independent;
-the algorithm makes no prior assumptions about the nature of the new physics that could be produced
-other than it would produce an extra events and that the extra events would occur in consecutive~\mjj~bins.
+The bumpHunter algorithm is chosen to search for excesses due to two important features.
+Firstly, the bumpHunter $p$-value is model independant;
+the algorithm makes no prior assumptions about the nature of the new physics model that could be present
+other than it would produce extra events and that the extra events would occur in consecutive~\mjj~bins.
 %This means that the bumpHunter algorithm is agnostic to the shape of the signal, the width of the signal and the location of the signal.
-Secondly, the bumpHunter $p$-value is global;
-this means that the $p$-value accounts for the fact that under the null hypothesis an excess such as the one observed could have occurred at any mass point in the~\mjj~spectrum.
-This due to the fact that in the pseudo-experiments there is no prior assumption on the location of the largest excess.
+Secondly, the bumpHunter $p$-value is naturally global;
+this means that the $p$-value accounts for the fact that under the null hypothesis an excess such as the one observed could have occured at any mass point in the~\mjj~spectrum.
+This is due to the fact that in the pseudo-experiments there is no prior assumption on the location of the largest excess.
 
 \section{Summer\_2016 Search Phase}
 \label{sec:bkg-summer}
