@@ -87,7 +87,6 @@ under the assumption of poisson-like errors.
 \subsection{Dijet Fit Functions}
 \label{sec:bkg-bkg_func}
 
-
 %\begin{equation}
 %  f(x)=p_1(1-x)^{p_2}(x)^{p_3+p_4\ln{x}+p_5(\ln{x})^{2}}
 %  %p_6(\ln{x})^{3}%},
@@ -139,7 +138,7 @@ However, additional parameters also allow for more flexibility in the background
 which might cause a fit bias if a resonance is present.
 Hence, there is an overall strategy to use the fewest parameters
 that can adequetely describe the background,
-such that we maximise sensitivity to signal.
+such that sensitivity to signal is maximised.
 
 \subsection{Wilks' Statistic}
 \label{sec:bkg-bkg_wilks}
@@ -206,7 +205,8 @@ From this probablity, the BumpHunter test statistic, $t$, is defined as
 \end{equation}
 The size of the test statistic represents how discrepant an excess is,
 with a large $t$ indicating a discrepant excess.
-%Note here that at this point we could have searched for a deficit using the same logic except for requiring that $ d < b$.
+Using the same logic and requiring that $d < b$ it is possible to also search for deficits,
+this is referred to as the DeficitHunter $p$-value.
 
 The bumpHunter algorithm will find the excess in data with the largest $t$ in the~\mjj~spectrum
 by scanning over all possible combinations of consecutive bins.
@@ -233,31 +233,400 @@ other than it would produce extra events and that the extra events would occur i
 %This means that the bumpHunter algorithm is agnostic to the shape of the signal, the width of the signal and the location of the signal.
 Secondly, the bumpHunter $p$-value is naturally global;
 this means that the $p$-value accounts for the fact that under the null hypothesis an excess such as the one observed could have occured at any mass point in the~\mjj~spectrum.
-This is due to the fact that in the pseudo-experiments there is no prior assumption on the location of the largest excess.
+This is due to the fact that in the pseudo-experiments there is no prior assumption on the location of the most discrepant excess.
 
-\section{Summer\_2016 Search Phase}
+\section{\textit{Summer\_16+15} Search Phase}
 \label{sec:bkg-summer}
 
-\subsection{Global Fit Strategy}
+This section presents the search phase for the \textit{Summer16+15} data-set.
+Section~\ref{sec:bkg-summer_global} describes the background modelling strategy used,
+Section~\ref{sec:bkg-summer_fitCR}-\ref{sec:bkg-summer_spusig}
+shows studies performed to validate the background modelling strategy
+and Section~\ref{sec:bkg-summer_results} presents the results of the search phase.
+
+As described in Chapter~\ref{sec:evt}
+that are two $b$-tag categories considered for the the \textit{Summer16+15} data-set 
+(2 $b$-tag and $\geq1$ $b$-tag)
+giving two dijet invariant mass spectra to perform a search phase.
+
+\subsection{Background Modelling Strategy}
 \label{sec:bkg-summer_global}
 
-To select a fit function the following strategy is used with the final data-set.
-The 3-parameter dijet function is used as the initial nominal function and hence the 4 parameter dijet function is the initial alternate.
+For the \textit{Summer16+15} dataset the background is modelled using a global fit function,
+where a single fit function is used to describe the full mass range of the invariant mass spectra,
+similar to previous dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
+
+To select a fit function from the set of dijet fit function described in Table~\ref{tab:bkg-fit} the following strategy is used with the final data-set.
+The 3-parameter dijet function is used as the initial nominal function and hence the 4-parameter dijet fit function function is the initial alternate function.
 Using the Wilks' statistic a $p$-value can be calculated,
 if the $p$-value is less than 0.05, the nominal fit function is rejected and the alternative function would then become the nominal.
-The process is iteratively run until a fit function is selected with a stable Wilks' $p$-value.
+The process is iteratively run until a dijet fit function is selected with a stable Wilks' $p$-value.
 
-\subsection{Fit Tests: Background Only Sample}
+In the \textit{Summer16+15} data-set when comparing the 3-parameter fit function to the 4-parameter fit function
+a Wilks' $p$-value of 0.55 and 0.12 where found in the 2 $b$-tag and $\geq1$ $b$-tag category respectively.
+Therefore the 3-parameter fit function was selected in both categories.
+
+Figure~\ref{fig:bkg-summer-wilks} shows the Wilks' $p$-value as a function of luminosity
+for the $\geq1$ $b$-tag and 2 $b$-tag categories.
+For both categories the 3-parameter fit function when compared to the 4-parameter fit function
+has a Wilks' $p$-value $>$ 0.05.
+Therefore the 3-parameter fit function was selected in both categories.
+\textbf{LM Question: Why only 8.8 ifb, what to do about it...}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-WilksStat_bb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-WilksStat_b.pdf}}
+  \end{center}
+  \caption{The Wilks' $p$-value as a function of luminosity
+    in the case that the 3-parameter is the nominal function and the 4-parameter is the alternate (blue)
+    and the case where the 4-parameter is the nominal function and the 5-parameter is the alternate (purple)
+    for the final data-set in the (a) 2 $b$-tag and (b) $\geq1$ $b$-tag category.
+  }
+  \label{fig:bkg-summer-wilks}
+\end{figure}
+
+\subsection{Fit Tests: Background-Only Dataset}
 \label{sec:bkg-summer_fitCR}
+
+To demonstrate that the dijet fit functions are a valid description of the background,
+fit tests are peformed to a representative background only data-set.
+
+To perform these tests, a PYTHIA8 MC multi-jet simulation is used as the representative background only data-set.
+The simulation sample is produced in several slices of leading jet $p_{T}$, where each slice contains the same number of events.
+A weight is applied to each event such that final distribution shape is representative of the smoothly falling~\mjj~spectrum that is expcted,
+whilst still maintaining a similar precision across the full mass range.
+The weighted invariant mass distribution is then scaled to 10~\ifb~\footnote{
+  These studies were carried out during data-taking
+  and as such the final integrated luminosity of the data-set had to be estimated,
+  10~\ifb was used were the final data-set is 13.3~\ifb.
+},
+this is referred to as the  `scaled distribution', which can be interpretated as the expected number of data events in a specific mass bin. 
+The precision of the scaled distribution is represented by the the number of `effective entries',
+which is the square of the error in that mass bin; the number of effective entries can be calculated from the event weights as shown in Equation~\ref{eq:effEnt}.
+\begin{equation}
+  N_{eff} = (\sum{w_i})^2 / \sum{w_i^2}
+  \label{eq:effEnt}
+\end{equation}
+Figure~\ref{fig:effEnt} shows the scaled and effective entries distributions as a function of dijet invariant mass for the 2 $b$-tag and $\geq$1 $b$-tag categories. 
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_effEntries_Logx_10fb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_effEntries_Logx_10fb.pdf}}
+  \end{center}
+  \caption{The scaled invariant mass distribution (red) compared to the
+    effective entries of the invariant mass distribution (green)
+    of Monte-Carlo simulation for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag category.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:effEnt}
+\end{figure}
 
 \subsection{Fit Tests: Mass Range Studies}
 \label{sec:bkg-summer_range}
 
+The first fit test is to demonstrate that
+the dijet fit functions are able to describe the~\mjj~spectra.
+In this test the scaled invariant mass spectra from simulation,
+with errors given by the square root of the number of effective entries,
+are fitted to using the search phase procedure.
+
+The dijet mass spectra considered have a lower mass edge of $m_{jj}$ = 1100 GeV,
+selected such that there is no kinematic bias from the single jet trigger,
+and the upper edge is the mass bin at which the dijet mass spectrum goes below one entry per bin.
+Figure~\ref{fig:Short_4para_1100_figure1} and \ref{fig:Short_5para_1100_figure1} show the search phase
+for both $b$-tag categories, fitted to with the 4 and 5 parameter fit function
+The most discrepant excess is indicated by the blue lines and the bumpHunter $p$-value of the excess is shown on the plot,
+whiv has been calculated using 10,000 pseudo-experiments.
+Similarly, the $p$-value of the most discrepant deficit is calculated using the same process, which is referred to as DeficitHunter,
+and an overall quality of fit $p$-value is also calculated by the same process using the $\chi^{2}$ test statistic.
+
+For both fit functions in the $\geq$1 $b$-tag category,
+a large excess is observed which has been assigned a BumpHunter $p$-value of 0.00.
+This indicates that the 4 and 5 parameter fit functions
+provide a poor description of the background distribution from simulation
+in the $\geq1$ $b$-tag category.
+Note that although these studies have been performed with the 4 and 5 parameter function,
+but as the 3-parameter function is a subset of the 4-parameter function it can be concluded
+that the 3-parameter function will also be inadquete.
+
+\begin{figure}[!ht]
+  \begin{center}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_Short_4para_1100_figure1_10fb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_Short_4para_1100_figure1_10fb.pdf}}
+  \end{center}
+  \caption{ The invariant mass distribution taken from multi-jet simulation for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag,
+   category, fitted to using the 4-parameter fit function, with lower mass bound of the fit range $m_{jj}$ = 1100 GeV.
+   The BumpHunter algorithm is run to identify the most discrepant excess, as indicated by the blue lines.
+   Pseudo-experiments are used to assign the excess a $p$-value, which is shown on the plot.    
+   The \textit{Summer16+15} dataset event selection has been applied.}
+ \label{fig:Short_4para_1100_figure1}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_Short_5para_1100_figure1_10fb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_Short_5para_1100_figure1_10fb.pdf}}
+  \end{center}
+  \caption{ The invariant mass distribution taken from multi-jet simulation for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag,
+    category, fitted to using the 5-parameter fit function, with lower mass bound of the fit range $m_{jj}$ = 1100 GeV.
+    The BumpHunter algorithm is run to identify the most discrepant excess, as indicated by the blue lines.
+    Pseudo-experiments are used to assign the excess a $p$-value, which is shown on the plot.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:Short_5para_1100_figure1}
+\end{figure}
+
+\FloatBarrier
+
+However, by changing the lower mass bound of the fit,
+a region can be found where the fit functions are able to describe the background accurately.
+To find the largest region with a stable fit quality, the simulated dijet mass spectrum is
+fitted to using the 4-parameter function with the lower mass bound of the fit region increased one bin at a time,
+beginning at $m_{jj}$ = 1100 GeV up to $m_{jj}$ = 1500 GeV.
+As before the upper edge of the fit region is the mass bin at which the simulation goes below one entry per bin.
+Figure~\ref{fig:mjjGraphs_bb} and \ref{fig:mjjGraphs_bj_inc} show,
+for the 2 $b$-tag and $\geq1$ $b$-tag categories, the distributions of the
+(a) BumpHunter, (b) DeficitHunter and (c) $\chi^{2}$ $p$-values as the lower mass bound of the fit region is increased.
+In both categories it is shown that there are fit regions that are stable if the lower mass bound is $m_{jj}$ = 1378 GeV or above.
+This demonstrates that there are features in the background mass spectrum at low masses that are causing a poor fit quality,
+which can be removed by using a fit region $m_{jj} >$ 1378 GeV. 
+
+Figure~\ref{fig:Short_4para_1378_figure1} shows the search phase applied to the dijet mass spectra
+of the simulated sample for both $b$-tagging categories,
+for the fit range with the lower mass bound of $m_{jj}$ = 1378 GeV,
+fitted to using the 4-parameter fit function.
+The most discrepant excess, as found by the BumpHunter algorithm, is indicated by the blue lines
+and the $p$-value of the excess is shown on the plot.
+This shows that the fit quality is reasonable for this choice of fit region.
+The study presented in this section motivates the choice of $m_{jj} >$ 1378 GeV
+as the lower mass cut used in the \verb|Summer16+15| data-set event selection.
+
+\begin{figure}[!htb]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{BumpHunter}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_mjjGraph_bumpHunter_10fb.pdf}}
+    \subcaptionbox{DeficitHunter}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_mjjGraph_deficitOnlyHunter_10fb.pdf}}
+    \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_mjjGraph_chi2_10fb.pdf}}
+  \end{center}
+  \caption{The distribution of the (a) BumpHunter, (b) DeficitHunter and (c) $\chi^{2}$ $p$-values
+    for different values of lower mass bound of the fit range, when fitting to 2 $b$-tag category
+    invariant mass distribution taken from multi-jet simulation with the 4-parameter fit function.
+    The \textit{Summer16+15} dataset event selection has been applied, with the exception of the~\mjj~cut.}
+  \label{fig:mjjGraphs_bb}
+\end{figure}
+
+\begin{figure}[!htb]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{BumpHunter}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_mjjGraph_bumpHunter_10fb.pdf}}
+    \subcaptionbox{DeficitHunter}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_mjjGraph_deficitOnlyHunter_10fb.pdf}}
+    \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.325\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_mjjGraph_chi2_10fb.pdf}}
+  \end{center}
+  \caption{The distribution of the (a) BumpHunter, (b) DeficitHunter and (c) $\chi^{2}$ $p$-values
+    for different values of lower mass bound of the fit range, when fitting to $\geq$1 $b$-tag category
+    invariant mass distribution taken from multi-jet simulation with the 4-parameter fit function.
+    The \textit{Summer16+15} dataset event selection has been applied, with the exception of the~\mjj~cut.}
+  \label{fig:mjjGraphs_bj_inc}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_Short_4para_1378_figure1_10fb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_Short_4para_1378_figure1_10fb.pdf}}
+  \end{center}
+  \caption{ The invariant mass distribution taken from multi-jet simulation for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag,
+    category, fitted to using the 4-parameter fit function, with lower mass bound of the fit range $m_{jj}$ = 1378 GeV.
+    The BumpHunter algorithm is run to identify the most discrepant excess, as indicated by the blue lines.
+    Pseudo-experiments are used to assign the excess a $p$-value, which is shown on the plot. 
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:Short_4para_1378_figure1}
+\end{figure}
+
+%\begin{figure}[!ht]
+%  \begin{center}
+%    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+%   \subcaptionbox{2 $b$-tag}{
+%      \includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbb_fix_8585_Short_5para_1378_figure1_10fb.pdf}
+%    }
+%   \subcaptionbox{$\geq$1 $b$-tag}{
+%      \includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/FitRange/mbj_inc_fix_8585_Short_5para_1378_figure1_10fb.pdf}
+%    }
+%  \end{center}
+%  \caption{ for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag category.}
+%  \label{fig:}
+%\end{figure}
+
+
 \subsection{Fit Tests: Spurious Signal}
 \label{sec:bkg-summer_spusig}
 
+If the true background dijet invariant mass spectrum cannot be described by the chosen fit function,
+then fit discrepancies can occur that could appear as false signal or could hide a true signal,
+the former is referred to as spurious signal.
+To show that fit discrepancies are not occuring, fits are peformed to a background-only representative data-set
+to demonstrate that the chosen fit function is a valid representation of the true background spectrum.
+Similar tests have been performed in previous iterations of both the inclusive and $b$-tagged dijet searches~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
+
+To perform these tests, the scaled distribtuion from the PYTHIA8 Monte-Carlo multi-jet simulation
+described in Section~\ref{sec:bkg-summer_fitCR}
+is used as the representative background only data-set.
+%In Section~\ref{sec:FitStudies:FitRegion}
+%the dijet mass spectrum used took the square root of the
+%number of effective entries as the errors.
+As shown in Figure~\ref{fig:effEnt},
+the number of effective entries is larger than the number of scaled entries,
+meaning that the distribution contains smaller statistical fluctuations than are present in the final data-set.
+To create a more representative simulated data-set to test the fit functions,
+Poisson fluctuations are applied to the scaled distribution to create a `data-like' distribution.
+Figure~\ref{fig:effEntDataLike} shows the scaled and effective entries distributions for both
+$b$-tag categories overlaid with a data-like distribution in blue.
+
+\begin{figure}[!ht]
+  \begin{center}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_dataLike_effEntries_Logx_10fb.pdf}\label{fig:effEntDataLike_bb}}
+    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_dataLike_effEntries_Logx_10fb.pdf}\label{fig:effEntDataLike_bj}}
+  \end{center}
+  \caption{The scaled invariant mass distribution (red) compared to the
+    effective entries of the invariant mass distribution (green) for the 2 $b$-tag category,
+    for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag case.
+    Overlaid is a data-like distribution (blue) created by applying poisson fluctuations to the scaled distribution.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:effEntDataLike}
+\end{figure}
+
+The search phase is then applied to the data-like distributions
+in both $b$-tag categories 
+to test the fit function in a background-only data-set.
+Figure~\ref{fig:DataLikeSearchPhase} shows an example data-like distribution for both $b$-tag categories fitted
+to with the 3-parameter fit function,
+with the most discrepant excess as identified by the BumpHunter algorithm shown.
+The $p$-value of the most discrepant excess is calculated by comparing the BumpHunter test statistic in the data-like distribution, $t_{obs}$
+to 10,000 pseudo-experiments; the procedure is illustrated in Figure~\ref{fig:DataLikeStatPlots_bh}.
+Using a similar process, the $p$-value of the most discrepant deficit is calculated using the DeficitHunter test statistic
+and an overall quality of fit $p$-value is calculated by the $\chi^{2}$ test statistic.
+For this specific set of Poisson fluctions in the 2 $b$-tag category
+the BumpHunter, DeficitHunter and  $\chi^{2}$ $p$-value are found to be
+0.57, 0.80 and 0.39 respectively.
+Similarly, in the $\geq1$ $b$-tag category the
+BumpHunter, DeficitHunter and  $\chi^{2}$ $p$-values are
+0.93, 0.77 and 0.86 respectively.
+Therefore, the fit is performing well for both $b$-tagging categories for this data-like fluctuation.
+
+\begin{figure}[!ht]
+  \begin{center}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_figure1_10fb_v10.pdf}}
+    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_figure1_10fb_v10.pdf}}
+  \end{center}
+  \caption{A data-like distribution taken from multi-jet simulation for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag,
+    category, fitted to using the 3-parameter fit function.
+    The BumpHunter algorithm is run to identify the most discrepant excess, as indicated by the blue lines.
+    Pseudo-experiments are used to assign the excess a $p$-value, which is shown on the plot.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:DataLikeSearchPhase}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_bumpHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeBumpHunterStatPlot_bb}}
+    \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_bumpHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeBumpHunterStatPlot_bj}}
+  \end{center}
+  \caption{The distribution of the BumpHunter test statistic for 10,000 pseudo experiments compared
+    to the value observed in a data-like distribution from the (a) 2 $b$-tag category and (b) $\geq$1 $b$-tag category.
+    The fraction of pseudo-experiments with a BumpHunter test statistic greater than the value in data is the estimation of the respective $p$-value.}
+  \label{fig:DataLikeStatPlots_bh}
+\end{figure}
+
+
+%\begin{figure}[!ht]
+%  \begin{center}
+%   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+%  \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_bumpHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeBumpHunterStatPlot_bb}}
+%  \subcaptionbox{DeficitHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_deficitOnlyHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeDeficitOnlyHunterStatPlot_bb}}  
+%  \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_chi2StatPlot_10fb_v10.pdf}\label{fig:DataLikeChi2StatPlot_bb}}  
+%  \end{center}
+%  \caption{The distribution of the (a) BumpHunter test statistic, (b) DeficitHunter test statistic and (c) $\chi^{2}$ test statistic for 10,000 pseudo experiments
+%    compared to the value found in a data-like distribution for the 2 $b$-tag category. 
+%    The fraction of pseudo-experiments with a BumpHunter, DeficitHunter or $\chi^{2}$ test statistic greater than the value in data is the estimation of the respective $p$-value.}
+%  \label{fig:DataLikeStatPlots_bb}
+%  \begin{center}
+%   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+%  \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_bumpHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeBumpHunterStatPlot_bj}}
+%  \subcaptionbox{DeficitHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_deficitOnlyHunterStatPlot_10fb_v10.pdf}\label{fig:DataLikeDeficitOnlyHunterStatPlot_bj}}  
+%  \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_chi2StatPlot_10fb_v10.pdf}\label{fig:DataLikeChi2StatPlot_bj}}  
+%  \end{center}
+%  \caption{The distribution of the (a) BumpHunter test statistic, (b) DeficitHunter test statistic and (c) $\chi^{2}$ test statistic for 10,000 pseudo experiments
+%    compared to the value found in a data-like distribution for the $\geq$1 $b$-tag category.
+%  The fraction of pseudo-experiments with a BumpHunter, DeficitHunter or $\chi^{2}$ test statistic greater than the value in data is the estimation of the respective $p$-value. }
+%  \label{fig:DataLikeStatPlots_bj}
+%\end{figure}
+
+
+Many different Poisson fluctuations can be applied to the scaled distribution to give many different data-like distributions that can be fitted,
+and each fit will give a different BumpHunter and $\chi^{2}$ $p$-value.
+Figure~\ref{fig:pValueHists_bb} and Figure~\ref{fig:pValueHists_bj} shows the distribution of BumpHunter, DeficitHunter and $\chi^{2}$ $p$-values for 200 different data-like distributions,
+for the 2 $b$-tag and $\geq$1 $b$-tag category.
+There is no evidence of a fit-bias causing spurious signal in either category,
+which could be seen by a bias towards low BumpHunter $p$-values causing fake signals,
+of a bias toward low DeficitHunter $p$-values causing fake deficits.
+The distribution of the $\chi^{2}$ $p$-values also indicates that there is good fit quality in both tagging categories.
+
+Hence, it can be concluded that the 3-parameter fit function is a good description of the simulated QCD background
+and that there is no evidence that spurious signal can occur.
+Similar tests were performed for the 4-parameter fit function but are not presented here because,
+as shown in the following section,
+the 3-parameter function is chosen in both categories for this data-set.
+
+\begin{figure}[!htb]
+  \begin{center}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+  \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_pValHist_bumpHunter_10fb_v10.pdf}}
+  \subcaptionbox{DeficitHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_pValHist_deficitOnlyHunter_10fb_v10.pdf}}\\
+  \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbb_fix_8585_pValHist_chi2_10fb_v10.pdf}}
+  \end{center}
+  \caption{The distribution of (a) BumpHunter, (b) DeficitHunter and (c) $\chi^{2}$ $p$-values for fits to
+    200 data-like invariant mass spectra in the 2 $b$-tag category.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:pValueHists_bb}
+\end{figure}   
+\begin{figure}[!htb]
+  \begin{center}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+  \subcaptionbox{BumpHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_pValHist_bumpHunter_10fb_v10.pdf}}
+  \subcaptionbox{DeficitHunter}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_pValHist_deficitOnlyHunter_10fb_v10.pdf}}\\
+  \subcaptionbox{$\chi^{2}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/SpuriousSignal/mbj_inc_fix_8585_pValHist_chi2_10fb_v10.pdf}}
+  \end{center}
+  \caption{The distribution of (a) BumpHunter, (b) DeficitHunter and (c) $\chi^{2}$ $p$-values for fits to
+    200 data-like invariant mass spectra in the $\geq1$ $b$-tag category.
+    The \textit{Summer16+15} dataset event selection has been applied.}
+  \label{fig:pValueHists_bj}
+\end{figure}
+
+\FloatBarrier
+
+%\section{Flavour Fraction}
+%\label{sec:FlavourFraction}
+%
+%\begin{figure}[!htb]
+%  \begin{center}
+%    \includegraphics[scale=0.8, angle=0]{figs/flavourFraction/backgroundFlavourComposition.pdf}
+%  \end{center}
+%  \caption{The dijet flavour composition of the simulated dijet background as a function of dijet mass, shown for the inclusive, ≥ 1 $b$-tag and 2 $b$-tag categories.}
+%  \label{fig:flavourComposition}
+%\end{figure}
+  
 \subsection{Search Phase}
 \label{sec:bkg-summer_results}
+
+
 
 \section{Full\_2016 Search Phase}
 \label{sec:bkg-full}
