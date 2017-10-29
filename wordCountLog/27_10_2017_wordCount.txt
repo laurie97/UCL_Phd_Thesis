@@ -193,12 +193,12 @@ Subcounts:
 
 Included file: ./Chapters/SearchPhase.tex
 Encoding: utf8
-Words in text: 2967
+Words in text: 3221
 Words in headers: 45
-Words outside text (captions, etc.): 691
+Words outside text (captions, etc.): 767
 Number of headers: 13
-Number of floats/tables/figures: 11
-Number of math inlines: 165
+Number of floats/tables/figures: 13
+Number of math inlines: 183
 Number of math displayed: 4
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -207,12 +207,12 @@ Subcounts:
   271+2+0 (1/0/5/0) Section: Background Estimation
   268+3+25 (1/1/11/0) Subsection: Dijet Fit Functions
   148+2+42 (1/0/8/0) Subsection: Wilks' Statistic
-  744+2+0 (1/0/33/3) Section: BumpHunter Algorithm
-  66+5+0 (1/0/4/0) Section: \textit{Summer\_16+15} Search Phase
-  135+3+0 (1/0/4/0) Subsection: Background Modelling Strategy
-  166+4+69 (1/1/7/1) Subsection: Fit Tests: Background-Only Dataset
-  439+5+326 (1/5/41/0) Subsection: Fit Tests: Mass Range Studies
-  515+4+229 (1/4/48/0) Subsection: Fit Tests: Spurious Signal
+  739+2+0 (1/0/33/3) Section: BumpHunter Algorithm
+  68+5+0 (1/0/4/0) Section: \textit{Summer\_16+15} Search Phase
+  238+3+55 (1/1/18/0) Subsection: Background Modelling Strategy
+  193+4+69 (1/1/7/1) Subsection: Fit Tests: Background-Only Dataset
+  553+5+338 (1/5/46/0) Subsection: Fit Tests: Mass Range Studies
+  528+4+238 (1/5/47/0) Subsection: Fit Tests: Spurious Signal
   0+2+0 (1/0/0/0) Subsection: Search Phase
   3+4+0 (1/0/0/0) Section: Full\_2016 Search Phase
 
@@ -289,12 +289,12 @@ Subcounts:
   7+2+0 (1/0/0/0) Section: Event Display
 
 File(s) total: Thesis.tex
-Words in text: 25674
+Words in text: 25928
 Words in headers: 394
-Words outside text (captions, etc.): 2515
+Words outside text (captions, etc.): 2591
 Number of headers: 131
-Number of floats/tables/figures: 66
-Number of math inlines: 1097
+Number of floats/tables/figures: 68
+Number of math inlines: 1115
 Number of math displayed: 25
 Files: 17
 Subcounts:
@@ -308,7 +308,7 @@ Subcounts:
   5845+45+258 (18/13/246/10) Included file: ./Chapters/Object.tex
   5091+80+934 (26/17/255/1) Included file: ./Chapters/Trigger.tex
   2745+26+190 (9/6/149/1) Included file: ./Chapters/EventSel.tex
-  2967+45+691 (13/11/165/4) Included file: ./Chapters/SearchPhase.tex
+  3221+45+767 (13/13/183/4) Included file: ./Chapters/SearchPhase.tex
   0+13+0 (5/0/1/0) Included file: ./Chapters/Limits.tex
   0+2+0 (1/0/0/0) Included file: ./Chapters/Conclusions.tex
   53+3+0 (2/0/1/0) Included file: ./Chapters/Appendices.tex

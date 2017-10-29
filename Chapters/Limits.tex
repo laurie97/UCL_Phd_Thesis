@@ -1,8 +1,88 @@
 \chapter{Di-$b$-jet Search: Limit Setting}
 \label{sec:lim}
 
-\section{Strategy}
+\section{Bayesian Limits}
 \label{sec:lim-strat}
+
+In Chapter~\ref{sec:bkg} it was shown that there was no evidence of signal in the dijet spectra considered.
+Specifically, what was found was that the probability of obtaining a data-set with an excess similar to the one observed
+under the assumption that there is new physics was above a certain threshold.
+This lead to the conclusion that there is no evidence of BSM physics in the di-$b$-jet spectra.
+
+However, it is also useful to further quantify this observation by asking the question
+`what new physics models would have be observed in the di-$b$-jet spectrum if they were true?'
+To consider this question, we invert the hypothesis test set out in the search phase;
+instead let us assume that there is a new physics resonance
+which produces $\mu$ di-$b$-jet events per \ifb in some known shape in~\mjj.
+This signal is produced in addition to the QCD background,
+which has been modelled by the background fit from the previous chapter.
+This signal plus background model can be denoted with the hypothesis $H_\mu$.
+
+Now let us consider this hypothesis in the context of the data,
+which in this case is one of our di-$b$-spectra, and is denoted by $D$.
+Let's say that in each~\mjj~bin, the model predicts
+$s_i$ signal events, $b_i$ background events and $n_i$ events were observed.
+For the hypothesis, $H_\mu$, the probability of producing a di-$b$-jet spectrum
+such as the one we observed is known as the likelihood.
+If no systematics are included the likelihood is simply given by
+\begin{equation}
+  \Like (H_\mu,D) = P(D \mid H_\mu) =  \Pi_i \frac{(s_i+b_i)^{n_i}~e^{-(s+b)_i}}{n_i!}
+\end{equation}
+Then, one can employ Bayes' theorem which states that
+\begin{equation}
+  P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}
+\end{equation}
+to obtain the probability of hypothesis given the observed di-$b$-jet spectrum,
+\begin{equation}
+  P(H_\mu \mid D) = \frac{ P(D \mid H_\mu) \, \Pi( H_\mu ) }{ \Pi( D ) }
+\end{equation}
+The $\Pi(D)$ term does not depend on $\mu$ and as such can be considered as a normaliastion term.
+
+The $\Pi( H_\mu )$ term  is called the signal prior
+and gives the probability of $H_\mu$ before the experiment took place.
+For this experiment we have chosen a flat signal prior
+\footnote{Flat from $\mu$ = 0 to the value of $\mu$ where
+likelihood has fallen to $10^{-5}$ of the optimal likelihood value.}
+which represents that we are ignorant to the size of the signal before the experiment.
+
+To accurately calculate a limit one must consider systematic uncertainties,
+which can affect the models prediction of $s_i$ and $b_i$.
+The systematics considered in this analysis are listed in Section~\ref{sec:lim-syst}.
+The systematics are included in the Likelihood in the form of a set of nuissance parameters, $\vec{\theta}$,
+such that the likelihood becomes a function of nuissance parameters
+\begin{equation}
+  \Like (H_\mu,D,\vec{\theta}) = P(D \mid H_\mu, \vec{\theta} ) 
+\end{equation}
+Then the nuissance parameters must be incorperated to equation~\ref{}.
+A prior is introduced for each the nuissance parameters, given by $\Pi(\vec{\theta})$.
+Then, the effect of the nuissnace parameter is propagated by integrating over
+the nuissance parameters, which gives
+\begin{equation}
+  P(H_\mu \mid D) \propto \int d \vec{\theta} \, \Like (H_\mu, D, \vec{\theta} ) \, \Pi( H_\mu )  \, \Pi(\vec{\theta}) \, 
+\end{equation}
+
+Therefore one can calculate the Likelihoods for the data and
+perform the integral over nuissance parameters for a range of values of $\mu$.
+The value of $\mu$ for which  $P(H_\mu \mid D) =$ 0.05,
+is the 95\% confidence level upper limit for the signal model
+\footnote{ This is known as an upper limit as it is clear that if more signal events where present
+  then $P(H_\mu \mid D) <$ 0.05 so can also be excluded,
+  but similarly if less events where present then no 95\% exclusion could be applied.}.
+
+In the di-$b$-jet analysis we will set limits using the benchmark signal model templates which were described in Section~\ref{}.
+The limits will be presented as limits on cross-section x acceptance x efficiency,
+which is equivalent definition as $\mu$ that was defined above.
+
+Two upper limits are typical given for any search in particle physics.
+The first is the observed limit, which is the limit using the observed di-$b$-spectra
+as $D$ as described above.
+The second is expected limits under the assumption that no signal is present, referred to as the expected limits.
+To calculate these the limit setting procedure is performed where $D$ is replaced by pseudo-experiments created by applying Poisson fluctuations to the background model,
+This process can be done for many pseudo-experiments and the median upper limit  found gives the expected limit
+and the 68\% and 95\% percentiles give the 1 and 2 $\sigma$ error bands on the expected limit.
+
+
+
 
 \section{Systematics}
 \label{sec:lim-syst}
