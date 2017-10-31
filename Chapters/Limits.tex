@@ -17,7 +17,6 @@ Section~\ref{sec:lim-syst} will list the systematics considered
 and Section~\ref{sec:lim-summer} and Section~\ref{sec:lim-full}
 shows the results for the various data-sets considered.
 
-
 \section{Bayesian Limits}
 \label{sec:lim-strat}
 
@@ -113,7 +112,12 @@ but it is important that one states clearly which approach is being taken.
 \section{Systematics}
 \label{sec:lim-syst}
 
-The systematics considered are grouped into two categories.
+As discussed in the previous section,
+systematic uncertainties are an important consideration in limit-setting.
+They describe the uncertainty in the signal or background prediction and are accounted for
+when considering the calculation of the likelihood and therefore the final limit.
+
+The systematics in the di-$b$-jet analysis considered are grouped into two categories~\cite{dibjet-ichep_conf}.
 The first are systematic uncertainties of the background estimate.
 As the background estimate is data-driven,
 the modelling uncertainties usually considered in an ATLAS analysis are not required.
@@ -140,8 +144,7 @@ the background systematics are:
 
 The second group of systematic uncertainties are uncertainties on the signal models used in the limit setting procedure.
 Simulated Monte-Carlo signal templates are used for the signal templates
-so a larger range of modelling systematics can vary the signal template
-and as such these uncertainties must be considered for the signal models.
+so a larger range of modelling systematics that can vary the signal template are considered.
 The signal systematic uncertainties considered are:
 
 \begin{itemize}[leftmargin=*]
@@ -182,6 +185,104 @@ The signal systematic uncertainties considered are:
 
 \section{Limits: 2016\_Summer}
 \label{sec:lim-summer}
+
+Table~\ref{tab:lim-summer_syst} summarises the systematic uncertainties
+for the signal template used in the \verb|Summer16+15| data-set for
+three mass points at various points in our invariant mass spectrum.
+The largest systematic is from $b$-tagging.
+\textbf{LM Fix: No numbers of ICHEP fit systematics}
+
+\begin{table}[!htb]
+  \centering
+  \begin{tabular}{|c||c|c|c|c|c|c|}
+    \hline
+\multirow{2}{*}{Reco. Mass} & \multicolumn{6}{c|}{Systematic Uncertainties}                    \\ \cline{2-7} 
+                            & JES   & JER   & $b$JES  & $b$-Tagging ($\geq$1 / 2) & PDF & Lumi  \\
+\hline
+1.25 TeV                    & 1.2\% & 1.1\% & 2.9\% &          20\% / 10\%      & 1\% & 2.9\% \\
+3 TeV                       & 1.4\% & 0.7\% & 0.7\% &          50\% / 60\%      & 1\% & 2.9\% \\
+5 TeV                       & 2.3\% & 0.3\% & 0.3\% &          50\% / 70\%      & 1\% & 2.9\% \\
+\hline
+  \end{tabular}
+  \caption[A table summarising the signal systematics used in the \textit{Summer16+15} data-set.
+    Jet Enery Scale (JES), Jet Energy Resolution (JER) and $b$-Jet Energy Scale ($b$JES) uncertainties
+    are uncertainties on the reconstructed mass,
+    whilst $b$-tagging, PDF and luminosity uncertainties are uncertainties on signal normalisation.]
+          {A table summarising the signal systematics used in the \textit{Summer16+15} data-set.
+    Jet Enery Scale (JES), Jet Energy Resolution (JER) and $b$-Jet Energy Scale ($b$JES) uncertainties
+    are uncertainties on the reconstructed mass,
+    whilst $b$-tagging, PDF and luminosity uncertainties are uncertainties on signal normalisation.
+    Values taken from~\cite{dibjet-ichep_int}.}
+  \label{tab:lim-summer_syst}
+\end{table}
+
+Figure~\ref{fig:lim-summer_zprime} and \ref{fig:lim-summer_bstar} show the
+95\% confidence level upper limits are set on $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+for the $Z'$-boson and a $b^*$-quark respectively.
+The signal models considered are described in Section~\ref{sec:evt-s+b}.
+The observed limit, the expected limit and the 1 and 2 $\sigma$ error bands on the expected limit.
+The $\geq1$ $b$-tag category is used for the $b^*$-quark model
+and the 2 $b$-tag category is used for the $Z'$-boson models
+as these categories provide the strongest limits on the models.
+Overlaid are theoretical predictions of
+$\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models described in Section~\ref{sec:evt-s+b}.
+
+The observed and expected limits decrease with increasing~\mjj~
+due to larger statistical and systematic uncertainties at high mass.
+The theoretical $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ predictions
+have much steeper decrease with increasing~\mjj~than the limits.
+The steep fall is due to a combination of
+lower signal acceptance times efficiency at high-mass, as shown in Figures~\ref{fig:evt-ichep_acc},
+reducing cross-section, because of PDF and matrix element effects similar to the effects that cause a
+smoothly falling~\mjj~spectrum from QCD described in Section~\ref{sec:theo-qcd-dijet_features}.
+
+In the mass regions where the theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+is larger than the upper limit, then it can be concluded that the model is excluded at the 95\% confidence level.
+The $b^*$-quark is excluded in mass range 1.38 - 2.3 TeV.
+The SSM $Z'$-boson cannot be excluded by this analysis,
+whilst the leptophobic $Z'$-boson at a mass of 1.5 TeV.
+
+\begin{figure}[!ht]
+  \centering
+   \includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-zprime.pdf}
+   \caption[Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+    for the $Z'$-boson using the 2 $b$-tag category.
+    The observed limit the observed limit is shown by the solid black line,
+    the expected limit is shown by the dotted black line
+    and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+    The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+    for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson are overlaid.]
+           {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+    for the $Z'$-boson using the 2 $b$-tag category.
+    The observed limit the observed limit is shown by the solid black line,
+    the expected limit is shown by the dotted black line
+    and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+    The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+    for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson are overlaid~\cite{dibjet-ichep_conf}.
+  }
+  \label{fig:lim-summer_zprime}
+  \vspace{1cm}
+  \centering
+   \includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-bstar.pdf}
+   \caption[Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+    for the $b^*$-quark using the $\geq$1 $b$-tag category.
+    The observed limit the observed limit is shown by the solid black line,
+    the expected limit is shown by the dotted black line
+    and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+    The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+    for the $b^*$-quark is overlaid.]
+           {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+    for the $b^*$-quark using the $\geq$1 $b$-tag category.
+    The observed limit the observed limit is shown by the solid black line,
+    the expected limit is shown by the dotted black line
+    and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+    The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+    for the $b^*$-quark is overlaid~\cite{dibjet-ichep_conf}.
+  }
+  \label{fig:lim-summer_bstar}
+\end{figure}
+
+\FloatBarrier
 
 \section{Limits: 2016\_Full}
 \label{sec:lim-full}
