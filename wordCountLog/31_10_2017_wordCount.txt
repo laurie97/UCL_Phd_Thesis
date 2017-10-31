@@ -172,12 +172,12 @@ Subcounts:
 
 Included file: ./Chapters/EventSel.tex
 Encoding: ascii
-Words in text: 2745
-Words in headers: 26
-Words outside text (captions, etc.): 190
-Number of headers: 9
-Number of floats/tables/figures: 6
-Number of math inlines: 149
+Words in text: 2987
+Words in headers: 29
+Words outside text (captions, etc.): 244
+Number of headers: 10
+Number of floats/tables/figures: 7
+Number of math inlines: 168
 Number of math displayed: 1
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -189,6 +189,7 @@ Subcounts:
   258+2+43 (1/1/7/0) Subsection: Jet Selection
   366+3+12 (1/1/15/1) Subsection: Event Level Cuts
   322+1+98 (1/2/36/0) Subsection: $b$-Tagging
+  242+3+54 (1/1/19/0) Subsection: Dijet Flavour Composition
   358+1+5 (1/1/19/0) Subsection: Acceptance
 
 Included file: ./Chapters/SearchPhase.tex
@@ -289,12 +290,12 @@ Subcounts:
   7+2+0 (1/0/0/0) Section: Event Display
 
 File(s) total: Thesis.tex
-Words in text: 27924
-Words in headers: 394
-Words outside text (captions, etc.): 2641
-Number of headers: 131
-Number of floats/tables/figures: 71
-Number of math inlines: 1193
+Words in text: 28166
+Words in headers: 397
+Words outside text (captions, etc.): 2695
+Number of headers: 132
+Number of floats/tables/figures: 72
+Number of math inlines: 1212
 Number of math displayed: 30
 Files: 17
 Subcounts:
@@ -307,7 +308,7 @@ Subcounts:
   3127+33+116 (12/8/83/3) Included file: ./Chapters/Detector.tex
   5845+45+258 (18/13/246/10) Included file: ./Chapters/Object.tex
   5091+80+934 (26/17/255/1) Included file: ./Chapters/Trigger.tex
-  2745+26+190 (9/6/149/1) Included file: ./Chapters/EventSel.tex
+  2987+29+244 (10/7/168/1) Included file: ./Chapters/EventSel.tex
   3480+44+777 (13/14/192/4) Included file: ./Chapters/SearchPhase.tex
   1737+14+40 (5/2/70/5) Included file: ./Chapters/Limits.tex
   0+2+0 (1/0/0/0) Included file: ./Chapters/Conclusions.tex

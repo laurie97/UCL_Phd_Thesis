@@ -423,6 +423,46 @@ For full details refer to the text.}
 \label{tab:evt}
 \end{table}
 
+\subsection{Dijet Flavour Composition}
+\label{sec:evt-sel-flavcomp}
+
+The dijet flavour composition is defined as the truth flavour of both of the jets used in the di-$b$-jet analysis,
+using the definition of truth flavour from Section~\ref{sec:obj-bjets_label}.
+Figure~\ref{fig:evt-summer_flavcomp} shows the dijet flavour composition of the QCD dijet background in
+the case where no $b$-tagging has been applied (inclusive) and in the $\geq1$ and 2 $b$-tag categories.
+For this figure the \verb|Summer16+15| data-set event selection has been applied,
+although the distributions are very similar for the \verb|Full16+15_HighMass| data-set
+as the same $b$-tagging operating point has been chosen.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.99\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-summer_flavcomp.pdf}
+  \end{center}
+  \caption{The dijet flavour composition of the simulated dijet background as a function of dijet mass,
+    shown without applying $b$-tagging (inclusive) and for $\geq1$ $b$-tag and 2 $b$-tag categories.
+    In the legend b, c and l refere to a truth matched $b$-jet, $c$-jet and light jet respectively.
+    The \textit{Summer16+15} dataset event selection has been applied.
+  }
+  \label{fig:evt-summer_flavcomp}
+\end{figure}
+
+There are a few features that can be noted in this figure.
+Firstly, the figure shows that the flavour fraction of the background before $b$-tagging is dominated by light-jets
+for the reasons outlined in~Section~\ref{sec:theo-qcd-dijet_features}.
+As the background is dominated by light-jets the application
+of $b$-tagging can sigificantly increase background rejection
+and thus increase sensitivity to signal models that decay to $b$-quarks.
+This motivates the use of $b$-tagging in the analysis.
+
+Secondly, even after the application of $b$-tagging the largest contribution to the background is from light jets,
+except for in a small region at low mass in the 2 $b$-tag category.
+This shows that the sensitivity of the analysis is limited by the
+$b$-tagging performance at high jet-\pT.
+
+Finally, in all three cases the dijet flavour fractions are smooth, which is evidence that
+there are no sudden changes in $b$-tagging efficiency of the background that could introduce
+a non-smooth feature in the background invariant mass spectra.
+
 \subsection{Acceptance}
 \label{sec:evt-sel-acc}
 
