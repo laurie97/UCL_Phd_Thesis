@@ -391,44 +391,10 @@ between operating points will be the same for all luminosities.
 \end{center}
 \end{table}
 
-As a summary the  key components
-of the event selection
-for each of the data-sets considered
-is listed Table~\ref{tab:evt}.
-
-\begin{table}[!htb]
-  \begin{tabular}{|c||c|c|c|}
-    \hline
-\thead{Cut}              &  \thead{Summer16+15} & \thead{Full16+15\_HighMass} & \thead{Full16+15\_LowMass} \\
-\hline
-%Trigger          & HLT\_380 & HLT\_380 & \makecell{ HLT\_j150\_bmv2c2060\_split\\\_j50\_bmv2c2060\_split} \\
-Trigger                & Single-jet       & Single-jet       & Double $b$-jet (60\% OP) \\
-Online LJ~\pT          & \gt~380 GeV  & \gt~380 GeV  & \gt~150 GeV  \\
-Online SLJ~\pT         & -  & -  & \gt~50 GeV \\
-\hline
-Leading Jet-\pT    &  \gt~430 GeV & \gt~430 GeV &  \gt~200~GeV\\
-Subleading Jet-\pT &  \gt~60 GeV & \gt~60 GeV  &  \gt~80~GeV\\
-Jet-$|\eta|$   & $<$ 2.4 & $<$ 2.0 & $<$ 2.0 \\
-\hline
-$m_{jj}$  & \gt~1378 GeV & \makecell{\gt~1200 GeV (2 $b$-tag)\\ \gt~1341 GeV ($\geq1$ $b$-tag)} & \gt~500 GeV \\
-$|y^*|$  & $<$ 0.6 & $<$ 0.8 & $<$ 0.6  \\
-\hline
-$b$-Tagging OP & 85\% & 85\% & 70\%\\
-$b$-Tag Categories & 2 and $\geq$1 & 2 and $\geq$1 & 2 \\
-\hline
-\end{tabular}
-\centering
-\caption{A summary of the key event selections applied in the di-$b$-jet analysis for each of the data-sets considered.
-For full details refer to the text.}
-\label{tab:evt}
-\end{table}
-
-\subsection{Dijet Flavour Composition}
-\label{sec:evt-sel-flavcomp}
-
+The background flavour composition is studied to better understand the effect of the flavour composition in this analysis.
 The dijet flavour composition is defined as the truth flavour of both of the jets used in the di-$b$-jet analysis,
 using the definition of truth flavour from Section~\ref{sec:obj-bjets_label}.
-Figure~\ref{fig:evt-summer_flavcomp} shows the dijet flavour composition of the QCD dijet background in
+Figure~\ref{fig:evt-summer_flavcomp} shows the dijet flavour composition of the simulated QCD dijet background in
 the case where no $b$-tagging has been applied (inclusive) and in the $\geq1$ and 2 $b$-tag categories.
 For this figure the \verb|Summer16+15| data-set event selection has been applied,
 although the distributions are very similar for the \verb|Full16+15_HighMass| data-set
@@ -441,8 +407,7 @@ as the same $b$-tagging operating point has been chosen.
   \caption{The dijet flavour composition of the simulated dijet background as a function of dijet mass,
     shown without applying $b$-tagging (inclusive) and for $\geq1$ $b$-tag and 2 $b$-tag categories.
     In the legend b, c and l refere to a truth matched $b$-jet, $c$-jet and light jet respectively.
-    The \textit{Summer16+15} dataset event selection has been applied.
-  }
+    The \textit{Summer16+15} dataset event selection has been applied.}
   \label{fig:evt-summer_flavcomp}
 \end{figure}
 
@@ -463,11 +428,72 @@ Finally, in all three cases the dijet flavour fractions are smooth, which is evi
 there are no sudden changes in $b$-tagging efficiency of the background that could introduce
 a non-smooth feature in the background invariant mass spectra.
 
-\subsection{Acceptance}
+\subsection{Event Selection Summary}
 \label{sec:evt-sel-acc}
 
-Signal acceptance of the di-$b$-jet analysis is studied
-as it helps us understand the strengths and weaknesses of the analysis
+The  key components
+of the di-$b$-jet event selection
+for each of the data-sets considered
+as descibed in this Chapter
+is listed Table~\ref{tab:evt}.
+
+\begin{table}[!htb]
+  \begin{tabular}{|c||c|c|c|}
+    \hline
+\thead{Cut}              &  \thead{Summer16+15} & \thead{Full16+15\_HighMass} & \thead{Full16+15\_LowMass} \\
+\hline
+%Trigger          & HLT\_380 & HLT\_380 & \makecell{ HLT\_j150\_bmv2c2060\_split\\\_j50\_bmv2c2060\_split} \\
+Trigger                & Single-jet       & Single-jet    & Double $b$-jet (60\% OP) \\
+Online LJ~\pT          & \gt~380 GeV      & \gt~380 GeV   & \gt~150 GeV  \\
+Online SLJ~\pT         & -                & -             & \gt~50 GeV \\
+\hline
+Leading Jet-\pT    &  \gt~430 GeV & \gt~430 GeV &  \gt~200~GeV\\
+Subleading Jet-\pT &  \gt~60 GeV & \gt~80 GeV  &  \gt~80~GeV\\
+Jet-$|\eta|$   & $<$ 2.4 & $<$ 2.0 & $<$ 2.0 \\
+\hline
+$m_{jj}$  & \gt~1378 GeV & \makecell{\gt~1200 GeV (2 $b$-tag)\\ \gt~1341 GeV ($\geq1$ $b$-tag)} & \gt~500 GeV \\
+$|y^*|$  & $<$ 0.6 & $<$ 0.8 & $<$ 0.6  \\
+\hline
+$b$-Tagging OP & 85\% & 85\% & 70\%\\
+$b$-Tag Categories & 2 and $\geq$1 & 2 and $\geq$1 & 2 \\
+\hline
+\end{tabular}
+\centering
+\caption{A summary of the key event selections applied in the di-$b$-jet analysis for each of the data-sets considered.
+For full details refer to the text.}
+\label{tab:evt}
+\end{table}
+
+To better visualise events that pass the event selection,
+Figure~\ref{fig:evt-vp1} show events displays for high~\mjj~events that pass
+the $\geq$1 and 2 $b$-tag $b$-tag event selection respectively.
+The figure was made using the VP1 event display package~\ref{evt-vp1}.
+These events are included in and pass both the \verb|Summer16+15| and \verb|Full16+15_HighMass| data-set event selection.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{2 $b$-tag\vspace{5mm}}      {\includegraphics[width=0.95\linewidth, angle=0]{figs/Dibjet/Gen/evt-vp1_bb.png}}\\
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.95\linewidth, angle=0]{figs/Dibjet/Gen/evt-vp1_b.png}}
+  \end{center}
+  \caption
+      {Event displays showing high~\mjj~events that pass the (a) 2 and (b) $\geq$1 $b$-tag di-$b$-jet event selection.
+        The left section of the figures show a cut-away of the ATLAS detector;
+        the inner detector is shown in purple, the hadronic calorimeter is shown in blue
+        and the toroid magnet and supporting structure is shown in black and grey.
+        The upper right section of the figures show a close-up view of the inner tracker in the $r-z$ plane.
+        In both sections tracks inside the inner detector are shown in orange
+        and energy deposits in the EM and hadronic calorimeter are shown in cyan and yellow respectively.
+        The two leading jets formed are indicated by the cones, where a blue cone indicates that the jet has been
+        $b$-tagged and a yellow cone shows that it has not.
+        The yellow spheres show the primary vertex candidates and the red spheres show the secondary vertex candidates.
+      }
+  \label{fig:lim-summer_gauss}
+\end{figure}
+
+With the event selection now defined
+the signal acceptance of the di-$b$-jet analysis is studied
+as it helps us understand the performance of the analysis selection
 and it will be used as an input to the limit-setting phase of the analysis.
 The signal acceptance multiplied by trigger efficiency is defined as the 
 the fraction of signal events that would pass the analysis' trigger and event selection.
