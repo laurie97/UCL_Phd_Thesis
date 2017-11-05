@@ -1,40 +1,28 @@
 \chapter{Di-$b$-jet Search: Search Phase}
 \label{sec:bkg}
 
-The role of the search phase is to identify
-if there is any evidence of a resonance
-in the~\mjj~spectra of the di-$b$-jet events selected.
-This is carred out in two parts;
-firstly a background fit is used to estimate
+The role of the search phase is to identify if there is any evidence of beyond standard model
+physics in the form of a resonance (or a bump) in the~\mjj~spectra of the di-$b$-jet events selected.
+This is carred out in two parts; firstly a background fit is used to estimate
 the~\mjj~distribution of the QCD dijet background.
-Then, the difference between the data
-and the background estimation is used 
-to search 
-for a significant excess that would be evidence
-of a resonance.
+Then, the difference between the data and the background estimation is used 
+to search for a significant excess that would be evidence of BSM physics.
 
-In this chapter
-I will describe
-the details of the $m_{jj}$ spectra used in the analysis
-(Section~\ref{sec:bkg-mjj}),
-the background estimation strategy
-(Section~\ref{sec:bkg-fit})
-the technique used to search for excesses
-(Section~\ref{sec:bkg-bh})
-and then I will present the search phase
-validation and results from each of the data sets.
+In this chapter I will describe
+the details of the $m_{jj}$ spectra used in the analysis (Section~\ref{sec:bkg-mjj}),
+the background estimation strategy (Section~\ref{sec:bkg-fit}),
+the technique used to search for excesses (Section~\ref{sec:bkg-bh})
+and then I will present the search phase validation and results from each of the data sets.
 
 \section{Invariant Dijet Mass Spectrum}
 \label{sec:bkg-mjj}
 
-The invariant mass spectrum is the number of events
-with an invariant mass~\mjj~
-of the leading and subleading jet.
+The invariant dijet mass spectrum, or~\mjj~spectrum,
+is the distribution of the invariant mass of the leading and subleading jet.
 The~\mjj~spectrum is analysed in a binned histogram,
-the bin size is chosen to give a smooth spectrum
-and to be larger than the mass resolution of the detector \textbf{LM Fix: I though mass res was ~5\%. Check}.
-The exact bins are chosen following the study found here~\cite{dijet-mori16_int}
-and are shown in Appendix~\ref{app:dijet_bins}.
+the bin width is chosen to be approximately the same size as the dijet mass resolution
+whilst still giving a smooth~\mjj~spectrum~\cite{dijet-mori16_int}.
+The exact bins are chosen are shown in Appendix~\ref{app:dijet_bins}.
 
 There is a different~\mjj~spectrum for each
 $b$-tagging category considered,
@@ -66,7 +54,7 @@ is smoothly falling with respect to~\mjj,
 as discussed in Section~\ref{sec:theo-qcd-dijet_features}.
 Fit functions have been widely used
 in a wide range of searches for resonances on smoothly falling backgrounds
-including previous dijet and di-$b$-jet searches~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
+including previous dijet and di-$b$-jet searches~\cite{dijet-mori16_paper,dibjet-mori16_paper,bkg-higgs_gammagamma}.
 
 This approach gives two requirements on a fit function;
 firstly the fit function must be able to describe the di-$b$-jet spectrum from QCD,
@@ -82,7 +70,7 @@ data is used to determine the parameters of the fit function.
 This is done by minimising the negative log likelihood,
 where the likelihood is calculated from comparing
 the binned data to the fit function
-under the assumption of poisson-like errors.
+under the assumption of Poisson errors.
 
 \subsection{Dijet Fit Functions}
 \label{sec:bkg-bkg_func}
@@ -134,29 +122,28 @@ Finally, the $x=m_{jj}/p_6$ term is added as an additional degree of freedom.
 This function has been found to provide a satisfactory fit to the leading and next-to-leading-order QCD Monte-Carlo simulation.
 
 
-Adding additional parameters to the 3 parameter dijet fit function may be required to describe the di-$b$-jet mass spectrum;
+The functions with higher number of parameters may be required to describe the di-$b$-jet mass spectrum;
 especially in large data-sets where small statistical errors reveal finer details of the QCD background shape
 and large mass ranges where larger constraints are applied to the fit in each mass range.
 However, additional parameters also allow for more flexibility in the background shape
 which might cause a fit bias if a resonance is present.
 Hence, there is an overall strategy to use the fewest number of parameters
-that can adequetely describe the background,
-such that sensitivity to signal is maximised.
+that can adequetely describe the background, such that sensitivity to signal is maximised.
 
 \subsection{Wilks' Statistic}
 \label{sec:bkg-bkg_wilks}
 
 To decide whether a fit function has adequete number of parameters the Wilks' test statistic is used,
 as done in previous iterations of both the inclusive and $b$-tagged dijet search~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
-The Wilks' test statistic tests the null hypothesis that the nominal fit function contains enough parameters to describe the data
-by comparing the nominal to an alternate fit that has 1 extra parameter.
-One can calculate the Wilks' test statistic, which is defined as $-\log{(\Lambda)}$, where $\Lambda$ is the likelihood ratio of the nominal and alternate function.
+For this test we consider a null hypothesis that a nominal dijet fit function contains enough parameters to describe the data
+and an alternate hypothesis that a dijet fit function with one extra parameter is required.
+The Wilks' test statistic is defined as $-\log{(\Lambda)}$, where $\Lambda$ is the likelihood ratio of the nominal and alternate function.
 Using Wilks' theorem it is known that for nested functions
 \footnote{Nested functions occur when the simpler function can be taken from a more complex function by setting one parameter to a specific value.
   For example the 3 parameter function can be taken from the 4 parameter function when $p_4$ = 0 and so on},
-such as the functions in Table~\ref{tab:bkg-fit},
+such as the dijet fit functions,
 the Wilks' test statistic will follow a $\chi^2$ distribution with 1 degree of freedom~\cite{dibjet-wilks}.
-Using this a $p$-value can be calculated for our null hypotheses that the nominal function has sufficient number of parameters.
+Therefore a $p$-value can be calculated for our null hypotheses that the nominal function has sufficient number of parameters.
 Such a $p$-value will be referred to as the Wilks' $p$-value throughout this section.
 
 %\subsection{Parameter Optimsation}
@@ -166,10 +153,10 @@ Such a $p$-value will be referred to as the Wilks' $p$-value throughout this sec
 \label{sec:bkg-bh}
 
 Once the background has been modelled using a fit, the next step is to determine
-if there is evidence of a resonance in our di-$b$-jet invariant mass spectrum.
+if there is evidence of a resonance in the di-$b$-jet invariant mass spectra.
 As shown in Figure~\ref{fig:evt-dijet_schem} such a resonance would appear as a bump on the smoothly falling background distribution.
 This can be observed as a discrepant excess in the~\mjj~spectrum;
-where an excess is defined as any set of consecutive bins that contain
+where an excess is defined as any set of consecutive bins that contains
 more events in data than the background prediction,
 and discrepant describes how inconsistent an excess is with the background estimation.
 To set this up in terms of hypothesis testing, the null hypothesis, $H_0$,
@@ -197,7 +184,7 @@ under the assumption of $H_0$.
 To derive the test statistic let's consider $N$ consecutive bins for which
 a total of $d$ data events are found and a total of $b$ background events are expected.
 As this is a search for excesses we will consider the case where $d > b$.
-Using poisson statitics one can calculate the probability of seeing an excess which is at least that discrepant
+Using Poisson statistics one can calculate the probability of seeing an excess which is at least that discrepant
 under the assumption of the null hypothesis:
 \begin{equation}
   P(d,b) = \sum_{n=d}^{\infty} \frac{b^n~e^{-b}}{n!}
@@ -211,13 +198,13 @@ with a large $t$ indicating a discrepant excess.
 Using the same logic and requiring that $d < b$ it is possible to also search for deficits,
 this is referred to as the DeficitHunter $p$-value.
 
-The BumpHunter algorithm will find the excess in data with the largest $t$ in the~\mjj~spectrum
+The BumpHunter algorithm calculates the value of $t$ for all excesses in the~\mjj~spectrum
 by scanning over all possible combinations of consecutive bins.
-The narrowest excess allowed is 2 bins and the widest excess allowed has half the number of bins in the spectrum.
-This excess found will be refered to as the most discrepant excess and the value of of $t$ observed is labelled $t_{obs}$.
+The narrowest excess allowed is two bins and the widest excess allowed has half the number of bins in the spectrum.
+This excess with the largest BumpHunter test-statistic is the most discrepant excess and the value of $t$ observed is labelled $t_{obs}$.
 
-To calculate the $p$-value of the discrepant excess
-Poisson fluctuations are applied to the background model to create pseudo-experients,
+To calculate the $p$-value of the most discrepant excess
+Poisson fluctuations are applied to the background model to create pseudo-experiments,
 which are data-like spectra that are consistent with the null hypothesis.
 In each pseudo-experiment the BumpHunter scan is performed to find the most discrepant excess and corresponding value of $t$.
 This is done for many pseudo-experiments to estimate the probability density function of $t$ under the assumption of the null hypothesis,
@@ -250,7 +237,7 @@ and Section~\ref{sec:bkg-summer_results} presents the results of the search phas
 As described in Chapter~\ref{sec:evt}
 there are two $b$-tag categories considered for the the \textit{Summer16+15} data-set 
 (2 $b$-tag and $\geq1$ $b$-tag)
-giving two dijet invariant mass spectra to perform a search phase.
+giving two dijet invariant mass spectra to perform a search phase on.
 
 \subsection{Background Modelling Strategy}
 \label{sec:bkg-summer_global}
@@ -262,19 +249,20 @@ similar to previous dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_pa
 To select a fit function from the set of dijet fit function described in Table~\ref{tab:bkg-fit} the following strategy is used with the final data-set.
 The 3 parameter dijet function is used as the initial nominal function and hence the 4 parameter dijet fit function function is the initial alternate function.
 Using the Wilks' statistic a $p$-value can be calculated,
-if the $p$-value is less than 0.05, the nominal fit function is rejected and the alternative function would then become the nominal.
+if the $p$-value is less than 0.05, the nominal fit function is rejected and the alternative function becomes the nominal.
 The process is iteratively run until a dijet fit function is selected with a stable Wilks' $p$-value.
 
-In the \textit{Summer16+15} data-set when comparing the 3 parameter fit function to the 4 parameter fit function
-a Wilks' $p$-value of 0.55 and 0.12 where found in the 2 $b$-tag and $\geq1$ $b$-tag category respectively.
-Therefore the 3 parameter fit function was selected in both categories.
-
+In the \textit{Summer16+15} data-set the choice of the dijet fit function choice was fixed using the Wilks' p-value calculated for a 8.8~\ifb~subset of data.
+This is because the analysis was being formed as data was being collected and a function choice was required to present the analysis
+to the collaboration before the final 4.5~\ifb~of data was processed and avaliable.
 Figure~\ref{fig:bkg-summer-wilks} shows the Wilks' $p$-value as a function of luminosity
-for the $\geq1$ $b$-tag and 2 $b$-tag categories.
+for the $\geq1$ $b$-tag and 2 $b$-tag categories for the 8.8~\ifb~subset of data.
 For both categories the 3 parameter fit function when compared to the 4 parameter fit function
 has a Wilks' $p$-value $>$ 0.05.
 Therefore the 3 parameter fit function was selected in both categories.
-\textbf{LM Question: Why only 8.8 ifb, what to do about it...}
+Given that the 3 parameter fit function was adequete to describe the majority of the data-set it is a good assumption that it would be able to describe the full data-set.
+However, I think with hindsight that it would have been better to perform the Wilks' test on the full data-set.
+
 
 \begin{figure}[!ht]
   \begin{center}
@@ -282,10 +270,17 @@ Therefore the 3 parameter fit function was selected in both categories.
    \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-WilksStat_bb.pdf}}
    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-WilksStat_b.pdf}}
   \end{center}
-  \caption{The Wilks' $p$-value as a function of luminosity
+  
+  \caption[The Wilks' $p$-value as a function of luminosity
     in the case that the 3 parameter is the nominal function and the 4 parameter is the alternate (blue)
     and the case where the 4 parameter is the nominal function and the 5 parameter is the alternate (purple)
-    for the final data-set in the (a) 2 $b$-tag and (b) $\geq1$ $b$-tag category.
+    for a 8.8~\ifb~subset of data in the (a) 2 $b$-tag and (b) $\geq1$ $b$-tag category.
+    The \textit{Summer16+15} data-set event selection has been applied.]
+          {The Wilks' $p$-value as a function of luminosity
+            in the case that the 3 parameter is the nominal function and the 4 parameter is the alternate (blue)
+            and the case where the 4 parameter is the nominal function and the 5 parameter is the alternate (purple)
+            for a 8.8~\ifb~subset of data in the (a) 2 $b$-tag and (b) $\geq1$ $b$-tag category.
+            The \textit{Summer16+15} data-set event selection has been applied~\cite{dibjet-mori17_conf}.
   }
   \label{fig:bkg-summer-wilks}
 \end{figure}
@@ -296,9 +291,9 @@ Therefore the 3 parameter fit function was selected in both categories.
 To demonstrate that the dijet fit functions are a valid description of the background,
 fit tests are peformed to a representative background only data-set.
 
-To perform these tests, a {\sc pythia}8 MC multi-jet simulation is used as the representative background only data-set.
+To perform these tests, the {\sc pythia}8 MC QCD multi-jet simulation is used as the representative background only data-set.
 The simulation sample is produced in several slices of leading jet $p_{T}$, where each slice contains the same number of events.
-A weight is applied to each event such that final distribution shape is representative of the smoothly falling~\mjj~spectrum that is expcted,
+A weight is applied to each event such that the final distribution is representative of the smoothly falling~\mjj~spectrum that is expcted,
 whilst still maintaining a similar precision across the full mass range.
 The weighted invariant mass distribution is then scaled to 10~\ifb~\footnote{
   These studies were carried out during data-taking
@@ -306,7 +301,7 @@ The weighted invariant mass distribution is then scaled to 10~\ifb~\footnote{
   10~\ifb was used where the final data-set is 13.3~\ifb.
 },
 this is referred to as the  `scaled distribution', which can be interpretated as the expected number of data events in a specific mass bin. 
-The precision of the scaled distribution is represented by the the number of `effective entries';
+The precision of the scaled distribution is represented by the number of `effective entries';
 the number of effective entries is the number of data events that would be required to give the same precision,
 or to put it another way it is the square of the error in that mass bin. The number of effective entries can be calculated from the event weights as shown in Equation~\ref{eq:effEnt}.
 \begin{equation}
@@ -348,6 +343,8 @@ The most discrepant excess is indicated by the blue lines and the BumpHunter $p$
 which has been calculated using 10,000 pseudo-experiments.
 Similarly, the $p$-value of the most discrepant deficit is calculated using the same process, which is referred to as DeficitHunter,
 and an overall quality of fit $p$-value is also calculated by the same process using the $\chi^{2}$ test statistic.
+The lower panel shows the significance in each~\mjj~bin,
+defined the difference between the data and the background estimate divided by the error on the data point.
 
 For both fit functions in the $\geq$1 $b$-tag category,
 a large excess is observed which has been assigned a BumpHunter $p$-value of 0.00.
@@ -502,7 +499,7 @@ $b$-tag categories overlaid with a data-like distribution in blue.
   \caption{The scaled invariant mass distribution (red) compared to the
     effective entries of the invariant mass distribution (green) for the 2 $b$-tag category,
     for the (a) 2 $b$-tag and (b) $\geq$1 $b$-tag case.
-    Overlaid is a data-like distribution (blue) created by applying poisson fluctuations to the scaled distribution.
+    Overlaid is a data-like distribution (blue) created by applying Poisson fluctuations to the scaled distribution.
     The \textit{Summer16+15} dataset event selection has been applied.}
   \label{fig:effEntDataLike}
 \end{figure}
@@ -523,7 +520,7 @@ the BumpHunter, DeficitHunter and  $\chi^{2}$ $p$-value are found to be
 Similarly, in the $\geq1$ $b$-tag category the
 BumpHunter, DeficitHunter and  $\chi^{2}$ $p$-values are
 0.93, 0.77 and 0.86 respectively.
-Therefore, the fit is performing well for both $b$-tagging categories for this data-like fluctuation.
+Therefore, the fit is performing well for both $b$-tagging categories for this set of Poisson fluctuations.\\
 
 \begin{figure}[!ht]
   \begin{center}
@@ -575,9 +572,9 @@ Therefore, the fit is performing well for both $b$-tagging categories for this d
 %  \label{fig:DataLikeStatPlots_bj}
 %\end{figure}
 
-
-Many different Poisson fluctuations can be applied to the scaled distribution to give many different data-like distributions that can be fitted,
-and each fit will give a different BumpHunter and $\chi^{2}$ $p$-value.
+However, it is required to study the fit quality without being dependant on any one set of Poisson fluctuations.
+Therefore, different Poisson fluctuations are applied to the scaled distribution to give many different data-like distributions,
+and the search phase can be applied to each data-like distribution.
 Figure~\ref{fig:pValueHists_bb} and Figure~\ref{fig:pValueHists_bj} shows the distribution of BumpHunter, DeficitHunter and $\chi^{2}$ $p$-values for 200 different data-like distributions,
 for the 2 $b$-tag and $\geq$1 $b$-tag category.
 There is no evidence of a fit-bias causing spurious signal in either category,
@@ -640,10 +637,10 @@ Hence, for the \verb|Summer16+15| data-set the 3 parameter fit function
 provides a valid background estimation in both categories.
 
 Figure~\ref{fig:bkg-summer_searchPhase} shows the final
-\verb|Summer16+15| data-set fitted to with the 3 parameter fit function
+\verb|Summer16+15| data-set and the background estimate using the 3 parameter dijet fit function
 in the 2 and $\geq1$ $b$-tag categories.
 The upper panel shows the data compared to the background fit,
-in addition the benchmark signal models with enhanced cross sections have been overlaid for each category.
+in addition the benchmark signal models with enhanced cross sections have been overlaid.
 The lower panel shows the significance of the difference between the data and background estimate.
 
 
@@ -675,9 +672,8 @@ in the figure using vertical blue lines.
 The BumpHunter $p$-value has been calculated using 10,000 pseudo-experiments.
 The BumpHunter $p$-value is 0.60 in the 2 $b$-tag category
 and 0.44 in the $\geq1$ $b$-tag category.
-Hence, the conclusion of the search phase in the \verb|Summer16+15| data-set analysis
-is that there is no signifcant excess found in either $b$-tag category.
-
+Therefore, it can be concluded that no signifcant excess is found in either $b$-tag category
+and that there is no evidence of new physics in the \verb|Summer16+15| data-set.
 
 \section{Full\_2016 Search Phase}
 \label{sec:bkg-full}
