@@ -62,7 +62,7 @@ and full detail can be found in the relevant chapter.
  
 \item\textbf{Limit Setting:} (\textit{Chapter~\ref{sec:lim}})\\
   If, in the search phase stage of the analysis, no significant evidence of signal is
-  found then it is desirable to quantify what cross-sections can be excluded as a result.
+  found then some of the signal models considered may be excluded.
   95\% confidence level limits are set on the two benchmark signals considered.
   Chapter~\ref{sec:lim} presents the limit-setting methodology,
   a description of systematics considered
@@ -94,7 +94,7 @@ is applied to remove events of low data-quality,
 which is typically because an element of the detector was not operating optimally.
 For example, data-taking periods where the inner-most layer of the inner detector,
 the IBL, was not operating are removed as
-this data-taking period had a lower $b$-tagging performance.
+this data-taking period has a lower $b$-tagging performance.
 A GRL is applied to all data-sets considered in this analysis.
 
 The data-sets are listed below, the trigger used in each data-set is described.
@@ -124,10 +124,10 @@ All quoted luminosities are given after the GRL has been applied.
   which requires two trigger-level jets with $p_T >$ 150 GeV and $p_T >$ 50 GeV
   where both jets have been $b$-tagged at the trigger level
   \footnote{Further details of $b$-jet triggers and this particular trigger used in this analysis is in Section~\ref{sec:trig-bjet}.}.
-  The \verb|Full16_LowMass| uses a $b$-jet trigger as the lower \pT~thresholds allow
+  The \verb|Full16_LowMass| data-set uses a $b$-jet trigger as the lower \pT~thresholds allow
   the analysis to probe a lower range of \mjj.
   This analysis does not include data from 2015 which was collected using a significantly different $b$-jet trigger configuration.
-  The \verb|Full16_LowMass| uses a $b$-jet trigger aware GRL which additionally
+  The \verb|Full16_LowMass| data-set uses a $b$-jet trigger aware GRL which additionally
   removes periods of data where the $b$-jet trigger was performing in a sub-optimal way,
   the GRL is described in Section~\ref{sec:trig-grl}.
   As a double $b$-jet trigger is used only the 2 $b$-tag category is considered.
@@ -267,7 +267,7 @@ For the \verb|Summer16+15| data-set; it is required that the leading jet has \pT
 This cut is derived by comparing the leading jet-\pT~distributions of jets that pass the trigger, \verb|HLT_j380|,
 relative to a benchmark trigger with a lower jet-\pT~threshold, \verb|L1_J75|.
 Figure~\ref{fig:evt-jet_pt} shows this comparison in one run of data where \verb|L1_J75| was unprescaled
-\footnote{unprescaled means that the trigger accepts every event passing the trigger selection criteria};
+\footnote{Unprescaled means that the trigger accepts every event passing the trigger selection criteria};
 in the ratio plot it is shown that for leading jet-\pT~$>$ 430 GeV events are on the trigger plateau.
 The subleading jet is required to have jet-\pT~$>$ 60 GeV
 to avoid contamination from pile-up jets
@@ -376,11 +376,11 @@ This operating point was chosen to maximise $S/\sqrt{B}$ for a range of simulate
 Below the details of the $b$-tagging optimisation study for the \verb|Full16+15_HighMass| data-set are shown,
 the results also validate the choice of $b$-tagging operating point in the \verb|Summer16+15| data-set.
 The number of background events, $B$, is estimated in
-a narrow mass window around
-each mass point considered using a
+a narrow~\mjj~window around
+each simulated mass point considered using a
 18.9~\ifb~subset of data for the 2 $b$-tag category.
 The number of signal events, $S$, is estimated
-in the same narrow mass windows using 
+in the same narrow~\mjj~windows using 
 the simulated SSM $Z'$-boson signal template
 described in Section~\ref{sec:evt-s+b} scaled to 18.9~\ifb~\footnote{This is
   the amount of data collected when the studies where performed}.
@@ -395,7 +395,7 @@ between operating points will be the same for all luminosities.
 \begin{center}
 \begin{tabular}{|c||c|c|c|}
   \hline
-  Signal Mass [GeV]        &  1500  &   2000  &  2500  \\
+  Simulated Mass [GeV]        &  1500  &   2000  &  2500  \\
   \hline
   Mass window [GeV]               & 1378-1573       &  1785-2114   &  2267-2659 \\
   \hline
@@ -404,10 +404,15 @@ between operating points will be the same for all luminosities.
   $S/\sqrt{B}$ for 70\% OP        &  1.73           &  0.47        &  0.12          \\
   $S/\sqrt{B}$ for 60\% OP        &  0.96           &  0.21        &  0.07          \\ \hline
 \end{tabular}
-\caption{The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
+\caption[The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
   $S$ is estimated using a SSM $Z'$-boson and $B$ is estimated using a 18.9~\ifb~subset of 2 $b$-tag category data.
   The \textit{Full16+15\_HighMass} data-set event selection has been applied.
-  Three different mass points are considered and the mass windows used
+  Three different simulated mass points are considered and the mass windows used
+  to estimate $S$ and $B$ for each mass point are shown in the table.]
+        {The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
+  $S$ is estimated using a SSM $Z'$-boson and $B$ is estimated using a 18.9~\ifb~subset of 2 $b$-tag category data.
+  The \textit{Full16+15\_HighMass} data-set event selection has been applied.
+  Three different simulated mass points are considered and the mass windows used
   to estimate $S$ and $B$ for each mass point are shown in the table~\cite{dibjet-ichep_int}.}
 \vspace{-2em}
 \label{tab:evt-btag_hm}
@@ -456,7 +461,7 @@ a non-smooth feature in the background invariant mass spectra.
 
 A summary of the  key components of the di-$b$-jet event selection
 for each of the data-sets considered
-is listed Table~\ref{tab:evt}.
+is listed in Table~\ref{tab:evt}.
 
 \begin{table}[!htb]
   \begin{tabular}{|c||c|c|c|}
@@ -512,12 +517,12 @@ These events pass both the \verb|Summer16+15| and \verb|Full16+15_HighMass| data
   \label{fig:evt-vp1}
 \end{figure}
 
-With the event selection now defined
+With the event selection now defined,
 the signal acceptance of the di-$b$-jet analysis is studied
 to understand the performance of the analysis selection
 and as an input to the limit-setting phase of the analysis.
 The signal acceptance multiplied by trigger efficiency is defined as the 
-the fraction of signal events that would pass the analysis' trigger and event selection.
+the fraction of signal events that pass the analysis' trigger and event selection.
 In addition, as $b$-tagging is a unique cut in our analysis relative to other dijet searches,
 we also consider the event-tagging efficiency defined as the fraction of events that pass
 $b$-tagging cuts given that the event has passed all other aspects of the event selection.
@@ -535,13 +540,12 @@ as a function of the reconstructed invariant mass,~\mjj.
 In both plots the $b$-tagging category used is labelled in the legend.
 
 There are a few features of the signal acceptance and tagging efficiency that can be commented on.
-There is reduced signal acceptance at lower values of simulated mass;
-this is because there is a low mass tail of the signal template which lies below the~\mjj~cut
-caused by a preference for low values of~\mjj~by the PDFs
-\footnote{Parton Distribution Function, see Section~\ref{sec:theo-qcd_pdf}.}.
+There is a reduced signal acceptance at lower values of simulated mass
+because there is a low mass tail of the signal template which lies below the~\mjj~cut,
+the tail is caused by a preference for low values of~\mjj~by the PDFs.
 In addition, the event tagging efficiency decreases at high values of~\mjj~
 due to a lower performance of $b$-tagging at high jet-\pT.
-\textbf{LM Fix: Reference high-pT $b$-tagging, will be added to b-tag chapter}.
+\textbf{LM Fix: Refer to high-pT $b$-tagging, will be added to b-tag chapter}.
 Finally, we see that the $b^*$ quark has a similar tagging efficiency
 as the $Z'$-boson in the $\geq$1 $b$-tag category at high~\mjj;
 whilst naively one would expect that the $Z'$-boson should have a higher
