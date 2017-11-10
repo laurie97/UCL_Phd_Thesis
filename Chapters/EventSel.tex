@@ -40,7 +40,7 @@ and full detail can be found in the relevant chapter.
 \item\textbf{Search Phase:} (\textit{Chapter~\ref{sec:bkg}})\\
   Once events have been selected the next part of the analysis aims to determine if there
   is evidence of a new particle in the selected events; this step is known as the `search phase'.
-  This step uses the \mjj~spectrum, where \mjj~is the invariant mass of the two highest \pT~jets.
+  This step uses the \mjj~spectrum, where \mjj~is the invariant mass of the two highest~\pT~jets.
   A new particle will appear as a resonance (or `bump') on the smoothly falling background
   \mjj~distribution from QCD multi-jet, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
   A fit function is used to model the smoothly falling QCD background and a
@@ -291,7 +291,7 @@ would also pass the online jet-\pT~requirements of the trigger
 \footnote{Online refers to reconstructed objects used in the trigger decision
   whilst offline refers to objects reconstructed after events have passed the trigger at the data-processing level,
   from the definition in Section~\ref{sec:trig-bjet_eff}.}.
-The jet-\pT~above which which a single jet-trigger is on the trigger plateu is referred to as the threshold jet-\pT.
+The jet-\pT~above which a single jet-trigger is on the trigger plateu is referred to as the threshold jet-\pT.
 
 For the \verb|Summer16+15| data-set; it is required that the leading jet has \pT~$>$ 430 GeV to be on the trigger plateau of \verb|HLT_j380|.
 This cut is derived by comparing the leading jet-\pT~distributions of jets that pass the trigger, \verb|HLT_j380|,
@@ -586,72 +586,71 @@ Finally, in all three cases the dijet flavour fractions are smooth, which is evi
 there are no sudden changes in $b$-tagging efficiency of the background that could introduce
 a non-smooth feature in the background invariant mass spectra.
 
-\subsection{Effect of $b$-Trigger Matching in the \textit{Full16\_LowMass} Data-set}
+\subsection{Effect of $b$-Jet Trigger Matching in the \textit{Full16\_LowMass} Data-set}
 
-In Section~\ref{sec:evt-sel-event} it was shown that for the \verb|Full16_LowMass| data-set
-for~\mjj~\gt~500 GeV there is no kinematic bias in the~\mjj~distribution
-due to the leading and subleading jet~\pT cuts.
+As discussed in Section~\ref{sec:trig-bjet},
+the double $b$-jet trigger used in the \verb|Full16_LowMass| data-set
+requires that there is one online jet with~\pT~\gt~150 GeV
+and another online jet with~\pT~\gt~50 GeV.
+Then both of these jets are required to be $b$-tagged at the online 60\% operating point.
 
-However, it is also possible that jets other than the leading or subleading jet could fire the $b$-jet trigger.
-I will refer to jets that are not the leading or subleading jet as `non-leading jets'.
-To determine if non-leading jets are firing the $b$-jet trigger and what the size of the effect,
-a study with trigger matching is considered.
+As described in Section~\ref{sec:evt-sel-jets}, it is requried that the leading and subleading offline jet have a jet~\pT~above
+the threshold jet-\pT~of the two trigger level requirements
+\footnote{The offline jet-\pT~above which a single jet-trigger is on the trigger plateu is referred to as the threshold jet-\pT.}.
+Then, in Section~\ref{sec:evt-sel-event} it was shown that in the \verb|Full16_LowMass| data-set
+there is no kinematic bias in the dijet invariant mass distribution due to the leading and subleading offline jet~\pT~cuts.
 
-Trigger matching is defined as requiring that the
-leading and subleading jet must match to a trigger jet that passes the trigger level requirements.
-An offline jet is matched to an online jet if $\Delta R$ between the jets $<$ 0.4.
+However, it has been discovered that one must also consider the effect of offline jets other than the leading and subleading jet,
+these jets I will refer to as `non-leading jets'.
+It is possible that in an event that has passed the double $b$-jet trigger the
+leading and subleading offline jet do not correspond to the
+online jets that have been used in the double $b$-jet trigger.
+Instead a non-leading offline jet could correspond one of the online jets used in the double $b$-jet trigger.
+Therefore, it must be additionaly shown that in the dijet mass range considered there is not a kinematic bias
+due to events where a non-leading jet is used by the the double $b$-jet trigger.
+
+A study is performed to determine the effect of the $b$-jet trigger using non-leading jets on the dijet mass spectrum.
+For this study offline jets are matched to online jets in a process known as trigger matching.
+An offline jet is matched to an online jet if $\Delta R$
+\footnote{Defined as $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$. See Equation~\ref{eqn:det-deltaR} for more details.}
+between the jets $<$ 0.4.
 The matching is exclusive, which means that no online or offline jet can be involved in two matchings.
-If two matching are possible then the pair of jets with the smallest value of $\Delta R$ is chosen.
+In the case that an offline jet can be matched to two online jets, then the pair of jets with the smallest~$\Delta R$ is chosen.
+In the case where two offline jets can be matched to an online jet, the offline jet with the highest-\pT~is chosen;
+this is done as there is a prior reason to believe that the leading and subleading jets are responsible
+for passing the $b$-jet trigger requirements as they are known to pass offline $b$-tagging.
+%To keep matching exclusive the following algorithm is performed.
+%Firstly, the leading offline jet is matched to the online jet with the smallest $\Delta R$, if the value of $\Delta R <$ 0.4.
+%This process is repeated with the subleading offline jet, excluding online jets that have already been matched.
+%The other jets are the matched in a similar manner considered in order of jet-\pT.
 
-Once each offline jet is matched to an online jet then it can be required that
-the leading and subleading jet must have online jets matched to them
-and that the matched online jets must pass the double $b$-jet trigger requirements.
-To be specific the trigger requirements are that
-one online jet must have~\pT~\gt~150 GeV,
-the other online jet must have~\pT~\gt~50 GeV
-and that both jets must be $b$-tagged at the online 60\% operating point
-\footnote{Further details of $b$-jet triggers and this particular trigger used in this analysis is in Section~\ref{sec:trig-bjet}.}..
-I will refer to events that pass this requirement as `$b$-jet trigger matched' events.
+Then one can define `$b$-jet trigger matched events' as events where
+the leading and subleading offline jets have succesfully been matched to online jets
+and that these online jets pass the double $b$-jet trigger level requirements described above.
+In $b$-jet trigger matched events it is known that there is no effect from the non-leading jets.
 
-In the ATLAS collaboration data is stored in objects know as `Derivations'
-Each derivation contains only the events and the event information required to perform an analysis,
-such that the data can be stored in a managable sized file.
-For the di-$b$-jet analysis a derivation called EXOT2 is used
-but, unfortunately, the trigger-level jet information is not present in EXOT2 derivation,
-which is required to apply $b$-jet trigger matching.
-Instead a derivation called FTAG2 is used, in which the trigger level information is present.
-However, in FTAG2 not all events that pass the double $b$-jet trigger are not present.
-In neither derivation is the full information required to do $b$-jet trigger matching on the full \verb|Full16\_LowMass| present.
+To study $b$-jet trigger matched events an additional complication has to be overcome.
+To perform trigger matching the \pT, $\eta$, $\phi$ and MV2c20 output of the online jets is required.
+Data from the ATLAS collaboration is processed and stored in containers known as `derivation containers'
+\footnote{Formally the `derivation containers' are known as Derived Analysis Object Data (DAODs)}
+and the derivation containers are used by analyses at ATLAS.
+To reduce the computer resources required to analyse each container, each derivation container contains only the events
+and the reconstucted object information required to perform an analysis.
+For the di-$b$-jet analysis a derivation called \textit{EXOT2} is used,
+however the online jet information required is not present in the \textit{EXOT2} derivation containers.
+Instead, a derivation container called \textit{FTAG1} is used, in which the trigger level information is present.
+However, in the \textit{FTAG1} derivation not all events that pass the double $b$-jet trigger are included.
+Therefore, in neither derivation container is the full information required to do $b$-jet trigger matching on the full \verb|Full16_LowMass| data-set.
 
-To overcome this problem the effect of $b$-trigger matching can be estimated using the FTAG2 derivation.
-Firstly, one can consider the~\mjj~spectrum of all events that pass the double $b$-jet trigger in
-one period of data-taking which contains ...\ifb  of 2016 data-taking and
-are included in the FTAG2 derivation when no $b$-jet trigger matching is applied.
-I will refer to this as the~\mjj~spectrum from FTAG2
+To overcome this problem the effect of $b$-jet trigger matching can be studied using the \textit{FTAG1} derivation.
+Firstly, one can consider the dijet mass spectrum of all events in the \textit{FTAG1} derivation
+that pass the \verb|Full16_LowMass| data-set event selection before $b$-jet trigger matching is applied.
+I will refer to this as the dijet mass spectrum from \textit{FTAG1}.
+Figure~\ref{fig:evt-btrig_match}(a) shows the dijet mass spectrum from \textit{FTAG1}
+compared to the equivalent dijet mass spectrum using the \textit{EXOT2} derivation, where all events are present.
 The full \verb|Full16_LowMass| data-set event selection has been applied to both.
-Figure~\ref{evt-btrig_match}(a) shows this~\mjj~spectrum from FTAG2
-compared to the~\mjj~spectrum equivalent using EXOT2, where all events are present,
-the lower panel shows a ratio between the two.
-One can notice that there is a deficit of events at low~\mjj.
-
-Then the~\mjj~spectrum from FTAG2 described above can be compared to the~\mjj~spectrum of
-all $b$-jet trigger matched events that pass the double $b$-jet trigger from the same Period of data.
-The full \verb|Full16\_LowMass| data-set selection is applied.
-Figure~\ref{evt-btrig_match}(b) shows the comparison of the two~\mjj spectra.
-The lower panel shows the ratio between the two.
-
-In the ratio plot of Figure~\ref{evt-btrig_match}(b) it is show that $\sim$ 5\% of events that
-pass the \verb|Full16\_LowMass| event selection will not pass $b$-jet trigger matching.
-In these cases a non-leading jet has fired that $b$-jet trigger.
-For~\mjj~\gt~566 GeV this effect is smooth with respect to~\mjj~showing
-that the effect of the non-leading jet will not cause a kinematic bias in this region.
-In the region~\mjj~\lt~566 GeV there is a clear non-smoothness in the ratio plot,
-which indicates that a kinematic bias could be present in the final data-set.
-
-It is concluded that for~\mjj~\gt 566 GeV there is no evidence that
-the effect of non-leading jets firing the double $b$-jet trigger
-will cause a bias in the final data-set.
-Therefore, for the \verb|Full16_LowMass| data-set it is required that~\mjj~\gt 566 GeV.
+The lower panel shows a ratio between the two, this shows that there is a deficit of events
+in the dijet mass spectrum from \textit{FTAG1}, particularly at low mass.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -659,15 +658,32 @@ Therefore, for the \verb|Full16_LowMass| data-set it is required that~\mjj~\gt 5
     \subcaptionbox{} {\includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/evt-trigmatch_exot2.pdf} }\hspace{-5mm}
     \subcaptionbox{} {\includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/evt-trigmatch_ftag1.pdf} }
   \end{center}
-  \caption{(a) The~\mjj~spectrum using the EXOT2 derivation and the FTAG2 derivation.
-    (b) A comparison of the~\mjj~spectrum of all events and all $b$-jet trigger matched events using the  FTAG2 derivation.
+  \caption{(a) A comparison of the dijet mass (\mjj) spectra created using the \textit{EXOT2} derivation and the \textit{FTAG1} derivation.
+    (b) A comparison of the dijet mass spectra of all events and $b$-jet trigger matched events using the \textit{FTAG1} derivation.
     For both plots the full \textit{Full16\_LowMass} event selection is applied }
-     \label{fig:evt-ICHEP_turnon}
+     \label{fig:evt-btrig_match}
 \end{figure}
 
-Finally it should be noted that for the 2017 reprocessing of data
-the full information required for $b$-jet trigger matching is included in the EXOT2 dervation,
-such that future iterations of the di-$b$-jet analysis can apply $b$-jet trigger matching.
+Figure~\ref{fig:evt-btrig_match}(b) shows the comparison of the dijet mass spectrum from \textit{FTAG1}
+before and after the application of $b$-jet trigger matching.
+The full \verb|Full16_LowMass| data-set event selection has been applied in both cases.
+A ratio of the two spectra is in the lower panel.
+The ratio shows that $\sim$8\% of events that
+pass the \verb|Full16_LowMass| event selection do not pass $b$-jet trigger matching requirement.
+In these events it can be concluded that a non-leading jet is used in the double $b$-jet trigger.
+For~\mjj~\gt~566 GeV the ratio is smooth with respect to dijet mass.
+However in the region~\mjj~\lt~566 GeV there is a clear non-smoothness in the ratio plot,
+which indicates that a kinematic bias could be present in the final data-set.
+
+The background estimation strategy (described in Section~\ref{sec:bkg}) requires that the dijet mass spectrum must be smooth,
+therefore it is required that there is no effect that can cause a non-smooth feature in the dijet mass spectrum.
+It has been shown that for~\mjj~\gt 566 GeV there is no effect of non-leading jets in the double $b$-jet trigger
+that can cause an un-smooth feature in the final data-set.
+Therefore, for the \verb|Full16_LowMass| data-set it is required that~\mjj~\gt 566 GeV.
+
+Finally it should be noted that for future iterations of the di-$b$-jet analysis
+the full information required for $b$-jet trigger matching will be included in the \textit{EXOT2} dervation,
+and as such trigger matching can be applied such that analyses can search a invariant mass range beginning at 500 GeV.
 
 \subsection{Event Selection Summary}
 \label{sec:evt-sel-acc}
