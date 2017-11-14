@@ -679,4 +679,140 @@ and that there is no evidence of new physics in the \verb|Summer16+15| data-set.
 \section{Full\_2016 Search Phase}
 \label{sec:bkg-full}
 
-SWiFt and ect...
+This section presents the search phase for the \textit{Full16+15\_HighMass} and \textit{Full16\_LowMass} data-sets.
+For both data-sets:
+Section~\ref{sec:stat:bkgsample} describes the background only samples used for the studies,
+Section~\ref{sec:globalfit} describes the studies using the global fit strategy,
+Section~\ref{sec:swift} intoduces a new fitting strategy called the Sliding Window Fit (SWiFt)
+and Sections~\label{sec:windowSel}-\label{sec:signalInj} shows studies performed to validate the SWiFt background estimation.
+Section~\ref{sec:bkg-lowmass_results}~and~\ref{sec:bkg-highmass_results} present the results of the search phase
+for the the \textit{Full16+15\_HighMass} and \textit{Full16\_LowMass} data-sets respectively.
+
+\subsection{Background Only Samples}
+\label{sec:stat:bkgsample}
+
+In order to test and develop the background estimation strategy without using the final dataset in a way which might bias the outcome of the analysis,
+a data-set is required that is known to contain only background, with at least the same precision as the final data-set.
+Ideally, one would use Monte-Carlo simulation to provide the background only test-region,
+as was done for the \textit{Summer16+15} data-set analysis as described in Section~\ref{sec:bkg-summer_fitCR}.
+However, for the two data-sets considered simulation does not have enough statistics to create an adequate test of the fit strategy.
+Instead data-driven fitting control regions are used, the fitting control regions are described below.
+
+\subsubsection{Low Mass}
+\label{sec:lowmass_bkgsample}
+
+The low mass fitting control region uses the data spectrum that has passed the double b-jet trigger, but with no offline b-tagging selection applied, which is refered to as the 0-tag distribution.
+In in panel (a) of Figure~\ref{fig:fittingCR} the 0-tag spectrum is compared to the subset of the 2-tag data-distribution, discussed above.
+Then the effect of offline b-tagging is estimated by peforming a fit to the ratio of the 0-tag spectrum to the subset of data, once the subset of data has been scaled up to the final luminosity.
+The fit function chosen is the five parameter dijet fit function.
+The fit is shown in panel (b) of of Figure~\ref{fig:fittingCR}.
+
+
+Then, the un-tagged spectrum is uniformly scaled by this function to create a `scaled' distribution, which is a higher precision representation of the final data-set.
+Panel (c) of Figure~\ref{fig:fittingCR} shows comparison of the final 2-tag data-set to the scaled distribution from the fitting control region,
+showing that this control region gives a valid background only sample which one can perform fitting tests to.
+
+Finally, to then perform fit tests in a meaningful way we create two types of spectra from the `scaled' distribution.
+The first is a `smooth' distribution, where the errors on the scaled distribution are set to be poisson-like, meaning that effectively the high precision background-only
+scaled spectrum sits within errors that represent the expected level of fluctuations in our final data-set.
+Typically one would expect that when an appropriate functional form is used to fit the the smooth spectrum, we would observe an excellent fit due to the enhanced errors
+and absence of equivalent statistical fluctuations.
+The second type of spectra is a `data-like' spectrum, where a random set of poisson fluctuations are applied to the scaled distribution, to mimic the kind of fluctuation we would use in data.
+Many data-like spectra can be made, using many different seeds for the random fluctuations.
+A data-like spectrum is shown in comparison to the smooth spectrum in panel (d) of Figure~\ref{fig:fittingCR}. \\
+
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\centering
+\subcaptionbox{0-tag data and the \\3~\ifb~subset of 2-tag data} {
+  \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/corrFitCR_0tag_subset.pdf}
+}\hspace{-8mm}
+\subcaptionbox{Offline tagging efficiency\\w.r.t. online tagging.} {
+  \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/corrFitCR_5parFit.pdf}
+} \\
+\subcaptionbox{The scaled fitting CR \\compared to 2-tag data.} {
+  \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/corrFitCR_dataComp.pdf}
+}\hspace{-8mm}
+\subcaptionbox{Smooth and data-like fitting \\control region distributions} {
+  \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/corrFitCR_smooth_dataLike.pdf}
+}
+\vspace{10pt}
+\caption{\label{fig:fittingCR}
+  A figure showing the process of obtaining the fitting control region $m_{jj}$ spectrum used for the low mass fit studies from the
+  $m_{jj}$ distribution that has passed the b-jet trigger but not offline $b$-tagging (0-tags spectrum).
+  Panel (c) shows the two types of distribution that are used for fitting tests.
+}
+\end{figure}
+
+The smooth and data-like spectra will be insensitive to signal, as they are taken from a sample before offline b-tagging hence will have larger light and charm jet impurities.
+In addition, applying poisson errors to this distribution will also ensure that these spectra will be insensitive to signal.
+Hence, we can assume that these spectra are background only.
+
+The fitting control region described above has many benefits, it can gives a high-precision background only spectra that can be used for fit tests,
+and allows us to make many data-like spectra to perform fit tests to.
+
+%However, as shown above, it does not have an identical shape to the final distribution, hence we also want to consider another test data set with an identical shape. 
+%% Add this line if describing subset of data.
+
+\subsubsection{High Mass}
+\label{sec:highmass_bkgsample}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Global Fit Tests}
+\label{sec:globalfit}
+\subsubsection{High Mass}
+\label{sec:highmass_globalFit}
+\subsubsection{Low Mass}
+\label{sec:lowmass_globalFit}
+
+
+\subsubsection{Sliding window background estimation (SWiFT)}
+\label{sec:swift}
+
+\subsection{SWiFT: Fit Function and Window Selection Strategy}
+\label{sec:windowSel}
+\subsubsection{Low Mass}
+\label{sec:lowmass_windowSel}
+\subsubsection{High Mass} 
+\label{sec:highmass_windowSel}
+
+\subsection{SWiFt: Testing the window width selection procedure}
+\subsubsection{Low Mass}
+\label{sec:lowmass_windowSelTests} 
+\subsubsection{High Mass}
+\label{sec:highmass_windowSelTests} 
+
+\subsection{SWiFt: Spurious Signal Tests}
+\label{sec:spuriousSignal}
+\subsubsection{Low Mass}
+\label{sec:lowmass_spuriousSignal}
+\subsubsection{High mass: 2 tag category}
+\label{sec:bb_spuriousSignal}
+\subsubsection{High mass: $\geq$1 tag category }
+\label{sec:b_spuriousSignal}
+
+\subsection{SWiFt: Signal Injection Tests}
+\label{sec:signalInj}
+\subsubsection{Low Mass}
+\label{sec:lowmass_signalInj}
+\subsubsection{High Mass}
+\label{sec:highmass_signalInj}
+
