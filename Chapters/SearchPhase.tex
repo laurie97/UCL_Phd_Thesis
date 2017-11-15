@@ -898,16 +898,16 @@ As described above, the SWiFt procedure involves breaking the spectrum up into s
 Hence, there are two key input parameters of the SWiFt fit procedure.
 \noindent
 They are:
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
 \item \textbf{The window size:}\\
-  As described above the window width is defined as symmetric windows are used, defined by their window-half-width (wHW).
+  As described above the window width is defined as symmetric windows are used, defined by their window-half-width (wHW).\vspace{0.5em}
 \item \textbf{Fit function used:}\\
   As SWiFt is an extention of the global fit strategy,
   in this analysis the dijet fit functions considered are the dijet fit functions by Table~\ref{tab:bkg-fit}.
-  The 6 parameter dijet fit function is considered to provide an alternate fit to the 5 parameter dijet fit function.
+  The 6 parameter dijet fit function is considered to provide an alternate fit to the 5 parameter dijet fit function.\vspace{0.5em}
 \end{enumerate}
 The largest sensitivity is found by using the largest window width with the fit function with the fewest number of parameters, whilst still obtaining sufficient fit quality.
-Sensitivity studies that demonstrate this statement are shown below in Section~\ref{sec:SWiFt_signalInj}.\\
+Sensitivity studies that demonstrate this statement are shown below in Section~\ref{sec:SWiFt_signalInj}.
 
 \noindent
 To define `sufficient fit quality' the following fit quality criteria used is:
@@ -981,19 +981,20 @@ Firstly, let's examine the results from the SWiFt background procedure applied t
 Figure~\ref{fig:windowSel_dataLike} shows the cumulative probability of the two fit quality variables used in the window selection procedure,
 with the fraction that pass the set cut printed on the plot.
 It is shown that in $>$ 99\% of cases a window-half-width in the range considered would pass the Wilks' $p$-value requirement
-and that in $>$ 80\% of cases a window-half-width in the range considered would pass the global $\chi^{2}$ $p$-value requirement. \\
+and that in $>$ 80\% of cases a window-half-width in the range considered would pass the global $\chi^{2}$ $p$-value requirement.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{Global $\chi^{2}$ $p$-value, 5 parameter fit} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=7]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_5para.pdf}
-}% \\
+  \includegraphics[width=0.49\linewidth, angle=0,page=7]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_5para.pdf}
+}  \hspace{-8mm}
+% \\
 %\subcaptionbox{Global Kolmogorov Smirnov $p$-value, 5 parameter fit} {
 %  \includegraphics[width=0.45\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy/windowSel_dataLike_5para.pdf}
 %}
 \subcaptionbox{Number of window fits with Wilks' $p$-value $<$ 0.1, 5 parameter fit} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=9]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_5para.pdf}
+  \includegraphics[width=0.49\linewidth, angle=0,page=9]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_5para.pdf}
 }
 \vspace{10pt}
 \caption{\label{fig:windowSel_dataLike}
@@ -1014,19 +1015,19 @@ It is notable that the window selection procedure in the subset of data has chos
 could have chosen the lower order function, in contrast to the fitting control region case. 
 This fact could either be due to the shape in the final data set being better described by the di-jet fit functions
 or because to model the higher precision of the 24.3 \ifb{} background requires tighter windows requirements than that of 3 \ifb{}.
-Either way, this shows the utility of choosing the window size on the final data-set using pre-defined criteria. \\
+Either way, this shows the utility of choosing the window size on the final data-set using pre-defined criteria.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{Global $\chi^{2}$ $p$-value} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=2]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
-}
+  \includegraphics[width=0.51\linewidth, angle=0,page=2]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
+}\hspace{-8mm}
 %\subcaptionbox{Global Kolmogorov Smirnov $p$-value} {
-%  \includegraphics[width=0.45\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
+%  \includegraphics[width=0.49\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
 %} \\
-\subcaptionbox{Number of window fits with Wilks' $p$-value $<$ 0.1} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
+\subcaptionbox{Number of window fits with\\ Wilks' $p$-value $<$ 0.1} {
+  \includegraphics[width=0.51\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy/windowSel_subset.pdf}
 }
 \vspace{10pt}
 \caption{\label{fig:windowSel_subset}
@@ -1037,23 +1038,23 @@ Either way, this shows the utility of choosing the window size on the final data
 }
 \end{figure}
 
+HERE
+
 \subsubsection{High Mass}
 \label{sec:highmass_windowSelTests} 
 
 \subsection{SWiFt: Spurious Signal Tests}
 \label{sec:spuriousSignal}
 
-
-
 If the true background di-jet invariant mass spectrum has a different shape to that of the chosen fit function, then fit discrepancies may occur
 that can cause a false signal or can hide a true signal, the former is referred to as spurious signal.
 To show that fit discrepancies are not occurring, fits are performed to many background-only representative
 data-sets and the global distribution of {\sc BumpHunter} $p$-values is studied.
 Similar tests have been performed in previous iterations of both the inclusive and $b$-tagged di-jet searches~\cite{highmass,2015Moriondsupport,2016ICHEPsupport}.
-The widest window that shows no sign of spurious signal is used as the initial starting point for the window selection procedure, as described in Section~\ref{sec:windowSel}.\\
+The widest window that shows no sign of spurious signal is used as the initial starting point for the window selection procedure, as described in Section~\ref{sec:windowSel}.
  
 To do this test we perform the SWiFt search phase to many data-like distributions taken from the fitting control region.
-Then the global distribution of {\sc BumpHunter} $p$-values from the many data-like distributions can be studied for evidence of spurious signal.\\
+Then the global distribution of {\sc BumpHunter} $p$-values from the many data-like distributions can be studied for evidence of spurious signal.
 
 The spurious signal tests are performed using a similar procedure for the three categories of this analysis:
 low mass 2 $b$-tag, high mass 2 $b$-tag and high mass $\geq$1 $b$-tag category.
@@ -1064,13 +1065,14 @@ For clarity, each will be described in separate sections below.
 
 For the low mass section of the analysis,
 the SWiFt search phase is performed with the 4 and 5 parameter fit function for a symmetric window with window-half-width range of 10 to 16,
-giving 8 different window width and fit function combinations. \\
+giving 8 different window width and fit function combinations.
 
 Firstly, the SWiFt procedure is tested using the smooth distribution from the fitted control region,
 which has been described in Section~\ref{sec:stat:bkgsample}.
 Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} shows an example of the SWiFt search phase procedure
 performed on the smooth distribution taken from the fitting control region,
-for all 8 window width and fit function choice combinations studied.
+for a SWiFt configuration using both fit functions and the widest and narrowest window width considered.
+The full set SWiFt configurations considered can be found in Appendix~\ref{app:lowMass_Swift}.
 The blue-lines indicate the largest excess found by the {\sc BumpHunter} algorithm and the $p$-value assigned is printed on the plot. 
 The smooth distribution does not contain the Poisson fluctuations expected in data
 and as a result the {\sc BumpHunter} $p$-value is not easily interpreted in this case.
@@ -1078,40 +1080,39 @@ However the fits to smooth do show the largest fit biases compared to the statis
 In Figure~\ref{fig:bhFit_lm_corrFitCR_smooth},
 one can see that in the 4-parameter case there appears to be a fit bias which is larger than the uncertainties assigned,
 particular notable is the large defecit observed in the middle of the mass range.
-In the 5-parameter case it appears that the fit quality is good and there is no obvious fit biases.\\
-
-
+In the 5-parameter case it appears that the fit quality is good and there is no obvious fit biases.
+ 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{4 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low16_high16.pdf}
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low16_high16.pdf}
 }
-\subcaptionbox{4 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low14_high14.pdf}
-}
-\subcaptionbox{4 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low12_high12.pdf}
-}
+%\subcaptionbox{4 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low14_high14.pdf}
+%}
+%\subcaptionbox{4 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low12_high12.pdf}
+%}
 \subcaptionbox{4 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low10_high10.pdf}
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_4para_low10_high10.pdf}
 }
 \subcaptionbox{5 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low16_high16.pdf}
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low16_high16.pdf}
 }
-\subcaptionbox{5 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low14_high14.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low12_high12.pdf}
-}
+%\subcaptionbox{5 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low14_high14.pdf}
+%}
+%\subcaptionbox{5 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low12_high12.pdf}
+%}
 \subcaptionbox{5 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low10_high10.pdf}
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_smooth_5para_low10_high10.pdf}
 }
 \vspace{10pt}
 \caption{\label{fig:bhFit_lm_corrFitCR_smooth}
   This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on the smooth distribution from the fitting control region in the low-mass category.
-  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
+  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) 10 and 16.
   The upper panel shows the data compared to the background estimate and the low panel shows the significance of the difference between the two.
   The most discrepant excess as found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the $p$-value of this excess is printed on the plot. }
 \end{figure}
@@ -1121,44 +1122,44 @@ the SWiFt procedure is applied to many data-like distributions,
 where Poisson fluctuations are applied to the fitting control region as described in Section~\ref{sec:stat:bkgsample}.
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} shows an example of the SWiFt search phase procedure performed on a data-like distribution taken from the fitting control region.
 %Again, all 8 window width and fit function choice combinations studied are considered
-For brevity, only the window-half-width of 14 for the 4 and 5 parameter function are shown.
+The SWiFt configurations with a window half-width of 14 for the 4 and 5 parameter function are shown, the full set can be found in Appendix~\ref{app:lowMass_Swift}.
 Again, the largest excess found by the {\sc BumpHunter} algorithm and the $p$-value assigned is indicated on the plot.
 It is observed that the fit biases noted in Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} are still visible in the 4 parameter case and identified by the {\sc BumpHunter} algorithm,
-where in the 5 parameter case, as expected, no obvious bias can be observed.\\
+where in the 5 parameter case, as expected, no obvious bias can be observed.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
-%\subcaptionbox{4 parameter-fit, wHW = 16} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low16_high16.pdf}
-%}
-\subcaptionbox{4 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low14_high14.pdf}
+\subcaptionbox{4 parameter-fit, wHW = 16} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low16_high16.pdf}
 }
+%\subcaptionbox{4 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low14_high14.pdf}
+%}
 %\subcaptionbox{4 parameter-fit, wHW = 12} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low12_high12.pdf}
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low12_high12.pdf}
 %}
 %\subcaptionbox{4 parameter-fit, wHW = 10} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low10_high10.pdf}
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_4para_low10_high10.pdf}
 %}
-%\subcaptionbox{5 parameter-fit, wHW = 16} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16.pdf}
-%}
-\subcaptionbox{5 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14.pdf}
+\subcaptionbox{5 parameter-fit, wHW = 16} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16.pdf}
 }
+%\subcaptionbox{5 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14.pdf}
+%}
 %\subcaptionbox{5 parameter-fit, wHW = 12} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12.pdf}
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12.pdf}
 %}
 %\subcaptionbox{5 parameter-fit, wHW = 10} {
-%  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10.pdf}
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10.pdf}
 %}
 \vspace{10pt}
 \caption{\label{fig:bhFit_lm_corrFitCR_dataLike}
   This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
   from the fitting control region in the low-mass category.
   %The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
-  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) of 14.
+  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) of 16.
   The upper panel shows the data compared to the background estimate and the low panel shows the significance of the difference between the two.
   The most discrepant excess as found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the $p$-value of this excess is printed on the plot. 
 }
@@ -1171,8 +1172,76 @@ only 100 seeds are used as this is sufficient statistics in these categories to 
 %In the case of the 5 parameter fit function with a window-half-width of 16, which is the widest window that will be used in data and hence the most
 %challenging fit that will be performed, this procedure was performed with 450 different data-like distributions to increase statistical precision.
 Figure~\ref{fig:bumpH_spuriousSignal} shows the normalised distribution of $p$-values for the ensemble of data-like distributions or `seeds'
-for the 8 combinations of window/function choice considered.
-In addition Table~\ref{tab:bumpH_lm_spuriousSignal} shows the fraction of seeds that had a {\sc BumpHunter} $p$-value less than 0.1, 0.05 and 0.01. \\
+for a subset of the SWiFt configurations considered, the full range of plots can be found in Appendix~\ref{app:lowMass_Swift}.
+%for the 8 combinations of window/function choice considered.
+In addition Table~\ref{tab:bumpH_lm_spuriousSignal} shows the percentage of seeds that have a {\sc BumpHunter} $p$-value less than %0.1,
+0.05 and 0.01 for the full range of SWiFt configurations shown.
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\centering
+\subcaptionbox{4 parameter-fit, wHW = 16} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
+}                                                                                              
+%\subcaptionbox{4 parameter-fit, wHW = 14} {                                                    
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low14_high14.pdf}
+%}                                                                                              
+%\subcaptionbox{4 parameter-fit, wHW = 12} {                                                    
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low12_high12.pdf}
+%}                                                                                              
+\subcaptionbox{4 parameter-fit, wHW = 10} {                                                    
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
+}                                                                                              
+\subcaptionbox{5 parameter-fit, wHW = 16} {                                                    
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
+}                                                                                              
+\subcaptionbox{5 parameter-fit, wHW = 14} {                                                    
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
+}                                                                                              
+%\subcaptionbox{5 parameter-fit, wHW = 12} {                                                    
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low12_high12.pdf}
+%}                                                                                              
+%\subcaptionbox{5 parameter-fit, wHW = 10} {                                                    
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low10_high10.pdf}
+%}
+\vspace{10pt}
+\caption{\label{fig:bumpH_spuriousSignal}
+  This figure shows the normalised distribution of {\sc BumpHunter} $p$-values from performing the SWiFt background estimate to an ensemble of
+  data-like distributions taken from the fitting control region in the low-mass category.
+  This is repeated for the 4 and 5 parameter fit function for a symmetric window with window-half-width (wHW) range of 10 to 16,
+  giving the 8 different window width and fit function combinations.
+  The number of data-like distributions or seeds is given on the plot.
+}
+\end{figure}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c||c|c|c|c|}
+  \hline
+\multirow{2}{*}{nPars} & \multirow{2}{*}{wHW} &\multicolumn{2}{c|}{Fraction of Seeds with BH $p$-value \textless} &  \multirow{2}{*}{nSeeds} \\ \cline{3-4} 
+                       &                     & 0.05                & 0.01            &        \\ 
+  \hline
+  4 &   16&  39.0\% (34.2-43.9\%) & 16.0\% (12.6-19.8\%) &  100  \\
+  4 &   14&  19.0\% (15.3-23.1\%) &  8.0\% (5.6-11.0\%)  &  100  \\
+  4 &   12&  12.0\% (9.1-15.5\%)  &  6.0\% (3.9-8.7\%)   &  100  \\
+  4 &   10&  4.0\% (2.3-6.3\%)    &  2.0\% (0.9-3.8\%)   &  100  \\
+  \hline
+  5 &   16&   6.0\% (5.0-7.1\%)  &  0.8\% (0.5-1.3\%)   &  485  \\
+  5 &   14&   2.6\% (2.0-3.4\%)  &  0.6\% (0.3-1.0\%)   &  500  \\
+  5 &   12&   1.8\% (1.3-2.5\%)  &  0.4\% (0.2-0.8\%)    &  500  \\
+  5 &   10&   2.8\% (1.5-4.7\%)  &  0.9\% (0.2-2.3\%)    &  108  \\
+  \hline
+\end{tabular}
+\vspace{10pt}
+\caption{\label{tab:bumpH_lm_spuriousSignal}
+  A summary of the fraction of data-like distributions 
+  with a {\sc BumpHunter} $p$-value less than certain threshold values,
+  when the SWiFt search phase procedure with the 4 and 5 parameter fit function
+  and various window-half-widths (wHW) is performed to an ensemble of data-like distributions
+  taken from the fitting control region in the low-mass category.
+  The numbers in brackets represent a 1$\sigma$ confidence interval on the fraction.}
+\end{table}
+
 
 What is observed is that for the 4 parameter fit function  there is a clear bias towards
 low {\sc BumpHunter} $p$-values. In particular, it is notable that significantly more than 1\% of seeds have {\sc BumpHunter} $p$-value of less than 0.01.
@@ -1187,75 +1256,37 @@ with a window-half-width of 10, 12, 14 and 16 there is no bias towards low {\sc 
 %However, we see that that only 0.9\% of seeds have {\sc BumpHunter} $p$-value of less than 0.01, which is within expectations.
 %In addition, as shown in Section~\ref{sec:lowmass_windowSel},
 %in most cases our window selection procedure would not select the 5 parameter fit function with a window-half-width of 16.
-Hence, the 5 parameter fit function with a window-half-width of 16 is a good starting point for our window selection scan.\\
-
-\begin{figure}[!htb]
-\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-\centering
-\subcaptionbox{4 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
-}                                                                                              
-\subcaptionbox{4 parameter-fit, wHW = 14} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low14_high14.pdf}
-}                                                                                              
-\subcaptionbox{4 parameter-fit, wHW = 12} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low12_high12.pdf}
-}                                                                                              
-\subcaptionbox{4 parameter-fit, wHW = 10} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter-fit, wHW = 16} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter-fit, wHW = 14} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter-fit, wHW = 12} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low12_high12.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter-fit, wHW = 10} {                                                    
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/pVal_bumpHunter_corrFitCR_5para_low10_high10.pdf}
-}
-\vspace{10pt}
-\caption{\label{fig:bumpH_spuriousSignal}
-  This figure shows the normalised distribution of {\sc BumpHunter} $p$-values from performing the SWiFt background estimate to an ensemble of
-  data-like distributions taken from the fitting control region in the low-mass category.
-  This is repeated for the 4 and 5 parameter fit function for a symmetric window with window-half-width (wHW) range of 10 to 16,
-  giving the 8 different window width and fit function combinations.
-  The number of data-like distributions or seeds is given on the plot.
-}
-\end{figure}
+Hence, the 5 parameter fit function with a window-half-width of 16 is a good starting point for our window selection scan.
 
 
 
-\begin{table}[!ht]
-\centering
-\begin{tabular}{|c|c||c|c|c|c|}
-  \hline
-\multirow{2}{*}{nPars} & \multirow{2}{*}{wHW} &\multicolumn{3}{c|}{Fraction of Seeds with BH $p$-value \textless} & nSeeds \\ \cline{3-5} 
-                       &                      &    0.1                  & 0.05                & 0.01            &        \\ 
-  \hline
-  4 &   16& 66.0\% (61.20-70.59) & 39.0\% (34.24-43.91) & 16.0\% (12.58-19.87) &  100  \\
-  4 &   14& 32.0\% (27.49-36.74) & 19.0\% (15.31-23.10) &  8.0\% (5.56-11.00) &  100  \\
-  4 &   12& 20.0\% (16.22-24.17) & 12.0\% (9.01-15.49) &  6.0\% (3.91-8.68) &  100  \\
-  4 &   10& 11.0\% (8.14-14.38) &  4.0\% (2.32-6.30) &  2.0\% (0.88-3.80) &  100  \\
-  \hline
-  5 &   16& 18.1\% (16.44-19.94) &  6.0\% (4.96-7.12) &  0.8\% (0.47-1.32) &  485  \\
-  5 &   14&  5.2\% (4.26-6.26)   &  2.6\% (1.95-3.38) &  0.6\% (0.31-1.03) &  500  \\
-  5 &   12&  3.6\% (2.83-4.50)   &  1.8\% (1.26-2.47) &  0.4\% (0.17-0.77) &  500  \\
-  5 &   10&  7.4\% (5.14-10.20)  &  2.8\% (1.46-4.70) &  0.9\% (0.25-2.29) &  108  \\
-  \hline
-\end{tabular}
-\vspace{10pt}
-\caption{\label{tab:bumpH_lm_spuriousSignal}
-  A summary of the fraction of data-like distributions 
-  with a {\sc BumpHunter} $p$-value less than certain threshold values,
-  when the SWiFt search phase procedure with the 4 and 5 parameter fit function
-  and various window-half-widths (wHW) is performed to an ensemble of data-like distributions
-  taken from the fitting control region in the low-mass category.
-  The numbers in brackets represent a 1$\sigma$ confidence interval on the fraction.}
-\end{table}
-
+%\begin{table}[!ht]
+%\centering
+%\begin{tabular}{|c|c||c|c|c|c|}
+%  \hline
+%\multirow{2}{*}{nPars} & \multirow{2}{*}{wHW} &\multicolumn{3}{c|}{Fraction of Seeds with BH $p$-value \textless} & nSeeds \\ \cline{3-5} 
+%                       &                      &    0.1                  & 0.05                & 0.01            &        \\ 
+%  \hline
+%  4 &   16& 66.0\% (61.20-70.59) & 39.0\% (34.24-43.91) & 16.0\% (12.58-19.87) &  100  \\
+%  4 &   14& 32.0\% (27.49-36.74) & 19.0\% (15.31-23.10) &  8.0\% (5.56-11.00) &  100  \\
+%  4 &   12& 20.0\% (16.22-24.17) & 12.0\% (9.01-15.49) &  6.0\% (3.91-8.68) &  100  \\
+%  4 &   10& 11.0\% (8.14-14.38) &  4.0\% (2.32-6.30) &  2.0\% (0.88-3.80) &  100  \\
+%  \hline
+%  5 &   16& 18.1\% (16.44-19.94) &  6.0\% (4.96-7.12) &  0.8\% (0.47-1.32) &  485  \\
+%  5 &   14&  5.2\% (4.26-6.26)   &  2.6\% (1.95-3.38) &  0.6\% (0.31-1.03) &  500  \\
+%  5 &   12&  3.6\% (2.83-4.50)   &  1.8\% (1.26-2.47) &  0.4\% (0.17-0.77) &  500  \\
+%  5 &   10&  7.4\% (5.14-10.20)  &  2.8\% (1.46-4.70) &  0.9\% (0.25-2.29) &  108  \\
+%  \hline
+%\end{tabular}
+%\vspace{10pt}
+%\caption{\label{tab:bumpH_lm_spuriousSignal}
+%  A summary of the fraction of data-like distributions 
+%  with a {\sc BumpHunter} $p$-value less than certain threshold values,
+%  when the SWiFt search phase procedure with the 4 and 5 parameter fit function
+%  and various window-half-widths (wHW) is performed to an ensemble of data-like distributions
+%  taken from the fitting control region in the low-mass category.
+%  The numbers in brackets represent a 1$\sigma$ confidence interval on the fraction.}
+%\end{table}
 
 \FloatBarrier
 
@@ -1267,7 +1298,7 @@ In the previous two subsections it is shown that the SWiFt background estimate p
 However, we also want to test the SWiFt procedure in the case that signal is present, to show that the signal can be found and the remaining background estimate is valid.
 This test is performed by injecting signal into the background only test-data sets used above and re-running SWiFt and {\sc BumpHunter} procedure.
 The size of the signal is varied by applying a factor to the nominal simulated cross-section,
-and as such the size of signal in these studies will be labelled relative to this nominal cross-section (i.e. xs*2 = nominal cross-section multiplied by 2).\\
+and as such the size of signal in these studies will be labelled relative to this nominal cross-section (i.e. xs*2 = nominal cross-section multiplied by 2).
 
 To identify signal,
 the SWiFt background estimation is passed to the {\sc BumpHunter} algorithm which identifies the most discrepant excess region
@@ -1283,7 +1314,7 @@ with the excluded region widened to account for this.
 This process is repeated until the excluded region is stable,
 at which point the fit is tested against the window selection
 criteria outlined in ~\ref{sec:lowmass_windowSel}.
-If the tests are not passed then this particular window-width is rejected, and a narrower window is tested. \\
+If the tests are not passed then this particular window-width is rejected, and a narrower window is tested.
 
 \noindent
 In the following section we will describe two tests:
@@ -1308,73 +1339,92 @@ Again, the low mass and high mass sections of the analysis are described separat
 \label{sec:lowmass_signalInj}
 
 For these tests a sequential standard model $Z'$ signal of mass 600 GeV or 800 GeV,
-using the nominal Pythia8 cross-section multiplied by a factor of 1 or 2 has been injected into a background only data-like taken from the fitting control region. \\
+using the nominal Pythia8 cross-section multiplied by a factor of 1 or 2 has been injected into a background only data-like taken from the fitting control region.
 
 Firstly, let us consider the $Z'$ of mass 600 GeV.
-Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1} shows the search phase with an injected $Z'$ with mass of 600 GeV and the nominal cross section,
-for the SWiFt procedure with the 5 parameter fit function and window-half-widths ranging from 10 to 16.
-This shows the that for all window widths the {\sc BumpHunter} algorithm has correctly identified the signal region location and assigned a $p$-value of less than 0.01.
-Hence, the SWiFT background estimate is then repeated excluding that region in the fit and then the window selection procedure is run, again excluding the excess region.
-The results of this refit are shown in Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1_removedWindow}
-and the window selection procedure is illustrated in Figure~\ref{fig:windowSel_Zprimebb600_xsFactor1}.
-The window selection procedure would have chosen the SWiFt background estimate with the 5-parameter fit function and a window-half-width of 12.
+The SWiFt search phase is performed for the fitting control region with an injected $Z'$ with mass of 600 GeV and the nominal cross section,
+for all window half-widths the {\sc BumpHunter} algorithm has identified the largest excess of 566 - 611 GeV, which is correct for the signal injected,
+and has assigned a $p$-value of less than 0.01, which is considered as significant.
+Hence, the SWiFT background estimate is then repeated excluding that region in the fit and then the window selection procedure is performed,
+excluding the excess region in the calculation of all fit quality measures.
 
-\begin{figure}[!htb]
-\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-\centering
-\subcaptionbox{5 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16_inj_Zprimebb600_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14_inj_Zprimebb600_xsFactor1.pdf}
-}\\
-\subcaptionbox{5 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10_inj_Zprimebb600_xsFactor1.pdf}
-}
-\vspace{10pt}
-\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1}
-  This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
-  from the fitting control region with a Pythia8 SSM $Z'$ of mass 600 GeV injected.
-  The SWiFt procedure has been run for the 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
-  All window-widths have correctly identified the signal and assigned a $p$-value less than 0.01.
-}
-\end{figure}
+Figure~\ref{fig:windowSel_Zprimebb600_xsFactor1} shows the window selection procedure when window exclusion is applied,
+the window selection procedure would have chosen the SWiFt background estimate with the 5-parameter fit function and a window half-width of 12.
+For the window half-width of 12, Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1} shows the result for the SWiFt search phase procedure before window exclusion is applied 
+and Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1_removedWindow} shows the result for the SWiFt search phase procedure after window exclusion is applied
+The equivalent plots for the full range of window half-widths can be found in Appendix~\ref{app}.
 
-\begin{figure}[!htb]
-\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-\centering
-\subcaptionbox{5 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
-}\\
-\subcaptionbox{5 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
-}
-\vspace{10pt}
-\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1_removedWindow}
-  This figure shows the result of the SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
-  from the fitting control region with a Pythia8 SSM $Z'$ of mass 600 GeV injected.
-  The SWiFt procedure has been run for the 5 parameter fit function for a window-half-width (wHW) range of 10 to 16, with the region of the largest window excluded from the fit.
-}
-\end{figure}
+%\begin{table}[!ht]
+%\centering
+%\begin{tabular}{|c|c||c|c|c|c|}
+%  \hline
+%  wHW  &  Mass Range of Excess [GeV]  &  BumpHunter $p$-value \\
+%  \hline
+%  16   &  566 - 611 & $<$ 0.001 \\
+%  14   &  566 - 611 & $<$ 0.001 \\
+%  12   &  566 - 611 & $<$ 0.001 \\
+%  10   &  566 - 611 & $<$ 0.001 \\
+%  \hline
+%\end{tabular}
+%\vspace{10pt}
+%\caption{\label{tab:bumpH_lm_sigInj_600}}
+%\end{table}
 
+%\begin{figure}[!htb]
+%\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+%\centering
+%\subcaptionbox{5 parameter-fit, wHW = 16} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16_inj_Zprimebb600_xsFactor1.pdf}
+%}
+%\subcaptionbox{5 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14_inj_Zprimebb600_xsFactor1.pdf}
+%}\\
+%\subcaptionbox{5 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1.pdf}
+%}
+%\subcaptionbox{5 parameter-fit, wHW = 10} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10_inj_Zprimebb600_xsFactor1.pdf}
+%}
+%\vspace{10pt}
+%\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1}
+%  This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
+%  from the fitting control region with a Pythia8 SSM $Z'$ of mass 600 GeV injected.
+%  The SWiFt procedure has been run for the 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
+%  All window-widths have correctly identified the signal and assigned a $p$-value less than 0.01.
+%}
+%\end{figure}
+%
+%\begin{figure}[!htb]
+%\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+%\centering
+%\subcaptionbox{5 parameter-fit, wHW = 16} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low16_high16_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
+%}
+%\subcaptionbox{5 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low14_high14_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
+%}\\
+%\subcaptionbox{5 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
+%}
+%\subcaptionbox{5 parameter-fit, wHW = 10} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low10_high10_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
+%}
+%\vspace{10pt}
+%\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1_removedWindow}
+%  This figure shows the result of the SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
+%  from the fitting control region with a Pythia8 SSM $Z'$ of mass 600 GeV injected.
+%  The SWiFt procedure has been run for the 5 parameter fit function for a window-half-width (wHW) range of 10 to 16, with the region of the largest window excluded from the fit.
+%}
+%\end{figure}
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{Global $\chi^{2}$ $p$-value} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=2]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_v11_Zprimebb600_xsFactor1_removeWindow.pdf}
-}
-\subcaptionbox{Number of window fits with Wilks' $p$-value $<$ 0.1} {
-  \includegraphics[width=0.45\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_v11_Zprimebb600_xsFactor1_removeWindow.pdf}
+  \includegraphics[width=0.49\linewidth, angle=0,page=2]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_v11_Zprimebb600_xsFactor1_removeWindow.pdf}
+}\hspace{-8mm}
+\subcaptionbox{Number of window fits with\\ Wilks' $p$-value $<$ 0.1} {
+  \includegraphics[width=0.49\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy/windowSel_corrFitCR_dataLike_v11_Zprimebb600_xsFactor1_removeWindow.pdf}
 }
 \vspace{10pt}
 \caption{\label{fig:windowSel_Zprimebb600_xsFactor1}
@@ -1386,6 +1436,25 @@ The window selection procedure would have chosen the SWiFt background estimate w
   The procedure would have selected the 5 parameter fit function with a window-half-width of 12.
 }
 \end{figure}
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\centering
+\subcaptionbox{5 parameter-fit, wHW = 12\\No Window Exclusion
+  \label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1}} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1.pdf}
+}
+\subcaptionbox{5 parameter-fit, wHW = 12\\Window Excluded 566-611 GeV
+  \label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb600_xsFactor1_removedWindow}} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_v13_5para_low12_high12_inj_Zprimebb600_xsFactor1_removedWindow.pdf}
+}
+\caption{  This figure shows the result of the SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
+  from the fitting control region with a Pythia8 SSM $Z'$ of mass 600 GeV injected.
+  In plot (a) no window exclusion is applied and in plot (b) the most discrepant region has been excluded from the fit.
+  The SWiFt procedure has been run for the 5 parameter fit function for a window-half-width (wHW) of 12.
+}
+\end{figure}
+
 
 \FloatBarrier
 
@@ -1401,7 +1470,63 @@ For the 4 parameter fit, for the widest windows (wHW = 16 and 14) {\sc BumpHunte
 likely due to the issues seen in Section~\ref{sec:lowmass_spuriousSignal}.
 For the narrower windows (wHW = 12 and 10) we see that {\sc BumpHunter} has correctly identified the signal region location, but with less significance than the 5 parameter fit.
 The fact that in this case the 5 parameter fit has performed better, both in describing the background and in sensitivity to signal,
-heavily informs the decision taken to use the 5 parameter fit function, which is discussed in Section~\ref{sec:lowmass_windowSel}. \\
+heavily informs the decision taken to use the 5 parameter fit function, which is discussed in Section~\ref{sec:lowmass_windowSel}.
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c||c|c|c|c|}
+  \hline
+  nPars & wHW  &  Mass Range of Excess [GeV]  &  BumpHunter $p$-value \\
+  \hline
+   4    & 16   &  1234 - 1300 &  0.012 \\
+   4    & 14   &  1234 - 1300 &  0.046 \\
+   4    & 12   &   730 - 807  &  0.129 \\
+   4    & 10   &   730 - 807  &  0.117 \\
+  \hline
+   5    & 16   &   730 - 807  &  0.007 \\
+   5    & 14   &   730 - 807  &  0.016 \\
+   5    & 12   &   730 - 807  &  0.021 \\
+   5    & 10   &   730 - 807  &  0.017 \\
+  \hline
+\end{tabular}
+\vspace{10pt}
+\caption{\label{tab:bumpH_lm_sigInj_800}}
+\end{table}
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\centering
+\subcaptionbox{4 parameter-fit, wHW = 16} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
+}
+%\subcaptionbox{4 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
+%}
+%\subcaptionbox{4 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
+%}\\
+\subcaptionbox{4 parameter-fit, wHW = 10} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
+}
+\subcaptionbox{5 parameter-fit, wHW = 16} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
+}
+%\subcaptionbox{5 parameter-fit, wHW = 14} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
+%}\\
+%\subcaptionbox{5 parameter-fit, wHW = 12} {
+%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
+%}
+\subcaptionbox{5 parameter-fit, wHW = 10} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
+}
+\vspace{10pt}
+\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
+  This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
+  from the fitting control region with a Pythia8 SSM $Z'$ of mass 800 GeV injected.
+  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
+}
+\end{figure}
 
 As no signal can be found in this case, we repeat with the nominal cross section multiplied by a factor of 2.
 Although the full range of window-half-widths have been tested,
@@ -1415,57 +1540,19 @@ However, we find that the new excess region found lies outside the region that w
 as shown in panel (b) of Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor2_wHW10}.
 So we expand the region excluded in the fit and re-run SWiFt,
 giving us the background estimate shown in panel (c) of Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor2_wHW10}.
-This is the widest window that passes the fit quality criteria when the excess region has been excluded from the fit. \\
-
-To conclude on signal injection studies, it has been shown that the SWiFt background fitting procedure is able to identify this signal and model the remaining background adequately,
-for a sequential standard model $Z'$ of mass 600 GeV and the nominal cross-section or a mass of 800 GeV and the nominal cross section multiplied by a factor of 2.
+This is the widest window that passes the fit quality criteria when the excess region has been excluded from the fit.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
-\subcaptionbox{4 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
+\subcaptionbox{5 parameter-fit, wHW = 10\\No Exclusion Region} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2.pdf}
 }
-\subcaptionbox{4 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{4 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
+\subcaptionbox{5 parameter-fit, wHW = 10\\Exclusion Region 705-807 GeV } {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2_removedWindow.pdf}
 }\\
-\subcaptionbox{4 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_4para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 16} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 14} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
-}\\
-\subcaptionbox{5 parameter-fit, wHW = 12} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter-fit, wHW = 10} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
-}
-\vspace{10pt}
-\caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
-  This figure shows the result of SWiFt background estimate and {\sc BumpHunter} algorithm procedure run on a data-like distribution
-  from the fitting control region with a Pythia8 SSM $Z'$ of mass 800 GeV injected.
-  The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window-half-width (wHW) range of 10 to 16.
-}
-\end{figure}
-
-\begin{figure}[!htb]
-\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-\centering
-\subcaptionbox{No Exclusion Region} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2.pdf}
-}
-\subcaptionbox{1st Exclusion Region} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2_removedWindow.pdf}
-}
-\subcaptionbox{2nd Exclusion Region} {
-  \includegraphics[width=0.3\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2_removedWindow2.pdf}
+\subcaptionbox{5 parameter-fit, wHW = 10\\Exclusion Region 705-834 GeV} {
+  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor2_removedWindow2.pdf}
 }
 \vspace{10pt}
 \caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor2_wHW10}
