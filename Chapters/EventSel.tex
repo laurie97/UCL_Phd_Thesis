@@ -5,7 +5,7 @@ In Chapter~\ref{sec:theo} it was shown that many Beyond Standard Model theories
 predict new particles decaying to one or two $b$-quarks that could be produced by the LHC.
 Chapters~\ref{sec:det},~\ref{sec:obj}~and~\ref{sec:trig}
 described the detectors and reconstruction techniques used to observe such events in the ATLAS detector.
-Hence, I have now outlined the motivation and the tools required to perform
+Hence, I have now outlined in the motivation and the tools required to perform
 a search for resonances decaying to one or two $b$-jets,
 an analysis known as a di-$b$-jet search.
 
@@ -30,10 +30,10 @@ and full detail can be found in the relevant chapter.
 \begin{itemize}[leftmargin=*]
 \item\textbf{Di-$b$-jet Event Selection:} (\textit{Chapter~\ref{sec:evt}})\\
   The first step is to select events that are consistent with a resonance decaying to one or two $b$-quarks
-  and reduce the number of background events.
+  in a way such that the number of background events is minimised.
   Briefly, two high-momentum jets are required and two $b$-tag categories are considered;
-  a category in which both jets have been $b$-tagged (2 $b$-tag) and a category where at least one jet has been $b$-tagged ($\geq$1 $b$-tag).
-  This chapter will focus on details of analysis selection;
+  a category in which both jets have been $b$-tagged (2 $b$-tag) and a category where at least one jet has been $b$-tagged ($\geq$1~$b$-tag).
+  This chapter will focus on event selection;
   Section~\ref{sec:evt-datasets} will describe the data-sets used,
   Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
   considered when defining the selections
@@ -43,11 +43,11 @@ and full detail can be found in the relevant chapter.
 \item\textbf{Search Phase:} (\textit{Chapter~\ref{sec:bkg}})\\
   Once events have been selected the next part of the analysis aims to determine if there
   is evidence of a new particle in the selected events; this step is known as the `search phase'.
-  This step uses the the dijet mass (\mjj)~spectrum, where \mjj~is the invariant mass of the two highest~\pT~jets
-  \footnote{The two highest~\pT~jets are selected before $b$-tagging is applied}.
+  This step uses the dijet mass (\mjj)~spectrum, where dijet mass is the invariant mass of the two highest \pT{} jets
+  \footnote{The two highest \pT{} jets are selected before $b$-tagging is applied}.
   A new particle will appear as a resonance (or `bump') on the smoothly falling background
-  \mjj~distribution from QCD multi-jet, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
-  The smoothly falling QCD background is modelled using a smooth falling function and a
+  dijet mass distribution from QCD dijet production, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
+  The background is modelled using a smooth falling function and a
   model-independent search for resonances is performed using the {\sc BumpHunter} algorithm~\cite{dibjet-bh}.
   Chapter~\ref{sec:bkg} contains a full description of the search phase strategy.
   %including tests of the fitting functions used and the results of the search phase in the data-sets considered.
@@ -58,15 +58,15 @@ and full detail can be found in the relevant chapter.
   \end{center}
   \vspace{-3mm}
   \caption{A cartoon illustrating the use of the dijet mass (\mjj) distribution in the search phase of the di-$b$-jet analysis.
-            Shown is the smoothly falling distribution from multi-jet QCD (SM)
+            Shown is the smoothly falling distribution from QCD dijet production (SM)
             and a resonance shape caused by a Beyond Standard Model particle (BSM)}
           \label{fig:evt-dijet_schem}
   \end{figure}
   \vspace{-5mm}
  
 \item\textbf{Limit Setting:} (\textit{Chapter~\ref{sec:lim}})\\
-  If, in the search phase stage of the analysis, no significant evidence of signal is found
-  then 95\% confidence level limits on the mass of the two benchmark signals considered.
+  If, in the search phase stage of the analysis, no significant evidence of a resonance is found
+  then 95\% confidence level limits are set on the mass of the two benchmark signal models considered.
   Chapter~\ref{sec:lim} presents the limit-setting methodology,
   a description of systematic uncertainties considered
   and the limit results for each of the data-sets considered.
@@ -83,7 +83,7 @@ firstly it is important to know as soon as possible
 if there is evidence of a new resonance as
 this would affect the strategy of future di-$b$-jet analyses and that of other analyses at ATLAS.
 Secondly, this allows us to incrementally
-expand, adapt and improve this strategy in each iteration of the analysis.
+expand, adapt and improve the analysis in each iteration.
 
 In this thesis three different data-sets are considered by the di-$b$-jet analysis.
 The overall analysis strategy is the same for each data-set,
@@ -104,37 +104,41 @@ The data-sets are listed below, the trigger used in each data-set is described.
 All quoted luminosities are given after the GRL has been applied.
 
 \begin{itemize}[leftmargin=*]
-\item\textbf{Summer16+15}: \\
-  The \verb|Summer16+15| data-set contains 13 TeV $pp$ collision data collected
+%\item\textbf{Summer16+15}: \\
+\item\textbf{\summer{}}: \\
+  The \summer{} data-set contains 13 TeV $pp$ collision data collected
   between January 2015 to July 2016 which has an integrated luminosity 13.3~\ifb.
   The trigger used in this data-set is \verb|HLT_j380|,
-  which requires a trigger-level jet with $p_T >$ 380 GeV, 
+  which requires an online
+  \footnote{Online refers to reconstructed objects used in the trigger decision
+  whilst offline refers to objects reconstructed after events have passed the trigger at the data-processing level,
+  from the definition in Section~\ref{sec:trig-bjet_eff}.}  jet with $p_T >$ 380 GeV, 
   and is chosen as it is the lowest unprescaled single jet trigger.
   \footnote{Unprescaled means that the trigger accepts every event passing the trigger selection criteria}.
-  Further details can be found in Section~\ref{sec:trig-jet}.
-  The analysis on this data-set has been published as a conference note~\cite{dibjet-ichep_conf}. \\
+  Section~\ref{sec:trig-jet} contains a further details on single jet triggers.
+  The analysis on this data-set has been published as a conference note in~\cite{dibjet-ichep_conf}. \\
   
-\item\textbf{Full16+15\_HighMass}:\\
-  The \verb|Full16+15_HighMass| data-set contains 13 TeV $pp$ collision data collected
+\item\textbf{\hm{}}:\\
+  The \hm{} data-set contains 13 TeV $pp$ collision data collected
   between January 2015 to December 2016, which has an integrated luminosity of 36.1~\ifb.
-  The trigger used in this data-set is \verb|HLT_j380|, as used in the \verb|Summer16+15| data-set.
+  The trigger used in this data-set is \verb|HLT_j380|, as used in the \summer{} data-set.
   The analysis on this data-set is to be published soon.\\
   
-\item\textbf{Full16\_LowMass}: \\
-  The \verb|Full16_LowMass| data-set contains 13 TeV $pp$ collision data collected
+\item\textbf{\lm{}}: \\
+  The \lm{} data-set contains 13 TeV $pp$ collision data collected
   between January 2016 to December 2016, which has an integrated luminosity of 24.3~\ifb.
   The trigger used in this data-set is a double $b$-jet trigger 
-  which requires two trigger-level jets with $p_T >$ 150 GeV and $p_T >$ 50 GeV
-  where both jets have been $b$-tagged at the trigger level
-  \footnote{Further details of $b$-jet triggers and this particular trigger used in this analysis is in Section~\ref{sec:trig-bjet}.}.
-  The \verb|Full16_LowMass| data-set uses a $b$-jet trigger as the lower \pT~thresholds allow
-  the analysis to probe a lower range of \mjj.
+  which requires two online jets with $p_T >$ 150 GeV and $p_T >$ 50 GeV
+  where both online jets have been $b$-tagged at the trigger level.
+  Section~\ref{sec:trig-bjet} contains further details of $b$-jet triggers and the particular trigger used in this analysis.
+  The \lm{} data-set uses a $b$-jet trigger as the lower \pT{} thresholds allow
+  the analysis to probe a lower range of dijet mass.
   This analysis does not include data from 2015 which was collected using a significantly different $b$-jet trigger configuration.
-  The \verb|Full16_LowMass| data-set uses a $b$-jet trigger aware GRL which additionally
+  The \lm{} data-set uses a $b$-jet trigger aware GRL which additionally
   removes periods of data where the $b$-jet trigger was performing in a sub-optimal way,
   the GRL is described in Section~\ref{sec:trig-grl}.
   As a double $b$-jet trigger is used only the 2 $b$-tag category is considered.
-  The analysis on this data-set is to be published with the \verb|Full16+15_HighMass| data-set.
+  The analysis on this data-set is to be published together with the \hm{} data-set.
 
 \end{itemize}
 
@@ -144,8 +148,7 @@ All quoted luminosities are given after the GRL has been applied.
 In the di-$b$-jet analysis selection two
 benchmark signal models and one dominant background are considered.
 The signal models and dominant background are
-used to optimise event selection, so I will describe
-the signal and backgrounds considered here.
+used to optimise event selection.
 
 For both the background and the signal models Monte-Carlo simulations of the processes are produced.
 Unless specified, all Monte-Carlo simulations are produced using
@@ -164,9 +167,8 @@ the detector response is modelled using the ATLAS detector simulation package~\c
   Section~\ref{sec:theo-qcd} discussed the details of QCD dijet production.
   In particular in Section~\ref{sec:theo-qcd-dijet_features} it was noted that the
   relative strength of the strong force compared to other forces
-  of the Standard Model means that
-  QCD dijet production dominates other backgrounds in a di-$b$-jet event selection.
-  Hence, this will be considered as the only background.
+  of the Standard Model means that QCD dijet production dominates all other backgrounds in a di-$b$-jet event selection.
+  %Hence, this will be considered as the only background.
   A description of how the QCD dijet background is modelled in this analysis is described in Chapter~\ref{sec:bkg}.
   A simulated QCD dijet sample is also used in this analysis
   for background studies and background modelling validation.
@@ -176,52 +178,52 @@ the detector response is modelled using the ATLAS detector simulation package~\c
 Before describing the signal models used it is useful to clearly differentiate between the two definitions of mass used in this analysis.
 The dijet mass or reconstructed mass is the invariant mass of the two leading jets, and is denoted by~\mjj.
 The simulated mass is defined as the pole mass of the signal model used in the generator.
-The two differ due to detector uncertainties when measuring jet energy.
+The two differ due to uncertainties in jet energy measurements.
 
 \begin{itemize}[leftmargin=*]
 \item\textbf{Signal: $Z'$ Boson}:  \vspace{1em} \\
   The $Z'$ boson is an additional gauge boson that can decay to two $b$-quarks.
-  The theoretical $Z'$ boson models considered are
+  The $Z'$ boson models considered are
   described in detail in Section~\ref{sec:theo-bsm_zprime}.
   The $Z'$ boson provides a benchmark model in the 2 $b$-tag category.\\
   %in the case that both jets have been $b$-tagged.
 
-  In the \verb|Summer16+15|, \verb|Full16+15_HighMass| and \verb|Full16_LowMass| data-set analyses
+  In the \summer{}, \hm{} and \lm{} data-set analyses
   the Sequential Standard Model (SSM) $Z'$ and the leptophobic $Z'$ models are considered.
   The intrinsic width of the $Z'$ boson has been set to 3\% of the simulated mass.
-  Monte-Carlo simulation is used to produce \mjj~signal templates at leading order (LO).
+  Monte-Carlo simulation is used to produce dijet mass signal templates at leading order (LO).
   Only decays to $b\bar{b}$ are simulated;
-  other decays of the  $Z'$ boson are ignored such that our
+  other decays of the  $Z'$ boson are ignored such that the
   results are easier to interpret for other signal models decaying to pairs of $b$-quarks.
   It has been shown that for a $Z'$ boson model the cross-sections can increase by up to 30\%
   from the addition of next-to-leading order (NLO) diagrams~\cite{evt-NLO_zprime}.
   Therefore the signal template normalisation is corrected to account for NLO effects,
   the correction factors have been derived by comparing
   the LO and NLO matrix calculations performed using the \textsc{MadGraph} generator~\cite{dibjet-madGraph}
-  and are found to be between 1.2 and 1.3 depending on the signal mass.
+  and are found to be between 1.2 and 1.3 depending on the simulated mass.
   Simulated SSM and leptophobic $Z'$ boson templates are produced at simulated mass points of
   600, 800, 1000, 1250, 1500, 1750, 2000, 2500, 3000, 4000 and 5000 GeV.\\
   
-  Further to this, for the \verb|Full16+15_HighMass| and \verb|Full16_LowMass| data-sets
+  Further to this, for the \hm{} and \lm{} data-sets
   the Dark Matter mediator (DM) $Z'$ boson is also considered.
   For this model the DM $Z'$ boson signal generation is performed at next-to-leading order using the \textsc{MadGraph5\_aMC@NLO} generator~\cite{dibjet-madGraph_NLO},
   whilst all other aspects of event modelling, including parton shower and hadronisation, are performed using the configuration with \textsc{Pythia8} as described above.
   The coupling of the DM $Z'$ boson to the Dark Matter fermion ($g_{DM}$) is set to 1 and
   the mass of the Dark Matter fermion is 10 TeV,
-  the large mass means that decays to the Dark Matter fermion are supressed.
-  For the \verb|Full16_LowMass| data-set the coupling to quarks ($g_{SM}$) is set to 0.1,
+  the large mass means that decays to the Dark Matter fermion are suppressed.
+  For the \lm{} data-set the coupling to quarks ($g_{SM}$) is set to 0.1,
   decays to $b$, $c$ and light flavour quarks are considered,
   and the simulated mass points are 600, 800 and 1000 GeV.
-  This configuration is chosen to be consistent with recomendations in~\cite{theo_bsm-zprime_dm},
+  This configuration is chosen to be consistent with recommendations in~\cite{theo_bsm-zprime_dm},
   and to be consistent with other dijet searches at ATLAS~\cite{dijet-mori16_paper}.
-  For the \verb|Full16+15_HighMass| data-set the coupling to quarks ($g_{SM}$) is set to 0.25
+  For the \hm{} data-set the coupling to quarks ($g_{SM}$) is set to 0.25
   and the simulated mass points are 1250, 1500, 1750, 2000, 2500, 3000, 4000 and 5000~GeV.
   The larger $g_{SM}$ value is chosen as larger cross-sections are required to set limits at high mass.
-  For the \verb|Full16+15_HighMass| data-set only decays to $b$-quarks are considered
+  For the \hm{} data-set only decays to $b$-quarks are considered
   as this allows for a greater number of simulated $Z' \to b\bar{b}$ events
   \footnote{This is required as the signal acceptance is lower at high mass, which will be shown in Section~\ref{sec:evt-sel-acc}.}.\\
   
-  %Similarly the same models are considered in the \verb|Full16+15_LowMass|... \\
+  %Similarly the same models are considered in the \lm{}... \\
 
 \item\textbf{Signal: $b^*$ Quark}:  \vspace{1em} \\ 
   The $b^*$ quark is the third generation excited quark which results from
@@ -232,19 +234,19 @@ The two differ due to detector uncertainties when measuring jet energy.
   The $b^*$ quark provides a benchmark model in the $\geq$1~$b$-tag category.\\
   %case that at least one of the jets has been $b$-tagged.
   
-  In the \verb|Summer16+15| and \verb|Full16+15_HighMass|
+  For the \summer{} and \hm{}
   data-sets the same $b^*$ quark model is considered.
-  Monte-Carlo simulation is used to produce a $b^*$ quark \mjj~signal template.
+  Monte-Carlo simulation is used to produce a $b^*$ quark dijet mass signal template.
   Only leading order calculations are considered.
   %again \textsc{Pythia8}~\cite{dibjet-pythia8} with the A14~\cite{dibjet-a14} tune and the NNPDF23LO PDF set~\cite{dibjet-nnpdf} is used.
   Decays to $bg$, $b\gamma$, $bZ_0$ and $tW^{-}$ are considered
   \footnote{Using the branching ratios described in Section~\ref{sec:theo-bsm_bstar}.}.
-  In the \verb|Full16+15_LowMass| data-set
-  only the 2 $b$-tag category is used
-  and as such that the $b^*$ quark model is not considered.
   %further details can be found in Section~\ref{sec:evt-sel-btag}.
   Simulated $b^*$ quark templates are produced at simulated mass points of
   1250, 1500, 1750, 2000, 2500, 3000, 4000 and 5000~GeV.
+  For the \lm{} data-set
+  only the 2 $b$-tag category is used
+  and as such that the $b^*$ quark model is not considered.
 \end{itemize}
 
 \section{Event Selection}
@@ -261,9 +263,9 @@ as this is the underlying assumption of the background estimation strategy,
 which will be described in Chapter~\ref{sec:bkg}.
 Here, smooth means that the spectrum is monotonically decreasing with no `bump' like features.
 In addition, it is desirable that the event selection for the
-\verb|Full16+15_HighMass| and \verb|Full16_LowMass| data-set are
-harmonised where possible such that the two analyses can be published together.
-Any differences in event-selection between the two must be well motivated.
+\hm{} and \lm{} data-set are
+harmonised where possible as the two analyses are to be published together.
+Any differences in event selection between the two must be well motivated.
 
 The di-$b$-jet event selection is split up into three sections each described separately.
 Firstly, a pair of jets are selected (Section~\ref{sec:evt-sel-jets}),
@@ -283,31 +285,28 @@ and calibrated using the EM+JES scheme;
 a full description of jets used in this analysis is in Section~\ref{sec:obj-jets}.
 
 At least two jets are required in an event.
-The two highest \pT~jets, referred to as the leading and subleading jet,
+The two highest \pT{} jets, referred to as the leading and subleading jet,
 are the jets used throughout this analysis.
 To reduce the number of fake jets from sources such as calorimeter noise
 both jets are required to pass \textit{loose} jet cleaning cuts
 based on the properties and distributions of the energy deposits in the calorimeter associated to the jet;
 details can be found in~\cite{evt-jet_cleaning}.
 
-Cuts are applied to the leading and subleading jet-\pT~such that events are on the trigger plateau;
-the kinematic region where all events passing the offline jet-\pT~selection
-would also pass the online jet-\pT~requirements of the trigger
-\footnote{Online refers to reconstructed objects used in the trigger decision
-  whilst offline refers to objects reconstructed after events have passed the trigger at the data-processing level,
-  from the definition in Section~\ref{sec:trig-bjet_eff}.}.
-The jet-\pT~above which a single jet-trigger is on the trigger plateu is referred to as the threshold jet-\pT.
+Requirements are placed on  the leading and subleading jet-\pT{} such that events are on the trigger plateau;
+the kinematic region where all events passing the offline jet-\pT{} selection
+would also pass the online jet-\pT{} requirements of the trigger
+The jet-\pT{} above which a single jet-trigger is on the trigger plateau is referred to as the threshold jet-\pT.
 
-For the \verb|Summer16+15| data-set; it is required that the leading jet has \pT~$>$ 430 GeV to be on the trigger plateau of \verb|HLT_j380|.
-This cut is derived by comparing the leading jet-\pT~distributions of jets that pass the trigger, \verb|HLT_j380|,
-relative to a benchmark trigger with a lower jet-\pT~threshold, \verb|L1_J75|.
+For the \summer{} data-set; it is required that the leading jet has \pT{} $>$ 430 GeV to be on the trigger plateau of \verb|HLT_j380|.
+This cut is derived by comparing the leading jet-\pT{} distributions of jets that pass the trigger, \verb|HLT_j380|,
+relative to a reference trigger with a lower jet-\pT{} threshold, \verb|L1_J75|.
 Figure~\ref{fig:evt-ICHEP_turnon}(a) shows this comparison in one run of data where \verb|L1_J75| was unprescaled;
-in the ratio plot it is shown that for leading jet-\pT~$>$ 430 GeV events are on the trigger plateau.
-The subleading jet is required to have jet-\pT~$>$ 60 GeV
-to avoid contamination from pile-up jets
-\footnote{Specifically, if jets have~\pT~$<$ 60 GeV then it is recommended that
+in the ratio plot it is shown that for leading jet-\pT{} $>$ 430 GeV events are on the trigger plateau.
+The subleading jet is required to have jet-\pT{} $>$ 60 GeV
+to reduce contamination from pile-up jets
+\footnote{Specifically, if jets have \pT{} $<$ 60 GeV then it is recommended that
   a pile-up suppression algorithm known as Jet Vertex Tagger (JVT) is used~\cite{evt-jvt}.
-  There is little gain in acceptance from the addition of low~\pT~subleading jets and
+  There is little gain in acceptance from the addition of low \pT{} subleading jets and
   complications from implementing the recommendations so the jets are removed. }.
 Both jets  are required to have $|\eta| <$ 2.4
 such that the jets lie within the volume of the ATLAS pixel detector,
@@ -316,52 +315,53 @@ which is essential for optimal $b$-tagging performance.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT~($p_T^{\text{lead}}$) } {\includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}}
-    \subcaptionbox{\mjj}                   {\includegraphics[width=0.44\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-mjj.pdf}}
+    \hspace{-2mm}
+    \subcaptionbox{Jet-\pT{} ($p_T^{\text{lead}}$) } {\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}}
+    \subcaptionbox{\mjj}                   {\includegraphics[width=0.46\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-mjj.pdf}}
   \end{center}
-  \caption[The comparisons of the (a) leading jet-\pT~($p_T^{\text{lead}}$) and (b)~\mjj~using events that passed an
+  \caption[The comparisons of the (a) leading jet-\pT{} ($p_T^{\text{lead}}$) and (b) dijet mass (\mjj{})~using events that pass an
             unprescaled L1\_J75 trigger (black) compared to events that pass a range of single-jet triggers (coloured) in one run of 2016 data.
-            As shown in the legend, the single-jet triggers considered are HLT\_j380, HLT\_j400 and, in plot (a), HLT\_j360.
-            In plot (b) the \textit{Summer16+15} event selection (excluding $b$-tagging) is applied with a leading jet-\pT~cut as described in the legend.
+            As shown in the legend, the single-jet triggers considered are HLT\_j380, HLT\_j400 and HLT\_j360.
+            In plot (b) the \textit{Summer16+15} event selection (excluding $b$-tagging) is applied with a leading jet-\pT{} cut as described in the legend.
             The ratio with respect to L1\_J75 is shown in the lower panel.]
-          {The comparisons of the (a) leading jet-\pT~($p_T^{\text{lead}}$) and (b)~\mjj~using events that passed an
+          {The comparisons of the (a) leading jet-\pT{} ($p_T^{\text{lead}}$) and (b) dijet mass (\mjj{})~using events that passed an
             unprescaled L1\_J75 trigger (black) compared to events that pass a range of single-jet triggers (coloured) in one run of 2016 data.
             As shown in the legend, the single-jet triggers considered are HLT\_j380, HLT\_j400 and, in plot (a), HLT\_j360.
-            In plot (b) the \textit{Summer16+15} event selection (excluding $b$-tagging) is applied with a leading jet-\pT~cut as described in the legend.
+            In plot (b) the \textit{Summer16+15} event selection (excluding $b$-tagging) is applied with a leading jet-\pT{} cut as described in the legend.
             The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
      \label{fig:evt-ICHEP_turnon}
 \end{figure}
 
-For the \verb|Full16+15_HighMass| data-set the trigger \verb|HLT_j380| is also used,
-and as such the leading jet is again required to have \pT~$>$ 430 GeV.
-The subleading jet-\pT~is required to be $>$ 80 GeV to be consistent with the subleading jet-\pT~cut in the \verb|Full16_LowMass| event selection,
+For the \hm{} data-set the trigger \verb|HLT_j380| is also used,
+and as such the leading jet is again required to have \pT{} $>$ 430 GeV.
+The subleading jet-\pT{} is required to be $>$ 80 GeV to be consistent with the subleading jet-\pT{} cut in the \lm{} event selection,
 which will be described in the following paragraph.
 Both jets  are required to have $|\eta| <$ 2.0;
-the tighter cut on $|\eta|$ (relative to the \verb|Summer16+15| data-set) is selected
-as at large values of jet-$|\eta|$ the $b$-Jet energy scale uncertainty is much larger.
+the tighter cut on $|\eta|$ (relative to the \summer{} data-set) is selected as the
+$b$-jet energy scale uncertainty is significantly increased at large values of jet-$|\eta|$.
 
-For the \verb|Full16_LowMass| data-set a double $b$-jet trigger has been used;
+For the \lm{} data-set a double $b$-jet trigger is used;
 which requires that there is an online jet with $p_T >$ 150 GeV and an online jet with $p_T >$ 50 GeV.
 As before, to be on the trigger plateau, it is required that the leading and subleading offline jets
-have a large enough jet-\pT~such that the corresponding online jets will pass the trigger-level~\pT~requirements.
-To derive the~\pT~cuts one can consider the threshold jet~\pT~of the equivalent single jet triggers,
+have a large enough jet-\pT{} such that the corresponding online jets will pass the trigger-level \pT{} requirements.
+To derive the \pT{} cuts one can consider the threshold jet \pT{} of the equivalent single jet triggers,
 one that requires that there is an online jets with $p_T >$ 150 GeV and the other $p_T >$ 50 GeV.
-To find the threshold jet-\pT~of the two single-jet triggers,
-a linear fit to the threshold jet-\pT~of a range of single jet triggers is used,
+To find the threshold jet-\pT{} of the two single-jet triggers,
+a linear fit to the threshold jet-\pT{} of a range of single jet triggers is used,
 details of the fit can be found in Appendix~\ref{app:triggerTurnOn_fit}.
-Using the results of the fit the leading jet is required to have~\pT~$>$ 200 GeV
-and the subleading jet is required to have~\pT~$>$ 80 GeV.
+Using the results of the fit the leading jet is required to have \pT{} $>$ 200 GeV
+and the subleading jet is required to have \pT{} $>$ 80 GeV.
 Both jets  are required to have $|\eta| <$ 2.0,
-such that the $|\eta|$ cut is consistent for the \verb|Full16_LowMass| and \verb|Full16+15_HighMass| event selection.
+such that the $|\eta|$ cut is consistent for the \lm{} and \hm{} event selection.
 
 %\begin{figure}[!ht]
 %  \begin{center}
 %    \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}
 %  \end{center}
-%  \caption[The comparisons of the leading jet-\pT~using unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
+%  \caption[The comparisons of the leading jet-\pT{} using unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
 %    HLT\_J380 trigger (green dots) and HLT\_J400 trigger (blue dots) in one run of 2016 data.
 %  The ratio with respect to L1\_J75 is shown in the lower panel.]
-%        {The comparisons of the leading jet-\pT~using an unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
+%        {The comparisons of the leading jet-\pT{} using an unprescaled L1\_J75 trigger (black dots) to the HLT\_J360 trigger (red dots),
 %          HLT\_J380 trigger (green dots) and HLT\_J400 trigger (blue dots) in one run of 2016 data.
 %          The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
 %  \label{fig:evt-jet_pt}
@@ -371,11 +371,10 @@ such that the $|\eta|$ cut is consistent for the \verb|Full16_LowMass| and \verb
 \label{sec:evt-sel-event}
 
 Using the two selected jets; there are a set of event-level requirements.
-Firstly, events are required to have good reconstruction quality;
-specifically the primary vertex
-must have at least two tracks associated with it
-and events with problematic reconstruction in the Tile calorimeter, LAr calorimeter or SCT are rejected.
-\textbf{LM Fix, not sure what these are}
+Firstly, to ensure good primary vertex reconstruction,
+the primary vertex must have at least two tracks associated with it.
+%and events with problematic reconstruction in the Tile calorimeter, LAr calorimeter or SCT are rejected.
+%\textbf{LM Fix, not sure what these are}
 
 \noindent
 Secondly, there is a cut applied to the variable $y^*$, defined as
@@ -385,57 +384,56 @@ Secondly, there is a cut applied to the variable $y^*$, defined as
 where $y_1$ and $y_2$ are the rapidities of the leading and subleading jet respectively.
 As discussed in Section~\ref{sec:theo-qcd-dijet_features}, QCD dijet production can occur through $t$-channel processes leading to more background events at large values of $|y^*|$,
 whilst signal production occurs only through $s$-channel processes so will have no dependence on $y^*$.
-Therefore, requiring $|y^*|$ below some threshold value will lead to an increased $S/\sqrt{B}$.
+Therefore, by requiring that $|y^*|$ is below some threshold value will lead to increased sensitivity.
 
-In the \verb|Summer16+15| data-set it is required that $|y^*| <$ 0.6.
+In the \summer{} data-set it is required that $|y^*| <$ 0.6.
 This value has been shown to maximise $S/\sqrt{B}$ when no $b$-tagging is applied
 at previous inclusive dijet searches at ATLAS~\cite{dijet-mori16_paper}
 \footnote{Inclusive dijet analysis means a dijet analysis where no $b$-tagging is applied}.
 The effect of $b$-tagging on the optimal value of this cut is assumed to be small,
 as $t$-channel processes still dominate the background.
 
-In the \verb|Full16+15_HighMass| data-set it is required that $|y^*| <$ 0.8.
-This value is derived by calculating $S/\sqrt{B}$ in the 2 $b$-tag category for a range of simulated mass points
+In the \hm{} data-set it is required that $|y^*| <$ 0.8.
+This value is found by maximising $S/\sqrt{B}$ in the 2 $b$-tag category for a range of simulated mass points
 using the SSM $Z'$ boson model as signal and the QCD background from simulation as background.
-It has been found that $|y^*| <$ 0.8 maximises $S/\sqrt{B}$.
 
-In the \verb|Full16_LowMass| data-set it is required that $|y^*| <$ 0.6.
-The $|y^*|$ cut was not harmonised with the \verb|Full16+15_HighMass| data-set
-as it was shown that the looser cut introduced a kinematic bias at low values of~\mjj.
+In the \lm{} data-set it is required that $|y^*| <$ 0.6.
+The $|y^*|$ cut was not harmonised with the \hm{} data-set
+as it was shown that the looser cut introduced a kinematic bias at low values of dijet mass.
 This will be demonstrated below.
 
-Finally, the dijet mass, \mjj, is required to be above a threshold value
-to ensure that there is no kinematic bias on the \mjj~distribution
-from the trigger or jet-\pT~requirements described in Section~\ref{sec:evt-sel-jets}.
-In addition, it is also required that the background is smooth in the \mjj~region chosen
+Finally, the dijet mass, \mjj{}, is required to be above a threshold value
+to ensure that there is no kinematic bias on the dijet mass distribution
+caused by the trigger or jet-\pT{} requirements described in Section~\ref{sec:evt-sel-jets}.
+In addition, it is also required that the background is smooth in the dijet mass region chosen
 such that it can be described using our background modelling strategy.
 
-In the \verb|Summer16+15| data-set it is required that \mjj~\gt~1378 GeV;
+In the \summer{} data-set it is required that \mjj~\gt~1378 GeV;
 which ensures the two conditions listed above are met.
-Firstly, Figure~\ref{fig:evt-ICHEP_turnon}(b) shows the comparison of \mjj~distributions for events
-that pass the \verb|Summer16+15| data-set event selection (exluding $b$-tagging), including the trigger \verb|HLT_j380|,
+Firstly, Figure~\ref{fig:evt-ICHEP_turnon}(b) shows the comparison of dijet mass distributions for events
+that pass the \summer{} data-set event selection (excluding $b$-tagging), including the trigger \verb|HLT_j380|,
 compared to events that pass a reference trigger, \verb|L1_J75|,
 in one run of data where \verb|L1_J75| was unprescaled.
-The ratio plot demonstrates that for \mjj~\gt~1100 GeV there is no kinematic bias from the trigger or event-selection.
+The ratio plot demonstrates that for \mjj~\gt~1100 GeV there is no kinematic bias from the trigger or event selection.
 %therefore we conclude that for \mjj~\gt~1378 GeV there is also no kinematic bias.
 Secondly, it has been shown using simulated events that
-\mjj~\gt~1378 GeV is required such that the \mjj~distribution from QCD dijet production
+\mjj~\gt~1378 GeV is required such that the dijet mass distribution from QCD dijet production
 can be described by our background modelling strategy;
 this study is presented in Section~\ref{sec:bkg-summer_range}.
 Hence, \mjj~\gt~1378 GeV is the loosest cut that meets both of the conditions.
 
-In the \verb|Full16+15_HighMass| data-set it is required that \mjj~\gt~1200 GeV in the 2 $b$-tag category and
+In the \hm{} data-set it is required that \mjj~\gt~1200 GeV in the 2 $b$-tag category and
 \mjj~\gt~1341 GeV in the $\geq1$ $b$-tag category;
-which again ensures the two conditions required are met.
+which again ensures the two conditions discussed above are met.
 Firstly, Figure~\ref{fig:evt-hm_turnon} compares the dijet mass spectrum
-for events that pass the trigger \verb|HLT_j380| and the \verb|Full16+15_HighMass| jet-\pT~requirements
+for events that pass the trigger \verb|HLT_j380| and the \hm{} jet-\pT{} requirements
 to events that pass a reference trigger, \verb|L1_J75|.
-The comparsion is done in one run of data where \verb|L1_J75| was unprescaled.
-For both spectra it is required that events pass the $|y^*|$ and jet-$|\eta|$ requirements of the \verb|Full16+15_HighMass| event selection.
-The ratio plot demonstrates that for \mjj~\gt~1200 GeV there is no kinematic bias from the trigger or event-selection.
+The comparison is done in one run of data where \verb|L1_J75| was unprescaled.
+For both spectra it is required that events pass the $|y^*|$ and jet-$|\eta|$ requirements of the \hm{} event selection.
+The ratio plot demonstrates that for \mjj~\gt~1200 GeV there is no kinematic bias from the trigger or event selection.
 Secondly, it will be shown in Section~\ref{sec:bkg-hm_spsig_1b}
 that in the $\geq1$ $b$-tag category a cut of \mjj~\gt~1341 GeV is required such that the
-\mjj~distribution from the background can be described by our background modelling strategy.
+dijet mass distribution from the background can be described by our background modelling strategy.
 No such effect was observed in the 2 $b$-tag category.
 Hence, \mjj~\gt~1200 GeV is required in the 2 $b$-tag category and
 \mjj~\gt~1341 GeV is required in the 1 $b$-tag category.
@@ -445,50 +443,56 @@ Hence, \mjj~\gt~1200 GeV is required in the 2 $b$-tag category and
   \begin{center}
     \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/HighMass/evt-mjj.pdf}
   \end{center}
-  \caption{The comparisons of the~\mjj~spectrum of events that pass an unprescaled L1\_J75 trigger (black squares)
-    and events that pass the  HLT\_j380 trigger and the \textit{Full16+15\_HighMass} event selection jet-\pT~requirements (red dots)
+  \caption{The comparisons of the dijet mass (\mjj{}) spectrum of events that pass an unprescaled L1\_J75 trigger (black squares)
+    and events that pass the  HLT\_j380 trigger and the \hm{} event selection jet-\pT{} requirements (red dots)
     in one run of 2016 data where L1\_J75 is unprescaled.
-    The \textit{Full16+15\_HighMass} event selection requires that leading jet~\pT~($p_T^{lead}$)~\gt~430 GeV and subleading jet-\pT~\gt~80 GeV.
-    The jet-$|\eta|$ and $|y^*|$ of the \textit{Full16+15\_HighMass} event selection have been applied.
+    The \hm{} event selection requires that leading jet \pT{} ($p_T^{lead}$)~\gt~430 GeV and subleading jet-\pT{} \gt~80 GeV.
+    The jet-$|\eta|$ and $|y^*|$ of the \hm{} event selection have been applied.
     The ratio with respect to L1\_J75 is shown in the lower panel.}
      \label{fig:evt-hm_turnon}
 \end{figure}
 
-For the \verb|Full16_LowMass| data-set it is shown that for \mjj~\gt~500 GeV there is no kinematic bias
-from the jet-\pT~cuts used in the \verb|Full16_LowMass| data-set event selection.
-Figure~\ref{fig:evt-lowmass_turnon}(a) compares the~\mjj~distribution of events
-that pass the event selection requirements that the leading (subleading) jet-\pT~$>$ 200 (80) GeV, labelled as `analysis~cuts',
-compared to events that pass some arbitarily low cuts of leading (subleading) jet-\pT~$>$ 150 (50) GeV, labelled as `low~cuts'.
+For the \lm{} data-set it is shown that for \mjj~\gt~500 GeV there is no kinematic bias
+from the jet-\pT{} cuts used in the \lm{} data-set event selection.
+Figure~\ref{fig:evt-lowmass_turnon}(a) compares the dijet mass distribution of events
+that pass the event selection requirements that the leading (subleading) jet-\pT{} $>$ 200 (80) GeV, labelled as `analysis~cuts',
+compared to events that pass lower requirements that the leading (subleading) jet-\pT{} $>$ 150 (50) GeV, labelled as `low~cuts'.
 Events are required to pass the \verb|L1_J75| trigger and are taken from a run of 2016 data where \verb|L1_J75| was unprescaled.
-The events are additionally required to pass the jet-$\eta$ and $|y^*|$ requirements of the \verb|Full16_LowMass| data-set event selection.
-For \mjj~\gt~500 GeV there is no kinematic bias from the the \verb|Full16_LowMass| event selection,
+The events are additionally required to pass the jet-$\eta$ and $|y^*|$ requirements of the \lm{} data-set event selection.
+For \mjj~\gt~500 GeV there is no kinematic bias from the \lm{} event selection,
 this includes a one~\mjj~bin buffer that is used as a safety measure.
-Figure~\ref{fig:evt-lowmass_turnon}(b) compares the~\mjj~distribution using the events that pass the analysis cuts and low cuts as before,
-except that now a $|y^*| <$ 0.8 is applied.
-For $|y^*| <$ 0.8 there is a kinematic bias in the~\mjj~range 500-544 GeV,
-and as such the $|y^*| <$ 0.8 is not selected.
+Figure~\ref{fig:evt-lowmass_turnon}(b) shows an identical comparison of  dijet mass distribution
+when it is required that $|y^*| <$ 0.8.
+For $|y^*| <$ 0.8 there is a kinematic bias in the dijet mass range 500-544 GeV,
+and as such the $|y^*| <$ 0.8 is not used in the event selection.
+
+For the \lm{} data-set the upper bound of the dijet mass range considered by the search phase and 1533 GeV,
+such that the analysis comfortably overlaps with the \summer{} and \hm{} analyses
+which means that the full mass range is searched for evidence of resonances.
+At higher values of mass the \summer{} and \hm{} analyses are more sensitive to signal due to
+larger data-sets and looser $b$-tagging requirements.
 
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{$|y^*| <$ 0.6} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/evt-mjj_yStar0p6.pdf}}
-    \subcaptionbox{$|y^*| <$ 0.8} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/evt-mjj_yStar0p8.pdf}}
+    \subcaptionbox{$|y^*| <$ 0.6} {\includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/evt-mjj_yStar0p6.pdf}}\hspace{-2mm}
+    \subcaptionbox{$|y^*| <$ 0.8} {\includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/evt-mjj_yStar0p8.pdf}}
   \end{center}
-  \caption{The comparisons of the~\mjj~of events that pass the analysis jet-\pT~cuts of leading (subleading) jet-\pT~$>$ 200 (80) GeV (black)
-    compared to events that pass a set of low jet-\pT~cuts of leading (subleading) jet-\pT~$>$ 200 (80) GeV (red).
+  \caption{Comparisons of the dijet mass (\mjj{})~of events that pass the analysis jet-\pT{} cuts of leading (subleading) jet-\pT{} $>$ 200 (80) GeV (black)
+    compared to events that pass a set of low jet-\pT{} cuts of leading (subleading) jet-\pT{} $>$ 200 (80) GeV (red).
     The events are required to pass the L1\_J75 trigger and are taken from one run of 2016 data where the trigger L1\_J75 is unprescaled.
     In addition the events are required to have (a) $|y^*| <$ 0.6 and (b) $|y^*| <$ 0.8.
     No $b$-tagging cuts have been applied.}
      \label{fig:evt-lowmass_turnon}
 \end{figure}
 
-However, for the the \verb|Full16_LowMass| data-set
-there is an additional kinematic bias on~\mjj~
+However, for the \lm{} data-set
+there is an additional kinematic bias on dijet mass 
 due to the effect of jets other than the leading or subleading jet
 that was discovered as the analysis progressed.
-As a result the dijet mass is required to be greater than 566~GeV.
+To account for this effect it is required that \mjj{} \gt{} 566 \GeV{}.
 To describe the studies showing this effect I must first introduce
-the $b$-tagging selections used in the \verb|Full16_LowMass| event-selection.
+the $b$-tagging selections used in the \lm{} event selection.
 Therefore the studies into this effect are described below in Section~\ref{sec:evt-sel_btrigMatch}.
 
 \subsection{$b$-Tagging}
@@ -506,34 +510,34 @@ The $\geq 1$ $b$-tag category requires that at least one jet is tagged,
 and is used to search for resonances decaying to 1 $b$-quark and a quark/gluon such as the $b^*$ quark.
 The exclusive 1 $b$-tag category was also considered but was found to be less sensitive to the $b^*$ quark model.
 
-In the \verb|Summer16+15| and \verb|Full16+15_HighMass| data-sets
+In the \summer{} and \hm{} data-sets
 $b$-tagging is performed using the 85\% operating point of the MV2c10 algorithm,
 details on the operating points of MV2c10 are found in Section~\ref{sec:obj-bjets_MV2}.
 This operating point was chosen to maximise $S/\sqrt{B}$ for a range of simulated mass points in the 2 $b$-tag category.
 
-In the \verb|Full16+15_LowMass| data-set $b$-tagging is performed using the 70\% operating point of the MV2c10 algorithm.
+In the \lm{} data-set $b$-tagging is performed using the 70\% operating point of the MV2c10 algorithm.
 This operating point was chosen to maximise $S/\sqrt{B}$ for a range of simulated mass points.
-It is expected that a tighter cut would optimal in the low mass data-set as a tight cut has already been applied at the trigger level.
+It is expected that a tighter cut would optimal in the low mass data-set as a tight cut has already been applied at the online level.
 In addition, as the double $b$-jet trigger used applies $b$-tagging to the leading and subleading jet at the online level
 only the 2 $b$-tag category is considered.
 
-In the $b$-tagging optimisation study for the \verb|Full16+15_HighMass| data-set
+In the $b$-tagging optimisation study for the \hm{} data-set
 the number of background events, $B$, is estimated in
-a narrow~\mjj~window around
+a narrow dijet mass window around
 each simulated mass point considered using a
 18.9~\ifb~subset of data for the 2 $b$-tag category.
 The number of signal events, $S$, is estimated
-in the same narrow~\mjj~windows using 
+in the same narrow dijet mass windows using 
 the simulated SSM $Z'$ boson signal template
 described in Section~\ref{sec:evt-s+b} scaled to 18.9~\ifb~\footnote{This is
   the amount of data collected when the studies were performed}.
-The full \verb|Full16+15_HighMass| event selection has been applied.
+The full \hm{} event selection has been applied.
 Table~\ref{tab:evt-btag_hm} summarises $S/\sqrt{B}$ for each operating point;
 the 85\% operating point is selected as it performs well across the full range of mass points considered.
 The conclusions of this study are luminosity independent
 as $S/\sqrt{B} \propto \sqrt{L}$ such that the relative sensitivity
 between operating points will be the same for all luminosities.
-Therefore the results also validate the choice of $b$-tagging operating point in the \verb|Summer16+15| data-set.
+Therefore the results also validate the choice of $b$-tagging operating point in the \summer{} data-set.
 
 \vspace{-0.4em}
 \begin{table}[ht]
@@ -551,12 +555,12 @@ Therefore the results also validate the choice of $b$-tagging operating point in
 \end{tabular}
 \caption[The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
   $S$ is estimated using a simulated SSM $Z'$ boson sample and $B$ is estimated using a 18.9~\ifb~subset of 2 $b$-tag category data.
-  The \textit{Full16+15\_HighMass} data-set event selection has been applied.
+  The \hm{} data-set event selection has been applied.
   Three different simulated mass points are considered and the mass windows used
   to estimate $S$ and $B$ for each mass point are shown in the table.]
         {The estimated $S/\sqrt{B}$ at 18.9~\ifb~for 4 different MV2c10 operating points (OP).
           $S$ is estimated using a simulated SSM $Z'$ boson sample and $B$ is estimated using a 18.9~\ifb~subset of 2 $b$-tag category data.
-          The \textit{Full16+15\_HighMass} data-set event selection has been applied.
+          The \hm{} data-set event selection has been applied.
           Three different simulated mass points are considered and the mass windows used
           to estimate $S$ and $B$ for each mass point are shown in the table~\cite{dibjet-full_int}.}
         \label{tab:evt-btag_hm}        
@@ -564,18 +568,18 @@ Therefore the results also validate the choice of $b$-tagging operating point in
 \vspace{-2em}
 \end{table}
 
-Similarly $b$-tagging operating point is chosen for the \verb|Full16_LowMass| data-set
-by estimating $B$ and $S$ in narrow~\mjj~windows around simulated mass points.
+Similarly, $b$-tagging operating point is chosen for the \lm{} data-set
+by estimating $B$ and $S$ in narrow dijet mass windows around simulated mass points.
 The number of background events, $B$, is estimated  using a
-3~\ifb~subset of \verb|Full16+15_LowMass| data and 
+3~\ifb~subset of \lm{} data and 
 the number of signal events, $S$, is estimated using the simulated SSM $Z'$ boson signal template
 described in Section~\ref{sec:evt-s+b} scaled to 3~\ifb~
 \footnote{A subset of data was used such that the studies were not biased if signal is present in the final data-set.}.
-The full \verb|Full16_LowMass| event selection has been applied.
+The full \lm{} event selection has been applied.
 The 85\% operating point is not considered,
 because the associated $b$-jet trigger systematic uncertainties
 are significantly larger as shown in Table~\ref{tab:trig-bTrig_jetSys_opComp}
-\footnote{Section~\ref{sec:trig-bjet_eff} contains a full description of the $b$-jet trigger sytematic uncertainties.}.
+\footnote{Section~\ref{sec:trig-bjet_eff} contains a full description of the $b$-jet trigger systematic uncertainties.}.
 Table~\ref{tab:evt-btag_lm} summarises $S/\sqrt{B}$ for each operating point;
 the 70\% operating point is selected as it performs well across the full range of mass points considered
 and, as shown in Table~\ref{tab:trig-bTrig_jetSys_opComp}, has a smaller $b$-jet trigger uncertainty associated than the 77\% operating point.
@@ -597,14 +601,14 @@ Again the conclusions of this study are luminosity independent.
 \end{tabular}
 \caption[The estimated $S/\sqrt{B}$ at 3~\ifb~for 3 different MV2c10 operating points (OP).
   $S$ is estimated using a simulated SSM $Z'$ boson sample and $B$ is estimated using a 3~\ifb~subset of data.
-  The \textit{Full16\_LowMass} data-set event selection has been applied.
+  The \lm{} data-set event selection has been applied.
   Three different simulated mass points are considered and the mass windows used
   to estimate $S$ and $B$ for each mass point are shown in the table.]
         {The estimated $S/\sqrt{B}$ at 3~\ifb~for 3 different MV2c10 operating points (OP).
           $S$ is estimated using a simulated SSM $Z'$ boson sample and $B$ is estimated using a 3~\ifb~subset of data.
-          The \textit{Full16\_LowMass} data-set event selection has been applied.
+          The \lm{} data-set event selection has been applied.
           Three different simulated mass points are considered and the mass windows used
-          to estimate $S$ and $B$ for each mass point are shown in the table.~\cite{dibjet-full_int}.}
+          to estimate $S$ and $B$ for each mass point are shown in the table~\cite{dibjet-full_int}.}
 \vspace{-2em}
 \label{tab:evt-btag_lm}
 \end{center}
@@ -615,15 +619,15 @@ The dijet flavour composition is defined as the truth flavour of the jets used i
 using the definition of truth flavour from Section~\ref{sec:obj-bjets_label}.
 Figure~\ref{fig:evt-summer_flavcomp} shows the dijet flavour composition of the simulated QCD dijet background in
 the case where no $b$-tagging has been applied (inclusive) and in the $\geq1$ and 2 $b$-tag categories.
-For this figure the \verb|Summer16+15| data-set event selection has been applied,
-although the distributions are very similar for the \verb|Full16+15_HighMass| data-set
+For this figure the \summer{} data-set event selection has been applied,
+although the distributions are very similar for the \hm{} data-set
 as the same $b$-tagging operating point has been chosen.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.99\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-summer_flavcomp.pdf}
   \end{center}
-  \caption{The dijet flavour composition of the simulated dijet background as a function of dijet mass for the \textit{Summer16+15} data-set
+  \caption{The dijet flavour composition of the simulated dijet background as a function of dijet mass (\mjj{}) for the \textit{Summer16+15} data-set
     shown without applying $b$-tagging (inclusive) and for $\geq1$ $b$-tag and 2 $b$-tag categories.
     In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
     The \textit{Summer16+15} data-set event selection has been applied.}
@@ -631,7 +635,7 @@ as the same $b$-tagging operating point has been chosen.
 \end{figure}
 
 There are a few features that should be noted in this figure.
-Firstly, the flavour fraction of the background before $b$-tagging is dominated by light-jets
+Firstly, the background before $b$-tagging is dominated by light-jets
 for the reasons outlined in~Section~\ref{sec:theo-qcd-dijet_features}.
 As the background is dominated by light-jets the application
 of $b$-tagging can increase background rejection
@@ -643,53 +647,54 @@ except for a small region at low mass in the 2 $b$-tag category.
 This shows that the sensitivity of the analysis is limited by the
 light-jet rejection of $b$-tagging at high jet-\pT.
 
-Finally, in all three cases the dijet flavour fractions are monatonically and steadily changing.
+Finally, in all three cases the dijet flavour fractions are monotonically and steadily changing.
 This is evidence that the effect of $b$-tagging on the background does not produce
 a non-smooth feature in the background dijet mass spectra.
 
 Figure~\ref{fig:evt-lowmass_flavcomp} shows the dijet flavour composition of the simulated QCD dijet background
-when the \verb|Full16_LowMass| data-set event selection has been applied.
-In the \verb|Full16_LowMass| data-set the background is dominated by $b$-jets
+when the \lm{} data-set event selection has been applied.
+In the \lm{} data-set the background is dominated by $b$-jets
 due to the tighter $b$-tagging operating point used and improved $b$-tagging performance a low jet-\pT.
 
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/LowMass/evt-flavcomp.pdf}
   \end{center}
-  \caption[The dijet flavour composition of the simulated dijet background as a function of dijet mass for the \textit{Full16\_LowMass} data-set
-    shown after the application of online and offline $b$-tagging requirments categories.
+  \caption[The dijet flavour composition of the simulated dijet background as a function of dijet mass (\mjj) for the \lm{} data-set
+    shown after the application of online and offline $b$-tagging requirements.
     In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
-    The \textit{Full16\_LowMass} data-set event selection has been applied.]
-          {The dijet flavour composition of the simulated dijet background as a function of dijet mass for the \textit{Full16\_LowMass} data-set
-            shown after the application of online and offline $b$-tagging requirments categories.
+    The \lm{} data-set event selection has been applied.]
+          {The dijet flavour composition of the simulated dijet background as a function of dijet mass for the \lm{} data-set
+            shown after the application of online and offline $b$-tagging requirements categories.
             In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
-            The \textit{Full16\_LowMass} data-set event selection has been applied~\cite{dibjet-full_int}.}
+            The \lm{} data-set event selection has been applied~\cite{dibjet-full_int}.}
   \label{fig:evt-lowmass_flavcomp}
 \end{figure}
 
-\subsection{Effect of $b$-Jet Trigger Matching in the \textit{Full16\_LowMass} Data-set}
+\newpage
+\subsection{Effect of $b$-Jet Trigger Matching in the \lm{} Data-set}
 \label{sec:evt-sel_btrigMatch}
 
 As discussed in Section~\ref{sec:trig-bjet},
-the double $b$-jet trigger used in the \verb|Full16_LowMass| data-set
-requires that there is one online jet with~\pT~\gt~150 GeV
-and another online jet with~\pT~\gt~50 GeV.
+the double $b$-jet trigger used in the \lm{} data-set
+requires that there is one online jet with \pT{} \gt~150 GeV
+and another online jet with \pT{} \gt~50 GeV.
 Then both of these jets are required to be $b$-tagged at the 60\% online operating point.
 
-As described in Section~\ref{sec:evt-sel-jets}, it is requried that the leading and subleading offline jet have a jet~\pT~above
-the threshold jet-\pT~of the two trigger level requirements
-\footnote{The offline jet-\pT~above which a single jet-trigger is on the trigger plateu is referred to as the threshold jet-\pT.}.
-Then, in Section~\ref{sec:evt-sel-event} it was shown that in the \verb|Full16_LowMass| data-set
-there is no kinematic bias in the dijet mass distribution due to the leading and subleading offline jet~\pT~cuts.
+As described in Section~\ref{sec:evt-sel-jets}, it is required that the leading and subleading offline jet have a jet \pT{} above
+the threshold jet-\pT{} of the two trigger level jet requirements
+\footnote{The offline jet-\pT{} above which a single jet-trigger is on the trigger plateau is referred to as the threshold jet-\pT.}.
+Then, in Section~\ref{sec:evt-sel-event} it was shown that in the \lm{} data-set
+there is no kinematic bias in the dijet mass distribution due to the leading and subleading offline jet \pT{} cuts for \mjj{}~\gt{}~566~GeV.
 
 However, it has been discovered that one must also consider the effect of offline jets other than the leading and subleading jet,
 these jets I will refer to as `non-leading jets'.
 It is possible that in an event that has passed the double $b$-jet trigger the
 leading and subleading offline jet do not correspond to the
-online jets that have been used in the double $b$-jet trigger.
-Instead a non-leading offline jet could correspond to one of the online jets used in the double $b$-jet trigger.
-Therefore, it must be additionaly shown that in the dijet mass range considered there is not a kinematic bias
-due to events where a non-leading jet is used by the the double $b$-jet trigger.
+online jets that have been used by the double $b$-jet trigger.
+Instead a non-leading offline jet could correspond to one of the online jets used by the double $b$-jet trigger.
+Therefore, it must be additionally shown that in the dijet mass range considered there is not a kinematic bias
+due to events where a non-leading jet is used by trigger.
 
 A study is performed to determine the effect of the $b$-jet trigger using non-leading jets on the dijet mass spectrum.
 For this study offline jets are matched to online jets in a process known as trigger matching.
@@ -698,8 +703,8 @@ An offline jet is matched to an online jet if $\Delta R$
 between the jets $<$ 0.4.
 The matching is exclusive, which means that no online or offline jet can be involved in two matchings.
 In the case that an offline jet can be matched to two online jets, then the pair of jets with the smallest~$\Delta R$ is chosen.
-In the case where two offline jets can be matched to an online jet, the offline jet with the highest-\pT~is chosen;
-this is done as there is a prior reason to believe that the leading and subleading jets are responsible
+In the case where two offline jets can be matched to an online jet, the offline jet with the highest-\pT{} is chosen;
+this is done as there is a prior reason to believe that the leading and subleading offline jets are responsible
 for passing the $b$-jet trigger requirements as they are known to pass offline $b$-tagging.
 %To keep matching exclusive the following algorithm is performed.
 %Firstly, the leading offline jet is matched to the online jet with the smallest $\Delta R$, if the value of $\Delta R <$ 0.4.
@@ -707,30 +712,31 @@ for passing the $b$-jet trigger requirements as they are known to pass offline $
 %The other jets are the matched in a similar manner considered in order of jet-\pT.
 
 Then one can define `$b$-jet trigger matched events' as events where
-the leading and subleading offline jets have succesfully been matched to online jets
-and that these online jets pass the double $b$-jet trigger level requirements described above.
+the leading and subleading offline jets have successful been matched to online jets
+and that these online jets pass the double $b$-jet trigger requirements described above.
 In $b$-jet trigger matched events it is known that there is no effect from the non-leading jets.
 
 To study $b$-jet trigger matched events an additional complication has to be overcome.
 To perform trigger matching the \pT, $\eta$, $\phi$ and MV2c20 output of the online jets is required.
 Data from the ATLAS collaboration is processed and stored in containers known as `derivation containers'
-\footnote{Formally the `derivation containers' are known as Derived Analysis Object Data (DAODs)}
-and the derivation containers are used by analyses at ATLAS.
-To reduce the computer resources required to analyse a derivation container,
-each contains only the events and the reconstucted object information required to perform an analysis.
+\footnote{Formally the `derivation containers' are known as Derived Analysis Object Data (DAODs)}.
+To reduce the computer resources required to analyse a derivation container
+there are many types of derivation containers,
+where each contains only the events and the reconstructed object information required to perform an analysis.
 For the di-$b$-jet analysis a derivation called \textit{EXOT2} is used,
 however the online jet information required is not present in the \textit{EXOT2} derivation containers.
-Instead, a derivation container called \textit{FTAG1} is used, in which the trigger level information is present.
+Instead, a derivation container called \textit{FTAG1} is used, in which the online jet information is present.
 However, in the \textit{FTAG1} derivation not all events that pass the double $b$-jet trigger are included.
-Therefore, in neither derivation container is the full information required to do $b$-jet trigger matching on the full \verb|Full16_LowMass| data-set.
+Therefore, neither derivation container contains the full information required to do $b$-jet trigger matching on the full \lm{} data-set.
 
-To overcome this problem the effect of $b$-jet trigger matching can be studied using the \textit{FTAG1} derivation.
+To overcome this problem the effect of $b$-jet trigger matching can be studied using the \textit{FTAG1} derivation
+to test if there is a kinmeatic bias.
 Firstly, one can consider the dijet mass spectrum of all events in the \textit{FTAG1} derivation
-that pass the \verb|Full16_LowMass| data-set event selection before $b$-jet trigger matching is applied.
+that pass the \lm{} data-set event selection before $b$-jet trigger matching is applied.
 I will refer to this as the dijet mass spectrum from \textit{FTAG1}.
 Figure~\ref{fig:evt-btrig_match}(a) shows the dijet mass spectrum from \textit{FTAG1}
-compared to the equivalent dijet mass spectrum using the \textit{EXOT2} derivation, where all events are present.
-The full \verb|Full16_LowMass| data-set event selection has been applied to both.
+compared to the full dijet mass spectrum from the \textit{EXOT2} derivation, where all events are present.
+The full \lm{} data-set event selection has been applied to both.
 The lower panel shows a ratio between the two, this shows that there is a deficit of events
 in the dijet mass spectrum from \textit{FTAG1}, particularly at low mass.
 
@@ -742,29 +748,30 @@ in the dijet mass spectrum from \textit{FTAG1}, particularly at low mass.
   \end{center}
   \caption{(a) A comparison of the dijet mass (\mjj) spectra created using the \textit{EXOT2} derivation and the \textit{FTAG1} derivation.
     (b) A comparison of the dijet mass spectra of all events and $b$-jet trigger matched events using the \textit{FTAG1} derivation.
-    For both plots the full \textit{Full16\_LowMass} event selection is applied }
+    For both plots the full \lm{} event selection is applied. Details of the derivation containers is given in the text. }
      \label{fig:evt-btrig_match}
 \end{figure}
 
 Figure~\ref{fig:evt-btrig_match}(b) shows the comparison of the dijet mass spectrum from \textit{FTAG1}
 before and after the application of $b$-jet trigger matching.
-The full \verb|Full16_LowMass| data-set event selection has been applied in both cases.
+The full \lm{} data-set event selection has been applied in both cases.
 A ratio of the two spectra is in the lower panel.
 The ratio shows that $\sim$8\% of events that
-pass the \verb|Full16_LowMass| event selection do not pass $b$-jet trigger matching requirement.
-In these events it can be concluded that a non-leading jet is used in the double $b$-jet trigger.
+pass the \lm{} event selection do not pass $b$-jet trigger matching requirement.
+In these events it can be concluded that a non-leading jet is used by the double $b$-jet trigger.
 For~\mjj~\gt~566 GeV the ratio is smooth with respect to dijet mass.
-However in the region~\mjj~\lt~566 GeV there is a clear non-smoothness in the ratio plot,
+However in the region~\mjj~\lt~566 GeV, which is shown by the first three \mjj{}~bins,
+there is a clear discontinuity in the ratio plot
 which indicates that a kinematic bias could be present in the final data-set.
 
 The background estimation strategy (described in Section~\ref{sec:bkg}) requires that the dijet mass spectrum must be smooth,
 therefore it is required that there is no effect that can cause a non-smooth feature in the dijet mass spectrum.
 It has been shown that for~\mjj~\gt 566 GeV there is no effect of non-leading jets in the double $b$-jet trigger
 that can cause an un-smooth feature in the final data-set.
-Therefore, for the \verb|Full16_LowMass| data-set it is required that~\mjj~\gt 566 GeV.
+Therefore, for the \lm{} data-set it is required that~\mjj~\gt 566 GeV.
 
 Finally it should be noted that for future iterations of the di-$b$-jet analysis
-the full information required for $b$-jet trigger matching will be included in the \textit{EXOT2} dervation,
+the full information required for $b$-jet trigger matching will be included in the \textit{EXOT2} derivation,
 and as such trigger matching can be applied such that analyses can search a dijet mass range beginning at 500 GeV.
 
 \newpage 
@@ -775,21 +782,24 @@ A summary of the  key components of the di-$b$-jet event selection
 for each of the data-sets considered
 is listed in Table~\ref{tab:evt}.
 
+{\renewcommand{\arraystretch}{1.5}
 \begin{table}[!htb]
   \begin{tabular}{|c||c|c|c|}
     \hline
-\thead{Cut}              &  \thead{Summer16+15} & \thead{Full16+15\_HighMass} & \thead{Full16+15\_LowMass} \\
-\hline
+    \thead{Detail}              &  \thead{Summer16+15} & \thead{Full16+15\_HighMass} & \thead{Full16+15\_LowMass} \\
+    \hline
+Luminosity               &       13.3 \ifb{}    &           36.1 \ifb{}       &        24.3 \ifb{}         \\
+  \hline
 %Trigger          & HLT\_380 & HLT\_380 & \makecell{ HLT\_j150\_bmv2c2060\_split\\\_j50\_bmv2c2060\_split} \\
 Trigger                & Single-jet       & Single-jet    & Double $b$-jet (60\% OP) \\
-Online LJ~\pT          & \gt~380 GeV      & \gt~380 GeV   & \gt~150 GeV  \\
-Online SLJ~\pT         & -                & -             & \gt~50 GeV \\
+Online LJ \pT          & \gt~380 GeV      & \gt~380 GeV   & \gt~150 GeV  \\
+Online SLJ \pT         & -                & -             & \gt~50 GeV \\
 \hline
 Leading Jet-\pT    &  \gt~430 GeV & \gt~430 GeV &  \gt~200~GeV\\
 Subleading Jet-\pT &  \gt~60 GeV & \gt~80 GeV  &  \gt~80~GeV\\
 Jet-$|\eta|$   & $<$ 2.4 & $<$ 2.0 & $<$ 2.0 \\
 \hline
-$m_{jj}$  & \gt~1378 GeV & \makecell{\gt~1200 GeV (2 $b$-tag)\\ \gt~1341 GeV ($\geq1$ $b$-tag)} & \gt~566 GeV \\
+$m_{jj}$  & \gt~1378 GeV & \makecell{\gt~1200 GeV (2 $b$-tag)\\ \gt~1341 GeV ($\geq1$ $b$-tag)} &  \makecell{566 - 1533 GeV} \\
 $|y^*|$  & $<$ 0.6 & $<$ 0.8 & $<$ 0.6  \\
 \hline
 $b$-Tagging OP & 85\% & 85\% & 70\%\\
@@ -797,16 +807,16 @@ $b$-Tag Categories & 2 and $\geq$1 & 2 and $\geq$1 & 2 \\
 \hline
 \end{tabular}
 \centering
-\caption{A summary of the key event selections applied in the di-$b$-jet analysis for each of the data-sets considered.
+\caption{A summary of the key details of the di-$b$-jet event selections applied for each of the data-sets considered.
 For full details refer to the text.}
 \label{tab:evt}
-\end{table}
+\end{table}}
 
 To better visualise events that pass the event selection,
 Figure~\ref{fig:evt-vp1} show events displays for high dijet mass events that pass
 the $\geq$1 and 2 $b$-tag event selection respectively.
 The figure was made using the VP1 event display package~\cite{evt-vp1}.
-These events pass both the \verb|Summer16+15| and \verb|Full16+15_HighMass| data-set event selection.
+These events pass both the \summer{} and \hm{} data-set event selection.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -815,16 +825,16 @@ These events pass both the \verb|Summer16+15| and \verb|Full16+15_HighMass| data
    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.95\linewidth, angle=0]{figs/Dibjet/Gen/evt-vp1_b.png}}
   \end{center}
   \caption
-      {Event displays showing high~\mjj~events that pass the (a) 2 and (b) $\geq$1 $b$-tag di-$b$-jet event selection.
+      {Event displays showing high dijet mass (\mjj{})~events that pass the (a) 2 and (b) $\geq$1 $b$-tag di-$b$-jet event selection.
         The left section of the figures show a cut-away of the ATLAS detector;
         the inner detector is shown in purple, the hadronic calorimeter is shown in blue
         and the toroid magnet and supporting structure is shown in black and grey.
         The upper right section of the figures show a close-up view of the inner tracker in the $r-z$ plane.
         In both sections tracks inside the inner detector are shown in orange
-        and energy deposits in the EM and hadronic calorimeter are shown in cyan and yellow respectively.
-        The two leading jets formed are indicated by the cones, where a blue cone indicates that the jet has been
-        $b$-tagged and a yellow cone shows that it has not.
-        The yellow spheres show the primary vertex candidates and the red spheres show the secondary vertex candidates.
+        and energy deposits in the EM and hadronic calorimeter are shown in green and yellow respectively.
+        The two leading jets formed are indicated by the cones, a blue cone indicates that the jet has been
+        $b$-tagged and a yellow cone indicates that it has not.
+        In the upper right panel the yellow spheres show the primary vertex candidates and the red spheres show the secondary vertex candidates.
       }
   \label{fig:evt-vp1}
 \end{figure}
@@ -834,41 +844,40 @@ the signal acceptance of the di-$b$-jet analysis is studied
 to understand the performance of the analysis selection
 and as an input to the limit-setting phase of the analysis.
 The signal acceptance multiplied by trigger efficiency is defined as the 
-the fraction of signal events that pass the analysis' trigger and event selection.
+fraction of signal events that pass the analysis' trigger and event selection.
 In addition, as $b$-tagging is a unique selection in our analysis relative to other dijet searches,
 the event-tagging efficiency is also considered, which is defined as the fraction of events that pass
 the $b$-tagging requirements given that the event has passed all other aspects of the event selection.
 Signal acceptance and event tagging efficiency are estimated using the
 Monte-Carlo signal templates discussed in Section~\ref{sec:evt-s+b}.
 
-For the \verb|Summer16+15| data-set event-selection;
+For the \summer{} data-set event selection;
 Figure~\ref{fig:evt-ichep_acc}(a) shows the signal acceptance multiplied by trigger efficiency
 for the $b^*$ quark and SSM $Z'$ boson signal models
 as a function of the simulated mass
 in the case that $b$-tagging is applied and when it is not applied.
 Figure~\ref{fig:evt-ichep_acc}(b) shows the event tagging efficiency
 for the $b^*$ quark and $Z'$ boson for a range of simulated mass points
-as a function of the dijet mass,~\mjj.
+as a function of the dijet mass.
 In both plots the $b$-tagging category used is labelled in the legend.
-
 
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-acc.pdf} }
-    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-tagEff.pdf} }
+    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-acc.pdf} }
+    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-tagEff.pdf} }
   \end{center}
   \caption[Plots to show the acceptance of the \textit{Summer16+15} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, in the case where $b$-tagging has been applied and not.
-            Panel (b) shows the event tagging efficiency as a function of the dijet mass,~\mjj,
+            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{})
             for a range of simulated masses, $m$, as indicated on the plot.
             In both figures the $b$-tagging categories used are indicated in the legend.
             Details of the \textit{Summer16+15} data-set event selection are described in the text.]
           {Plots to show the acceptance of the \textit{Summer16+15} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, in the case where $b$-tagging has been applied and not.
-            Panel (b) shows the event tagging efficiency as a function of the dijet mass,~\mjj,
+            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{})
             for a range of simulated masses, $m$, as indicated on the plot.
             In both figures the $b$-tagging categories used are indicated in the legend.
             Details of the \textit{Summer16+15} data-set event selection are described in the text.
@@ -876,7 +885,7 @@ In both plots the $b$-tagging category used is labelled in the legend.
   \label{fig:evt-ichep_acc}
 \end{figure}
 
-For the \verb|Full6+15_HighMass| data-set event-selection;
+For the \hm{} data-set event selection;
 Figure~\ref{fig:evt-hm_acc}(a) shows the signal acceptance multiplied by trigger efficiency
 for the $b^*$ quark, SSM $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models
 as a function of the simulated mass.
@@ -884,7 +893,7 @@ For both models the signal acceptance is shown before and after the
 dijet mass and $b$-tagging requirements are applied.
 Figure~\ref{fig:evt-hm_acc}(b) shows the event tagging efficiency
 for the $b^*$ quark and SSM $Z'$ boson for a range of simulated mass points
-as a function of the dijet mass,~\mjj.
+as a function of the dijet mass (\mjj{}).
 The SSM $Z'$ boson is used to show the event tagging efficiency such that the
 comparisons can be made between the different data-sets.
 In both plots the $b$-tagging category used is labelled in the legend.
@@ -892,39 +901,39 @@ In both plots the $b$-tagging category used is labelled in the legend.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/HighMass/evt-acc.pdf} }
-    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/HighMass/evt-tagEff.pdf} }
+    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/HighMass/evt-acc.pdf} }
+    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/HighMass/evt-tagEff.pdf} }
   \end{center}
-  \caption[Plots to show the acceptance of the \textit{Full16+15\_HighMass} data-set event selection for the $b^*$ quark,
+  \caption[Plots to show the acceptance of the \hm{} data-set event selection for the $b^*$ quark,
             Sequential Standard Model (SSM) $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, before and after the
             dijet mass and $b$-tagging requirements are applied.
-            Panel (b) shows the event tagging efficiency as a function of the dijet mass,~\mjj,
+            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{}),
             for the $b^*$ quark and SSM $Z'$ boson models
             for a range of simulated masses, $m$, as indicated in the legend.
             In both figures the $b$-tagging categories used are indicated in the legend.
-            Details of the \textit{Full16+15\_HighMass} data-set event selection are described in the text.]
-          {Plots to show the acceptance of the \textit{Full16+15\_HighMass} data-set event selection for the $b^*$ quark,
+            Details of the \hm{} data-set event selection are described in the text.]
+          {Plots to show the acceptance of the \hm{} data-set event selection for the $b^*$ quark,
             Sequential Standard Model (SSM) $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, before and after the
             dijet mass and $b$-tagging requirements are applied.
-            Panel (b) shows the event tagging efficiency as a function of the dijet mass,~\mjj,
+            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{}),
             for the $b^*$ quark and SSM $Z'$ boson models
             for a range of simulated masses, $m$, as indicated in the legend.
             In both figures the $b$-tagging categories used are indicated in the legend.
-            Details of the \textit{Full16+15\_HighMass} data-set event selection are described in the text.
+            Details of the \hm{} data-set event selection are described in the text.
             Figures taken from~\cite{dibjet-full_int}.} 
   \label{fig:evt-hm_acc}
 \end{figure}
 
-For the \verb|Full6_LowMass| data-set event-selection;
+For the \lm{} data-set event selection;
 Figure~\ref{fig:evt-lm_acc}(a) shows the signal acceptance multiplied by trigger efficiency
 for the SSM $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models as a function of the simulated mass.
 For both models the signal acceptance is shown before and after the
 dijet mass and offline $b$-tagging requirements are applied.
-The signal acceptance is considerably lower for the DM $Z'$ boson model in the \verb|Full6_LowMass| data-set
+The signal acceptance is considerably lower for the DM $Z'$ boson model in the \lm{} data-set
 as decays to light, $c$ and $b$ quarks are considered
 whilst for the SSM model only decays to $b$-quarks are considered.
 Figure~\ref{fig:evt-lm_acc}(b) shows the event tagging efficiency
@@ -935,10 +944,10 @@ as a function of the dijet mass,~\mjj.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/LowMass/evt-acc.pdf} }
-    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.485\linewidth, angle=0]{figs/Dibjet/LowMass/evt-tagEff.pdf} }
+    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/LowMass/evt-acc.pdf} }
+    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/evt-tagEff.pdf} }
   \end{center}
-  \caption[Plots to show the acceptance of the \textit{Full16\_LowMass} data-set event selection for the
+  \caption[Plots to show the acceptance of the \lm{} data-set event selection for the
     Sequential Standard Model (SSM) $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, before and after the
@@ -946,8 +955,8 @@ as a function of the dijet mass,~\mjj.
             Panel (b) shows the event tagging efficiency of just online $b$-tagging and the combination of online and offline $b$-tagging
             as a function of the dijet mass,~\mjj, for the SSM $Z'$ boson 
             at a range of simulated masses, $m$, as indicated in the legend.
-            Details of the \textit{Full16\_LowMass} data-set event selection are described in the text.]
-          {Plots to show the acceptance of the \textit{Full16\_LowMass} data-set event selection for the
+            Details of the \lm{} data-set event selection are described in the text.]
+          {Plots to show the acceptance of the \lm{} data-set event selection for the
             Sequential Standard Model (SSM) $Z'$ boson and Dark Matter mediator (DM) $Z'$ boson signal models.
             Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
             function of the simulated mass of the signal model, before and after the
@@ -955,21 +964,22 @@ as a function of the dijet mass,~\mjj.
             Panel (b) shows the event tagging efficiency of just online $b$-tagging and the combination of online and offline $b$-tagging
             as a function of the dijet mass,~\mjj, for the SSM $Z'$ boson 
             at a range of simulated masses, $m$, as indicated in the legend.
-            Details of the \textit{Full16\_LowMass} data-set event selection are described in the text
+            Details of the \lm{} data-set event selection are described in the text
             Figures taken from~\cite{dibjet-full_int}.} 
   \label{fig:evt-lm_acc}
 \end{figure}
 
 There are a few features of the signal acceptance and tagging efficiency that should be commented on.
 There is a reduced signal acceptance at lower values of simulated mass
-because there is a low mass tail of the signal template which lies below the~\mjj~cut,
-the tail is caused by a preference for low values of~\mjj~by the PDFs.
-In addition, the event tagging efficiency decreases at high values of~\mjj~
+because the dijet mass template has a bias towards low mass events, known as a tail,
+and events in the low mass tail can be below the dijet mass requriements of the event selection.
+The low mass tail is caused by a preference for low values of dijet mass by the PDFs.
+In addition, the event tagging efficiency decreases at high values of dijet mass
 due to a lower performance of $b$-tagging at high jet-\pT.
 \textbf{LM Fix: Refer to high-pT~$b$-tagging, will be added to b-tag chapter}.
 Finally, the $b^*$ quark has a similar tagging efficiency
 as the $Z'$ boson in the $\geq$1 $b$-tag category when~\mjj~\gt~3 TeV;
 whilst naively one would expect that the $Z'$ boson should have a higher
 event tagging efficiency as it decays to two $b$-quarks,
-the gluon from the $b^*$ quark decay can split into a pair of lower~\pT~$b$-quarks
+the gluon from the $b^*$ quark decay can split into a pair of lower \pT{} $b$-quarks
 which can often be tagged leading to a similar tagging efficiency.

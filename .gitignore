@@ -12,5 +12,11 @@
 *.out
 *.toc
 *.bak
+
+## Folders I don't want
 Examples/
 Output/
+
+## More specific
+*.key
+References/Object.bib_preATLAS
