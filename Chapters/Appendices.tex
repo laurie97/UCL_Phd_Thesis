@@ -27,40 +27,51 @@ The binning used in the di-$b$-jet analysis is:
 12200, 12432, 12669, 12910, 13156
 \end{verbatim}
 
-\chapter{Single Jet Trigger Threshold~\pT~Fit}
+\chapter{Single Jet Trigger Threshold~\pT{} Fit}
 \label{app:triggerTurnOn_fit}
 
-The threshold jet-\pT~of a single jet trigger is defind as the jet-\pT~above
-which which a single jet-trigger is on the trigger plateu.
-The threshold jet-\pT~follows a linear behaviour with respect to jet-\pT,
-and such a linear fit can be used to predict the thresholds jet-\pT~of a single jet trigger.
+The trigger plateau is defined as the kinematic region where all events that pass the offline jet-\pT{} selection
+also pass the online jet-\pT{} selection at the trigger level.
+To be on the trigger plateau of a single jet trigger
+the offline jet-\pT{} must be above some threshold value,
+which is referred to as the threshold jet-\pT{}.
 
-Figure~\ref{fig:triggerTurnOn_fit} shows the threshold jet-\pT~
-at which a trigger is 99\% efficient with respect to a lower-\pT~benchmark trigger
-as a function of the trigger-level~\pT~requirements of the single jet trigger.
+For single jet triggers it is found that the threshold jet-\pT{} follows
+a linear behaviour with respect to the online jet-\pT{} requirements at the trigger level.
+Therefore a linear fit can be used to predict the threshold jet-\pT{} of any single jet trigger
+from considering a small number of single jet triggers.
+The single jet triggers considered require that there is an online jet with \pT{} above
+15, 25, 35, 45, 60, 110, 175, 260 and 360 GeV respectively.
+%are \verb|HLT_j15|, \verb|HLT_j25|, \verb|HLT_j35|, \verb|HLT_j45|,
+%\verb|HLT_j60|, \verb|HLT_j110| , \verb|HLT_j175| , \verb|HLT_j260| and \verb|HLT_j360|,
+%where, as an example, \verb|HLT_j360| requires that there is an online jet with \pT{}~\gt{}~360~GeV.
+
+Figure~\ref{fig:triggerTurnOn_fit} shows the threshold jet-\pT{} 
+at which a trigger is 99\% efficient with respect to a lower-\pT{} benchmark trigger
+as a function of the jet-\pT{} requirement of the single jet trigger.
 A linear fit is performed, as shown by the red line.
 The 1$\sigma$ error band on the fit slope is shown by the dotted lines~\cite{evt-jet_turnOnFit}.
 
 \begin{figure}[!hbt]
     \begin{center}
-        \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/LowMass/jetTriggerTurnOn.pdf}
+        \includegraphics[width=0.7\linewidth, angle=0]{figs/Dibjet/LowMass/jetTriggerTurnOn.pdf}
       \end{center}
-  \caption[A plot showing the threshold jet-\pT~at which a trigger is 99\% efficient
-             with respect to a lower-\pT~benchmark trigger as a function of the trigger-level~\pT~requirements of the single jet trigger.
+  \caption[A plot showing the threshold jet-\pT{} at which a trigger is 99\% efficient
+             with respect to a lower-\pT{} benchmark trigger as a function of the trigger-level~\pT{} requirements of the single jet trigger.
              A linear fit is performed, as shown by the red line. The 1$\sigma$ error band on the fit slope is shown by the dotted lines.]
-           {A plot showing the threshold jet-\pT~at which a trigger is 99\% efficient
-             with respect to a lower-\pT~benchmark trigger as a function of the trigger-level~\pT~requirements of the single jet trigger.
+           {A plot showing the threshold jet-\pT{} at which a trigger is 99\% efficient
+             with respect to a lower-\pT{} benchmark trigger as a function of the trigger-level~\pT{} requirements of the single jet trigger.
              A linear fit is performed, as shown by the red line. The 1$\sigma$ error band on the fit slope is shown by the dotted lines~\cite{evt-jet_turnOnFit}.}
           \label{fig:triggerTurnOn_fit}
 \end{figure}
 
 \noindent
-The resulting linear fit has a normalisation of 12.30 and a slope of 1.236.
-Using the fit for the trigger level jet requirements of the double $b$-jet trigger we obtain:
+The resulting linear fit has a normalisation of 12.3 and a slope of 1.24.
+Applying the fit to the trigger level jet requirements of the double $b$-jet trigger we obtain:
 \vspace{-0.5em}
 \begin{itemize}[leftmargin=*]
-\item Trigger Level Jet~\pT~$>$ 150 GeV,~  Threshold Jet~\pT~$>$ 74.1 GeV 
-\item Trigger Level Jet~\pT~$>$  50 GeV,~~ Threshold Jet~\pT~$>$ 197.8 GeV
+\item Trigger Level Jet~\pT{} $>$ 150 GeV,~  Threshold Jet~\pT{} $>$ 74.1 GeV 
+\item Trigger Level Jet~\pT{} $>$  50 GeV,~~ Threshold Jet~\pT{} $>$ 198 GeV
 \end{itemize}
 \vspace{-0.3em}
 \noindent
