@@ -1,0 +1,23 @@
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|c||c|c|c|c|}
+\hline
+\multirow{2}{*}{Mass} & \multirow{2}{*}{xsFactor} & \multirow{2}{*}{nPars} &\multicolumn{4}{c|}{window-half-width} \\ \cline{4-7} 
+                      &                           &                        &      10        &      12        &      14        &      16        \\ \hline
+        600           &            2              &           4            &   0.061    &   0.071    &     -      &     -      \\
+                      &                           &           5            &   0.110    &   0.093    &   0.104    &   0.045    \\ \cline{2-7}
+                      &            3              &           4            &   $<$0.001 &   0.001    &   0.001    &   0.005    \\
+                      &                           &           5            &   0.003    &   0.001    &   0.001    &  $<$0.001 \\ \hline
+        800           &            1              &           4            &   0.100    &   0.069    &     -      &     -      \\
+                      &                           &           5            &   0.085    &   0.011    &   0.007    &   0.007    \\ \cline{2-7}
+                      &            2              &           4            &   $<$0.001 &   $<$0.001 &   $<$0.001 &   $<$0.001  \\
+                      &                           &           5            &   $<$0.001 &   $<$0.001 &   $<$0.001 &   $<$0.001  \\ \hline
+       1000           &            1              &           4            &   0.120    &   0.112    &   0.098    &   0.074    \\
+                      &                           &           5            &     -      &     -      &   0.107    &   0.093    \\ \cline{2-7}
+                      &            2              &           4            &   $<$0.001 &   $<$0.001 &   $<$0.001 &   $<$0.001  \\
+                      &                           &           5            &   $<$0.001 &   $<$0.001 &   $<$0.001 &   0.001    \\
+\hline
+\end{tabular}
+\vspace{10pt}
+\caption{\label{tab:tableName} bumpHunter_v11 bumpHunter p-values for injected SSM Z' }
+\end{table}
