@@ -682,22 +682,23 @@ and that there is no evidence of new physics in the \verb|Summer16+15| data-set.
 This section presents the search phase for the \hm{} and \lm{} data-sets.
 For both data-sets:
 Section~\ref{sec:stat:bkgsample} describes the background-only samples used for the studies,
-Section~\ref{sec:globalfit} describes the studies using the global fit strategy and
+Section~\ref{sec:globalFit} describes the studies using the global fit strategy and
 Section~\ref{sec:swift} introduces an alternative background modelling strategy called the Sliding Window Fit (SWiFt),
-which has been developed and validated in the inclusive dijet analysis on the full 2015+2016 data-set at ATLAS~\cite{dijet_mori17_paper}.
-Sections~\ref{sec:windowSel}-\ref{sec:SWiFt_signalInj} shows studies performed to validate the SWiFt background estimation.
+which has been developed and validated in the inclusive dijet analysis on the full 2015+2016 data-set at ATLAS~\cite{dijet-mori17_paper}.
+Sections~\ref{sec:windowSel}-\ref{sec:signalInj} shows studies performed to validate the SWiFt background estimation.
 Section~\ref{sec:bkg-full_results} presents the results of the search phase
 for the the \hm{} and \lm{} data-sets.
 
 \subsection{Background-Only Samples}
 \label{sec:stat:bkgsample}
 
-It is required to test and develop the background estimation strategy without using the final data-set, which is known as `blinding'.
+The background estimation strategy is tested and developed without using the final data-set, which is known as `blinding'.
 Blinding is required such that no bias from the final data-set is introduced into the background estimation strategy.
 To perform blinded tests a dijet mass spectrum that is representative of the background is required.
-Ideally, Monte-Carlo simulation would be used as the background-only dijet mass spectrum
+Ideally, Monte-Carlo simulation would be used
 as was done for the \summer{} data-set analysis as described in Section~\ref{sec:bkg-summer_fitCR}.
-However, for the two data-sets considered simulation cannot produce a large enough statistical precision to perform an adequate test of the fit strategy.
+However, for the two data-sets considered Monte-Carlo simulation cannot be produced with a large enough statistical
+precision to perform an adequate test of the background estimation strategy.
 Instead fitting test data-sets are used as described below.
 
 \subsubsection{Low Mass}
@@ -708,7 +709,7 @@ a 3 \ifb{} subset of the final test data and a high precision fitting control re
 
 To create the 3 \ifb{} subset of data,
 events are randomly drawn from the final data spectrum as shown in Figure~\ref{fig:fittingDataSubset}.
-This dijet mass spectrum of the subset of data represents the shape of the dijet mass spectrum in final data-set,
+The dijet mass spectrum of the subset of data represents the shape of the dijet mass spectrum in final data-set,
 except with a lower statistical precision.
 The luminosity of the subset of data was chosen to be similar to that of a
 previous low mass di-$b$-jet search in a similar mass range~\cite{dibjet-lhcp_conf},
@@ -718,9 +719,8 @@ such that this subset of data is known not to be sensitive to signal.
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \includegraphics[width=0.7\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/subset_dataComp.pdf}
-\vspace{10pt}
 \caption{\label{fig:fittingDataSubset}
-  The \lm{} dijet mass (\mjj{}) distribution and the dijet mass distribution of a subset of data drawn final data-set which is equivalent to 3 \ifb{}.
+  The dijet mass (\mjj{}) spectra of the full \lm{} data-set and a 3 \ifb{} subset of \lm{} data.
   The lower panel shows a a ratio.}
 \end{figure}
 
@@ -729,7 +729,7 @@ two dijet mass spectra from data are used as inputs.
 The first is the dijet mass spectrum of the~3 \ifb{} subset described above.
 The second is the dijet mass spectrum of events that have passed the \lm{} event-selection
 except that no offline $b$-tagging selection is applied, this is referred to as the 0-tag dijet mass spectrum.
-In plot (a) of Figure~\ref{fig:fittingCR} the 0-tag dijet mass spectrum is compared to the dijet mass spectrum of the 3 \ifb{} data subset.
+Figure~\ref{fig:fittingCR}(a) shows a comparison of the dijet mass spectrum of the 0-tag data and the 3 \ifb{} data subset.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
@@ -749,62 +749,64 @@ In plot (a) of Figure~\ref{fig:fittingCR} the 0-tag dijet mass spectrum is compa
   \includegraphics[width=0.51\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy/corrFitCR_smooth_dataLike.pdf}
 }
 \hspace{-2mm}
-\vspace{10pt}
+
 \caption{\label{fig:fittingCR}
   A figure showing the process of obtaining the fitting control region dijet mass ($m_{jj}$) spectrum
   used for the \lm{} data-set fit studies.
-  Plot (a) shows the dijet mass spectrum of events before $b$-tagging is applied (0-tag) and of a 3 \ifb{} subset of 2-tag data.
-  Plot (b) shows the offline $b$-tagging efficiency with respect to online tagging estimated using the luminosity adjusted ratio of the two spectra in plot (a),
+  Panel (a) shows the dijet mass spectrum of events before $b$-tagging is applied (0-tag) and of a 3 \ifb{} subset of 2-tag data.
+  Panel (b) shows the offline $b$-tagging efficiency with respect to online tagging estimated using the luminosity adjusted ratio of the two spectra in plot (a),
   the lower panel shows the significance of difference between the luminosity adjusted ratio and the fit.
-  Plot (c) shows the dijet mass spectrum of the fitting control region compared to 2-tag data.
-  Plot (d) shows the smooth and data-like dijet mass spectra from the fitting control region.
+  Panel (c) shows the dijet mass spectrum of the fitting control region compared to 2-tag data.
+  Panel (d) shows the smooth and data-like dijet mass spectra from the fitting control region.
 }
 \end{figure}
 
-To model the effect of $b$-tagging, the event-level offline $b$-tagging efficiency with respect to online $b$-tagging is estimated,
+To model the effect of offline $b$-tagging, the event-level offline $b$-tagging efficiency with respect to online $b$-tagging is estimated,
 which is defined as the fraction of events that pass offline $b$-tagging requirements given
-that the events have passes all other requirements of the \lm{} event selection, including online $b$-tagging.
+that the events have passed all other requirements of the \lm{} event selection, including online $b$-tagging.
 The event-level offline $b$-tagging efficiency with respect to online $b$-tagging is estimated using the ratio
 of the dijet mass spectrum of 0-tag data to the subset of data, after the subset of data has been normalised to 24.3 \ifb{}.
-This ratio is smoothed using the five parameter dijet fit function.
+The luminosity adjusted ratio is smoothed using the five parameter dijet fit function.
+Figure~\ref{fig:fittingCR}(b) shows the luminosity adjusted ratio (black points) and the fit (red line).
 The goodness of fit is estimated by comparing the $\chi^2$ test statistic to a $\chi^2$ distribution with the same number of degrees of freedom;
 a $\chi^2$ p-value 0.053 is observed indicating a reasonable fit quality.
-The luminosity adjusted ratio and the fit is shown in plot (b) of Figure~\ref{fig:fittingCR}.
+
 Then, the 0-tag spectrum is uniformly scaled by the fit function to create a `fitting control region', which is a high statistic representation of the final data-set.
-Plot (c) of Figure~\ref{fig:fittingCR} shows the comparison of the dijet mass spectrum from the final 2-tag data-set to the fitting control region,
+Figure~\ref{fig:fittingCR}(c) shows the comparison of the dijet mass spectrum from the final 2-tag data-set to the fitting control region,
 showing that this control region gives a reasonable background-only sample which one can perform fitting tests to.
 
-Finally, to then perform fit tests in a meaningful way two types of spectra are created using the fitting control region.
+Finally, to then perform fit tests in a meaningful way two types of dijet mass spectra are created using the fitting control region.
 The first is a `smooth' dijet mass spectrum, where the errors on the fitting control region are set to be Poisson like, which
 means that the error is equal to the square root of the number of entries.
 This is done such that the errors represent the  size of statistical fluctuations expected in our final data-set.
-Typically one would expect an excellent fit quality that when an appropriate functional form is used
-to fit to the smooth spectrum as the uncertainties are larger than the true statistical fluctuations present.
 The second type of dijet mass spectrum is a `data-like' spectrum,
 where a random set of Poisson fluctuations are applied to the fitting control region,
 to mimic the kind of fluctuation that are observed in data.
 Many data-like spectra can be made, using many different seeds for the random fluctuations.
-A data-like spectrum is shown in comparison to the smooth spectrum in panel (d) of Figure~\ref{fig:fittingCR}.
+Figure~\ref{fig:fittingCR}(d) shows the comparison of the smooth spectrum and a data-like spectrum.
 
 The 0-tag data will be insensitive to signal as no offline $b$-tagging is applied, hence will have larger light and charm jet impurities
 and, as has been discussed above, the  3 \ifb{} subset of data will not be sensitive to signal.
 Therefore the fitting control region is considered a background-only spectrum.
+The the fitting control region is created in the dijet mass region 500-1533 GeV
+as the fitting control region was created before the bias due to non-leading jets, described in Section~\ref{sec:evt-sel_btrigMatch}, was observed.
+However, as the fitting control regions are created by applying a smoothed efficiency to each independant dijet mass bin,
+the bias will not effect events with the \mjj{} $>$ 566 GeV.
 
-The use of the subset and the fitting control region gives two complementary approaches to fit tests.
-The subset is representative of the same underlying distribution but has lower precision.
-The fitting control region, provides a high-statistic background-only spectra with a
-similar shape to the final distribution that can be used for fit tests.
-
+The use of the subset and the fitting control region gives two complementary dijet mass spectra to perform background estimation tests.
+The subset is representative of the same underlying dijet mass spectrum as the full \lm{} data-set but has lower precision.
+The fitting control region, provides a high-statistic background-only spectra with a similar shape to the dijet mass spectrum of the full \lm{} data-set.
 
 %However, as shown above, it does not have an identical shape to the final distribution, hence we also want to consider another test data set with an identical shape. 
 %% Add this line if describing subset of data.
+
 
 \subsubsection{High Mass}
 \label{sec:highmass_bkgsample}
 
 \newpage
 \subsection{Global Fit Tests}
-\label{sec:globalfit}
+\label{sec:globalFit}
 
 A single fit function being used to model the full mass range considered is known as the global fit.
 Previous di-$b$-jet searches have used a global fit strategy~\cite{dibjet-mori16_paper}, including the \summer{} analysis described above.
@@ -813,25 +815,28 @@ Hence, the global fit strategy is the first strategy that is tested for the \lm{
 \subsubsection{Low Mass}
 \label{sec:lowmass_globalFit}
 
+For the \lm{} data-set fit tests are performed in the mass region 566-1533~GeV.
 Figure~\ref{fig:lowmass_globalFit} shows the smooth fitting control region dijet mass spectrum fitted to
 using the global fit strategy with the 3, 4 and 5 parameter dijet fit functions.
 The lower panel shows the significance of the difference between the data and the various fits.
-One would expect that if this was an appropriate strategy we would see excellent fit quality due to the enhanced errors on the smooth dijet mass spectrum.
+One would expect an excellent fit quality when an appropriate background estimation is used
+to model the smooth spectrum as the uncertainties are larger than the true statistical fluctuations present.
 However, it is shown that the 3 parameter fit function has a $\chi^{2}/\text{n.d.f.} >> 1$ , demonstrating a extremely poor fit quality.
 Hence, the 3 parameter fit is rejected as a fit function option.
 Further to this, there is a fit bias present for all dijet fit functions,
 where a fit bias is defined as a difference between the background estimation and the true underlying dijet mass distribution of the background.
 The bias is observed as a set of peaks and troughs in the significance plot.
-The fit bias may cause a peak to be falsely interpreted as signal or for a trough to mask true signal. 
+A fit bias that is similar in size to the statistical fluctuations
+may cause a peak to be falsely interpreted as signal or for a trough to mask true signal.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.5, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/globalFit_lm_dH.pdf}
-\vspace{10pt}
+\includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/globalFit_lm_dH.pdf}
+
 \caption{\label{fig:lowmass_globalFit}
   The dijet mass spectrum of the smooth fitting control region for the \lm{}
   fitted to using the 3, 4 and 5 parameter global fits.
-  The lower panel shows the significance of the difference between the data fit functions.}
+  The lower panel shows the significance of the difference between the data and the background fits.}
 \end{figure}
 
 To further quantify the effect of the fit biases in the 4 and 5 parameter case,
@@ -840,8 +845,8 @@ The {\sc BumpHunter} algorithm assigns \mbox{$p$-values} of 0.096 and 0.247 to t
 In the case of the smooth spectrum, the {\sc BumpHunter} \mbox{$p$-value} cannot be interpreted in the conventional way,
 as the smooth distribution does not contain the Poisson fluctuations that are present in the pseudo-experiments it is being compared to.
 Instead, it provides an approximate estimation of the size of the largest fit bias to the size of the largest excesses expected in data due to statistical fluctuations.
-It is concluded that the fit biases in the global fit for both functions is large relative to the size of statistical fluctuations expected,
-and therefore that that neither fit function provides an adequate description of the background.
+The fit biases in the global fit for both functions are large relative to the size of statistical fluctuations expected,
+and therefore it is concluded that neither fit function provides an adequate description of the background.
 Hence, we reject the global fit strategy and will use an alternative background modelling strategy
 
 \begin{figure}[!htb]
@@ -853,7 +858,7 @@ Hence, we reject the global fit strategy and will use an alternative background 
 \subcaptionbox{5 parameters, Global} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/globalFit_lm_bH_5para.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_global}
   The global fit and {\sc BumpHunter} algorithm procedure run on the smooth dijet mass spectrum from the fitting control region in the low-mass category
   using the global 4 and 5 parameter dijet fit functions.
@@ -864,13 +869,13 @@ Hence, we reject the global fit strategy and will use an alternative background 
 \subsubsection{High Mass}
 \label{sec:highmass_globalFit}
 
-\subsection{Sliding window background estimation (SWiFT)}
-\label{sec:swift}
+\newpage
+\subsection{Sliding window background estimation (SWiFT)}\label{sec:swift}
 
-In Section~\ref{sec:globalfit} it is shown that the global fit cannot provide a
+In Section~\ref{sec:globalFit} it is shown that the global fit strategy cannot provide a
 valid background estimation in the \hm{} and \lm{} fitting control regions.
-This is expected for large luminosities and wide mass ranges,
-as the resulting small statistical errors and large fit ranges mean that
+This is not unexpected for large luminosities and wide mass ranges,
+as the resulting small statistical errors and large fit ranges mean that any
 differences between the underlying shape of the QCD dijet mass spectrum
 and the dijet fit functions are magnified.
 Therefore an alternate background modelling strategy must be used.
@@ -878,16 +883,23 @@ Therefore an alternate background modelling strategy must be used.
 The Sliding Window Fit (SWiFt) background estimation breaks the spectrum up into many smaller windows,
 and performs a local fit in each window to provide one point in the dijet mass background estimate.
 This makes the SWiFt method more stable than the global fit at higher luminosities as the mass range of each fit is reduced.
-The SWiFt background estimation procedure has been used in the inclusive dijet analysis on the full 2015+2016 ATLAS data-set~\cite{dijet_mori17_paper}.
+The SWiFt background estimation procedure has been used in the inclusive dijet analysis on the full 2015+2016 ATLAS data-set~\cite{dijet-mori17_paper}.
 
-The window centres are positioned at bin boundaries defined by the dijet mass bins, which are shown in Appendix~\ref{app:dijet_bins}.
+The windows used by the SWiFT background estimate are centered at each of the
+bin boundaries defined by the dijet mass bins, which are shown in Appendix~\ref{app:dijet_bins}.
 The window width is defined by fixing the number of bins below the window centre ($n_{\text{Low}}$)
 and fixing the number of bins above the window centre ($n_{\text{High}}$).
 For this analysis symmetric windows are used, defined by their window half-width ($wHW$); i.e. $n_{\text{Low}}$ = $n_{\text{High}}$ = $wHW$.
 Symmetric windows are chosen as this ensures that there will be an adequate side band on either side of the window centre where possible,
 and reduces the number of parameters that have to be tested.
-Figure~\ref{fig:bkg-lm_swiftBins} shows the SWiFt windows used in the \lm{} data-set analysis for the range of window half-widths considered.
+Windows are allowed to overlap, have no upper mass restriction and have the same lower mass bound as is used in the event-selection.
+Figure~\ref{fig:bkg-lm_swiftBins} shows the SWiFt windows used in the \lm{} data-set analysis for the window half-widths of 10, 12, 14 and 16.
 The procedure for choosing the window half-width is described in Section~\ref{sec:windowSel}
+
+In each window a fit to the data is performed using one of the dijet fit functions listed in Table~\ref{tab:bkg-fit}.
+The same function is used in all windows, with initial parameters seeded initially from a configuration file and then from the previous fit.
+Each of the fits are evaluated at the dijet mass bin which is at the centre of the window, this value forms the background estimation for that bin.
+A background estimation for the full dijet mass spectrum is constructed by combining the single bin background estimations from each of the window fits.
 
 \begin{figure}[!htb]
 \centering
@@ -897,31 +909,26 @@ The procedure for choosing the window half-width is described in Section~\ref{se
   The bin centre is indicated by the black mark and the corresponding window is indicated by the coloured squares.}
 \end{figure}
 
-In each overlapping, sliding window a fit to the data is performed using one of the dijet fit functions, as listed in Table~\ref{tab:bkg-fit}.
-The same function is used to fit each window,
-with initial parameters seeded initially from a configuration file and then from the previous fit.
-Thus, an estimation of the background dijet mass spectrum is constructed, bin by bin,
-evaluating the fit function at each consecutive window centre.
-
 Once, a background estimation is constructed using the SWiFt procedure,
 it is then compared to data using the {\sc BumpHunter} algorithm which finds the most discrepant excess region and assigns a \mbox{$p$-value} to it.
-In the following SWiFt validation studies 1,000 pseudo-experiments are used to calculate the {\sc BumpHunter} \mbox{$p$-value}.
 The combination of the SWiFt background estimation and {\sc BumpHunter} algorithm is referred to as the SWiFt search phase.
+In the following SWiFt validation studies 1,000 pseudo-experiments are used to calculate the {\sc BumpHunter} \mbox{$p$-value}.
 
 \subsection{SWiFT: Fit Function and Window Selection Strategy}
 \label{sec:windowSel}
 
-As described above, the SWiFt background estimation involves breaking the spectrum up into smaller windows and performing a fit in each window.
-Hence, there are two key input parameters of the SWiFt background estimation:
+%As described above, the SWiFt background estimation involves breaking the spectrum up into smaller windows and performing a fit in each window.
+%Hence, there are two key input parameters of the SWiFt background estimation:
+There are two key input parameters of the SWiFt background estimation proceudre:
 \begin{enumerate}[leftmargin=*]
-\item \textbf{The window size:}\\
-  As described, symmetric windows around the window centre are used, with a width defined by their window half-width ($wHW$) parameter.\vspace{0.5em}
+\item \textbf{The window width:}\\
+  In this analysis symmetric windows are used, therefore the width of the windows is defined by the window half-width ($wHW$) parameter.\vspace{0.5em}
 \item \textbf{Fit function used:}\\
-  The dijet fit functions are used, as is done in the global fit strategy. The function are listed in Table~\ref{tab:bkg-fit}.
+  The dijet fit functions are used, as is done in the global fit strategy. \\The function are listed in Table~\ref{tab:bkg-fit}.
   %The 6 parameter dijet fit function is considered to provide an alternate fit to the 5 parameter dijet fit function.\vspace{0.5em}
 \end{enumerate}
 The largest sensitivity is found by using the largest window width with the fit function with the fewest number of parameters, whilst still obtaining sufficient fit quality.
-Sensitivity studies that demonstrate this statement are shown below in Section~\ref{sec:SWiFt_signalInj}.
+Sensitivity studies that demonstrate this statement are shown below in Section~\ref{sec:signalInj}.
 
 \noindent
 To define `sufficient fit quality' the following fit quality criteria used is:
@@ -935,22 +942,22 @@ To define `sufficient fit quality' the following fit quality criteria used is:
 \item \textbf{Number of windows with Wilks' \mbox{$p$-value} $<$ 0.1 must be $\leq$ \\10 (low mass) / 15(high mass)}:\\
   The Wilks' \mbox{$p$-value} is used to test if an additional parameter is required in the fit function
   to provide an adequate description of the data, as described in \ref{sec:bkg-bkg_wilks}. 
-  However, for SWiFt it is not appropriate to require that every individual fit satisfies the Wilks' criteria used in the global fit strategy,
-  as this does not account for the fact that we are performing many fits and it would be expected that by chance some fits would fail this requirement.
+  However, for SWiFt it is not appropriate to require that every individual fit a Wilks' $p$-value $>$ 0.05 criteria, as done in the global fit strategy,
+  as this does not account for the fact that many fits are performed and it is expected that by chance some fits would fail this requirement.
   Instead, a requirement is placed that in the large majority of windows we see no evidence that the functional form is incorrect.
 \end{itemize}
 
 To select the optimal SWiFt configuration, a predefined iterative window selection procedure is performed on the final unblinded data-set.
-A predefined procedure is used as this means that the most sensitive SWiFt configuration that provides an adequate fit to final data-set can be selected
+A predefined procedure is used as this means that the most sensitive SWiFt configuration that provides an adequate fit to the final data-set can be selected
 in a manner in which no personal bias can be introduced.
-The exact procedure is tuned for the low mass and high mass searches separately so precise descriptions are found below,
-but the principle is the same for both.
+%The exact procedure is tuned for the low mass and high mass searches separately so precise descriptions are found below,
+%but the principle is the same for both.
 
-The procedure starts with the SWiFt configuration with the widest window size and lowest number or parameters that will not produce spurious signal
-(see Section~\ref{sec:spuriousSignal} for the relevant spurious signal studies).
-The SWiFt background estimation is then tested against the above defined fit quality criteria.
-If the window selection fails the fit quality, then a narrower window or high-order fit function is used and again this window tested against the fit quality criteria.
-If the new window fails then again a narrower window or higher-order fit function is tested, until a window is found that passes the fit quality criteria.
+%The procedure starts with the SWiFt configuration with the widest window and lowest number or parameters that will not produce spurious signal
+%(see Section~\ref{sec:spuriousSignal} for the relevant spurious signal studies).
+%The SWiFt background estimation is then tested against the above defined fit quality criteria.
+%If the window selection fails the fit quality, then a narrower window or high-order fit function is used and again this window tested against the fit quality criteria.
+%If the new window fails then again a narrower window or higher-order fit function is tested, until a window is found that passes the fit quality criteria.
 
 
 \subsubsection{Low Mass}
@@ -964,39 +971,43 @@ as at this point the windows are becoming excessively narrow.
 Figure~\ref{fig:bkg-lm_swiftBins} shows the SWiFt windows used in the \lm{} analysis for the window half-widths of 16, 14, 12 and 10
 
 The 5 parameter dijet fit function is used for the SWiFt background estimation in the \lm{} data-set.
-The 3 parameter fit function was not considered due to its exceptionally poor performance in the global fit, as noted in Section~\ref{sec:lowmass_globalFit}.
+The 3 parameter fit function was not considered due to its exceptionally poor performance in the global fit, as noted in Section~\ref{sec:globalFit}.
 The 4 parameter fit function was rejected for two reasons.
 Firstly the SWiFt procedure using the 4 parameter fit function provides poor background estimates in the fit tests,
-as will be demonstrated below in Section~\ref{sec:lowmass_spuriousSignal}.
+as will be demonstrated below in Section~\ref{sec:spuriousSignal}.
 Secondly, the SWiFt background estimates for the 4 parameter fit function is less sensitive to signal than
-using the SWiFt background procedure with the 5 parameter fit function and wider windows, as is demonstrated in Section~\ref{sec:lowmass_signalInj}.
+using the SWiFt background procedure with the 5 parameter fit function and wider windows, as is demonstrated in Section~\ref{sec:signalInj}.
 
 \noindent
-Given the quality requirements outlined above, the strategy for selecting a window size is:
+Given the quality requirements outlined above, the strategy for selecting a window width is:
 \begin{enumerate}
 \item Perform the SWiFt background estimate using a window half-width of 16.
 \item Use the {\sc BumpHunter} algorithm to search for any significant discrepant excesses (\mbox{$p$-value} $<$ 0.01),
   if one is found the SWiFt background estimate is repeated excluding the excess region.
-\item Check if the fit quality tests outlined above are passed. If so select this window choice.
+\item Check if the fit quality tests outlined above are passed. If so select this window width.
 \item If not then drop the window half-width by 2, and repeat step (2).
-\item This is repeated until a window half-width is found where the fit quality criteria have been passed.
 \end{enumerate}
+This procedure is repeated until a window half-width is found where the fit quality criteria have been passed.
+
 The step of excluding a region if the {\sc BumpHunter} \mbox{$p$-value} $<$ 0.01 is introduced such that
 the presence of a significant signal will not bias the background estimation procedure and therefore enhance the size of observed signal.
+A threshold of 0.01 is used as this signifies an excess that is greater than 2~$\sigma$ in significance,
+and is consistent with the theshold used in previous dijet searches~\cite{det-thesis_kate}.
 Therefore the observation of a {\sc BumpHunter} \mbox{$p$-value} of 0.01 becomes a critical point in this analysis,
 and as such will be considered as the point at which signal becomes significant for the purposes of the following background estimation tests.
-The exact procedure in the case that an excess region is excluded is outlined in Section~\ref{sec:SWiFt_signalInj}.
+The exact procedure in the case that an excess region is excluded is outlined in Section~\ref{sec:signalInj}.
 
-\noindent
-The tests of the window selection procedure using the background-only data sets are shown in Section~\ref{sec:lowmass_windowSelTests}
+%\noindent
+%The tests of the window selection procedure using the background-only data sets are shown in Section~\ref{sec:windowSelTests}
 
 \subsubsection{High Mass} 
 \label{sec:highmass_windowSel}
 
 \subsection{SWiFt: Testing the window width selection procedure}
+\label{sec:windowSelTests} 
 
 The SWiFt window selection strategy, described in Section~\ref{sec:windowSel}, has been tested in the fitting test data-sets, described in Section~\ref{sec:stat:bkgsample}.
-The tests have been performed in both the low and high mass searches, which are described separately below.
+%The tests have been performed in both the low and high mass searches, which are described separately below.
 
 \subsubsection{Low Mass}
 \label{sec:lowmass_windowSelTests} 
@@ -1013,14 +1024,10 @@ and that in $>$ 80\% of cases a window half-width in the range considered would 
 \subcaptionbox{Global $\chi^{2}$ \mbox{$p$-value},\\ 5 parameter function} {
   \includegraphics[width=0.49\linewidth, angle=0,page=7]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_corrFitCR_dataLike_5para.pdf}
 }  \hspace{-8mm}
-% \\
-%\subcaptionbox{Global Kolmogorov Smirnov \mbox{$p$-value}, 5 parameter function} {
-%  \includegraphics[width=0.45\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_dataLike_5para.pdf}
-%}
 \subcaptionbox{Number of window fits with\\Wilks' \mbox{$p$-value} $<$ 0.1,\\ 5 parameter function} {
   \includegraphics[width=0.49\linewidth, angle=0,page=9]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_corrFitCR_dataLike_5para.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:windowSel_dataLike}
   The cumulative probability of the global $\chi^{2}$ \mbox{$p$-value}, %global Kolmogorov-Smirnov \mbox{$p$-value}
   and number of window fits with Wilks' \mbox{$p$-value} $<$ 0.1 of the SWiFt background estimation for
@@ -1032,23 +1039,11 @@ and that in $>$ 80\% of cases a window half-width in the range considered would 
 \end{figure}
 
 The window selection procedure is also tested using the 3 \ifb{} subset of data.
-Figure~\ref{fig:windowSel_subset} shows the fit quality measures used in the window and fit function selection,
-for the full possible range of window half-widths of 16 to 10, for both the 4 and 5 parameter fit function.
-According to the window selection procedure outlined above the 5 parameter fit function with a window half-width of 16 would have been selected,
-although the 4 parameter fit function also passed the fit quality criteria.
-
-To illustrate the fits being used in the window selection procedure,
-Figure~\ref{fig:bhFit_lm_subset} shows the SWiFt search phase performed on the dijet mass spectrum of the 3 \ifb{} of data,
-for the 4 and 5 parameter fit function for a window half-width of 16, which both pass the fit quality criteria.
-The blue-lines indicate the largest excess found by the {\sc BumpHunter} algorithm and the \mbox{$p$-value} assigned is printed on the plot. 
-In both cases the background is well modelled and, as expected, there is no significant excess found.
-
-It is notable that the window selection procedure in the subset of data has chosen a wide window and
-could have chosen the lower order function, in contrast to the fitting control region case. 
-This shows that either the fitting control region often selects narrower windows
-because it is not a perfect representation of the true dijet mass spectra
-or because at the higher precision of the 24.3 \ifb{} narrower windows are required than at 3 \ifb{}.
-Either way, this shows the utility of choosing the window size on the final data-set using a pre-defined procedure.
+Figure~\ref{fig:windowSel_subset} shows the fit quality measures used in the window width selection procedure,
+using a range of window half-widths of 16 to 10, for both the 4 and 5 parameter fit function.
+The requirements placed on each fit quality measure by the window selection procedure are indicated by dotted lines on the figure.
+According to the window selection procedure the 5 parameter fit function with a window half-width of 16 would have been selected,
+although the 4 parameter fit function with window half-width of 16 has also passed the fit quality criteria.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
@@ -1062,14 +1057,21 @@ Either way, this shows the utility of choosing the window size on the final data
 \subcaptionbox{Number of window fits with\\ Wilks' \mbox{$p$-value} $<$ 0.1} {
   \includegraphics[width=0.45\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_subset.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:windowSel_subset}
   An illustration of the window selection procedure for a 3 \ifb{} subset of \lm{} data.
   It shows the global $\chi^{2}$ \mbox{$p$-value}, %global Kolmogorov-Smirnov \mbox{$p$-value}
-  and number of window fits with Wilks' \mbox{$p$-value} $<$ 0.1 for SWiFt background estimate,
-  for a range of window half-widths ($wHW$) and number of parameters (nPars) of the dijet fit function.
+  and number of window fits with Wilks' \mbox{$p$-value} $<$ 0.1 for the SWiFt background estimate
+  using a range of window half-widths ($wHW$) and number of parameters (nPars) of the dijet fit function.
+  The dotted lines indicate thresholds that are used in the window selection procedure.
 }
 \end{figure}
+
+To illustrate the background estimations being used in the above window selection procedure,
+Figure~\ref{fig:bhFit_lm_subset} shows the SWiFt search phase performed on the dijet mass spectrum of the 3 \ifb{} data subset,
+for the 4 and 5 parameter fit function for a window half-width of 16, which both pass the fit quality criteria.
+The blue-lines indicate the largest excess found by the {\sc BumpHunter} algorithm and the \mbox{$p$-value} assigned is printed on the plot. 
+In both cases the background is well modelled and, as expected, there is no significant excess found.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
@@ -1080,7 +1082,7 @@ Either way, this shows the utility of choosing the window size on the final data
 \subcaptionbox{5 parameter function,\\ $wHW$ = 16} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_subset_5para_low16_high16.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_subset}
   The SWiFt search phase procedure run on a 3 \ifb{} subset of the \lm{} data-set.
   The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window half-width ($wHW$) of 16.
@@ -1088,9 +1090,17 @@ Either way, this shows the utility of choosing the window size on the final data
   The most discrepant excess as found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the \mbox{$p$-value} of this excess is printed on the plot. }
 \end{figure}
 
+It is notable that the window selection procedure in the subset of data has chosen a wide window and
+could have chosen the lower order function, in contrast to the fitting control region case. 
+This shows that either the fitting control region often selects narrower windows
+because it is not a perfect representation of the true dijet mass spectra
+or because at the higher precision of the 24.3 \ifb{} narrower windows are required than at 3 \ifb{}.
+Either way, this shows the utility of choosing the window width on the final data-set using a pre-defined procedure.
+
 \subsubsection{High Mass}
 \label{sec:highmass_windowSelTests} 
 
+\newpage
 \subsection{SWiFt: Spurious Signal Tests}
 \label{sec:spuriousSignal}
 
@@ -1099,11 +1109,11 @@ provides a valid representation of the true background spectrum meaning that fit
 To show this, the SWiFt search phase is performed to many background-only representative
 data-sets and the global distribution of the {\sc BumpHunter} \mbox{$p$-values} is studied.
 %Similar tests were performed for the \summer{} data-set as described in Section~\ref{sec:bkg-summer_spusig}.
-The widest window that shows no sign of spurious signal is used as the initial starting point for the window selection procedure, as described in Section~\ref{sec:windowSel}.
+Only windows widths that show no evidence of spurious signal are considered by window selection procedure.
 
-The spurious signal tests are performed using a similar procedure for the three categories of this analysis:
-low mass 2 $b$-tag, high mass 2 $b$-tag and high mass $\geq$1 $b$-tag category.
-For clarity, each will be described in separate sections below.
+%The spurious signal tests are performed using a similar procedure for the three categories of this analysis:
+%low mass 2 $b$-tag, high mass 2 $b$-tag and high mass $\geq$1 $b$-tag category.
+%For clarity, each will be described in separate sections below.
 
 \subsubsection{Low Mass}
 \label{sec:lowmass_spuriousSignal}
@@ -1150,7 +1160,7 @@ The blue-lines indicate the largest excess found by the {\sc BumpHunter} algorit
 \subcaptionbox{5 parameter function,\\ $wHW$ = 10} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low10_high10.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_corrFitCR_smooth}
   The SWiFt search phase procedure run on the smooth distribution from the fitting control region in the low-mass category.
   The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window half-width ($wHW$) 10 and 16.
@@ -1158,24 +1168,26 @@ The blue-lines indicate the largest excess found by the {\sc BumpHunter} algorit
   The most discrepant excess as found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the \mbox{$p$-value} of this excess is printed on the plot. }
 \end{figure}
 
-As was discussed in Section~\ref{sec:globalfit}, in the case of the smooth spectrum the {\sc BumpHunter} \mbox{$p$-value} provides an approximate estimation
-of the size of the largest fit bias to the size of the largest excesses expected in data due to statistical fluctuations.
+As was discussed in Section~\ref{sec:globalFit}, in the case of the smooth spectrum the {\sc BumpHunter} \mbox{$p$-value} provides an approximate estimation
+of the size of the largest fit bias relative to the size of the largest excesses expected in data due to statistical fluctuations.
 If the fit bias is larger than the statistical fluctuations then this is an indication that spurious signal can occur. 
-For the 4 parameter function there is a fit bias which is large relative to the expected statistical fluctuations,
-particularly notable is the large deficit observed in the middle of the mass range.
-In the 5 parameter case it appears that the fit quality is good and that there is no obvious fit biases.
- 
+For the 4 parameter function with a window half-width of 16 a BumpHunter $p$-value of 0.298 is observed indicating that
+there is a fit bias which is large relative to the expected statistical fluctuations.
+It is also notable that for the 4 parameter function there is a large deficit observed in the middle of the mass range for both window half-widths shown.
+In the 5 parameter fit function BumpHunter $p$-values of 0.826 and 0.987 are observed in the window half-width of 16 and 10 respectively,
+which indicates that the largest fit bias is not larger than the size of the excesses expected in data.
+
 The SWiFt search phase performed on the smooth distribution provides a good visual representation and approximate size of possible fit biases,
-but it is desirable to determine if spurious signal can occur in the final data-set where Poisson fluctuations are present.
-To do this the SWiFt search phase procedure is applied to many data-like distributions,
+but a more robust approach is to determine if spurious signal can occur in the final data-set where Poisson fluctuations are present.
+To do this the SWiFt search phase procedure is applied to many data-like dijet mass spectra,
 where Poisson fluctuations are applied to the fitting control region as described in Section~\ref{sec:stat:bkgsample}.
-Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} shows an example of the SWiFt search phase procedure performed on a data-like distribution taken from the fitting control region.
+Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} shows an example of the SWiFt search phase procedure performed on a data-like dijet mass spectrum taken from the fitting control region.
 %Again, all 8 window width and fit function choice combinations studied are considered
 The SWiFt configurations with a window half-width of 16 for the 4 and 5 parameter function are shown, the full set can be found in Appendix~\ref{app:lowMass_Swift}.
 Again, the largest excess found by the {\sc BumpHunter} algorithm and the \mbox{$p$-value} assigned is indicated on the plot.
 It is observed that the fit biases noted in Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} are still visible in the 4 parameter case.
 In the 5 parameter case the {\sc BumpHunter} algorithm has not identified a discrepant excess indicating
-there is no spurious signal for this particular data-like distribution.
+there is no spurious signal for this particular data-like spectrum.
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
@@ -1204,10 +1216,9 @@ there is no spurious signal for this particular data-like distribution.
 %\subcaptionbox{5 parameter function,\\ $wHW$ = 10} {
 %  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low10_high10.pdf}
 %}
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_corrFitCR_dataLike}
-  The SWiFt search phase procedure run on a data-like distribution
-  from the fitting control region in the low-mass category.
+  The SWiFt search phase procedure run on a data-like dijet mass spectrum of the the fitting control region in the low-mass category.
   %The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window half-width ($wHW$) range of 10 to 16.
   The SWiFt procedure has been run for the 4 and 5 parameter fit function for a window half-width ($wHW$) of 16.
   The upper panel shows the data compared to the background estimate and the lower panel shows the significance of the difference between the two.
@@ -1216,10 +1227,10 @@ there is no spurious signal for this particular data-like distribution.
 \end{figure}
 
 To provide a quantitative statement on if spurious signal is observed,
-this process is repeated for 500 data-like distributions and the distribution of {\sc BumpHunter} \mbox{$p$-value}s is studied to look for evidence of spurious signal.
+this process is repeated for 100 data-like dijet mass spectra and the distribution of {\sc BumpHunter} \mbox{$p$-value}s is studied to search for evidence of spurious signal.
+500 data-like distributions are used in the case of the 5 parameter fit for window half-widths of 14 and 16
+as extra precision is required to make the necessary conclusion for these configurations.
 Each data-like distribution is referred to as a `seed', which denotes the seed used in the random Poisson fluctuation generator.
-In the case of the 4 parameter fit for all window half-widths and the 5 parameter fit with a window half-width of 10,
-only 100 data-like distributions are used as this is sufficient to draw the necessary conclusion for these categories.
 %In the case of the 5 parameter fit function with a window half-width of 16, which is the widest window that will be used in data and hence the most
 %challenging fit that will be performed, this procedure was performed with 450 different data-like distributions to increase statistical precision.
 Figure~\ref{fig:bumpH_spuriousSignal} shows the normalised distribution of \mbox{$p$-value}s for the ensemble of data-like distributions
@@ -1253,7 +1264,7 @@ for a subset of the SWiFt configurations considered, the full range of plots can
 %\subcaptionbox{5 parameter function,\\ $wHW$ = 10} {                                                    
 %  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low10_high10.pdf}
 %}
-\vspace{10pt}
+
 \caption{\label{fig:bumpH_spuriousSignal}
   This figure shows the normalised distribution of {\sc BumpHunter} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
   data-like distributions taken from the fitting control region in the low-mass category.
@@ -1263,13 +1274,11 @@ for a subset of the SWiFt configurations considered, the full range of plots can
 }
 \end{figure}
 
-
-In addition, Table~\ref{tab:bumpH_lm_spuriousSignal} shows the percentage of data-like distributions (or seeds)
+Furthermore, Table~\ref{tab:bumpH_lm_spuriousSignal} shows the percentage of data-like distributions (or seeds)
 that have a {\sc BumpHunter} \mbox{$p$-value} less than %0.1,
 0.05 and 0.01 for the full range of SWiFt configurations considered;
-these values are chosen as 0.05 represents a 2$\sigma$ excess and
-0.01 is the threshold for an excess region to be considered significant enough
-to exclude from the background estimate procedure which can effect the judgement on overall fit quality.
+in particular 0.01 is important as it is the threshold for an excess region to be considered significant enough
+to exclude from the background estimate procedure.
 
 \begin{table}[!ht]
 \centering
@@ -1289,8 +1298,8 @@ to exclude from the background estimate procedure which can effect the judgement
   5 &   10 &  2\%   (1-4\%)      &  1.0\%  (0-3\%)  & 100  \\
   \hline
 \end{tabular}
-\vspace{10pt}
-\caption{\label{tab:bumpH_lm_spuriousSignal_566}
+
+\caption{\label{tab:bumpH_lm_spuriousSignal}
   A summary of the fraction of data-like distributions 
   with a {\sc BumpHunter} \mbox{$p$-value} less than certain threshold values,
   when the SWiFt search phase procedure with the 4 and 5 parameter fit function
@@ -1300,18 +1309,19 @@ to exclude from the background estimate procedure which can effect the judgement
 \end{table}
 
 
-What is observed is that for the 4 parameter fit function and a window half-width of 10, 12 and 15  there is a clear bias towards
+It is observed that for the 4 parameter fit function and a window half-width of 10, 12 and 14 there is a clear bias towards
 low {\sc BumpHunter} \mbox{$p$-value}s.
 In particular, it is notable that significantly more than 1\% of seeds have {\sc BumpHunter} \mbox{$p$-value} of less than 0.01.
-For the 4 parameter fit function with a window half-width of 10, there is no evidence of spurious signal.
 Hence, it is concluded that all SWiFt configurations with the 4 parameter fit function with window half-width greater than 10
 show evidence of spurious signal.
-In the case of the 5 parameter fit function there is no bias towards low {\sc BumpHunter} \mbox{$p$-value}s.
-Therefore it is concluded that for the 5 parameter dijet fit function there is no evidence that spurious signal can occur for the window half-widths considered,
-and thus the 5 parameter fit function with a window half-width of 16 is used as the initial configuration  for the window selection procedure.
-It should be noted that the 4 parameter fit function with a window half-width is not used as the initial configuration as it has significantly
-less sensitivity to signal than the 5 parameter fit with the wider windows, which will be shown in~\ref{sec:SWiFt_signalInj}
+For the 4 parameter fit function with a window half-width of 10, there is no evidence of spurious signal,
+However this configuration is not used as it it is less sensitivite to signal than the 5 parameter fit with wider windows, as shown will be shown in Section~\ref{sec:signalInj}.
+In the case of the 5 parameter fit function there is no significant bias towards low {\sc BumpHunter} \mbox{$p$-value}s,
+specifically the number of seeds with a {\sc BumpHunter} \mbox{$p$-value} of less than 0.01 is consistent with expectations.
+There is a deficit of seeds with a BumpHunter $p$-value $>$ 0.9 for all configurations which is due to the fact that the
+dijet mass spectrum itself of the fitting control region is not perfectly smooth.
 
+Therefore, it is concluded that for the 5 parameter dijet fit function there is no evidence that spurious signal can occur in the window half-widths considered.
 
 %\begin{table}[!ht]
 %\centering
@@ -1331,7 +1341,7 @@ less sensitivity to signal than the 5 parameter fit with the wider windows, whic
 %  5 &   10&  7.4\% (5.14-10.20)  &  2.8\% (1.46-4.70) &  0.9\% (0.25-2.29) &  108  \\
 %  \hline
 %\end{tabular}
-%\vspace{10pt}
+%
 %\caption{\label{tab:bumpH_lm_spuriousSignal}
 %  A summary of the fraction of data-like distributions 
 %  with a {\sc BumpHunter} \mbox{$p$-value} less than certain threshold values,
@@ -1344,33 +1354,34 @@ less sensitivity to signal than the 5 parameter fit with the wider windows, whic
 \FloatBarrier
 
 \subsection{SWiFt: Signal Injection Tests}
-\label{sec:SWiFt_signalInj}
+\label{sec:signalInj}
 
 In the previous two subsections it is shown that the SWiFt background estimate procedure is effective in the case that there is no signal.
 However, it is also required to test the SWiFt procedure in the case that signal is present, to show that signal can be identified and the remaining background estimate is valid.
-This test is performed by injecting the signal dijet mass templates into the background-only test data-sets and performing the SWiFt Search phase procedure.
-The size of the signal is varied by applying a factor to the nominal simulated cross-section,
-and as such the size of signal in these studies will be labelled relative to this nominal cross-section (i.e. xs*2 = nominal cross-section multiplied by 2).
+This test is performed by injecting the signal dijet mass templates, described in Section~\ref{sec:evt-s+b}, into the background-only test data-sets and performing the SWiFt search phase procedure.
+The size of the signal is varied by applying a normalisation factor to the simulated signal templates,
+and as such the size of signal in these studies will be labelled relative to this nominal cross-section (i.e. xs*2 = normalsation factor of 2).
 
-To identify signal,
-the SWiFt search phase uses the {\sc BumpHunter} algorithm to identify the most discrepant excess region and assigns that region a \mbox{$p$-value}.
+To identify signal, the SWiFt search phase uses the {\sc BumpHunter} algorithm to identify the most discrepant excess region and assigns that region a \mbox{$p$-value}.
 If the \mbox{$p$-value} is $<$ 0.01 then a exclusion region procedure is used to reduce any bias from a large signal in the background estimation.
-The exclusion region procedure is as follow.
+The exclusion region procedure is as follows.
 \begin{enumerate}[leftmargin=*]
-\item If an discrepant excess is found, define an exclusion region as the excess
-  region that the {\sc BumpHunter} algorithm identified with an additional bin added to the low mass side.
-  The additional bin has been to help reduce any bias from signal~\cite{dijet-mori16_paper}.
+\item If a discrepant excess is found, define an exclusion region as the excess
+  region identified by the {\sc BumpHunter} algorithm with an additional \mjj{} bin added to the low mass side.
+  The additional bin has been shown to help reduce any bias from signal~\cite{dijet-mori16_paper}.
 \item Re-run SWiFt, ignoring the exclusion region in all fits and fit quality measures.
-\item A new excess is found using the new background and the {\sc BumpHunter} algorithm.
-\item If the new excess is not covered by the exclusion region then signal was not fully excluded.
-  Thus the excess region is then widened and the procedure returns to step 2.
-\item Otherwise, the new background is tested against the fit quality criteria outlined in~\ref{sec:lowmass_windowSel}.
-\item If the fit quality criteria are failed, then a narrower window is used.
-\item If the tests are passed the background estimation is used.
+\item A new excess is found using the new background and the {\sc BumpHunter} algorithm,
+  the excess can include bins in the exclusion region.
+\item If the new excess is not covered by the exclusion region, then the signal was not contained within the exclusion region.
+  Thus, the excess region is then widened and the procedure returns to Step 2.
+\item Otherwise, the new background is tested against the fit quality criteria outlined in~\ref{sec:windowSel}.
+\item If the fit quality criteria is failed, then a narrower window is tested.
+\item If the fit quality criteria is passed, the background estimation is used.
 \end{enumerate}
+This process will be illustrated with an example below for clarity.
  
 \noindent
-In the following section we will describe two tests:
+In the following section we will describe two signal injection tests:
 \begin{enumerate}
   \item\textbf{Sensitivity Studies}\\
   This test is to show that the procedure is sensitive to signal,
@@ -1378,7 +1389,7 @@ In the following section we will describe two tests:
   This is performed by studying the {\sc BumpHunter} \mbox{$p$-value}s for various SWiFt configurations for the signal injected spectra described above.
   A \mbox{$p$-value} $<$ 0.01 will be counted as a success, as this is a critical point  where the region exclusion criteria is triggered.
   For comparing the sensitivity of two SWiFt configurations a comparison of
-  {\sc BumpHunter} \mbox{$p$-value}s is used, where a lower \mbox{$p$-value} indicates more sensitivity.\vspace{1em}
+  {\sc BumpHunter} \mbox{$p$-value}s is used, where a lower \mbox{$p$-value} indicates a higher sensitivity.\vspace{1em}
   
   \item\textbf{Robustness of Window Selection Procedure}\\
   This test is to show that in the presence of signal, the window selection procedure is able to select a window.
@@ -1386,11 +1397,11 @@ In the following section we will describe two tests:
   and the region exclusion and  window selection procedure described in the previous paragraph is applied.
 \end{enumerate}
 
-\noindent
-Again, the low mass and high mass sections of the analysis are described separately for clarity.
+%\noindent
+%Again, the low mass and high mass sections of the analysis are described separately for clarity.
 
-\subsubsection{Low Mass}
-\label{sec:lowmass_signalInj}
+%\subsubsection{Low Mass}
+%\label{sec:lowmass_signalInj}
 
 For these tests a Monte Carlo simulated dijet mass signal template of a sequential standard model (SSM) $Z'$ boson with a simulated mass of 600, 800 and 1000 GeV
 has been injected into a data-like dijet mass spectrum taken from the background-only fitting control region.
@@ -1399,11 +1410,10 @@ The cross-section of the template uses the nominal Monte-Carlo simulated cross-s
 As an example let's first consider the $Z'$ boson with mass of 800 GeV.
 The  SWiFt search phase is performed on a data-like mass spectrum
 with an injected  $Z'$ boson with mass of 800 GeV and the nominal cross section.
-
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
 shows the results of the SWiFt search phase procedure
-for the 5 parameter fit function for the window half-widths of 10 and 16.
-For all window widths, the {\sc BumpHunter} algorithm has correctly identified the signal region location.
+using the 5 parameter fit function and a range of window half-widths of 16 to 10.
+For all window widths, the {\sc BumpHunter} algorithm has correctly identified the signal region location
 and in the case of the window half-width of 14 and 16, has assigned a significant \mbox{\mbox{$p$-value}} ($<$ 0.01).
 
 \begin{figure}[!htb]
@@ -1433,7 +1443,7 @@ and in the case of the window half-width of 14 and 16, has assigned a significan
 \subcaptionbox{5 parameter function,\\ $wHW$ = 10} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
   The SWiFt search phase procedure run on a data-like distribution
   from the fitting control region with a simulated SSM $Z'$ boson of mass 800 GeV injected.
@@ -1441,8 +1451,8 @@ and in the case of the window half-width of 14 and 16, has assigned a significan
 }
 \end{figure}
 
-Therefore, in in the case of the window half-width of 14 and 16 the region exclusion is applied.
-The region excluded is 705-834 GeV, derived by adding one bin on the low mass side of the excess region identified by the bumpHunter algorithm.
+Therefore, in in the case of the window half-width of 14 and 16 the region exclusion procedure is applied.
+The region excluded is 705-834~GeV, derived by adding one bin on the low mass side of the excess region identified by the bumpHunter algorithm (730-834~GeV).
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_removedWindow} shows the SWiFt search phase procedure
 performed on the same spectrum when a region exclusion of 705-834 GeV is applied.
 The new excess found lies within the exclusion region which indicates that any fit bias from the signal has been successfully removed
@@ -1457,7 +1467,7 @@ and therefore the exclusion region does not need to be widened.
 \subcaptionbox{Exclusion Region 705-834 GeV,\\ $wHW$ = 14} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low14_high14_inj_Zprimebb800_xsFactor1_removedWindow.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_removedWindow}
   The SWiFt search phase procedure run on a data-like distribution
   from the fitting control region with a simulated SSM $Z'$ boson of mass 800 GeV and the nominal cross-section injected.
@@ -1465,9 +1475,9 @@ and therefore the exclusion region does not need to be widened.
   with an exclusion region of 705-834~GeV.}
 \end{figure}
 
-Figure~\ref{fig:windowSel_Zprimebb800_xsFactor1} shows the fit quality measures used in window selection procedure after the region exclusion of 705-834 GeV is applied,
+Figure~\ref{fig:windowSel_Zprimebb800_xsFactor1} shows the fit quality measures used in the window selection procedure after the region exclusion of 705-834 GeV is applied,
 for a window half-width of 14 and 16 for the 5 parameter fit function.
-Only two window half-widths are considered these are the only windows that had a significant enough $p$-value to trigger the region exclusion procedure in
+Only two window half-widths are considered as these are the only windows that had a significant enough $p$-value to trigger the region exclusion procedure in
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}.
 The window selection procedure has chosen the SWiFt background estimate with the 5 parameter fit function and a window half-width of 14.
 
@@ -1480,7 +1490,7 @@ The window selection procedure has chosen the SWiFt background estimate with the
 \subcaptionbox{Number of window fits with\\ Wilks' \mbox{$p$-value} $<$ 0.1} {
   \includegraphics[width=0.49\linewidth, angle=0,page=8]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_corrFitCR_dataLike_v11_Zprimebb800_xsFactor1_removeWindow.pdf}
 }
-\vspace{10pt}
+
 \caption{\label{fig:windowSel_Zprimebb800_xsFactor1}
   An illustration of the window selection procedure a data-like distribution when
   a simulated SSM $Z'$ boson has been injected of mass 800 GeV with the nominal cross-section,
@@ -1493,9 +1503,9 @@ The window selection procedure has chosen the SWiFt background estimate with the
 \end{figure}
 
 Hence, it can be concluded that the SWiFt search phase and region exclusion procedure can identify
-a $Z'$ boson with a mass of 800 GeV at the nominal cross-section using the 5 parameter fit function.
+a $Z'$ boson with a mass of 800 GeV at the nominal cross-section.
 The bumpHunter $p$-value assigned after region exclusion is applied is $<$ 0.001 using 10,000 pseudo-experiments,
-which represents a excess that is greater than a 3~\sigma deviation.
+which shows that the excess has a significance greater than 3~$\sigma$.
 
 The  SWiFt search phase is performed on a data-like mass spectrum
 with an injected $Z'$ bosons with mass of 600, 800 and 1000 GeV
@@ -1513,18 +1523,13 @@ and is selected by the window selection procedure after the region exclusion pro
 There are a few conclusions that are taken from Table~\ref{tab:bumpH_lm_sigInj}.
 Firstly, that all SWiFt configurations are able to get a {\sc BumpHunter} $p$-value $<$ 0.01 and select a window if the cross-section is high enough.
 At 800 GeV the cross-section is that of the nominal Monte-Carlo, whilst for the 600 and 1000 GeV points
-the cross-section needs to be increased to 2 and 3 times respectively.
-The larger cross-section for the 600 GeV is required due to the fact that it is close to the start of the dijet mass spectrum,
-and thus has no side-band to restrict the fit.
+the cross-section needs to be increased to 3 and 2 times respectively.
+The larger cross-section for the 600 GeV is required due to the fact that it is so close to the start of the dijet mass spectrum
+the there is no side-band to constrain the fit.
 Secondly, by comparing {\sc BumpHunter} $p$-values for identical injected signals across SWiFt configurations,
 it can be seen that configurations that use large window-half-widths are more sensitive.
 Finally, there is no strong gain in sensitivity by using the 4 parameter fit function over the 5 parameter fit function.
-These conclusions are important in driving the choice of the window selection procedure in the high-mass case, which is described in Section~\ref{sec:windowSel}.
-
-It should also be noted that all $p$-values reported are before region exclusion is applied.
-The bumpHunter \mbox{$p$-value}s are always smaller after region exclusion is applied
-as any bias from the signal in the background estimation has been removed,
-this was shown in the case of the $Z'$-boson of mass of 800 GeV.
+These conclusions are important in driving the choice of the window selection procedure, which is described in Section~\ref{sec:windowSel}.
 
 \begin{table}[!ht]
 \centering
@@ -1546,7 +1551,7 @@ this was shown in the case of the $Z'$-boson of mass of 800 GeV.
                      &                           &           5            &   $<$0.001 &   $<$0.001 &   $<$0.001 &   \textbf{0.001}    \\
 \hline
 \end{tabular}
-\vspace{10pt}
+
 \caption{\label{tab:bumpH_lm_sigInj}
   The  bumpHunter \mbox{$p$-value} when performing the SWiFt search phase with no region exclusion applied
   on a data-like spectrum that has been injected with a sequential standard model $Z'$ with
@@ -1558,34 +1563,41 @@ this was shown in the case of the $Z'$-boson of mass of 800 GeV.
   and is selected by the window selection procedure after the region exclusion procedure has been applied. }
 \end{table}
 
+It should also be noted that all $p$-values reported are before region exclusion is applied.
+The bumpHunter \mbox{$p$-value}s are always smaller after region exclusion is applied
+as any bias from the signal in the background estimation has been removed,
+this was shown in the case of the $Z'$-boson of mass of 800 GeV.
+
 %\subsubsection{High Mass}
 %\label{sec:highmass_signalInj}
 
+\newpage
 \subsection{Search Phase Results}
 \label{sec:bkg-full_results}
 %\subsubsection{Low Mass}
 %\label{sec:bkg-lowmass_results}
 
 For the full \lm{} data-set a window half-width is chosen using the window selection procedure outlined in Section~\ref{sec:windowSel}.
-The SWiFt background estimation is performed for the full data-set with a window half-width range of 16 to 10 for the 5 parameter fit function.
-Figure~\ref{fig:windowSel_unblind} shows the two fit quality measures used in the window and fit function selection,
+The SWiFt background estimation is performed using the 5 parameter fit function and a window half-width range of 16 to 10 .
+For each SWiFt background estimate, Figure~\ref{fig:windowSel_unblind} shows the two fit quality measures used in the window selection procedure,
 the global $\chi^2$ $p$-value and the number of windows with a Wilks' $p$-value $<$ 0.1.
-The 5 parameter fit function with a window half-width of 16 is selected as it is the
-widest window that passes the fit quality criteria outlined in Section~\ref{sec:windowSel}.
+The requirements placed on each fit quality measure by the window selection procedure are indicated by dotted lines on the figure.
+A window half-width of 16 is selected as it is the widest window that passes the fit quality criteria.
 Figure~\ref{fig:windowSel_unblind_just16} shows the Wilks' $p$-value and $\chi^2$ $p$-value for fits in each of the windows
-as a function of the window centre, further showing that the SWiFt procedure has found a good background estimation for this window half-width.
+as a function of the window centre for the SWiFtbackground esimation using the 5 parameter fit function and a window half-width of 16,
+further showing that all window fits in the the SWiFt procedure are of good quality.
 
-\vspace{-1mm}
+\vspace{-2mm}
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{Global $\chi^{2}$ \mbox{$p$-value}} {
-  \includegraphics[width=0.43\linewidth, angle=0,page=6]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind.pdf}
-}\hspace{-8mm}
+  \includegraphics[width=0.45\linewidth, angle=0,page=6]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind.pdf}
+}\hspace{-5mm}
 \subcaptionbox{Number of window fits with\\ Wilks' \mbox{$p$-value} $<$ 0.1} {
-  \includegraphics[width=0.43\linewidth, angle=0,page=8]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind.pdf}
+  \includegraphics[width=0.45\linewidth, angle=0,page=8]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind.pdf}
 }
-\vspace{8pt}
+\vspace{2pt}
 \caption{\label{fig:windowSel_unblind}
   An illustration of the window selection procedure for the full \lm{} data-set.
   It shows the global $\chi^{2}$ \mbox{$p$-value} and number of window fits with Wilks' \mbox{$p$-value} $<$ 0.1
@@ -1593,44 +1605,45 @@ as a function of the window centre, further showing that the SWiFt procedure has
   The dotted lines indicate the requirements used in the window selection procedure. A window half-width of 16 is selected.
 }
 \end{figure}
-\vspace{-1mm}
+\vspace{-3mm}
+
+Figure~\ref{fig:bhFit_lm_unblind} shows the dijet mass spectrum of the full \lm{} data-set
+fitted to with the SWiFt background estimation procedure using the 5 parameter dijet fit function and a window half-width of 16.
+The BumpHunter algorithm has identified the most discrepant excess, indicated in the figure using vertical blue lines,
+and assigned the excess a \mbox{$p$-value} of 0.603, which has been calculated using 10,000 pseudo-experiments.
+This BumpHunter $p$-value shows that no significant excess is found 
+and therefore it can be concluded that there is no evidence of new physics in the \lm{} data-set.
 
 \vspace{-1mm}
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{$\chi^{2}$ \mbox{$p$-value}} {
-  \includegraphics[width=0.43\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind_just16.pdf}
-}\hspace{-8mm}
-\subcaptionbox{Wilks' \mbox{$p$-value}} {
   \includegraphics[width=0.43\linewidth, angle=0,page=4]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind_just16.pdf}
+}\hspace{-5mm}
+\subcaptionbox{Wilks' \mbox{$p$-value}} {
+  \includegraphics[width=0.43\linewidth, angle=0,page=1]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_unblind_just16.pdf}
 }
-\vspace{10pt}
+\vspace{1pt}
 \caption{\label{fig:windowSel_unblind_just16}
   The  $\chi^{2}$ \mbox{$p$-value} and Wilks' \mbox{$p$-value} for each window fit in the SWiFt background estimate
   performed on the full \lm{} data-set, shown as a function of the window centre.
   The 5 parameter dijet fit function with a window half-width of 16 is used as the SWiFt configuration.
+  The dotted lines indicate thresholds that are used in the window selection procedure.
 }
 \end{figure}
-\vspace{-1mm}
 
-Figure~\ref{fig:bhFit_lm_unblind} shows the dijet mass spectrum of the full \lm{} data-set
-fitted to using the SWiFt background estimation procedure using the 5 parameter dijet fit function and a window half-width of 16.
-The BumpHunter algorithm has identified the most discrepant excess indicated in the figure using vertical blue lines,
-The BumpHunter \mbox{$p$-value} is 0.603, which has been calculated using 10,000 pseudo-experiments.
-This $p$-value shows that no significant excess is found 
-and therefore it can be concluded that there is no evidence of new physics in the \lm{} data-set.
-
+\vspace{-2mm}
 \begin{figure}[!thb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
   \includegraphics[width=0.7\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_unblind_5para_low16_high16.pdf}
-\vspace{10pt}
+\vspace{3pt}
 \caption{\label{fig:bhFit_lm_unblind}
-   The dijet mass spectrum (\mjj) of the  full \lm{} data-set fitted to using the SWiFt background estimation procedure
+   The dijet mass spectrum (\mjj) of the \lm{} data-set fitted to by the SWiFt background estimation procedure
    using the the 5 parameter fit function and a window half-width ($wHW$) of 16.
    The upper panel shows the data compared to the background estimate and the lower panel shows the significance of the difference between the two.
-   The most discrepant excess as found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the \mbox{$p$-value} of this excess is printed on the plot. }
+   The most discrepant excess found by the {\sc BumpHunter} algorithm is indicated by the vertical blue lines and the \mbox{$p$-value} of this excess is printed on the plot. }
 \end{figure}
 
 \subsubsection{High Mass}
