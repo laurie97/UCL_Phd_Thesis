@@ -38,7 +38,9 @@ Then, by only considering statistical uncertainties, the likelihood for a given 
   \Like (\mu,D) = P(D \mid \mu) =  \Pi_i \frac{(s_i(\mu)+b_i)^{n_i}~e^{-(s_i(\mu)+b_i)}}{n_i!}
   \label{eqn:lim-like}
 \end{equation}
-where the product is over all~\mjj~bins.
+where the product is over all~\mjj~bins and
+the notation $P(A \mid B)$ represents the probability of event $A$ occurring
+given the event $B$ has occurred.
 
 \noindent
 Then, one can employ Bayes' theorem which states that
@@ -50,30 +52,34 @@ to obtain the probability density function of $\mu$ given the observed di-$b$-je
   P(\mu \mid D) = \frac{ P(D \mid \mu) \, \Pi( \mu ) }{ \Pi( D ) }
   \label{eq:lim-conf_statOnly}
 \end{equation}
-This quantity, known as the posterior, is an expression of our confidence in the hypothesis
+This quantity, known as the posterior, is an expression of the degree of belief in the hypothesis
 $H_\mu$ for any particular value of $\mu$.
-
 The $\Pi( \mu )$ term in the posterior %Equation~\ref{eq:lim-conf_statOnly}
 is called the signal prior
 and gives the probability density of $\mu$ before the experiment took place.
-For this experiment a flat signal prior was chosen
+A prior flat with respect to $\mu$ is used
 \footnote{Flat from $\mu$ = 0 to the value of $\mu$ where the
 likelihood has fallen to $10^{-5}$ of the optimal likelihood value.}
 which represents ignorance to the size of the signal before the experiment.
 The $\Pi(D)$ term does not depend on $\mu$ and as such can be considered as a normalisation term.
 
-However, to accurately represent a true degree of belief in a model one must consider systematic uncertainties,
-which are uncertainties in the model's predictions.
+However, to accurately represent a true degree of belief in a model one must consider the systematic uncertainties,
+which are uncertainties in the values of $b_i$ and $s_i$ in Equation~\ref{eqn:lim-like}.
 The systematic uncertainties considered in this analysis are listed below in Section~\ref{sec:lim-syst}.
-The systematic uncertainties are incorporated by making $s_i$ and $b_i$ a function of a set of
-nuisance parameters, $\vec{\theta}$, where each nuisance parameter models the effect of a systematic uncertainty.
+The systematic uncertainties are incorporated by explicitly considering $s_i$ and $b_i$ as a
+function of the parameters which have a systematic uncertainty,
+the parameters used are known as nuisance parameters.
+For example, the number of signal events, $s_i$, is linearly dependant on luminosity ($L$) such that $s_i(L) \propto L$.
+Here luminosity is an example of a nuisance parameter.
+
 Therefore the likelihood becomes a function of the nuisance parameters
 \begin{equation}
-  \Like (\mu,D,\vec{\theta}) = P(D \mid \mu, \vec{\theta} ) 
+  \Like (\mu,D,\vec{\theta}) = P(D \mid \mu, \vec{\theta} ) =  \Pi_i \frac{(s_i(\mu,\vec{\theta})+b_i(\vec{\theta})^{n_i}~e^{-(s_i(\mu,\vec{\theta})+b_i(\vec{\theta}))}}{n_i!}
 \end{equation}
+where $\vec{\theta}$ represents the set of nuisance parameters.
 The effect of the systematic uncertainties are then propagated to the posterior. %Equation~\ref{eq:lim-conf_statOnly}.
 To do this a prior is introduced for each the nuisance parameters, given by $\Pi(\vec{\theta})$,
-that describes the probability distribution of the nuisance parameters.
+that describes the prior probability distribution of the nuisance parameters.
 Then, by integrating over the nuisance parameters,
 one obtains the probability density function for $\mu$ that includes the systematic uncertainties
 \begin{equation}
@@ -83,20 +89,19 @@ one obtains the probability density function for $\mu$ that includes the systema
 One can calculate the likelihoods for the data,
 perform the integral over nuisance parameters
 and then normalise to calculate the probability density of $\mu$
-\footnote{This integral is performed using a Monte-Carlo Markov chain using the Bayesian Analysis Toolkit.
+\footnote{This integral is performed using a Markov chain Monte-Carlo using the Bayesian Analysis Toolkit.
  Full details on the implementation can be found here~\cite{det-thesis_kate}.}.
 
 Using the posterior calculated from Equation~\ref{eq:lim-conf_syst},
-the 95\% confidence level upper limit of $\mu$, denoted by $\mu_{up}\,$,
+the 95\% credibility level upper limit of $\mu$, denoted by $\mu_{up}\,$,
 is calculated using the expression
 \begin{equation}
 \int_0^{\mu_{up}} P(\mu \mid D)~=~0.95
 \end{equation}
-The 95\% confidence upper limit
-defines a confidence region ($0 < \mu < \mu_{up}$)
-that will contain the true value of $\mu$ with 95\% confidence.
+The 95\% credibility upper limit defines an interval ($0 < \mu < \mu_{up}$)
+that will contain the true value of $\mu$ with 95\% probability.
 Any model under the hypothesis $H_{\mu}$ that predicts a $\mu$
-value outside of this region is said to be excluded at the 95\% confidence level.
+value outside of this region is said to be excluded at the 95\% credibility level.
 
 In the di-$b$-jet analysis limits are set using the benchmark signal model templates for a range of mass points,
 %the models and mass points considered
@@ -125,8 +130,8 @@ This process can be done for many pseudo-experiments; the median upper limit fou
 and the 68\% and 95\% percentiles give the 1 and 2 $\sigma$ uncertainty bands on the expected limit.
 
 In this analysis the Bayesian approach for limit setting is used,
-while there is another widely used approach known as the frequentist approach.
-The Bayesian approach defines a confidence region using the probability (or degree of belief) in a hypothesis given the observed data ( $P(\mu \mid D)$ ).
+while there is a widely used alternative known as the frequentist approach.
+The Bayesian approach defines a credibility interval using the probability (or degree of belief) in a hypothesis given the observed data ( $P(\mu \mid D)$ ).
 On the other hand, the frequentist approach calculates the probability (or fraction of trials)
 of obtaining the data assuming a given signal model is true ( $P(D \mid \mu)$ ) and rejects models that produce a low probability~\cite{lim-cowan}.
 %Bayesian limits are used for two reasons,
@@ -134,7 +139,8 @@ of obtaining the data assuming a given signal model is true ( $P(D \mid \mu)$ ) 
 %Secondly, the Bayesian approach has been used in other di-jet search analyses at ATLAS~\cite{dijet-mori16_paper}
 %which allows for comparable results and shared development of computational framework.
 Both approaches are valid and logically consistent,
-but it is important that one states clearly which approach is being taken.
+but it is important that one states clearly which approach is being taken
+\footnote{As a side note the BumpHunter $p$-value uses the frequentist approach to calculate a $p$-value.}.
 
 \section{Description of Systematic Uncertainties}
 \label{sec:lim-syst}
@@ -153,7 +159,7 @@ The signal systematic uncertainties considered are:
 \begin{itemize}[leftmargin=*]
 \item\textbf{Jet Energy Scale, Jet Energy Resolution  and $b$-Jet Energy Scale} \hspace{1mm} (\textit{Signal}):\\
   Jet energy scale (JES) and jet energy resolution (JER) are uncertainties in the measurement of the jet energy,
-  which causes an uncertainty in the~\mjj~signal template.
+  which causes on uncertainty of the width of the dijet mass signal templates.
   The JES and JER uncertainties used in this analysis were described in Section~\ref{sec:obj-jets_uncert}.
   In addition, there is also an additional $b$-jet energy scale ($b$JES) uncertainty which
   has been described in Section~\ref{sec:obj-bjets_bjes}.
@@ -161,21 +167,23 @@ The signal systematic uncertainties considered are:
 \item\textbf{$b$-Tagging} \hspace{1mm} (\textit{Signal}):\\
   The $b$-tagging modelling in Monte-Carlo simulation is calibrated to data using measured $b$-tagging scale factors,
   the scale factors and associated uncertainties are discussed in Section~\ref{sec:obj-bjets_calib}.
-  Variations of the $b$-tagging scale factors within uncertainties can vary the signal template.
-  The $b$-tagging systematic uncertainty is large at high values of jet-\pT, and as such is the dominant uncertainty in this analysis.
+  The uncertainty on $b$-tagging scale factor causes on uncertainty on the normalisation of each point in the dijet mass signal template.
+  The $b$-tagging systematic uncertainty is large at high values of jet-\pT.%, and as such is the dominant uncertainty in this analysis.
   \vspace{0.5em}
 \item\textbf{$b$-Jet Trigger} \hspace{1mm} (\textit{Signal}) - \lm{} data-set only:\\
   Similarly, when using the $b$-jet trigger,
-  the online $b$-tagging is corrected to data using $b$-jet trigger scale factors.
+  the online $b$-tagging efficiency is corrected to data using $b$-jet trigger scale factors.
   The $b$-jet trigger scale factors and relevant uncertainties are derived in Section~\ref{sec:trig-bjet_eff}.
-  These systematic uncertainties are only used in the \lm{} data-set, as this is the only data-set using a $b$-jet trigger.
+  The uncertainty on the $b$-jet trigger scale factors cause an uncertainty on the normalisation of each point in the dijet mass signal template.
+  This systematic uncertainty is only used in the \lm{} data-set, as this is the only data-set using a $b$-jet trigger.
   \vspace{0.5em}
 \item\textbf{Luminosity} \hspace{1mm} (\textit{Signal}):\\
-  The luminosity uncertainty is determined using the methodology outlined in~\cite{lim-syst_lumi}
-  from van der Meer scans performed in August 2015 and May 2016.
+  The luminosity uncertainty is determined using the methodology outlined in~\cite{lim-syst_lumi}.
+  %from van der Meer scans performed in August 2015 and May 2016.
   The luminosity uncertainties used are 2.9\% in the \summer{} data-set,
   2.2\% in the \lm{} data-set
   and 2.1\% in the \hm{} data-set.
+  The uncertainty on luminosity causes an uncertainty on the normalisation of the dijet mass signal template.
   \vspace{0.5em}
 \item\textbf{Parton Distribution Functions (PDFs) } \hspace{1mm}  (\textit{Signal}):\\
   The PDFs are important in calculating the cross-section of any process at the LHC.
@@ -184,6 +192,7 @@ The signal systematic uncertainties considered are:
   A flat 1\% uncertainty from the PDFs is considered,
   which has been found at previous dijet searches to conservatively cover
   the effect of the PDF uncertainties~\cite{dijet-mori16_paper}.
+  The uncertainty on PDF causes is treated as an uncertainty on the normalisation of the dijet mass signal template.
   \vspace{0.5em}
 \end{itemize}
 
@@ -219,7 +228,7 @@ three different values of dijet mass~\mjj.
 Figure~\ref{fig:lim-summer_systBkg} shows the systematic uncertainties on the background estimate
 for both $b$-tagging categories as a function of dijet mass,~\mjj.
 %Reconstructed mass is defined as invariant mass of the two observed jets.
-$b$-tagging is the dominant systematic uncertainty for the full range of~\mjj.
+%$b$-tagging is the dominant systematic uncertainty for the full range of~\mjj.
 
 \begin{table}[!htb]
   \centering
@@ -268,11 +277,11 @@ $b$-tagging is the dominant systematic uncertainty for the full range of~\mjj.
 
 %Figure~\ref{fig:lim-summer_zprime} and \ref{fig:lim-summer_bstar} show the %% When there was two
 Figure~\ref{fig:lim-summer_benchmark} shows the
-95\% confidence level upper limits set on $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+95\% credibility level upper limits set on $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 as a function of simulated mass
 for the $Z'$-boson and a $b^*$-quark.
 %The signal models considered are described in Section~\ref{sec:evt-s+b}.
-The observed limit, the expected limit and the 1 and 2 $\sigma$ error bands on the expected limit are shown.
+The observed limit, the expected limit and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown.
 The $\geq1$ $b$-tag category is used for the $b^*$-quark model
 and the 2 $b$-tag category is used for the $Z'$-boson models
 as these categories provide the strongest limits on the models.
@@ -282,20 +291,20 @@ $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models desc
 %\begin{figure}[!ht]
 %  \centering
 %   \includegraphics[width=0.7\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-zprime.pdf}
-%   \caption[Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+%   \caption[Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
 %     for the $Z'$-boson as a function of simulated mass
 %     for the 2 $b$-tag category using the \textit{Summer16+15} data-set.
 %     The observed limit is shown by the solid black line,
 %     the expected limit is shown by the dotted black line
-%     and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+%     and the 1 and 2 $\sigma$ uncertainty bands are shown by the green and yellow bands respectively.
 %     The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 %     for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson are overlaid.]
-%           {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+%           {Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
 %             for the $Z'$-boson as a function of simulated mass
 %             for the 2 $b$-tag category using the \textit{Summer16+15} data-set.
 %             The observed limit is shown by the solid black line,
 %             the expected limit is shown by the dotted black line
-%             and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+%             and the 1 and 2 $\sigma$ uncertainty bands are shown by the green and yellow bands respectively.
 %             The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 %             for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson are overlaid~\cite{dibjet-ichep_conf}.
 %           }
@@ -303,20 +312,20 @@ $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models desc
 %  \vspace{1cm}
 %  \centering
 %   \includegraphics[width=0.7\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-bstar.pdf}
-%   \caption[Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+%   \caption[Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
 %    for the $b^*$-quark  as a function of simulated mass
 %    for the $\geq$1 $b$-tag category using the \textit{Summer16+15} data-set.
 %    The observed limit is shown by the solid black line,
 %    the expected limit is shown by the dotted black line
-%    and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+%    and the 1 and 2 $\sigma$ uncertainty bands are shown by the green and yellow bands respectively.
 %    The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 %    for the $b^*$-quark is overlaid.]
-%           {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+%           {Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
 %             for the $b^*$-quark  as a function of simulated mass
 %             for the $\geq$1 $b$-tag category using the \textit{Summer16+15} data-set.
 %             The observed limit is shown by the solid black line,
 %             the expected limit is shown by the dotted black line
-%             and the 1 and 2 $\sigma$ error bands are shown by the green and yellow bands respectively.
+%             and the 1 and 2 $\sigma$ uncertainty bands are shown by the green and yellow bands respectively.
 %             The theoretical predicition of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 %             for the $b^*$-quark is overlaid~\cite{dibjet-ichep_conf}.
 %           }
@@ -330,20 +339,20 @@ $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models desc
   \subcaptionbox{$Z'$-boson,\hspace{1mm} 2 $b$-tag}{\includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-zprime.pdf}}
   \hspace{2mm}
   \subcaptionbox{$b^*$ quark,\hspace{1mm} $\geq$1 $b$-tag}{  \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-bstar.pdf}}
-   \caption[Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+   \caption[Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
              for the (a) $Z'$-boson and (b) $b^*$-quark  as a function of simulated mass
              using the \textit{Summer16+15} data-set in the 2 and $\geq$1 $b$-tag category respectively.
              The observed limit is shown by the solid black line,
              the expected limit is shown by the dotted black line
-             and the 1 and 2 $\sigma$ error bands on the expected limit are shown by the green and yellow bands.
+             and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
              The theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
              for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson and the $b^*$-quark are overlaid.]
-           {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+           {Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
              for the (a) $Z'$-boson and (b) $b^*$-quark  as a function of simulated mass
              using the \textit{Summer16+15} data-set in the 2 and $\geq$1 $b$-tag category respectively.
              The observed limit is shown by the solid black line,
              the expected limit is shown by the dotted black line
-             and the 1 and 2 $\sigma$ error bands on the expected limit are shown by the green and yellow bands.
+             and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
              The theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
              for the Sequential Standard Model (SSM) and leptophobic $Z'$-boson and the $b^*$-quark are overlaid~\cite{dibjet-ichep_conf}.
            }
@@ -361,33 +370,31 @@ similar to those that caused a smaller QCD dijet production at high mass as desc
  Section~\ref{sec:theo-qcd-dijet_features}.
 
 In the mass regions where the theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
-is larger than the upper limit, it can be concluded that the model is excluded at the 95\% confidence level.
+is larger than the upper limit, it can be concluded that the model is excluded at the 95\% credibility level.
 Using the \summer{} data-set:
 the \mbox{$b^*$-quark} is excluded in the mass range of 1.38 - 2.3 TeV,
 the SSM $Z'$-boson cannot be excluded,
 and the leptophobic $Z'$-boson is excluded at a mass of 1.5 TeV.
 
-\FloatBarrier
-
-For the generic Gaussian limit setting procedure,
+To produce generic Gaussian limits ,
 a signal template with a Gaussian shape in dijet mass is used.
 The Gaussian shapes are centred on a range of masses
 and the width of the considered Gaussians are
-15\%, 10\% and 7\% of the simulated mass
+15\%, 10\%, 7\% of the simulated mass
 in addition to a Gaussian with the width of the detector mass resolution.
 The detector mass resolution has been estimated
 at previous dijet searches~\cite{dijet-mori16_paper}
 and varies from 3\% at 1.5 TeV to 2\% at 5 TeV.
 %The dijet mass resolution is defined as the width of a Gaussian fit to mreco/mtruth
 % for matched leading and subleading jets divided by the mean of the Gaussian.
-For the Gaussian limit setting
-systematic uncertainties come from the luminosity uncertainty,
+For the Gaussian limits the sources of the systematic uncertainty considered
+are the luminosity uncertainty,
 the background modelling uncertainties,
-and an additional 10\% flat uncertainty to
-incorporate sources of systematic uncertainties related to signal modelling
-\textbf{LM question. Why 10\%? Much less than the other signal models}.
+and a 10\% flat uncertainty to account sources for
+experimental uncertainties related to signal modelling,
+such as jet-energy scale.
 
-Figure~\ref{fig:lim-summer_gauss} shows the observed 95\% confidence upper limits
+Figure~\ref{fig:lim-summer_gauss} shows the observed 95\% credibility upper limits
 on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
 $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
 for the full range of Gaussian signals described above in both $b$-tagging categories.
@@ -400,17 +407,18 @@ ranging from 0.2 to 0.001 pb is set in the mass range 1.4 to 6 TeV.
    \subcaptionbox{2 $b$-tag}      {\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_bb.pdf}}
    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_b.pdf}}
   \end{center}
-  \caption[95\% confidence observed upper limits
+  \caption[95\% credibility observed upper limits
     on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
     $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
     for Gaussian signals for both $b$-tagging categories using the \textit{Summer16+15} data-set.
     The Gaussian widths considered are 15\%, 10\% and 7\% of the simulated mass
     in addition to a Gaussian with the width of the detector mass resolution.]
-  {95\% confidence observed upper limits
+  {95\% credibility observed upper limits
     on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
     $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
     for Gaussian signals for both $b$-tagging categories using the \textit{Summer16+15} data-set.
-    The Gaussian widths considered are 15\%, 10\% and 7\% of the simulated mass
+    The signal templates are Gaussian in dijet  mass with
+    widths of 15\%, 10\% and 7\% of the simulated mass
     in addition to a Gaussian with the width of the detector mass resolution~\cite{dibjet-ichep_conf}.
   }
   \label{fig:lim-summer_gauss}
@@ -424,34 +432,37 @@ ranging from 0.2 to 0.001 pb is set in the mass range 1.4 to 6 TeV.
 \subsection{Signal Morphing}
 \label{sec:lim-full_morphing}
 
-The Monte-Carlo simulated dijet mass signal templates for the \lm{} data-set analysis have been described in Section~\ref{sec:evt-s+b}.
-To obtain dijet mass signal templates for intermediate points a signal morphing technique used at a previous ATLAS previous dijet search~\cite{dijet-mori17_paper}.
-A `Gaussian + reverse Landau fit' is performed to the simulated dijet mass signal templates.
+The limit setting procedure requires dijet mass signal templates as an input.
+For the \lm{} data-set analysis, simulated dijet mass signal templates of the SSM $Z'$ boson are created at simulated mass points of
+600, 800, 1000 and 1250 GeV, as described in Section~\ref{sec:evt-s+b}.
+To obtain dijet mass signal templates for intermediate points a signal morphing technique is used,
+first implemented in an inclusive ATLAS dijet search~\cite{dijet-mori17_paper}.
+
+A `Gaussian + reverse Landau' fit is performed to the simulated dijet mass signal templates.
 The reverse Landau function is the transformation of the Landau function~\cite{lim-landau} under $x\to-x$.
-
-\noindent
-The Gaussian + reverse Landau fit is defined as:
+The Gaussian + reverse Landau fit function is therefore defined as:
 \begin{equation}
-  f(x)=p_0 \left[ \,p_3\,\mathrm{Gaus}\left(x,p_1,p_2\right)\,+\,\left(\,1-p_3\,\right)\,\mathrm{Landau}\,\left(-x,p_4,p_5\right)\, \right]
+  f(x)=p_0 \left[ \,p_3\,\mathrm{Gauss}\left(x,p_1,p_2\right)\,+\,\left(\,1-p_3\,\right)\,\mathrm{Landau}\,\left(-x,p_4,p_5\right)\, \right]
 \end{equation}
-The Gaussian distribution models the convolution of a Breit-Wigner resonance distribution and dijet mass resolution effects.
-The reverse Landau distribution provides a description of the low mass tail of the dijet mass signal signal templates caused by PDF effects.
+The Gaussian distribution models the convolution of a Breit-Wigner resonance distribution and mass resolution effects.
+The reverse Landau distribution provides a description of the off-shell contributions to the dijet mass signal templates which are enhanced at low mass by PDF effects.
 
-The parameters of the fits are interpolated to itermediatiary simulated mass points to produce dijet mass signal templates.
-Figure~\ref{fig:lim-full_morphing} shows the simulated SSM $Z'$ dijet mass signal templates at simulated mass points of 600, 800, 1000 and 1250 GeV
-and the intermediate dijet mass signal templates produced using the morphing procedure.
+The parameters of the Gaussian + reverse Landau fits are interpolated to produce dijet mass signal templates at intermediary simulated mass points
+in the range 600 to 1250 GeV with a separation of 50 GeV
+\footnote{Explicitly morphed signal templates are created at simulated mass points of
+  650, 700, 750, 850, 900, 950, 1050, 1100, 1150 and 1200 GeV.}.
+Figure~\ref{fig:lim-full_morphing} shows the simulated SSM $Z'$ boson dijet mass signal templates and the intermediate dijet mass signal templates produced using the morphing procedure.
 The simulated and morphed signal dijet mass spectra are used as signal templates in the limit setting procedure for the \lm{} data-set analysis.
   
 \begin{figure}[!ht]
 \begin{center}
-  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing.pdf} 
+  \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing.pdf} 
 \end{center}
-\caption[Simulated SSM $Z'$ dijet mass signal templates (coloured lines)
-  at simulated mass points of 600, 800, 1000 and 1250 GeV 
-  and the intermediate dijet mass signal templates created using the morphing procedure (violet).]
-        {Simulated SSM $Z'$ dijet mass signal templates (coloured lines)
+\caption[Simulated SSM $Z'$ boson dijet mass (\mjj) signal templates and the intermediate dijet mass signal templates
+  created using the signal morphing technique used in the \lm{} data-set limit setting phase.]
+        {Simulated SSM $Z'$ boson dijet mass (\mjj) signal templates (solid points lines)
           at simulated mass points of 600, 800, 1000 and 1250 GeV 
-          and the dijet mass signal templates created using the morphing procedure (violet)~\cite{dibjet-full_int}
+          and the dijet mass signal templates created using the signal morphing technique (dotted lines) used in the \lm{} data-set limit setting phase~\cite{dibjet-full_int}.
           \label{fig:lim-full_morphing}}
 \end{figure}
 
@@ -467,8 +478,8 @@ Figure~\ref{fig:lim-lowmass_syst}(a) shows the total $b$-jet trigger systematic 
 this includes both the jet-level and event-level uncertainties described in Section~\ref{sec:trig-bjet_eff}.
 Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass.
 %Reconstructed mass is defined as invariant mass of the two observed jets.
-$b$-tagging, $b$-jet trigger and $b$-jet energy scale are the dominant sources of systematic uncertainties at the lowest mass point,
-whilst for the remaining dijet mass range $b$-jet trigger uncertainties are dominant.
+%$b$-tagging, $b$-jet trigger and $b$-jet energy scale are the dominant sources of systematic uncertainties at the lowest mass point,
+%whilst for the remaining dijet mass range $b$-jet trigger uncertainties are dominant.
 
 \begin{table}[!htb]
   \centering
@@ -515,15 +526,16 @@ whilst for the remaining dijet mass range $b$-jet trigger uncertainties are domi
 \subsection{Signal Subtracted Background Estimation}
 \label{sec:lim-full_ssb}
 
-Section~\ref{sec:bkg-full_swift} described the SWiFt background estimation procedure used for the \lm{} data-set.
-The SWiFt background estimation is model independent meaning that there is no assumption of any signal models when performing the fit.
+Section~\ref{sec:bkg-full_swift} described the SWiFt background estimation procedure used for the \lm{} data-set,
+for clarity this estimation will be referred to as the nominal SWiFt background estimation in this section.
+The nominal SWiFt background estimation is model independent meaning that there is no assumption of any signal models when performing the fit.
 In Section~\ref{sec:bkg-full_signalInj} it was found that there is a signal induced fit bias present when
-the SWiFt background estimation is performed on a data-set including a SSM $Z'$ boson.
-This was particularly notable for a $Z'$ boson with a simulated mass of 600 GeV,
+the nominal SWiFt background estimation is performed on a background-only test data-set with a SSM $Z'$ boson injected.
+This was particularly notable for a SSM $Z'$ boson with a simulated mass of 600 GeV,
 as this is near the edge of the dijet mass spectrum considered.
 
 To remove any signal induced fit bias in the limit setting phase a Signal Subtracted Background (SSB) estimation is
-created for each simulated mass point considered, this technique has been used in a previous dijet analysis at ATLAS~\cite{dijet-mori17_paper}.
+created for each simulated mass point considered, this technique has been used in a previous dijet search at ATLAS~\cite{dijet-mori17_paper}.
 The signal subtracted background estimate is created by performing two fits;
 the first is a signal plus background fit, performed in the SWiFt window
 in which the simulated signal mass being considered is at the window centre.
@@ -531,24 +543,26 @@ The signal is modelled using the dijet mass signal templates described in Sectio
 and the background is modelled using the 5 parameter dijet fit function.
 The normalisation of signal template and the parameters of the background function are
 chosen to maximise the likelihood (defined in~\ref{eqn:lim-like}),
-the signal normalisation is required to be greater than zero.
+the signal normalisation is required to be greater or equal to zero.
 The signal template, normalised by the signal plus background fit, is then subtracted from the data.
-Finally, the SWiFt background estimation is performed to the signal subtracted data using the 
-5 parameter dijet fit function and a window half-width of 16, the same SWiFt configuration used in the search phase results.
+Finally, the SWiFt background estimation procedure is performed to the signal subtracted data using the 
+5 parameter dijet fit function and a window half-width of 16, the same SWiFt configuration used in the search phase results shown in Section~\ref{sec:bkg-full_results}.
 This second background estimation is called the signal subtracted background estimation and is used as the background template in the limit setting phase.
 A signal subtracted background estimation is created for each signal mass point.
 
-To demonstrate that the signal subtracted background estimation will remove any signal induced fit bias,
-fits are performed to the data-like dijet mass spectrum from the fitting control region when the dijet mass signal templates are injected.
+To demonstrate that the signal subtracted background estimation will remove the signal induced fit bias,
+fits are performed to a data-like dijet mass spectrum from the fitting control region when SSM $Z'$ boson dijet mass signal templates are injected.
 The same distributions were used in the signal injection tests presented in Section~\ref{sec:bkg-full_signalInj}.
 The performance of the signal subtracted background estimation can be compared to that of the nominal SWiFt background estimation.
 
-In the Figure~\ref{fig:lim-lowmass_ssb_test}(a) the signal subtracted background estimation (blue)
-and the SWiFt background estimation (red) performed on a data-like dijet mass spectrum from the fitting control region with a SSM $Z'$-boson injected at 600 GeV
-are shown as a ratio to the SWiFt background estimation performed on the same data-like dijet mass spectrum when no signal is injected (black).
-The signal injected dijet mass spectrum is shown by the green points and the the grey hatched area represents the the statistical uncertainty of data.
-This ratio is used to clearly show any fit biases caused by the injected of signal.
-Figure~\ref{fig:lim-lowmass_ssb_test}(b) shows the same comparison using a $Z'$-boson injected at 1000 GeV.
+In Figure~\ref{fig:lim-lowmass_ssb_test}(a) the signal subtracted background~(blue) and SWiFt background~(red) estimations
+for a data-like dijet mass spectrum from the fitting control region with a SSM $Z'$ boson injected at 600 GeV are
+shown as a ratio to the nominal SWiFt background estimation for the same data-like dijet mass spectrum when no signal is injected (black).
+This ratio is used to clearly show any fit biases caused by the injected signal.
+The signal injected dijet mass spectrum is shown by the green points and the the grey area represents the the statistical uncertainty of the data.
+Figure~\ref{fig:lim-lowmass_ssb_test}(b) shows the same comparison using a SSM $Z'$ boson injected at 1000 GeV.
+These two mass points are tested as the signal injection tests presented in Section~\ref{sec:bkg-full_signalInj} showed that the search phase
+would not produce a significant observation of a SSM $Z'$ boson at these mass points. 
 
 \begin{figure}[!ht]
   \begin{center}
@@ -557,33 +571,33 @@ Figure~\ref{fig:lim-lowmass_ssb_test}(b) shows the same comparison using a $Z'$-
     \subcaptionbox{$Z'$-boson, $m$ = 1000 GeV}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/LowMass/lim-ssb_test1000.pdf}}
   \end{center}
   \vspace{-1mm}
-  \caption{The nominal background-only SWiFt background estimation (red) and the signal subtracted background estimation (blue) performed on a data-like
-    dijet mass spectrum from the fitting control region with a SSM $Z'$-boson injected (shown in green).
-    The mass of the at (a) 600 GeV and (b) 1000 GeV
-    The resulting backgrounds are shown as a ratio to the SWiFt background estimation performed on the same data-like dijet mass spectrum when no signal is applied (grey),
-    shown as a function of dijet mass (\mjj{})
-    the hatched area represents the statistical uncertainties in the data-set.}
+  \caption{The nominal background-only SWiFt background (red) and signal subtracted background (SSB) (blue) estimations
+    for a data-like dijet mass (\mjj) spectrum from the fitting control region with a SSM $Z'$ boson injected (green points)
+    as a ratio to the nominal SWiFt background estimation performed on the same data-like dijet mass spectrum when no signal is applied.
+    The area represents the statistical uncertainties in the data-set.
+    The simulated mass of the SSM $Z'$ boson is (a) 600 GeV and (b) 1000 GeV.}
   \label{fig:lim-lowmass_ssb_test}
 \end{figure}
 
-In both figures it can be seen that SWiFt background estimation is biased when signal is injected,
-shown by the fact that the red line is significantly drawn towards the injected signal.
-The signal induced fit bias is larger than the statistical uncertainties of the data in the case of a $Z'$ boson at 600 GeV.
+The nominal SWiFt background estimation is biased when a SSM $Z'$ boson is injected,
+shown by the fact that the red line is significantly drawn towards the injected signal in Figure~\ref{fig:lim-lowmass_ssb_test}.
+The signal induced fit bias is approximately the same size of the injected signal in the case of a SSM $Z'$ boson at 600 GeV.
 It is also observed that the fit bias of the signal subtracted background is small relative to the size of the injected signal.
-Therefore, it can be concluded that the signal subtracted background is a valid background estimation to use in the limit setting phase.
+Therefore, the signal subtracted background is background estimation used in the limit setting phase.
 
 Figure~\ref{fig:lim-lowmass_ssb_data} shows the ratio of the 
-signal subtracted background (SSB) estimations and the nominal SWiFt background estimate (black) performed on the full \lm{} data-set.
-The SWiFt background estimate performed on the full data-set was presented in Section~\ref{sec:bkg-full_results}.
-The hatched area represents the parameter choice uncertainty on the background.
+signal subtracted background (SSB) estimations and the nominal SWiFt background estimate (black) performed on the full \lm{} data-set
+\footnote{The SWiFt background estimate for the full data-set is shown in comparison to the data in Figure~\ref{fig:bhFit_lm_unblind}.}.
+The area represents the parameter choice uncertainty of the nominal SWiFt background estimation.
 Signal subtracted background estimations are created for all simulated mass points considered,
 but for clarity only those at mass points 600, 800, 1000 and 1250 GeV are shown in the figure.
-For all simulated mass points used in the limits, including those not shown in the figure,
-the signal subtracted background estimate is consistent with the SWiFt background estimation
+For all simulated mass points, including those not shown in the figure,
+the signal subtracted background estimate is consistent with the nominal SWiFt background estimation
 within background uncertainties.
-This shows that the results of the limit setting phase are invariant to both background estimations considered in this section.
+Therefore the results of the limit setting phase would be consistent if either the
+signal subtracted or nominal SWiFt background estimation are used.
 Furthermore, it can be inferred that there is no signal induced fit bias due to a $Z'$ boson
-in the SWiFt background estimation performed to the \lm{} data-set.
+in the nominal SWiFt background estimation performed to the \lm{} data-set.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -599,7 +613,7 @@ in the SWiFt background estimation performed to the \lm{} data-set.
 
 Finally, it is important to note that no signal plus background fit is considered in the search phase result,
 as this would mean that the search phase result is not model independent.
-However, it is clear that the SWiFt background estimation can be affected by a signal induced fit bias,
+However, it is clear that the nominal SWiFt background estimation can be affected by a signal induced fit bias,
 as shown in Figure~\ref{fig:lim-lowmass_ssb_test}.
 As a result the sensitivity of the search phase is reduced to specific signal models relative to the results of the limit-phase presented below;
 the reduced sensitivity is accepted to maintain model independence.
@@ -609,36 +623,92 @@ the reduced sensitivity is accepted to maintain model independence.
 
 %Figure~\ref{fig:lim-summer_zprime} and \ref{fig:lim-summer_bstar} show the %% When there was two
 Figure~\ref{fig:lim-lowmass_benchmark} shows the
-95\% confidence level upper limits set on $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+95\% credibility level upper limits set on $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 as a function of simulated mass for the $Z'$-boson .
 %The signal models considered are described in Section~\ref{sec:evt-s+b}.
-The observed limit, the expected limit and the 1 and 2 $\sigma$ error bands on the expected limit are shown.
+The observed limit, the expected limit and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown.
 Overlaid are theoretical predictions of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the
 Sequential Standard Model (SSM), leptophobic and DM $Z'$ boson benchmark models, which have been described in Section~\ref{sec:evt-s+b}.
 These limits have not yet been published and can be considered as preliminary.
 
 Using the \lm{} data-set it is anticipated that the SSM and leptophobic $Z'$-boson
-will be excluded in the simulated mass range 0.6 - 1.25 TeV at the 95\% confidence level.
+will be excluded in the simulated mass range 0.6-1.25 TeV at the 95\% credibility level.
 Additionally it is anticipated the DM $Z'$-boson will be excluded in the simulated mass range
-0.6 - 0.95 TeV  at the 95\% confidence level limit.
+0.6-0.95 TeV  at the 95\% credibility level.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime.pdf}
-  \caption[Bayesian 95\% confidence level upper limits on
+  \caption[Bayesian 95\% credibility level upper limits on
            cross-section times acceptance times tagging efficiency
            ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$)
            for the $Z'$-boson and as a function of simulated mass using the \lm{} data-set.
            The observed limit is shown by the solid black line, the expected limit is shown by the dotted black line
-           and the 1 and 2 $\sigma$ error bands on the expected limit are shown by the green and yellow bands.
+           and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
            The theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
            for the Sequential Standard Model (SSM), leptophobic and DM $Z'$-bosons are overlaid.]
-          {Bayesian 95\% confidence level upper limits on cross-section times acceptance times tagging efficiency
+          {Bayesian 95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
             ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$)
              for the $Z'$-boson and as a function of simulated mass using the \lm{} data-set.
              The observed limit is shown by the solid black line, the expected limit is shown by the dotted black line
-             and the 1 and 2 $\sigma$ error bands on the expected limit are shown by the green and yellow bands.
+             and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
              The theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
              for the Sequential Standard Model (SSM), leptophobic and DM $Z'$-bosons are overlaid~\cite{dibjet-full_int}.}
   \label{fig:lim-lowmass_benchmark}
+\end{figure}
+
+
+For the generic Gaussian limit setting procedure there is a significant difference
+with respect to the \summer{} data-set analysis.
+In the \summer{} data-set analysis a signal template with a Gaussian distribution in dijet mass is used,
+whilst for the \lm{} data-set analysis a signal template with a Gaussian distribution in the truth mass distribution is used.
+The truth mass is defined as the invariant mass of the leading and subleading truth jets,
+using the definition of truth jet from Section~\ref{sec:obj-jets_calib}.
+The Gaussian shapes are centred on a range of simulated masses and the width of the considered Gaussians are
+15\%, 10\%, 7\%, 5\%, 3\% and 0\% of the simulated mass;
+a Gaussian with a 0\% width is a Dirac delta peak.
+The transformation of the signal templates from truth mass to dijet mass is performed using
+transfer matrices calculated using Monte-Carlo simulated QCD dijet samples,
+following the procedure outlined in~\cite{dijet-mori17_paper}.
+The Gaussian with a 0\% width in truth mass will have
+a width of the mass resolution of the detector in dijet mass.
+
+For the Gaussian limit setting the sources of systematic uncertainties
+are the luminosity uncertainty,
+the background modelling uncertainties and a flat 5\% uncertainty to cover
+the JES, JER and $b$JES systematic uncertainties.
+Other systematic are not included in the preliminary Gaussian limit
+as uncertainties are found to have a small effect on upper limit relative to the resolution uncertainties,
+as these can significantly broaden the width of the dijet mass signal template.
+
+Figure~\ref{fig:lim-lowmass_gauss} shows the observed 95\% credibility upper limits set 
+on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
+$\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
+for the full range of Gaussian signals described above.
+The expected limits for a Gaussian signal with a 0\% width
+in simulated mass is shown by the dotted lines and associated 1~and~2~$\sigma$ uncertainty bands
+are shown in green and yellow.
+The results have not yet been published and can be considered as preliminary.
+
+For the \lm{} data-set it is anticipated that an upper limit will be placed
+on a generic Gaussian signal ranging from 0.05 to 0.003 pb in the mass range 0.65 to 1.4 TeV.
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/lowmass/lim-gaussian.pdf}
+  \end{center}
+  \caption[95\% credibility upper limits
+    on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
+    $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
+    for Gaussian signals using the \lm{} data-set.]
+  {95\% credibility observed upper limits
+    on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
+    $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
+    for Gaussian signals using the \lm{} data-set are shown by the solid lines.
+    The signal templates are Gaussian in simulated mass with
+    widths of 15\%, 10\%, 7\%, 5\%, 3\% and 0\% of the simulated mass.
+    Also shown are the expected 95\% credibility observed upper limit on the Gaussian signal shape with a 0\% width (dotted line)
+    and the associated 1~\sigma\ and 2~\sigma{} (yellow and green bands)~\cite{dibjet-full_int}.
+  }
+  \label{fig:lim-lowmass_gauss}
 \end{figure}

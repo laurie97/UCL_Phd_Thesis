@@ -229,7 +229,7 @@
 %    \begin{macrocode}
 \setlength \parindent{2em}
 %\setlength \parskip  {\z@ \@plus 1\p@}
-\setlength \parskip {2 em}
+\setlength \parskip {1.2 em}
 \setlength \headsep  {16\p@}
 \ifcase \@ptsize
     \setlength \footskip{26\p@}
@@ -253,7 +253,7 @@
 %
 %  One and a half is a sensible choice for theses, especially with a wide margin.
 %    \begin{macrocode}
-\renewcommand \baselinestretch{1.5}
+\renewcommand \baselinestretch{1}
 %    \end{macrocode}
 %
 %  \subsection{Running Heads}
