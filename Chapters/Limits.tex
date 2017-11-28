@@ -25,12 +25,12 @@ In this analysis a Bayesian limit setting approach is used~\cite{lim-bayes}.
 For limit setting, one considers a hypothesis that the di-$b$-jet events are produced by a combination of 
 the QCD background, which has been modelled by the background estimates described in the previous chapter,
 and some new physics process 
-which produces $\mu$ events according to some template shape in~\mjj.
+which produces $\mu$ events according to a dijet mass signal template.
 This signal plus background hypothesis is denoted by the symbol $H_\mu$.
 
 Now let us consider this hypothesis in the context of the data, denoted by $D$,
 which in this case is one of our observed di-$b$-jet spectra.
-For the hypothesis, $H_\mu$, the probability of producing the data is known as the ``likelihood''.
+For the hypothesis, $H_\mu$, the probability of producing the data is known as the likelihood.
 If, in each~\mjj~bin, the model predicts
 $s_i(\mu)$ signal events, $b_i$ background events and $n_i$ events were observed in data.
 Then, by only considering statistical uncertainties, the likelihood for a given value of $\mu$ is given by
@@ -63,14 +63,14 @@ likelihood has fallen to $10^{-5}$ of the optimal likelihood value.}
 which represents ignorance to the size of the signal before the experiment.
 The $\Pi(D)$ term does not depend on $\mu$ and as such can be considered as a normalisation term.
 
-However, to accurately represent a true degree of belief in a model one must consider the systematic uncertainties,
-which are uncertainties in the values of $b_i$ and $s_i$ in Equation~\ref{eqn:lim-like}.
-The systematic uncertainties considered in this analysis are listed below in Section~\ref{sec:lim-syst}.
+To accurately represent a true degree of belief in a model one must consider the systematic uncertainties
+in the values of $b_i$ and $s_i$ in Equation~\ref{eqn:lim-like}.
+The sources of systematic uncertainty considered in this analysis are listed in Section~\ref{sec:lim-syst}.
 The systematic uncertainties are incorporated by explicitly considering $s_i$ and $b_i$ as a
-function of the parameters which have a systematic uncertainty,
+function of the parameters which are considered as a sources of systematic uncertainty,
 the parameters used are known as nuisance parameters.
 For example, the number of signal events, $s_i$, is linearly dependant on luminosity ($L$) such that $s_i(L) \propto L$.
-Here luminosity is an example of a nuisance parameter.
+Luminosity is a source of systematic uncertainty, so is an example of a nuisance parameter.
 
 Therefore the likelihood becomes a function of the nuisance parameters
 \begin{equation}
@@ -78,7 +78,7 @@ Therefore the likelihood becomes a function of the nuisance parameters
 \end{equation}
 where $\vec{\theta}$ represents the set of nuisance parameters.
 The effect of the systematic uncertainties are then propagated to the posterior. %Equation~\ref{eq:lim-conf_statOnly}.
-To do this a prior is introduced for each the nuisance parameters, given by $\Pi(\vec{\theta})$,
+To do this a prior is introduced for each of the nuisance parameters, given by $\Pi(\vec{\theta})$,
 that describes the prior probability distribution of the nuisance parameters.
 Then, by integrating over the nuisance parameters,
 one obtains the probability density function for $\mu$ that includes the systematic uncertainties
@@ -98,10 +98,10 @@ is calculated using the expression
 \begin{equation}
 \int_0^{\mu_{up}} P(\mu \mid D)~=~0.95
 \end{equation}
-The 95\% credibility upper limit defines an interval ($0 < \mu < \mu_{up}$)
-that will contain the true value of $\mu$ with 95\% probability.
+Therefore there is a 95\% probability that the parameter $\mu$ lies
+within the interval \mbox{$0 \leq \mu < \mu_{up}$}.
 Any model under the hypothesis $H_{\mu}$ that predicts a $\mu$
-value outside of this region is said to be excluded at the 95\% credibility level.
+value outside of this interval is said to be excluded at the 95\% credibility level.
 
 In the di-$b$-jet analysis limits are set using the benchmark signal model templates for a range of mass points,
 %the models and mass points considered
@@ -123,7 +123,8 @@ which can be reinterpreted for a wider range of models.
   
 The di-$b$-jet analysis will present two limits, which is typical of searches at ATLAS.
 The first is the observed limit, which is the limit using the observed di-$b$-spectra as $D$, which was described above.
-The second is the expected limit under the assumption that there is no signal in the di-$b$-jet spectrum.
+The second is the expected limit under the assumption that there is no signal in the di-$b$-jet spectrum,
+the expected limit shows the sensitivity of limit setting phase.
 To calculate the expected limit the procedure is performed where $D$ is replaced by pseudo-experiments
 created by varying the background estimate within the systematic uncertainties.
 This process can be done for many pseudo-experiments; the median upper limit found gives the expected limit
