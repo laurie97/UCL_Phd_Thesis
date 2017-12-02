@@ -458,7 +458,7 @@
 %    \begin{macrocode}
        \newcommand \makedeclaration {%
          \clearpage%
-         I, \@author , confirm that the work presented in this thesis is my own.
+         I, Laurie M$\textsuperscript{c}$Clymont, confirm that the work presented in this thesis is my own.
          Where information has been derived from other sources, I confirm that this has been indicated in the work.
          \gdef \@author{}%
          \clearpage%

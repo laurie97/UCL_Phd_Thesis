@@ -3,173 +3,224 @@
 
 One of the great questions that humans have always tried to answer is
 what are the fundamental building blocks of the universe and what are the rules that govern them?
-Attempts at answering this question have ranged from the
-philosophical approach of \textit{`atomism'} by the ancient Greeks \cite{theo-atomism}
-to the discovery of atomic structure by Ernest Rutherford \cite{theo-rutherford}.
-
+%Attempts at answering this question have ranged from the
+%philosophical approach of \textit{`atomism'} by the ancient Greeks \cite{theo-atomism}
+%to the discovery of atomic structure by Ernest Rutherford \cite{theo-rutherford}.
+%
 The current best answer to this question is the \textit{`Standard Model of Particle Physics'},
 a mathematical description of a finite set of fundamental particles and their interactions.
-The Standard Model's ability to describe data is formidable
-and as such it is the foundation of the field of Particle Physics. 
+The Standard Model has been found to agree with experimental data at great precision~\cite{theo-ewTests}
+and as a result is the foundation of the field of particle physics.
 However, it is known that this is not a complete theory and there must be
 a deeper underlying theory that lies beyond the Standard Model.
 
-This chapter firstly aims to describe the Standard Model and its key predictions
-with respect to the analyses presented in this thesis.
-Section~\ref{sec:theo-sm} briefly describes the Standard Model and
-Section~\ref{sec:theo-qcd} outlines the QCD description of jet formation and dijet production in proton-proton collisions.
-Then, Section~\ref{sec:theo-bsm} will discuss Beyond the Standard Model (BSM) physics;
+This chapter firstly aims to describe the Standard Model and
+possible Beyond Standard Model physics in the context of di-$b$-jet searches.
+Section~\ref{sec:theo-sm} briefly describes the particles and forces of the Standard Model.
+Section~\ref{sec:theo-qcd} describes hadronic jet formation and the production of the dominant Standard Model background to di-$b$-jet searches.
+Then, Section~\ref{sec:theo-bsm} will discuss Beyond Standard Model (BSM) physics;
 specifically the problems in the Standard Model that require BSM physics
 and proposed BSM models that predict resonances preferentially decaying to one or two $b$-quarks.
 
-\newpage
 \section{The Standard Model}
 \label{sec:theo-sm}
 
 The Standard Model is a quantum field theory,
 meaning that the theory describes a finite set of particles and their interactions in
 terms of a set of fields.
-The end product of the Standard Model is a prediction
-of what will happen when any two particles in nature interact;
-which in the context of a collider experiment means predicting what is the cross-section of any given interaction.
+%The end product of the Standard Model is a prediction
+%of what will happen when any two particles in nature interact;
+%which in the context of a collider experiment means predicting what is the cross-section of any given interaction.
 
-Section~\ref{sec:theo-sm_particles} contains a description of the particles that make up the Standard Model 
-and Section~\ref{sec:theo-sm_forces} contains a description of the types of interactions between the particles, known as forces.
+%Section~\ref{sec:theo-sm_particles} contains a description of the particles that make up the Standard Model 
+%and Section~\ref{sec:theo-sm_forces} contains a description of the types of interactions between the particles, known as forces.
 
 \subsection{Particles}
 \label{sec:theo-sm_particles}
 
-There are 18 fundamental particles in the Standard Model,
+There are 18 fundamental matter particles in the Standard Model,
 where fundamental means that they are not composed of other constituent particles.
-These particles are grouped into three families with similar properties;
-known as quarks, leptons and bosons.
-Details on the particles in the Standard Model is taken from~\cite{obj-bjets_PDG}, where a full description can be found.
+These particles form three groups of particles with similar properties: quarks, leptons and bosons.
+Details on the particles in the Standard Model are taken from~\cite{obj-bjets_PDG}, where a full description can be found.
 
 \begin{itemize}[leftmargin=*]
 \item\textbf{Quarks:}
-  Quarks are fermions that interact with the strong force;
-  a description of the strong force is in the next section.
+  %Quarks are spin-$\frac{1}{2}$ fermions.
   There are 6 different types of quarks, known as flavours, arranged in 3 generations.
-  Table~\ref{tab:theo-sm_quarks} summarises the flavours of quark and their key properties.
-  For each quark there is also an anti-quark, which has identical mass and spin, but opposite charge and quantum numbers.
+  %Table~\ref{tab:theo-sm_quarks} summarises the flavours of quark and their key properties.
+  For each quark there is also an anti-quark, which has identical mass and spin, but opposite charge and quantum numbers.  \vspace{0.5em}
   %\end{itemize}
-  {\renewcommand{\arraystretch}{1.5}
-  \begin{table}[!ht]
-  \begin{center}
-    \begin{tabular}{|c||c|c|c|c|}
-      \hline
-    Quark Flavour & Symbol & Charge            &  Spin           &  Mass [GeV]\\
-    \hline
-    Up            &   $u$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  0.002\\
-    Down          &   $d$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.005\\
-    \hline                                                   
-    Charm         &   $c$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  1.3 \\
-    Strange       &   $s$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.096 \\
-    \hline                                                      
-    Top           &   $t$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  173  \\
-    Bottom        &   $b$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  4.2  \\
-    \hline  
-  \end{tabular}
-    \caption{The key properties of the 6 flavours of quark in the Standard Model,
-    organised into the three generations of quarks.}
-  \label{tab:theo-sm_quarks}
-  \end{center}
-  \end{table}}
+  
+ % \vspace{-0.5em}
+ % {\renewcommand{\arraystretch}{1.2}
+ % \begin{table}[!ht]
+ % \begin{center}
+ %   \begin{tabular}{|c||c|c|c|c|}
+ %     \hline
+ %   Quark Flavour & Symbol & Charge            &  Spin           &  Mass [GeV]\\
+ %   \hline
+ %   Up            &   $u$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  0.002\\
+ %   Down          &   $d$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.005\\
+ %   \hline                                                   
+ %   Charm         &   $c$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  1.3 \\
+ %   Strange       &   $s$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.096 \\
+ %   \hline                                                      
+ %   Top           &   $t$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  173  \\
+ %   Bottom        &   $b$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  4.2  \\
+ %   \hline  
+ %   \end{tabular}
+ % \end{center}
+ % \vspace{-0.25em}
+ %   \caption{The key properties of the 6 flavours of quark in the Standard Model,
+ %     organised into the three generations of quarks.}
+ %   \label{tab:theo-sm_quarks}
+ % \end{table}}
+ % \vspace{-1em}
 
 \item\textbf{Leptons:}
-  Leptons are fermions that, unlike the quarks, do not interact with the strong force.
+  %Leptons are fermions that, unlike the quarks, do not interact with the strong force.
   There are 6 different types of leptons,
   arranged into  3 generations, each containing a charge $-1$ particle and a charge 0 neutrino.
-  Table~\ref{tab:theo-sm_leptons} summarises the leptons and their key properties.
+  %Table~\ref{tab:theo-sm_leptons} summarises the leptons and their key properties.
   Neutrinos masses are not well known, but they are known to be non-zero
   and the sum of the masses of the three flavours of neutrino is less than a few eV~\cite{theo-nu_mass},
   hence are negligible compared to the other particles of the Standard Model.
   %\footnote{The upper constraint on neutrino mass means that neutrinos are much lighter than the other particles
   %in the Standard Model and the energy scale considered in this thesis; so they will be treated as massless here.}
-  For each lepton there is also an anti-lepton.
-  
-  {\renewcommand{\arraystretch}{1.5}
-  \begin{table}[!ht]
-  \begin{center}
-    \begin{tabular}{|c||c|c|c|c|}
-      \hline
-    Lepton            & Symbol        & Charge  &  Spin           &  Mass [GeV]\\
-    \hline
-    Electron          &   $e$         &  -1    &  $\frac{1}{2}$   &  \num{5.1e-4}\\
-    Electron Neutrino &   $\nu_e$     &  0     &  $\frac{1}{2}$   &  -\\
-    \hline                                   
-    Muon              &   $\mu$       &  -1    &  $\frac{1}{2}$   &  0.11 \\
-    Muon Neutrino     &   $\nu_{\mu}$  &  0     &  $\frac{1}{2}$   &  -\\
-    \hline                                      
-    Tau               &   $\tau$       &  -1   &  $\frac{1}{2}$   &  1.8\\
-    Tau Neutrino      &   $\nu_{\tau}$  &  0    &  $\frac{1}{2}$   &  -\\
-    \hline  
-  \end{tabular}
-    \caption{The 6 types of lepton in the Standard Model and their key properties,
-    organised into the three generations of leptons. Neutrino masses are not well known. }
-  \label{tab:theo-sm_leptons}
-  \end{center}
-  \end{table}}
+  For each lepton there is also an anti-lepton. \vspace{0.5em}
+
+ %\vspace{-0.5em}
+ %{\renewcommand{\arraystretch}{1.2}
+ %\begin{table}[!ht]
+ %\begin{center}
+ %  \begin{tabular}{|c||c|c|c|c|}
+ %    \hline
+ %  Lepton            & Symbol        & Charge  &  Spin           &  Mass [GeV]\\
+ %  \hline
+ %  Electron          &   $e$         &  -1    &  $\frac{1}{2}$   &  \num{5.1e-4}\\
+ %  Electron Neutrino &   $\nu_e$     &  0     &  $\frac{1}{2}$   &  -\\
+ %  \hline                                   
+ %  Muon              &   $\mu$       &  -1    &  $\frac{1}{2}$   &  0.11 \\
+ %  Muon Neutrino     &   $\nu_{\mu}$  &  0     &  $\frac{1}{2}$   &  -\\
+ %  \hline                                      
+ %  Tau               &   $\tau$       &  -1   &  $\frac{1}{2}$   &  1.8\\
+ %  Tau Neutrino      &   $\nu_{\tau}$  &  0    &  $\frac{1}{2}$   &  -\\
+ %  \hline  
+ %  \end{tabular}
+ %  \vspace{-0.25em}
+ %  \caption{The 6 types of lepton in the Standard Model and their key properties,
+ %  organised into the three generations of leptons. Neutrino masses are not well known. }
+ %\label{tab:theo-sm_leptons}
+ %\end{center}
+ %\end{table}}
+ %\vspace{-1em}
  
 \item\textbf{Bosons:}
   There are a set of integer-spin particles in the Standard Model, known as bosons.
-  The bosons of the Standard Model act as the mediators of the forces that will be described below.
-  Table~\ref{tab:theo-sm_bosons} summarises the bosons and their key properties.
+  The bosons of the Standard Model act as the mediators of the forces that will be described below.  \vspace{0.5em}
+  %Table~\ref{tab:theo-sm_bosons} summarises the bosons and their key properties.
   %The bosons are their own anti-particle, with the exception of the $W^{+}$ and $W^{-}$
   %which are each others anti-particle.
+  
+\end{itemize}
+  
+  %\vspace{-0.5em}
+  %{\renewcommand{\arraystretch}{1.2}
+  %\begin{table}[!ht]
+  %\begin{center}
+  %  \begin{tabular}{|c||c|c|c|c|}
+  %    \hline
+  %  Boson            & Symbol        & Charge  &  Spin  &  Mass [GeV]\\
+  %  \hline
+  %  Photon           &   $\gamma$    &  0      &  1     &  0 \\
+  %  W-boson          &   $W^{\pm}$    & $\pm$1  &  1     &  80 \\
+  %  Z-boson          &   $Z_0$       &  0      &  1     &  91\\
+  %  Gluon            &   $g$         &  0      &  1     &  0 \\
+  %  Higgs Boson      &   $H$         &  0      &  0     &  125\\
+  %  \hline  
+  %  \end{tabular} 
+  %\vspace{-0.25em}
+  %  \caption{The key properties of the bosons of the Standard Model. }
+  %\label{tab:theo-sm_bosons}
+  %\end{center}
+  %\end{table}}
+  \vspace{-1em}
 
-  {\renewcommand{\arraystretch}{1.5}
+Table~\ref{tab:theo-sm_particles} summarises the key properties of each of the particles.
+The particles are organised into the particle groups
+and then into the three generations for the quarks and leptons.
+
+\vspace{-0.5em}
+  {\renewcommand{\arraystretch}{1.3}
   \begin{table}[!ht]
   \begin{center}
-    \begin{tabular}{|c||c|c|c|c|}
+    \begin{tabular}{|c|c||c|c|c|c|}
       \hline
-    Boson            & Symbol        & Charge  &  Spin  &  Mass [GeV]\\
+    Particle Group          & Particle Name   & Symbol        & Charge  &  Spin  &  Mass [GeV]\\
     \hline
-    Photon           &   $\gamma$    &  0      &  1     &  0 \\
-    W-boson          &   $W^{\pm}$    & $\pm$1  &  1     &  80 \\
-    Z-boson          &   $Z_0$       &  0      &  1     &  91\\
-    Gluon            &   $g$         &  0      &  1     &  0 \\
-    Higgs Boson      &   $H$         &  0      &  0     &  125\\
+    \multirow{6}{*}{Quark}  &Up            &   $u$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  0.002\\
+                            &Down          &   $d$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.005\\
+                            \cline{2-6}                                            
+                            &Charm         &   $c$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  1.3 \\
+                            &Strange       &   $s$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  0.096 \\
+                            \cline{2-6}                                                      
+                            &Top           &   $t$  &  $+\frac{2}{3}$   &  $\frac{1}{2}$  &  173  \\
+                            &Bottom        &   $b$  &  $-\frac{1}{3}$   &  $\frac{1}{2}$  &  4.2  \\
+    \hline                  
+    \multirow{6}{*}{Lepton} &Electron          &   $e$         &  -1    &  $\frac{1}{2}$   &  \num{5.1e-4}\\
+                            &Electron Neutrino &   $\nu_e$     &  0     &  $\frac{1}{2}$   &  -\\
+                            \cline{2-6}                                   
+                            &Muon              &   $\mu$       &  -1    &  $\frac{1}{2}$   &  0.11 \\
+                            &Muon Neutrino     &   $\nu_{\mu}$  &  0     &  $\frac{1}{2}$   &  -\\
+                            \cline{2-6}                                      
+                            &Tau               &   $\tau$       &  -1   &  $\frac{1}{2}$   &  1.8\\
+                            &Tau Neutrino      &   $\nu_{\tau}$  &  0    &  $\frac{1}{2}$   &  -\\
+    \hline
+    \multirow{5}{*}{Boson}  &Photon           &   $\gamma$    &  0      &  1     &  0 \\
+                            &W-boson          &   $W^{\pm}$    & $\pm$1  &  1     &  80 \\
+                            &Z-boson          &   $Z_0$       &  0      &  1     &  91\\
+                            &Gluon            &   $g$         &  0      &  1     &  0 \\
+                            &Higgs Boson      &   $H$         &  0      &  0     &  125\\
     \hline  
-  \end{tabular}
-    \caption{The key properties of the bosons of the Standard Model. }
-  \label{tab:theo-sm_bosons}
+    \end{tabular} 
+  \caption[The key properties of the particles of the Standard Model]
+          {The key properties of the particles of the Standard Model, values taken from~\cite{obj-bjets_PDG}.}
+  \label{tab:theo-sm_particles}
   \end{center}
   \end{table}}
-    
-\end{itemize}
+  \vspace{-1em}
 
 \subsection{Forces}
 \label{sec:theo-sm_forces}
 
-The Standard Model combines three key theories in a
-$SU(3)~\text{x}~SU(2)~\text{x}~U(1)$ gauge symmetry.
-The first key theory is the electro-weak theory~\cite{theo-glashow};
-this theory is based on mixing within the symmetry group $SU(2)~\text{x}~U(1)$
-leading to three distinct interaction types grouped into two forces:
+The Standard Model combines three key theories.
+%in a $SU(3)~\text{x}~SU(2)~\text{x}~U(1)$ gauge symmetry.
+The first is the electro-weak theory~\cite{theo-glashow}
+which describes three distinct interaction types grouped into two forces:
 the electro-magnetic and weak forces.
 The second is Quantum Chromodynamics (QCD)~\cite{theo-qcd} which describes the strong force.
-Finally, the Brout-Englert-Higgs Mechanism~\cite{theo-be,theo-higgs} describes the origin of mass in the Standard Model.
+Finally, the Brout-Englert-Higgs Mechanism~\cite{theo-be,theo-higgs} describes the origin of mass in the Standard Model
+\footnote{With the exception of the neutrinos, whose mass is not described by the Standard Model.}.
 
 \noindent
 The properties of each force are discussed below:
 \begin{itemize}[leftmargin=*]
 \item\textbf{Electro-magnetic (EM):}
 
-  The EM force is an interaction between charged particles and is mediated by the photon.
+  The EM force is an interaction between electrically charged particles and is mediated by the photon.
   The strength of a force is often given in terms of the coupling constant, $\alpha$.
   In this case the EM coupling is proportional to the EM coupling constant, $\alpha_{EM}$,
-  multiplied by the product of the charges of the two particles, where $\alpha_{EM} \sim$ 1/137.\\ %\vspace{0.5em}
+  multiplied by the product of the charges of the two particles, where $\alpha_{EM} \sim$ 1/137.\vspace{1em} %\vspace{0.5em}
 
-\item\textbf{Weak Force:}
-  
+\item\textbf{Weak Force:} \\
   The weak force is composed of the two remaining interactions from electro-weak theory;
   the neutral current interaction and the charged current interaction.
   
-  The neutral current interaction is mediated by the $Z_0$ boson, has a universal interaction to all fermions,
+  The neutral current interaction is mediated by the $Z_0$ boson, interacts with all fermions,
   and does not allow flavour changing interactions.
 
-  The charged current interaction is mediated by the $W^+$ and $W^-$ boson, has a universal interaction with all fermions,
+  The charged current interaction is mediated by the $W^+$ and $W^-$ bosons,
+  has a universal interaction with all fermions,
   and flavour changing interactions are allowed.
   In the quark sector, the charged current interaction
   couples with weak eigenstates of fermions rather than their flavour eigenstates,
@@ -179,30 +230,31 @@ The properties of each force are discussed below:
   %This high supprestion will prove important for identifying the presence of $b$-quarks at the ATLAS detector, which will be discussed in Section~\ref{sec:obj-bjets}.
   Both interactions of the weak force are much weaker than the EM force
   due to the large masses of the mediating particles
-  ($\text{Weak}/\text{EM} \sim 10^{-4}$).\\ %\vspace{0.5em}
+  ($\text{Weak}/\text{EM} \sim 10^{-4}$).\vspace{1em} %\vspace{0.5em}
   
-\item\textbf{Strong Force:}
-
-  Quantum Chromodynamics (QCD) is a theory based on a $SU(3)$ gauge symmetry that describes the strong force.
-  The strong force is mediated by the gluon and interacts with particles that have colour charge; which are quarks and gluons.
+\item\textbf{Strong Force:}\\
+  Quantum Chromodynamics (QCD) describes the strong force.
+  The strong force is mediated by the gluon 
+  and interacts with particles that have colour charge; which are quarks and gluons.
   The fact that the gluon has colour charge means that the gluon is self interacting.
-  The $SU(3)$ symmetry results in 3 colour charges: known as red, green and blue.
+  QCD has 3 colour charges: known as red, green and blue.
+  A gluon has a colour charge and an anti-colour charge, leading to 8 independant colour states.
   An anti-quark has colour charge anti-red, anti-blue or anti-green.
   A colour neutral object can be formed if all three colour charges are present (i.e. in a baryon containing three quarks)
   or if a colour and the corresponding anti-colour is present (i.e. in a meson that contains $q\bar{q}$).
   QCD is important in terms of understanding hadronic jet formation and the production of the
-  largest background in a di-$b$-jet search, so further discussion of QCD is found in Section~\ref{sec:theo-qcd}.\\
+  largest background in a di-$b$-jet search, so further discussion of QCD is found in Section~\ref{sec:theo-qcd}.\vspace{1em}
 
-\item\textbf{Higgs Mechanism:}
+\item\textbf{Higgs Mechanism:}\\
   The Higgs mechanism \footnote{Also known as the Higgs-Englert-Brout mechanism}
   introduces an extra scalar field to the Standard Model
   with a Higgs potential given by the so-called `Mexican-hat potential'.
   This allows for spontaneous symmetry breaking which gives mass to the bosons of the Standard Model.
   In addition, a Yukawa coupling term between the scalar field and the fermions gives rise to the mass of the fermions
   \footnote{With the exception of the neutrinos, whose mass is not described by the Standard Model}.
-  A final prediction of the Higgs mechanism is the existence of a spin-0 boson, known as the Higgs boson.
-  The first observation of a Higgs boson like object by the ATLAS~\cite{theo-higgs_atlas} and CMS~\cite{theo-higgs_cms} experiments
-  in 2012 appears to confirm the Higgs mechanism, which is seen as a great triumph of the Standard Model.
+  A final prediction of the Higgs mechanism is the existence of the Higgs boson.
+  The first observation the Higgs boson by the ATLAS~\cite{theo-higgs_atlas} and CMS~\cite{theo-higgs_cms} experiments
+  in 2012 confirms the Higgs mechanism, the crowning achievement of the Standard Model.
 \end{itemize}
 
 \section{QCD: Hadronic Jet Formation and Dijet Production}
@@ -227,7 +279,7 @@ The summation over all higher-order loops leads to divergences in calculations o
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/qcd_gluon_loop.pdf}
+    \includegraphics[width=0.5\linewidth, angle=0]{figs/Theory/qcd_gluon_loop.pdf}
   \end{center}
   \caption[A schematic showing the gluon propagator with the additional first order loops.]
   {A schematic showing the gluon propagator with the additional first order loops~\cite{det-thesis_kate}.}
@@ -237,14 +289,14 @@ The summation over all higher-order loops leads to divergences in calculations o
 To avoid these divergences, there is a well accepted mathematical tool, known as renormalisation,
 where one effectively re-scales the fields in the Lagrangian.
 Renormalisation is done such that the divergences are removed
-and one can perform calculations of QCD in a perturbative expansion.
+to allow for perturbative calculations of QCD.
 This leads to a dependence of the strong coupling constant, $\alpha_S$, on the renormalisation scaled used, $\mu_R$,
 an effect known as the running of $\alpha_S$.
 To get an effective strength of the strong interaction in any given process,
-once sets the value of $\mu_R$ to be the scale of the momentum transfer $Q$ of the process.
+the value of $\mu_R$ is set as the scale of the momentum transfer, $Q$, of the process.
 %%which is the natural choice for the process.
 %$\alpha_S($\mu_R \sim Q^{2}$).
-The running of $\alpha_S$ can be measured through experimental observation;
+The running of $\alpha_{S}$ can be measured through experimental observation;
 Figure~\ref{fig:theo-qcd_running} shows the measured values of $\alpha_S$
 as a function of the energy scale, $Q$, in a range of experiments.
 
@@ -252,16 +304,14 @@ as a function of the energy scale, $Q$, in a range of experiments.
   \begin{center}
     \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/qcd_running.pdf}
   \end{center}
-  \caption[Summary of measurements of $\alpha_S$ as a function of the energy scale $Q$.
-    The respective degree of QCD perturbation theory used in the extraction of $\alpha_S$ is indicated in brackets
-    (NLO: next-to-leading order; NNLO: next-to-next-to leading order; res. NNLO: NNLO matched with resummed next-to-leading logs; N3LO: next-to-NNLO).]
+  \caption[Summary of measurements of $\alpha_S$ as a function of the energy scale $Q$.]
           {Summary of measurements of $\alpha_S$ as a function of the energy scale $Q$.
             The respective degree of QCD perturbation theory used in the extraction of $\alpha_S$ is indicated in brackets
             (NLO: next-to-leading order; NNLO: next-to-next-to leading order; res. NNLO: NNLO matched with resummed next-to-leading logs; N3LO: next-to-NNLO)~\cite{theo-qcd}.}
   \label{fig:theo-qcd_running}
 \end{figure}
 
-There are three features of Figure~\ref{fig:theo-qcd_running} that can be noted.
+There are three features of Figure~\ref{fig:theo-qcd_running} that should be noted.
 Firstly, the size of $\alpha_S$ is generally large compared to $\alpha_{EM}$;
 this means that, depending on the energy scale, the strong force is typically stronger than the EM force by one or two orders of magnitude.
 Secondly, at high-energies/low-distance scales the strong force becomes relatively weak, this phenomenon is known as
@@ -271,6 +321,7 @@ Finally, at low-energies/large-distance scales the strong force is exceptionally
 As a result, if two interacting quarks become separated by a large distance then it becomes energetically favourable to
 pair-produce $q\bar{q}$ pairs from the vacuum until a colour neutral object can be formed.
 Therefore quarks are not observed in isolation, but instead quarks form colour neutral hadrons; this feature of QCD is known as \textit{`confinement'}.
+At low-energy scales perturbative expansions of QCD are not possible.
 
 \subsection{Hadronic Jet Formation}
 \label{sec:theo-qcd_jets}
@@ -293,7 +344,7 @@ Hadronic jet formation occurs through two distinct processes; parton-shower and 
   The parton shower process occurs at high energy such that the value of $\alpha_S$ is small
   and thus perturbative expansions of QCD can be used to perform calculations.
   However, at each step of the splitting the energy of the partons decreases
-  and thus the value of $\alpha_S$ increases.\\
+  and thus the value of $\alpha_S$ increases.\vspace{0.5em}
   
 \item\textbf{Hadronisation:}
   
@@ -325,7 +376,6 @@ The details of the experimental definition of a hadronic jet is discussed in Sec
 \subsection{Dijet Production in $pp$ Collisions}
 \label{sec:theo-qcd_dijet}
 
-
 Dijet production is one of the most common process that occurs in any hadron collider.
 The first step of dijet production in $pp$ colliders is the two protons interacting through QCD to give two quarks or gluons in the final state;
 the frequency of this interaction is described by the hadronic cross-section, $\sigma_{had}$.
@@ -353,13 +403,14 @@ The first element is the parton-level cross-section, $\hat{\sigma}$, which is th
 two partons from the proton ($p_i$ and $p_j$) scattering to give two final state partons ($p_k$ and $p_l$).
 This is effectively the central part of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_feynman}.
 
-The second element is the Parton Density Functions (PDFs), $F_i(x_i)$, which give the number density of
+The second element is the Parton Distribution Function (PDF), $F_i(x_i)$, which gives the number density of
 a specific parton, $p_i$, with momentum fraction, $x_i$, in a proton.
 Momentum fraction is defined as the fraction of the proton's total momentum that the parton is carrying, $x = p_{\text{parton}}/p_{\text{proton}}$.
 The number density affects the overall cross-section, as it changes the probability that a specific parton
 can form the initial parton propagators.
 This part of the interaction is indicated by the circles in the
 top and bottom left of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_feynman}.
+A further detail on PDFs is found in Section~\ref{sec:theo-qcd_pdf}.
 
 The elements are combined to calculate $\sigma_{had}$;
 \begin{equation}
@@ -394,54 +445,40 @@ defined in terms of the rapidities of the outgoing partons, $y_k$ and $y_l$;
   cos(\theta^*) = \tanh(y^*)
 \end{equation}
 \noindent
-Finally the Mandelstam variables, generally used to describe a 2$\to$2 particle scatter event, are defined as 
+Finally the Mandelstam variables are defined as, %generally used to describe a 2$\to$2 particle scatter event, 
 \begin{equation}
   \hat{s} = m_{kl}^2, \hspace{3mm}  \hat{t} = -\hat{s}\hspace{1mm}(1 - \cos{\theta^*}), \hspace{3mm} \hat{u} = - \hat{s}\hspace{1mm}(1+\cos{\theta^*})
+  \label{eqn:theo-mandy}
 \end{equation}
+The Madlestam variables represent the square of the 4-momentum of the propagator in a 2$\to$2 particle scatter event
+for an s, t or u-channel Feynman diagram respectively.
 
 \noindent
-The parton-level cross-section of incoming partons $i$ and $j$ scattering to give
+The parton-level differential cross-section of incoming partons $i$ and $j$ scattering to give
 outgoing partons $k$ and $l$ is given in terms of the variables $\theta^*$ and $m_{kl}$~\cite{theo-dijet_harris};
 \begin{equation}
   \frac{d\hat{\sigma}(p_i, p_j \to p_k p_l)}{dm_{kl}\hspace{1mm}d\cos{\theta^*}} = \frac{ \pi \alpha_s}{m_{kl}}\hspace{1mm} \text{S}(ij \to kl) \hspace{1mm} \frac{1}{1+\delta_{kl}}
   \label{eq:theo-qcd_dijet_xs}
 \end{equation}
-Where $\text{S}(ij \to kl)$ gives the process dependant kinematics of a $ij \to kl$  parton scatter.
-$\text{S}\nobreak(ij~\to~kl)$ for each process is given in Table~\ref{tab:theo-qcd_dijet_s}.
+$\text{S}(ij \to kl)$ gives the process dependant kinematics of a $ij \to kl$ parton scatter.
 
-%  {\renewcommand{\arraystretch}{1.5}
-%  \begin{table}[!ht]
+%The $\text{S}\nobreak(ij~\to~kl)$ for each process is given in Table~\ref{tab:theo-qcd_dijet_s}.
+The $\text{S}\nobreak(ij~\to~kl)$ for each process is given in Table 1 in~\cite{theo-dijet_harris}.
+All but one process can occur through a t-channel diagram and therefore the 
+$\text{S}\nobreak(ij~\to~kl)$ for those processes contains a $1/\,\hat{t}\,$ or $(1/\,\hat{t})^2\,$ term.
+The importance of this will be discussed in Section~\ref{sec:theo-qcd-dijet_features}.
+
+%  \begin{table}[!hbt]
 %  \begin{center}
-%    \begin{tabular}{|c|c|}
-%      \hline
-%      Subprocess         & $\text{S}(ij \to kl)$ \\
-%    q1q2 - q1q2          &    4 s + u / 9t       \\
-%    q1barq2 - q1barq2    &    4 s + u / 9t       \\
-%    q1q1 - q1q1          &    4 s + u / 9t +  4 s + t / 9u
-%    q1barq1 - q2barq2
-%    
-%    \hline  
-%  \end{tabular}
-%    \caption{The key properties of the 6 flavours of quark in the Standard Model,
-%    organised into the three generations of quarks.}
-%  \label{tab:theo-sm_quarks}
+%    \includegraphics[width=0.5\linewidth, angle=0]{figs/Theory/qcd_dijet_stable.pdf}
 %  \end{center}
-%  \end{table}}
-%
+%  \caption[A table showing $\text{S}(ij \to kl)$, the process dependant part of the parton cross-section, for all possible processes.]
+%          {A table showing $\text{S}(ij \to kl)$, the process dependant part of the parton cross-section, for all possible processes.
+%            The indices refer to quark flavour, if no indices are used then the same flavour is used for all quarks in that process. Taken from Table 1 of~\cite{theo-dijet_harris}. }
+%  \label{tab:theo-qcd_dijet_s}
+%\end{table}
 
-\begin{table}[!hbt]
-  \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/qcd_dijet_stable.pdf}
-  \end{center}
-  \caption[A table showing $\text{S}(ij \to kl)$, the process dependant part of the parton cross-section, for all possible processes.
-    The indices refer to quark flavour, if no indices are used then the same flavour is used for all quarks in that process.]
-          {A table showing $\text{S}(ij \to kl)$, the process dependant part of the parton cross-section, for all possible processes.
-            The indices refer to quark flavour, if no indices are used then the same flavour is used for all quarks in that process. Taken from Table 1 of~\cite{theo-dijet_harris}.}
-  \label{tab:theo-qcd_dijet_s}
-\end{table}
-
-\newpage
-\subsubsection{Parton Density Functions}
+\subsubsection{Parton Distribution Functions}
 \label{sec:theo-qcd_pdf}
 
 A naive model of the proton contains two up-quarks and a down-quark,
@@ -451,7 +488,7 @@ and $q\bar{q}$ pairs can be produced from the emitted gluons.
 This means that, in reality, the proton is made up of the three valence quarks, typically carrying a large fraction of the proton's momentum,
 in addition to a sea of quarks and gluons from QCD effects, that will typically carry a lower fraction of the proton's momentum.
 
-Parton Density Functions (PDFs) give the number density of a specific parton $p_i$ in a proton $P_i$
+Parton Distribution Functions (PDFs) give the number density of a specific parton $p_i$ in a proton $P_i$
 for a given momentum fraction $x_i$ and energy scale, $Q$.
 Due to the large value of $\alpha_S$ in the proton, QCD cannot be considered in perturbative expansions and as such the PDFs cannot be calculated directly.
 Instead the PDFs can be measured by combining a range of experimental scattering results.
@@ -466,39 +503,38 @@ the strong constraints are due, in part, to there only being one parton in the c
 Figure~\ref{fig:theo-qcd_pdf} shows the $x\hspace{0.3mm}F(x,Q^2)$ for a $Q^2$ of 10 and $10^4$ $\text{GeV}^2$
 from the MMHT2014 PDF set~\cite{theo-qcd_pdf}.
 The various coloured lines represent the PDF for each of the different partons.
+It shows that as $x$ increases the values of the PDF for the sea quarks and gluons will fall smoothly;
+this is because it is energetically unfavourable to emit a high momentum gluon or $q\bar{q}$ pair.
+The fall in the PDFs with respect to $x$ is particularly notable for the gluon which is the dominant contribution at large $Q^2$ and at low $x$.
+The PDFs of the valence quarks, $u_v$ and $d_v$, have a peak value around $x \sim \frac{1}{3}$, and then fall off rapidly at higher $x$.
+This shape is caused by the smearing of our inital naive model by QCD interactions.
 
-\begin{table}[!hbt]
+\begin{figure}[!bt]
   \begin{center}
     \includegraphics[width=1\linewidth, angle=0]{figs/Theory/qcd_pdf.pdf}
   \end{center}
   \caption[MMHT2014 NNLO PDFs at $Q^2$ = 10 $\text{GeV}^2$ and $Q^2$ = $10^4$ $\text{GeV}^2$, with associated 68\% confidence-level uncertainty bands.]
   {MMHT2014 NNLO PDFs at $Q^2$ = 10 $\text{GeV}^2$ and $Q^2$ = $10^4$ $\text{GeV}^2$, with associated 68\% confidence-level uncertainty bands~\cite{theo-qcd_pdf}.}
   \label{fig:theo-qcd_pdf}
-\end{table}
+\end{figure}
 
-One can note that as $x$ increases the values of the PDF for the sea quarks and gluons will fall smoothly;
-this is because it is energetically unfavourable to emit a high momentum gluon or $q\bar{q}$ pair.
-The fall in the PDFs with respect to $x$ is particularly notable for the gluon which is the dominant contribution at large values of $Q^2$.
 
-The PDFs of the valence quarks, $u_v$ and $d_v$, have a peak value around $x \sim \frac{1}{3}$, and then fall off rapidly at higher $x$.
-If one considered the proton in the initial naive model of the proton then we find the PDFs of valence quarks as delta peaks at exactly $\frac{1}{3}$
-with amplitude of $\frac{2}{3}$ and $\frac{1}{3}$ for the $u$ and $d$ quark respectively;
-however, QCD interactions have smeared this peak to what is observed.
+%If one considered the proton in the initial naive model of the proton then we find the PDFs of valence quarks as delta peaks at exactly $\frac{1}{3}$
+%with amplitude of $\frac{2}{3}$ and $\frac{1}{3}$ for the $u$ and $d$ quark respectively;
+%however, QCD interactions have smeared this peak to what is observed.
 
 \subsubsection{Features of the Hadronic Cross-section}
 \label{sec:theo-qcd-dijet_features}
 
 There are four important features that one can qualitatively describe about the dijet hadronic cross-section
 from the two factorised elements shown in Section~\ref{sec:theo-qcd_dijet_xs}~and~\ref{sec:theo-qcd_pdf}.
-These important features will have significance when forming the di-$b$-jet search analysis strategy in
-Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Event selection chapter}.
+These important features will have significance when forming the di-$b$-jet search strategy in Chapters~\ref{sec:evt}~and~\ref{sec:bkg}.
 
 \begin{itemize}[leftmargin=*]
 \item\textbf{Large cross-section :}\\
   The strong coupling constant $\alpha_s$ is much larger than the other forces,
   meaning that the dijet cross-section is large.
-  As a result dijet production through QCD is one of the most common events at hadron colliders
-  and will be the strongly dominant background in any di-$b$-jet search.\vspace{0.5em}
+  As a result QCD dijet production is the dominant background in any di-$b$-jet search.\vspace{0.5em}
   
 \item\textbf{Behaviour with respect to $m_{kl}$ :}\\
   It can be seen that the hadronic cross-section causes
@@ -509,31 +545,29 @@ Chapters~\ref{bkg}\textit{Background estimation chapter} and~\ref{evt}\textit{Ev
   $\alpha_S$ will smoothly decrease with increasing $Q$, which in this case is correlated with $m_{kl}$.
   Finally, as $m_{kl}$ increases then the momentum fraction of the proton, $x$, required to create
   the dijet event will also increase.
-  As shown in Figure~\ref{fig:theo-qcd_pdf}, the parton density functions are generally falling 
+  As shown in Figure~\ref{fig:theo-qcd_pdf}, the parton distribution functions are generally falling 
   with respect to $x$, which will lead to falling behaviour in the hadronic cross-section.
   \vspace{0.5em}
   
 \item\textbf{Behaviour with respect to $y^*$ :}\\
-  In all but one of the $\text{S}(ij \to kl)$ terms shown in Table~\ref{tab:theo-qcd_dijet_s},
-  we see that there is a $1/\hat{t}$ term, which originates from the t-channel Feynman diagram.
-  This term will become large when $\cos{\theta^*} \to 1$
-  causing the dijet cross-section to peak at large values of $y^*$.
+  A described in Section~\ref{sec:theo-qcd_dijet_xs} all but one of the $\text{S}(ij \to kl)$ terms
+  contains a $1/\hat{t}$ or $(1/\,\hat{t})^2\,$ term from t-channel Feynman diagrams.
+  These terms will become large when $\hat{t} \to 0$ which happens when $\cos{\theta^*} \to 1$, \footnote{Using the definition of $\hat{t}$ in Equation~\ref{eqn:theo-mandy}.}
+  meaning that the QCD dijet cross-section to peak at large values of $y^*$.
   \vspace{0.5em}
-
+  
 \item\textbf{Flavour Preference:}\\
-  Table~\ref{tab:theo-qcd_dijet_s} shows that all the processes that produce heavy flavour quarks ($c$ or $b$),
-  with the exception of $q_1 \bar{q_1} \to q_2 \bar{q_2}$ and $g g \to q \bar{q}$,
+  Most $ij \to kl$ processes that produce heavy flavour quarks ($c$ or $b$),
+  with the exception of $q \bar{q} \to b\bar{b} \ (\text{or}\ c\bar{c})$ and $g g \to b\bar{b} \ (\text{or}\ c\bar{c})$,
   require a heavy flavour quark to be one of the initial partons.
-  However, Figure~\ref{fig:theo-qcd_pdf} shows the heavy flavour quarks are suppressed in
-  the PDFs relative to the other partons.
+  Figure~\ref{fig:theo-qcd_pdf} shows the heavy flavour quarks are suppressed in the PDFs relative to the other partons.
   Therefore, dijet events will be dominated by jets initiated by gluons or light-quarks ($u$, $d$ or $s$).
-  
-  
+ 
 \end{itemize}
 
-Finally, it should be noted that the above description of the dijet cross-section is
-not a full description; I have only considered the tree-level diagrams, 
-but one needs to consider higher-orders of QCD to give a complete description of dijet production.
+Finally, it should be noted that the above description of the QCD dijet production is not a full description;
+I have only considered the tree-level diagrams, 
+but one needs to consider higher-orders of QCD to give a complete description of QCD dijet production.
 Related to that issue is the occurrence of initial state and final state radiation, known as ISR and FSR respectively.
 ISR is when an additional parton is radiated off the incoming parton and FSR is when an additional parton is radiated off the outgoing parton to form a separate jet.
 This can lead to additional jets in an event, creating a multi-jet event.
@@ -558,11 +592,11 @@ As in dijet production, $t\bar{t}$ pairs can be pair-produced in proton-proton c
 The two top quarks will decay into two $W$-bosons and two jets containing $b$-quarks.
 One mode of $t\bar{t}$ decay is when one $W$-boson decays into a $l^+~\nu_l$ pair and the other into a $l^{-}~\bar{\nu_l}$ pair.
 This is known as a di-lepton $t\bar{t}$ event, a Feynman diagram showing an example of a di-lepton $t\bar{t}$ event is shown in
-Figure~\ref{fig:theo-ttbar}\footnote{This figure shows the $q\bar{q}$ mode of $t\bar{t}$ production. It should be noted that the $gg$ mode is the dominant at the LHC}.
+Figure~\ref{fig:theo-ttbar} \footnote{ This figure shows the $q\bar{q}$ mode of $t\bar{t}$ production. It should be noted that the $gg$ mode is the dominant at the LHC}.
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/ttbar.pdf}
+    \includegraphics[width=0.6\linewidth, angle=0]{figs/Theory/ttbar.pdf}
   \end{center}
   \caption[A Feynman diagram showing an example of a di-lepton $t\bar{t}$ event.]
   {A Feynman diagram showing an example of a di-lepton $t\bar{t}$ event~\cite{theo-ttbar_feyn}.}
@@ -574,12 +608,12 @@ In particular, the case of opposite flavour di-lepton $t\bar{t}$, where the two 
 because this has been caused by two separate weak-decays which would typically be suppressed,
 but here the large mass of the top overcomes this suppression.
 In addition we have two jets formed from $b$-quarks, which can be observed.
+
 The distinct signature of di-lepton $t\bar{t}$ events and the fact that the top-quark nearly always decays to a $b$-quark
 means that this decay topology is often used to obtain a pure sample of jets containing $b$-quarks,
-such as in Section~\ref{sec:obj-bjets_calib}~and~\ref{sec:trig-bjet_eff}. 
+as will be done in Section~\ref{sec:obj-bjets_calib}~and~\ref{sec:trig-bjet_eff}.
 
-\clearpage
-\section{Beyond the Standard Model}
+\section{Beyond Standard Model Physics}
 \label{sec:theo-bsm}
 
 The preceding sections of this chapter described the Standard Model
@@ -591,7 +625,7 @@ in this section I will discuss some of the key deficiencies of the Standard Mode
 that Beyond Standard Model (BSM) physics is required.
 I will then discuss some proposed BSM models that motivate the analyses shown in this thesis.
 
-\subsection{Motivations for Beyond the Standard Model Physics}
+\subsection{Motivations}
 
 The motivations for BSM physics listed in this section
 describe only a subset of deficiencies of the Standard Model,
@@ -616,7 +650,7 @@ It is a clear inadequacy of the Standard Model that there is no explanation of g
 \label{sec:theo_bsm_dm}
 
 %It is remarkable that the physics that describes the largest and smallest scale known,
-%Astronomy and Particle Physics,
+%Astronomy and particle physics,
 %are often deeply related; the prediction of Dark Matter (DM) is a great example of this.
 
 %Astronomers are able to make observations of distant galaxies using
@@ -630,17 +664,17 @@ Astronomers are able to make observations of distant galaxies and stars
 to study their dynamics in terms of both Standard Model processes
 and, due to the large masses of galaxies, gravitational interactions.
 This has meant that astrophysicists have made a remarkable observation that
-80\% of the universe's matter must be so-called `Dark Matter'~\cite{theo-bsm_dm_peskin}.
+$\sim$80\% of the universe's matter must be so-called `Dark Matter'~\cite{theo-bsm_dm_peskin}.
 Dark Matter are particles not described by the Standard Model,
 so is clear evidence of Beyond Standard Model physics.
-It is known that Dark Matter must interact weakly with the Standard Model,
-otherwise we would have already observed it through interactions with Standard Model particles,
-and that Dark Matter must be massive, otherwise it would not interact through gravity.
+It is known that Dark Matter interacts through gravity
+and must interact weakly, if at all, with the Standard Model,
+otherwise we would have already observed it through interactions with Standard Model particles .
 
 The evidence for Dark Matter comes from many separate astronomical observations:
 such as studies of
 galaxy rotation curves,
-colliding clusters of galaxies known as bullet clusters,
+colliding clusters of galaxies known as the bullet cluster,
 and the cosmic microwave background.
 %and galaxies using gravitataional lensing.
 A wider summary of the evidence for Dark Matter can be found here~\cite{theo-bsm_dm_evidence}.
@@ -698,7 +732,7 @@ Standard Model particles; this mechanism is referred to as a Dark Matter mediato
 
 \subsubsection{Hierarchy Problem}
 
-The Hierarchy problem is the fact that the energy scale of electro-weak breaking, ($M_{EW}\nobreak\sim\nobreak100~\text{GeV}$),
+The Hierarchy problem is the fact that the energy scale of the Higgs mechanism, ($M_{H}\nobreak=\nobreak125~\text{GeV}$),
 is much smaller than the energy scale of gravity,
 known as the Plank scale ($M_{Plank}\nobreak\sim\nobreak10^{19}~\text{GeV}$).
 This means that the energy scale of the Standard Model is very far
@@ -723,7 +757,7 @@ If the BSM physics is on the TeV scale then this would reduce to size of the con
 giving some prior belief that new physics could be found at this energy scale.
 %Both solutions could result in BSM physics around the TeV scale.
 
-\subsubsection{Quarks Generational Structure}
+\subsubsection{Generational Structure of Quarks}
 \label{sec:theo-bsm_3g}
 
 The quarks of the Standard Model have a well ordered generational symmetry.
@@ -738,7 +772,7 @@ There is no good explanation of why there is generational structure in the Stand
 why the mass hierarchy is unsymmetric 
 or why the third generation has one quark with such a large mass.
 The generational structure could be a result of some underlying broken symmetry
-which forms a part of a deeper theory of Particle Physics.
+which forms a part of a deeper theory of particle physics.
 Any deeper theory explaining the generational structure could contain observable BSM particles,
 and, given the special nature of the third generation,
 the BSM particles could couple strongest with the third generation of quarks.
@@ -755,7 +789,7 @@ searches for particles decaying to the third generation of quarks.
 \label{sec:theo-bsm_models}
 
 The previous section discussed a list of deficiencies of the Standard Model,
-which makes us confident that Beyond the Standard Model physics must exist.
+which makes us confident that Beyond Standard Model physics must exist.
 This leads us to ask what the new theory of physics could be
 and, crucially for an experimentalist,
 how can one obtain evidence of such a theory.
@@ -764,7 +798,7 @@ Many proposed theories of BSM physics include the addition of a new particle and
 in particular, the special nature of the third generation
 \footnote{Discussed in Section~\ref{sec:theo-bsm_3g}}
 means that some models of BSM predict new particles
-that preferentially decay to one or two $b$-quarks.
+that preferentially decay to two $b$-quarks or a $b$-quark and a gluon.
 Hence, the observation of such a resonance would provide evidence of BSM physics.
 Further to this, the Hierarchy Problem provides motivation to believe
 that any new physics may be found at the TeV scale.
