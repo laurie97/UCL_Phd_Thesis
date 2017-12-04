@@ -28,7 +28,7 @@ End of Data       & \multicolumn{2}{c|}{Integrated Luminosity}          &   \mul
 Collection        &  \multicolumn{2}{c|}{using a Single Jet Trigger}    &   \multicolumn{2}{c|}{using a Double $b$-Jet Trigger}  \\
 \hline                                                                    
 End of 2015       &  3.2 \ifb{} & \cite{dibjet-mori16_paper}            &  3.2 \ifb{}           & \cite{dibjet-lhcp_conf}          \\
-July  2016        & 13.1 \ifb{} & \cite{dibjet-ichep_conf} (\summer{})  &  \multicolumn{2}{c|}{No analysis performed}            \\
+July  2016        & 13.3 \ifb{} & \cite{dibjet-ichep_conf} (\summer{})  &  \multicolumn{2}{c|}{No analysis performed}            \\
 End of 2016       & 36.1 \ifb{} & (\hm{})                               &  24.3 \ifb{}          & (\lm{})                          \\
 End of 2022       & $\sim$ 300 \ifb{} &  \textit{(Projection)}          &  $\sim$ 300  \ifb{}   &  \textit{(Projection)}           \\
 End of 2038       & $\sim$ 3000 \ifb{} & \textit{(Projection)}          &  $\sim$ 3000 \ifb{}   &  \textit{(Projection)}           \\
@@ -94,11 +94,11 @@ of the sensitivity to the $Z'$ boson signal models in future ATLAS di-$b$-jet an
 \centering
 \begin{tabular}{|c||c|c|c|c|}
   \hline
-\multirow{2}{*}{Analysis} & \multirow{2}{*}{$\sqrt{s}$} & \multirow{2}{*}{Luminosity} & \multicolumn{2}{c|}{95\% CL Observed Upper Mass Limit} \\\cline{4-5}
-                          &                             &                             & SSM $Z'$ boson              & $b^*$ quark             \\
+\multirow{2}{*}{Analysis} & \multirow{2}{*}{$\sqrt{s}$} &   Integrated                & \multicolumn{2}{c|}{95\% CL Observed Upper Mass Limit} \\\cline{4-5}
+                          &                             &   Luminosity                & SSM $Z'$ boson              & $b^*$ quark             \\
 \hline
 ATLAS~\cite{dibjet-ichep_conf}& 13 TeV                  & 13.3 \ifb                   &       -                     &   2.3 TeV               \\
-CMS~\cite{dibjet-cms}         & ~8 TeV                   & 19.6 \ifb                   &       1.7 TeV               &   1.5 TeV               \\
+CMS~\cite{dibjet-cms}         & ~8 TeV                   & 19.6 \ifb                  &       1.7 TeV               &   1.5 TeV               \\
 \hline      
 \end{tabular}
 \caption[A comparison of the observed 95\% credibility level upper mass limits set by the \summer{} data-set analysis and a di-$b$-jet search performed by the CMS collaboration]
@@ -110,15 +110,18 @@ CMS~\cite{dibjet-cms}         & ~8 TeV                   & 19.6 \ifb            
 
 \section{Improvement of $b$-Jet Trigger Efficiency Measurement}
 
-In Chapter~\ref{sec:lim} it was shown that in the \lm{} data-set analysis there
+In Section~\ref{sec:lim-full} it was shown that in the \lm{} data-set analysis there
 is a large systematic uncertainty at high dijet mass due to the 
 measurement of the $b$-jet trigger efficiency, the details of which are described in Chapter~\ref{sec:trig}.
 Tables~\ref{tab:bTrig_jetSys}~and~\ref{tab:bTrig_eventEff} show that the largest sources of uncertainty
 on the measurement of the $b$-jet trigger efficiency are non-$b$-jet impurities
-and the extrapolation process required due to the low number of high-\pT{} jets in di-lepton $t\bar{t}$ events.
+and the high-\pT{} extrapolation process required due to the low number of high-\pT{} jets in di-lepton $t\bar{t}$ events.
 
 Techniques have been developed to reduce the same sources of systematic uncertainties in
-measurements of the offline $b$-tagging efficiency~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}, described in Section~\ref{sec:obj-bjets_calib}.
+measurements of the offline \footnote{Offline refers to objects reconstructed after events have passed the trigger at the data-processing level
+  and online refers to reconstructed objects used in the trigger decision.
+  From the definition in Section~\ref{sec:trig-bjet_eff}.}
+$b$-tagging efficiency~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}, described in Section~\ref{sec:obj-bjets_calib}.
 For example a Boosted Decision Tree (BDT) is used to increase the $b$-jet purity of the selected jets
 and di-lepton $t\bar{t}$ events containing two electrons or two muons are included to increase the number of di-lepton $t\bar{t}$ events.
 Such techniques can be used to improve the $b$-jet trigger efficiency measurements.
@@ -132,7 +135,7 @@ the improved techniques from the offline $b$-tagging measurement described above
 
 In Figure~\ref{fig:lim-lowmass_ssb_test} it was shown that, for the \lm{} data-set analysis,
 there is a signal induced fit bias when the nominal background estimate is applied to a
-spectrum injected with a dijet mass signal template of a SSM $Z'$ boson.
+background-only dijet mass spectrum injected with a dijet mass signal template of a SSM $Z'$ boson.
 This could be because higher order dijet fit functions
 and more complex fitting models, such as SWiFt, are required to estimate the background from QCD dijet production at high luminosity.
 The signal induced fit bias is removed when a technique employing a signal plus background fit is applied.

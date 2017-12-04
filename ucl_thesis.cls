@@ -423,9 +423,10 @@
 %%%    \renewcommand{\baselinestretch}{2.5}
 %%%    \small
 %%%    \normalsize
-%%%
+    %%%
+    
     \begin{center}%
-        {\huge \bfseries \@title}\\[5em]%
+        {\huge \bfseries \@title}\\[7em]%
         {\Large \itshape \@author}\\%
     \end{center}%
     \vfill%
