@@ -1,88 +1,78 @@
 \chapter{Object Definition and Reconstruction}
 \label{sec:obj}
 
-The previous chapter described how the ATLAS detector collects information on 
-final state particles produced in $pp$ collisions in the form of,
-for example, hits in the Inner Detector and Muon Spectrometer
+The previous chapter described how the ATLAS detector collects information
+in the form of, for example, hits in the Inner Detector and Muon Spectrometer
 or energy deposits in the calorimeter.
-This chapter defines physics objects,
-which are observables that allow us to study the hard-scatter processes and
-form the basis of the analyses in future chapters.
-This chapter will describe how, using the information provided by the ATLAS detector,
-each physics object is identified
-and their 4-momentums and trajectories reconstructed.
+However, analyses at ATLAS use physics objects, such as electrons or hadronic jets containing $b$-quarks.
+This chapter will define the physics objects used at ATLAS
+and describe how each physics object is identified and their 4-momenta reconstructed.
 
 Specifically this chapter will focus on physics objects important to the analyses in this thesis:
 tracks are described in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
 $b$-jets in Section~\ref{sec:obj-bjets}, and electrons and muons in Section~\ref{sec:obj-leptons}.
-Finally, Section~\ref{sec:obj-further} will briefly describe some further physics objects
-widely used in the ATLAS physics program outside of the analyses being presented here.
+Finally, Section~\ref{sec:obj-further} will briefly describe some further important physics objects
+not used in the analyses being presented here.
 
 \section{Tracks}
 \label{sec:obj-tracks}
 
-The ATLAS detector is able to reconstruct the trajectory of charged particles produced
-in the proton-proton collision as they pass through the Inner Detector;
-the reconstructed trajectories are known as tracks.
-Track reconstruction is essential in a number of important areas of ATLAS analyses:
-for example; primary vertex reconstruction, identification of $b$-jets (Section~\ref{sec:obj-bjets})
-and the identification and reconstruction of electrons and muons (Section~\ref{sec:obj-leptons}).
-
-Track reconstruction uses hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
-The track reconstruction is performed using an `inside-out' approach,
-which entails using the higher precision Pixel and SCT hits initially
-before adding in the TRT hits to improve track quality.
+The trajectory of charged particles that pass through the Inner Detector can be reconstructed
+using hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
+The reconstructed trajectories are known as tracks.
+Track reconstruction is important to identify and recontruct many other physics objects at ATLAS
+for example; $b$-jets, electrons and muons.
 The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps:
-\vspace{-0.5em}
+
 \begin{itemize}[leftmargin=*]
-\item\textbf{Clustering:}
-  \footnote{In the associated reference this step is referred to as `clusterization', but here I will use clustering for consistency with the English language.}
-  Neighbouring hits in a layer of the Pixel or SCT detector are converted into a 3D `space-point'
-  that represents the point where the charged particle traversed the active material of the ID.
-  In the Pixel detector one cluster of hits can form a space-point,
-  whilst in the SCT hits from both sides of a strip layer are required to create a 3D space-point.\vspace{0.5em}
-\item\textbf{Track Seeding:}
-  Track seeds are formed from three space-points in consecutive layers of the Inner Detector
-  that are consistent with the trajectory of a particle with $p_T >$ 500 MeV.\vspace{0.5em}
 \item\textbf{Track Candidates:}
+  To form inital track candidates only the higher precision and granularity Pixel and SCT hits are used.
+  Neighbouring hits in a layer of the pixel detector or SCT are converted into a 3D `space-point' that represents the position of a charged particle.
+  Track seeds are then formed from three space-points in consecutive layers of the Inner Detector
+  consistent with the trajectory of a charged particle. % with $p_T >$ 500 MeV.
   From the track seeds, track candidates are built by iteratively adding space-points
-  from the remaining Pixel and SCT detector layers using an combinatorial Kalman filter~\cite{obj-tracks_kal}.
-  There can be multiple track candidates per seed.\vspace{0.5em}
+  from the remaining Pixel and SCT detector layers.
+  %using an combinatorial Kalman filter~\cite{obj-tracks_kal}.
+  %There can be multiple track candidates per seed.
+  \vspace{0.5em}
 \item\textbf{Track selection / Ambiguity resolving:}
-  Each track candidate is assigned a `track-score' that is based a number of variables of the track candidate;
-  the $p_T$, $\eta$, $\chi^{2}$ fit and the hit pattern.
-  The hit pattern refers to the number of Pixel or SCT hits,
-  the number of holes (missing hits where one was expected)
-  and the quality of the hits.
-  Track candidates must also pass some track quality requirements,
-  that are similarly based on the track candidate's $p_T$, $\eta$ and the hit pattern.
-  The self-consistent set of track candidates that have the highest `track-score' and that pass track quality requirements are then selected.
-  Exact details of the track-scoring, track requirements and selection algorithm is described in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
+  Each track candidate is assigned a `track-score' based on
+  the the compatibility of hits to the track candidate and the $p_T$ and $\eta$ of the track.
+  %The hit pattern refers to the number of Pixel or SCT hits,
+  %the number of holes (missing hits where one was expected)
+  %and the quality of the hits.
+  %Track candidates must also pass some track quality requirements based on similar criteria.
+  %that are similarly based on the track candidate's $p_T$, $\eta$ and the hit pattern.
+  The self-consistent set of track candidates that have the highest combined `track-score' are selected.
+  Exact details of the track-scoring, track quality requirements and selection algorithm are found in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
 \item\textbf{Add TRT Information:}
-  Track candidates from the previous step are extrapolated into the TRT and all hits within \SI{10}{\milli\metre} are added.
-  The track candidates are then refitted using Pixel, SCT and TRT hits to make use of the full tracking detector.
+  Finally, track candidates are then updated such that hits in the TRT consistent with the track candidates are included.
+  This means that the full ID is used to improve the precision of the track reconstruction.
 \end{itemize}
 
 The outputs of the above track reconstruction process will be referred to as tracks in the remainder of this thesis.
-Also it is important to note that, as discussed in Section~\ref{sec:det-ID}, the tracks are curved by a known magnetic field in the Inner Detector,
-therefore the tracks contain information on the charge and the momentum of the particles whose trajectory they are describing.
+The montentum and sign of charge of the charged particles can be determined from the sign and magnitude of tracks' curvature
+caused by the solenoid magnet.
 
 \section{Jets}
 \label{sec:obj-jets}
 
-If a collision results in a free quark or gluon in its final state then a stream of high-energy hadrons is created,
-which is known as a hadronic jet.
-The underlying processes in hadronic jet formation can be summarised as follows;
-firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
-these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
-A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
-The components of the hadronic jet deposit energy in the cells of the ATLAS calorimeter, through the processes described in Section~\ref{sec:det-calo},
-such that the ATLAS calorimeter has an energy and positional measurement of the components of the hadronic jet.
-The process of parton shower, hadronisation and energy deposition in the calorimeter, as described above, is illustrated in Figure~\ref{fig:obj-jets_schem}.
+Quarks or gluons that are created in a proton-proton scatter event
+will form a stream of high-energy hadrons, known as a hadronic jet.
+Section~\ref{theo-qcd_jets} described the formation of a hadronic jet in detail.
+The high-energy hadrons that form the hadronic jet will then deposit their energy in the cells of the ATLAS calorimeter,
+through the processes described in Section~\ref{sec:det-calo}.
+Therefore the the ATLAS calorimeter has an energy and positional measurement of the components of the hadronic jet.
+The process of hadronic jet formation and energy deposition in the calorimeter, as described above, is illustrated in Figure~\ref{fig:obj-jets_schem}.
+
+%The underlying processes in hadronic jet formation can be summarised as follows;
+%firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
+%these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
+%A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Objects/jets_schem.png}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Objects/jets_schem.png}
   \end{center}
   \caption[A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system.]
           {A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system \cite{obj-jets_schem}.}
@@ -97,12 +87,12 @@ then jets are formed from topoclusters using reclustering algorithms as describe
 and finally Section~\ref{sec:obj-jets_calib} and Section~\ref{sec:obj-jets_uncert}
 describes how the jets are calibrated and the relevant jet energy uncertainties are derived.
 
-In this section the formation of hadronic jets constructed from calorimeter cells is described,
-as this is the only jet object used in the context of the analyses presented in this thesis.
-However, it is worth noting, that there are other types of jets used at ATLAS;
+In this section the formation of hadronic jets from calorimeter cells is described,
+as this is the jet object used in di-$b$-jet searches.
+There are other types of jets used at ATLAS; for example
 %jets are used to observe electrons and taus whilst
-for example hadronic jets can also be constructed from tracks formed in the Inner Detector,
-a technique that has been useful in dense environments~\cite{obj-Hbb}.
+hadronic jets constructed from tracks~\cite{obj-Hbb}.
+%a technique that has been useful in dense environments
 
 \subsection{Hadronic Topocluster Reconstruction}
 \label{sec:obj-jets_topo}
