@@ -1,101 +1,102 @@
 \chapter{Object Definition and Reconstruction}
 \label{sec:obj}
 
-The previous chapter described that the ATLAS detector consists of many sub-detectors
-that each provide a set of measurements
-in the form of, for example, hits in the Inner Detector or energy deposits in the calorimeter.
-These measurements from the sub-detectors are combined to reconstruct the physics objects required to study the hard-scatter process, 
+As described in the previous chapter,
+the ATLAS detector consists of many sub-detectors
+that each provide a different set of measurements.
+%in the form of, for example, hits in the Inner Detector or energy deposits in the calorimeter.
+The measurements from the sub-detectors are combined to reconstruct physics objects,
+which are physically meaningful objects used to study the hard-scatter process;
 for example electrons or hadronic jets containing $b$-quarks.
-
 This chapter will define the physics objects used in the analyses presented in this thesis
 and describe how each physics object is identified and their 4-momenta reconstructed.
-Tracks are described in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
-$b$-jets in Section~\ref{sec:obj-bjets}, and electrons and muons in Section~\ref{sec:obj-leptons}.
-Finally, Section~\ref{sec:obj-further} will briefly describe some other  physics objects
-not used in the analyses being presented here.
+%Tracks are described in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
+%$b$-jets in Section~\ref{sec:obj-bjets}, and electrons and muons in Section~\ref{sec:obj-leptons}.
+%Finally, Section~\ref{sec:obj-further} will briefly describe some other  physics objects
+%not used in the analyses being presented in this thesis.
 
 \section{Tracks}
 \label{sec:obj-tracks}
 
-The trajectory of charged particles that pass through the Inner Detector can be reconstructed
-using hits from the Pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
+The trajectory of charged particles that pass through the Inner Detector (ID) can be reconstructed
+using hits from the IBL, pixel detector, SCT and TRT which are described in Section~\ref{sec:det-ID}.
 The reconstructed trajectories are known as tracks.
+The momentum of the charged particle can be determined from the magnitude of track curvature caused by the solenoid magnet.
 Track reconstruction is important to identify and reconstruct many other physics objects at ATLAS
 for example; $b$-jets, electrons and muons.
+
+\noindent
 The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps:
 
 \begin{itemize}[leftmargin=*]
 \item\textbf{Track Candidates:}
-  Initial track candidates are formed using only hits from the IBL, pixel detector and SCT because they have a higher precision and granularity.
-  Neighbouring hits in a layer of the pixel detector or SCT are converted into a 3D `space-point' that represents the position of a charged particle.
-  Track seeds are then formed from three space-points in consecutive layers of the Inner Detector
+  Initial track candidates are formed using hits from the IBL, pixel detector and SCT because they have a higher precision and granularity than the TRT.
+  Neighbouring hits in the same layer of ID are converted into a 3D `space-point' that represents the position of a charged particle.
+  Track seeds are then formed from three space-points in consecutive layers of the ID
   consistent with the trajectory of a charged particle. % with $p_T >$ 500 MeV.
   From the track seeds, track candidates are built by iteratively adding space-points
-  from the remaining Pixel and SCT detector layers.
+  from the remaining IBL, pixel and SCT detector layers.
   %using an combinatorial Kalman filter~\cite{obj-tracks_kal}.
   %There can be multiple track candidates per seed.
-  \vspace{0.5em}
+  \\\vspace{0.5em}
 \item\textbf{Track selection / Ambiguity resolving:}
-  Each track candidate is assigned a `track-score' based on
-  the the compatibility of hits to the track candidate and the \pT{} and $\eta$ of the track.
+  Each track candidate is assigned a `track-score' that represents the track quality based on
+  the compatibility of hits to the track candidate and the \pT{} of the track.
   %The hit pattern refers to the number of Pixel or SCT hits,
   %the number of holes (missing hits where one was expected)
   %and the quality of the hits.
   %Track candidates must also pass some track quality requirements based on similar criteria.
   %that are similarly based on the track candidate's \pT{}, $\eta$ and the hit pattern.
-  The self-consistent set of track candidates that have the highest combined `track-score' are selected.
-  Full details of the track-selection algorithm are found in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
+  The self-consistent set of track candidates that have the highest combined track-score is selected.
+  Full details of the track selection algorithm is in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
 \item\textbf{Add TRT Information:}
-  Finally, track candidates are then updated such that hits in the TRT consistent with the track candidates are included.
-  This means that the full ID is used to improve the precision of the track reconstruction.
+  Finally, track candidates are updated such that hits in the TRT consistent with the track candidates are included.
+  Including hits from the TRT means that tracks are measured over a larger radial distance which improves momentum resolution.
 \end{itemize}
 %The outputs of the above track reconstruction process will be referred to as tracks in the remainder of this thesis.
 %Tracks ar
-The end result of this process are tracks.
-The momentum and sign of charge of the charged particles can be determined from the sign and magnitude of tracks' curvature
-caused by the solenoid magnet.
 
 \subsection{Primary Vertex Identification}
 \label{sec:obj-tracks_pv}
 
-As described in Section~\ref{sec:det-LHC} the LHC collides bunches of protons leading to multiple collisions per bunch crossing;
+As described in Section~\ref{sec:det-LHC} to achieve a high instantaneous luminosity the LHC collides bunches of protons leading to multiple collisions per bunch crossing;
 in $pp$ collision data collected in 2015 and 2016 by ATLAS the average number of collisions per bunch crossing is 13.7 and 24.9 respectively~\cite{det-ATLAS_lumi_twiki}.
 
 A primary vertex is the position where a $pp$ collision occurred.
 The position of primary vertices in a bunch-crossing is calculated by performing
 an iterative fit using the positions that tracks intersect the beam-pipe~\cite{obj-tracks_pv}.
 In the iterative fit procedure tracks are associated to primary vertices.
-The hard-scatter primary vertex, the point at which the collision of interest occurred,
-is defined as the primary vertex with the highest sum of the squared transverse momenta ($\sum {\pT}^2$) of associated tracks.
-
+The hard-scatter primary vertex is defined as the primary vertex with the highest sum of the squared transverse momenta ($\sum {\pT}^2$) of associated tracks.
+This is because a vertex with a large number of high-\pT{} tracks associated to it is likely to have been cause by a
+inelastic scattering event, such as a scatter that would occur if a BSM particle was produced.
 
 \section{Jets}
 \label{sec:obj-jets}
 
-Quarks or gluons that are created in a proton-proton scatter event
+Quarks or gluons created in a proton-proton scatter event
 will form a stream of high-energy hadrons, known as a hadronic jet.
 Section~\ref{sec:theo-qcd_jets} described the formation of a hadronic jet in detail.
 The high-energy hadrons that form the hadronic jet will then deposit their energy in the cells of the ATLAS calorimeter,
 through the processes described in Section~\ref{sec:det-calo}.
-Therefore the the ATLAS calorimeter has an energy and positional measurement of the components of the hadronic jet.
-The process of hadronic jet formation and energy deposition in the calorimeter, as described above, is illustrated in Figure~\ref{fig:obj-jets_schem}.
+Therefore, the ATLAS calorimeter has an energy and positional measurement of the components of the hadronic jet.
+%The process of hadronic jet formation and energy deposition in the calorimeter, as described above, is illustrated in Figure~\ref{fig:obj-jets_schem}.
 
 %The underlying processes in hadronic jet formation can be summarised as follows;
 %firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
 %these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
 %A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
 
-\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Objects/jets_schem.png}
-  \end{center}
-  \caption[A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system.]
-          {A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system \cite{obj-jets_schem}.}
-          \label{fig:obj-jets_schem}
-          \vspace{-1em}
-\end{figure} 
+%\begin{figure}[!ht]
+%  \begin{center}
+%    \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/jets_schem.png}
+%  \end{center}
+%   \vspace{-0.5em}
+%  \caption[A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system.]
+%          {A schematic illustrating the formation of hadronic jets and the resulting observed energy deposits in the calorimeter system \cite{obj-jets_schem}.}
+%          \label{fig:obj-jets_schem}
+%          \vspace{-1em}
+%\end{figure} 
 
-\FloatBarrier
 This section contains a description the jet building procedure utilised by ATLAS
 to go from energy deposits in calorimeter cells to well defined and calibrated hadronic jets.
 %This procedure can be split up into three separate steps that are described in the following sections;
@@ -106,14 +107,16 @@ Only the building of hadronic jets from calorimeter cells is described,
 as this is the jet object used in di-$b$-jet searches.
 There are other types of jets used at ATLAS; for example
 %jets are used to observe electrons and taus whilst
-hadronic jets constructed from tracks~\cite{obj-Hbb}.
+hadronic jets constructed from tracks~\cite{obj-Hbb_exotic}.
 %a technique that has been useful in dense environments
 
+\newpage
 \subsection{Hadronic Topocluster Reconstruction}
 \label{sec:obj-jets_topo}
 
 The first step of jet building at ATLAS is the formation of 3D clusters, known as topoclusters, from groups of energy deposits in neighbouring calorimeter cells~\cite{obj-jets_topo}.
-The calorimeter cells can be from either the EM or hadronic calorimeter systems which have a granularity described in Section~\ref{sec:det-calo}.
+Each topocluster represents a hadron or a set of collimated hadrons within a hadronic jet.
+The calorimeter cells can be from either the EM or hadronic calorimeter systems are described in Section~\ref{sec:det-calo}.
 The topocluster building algorithm uses the variable \mbox{\textit{`cell signal significance'}} defined as, 
 \begin{equation}
   \vspace{0.2em}
@@ -130,9 +133,9 @@ Using the value of $S_{\text{cell}}$, each calorimeter cell is labelled as follo
 \begin{itemize}
 \item If \ \ \ \ \ \ \ ($|S_{\text{cell}}| > 4$): the cell is labelled as a \textbf{seed} cell.
 \item If ($2 < |S_{\text{cell}}| < 4$): the cell is labelled as a \textbf{growth} cell.
-\item If ($0 < |S_{\text{cell}}| > 2$): the cell is labelled as a \textbf{boundary} cell.
+\item If ($0 < |S_{\text{cell}}| < 2$): the cell is labelled as a \textbf{boundary} cell.
 \end{itemize}
-Then the algorithms builds topoclusters as in the following steps:
+Topoclusters are then built using the following steps
 \vspace{-1em}
 \begin{enumerate}
 \item A seed cell forms the centre of a new topocluster.
@@ -140,10 +143,11 @@ Then the algorithms builds topoclusters as in the following steps:
 \item Then, growth cells neighbouring the topocluster are added.
 \item Finally, boundary cells neighbouring the topocluster are added.
 \end{enumerate}
-
+Figure~\ref{fig:obj-topo_schem} shows an illustration of a set of energy deposits that would form a topocluster
+and a set of energy deposits that would not form a topocluster, as no seed cell is present.
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/topo_schem.png}
+    \includegraphics[width=0.36\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
   \caption[A schematic illustrating the algorithm used to form a topocluster.]
           {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label~\cite{det-magnet_fig}.}
@@ -151,18 +155,14 @@ Then the algorithms builds topoclusters as in the following steps:
 \vspace{-0.5em}
 \end{figure}
 
-Figure~\ref{fig:obj-topo_schem} shows an illustration of a set of energy deposits that would form a topocluster
-and a set of energy deposits that would not form a topocluster, as no seed cell is present.
-
-The topoclusters are treated as massless objects,
-such that the four-momentum of each deposit can be calculated using the sum of energy deposited in the topoclusters
-and the $\eta-\phi$ position of the topocluster.
+The topoclusters are treated as massless objects as their energy is much larger than that of the hadrons that typically form a hadronic jet \footnote{\ Mostly light hadrons such as pions}.
+Therefore the four-momentum of each topocluster is determined from the $\eta-\phi$ position and the sum of energy deposited.
 %The constructed topoclusters and their four-momenta are then used as the inputs to the next step of jet reconstruction.
 
 \subsection{Jet Reconstruction}
 \label{sec:obj-jets_reco}
 
-In the next step of jet building, jet reconstruction algorithms are employed to form jets from
+In the next step of jet building, jet reconstruction algorithms are employed to build jets from
 the four-momenta of the topoclusters.
 Each jet built by the algorithm has a well defined four-momentum and set of constituents.
 The use of jet reconstruction algorithms means that jets are experimentally well-defined model-independent observables,
@@ -178,7 +178,7 @@ The three algorithms use a set of four-momenta (clusters), which are initially t
 The algorithm makes use of two distances: the inter-jet distance between clusters $i$ and $j$ ($d_{ij}$) 
 and the particle-beam distance for cluster $i$ ($d_{ib}$). The distances are defined as
 \begin{equation}
-  d_{ij} = \text{min}[(p_{ Ti})^a, (p_{ Tj})^a]  \left(\frac{\Delta  R_{ij}}{R}\right) ^2, \hspace{2cm}  d_{iB} = (p_{Ti})^a  \label{dij}
+  d_{ij} = \text{min}[(p_{ Ti})^a, (p_{ Tj})^a]  \left(\frac{\Delta  R_{ij}}{R}\right) ^2, \hspace{1cm}  d_{iB} = (p_{Ti})^a  \label{dij}
 \end{equation}
 %\begin{equation}
 %  d_{ij} = \text{min}
@@ -215,7 +215,7 @@ In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are 
 %$d_{ij}$ and $d_{iB}$ are not physical distances, but are instead dimensional measures of how likely it is that
 %clusters $i$ and $j$ represent clusters caused by hadrons from the same jet.
  
-\noindent The algorithm then proceeds using the following steps:
+\noindent Sequential reclustering algorithms then proceed using the following steps:
 \vspace{-0.5em}
 \begin{enumerate}[nolistsep,leftmargin=*]
   \item Calculate $d_{ij}$ and $d_{iB}$ for all combinations of clusters and find the minimum.
@@ -231,21 +231,18 @@ because if $\Delta R_{ij} > R$  for a pair of clusters then
 $d_{iB} < d_{ij}$ for one of the clusters (depending on the value of $a$) and the two cluster cannot be merged.
 
 The sequential reclustering algorithms described above are used as they satisfy two important %theoretically motivated
-criteria:
-infrared and collinear safety.
+criteria: infrared and collinear safety \footnote{\ Cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
+  such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy this infrared and collinear safety.}.
 Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emission \footnote{\ Soft means low momentum}
 and collinear safety requires that the result should be invariant against a parton splitting into two partons with small angular separation.
 These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
 two different sets of jets could be built from an identical hard-scatter processes
 due to an additional emission process in the parton shower.
-The sequential reclustering algorithms described above are infrared and collinear safe
-\footnote{\ Cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
-  such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy this infrared and collinear safety.}.
 
 Anti-$k_T$ is the standard jet reconstruction algorithm used at ATLAS. %, which is typical of analyses at ATLAS.
-This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet because
+This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet as
 the algorithm reconstructs the high-\pT{} core of the jets first and then adds in the lower \pT{} suburbs. % in later steps.
-Figure~\ref{fig:obj-jets_reco_shapes} shows the jets built by the %Cambridge-Aachen,
+To illustrate this point Figure~\ref{fig:obj-jets_reco_shapes} shows the jets built by the %Cambridge-Aachen,
 $k_T$ and anti-$k_T$ algorithm using the same set of input clusters; the anti-$k_T$ algorithm creates a more regular jet shape.
 %this illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
 
@@ -290,7 +287,7 @@ The key factors for the unrepresentative hadronic jet energy measurement are~\ci
 \item\textbf{Jet energy scale}:
   As discussed in Section~\ref{sec:det-calo_HCAL}, the response of the ATLAS calorimeter is different for an EM-object and a hadronic object.
   The calorimeter energy response is initially calibrated for an EM-object.
-  Therefore energy measurements of hadronic objects must be corrected for using a jet energy scale correction. \vspace{0.5em}
+  Therefore energy measurements of hadronic objects must be corrected using a jet energy scale correction. \vspace{0.5em}
 \item\textbf{Detector Effects}:
   Some of the jet energy may be deposited either in an inactive region within the ATLAS detector,
   outside of the angular acceptance of the calorimeter or beyond the calorimeter, an effect known as `punch-through'.\vspace{0.5em}
@@ -299,14 +296,14 @@ The key factors for the unrepresentative hadronic jet energy measurement are~\ci
   or from inaccuracies in the jet reconstruction algorithm.\vspace{0.5em}
 \item\textbf{Pile-up}:
   In Section~\ref{sec:det-LHC} pile-up was defined as proton collisions other than the hard-scatter primary vertex.
-  Objects from pile-up collisions can be included in the jet reconstruction and hence effect the jet energy measurement.
+  Particles from pile-up collisions can be included in the jet reconstruction and hence effect the jet energy measurement.
   %This includes in-time and out-of-time pile-up.
   %A  definition of pile-up can be found in Section~\cite{}. \textbf{LM Fix: Need a description of pile-up, probably in LHC running conditions}
 \end{itemize}
 \vspace{-0.5em}
-A calibration procedure is performed to correct the energy of a jet~\cite{obj-jets_calib_run2}.
+As a result, a calibration procedure is performed to correct the energy of a jet~\cite{obj-jets_calib_run2}.
 
-For a calibration one must decided what to correct with respect to.
+For a calibration one must decide what to correct with respect to.
 Naively one could choose the truth initial parton,
 however the correction would then strongly depend on the theoretical modelling of the parton shower and hadronisation process.
 The resulting corrected jets would then not be model-independent.
@@ -344,20 +341,20 @@ built from the EM-scale topoclusters using a number of steps:
   the number of primary vertices, $N_{PV}$
   and the mean number of additional $pp$ collisions per bunch crossing of the event, $\mu$.\vspace{0.3em}
 \item\textbf{Absolute JES Correction}:
-  This step corrects the jet four-momentum from the EM-scale, at which they were initially built,
-  to the hadronic-scale, which is defined in terms of the truth jets in simulation.
-  This correction is derived using truth jets and reconstructed detector-level jets in dijet Monte-Carlo events.\vspace{0.3em}
+  This step corrects the jet four-momentum from the EM-scale, at which they were initially built,  to the hadronic-scale.
+  This correction is derived using truth jets and reconstructed detector-level jets in Monte-Carlo simulated dijet events.\vspace{0.3em}
 \item\textbf{Global Sequential Calibration}:
   This step uses information from the calorimeter, muon spectrometer and track-based variables
   to refine the reconstructed energy and reduce the overall uncertainties.\vspace{0.3em}
 \item\textbf{In-situ calibration}:
   All previous steps use simulation to correct detector-level jets to truth jets.
   This step corrects for differences between simulation and data using events
-  containing a jet to be calibrated and a well-measured reference objects, including photons, Z bosons, and calibrated jets.
+  containing a jet to be calibrated and a well-measured reference objects, including photons, $Z$ bosons, and calibrated jets.
   Conservation of momentum provides information on the true \pT{} of the jet to be calibrated.
-  One can then calculate a double ratio, $R$, which is applied as a correction to jet \pT{} in data only.
+  One can then calculate a correction factor, which is applied jet four-momentum in data only.
   \begin{equation}
-    \text{Correction} = \frac{1}{R(p_T, \eta)} = \frac{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{MC}} }{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{Data}} }
+    %\text{Correction} = \frac{1}{R(p_T, \eta)} = \frac{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{MC}} }{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{Data}} }
+    \text{Correction Factor}~(p_T, \eta) = \frac{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{MC}} }{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{Data}} }
   \end{equation}
   %; this correction is not applied in simulation.
 \end{enumerate}
@@ -371,8 +368,10 @@ EM+JES is generally used in ATLAS analyses as it is a simpler calibration scheme
 The end result of the processes described in this section is a jet
 reconstructed from EM-scale topoclusters using an anti-$k_T$ algorithm with a jet width parameter $R$=0.4
 that is calibrated using the EM+JES calibration scheme.
-This type of jet is known as `anti-$k_T$ R=0.4 EM+JES jet',
+This type of jet is known as an `anti-$k_T$ R=0.4 EM+JES jet',
 and is the definition of a jet throughout this thesis.
+
+\newpage
 
 \subsection{Jet Energy Uncertainties}
 \label{sec:obj-jets_uncert}
@@ -384,36 +383,35 @@ to correct jets from the EM-scale to the hadronic-scale, outline above.
 80 separate uncertainties are derived to cover each step of the calibration,
 the dominant uncertainties arise from the data-driven in-situ step~\cite{obj-jets_calib_run2}.
 Figure~\ref{fig:obj-jets_calib_JES} shows the fractional JES uncertainty as a function of jet-\pT{} and jet-$\eta$.
-The increased uncertainty in the region $2 < |\eta| < 2.6$ is caused by uncertainties in
-modelling of the detector response of the EM end-cap calorimeters.
-%required to account localised data/simulation differences observed in that region,
-%which is caused by the modelling of the detector response .
-%the modelling of detector response in the transition region between different layers of the electro-magnetic end-cap calorimeters.
+The increased uncertainty in the region $2 < |\eta| < 2.6$ is caused by localised data/simulation discrepancies
+caused by mis-modelling of the detector response in the EM end-cap calorimeters.
 
-\begin{figure}[!htb]
-  \begin{center}
-    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.42\linewidth, angle=0]{figs/Objects/jets_uncert_JES_pt.png} }
-    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.42\linewidth, angle=0]{figs/Objects/jets_uncert_JES_eta.png} }
-  \end{center}
- \vspace{-1em}
-  \caption[The fractional jet energy scale uncertainty as a function of jet-\pT{} and \eta.]
-          { \label{fig:obj-jets_calib_JES} The fractional jet energy scale uncertainty as a function of jet-\pT{} and \eta.
-            The total uncertainty is shown with the contributions from the various sources of uncertainty~\cite{obj-jets_calib_run2}.}
-\end{figure}
+
 
 Jet energy resolution (JER) is defined as $\sigma(E)/E$, and JER uncertainties
-come from an imperfect simulation of detector resolution in Monte-Carlo simulation.
-This uncertainty is measured using an in-situ technique from the balancing of jets in 8 TeV collision data
+accounts for the imperfect simulation of detector resolution in Monte-Carlo simulation.
+The uncertainty is measured using an in-situ technique from the balancing of jets in 8 TeV collision data
 which is extrapolated for 13 TeV data; the final uncertainty accounts for this extrapolation.
 Figure~\ref{fig:obj-jets_calib_JER} shows the fractional JER uncertainty as a function of jet-\pT{} and jet-$\eta$.
 Full details on the derivation of this uncertainty can be found in~\cite{obj-jets_calib_2015}~and~\cite{obj-jets_calib_JER_8TeV}.
 
 \begin{figure}[!htb]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_pt.png} }
+    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_eta.png} }
+  \end{center}
+ \vspace{-1em}
+  \caption[The fractional jet energy scale uncertainty as a function of jet-\pT{} and \eta.]
+          { \label{fig:obj-jets_calib_JES} The fractional jet energy scale uncertainty as a function of jet-\pT{} and \eta.
+            The total uncertainty is shown with the contributions from the various sources of uncertainty~\cite{obj-jets_calib_run2}.}
+%\end{figure}
+          %\begin{figure}[!htb] 
+ \vspace{0.2em}
   \begin{center}      
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.42\linewidth, angle=0]{figs/Objects/jets_uncert_JER_pt.pdf} }
-    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.42\linewidth, angle=0]{figs/Objects/jets_uncert_JER_eta.pdf} }
+    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JER_pt.pdf} }
+    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JER_eta.pdf} }
  \end{center}
  \vspace{-1em}
   \caption[The fractional jet energy resolution uncertainty as a function of jet-\pT{} and \eta.]
@@ -426,16 +424,16 @@ Full details on the derivation of this uncertainty can be found in~\cite{obj-jet
 \section{$b$-Jets}
 \label{sec:obj-bjets}
 
-There are three separate categories f hadronic jets  based on the flavour of the constituent quarks.
-$b$-jets are defined as jets containing one or more $b$-hadrons,
+There are three flavour categories of hadronic jets based on the flavour of the constituent quarks.
+$b$-jets are defined as jets containing one or more $b$-hadrons, where a $b$-hadron is any hadron containing a $b$-quark.
 $c$-jets are defined as jets containing one or more $c$-hadrons but no $b$-hadrons
-and finally light jets comprise of only light hadrons (formed of $u$, $d$ and $s$ quarks).
+and light jets consist of only light hadrons (formed of $u$, $d$ and $s$ quarks).
 %A description of how this definition is practically used in simulation is given in Section~\ref{sec:obj-bjets_label}.
 
-The identification of $b$-jets, known as $b$-tagging, is an essential tool in a range of ATLAS collaboration results;
-for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar}
-\footnote{\ Section~\ref{sec:trig-bjet_eff} contains an analysis utilising $b$-tagging in the $t\bar{t}$ final state.}
-and the first direct evidence of the Higgs boson coupling to the quark-sector~\cite{obj-Hbb}.
+The identification of $b$-jets, known as $b$-tagging, is an essential tool in a range of ATLAS collaboration results~\cite{obj-ttbar,obj-Hbb};
+%for example analyses studying the $t\bar{t}$ final state \cite{obj-ttbar}
+%\footnote{\ Section~\ref{sec:trig-bjet_eff} contains an analysis utilising $b$-tagging in the $t\bar{t}$ final state.}
+%and the first direct evidence of the Higgs boson coupling to the quark-sector~\cite{obj-Hbb}.
 %In the former, as the top decays to a \textit{W}-boson and a $b$-quark with a branching ratio close to 100\%, 
 %the application of $b$-tagging can be used increase purity, this is used in the study described in Section~\ref{sec:trig-sys}.
 %In the latter, the Higgs boson coupling is proportional to mass squared, hence the large mass of the
@@ -464,7 +462,7 @@ This definition of truth flavour in simulation is used generally within this the
 
 To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction.
 Weakly decaying $b$-hadrons produced at the LHC have an average lifetime of $\sim$\SI{1.6}{\pico\second} ~\cite{obj-bjets_PDG}
- \footnote{\ There are also excited $b$-hadron states decay rapidly to other $b$-hadrons through the strong force.}.
+ \footnote{\ There are also excited $b$-hadron states that decay rapidly to other $b$-hadrons through the strong force.}.
 A $b$-jet decay chain  will typically contain two of these flavour changing interactions, 
 as at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $s$ or $d$ quark.
 Due to their long lifetimes, $b$-hadrons decay a measurable distance from the hard-scatter primary vertex;
@@ -478,14 +476,14 @@ Hence, the flavour of a jet can be inferred from the presence of particles
 that originate from a point offset from the primary vertex.
 
 $b$-Tagging uses tracks and jets as described in Section~\ref{sec:obj-tracks} and \ref{sec:obj-jets}.
-For $b$-tagging tracks are associated to jets if there is a small angular separation $\Delta R$ between the two objects.
+To perform $b$-tagging, tracks are associated to jets if there is a small angular separation, $\Delta R$, between the two objects.
 Tracks are exclusively matched, meaning each track is only associated to the jet with the smallest $\Delta R$ separation.
 The maximum value of $\Delta R$ for association decreases as jet-\pT{} increases because high-\pT{} jets are more collimated;
 $\,\Delta R_{\text{max}}$ is 0.45 for a jet-\pT{} of 20 GeV whilst $\,\Delta R_{\text{max}}$ is 0.26 for a jet-\pT{} of 150 GeV.
 
-There are three base $b$-tagging algorithms utilised to produce discriminating variables \cite{obj-bjets_algo_2016}, which are described in the next three sections.
+There are three base $b$-tagging algorithms utilised to produce flavour discriminating variables~\cite{obj-bjets_algo_2016}, which are described in the next three sections.
 %Sections~\ref{sec:obj-bjets_IP}~to~\ref{sec:obj-bjets_JF}.
-The discriminating variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
+The flavour discriminating variables are then combined in a multi-variate algorithm which is described in Section~\ref{sec:obj-bjets_MV2}.
 Figure~\ref{fig:obj_bjets_schem} shows a schematic illustrating how tracks
 are used by the three $b$-tagging algorithms to identify a $b$-jet,
 the details of this figure are referred to in the following three sections.
@@ -533,7 +531,7 @@ and the number of tracks at the secondary vertex, which will be larger for relia
 The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the $b$-hadron into a $c$-hadron and then into light-hadrons. 
 This is done by assuming that all vertices lie on a common $b$-flight axis, and constructing vertices from the intersection of
 one or more tracks and the flight axis.
-The aim of this is to reconstruct the secondary and tertiary vertices which correspond to the decays of the $b$-hadron and charmed-hadron,
+The aim of this is to reconstruct the secondary and tertiary vertices which correspond to the decays of the $b$ and $c$-hadron,
 as illustrated in Figure \ref{fig:obj_bjets_schem}.
 Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
 for example vertex mass and number of vertices with two or more tracks.
@@ -541,19 +539,19 @@ for example vertex mass and number of vertices with two or more tracks.
 \subsection{Multi-Variate $b$-tagging Algorithm}
 \label{sec:obj-bjets_MV2}
 
-The three base algorithms are combined in a boosted decision tree (BDT), a machine-learning technique for combining the many flavour-discriminating variables,
-resulting in an algorithm that is known as MV2.
+The three base algorithms are combined in a Boosted Decision Tree (BDT), a machine-learning technique for combining the many flavour discriminating variables,
+resulting in the MV2 algorithm.
 A BDT is used as it is able to use the complex correlations between the input variables to maximise $b$-tagging performance.
-As shown in Figure \ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
-with the discriminating variables of SV1 and JF discussed in the preceding sections,
-resulting in an output between -1 and 1, where 1 indicates that the jet is very likely to be a $b$-jet and -1 indicates the inverse.
+As shown in Figure~\ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
+with the flavour discriminating variables of SV1 and JF discussed in the preceding sections.
+The MV2 output is a variable between -1 and 1, where 1 indicates that the jet is likely to be a $b$-jet and -1 indicates the inverse.
 
 \begin{figure}[!htb]
   \begin{center}
     \includegraphics[width=1.0\textwidth]{figs/Objects/MV2_schem.pdf}
     \caption[An illustration of how the three base flavour tagging algorithms are combined in the MV2 algorithm.]
             {An illustration of how the three base flavour tagging algorithms are combined in the MV2 algorithm.
-              The figure shows that the discriminating variables from SV1 and Jet Fitter are combined with the likelihood outputs from IP2D and IP3D.}
+              The figure shows that the flavour discriminating variables from SV1 and Jet Fitter are combined with the likelihood outputs from IP2D and IP3D.}
     \label{fig:obj-MV2_schem}
   \end{center}
   \vspace{-1em}
@@ -567,15 +565,16 @@ The training makes use of the truth jet flavour label scheme described in Sectio
 %whilst still obtaining a large $c$- and light-jet rejection.
 Subtly different MV2 algorithms are created using samples containing different fractions of light and $c$-jets,
 the fraction of $c$-jets used is labelled in the algorithm name;
-for example the MV2c10 algorithm has been trained on a sample containing 10\% charm-jets, which gives strong light- and $c$-rejection.
+for example the MV2c10 algorithm has been trained on a sample containing 10\% charm-jets, which gives strong light- and $c$-jet rejection.
 
-A cut is then applied to this MV2 output in order to select jets that are likely to $b$-jets.
+%A cut is then applied to this MV2 output in order to select jets that are likely to $b$-jets.
+A $b$-tagged jet is required to have a MV2 output above a threshold cut to select jets that are likely to $b$-jets.
 The choice of cut will vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection,
 where $b$-jet efficiency is defined as the probability of accepting a true $b$-jet,
 light-jet rejection is defined as 1 divided by the probability of accepting a true light-jet, and a similar definition applies for $c$-jet rejection.
 Figure~\ref{fig:obj-bjets_perf} shows the $b$-jet efficiency against (a) light and (b) $c$-jet rejection of the MV2 algorithm for a continuous range of cuts.
 The different lines show the performance of the algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}
-and in the 2016 configuration~\cite{obj-bjets_algo_2016} where a range of different fraction of $c$-jets are used in the training;
+and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractions of $c$-jets are used in the training;
 2016 MV2c10 is the configuration throughout this thesis as recommended in~\cite{obj-bjets_algo_2016}.
     
 \begin{figure}[!ht]
@@ -595,10 +594,10 @@ and in the 2016 configuration~\cite{obj-bjets_algo_2016} where a range of differ
 There are a set of MV2 operating points, such that a communal $b$-tagging calibration can be used.
 Looser operating points have a lower cut on MV2 output, leading to a higher $b$-jet efficiency at the cost of worse light- and $c$-jet rejections.
 The inverse is true for tighter operating points.
-Table~\ref{tab:obj-MV2_WPs} shows the fixed cut operating points used at ATLAS with a given cut on MV2c10 output;
-shown with the corresponding benchmark values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection
-\footnote{\ In this thesis only the fixed-cut operating points shown above will be used,
-  however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT{}.}.
+Table~\ref{tab:obj-MV2_WPs} shows the operating points used at ATLAS with a given cut on MV2c10 output;
+shown with the corresponding benchmark values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection.
+%\footnote{\ In this thesis only the fixed-cut operating points shown above will be used,
+%  however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT{}.}.
 
 \begin{table}[!htb]
   \begin{center}
@@ -623,9 +622,9 @@ $b$-tagging performance decreases at high jet-\pT{} due to a number of factors.
 Firstly, high-\pT{} jets are more collimated meaning that reconstructed vertices
 will have a larger positional uncertainty and fake vertices become more common.
 Secondly, the fraction of tracks in a $b$-jet that do not come from the decay of a $b$-hadron increases,
-meaning that the signature is diluted.
+meaning that the flavour discriminating variables are diluted.
 Finally, at high-\pT{} the $b$-hadron can decay on the far side of the IBL, leading to a reduced vertex and impact parameter resolution.
-To illustrate this trend, Figure~\ref{fig:obj-bjets_perf_pt} $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets in $t\bar{t}$ simulation as a function of jet-\pT{}
+To illustrate this trend, Figure~\ref{fig:obj-bjets_perf_pt} shows the $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets in $t\bar{t}$ simulation as a function of jet-\pT{}
 for the MV2c20 algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}. A similar trend is also found for the MV2c10 using the 2016 configuration~\cite{obj-bjets_algo_2016}.
 
 \begin{figure}[!htb]
@@ -641,30 +640,28 @@ for the MV2c20 algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}. A
 \subsection{Calibration and Uncertainties}
 \label{sec:obj-bjets_calib}
 
-As with any part of a measurement, the process of $b$-tagging must be calibrated using data.
-$b$-tagging calibration uses di-lepton $t\bar{t}$ events which, as described in Section~\ref{sec:theo-qcd_ttbar},
-have a distinctive signature and provide a pure sample of $b$-jet~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}.
-From the pure $b$-jet sample one can perform a likelihood fit to extract the $b$-jet efficiency, $\epsilon_{\text{bTag}}$, which is defined as:
+A calibration is performed to correct the modelling of $b$-tagging in simulation to the true $b$-tagging performance in data.
+The $b$-tagging calibration uses di-lepton $t\bar{t}$ events which, as described in Section~\ref{sec:theo-ttbar},
+have a distinctive signature and provide a pure sample of $b$-jets~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}.
+From the pure $b$-jet sample one can perform a likelihood fit to extract the $b$-jet efficiency, $\epsilon_{\,b\text{Tag}}$, which is defined as:
 \begin{equation}
- \epsilon_{\text{bTag}} = \frac{N(\text{$b$-tagged true $b$-jets)}}{N(\text{True $b$-jets)}}
+ \epsilon_{\,b\text{Tag}} = \frac{N(\text{$b$-tagged true $b$-jets)}}{N(\text{True $b$-jets)}}
 \end{equation}
 where $b$-tagged means above the cut on the MV2 output for a given operating point.
-By measuring $\epsilon_{\text{bTag}}$ in both data and in Monte-Carlo simulation one can derive
-a correction to simulation, known as a data/MC scale factor ($SF_{\text{bTag}}$), defined as:
+By measuring $\epsilon_{\,b\text{Tag}}$ in both data and in Monte-Carlo simulation one can derive
+a correction to simulation, known as a data/MC scale factor ($SF_{\,b\text{Tag}}$), defined as:
 \begin{equation}
- SF_{\text{bTag}} = \epsilon_{\text{bTag}}^{\text{Data}}/\epsilon_{\text{bTag}}^{\text{MC}}
+ SF_{\,b\text{Tag}} = \epsilon_{\,b\text{Tag}}^{\text{Data}}/\epsilon_{\,b\text{Tag}}^{\text{MC}}
 \end{equation}
 Uncertainties are derived for the scale factors 
-to account for factors such as
-uncertainties in the modelling of the backgrounds in simulation and
-uncertainties in the modelling of the detector response to electrons, muons and jets.
-The dominant uncertainty comes from modelling of $t\bar{t}$ in simulation.
+to account for uncertainties in the modelling of the backgrounds and the detector response to electrons, muons and jets in simulation.
+The dominant source of uncertainty is the modelling of $t\bar{t}$ in simulation.
 Figure~\ref{fig:obj-bjets_calib} shows the data/MC scale factor measured in 2015 and 2016 data as a function of jet \pT{}.
-The scale factor is consistent with unity within uncertainties everywhere, showing that $b$-tagging is generally well-modelled in simulation.
+The scale factors are consistent with unity within uncertainties, showing that $b$-tagging is generally well-modelled in simulation.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
+    \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
   \end{center}
   \vspace{-1em}
   \caption[Ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% working point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
@@ -675,17 +672,17 @@ The scale factor is consistent with unity within uncertainties everywhere, showi
 The $b$-tagging calibration using di-lepton $t\bar{t}$ events described above
 is unable to measure a data/MC scale factor for jets with \pT{} greater than 300 GeV, due to low data statistics in the high-\pT{} region.
 Thus, the measured scale factors are extrapolated to cover the high jet-\pT{} region.
-To derive an uncertainty for the high-\pT{} extrapolation; $\epsilon_{\text{bTag}}$ is measured in Monte-Carlo simulations of high-\pT{} $b$-jets  
-when variables known to affect the performance of $b$-tagging are varied to represent our uncertainty of $b$-tagging modelling at high-\pT{}~\cite{obj-bjets_calib_highPt}.
-The dominant extrapolating uncertainty arises for variations of the impact parameter resolution.
+To derive an uncertainty for the high-\pT{} extrapolation; $\epsilon_{\,b\text{Tag}}$ is measured in Monte-Carlo simulations of high-\pT{} $b$-jets  
+when variables known to affect the performance of $b$-tagging are varied to represent the modelling uncertainties of high-\pT{} $b$-jets~\cite{obj-bjets_calib_highPt}.
+The dominant extrapolation uncertainty is from variations of the impact parameter resolution.
 
 \subsection{$b$-Jet Energy Scale}
 \label{sec:obj-bjets_bjes}
 
 Sections~\ref{sec:obj-jets_calib} and \ref{sec:obj-jets_uncert} described the
-jet energy correction applied  hadronic jets the associated uncertainty jet energy scale uncertainty.
+jet energy scale correction applied to hadronic jets.
 For $b$-jets this correction may be different due to differences in the parton shower and hadronisation processes for a $b$-jet;
-for example during the decay of the $b$-hadron muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
+for example during the decay of the $b$-hadron, muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
 
 As a result an additional $b$-jet energy scale ($b$JES) uncertainty has been 
 specifically derived for a previous di-$b$-jet search at ATLAS~\cite{dibjet-mori16_paper}.
@@ -693,21 +690,21 @@ Figure~\ref{fig:obj-bjets_bJES_uncert} shows the derived total $b$JES uncertaint
 the components that contribute to the uncertainty are also shown.
 The contributions to the $b$JES uncertainty considered are $b$-jet modelling in simulation (referred to as fragmentation),
 modelling of the detector response (material description), $b$-tagging calibration and jet energy resolution.
-In addition, an uncertainty is applied to cover a bias in the number of charged tracks associated to a $b$-jet with respect to a light jet. 
-
-The $b$JES uncertainty is validated by comparing jet energy measurements to independent well calibrated objects, in this case tracks.
-It is found that the energy of $b$-jets is consistent with the energy of inclusive jets within the $b$JES uncertainties considered,
-such that no additional $b$JES correction is required.
+In addition, an uncertainty is applied to cover a bias in the number of charged tracks associated to a $b$-jet with respect to a light jet,
+which is necessary because, as is described below, tracks are used to validate the $b$JES uncertainty.
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/bjets_bJES_uncert_edit.pdf}
+    \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/bjets_bJES_uncert_edit.pdf}
   \vspace{-2em}
   \end{center}
   \caption[The total fractional $b$JES uncertainty shown with the various contributions.]
           {\label{fig:obj-bjets_bJES_uncert} The total fractional $b$JES uncertainty shown with the various contributions~\cite{dibjet-int_mori16}.}
-          \vspace{-1em}
 \end{figure}
+
+The $b$JES uncertainty is validated by comparing jet energy measurements to independent well calibrated objects, in this case tracks that are associated to the jets.
+It is found that the jet energy scale correction required for $b$-tagged jets is consistent with the jet energy scale correction of jets with no $b$-tagging applied
+within the $b$JES uncertainties considered, such that no additional $b$JES correction is required.
 
 \section{Electrons and Muons}
 \label{sec:obj-leptons}
@@ -720,36 +717,38 @@ described in Section~\ref{sec:trig-bjet_eff}.
 %As these objects are not used in the final analysis presented in this thesis,
 %they are described below in less detail than has been given to jets and $b$-jets.
 
-Electron\footnote{\ For the purposes of reconstruction positrons are included as a subset of electrons}
+Electron~\footnote{\ For the purposes of reconstruction positrons are included as a subset of electrons}
 reconstruction at ATLAS ~\cite{obj-electrons} uses
 the matching of narrow clusters of energy deposits in the EM calorimeter
-to a track from the inner detector,
+to a track from the ID (described in Section~\ref{sec:obj-tracks}),
 from which the four-momentum of the electron can be determined.
 Information such as the calorimeter shower shape,
 properties of the matched track
 and TRT transition radiation (described in Section~\ref{sec:det-ID})
 are used to identify electrons.
-Three different operating points are provided for electron identification:
-which are, in order of increasing background rejection
+Three different operating points are provided for electron identification
+which are, in order of increasing background rejection:
 \textit{Loose}, \textit{Medium}, and \textit{Tight}. 
 
-Muons\footnote{\ Similar to positrons, in reconstruction anti-muons are included as a subset of muons}
-are the only charged particle not to be stopped by the ATLAS calorimeter,
-hence muons are identified at ATLAS using hits in the Muon Spectrometer (MS), which was described in Section~\ref{sec:det-MS}.
+Muons~\footnote{\ Similar to positrons, in reconstruction anti-muons are included as a subset of muons}
+are the only charged particle not to be stopped by the ATLAS calorimeter.
+Therefore muons are identified at ATLAS using hits in the sub-detector outside of the calorimeter, the Muon Spectrometer (MS), which is described in Section~\ref{sec:det-MS}.
 Two of the techniques used for muon reconstruction are combined muons and extrapolated muons.
-For both techniques initially trajectories are reconstructed from hits in the MS, which are known as muon tracks.
-Combined muons are then reconstructed by extrapolating muon tracks inwards to match tracks in the ID (described in Section~\ref{sec:obj-tracks}),
+For both techniques trajectories are initially reconstructed from hits in the MS, which are known as muon tracks.
+Combined muons are then reconstructed by extrapolating muon tracks inwards to match tracks in the ID,
 if a match is found then a combined muon track is formed from the associated ID and MS hits.
-By using both ID and MS position measurements, a higher precision muon track is created.
+By using both ID and MS position measurements, a higher precision muon track is created
+and the muon tracks can be accurately assigned to a primary vertex, which is used to reduce muons from pile-up.
 Extrapolated muons are formed from muon tracks alone,
-with a loose requirement on the track pointing to the primary vertex;
+with a loose requirement on the track pointing to the hard-scatter primary vertex to reduce effects from pile-up;
 extrapolated muons are important in the range $2.5 < \eta < 2.7$ for which there is no ID coverage.
-The four-momentum of the reconstructed muons can be constructed from the direction and curvature of the muon tracks.
+The four-momentum of the reconstructed muons is determined from the direction and curvature of the muon tracks.
 
 The muon identification working points are \textit{Loose}, \textit{Medium}, \textit{Tight}, and \textit{High-\pT{}}.
-Medium muons, used in Section~\ref{sec:trig-bjet_eff}, use combined and extrapolated muons that pass a quality criteria based on
+Medium muons, used in Section~\ref{sec:trig-bjet_eff}, are combined or extrapolated muons that pass a quality criteria based on
 number of MS hits, track fit quality and, where relevant, compatibility between the ID and MS tracks.
 
+\newpage
 \section{Further objects}
 \label{sec:obj-further}
 
@@ -757,9 +756,9 @@ In this chapter all objects used in the analyses presented in this thesis have b
 However there are more objects that ATLAS can reconstruct. For example:
 \textit{`Photons'} are identified using narrow clusters of energy deposits in the calorimeter similar to that of electrons,
   except with no track associated~\cite{obj-photons}. %\vspace{em}
-%\item\textbf{Taus:}
-%  Taus decaying hadronically are identified and reconstructed using narrow calorimeter jets
-%  associated to a topologies of tracks that match their known decay chain~\cite{obj-taus}.\vspace{0.5em}
-\textit{`Missing Transverse Momentum''} (MET) is the negative sum of the momenta of all reconstructed physics objects in an event~\cite{obj-met}.
+ Hadronically decaying \textit{`taus'} are identified and reconstructed using narrow calorimeter jets
+ associated to a topologies of tracks that match their known decay chain~\cite{obj-taus}.
+ \textit{`Missing Transverse Momentum'} (MET) is the negative sum of the transverse momenta of all reconstructed physics objects in an event~\cite{obj-met}.
+ As momentum is conserved in the transverse plane, MET indicates the sum of the $p_T$ of objects that did not interact with the ATLAS detector.
   MET is used to identify neutrinos~\cite{obj-Hbb} and to search for dark matter~\cite{obj-met_monoJet}.
 %\end{itemize}
