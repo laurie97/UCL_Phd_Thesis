@@ -526,7 +526,7 @@ The signal is modelled using the dijet mass signal templates described in Sectio
 and the background is modelled using the 5 parameter dijet fit function.
 The signal plus background fit is performed in the SWiFt window in which the generated mass of the signal being considered is at the window centre,
 the fit does not use the full mass range as it has been shown in Section~\ref{sec:bkg-full_globalFit} that a global background fit is not reliable.
-A window half-width of 16 and the 5 parameter fit function are used as is done in the search phase results shown in Section~\ref{sec:bkg-full_results}.
+A window half-width of 16 and the 5 parameter fit function are chosen to match the configuration used in the search phase results shown in Section~\ref{sec:bkg-full_results}.
 The normalisation of the signal template and the parameters of the background function are
 chosen to maximise the likelihood (defined in Eqn.~\ref{eqn:lim-like}), the signal normalisation is required to be greater or equal to zero.
 
@@ -534,13 +534,14 @@ The signal plus background fit provides an estimate of the signal and background
 however the framework used for limit setting requires a background estimation for the full mass range considered.
 To extend the fit to the full range, the signal template, normalised by the signal plus background fit, is subtracted from the data.
 The SWiFt background estimation procedure is then performed to the signal subtracted data,
-using the 5 parameter dijet fit function and a window half-width of 16, which is again chosen to match the search phase results.
-The resulting background estimation is the \textit{'signal subtracted background estimation'}
+using the 5 parameter dijet fit function and a window half-width of 16, which is again chosen to match the configuration in the search phase.
+The resulting background estimation is the \textit{`signal subtracted background estimation'}
 and is used as the background template in the limit setting phase.
 A signal subtracted background estimation is created for each generated mass point for each signal.
 
 The signal subtracted background is used as it provides a simple method of extending the signal plus background fit to create a background estimate for the full mass range. 
-Futhermore, the signal subtracted background is also chosen as it has been used by a previous inclusive dijet search at ATLAS~\cite{dijet-mori17_paper}.
+Futhermore, the signal subtracted background estimate is used by the inclusive dijet search on the
+combinded 2015 and 2016 data-set at ATLAS~\cite{dijet-mori17_paper}.
 It is benefitial for related analyses at ATLAS to utilise similar background estimation techniques as this
 increases reliability as the technique is independantly validated multiple times,
 shares framework development responsibilities between multiple analyses,
@@ -597,8 +598,8 @@ but for clarity only those at mass points 600, 800, 1000 and 1250~GeV are shown 
 For all generated mass points, including those not shown in the figure,
 the signal subtracted background estimate is consistent with the nominal SWiFt background estimation
 within background uncertainties.
-Therefore the results of the limit setting phase would be consistent if either the
-signal subtracted or nominal SWiFt background estimation are used.
+Therefore, the nominal SWiFt background estimate used in the search phase and the 
+signal subtracted background estimate used in the limit setting phase are consistent.
 Furthermore, it can be inferred that there is no signal induced fit bias due to a $Z'$ boson
 in the nominal SWiFt background estimation performed to the \lm{} data-set.
 
@@ -616,13 +617,13 @@ in the nominal SWiFt background estimation performed to the \lm{} data-set.
   \label{fig:lim-lowmass_ssb_data}
 \end{figure}
 
-Finally, it is important to note that no signal plus background fit is considered in the search phase result,
+The nominal SWiFt background estimate used in the search phase
+does not utilise a signal plus background fit
 as this would mean that the search phase result is not model independent.
 However, it is clear that the nominal SWiFt background estimation can be affected by a signal induced fit bias,
 as shown in Figure~\ref{fig:lim-lowmass_ssb_test}.
 As a result the sensitivity of the search phase is reduced to specific signal models relative to the results of the limit-phase presented below;
 the reduced sensitivity is accepted to maintain model independence.
-
 In Chapter~\ref{sec:fut} I will discuss how a signal plus background
 could be employed differently to benefit both the search and limit-setting phase in future analyses.
 
@@ -634,9 +635,12 @@ Figure~\ref{fig:lim-lowmass_benchmark} shows the
 of a $Z'$ boson as a function of generated mass.
 The observed limit, expected limit and 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown.
 Overlaid are theoretical predictions of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the
-Sequential Standard Model (SSM), leptophobic and DM $Z'$ boson benchmark models, which have been described in Section~\ref{sec:evt-s+b},
-there is a reduced gradient of the predicition for $m_{Z'} <$800~GeV is due to the loss in acceptance at low mass due to the requirement that the dijet mass is greater than 566~GeV,
-as is observed in Figure~\ref{fig:evt-lm_acc}.
+Sequential Standard Model (SSM), leptophobic and DM $Z'$ boson benchmark models, which have been described in Section~\ref{sec:evt-s+b}.
+The change in gradiant of the theoretical predicition lines at $m_{Z'} =$ 800~GeV
+is a result of a reduction in the acceptance of the $Z'$ boson for $m_{Z'} <$ 800~GeV
+caused by the requirement that the dijet mass is greater than 566~GeV.
+This effect is discussed further in Section~\ref{sec:evt-sel-acc}
+and can be seen clearly in Figure~\ref{fig:evt-lm_acc}.
 
 \begin{figure}[!ht]
   \centering
@@ -670,7 +674,7 @@ In the \summer{} data-set analysis a signal template with a Gaussian distributio
 whilst for the \lm{} data-set analysis a signal template with a Gaussian distribution in the truth mass distribution is used.
 The truth mass is defined as the invariant mass of the leading and subleading truth jets,
 using the definition of truth jet from Section~\ref{sec:obj-jets_calib}.
-Limits placed on a gaussian signal shape in truth mass can be interpreted for a range of signal models without
+Limits placed on a Gaussian signal shape in truth mass can be interpreted for a range of signal models without
 further information on the dijet mass resolution of the detector.
 
 The Gaussian shapes in truth mass are centred on a range of generated masses and the width of the considered Gaussians are
@@ -690,7 +694,7 @@ the background modelling uncertainties and a flat 5\% uncertainty to cover
 the JES, JER and $b$JES systematic uncertainties.
 Other systematic uncertainties are not included in the preliminary limits,
 as these are found to have a small effect on the upper limit relative to the jet energy uncertainties.
-This is because the jet energy uncertainties are uncertainties on the dijet mass of a simulated event and
+This is because the jet energy uncertainties cause uncertainties on the dijet mass of a simulated event and
 therefore can significantly affect the shape of the dijet mass signal template.
 
 Figure~\ref{fig:lim-lowmass_gauss} shows the observed 95\% credibility upper limits set 

@@ -1,0 +1,324 @@
+File: Thesis.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 14
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 1
+Number of math displayed: 0
+
+Included file: ./Aux/MainPackages.tex
+Encoding: ascii
+Words in text: 6
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/LinksAndMetadata.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/FloatSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/BibSettings.tex
+Encoding: ascii
+Words in text: 0
+Words in headers: 0
+Words outside text (captions, etc.): 0
+Number of headers: 0
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+Included file: ./Aux/Preamble.tex
+Encoding: ascii
+Words in text: 172
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 6
+Number of math displayed: 0
+
+Included file: ./Chapters/Introduction.tex
+Encoding: ascii
+Words in text: 1418
+Words in headers: 3
+Words outside text (captions, etc.): 0
+Number of headers: 2
+Number of floats/tables/figures: 0
+Number of math inlines: 55
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  720+1+0 (1/0/35/0) Chapter: Introduction
+  698+2+0 (1/0/20/0) Section: Personal Contributions
+
+Included file: ./Chapters/Theory.tex
+Encoding: ascii
+Words in text: 4592
+Words in headers: 65
+Words outside text (captions, etc.): 340
+Number of headers: 22
+Number of floats/tables/figures: 8
+Number of math inlines: 214
+Number of math displayed: 6
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  193+3+0 (1/0/3/0) Chapter: An Incomplete Theory
+  28+3+0 (1/0/0/0) Section: The Standard Model
+  143+1+21 (1/1/1/0) Subsection: Particles
+  498+1+36 (1/0/11/0) Subsection: Forces
+  104+7+0 (1/0/1/0) Section: QCD: Hadronic Jet Formation and Dijet Production
+  312+5+56 (1/2/15/0) Subsection: Renormalisation and the Running of $\alpha_S$
+  362+3+91 (1/0/8/0) Subsection: Hadronic Jet Formation
+  1115+15+74 (4/2/105/6) Subsection: Dijet Production in $pp$ Collisions
+  261+3+25 (1/1/24/0) Subsection: A Special Case: $t\bar{t}$
+  65+4+0 (1/0/0/0) Section: Beyond Standard Model Physics
+  783+10+0 (5/0/5/0) Subsection: Motivations
+  728+10+37 (4/2/41/0) Subsection: Beyond Standard Model Theories
+
+Included file: ./Chapters/Detector.tex
+Encoding: utf8
+Words in text: 3232
+Words in headers: 43
+Words outside text (captions, etc.): 315
+Number of headers: 12
+Number of floats/tables/figures: 7
+Number of math inlines: 111
+Number of math displayed: 3
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+6+0 (1/0/0/0) Chapter: The LHC and the ATLAS Detector
+  153+5+0 (1/0/2/0) Section: The Large Hadron Collider (LHC)
+  210+7+63 (1/0/8/0) Subsection: LHC running conditions in 2015 and 2016
+  134+3+12 (1/1/1/0) Section: ATLAS Detector Description
+  253+3+0 (1/0/28/2) Subsection: ATLAS Co-ordinate System
+  635+2+146 (1/2/16/0) Subsection: Inner Detector
+  1274+14+63 (4/2/45/1) Subsection: ATLAS Calorimeter System
+  452+2+25 (1/1/9/0) Subsection: Muon Spectrometer
+  121+1+6 (1/1/2/0) Subsection: Magnets
+
+Included file: ./Chapters/Object.tex
+Encoding: ascii
+Words in text: 4785
+Words in headers: 48
+Words outside text (captions, etc.): 368
+Number of headers: 19
+Number of floats/tables/figures: 10
+Number of math inlines: 232
+Number of math displayed: 5
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  78+4+0 (1/0/1/0) Chapter: Object Definition and Reconstruction
+  270+1+0 (1/0/1/0) Section: Tracks
+  175+3+0 (1/0/3/0) Subsection: Primary Vertex Identification
+  131+1+0 (1/0/1/0) Section: Jets
+  252+3+40 (1/1/10/1) Subsection: Hadronic Topocluster Reconstruction
+  570+2+74 (1/1/36/1) Subsection: Jet Reconstruction
+  695+2+0 (1/0/11/1) Subsection: Jet Calibration
+  177+3+54 (1/1/4/0) Subsection: Jet Energy Uncertainties
+  137+1+0 (1/0/17/0) Section: $b$-Jets
+  105+4+0 (1/0/10/0) Subsection: Assigning a Flavour Label
+  661+10+49 (4/1/52/0) Subsection: Baseline $b$-tagging Algorithms
+  541+3+79 (1/4/42/0) Subsection: Multi-Variate $b$-tagging Algorithm
+  273+3+36 (1/1/21/2) Subsection: Calibration and Uncertainties
+  228+3+10 (1/1/19/0) Subsection: $b$-Jet Energy Scale
+  358+3+26 (1/0/3/0) Section: Electrons and Muons
+  134+2+0 (1/0/1/0) Section: Further objects
+
+Included file: ./Chapters/Trigger.tex
+Encoding: ascii
+Words in text: 5726
+Words in headers: 50
+Words outside text (captions, etc.): 675
+Number of headers: 10
+Number of floats/tables/figures: 23
+Number of math inlines: 337
+Number of math displayed: 2
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  558+4+39 (1/1/8/0) Chapter: The ATLAS Trigger System
+  396+2+0 (1/0/14/0) Section: Jet Triggers
+  624+2+74 (1/1/48/0) Section: $b$-Jet Triggers
+  276+9+0 (1/0/28/2) Section:  Measurement of the $b$-Jet Trigger Efficiency in 2016 Data
+  594+6+38 (1/0/55/0) Subsection: Description of Event Selection and Data-sets
+  1201+4+100 (1/7/68/0) Subsection: Investigation of Data-Simulation Discrepancies
+  340+7+0 (1/4/15/0) Subsection: $b$-Jet Trigger Aware Good Run List (GRL)
+  1737+16+424 (3/10/101/0) Subsection: Efficiency Measurement Results and Associated Uncertainties
+
+Included file: ./Chapters/EventSel.tex
+Encoding: ascii
+Words in text: 5125
+Words in headers: 35
+Words outside text (captions, etc.): 790
+Number of headers: 10
+Number of floats/tables/figures: 10
+Number of math inlines: 283
+Number of math displayed: 1
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  110+7+0 (1/0/6/0) Chapter: Di-$b$-jet Search: Outline and Event Selection
+  341+2+52 (1/1/15/0) Section: Analysis Outline
+  524+5+44 (1/0/20/0) Section: List of Data Sets Used
+  721+3+7 (1/0/44/0) Section: Backgrounds and Signal
+  169+2+0 (1/0/7/0) Section: Event Selection
+  477+2+47 (1/1/19/0) Subsection: Jet Selection
+  623+2+91 (1/1/28/1) Subsection: Event-Level Cuts
+  670+1+189 (1/2/65/0) Subsection: $b$-Tagging
+  941+8+74 (1/1/34/0) Subsection: Effect of $b$-Jet Trigger Matching in the \lm{} Data-set
+  549+3+286 (1/4/45/0) Subsection: Event Selection Summary
+
+Included file: ./Chapters/SearchPhase.tex
+Encoding: ascii
+Words in text: 9686
+Words in headers: 85
+Words outside text (captions, etc.): 1797
+Number of headers: 23
+Number of floats/tables/figures: 29
+Number of math inlines: 338
+Number of math displayed: 6
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  139+5+0 (1/0/2/0) Chapter: Di-$b$-jet Search: Search Phase
+  149+3+12 (1/0/2/0) Section: Dijet Mass Spectrum
+  327+2+0 (1/0/8/1) Section: Background Estimation
+  432+2+35 (1/1/17/0) Subsection: Functional Form
+  251+3+0 (1/0/8/1) Subsection: Wilks' Test Statistic
+  752+3+0 (1/0/28/3) Section: Resonance Search Strategy
+  64+2+0 (1/0/4/0) Section: \summer{} Search Phase
+  301+3+0 (1/1/10/0) Subsection: Background Modelling Strategy
+  298+4+75 (1/1/7/1) Subsection: Validation Studies: Background-Only Data-set
+  544+6+237 (1/3/40/0) Subsection: Validation Studies: Dijet Mass Range Studies
+  411+4+242 (1/4/39/0) Subsection: Validation Studies: Spurious Signal
+  244+4+0 (1/0/3/0) Subsection: Validation Studies: Signal Injection
+  158+3+0 (1/1/8/0) Subsection: Search Phase Results
+  92+2+0 (1/0/0/0) Section: \lm{} Search Phase
+  803+2+133 (1/2/21/0) Subsection: Background-Only Samples
+  438+3+116 (1/1/6/0) Subsection: Global Fit Strategy
+  407+5+37 (1/1/9/0) Subsection: Sliding window background estimation (SWiFT)}\label{sec:bkg-full_swift
+  785+3+0 (1/0/22/0) Subsection: Window Selection Strategy
+  322+7+138 (1/2/15/0) Subsection: SWiFt Validation Studies: Window Width Selection Procedure
+  1069+5+332 (1/5/25/0) Subsection: SWiFt Validation Studies: Spurious Signal
+  1424+5+320 (1/4/47/0) Subsection: SWiFt Validation Studies: Signal Injection
+  163+6+120 (1/2/15/0) Subsection: Results of Window Width Selection Procedure
+  113+3+0 (1/1/2/0) Subsection: Search Phase Results
+
+Included file: ./Chapters/Limits.tex
+Encoding: ascii
+Words in text: 3949
+Words in headers: 28
+Words outside text (captions, etc.): 282
+Number of headers: 9
+Number of floats/tables/figures: 11
+Number of math inlines: 136
+Number of math displayed: 7
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  139+6+10 (1/0/4/0) Chapter: Di-$b$-jet Search: Limit Setting Phase
+  873+3+61 (1/0/60/6) Section: Limit Setting Methodology
+  587+4+0 (1/0/17/0) Section: Description of Systematic Uncertainties
+  351+2+50 (1/4/21/0) Section: \summer{} Data-set Limits
+  0+2+0 (1/0/0/0) Section: \lm{} Data-set Limits
+  221+2+23 (1/1/3/1) Subsection: Signal Morphing
+  61+4+121 (1/2/7/0) Subsection: Summary of Systematic Uncertainties
+  1093+4+17 (1/2/10/0) Subsection: Signal Subtracted Background Estimation
+  624+1+0 (1/2/14/0) Subsection: Results
+
+Included file: ./Chapters/Future.tex
+Encoding: ascii
+Words in text: 1193
+Words in headers: 30
+Words outside text (captions, etc.): 142
+Number of headers: 5
+Number of floats/tables/figures: 2
+Number of math inlines: 71
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  28+6+0 (1/0/2/0) Chapter: Future Prospects of Di-$b$-Jet Searches
+  393+6+52 (1/1/24/0) Section: Di-$b$-Jet Searches at Higher Luminosities
+  364+4+59 (1/1/30/0) Section: Combination of $b$-Tagging Categories
+  187+6+31 (1/0/14/0) Section: Improvement of $b$-Jet Trigger Efficiency Measurement
+  221+8+0 (1/0/1/0) Section: Signal Plus Background Fit in the Search Phase
+
+Included file: ./Chapters/Conclusions.tex
+Encoding: ascii
+Words in text: 432
+Words in headers: 1
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 25
+Number of math displayed: 0
+
+Included file: ./Chapters/Appendices.tex
+Encoding: ascii
+Words in text: 260
+Words in headers: 14
+Words outside text (captions, etc.): 173
+Number of headers: 3
+Number of floats/tables/figures: 5
+Number of math inlines: 9
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  9+2+0 (1/0/1/0) Chapter: Dijet Binning
+  251+5+0 (1/1/6/0) Chapter: Single Jet Trigger Threshold~\pT{} Fit
+  0+7+173 (1/4/2/0) Chapter: All Configurations for Low Mass Fit Studies
+
+Included file: ./Chapters/app_plan.tex
+Encoding: ascii
+Words in text: 101
+Words in headers: 2
+Words outside text (captions, etc.): 0
+Number of headers: 1
+Number of floats/tables/figures: 0
+Number of math inlines: 0
+Number of math displayed: 0
+
+File(s) total: Thesis.tex
+Words in text: 40677
+Words in headers: 419
+Words outside text (captions, etc.): 4882
+Number of headers: 119
+Number of floats/tables/figures: 105
+Number of math inlines: 1818
+Number of math displayed: 30
+Files: 18
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+14+0 (1/0/1/0) File: Thesis.tex
+  6+0+0 (0/0/0/0) Included file: ./Aux/MainPackages.tex
+  172+1+0 (1/0/6/0) Included file: ./Aux/Preamble.tex
+  1418+3+0 (2/0/55/0) Included file: ./Chapters/Introduction.tex
+  4592+65+340 (22/8/214/6) Included file: ./Chapters/Theory.tex
+  3232+43+315 (12/7/111/3) Included file: ./Chapters/Detector.tex
+  4785+48+368 (19/10/232/5) Included file: ./Chapters/Object.tex
+  5726+50+675 (10/23/337/2) Included file: ./Chapters/Trigger.tex
+  5125+35+790 (10/10/283/1) Included file: ./Chapters/EventSel.tex
+  9686+85+1797 (23/29/338/6) Included file: ./Chapters/SearchPhase.tex
+  3949+28+282 (9/11/136/7) Included file: ./Chapters/Limits.tex
+  1193+30+142 (5/2/71/0) Included file: ./Chapters/Future.tex
+  432+1+0 (1/0/25/0) Included file: ./Chapters/Conclusions.tex
+  260+14+173 (3/5/9/0) Included file: ./Chapters/Appendices.tex
+  101+2+0 (1/0/0/0) Included file: ./Chapters/app_plan.tex
+
