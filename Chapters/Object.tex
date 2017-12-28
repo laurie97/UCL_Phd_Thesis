@@ -6,7 +6,7 @@ the ATLAS detector consists of many sub-detectors
 that each provide a different set of measurements.
 %in the form of, for example, hits in the Inner Detector or energy deposits in the calorimeter.
 The measurements from the sub-detectors are combined to reconstruct physics objects,
-which are physically meaningful objects used to study the hard-scatter process;
+which are physically meaningful and are used to study the hard-scatter process;
 for example electrons or hadronic jets containing $b$-quarks.
 This chapter will define the physics objects used in the analyses presented in this thesis
 and describe how each physics object is identified and their 4-momenta reconstructed.
@@ -48,7 +48,7 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
   %Track candidates must also pass some track quality requirements based on similar criteria.
   %that are similarly based on the track candidate's \pT{}, $\eta$ and the hit pattern.
   The self-consistent set of track candidates that have the highest combined track-score is selected.
-  Full details of the track selection algorithm is in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
+  Details of the track selection algorithm are found in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
 \item\textbf{Add TRT Information:}
   Finally, track candidates are updated such that hits in the TRT consistent with the track candidates are included.
   Including hits from the TRT means that tracks are measured over a larger radial distance which improves momentum resolution.
@@ -64,7 +64,7 @@ in $pp$ collision data collected in 2015 and 2016 by ATLAS the average number of
 
 A primary vertex is the position where a $pp$ collision occurred.
 The position of primary vertices in a bunch-crossing is calculated by performing
-an iterative fit using the positions that tracks intersect the beam-pipe~\cite{obj-tracks_pv}.
+an iterative fit using the positions that tracks intersect the centre of the region where the proton beams interact (known as the beam-spot)~\cite{obj-tracks_pv}.
 In the iterative fit procedure tracks are associated to primary vertices.
 The hard-scatter primary vertex is defined as the primary vertex with the highest sum of the squared transverse momenta ($\sum {\pT}^2$) of associated tracks.
 This is because a vertex with a large number of high-\pT{} tracks associated to it is likely to have been caused by a
@@ -82,12 +82,7 @@ Section~\ref{sec:theo-qcd_jets} described the formation of a hadronic jet in det
 The high-energy hadrons that form the hadronic jet will then deposit their energy in the cells of the ATLAS calorimeter
 through the processes described in Section~\ref{sec:det-calo}.
 Therefore, the ATLAS calorimeter has an energy and positional measurement of the components of the hadronic jet.
-%The process of hadronic jet formation and energy deposition in the calorimeter, as described above, is illustrated in Figure~\ref{fig:obj-jets_schem}.
 
-%The underlying processes in hadronic jet formation can be summarised as follows;
-%firstly the free quark/gluon will radiate additional gluons and quarks in a process known as the parton shower,
-%these gluons and quarks will then undergo hadronisation to form hadrons which are the constituents of the hadronic jet.
-%A more detailed description of the parton shower and hadronisation process can be found in Section~\textit{[QCD theory description] Not written yet} \textbf{LM fix}.
 
 %\begin{figure}[!ht]
 %  \begin{center}
@@ -102,17 +97,10 @@ Therefore, the ATLAS calorimeter has an energy and positional measurement of the
 
 This section describes the jet building procedure utilised by ATLAS
 to convert energy deposits in calorimeter cells into well defined and calibrated hadronic jets.
-%This procedure can be split up into three separate steps that are described in the following sections;
-%firstly topoclusters are formed (Section~\ref{sec:obj-jets_topo}),
-%then jets are formed from topoclusters using reclustering algorithms (Section~\ref{sec:obj-jets_reco})
-%and then the jets are calibrated and relevant jet energy uncertainties are derived (Section~\ref{sec:obj-jets_calib}~--~\ref{sec:obj-jets_uncert}).
 Only hadronic jets built from calorimeter cells are described,
 as this is the jet object used in di-$b$-jet searches.
 Other types of jets used %at ATLAS
-are, for example,
-%jets are used to observe electrons and taus whilst
-hadronic jets constructed from tracks~\cite{obj-Hbb_exotic}.
-%a technique that has been useful in dense environments
+are, for example, jets constructed from tracks~\cite{obj-Hbb_exotic}.
 
 \newpage
 \subsection{Hadronic Topocluster Reconstruction}
@@ -198,7 +186,7 @@ and the particle-beam distance for cluster $i$ ($d_{ib}$). The distances are def
 where \pT{} is transverse momentum (component of momentum perpendicular to the beam-pipe)
 and $\Delta R_{ij} = \sqrt{(y_{i}-y_{j})^2 + (\phi_{i}-\phi_{j})^2}$.
 $R$ is the jet width parameter, a free parameter of the algorithm.
-The parameter $a$ in takes the value $a = 2$ for the $k_t$ algorithm, $a = -2$ for the anti-$k_t$ algorithm 
+The parameter $a$ takes the value $a = 2$ for the $k_t$ algorithm, $a = -2$ for the anti-$k_t$ algorithm 
 and  $a = 0$ for the Cambridge-Aachen algorithm.
 If $d_{ij} < d_{iB}$ for a pair of clusters then it is likely that the two clusters are from the same jet. 
 In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are from the same jet.
@@ -239,12 +227,12 @@ $d_{iB} < d_{ij}$ for one of the clusters %(depending on the value of $a$)
 and the two cluster cannot be merged.
 
 The sequential reclustering algorithms described above are used as they satisfy two important %theoretically motivated
-criteria: infrared and collinear safety \footnote{\ Cone-based algorithms jet reconstruction algorithms used at some previous collider experiments,
-  such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy this infrared and collinear safety.}.
+criteria: infrared and collinear safety \footnote{\ Cone-based jet reconstruction algorithms used at some previous collider experiments,
+  such as UA2 ~\cite{obj-jets_reco_UA2}, do not satisfy infrared and collinear safety.}.
 Infrared safety requires that the jet reconstruction algorithm result should be invariant against soft gluon emission \footnote{\ Soft means low momentum.}
 and collinear safety requires that the result should be invariant against a parton splitting into two partons with small angular separation.
-These conditions are desirable as if the jet reconstruction algorithm is infrared or collinear unsafe,
-two different sets of jets could be built from an identical hard-scatter processes
+If the jet reconstruction algorithm is not infrared and collinear safe,
+two different sets of jets could be built from identical hard-scatter processes
 due to an additional emission process in the parton shower.
 
 Anti-$k_T$ is the standard jet reconstruction algorithm used at ATLAS. %, which is typical of analyses at ATLAS.
@@ -379,8 +367,7 @@ EM+JES is generally used in ATLAS analyses as it is a simpler calibration scheme
 The end result of the processes described in this section is a jet
 reconstructed from EM-scale topoclusters using an anti-$k_T$ algorithm with a jet width parameter $R$=0.4
 that is calibrated using the EM+JES calibration scheme.
-This type of jet is known as an `anti-$k_T$ R=0.4 EM+JES jet',
-and is the definition of a jet throughout this thesis.
+This is the definition of a jet used throughout this thesis.
 
 \newpage
 
@@ -390,7 +377,7 @@ and is the definition of a jet throughout this thesis.
 There are two components of uncertainty on the jet energy measurement; jet energy scale and jet energy resolution.
 
 Jet energy scale (JES) uncertainties arise from the calibration procedure
-to correct jets from the EM-scale to the hadronic-scale, outline above.
+to correct jets from the EM-scale to the hadronic-scale, outlined above.
 80 separate uncertainties are derived to cover each step of the calibration,
 the dominant uncertainties arise from the data-driven in-situ step~\cite{obj-jets_calib_run2}.
 Figure~\ref{fig:obj-jets_calib_JES} shows the fractional JES uncertainty as a function of jet-\pT{} and jet-$\eta$.
@@ -400,7 +387,7 @@ caused by mis-modelling of the detector response in the EM end-cap calorimeters.
 
 
 Jet energy resolution (JER) is defined as $\sigma(E)/E$, and JER uncertainties
-accounts for the imperfect simulation of detector resolution in Monte-Carlo simulation.
+account for the imperfect simulation of detector resolution in Monte-Carlo simulation.
 The uncertainty is measured using an in-situ technique from the balancing of jets in 8 TeV collision data
 which is extrapolated for 13 TeV data; the final uncertainty accounts for this extrapolation.
 Figure~\ref{fig:obj-jets_calib_JER} shows the fractional JER uncertainty as a function of jet-\pT{} and jet-$\eta$.
@@ -465,17 +452,18 @@ Truth-level hadrons with $p_{T} >$ 5 GeV are matched to jets if $\Delta R <$ 0.3
 the matching is exclusive meaning each hadron is assigned to the jet with the smallest $\Delta R$ separation.
 If a $b$-hadron is matched to a jet, the jet is then declared a $b$-jet;
 this process is then repeated for $c$-hadrons and $\tau$ leptons.
-If no match between $b$, $c$ or $\tau$ is achieved the jet is assigned as a light jet.
+If no match between $b$, $c$ or $\tau$ is achieved the jet is labelled as a light jet.
 %The matching is exclusive, which means that each particle is only assigned to one jet.
 This definition of truth flavour in simulation is used generally within this thesis.
+
    
 \subsection{Baseline $b$-tagging Algorithms}
 
-To identify $b$-jets, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction.
+To identify $b$-jets in data, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction.
 Weakly decaying $b$-hadrons produced at the LHC have an average lifetime of $\sim$\SI{1.6}{\pico\second} ~\cite{obj-bjets_PDG}
  \footnote{\ There are also excited $b$-hadron states that decay rapidly to other $b$-hadrons through the strong force.}.
-A $b$-jet decay chain  will typically contain two of these flavour changing interactions, 
-as at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $s$ or $d$ quark.
+A $b$-jet decay chain  will typically contain two of these flavour changing interactions 
+as, at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $s$ or $d$ quark.
 Due to their long lifetimes, $b$-hadrons decay a measurable distance from the hard-scatter primary vertex;
 for example a $B_0$ meson with a \pT{} of $100$ GeV will travel approximately $10$ mm.
 %Note to laurie - First year talk contains this calc
@@ -484,9 +472,9 @@ for example a $B_0$ meson with a \pT{} of $100$ GeV will travel approximately $1
 %   d = p tau / m
 %   Plug in numbers.
 Hence, the flavour of a jet can be inferred from the presence of particles
-that originate from a point offset from the primary vertex.
+that originate from a point offset from the hard-scatter primary vertex.
 
-$b$-Tagging uses tracks and jets as described in Section~\ref{sec:obj-tracks} and \ref{sec:obj-jets}.
+The $b$-tagging algorithms use tracks and jets as described in Section~\ref{sec:obj-tracks} and \ref{sec:obj-jets}.
 To perform $b$-tagging, tracks are associated to jets if there is a small angular separation, $\Delta R$, between the two objects.
 Tracks are exclusively matched, meaning each track is only associated to the jet with the smallest $\Delta R$ separation.
 The maximum value of $\Delta R$ for association decreases as jet-\pT{} increases because high-\pT{} jets are more collimated;
@@ -508,10 +496,10 @@ the details of this figure are referred to in the following three sections.
   \vspace{-0.5cm}
 \end{figure}
 
-\subsubsection{Impact parameter based}
+\subsubsection{Impact Parameter Based Algorithm}
 \label{sec:obj-bjets_IP}
 
-The IP3D and IP2D algorithms utilise the impact parameter, which is defined as the shortest distance between a track and the primary vertex.
+The IP3D and IP2D algorithms utilise the impact parameter, which is defined as the shortest distance between a track and the hard-scatter primary vertex.
 A track corresponding to a particle from the offset decay vertex of a heavy-hadron is likely to have a large impact parameter,
 meaning that the distribution of track impact parameter is different for each of the jet-flavours.
 The impact parameter of a track coming from the decay of a heavy hadron is indicated in Figure~\ref{fig:obj_bjets_schem}.
@@ -523,7 +511,7 @@ based on the distributions of the impact parameters ($d_{0}$, $z_{0}$) and their
 The IP2D algorithm calculates the jet flavour likelihood from just the transverse distributions, ($d_{0}$ and $d_{0}$ significance), which is more
 robust to pile-up, as tracks from pile-up jets incorrectly associated to the hard-scatter primary vertex are likely to have large $z_{0}$ significance values.
 
-\subsubsection{Secondary vertex}
+\subsubsection{Secondary Vertex Based Algorithm}
 \label{sec:obj-bjets_SV}
 
 The SV1 algorithm aims to reconstruct a secondary vertex of two or more intersecting tracks, corresponding to the decay of a heavy-flavour hadron;
@@ -531,12 +519,12 @@ the secondary vertex within a $b$-jet's decay chain is illustrated in Figure~\re
 The SV1 algorithm calculates a set of flavour discriminating variables using the properties of the reconstructed secondary vertex.
 Examples of flavour discriminating variables are the vertex invariant mass,
 which will be larger for $b$-jets due to the heavy mass of the $b$-hadron
-\footnote{\ The mass of a $B_0$ or $B^\pm$ meson is $\sim$ 5 GeV which are the most common $B$-hadron in a $b$-jet~\cite{obj-bjets_PDG}.}, 
-the distance in the transverse plane between the primary vertex and the secondary vertex, % (2D flight path $L_{XY}$),
+\footnote{\ The mass of a $B_0$ or $B^\pm$ meson is $\sim$ 5 GeV which are the most common $b$-hadron in a $b$-jet~\cite{obj-bjets_PDG}.}, 
+the distance in the transverse plane between the hard-scatter primary vertex and the secondary vertex, % (2D flight path $L_{XY}$),
 which will be larger for $b$-jets due to the long lifetime of the $b$-hadron,
 and the number of tracks at the secondary vertex, which will be larger for reliable secondary vertices.
 
-\subsubsection{Jet Fitter}
+\subsubsection{Jet Fitter Algorithm}
 \label{sec:obj-bjets_JF}
 
 The JetFitter algorithm (JF) attempts to reconstruct the full decay chain of the $b$-hadron into a $c$-hadron and then into light-hadrons. 
@@ -550,8 +538,8 @@ for example vertex mass and number of vertices with two or more tracks.
 \subsection{Multi-Variate $b$-tagging Algorithm}
 \label{sec:obj-bjets_MV2}
 
-The three base algorithms are combined in a Boosted Decision Tree (BDT), a machine-learning technique for combining the many flavour discriminating variables,
-resulting in the MV2 algorithm.
+The three base algorithms are combined in a Boosted Decision Tree (BDT)~\cite{obj-bjets_bdt},
+a machine-learning technique for combining the many flavour discriminating variables, resulting in the MV2 algorithm.
 A BDT is used as it is able to use the complex correlations between the input variables to maximise $b$-tagging performance.
 As shown in Figure~\ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
 with the flavour discriminating variables of SV1 and JF discussed in the preceding sections.
@@ -651,16 +639,16 @@ for the MV2c20 algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}. A
 \subsection{Calibration and Uncertainties}
 \label{sec:obj-bjets_calib}
 
-A calibration is performed to correct the modelling of $b$-tagging in simulation to the true $b$-tagging performance in data.
+A calibration is performed to correct the modelling of $b$-tagging in simulation to the $b$-tagging performance in data.
 The $b$-tagging calibration uses di-lepton $t\bar{t}$ events which, as described in Section~\ref{sec:theo-ttbar},
 have a distinctive signature for event selection and provide a pure sample of $b$-jets~\cite{obj-bjets_calib_tech,obj-bjets_calib_plots}.
 From the pure $b$-jet sample one can perform a likelihood fit to extract the $b$-jet efficiency, $\epsilon_{\,b\text{Tag}}$, which is defined as:
 \begin{equation}
- \epsilon_{\,b\text{Tag}} = \frac{N(\text{$b$-tagged true $b$-jets)}}{N(\text{True $b$-jets)}}
+ \epsilon_{\,b\text{Tag}} = \frac{N(\text{$b$-tagged $b$-jets)}}{N(\text{$b$-jets)}}
 \end{equation}
 where $b$-tagged means above the cut on the MV2 output for a given operating point.
 By measuring $\epsilon_{\,b\text{Tag}}$ in both data and in Monte-Carlo simulation one can derive
-a correction to simulation, known as a data/simulation scale factor ($SF_{\,b\text{Tag}}$), defined as:
+a correction to simulation, known as a data/simulation scale factor ($SF_{\,b\text{Tag}}$), as:
 \begin{equation}
  SF_{\,b\text{Tag}} = \epsilon_{\,b\text{Tag}}^{\text{Data}}/\epsilon_{\,b\text{Tag}}^{\text{MC}}
 \end{equation}
@@ -668,14 +656,14 @@ Uncertainties are derived for the scale factors
 to account for uncertainties in the modelling of the Standard Model processes and the detector response to electrons, muons and jets in simulation.
 The dominant source of uncertainty is the modelling of $t\bar{t}$ in simulation.
 Figure~\ref{fig:obj-bjets_calib} shows the data/simulation scale factor measured in 2015 and 2016 data as a function of jet \pT{}.
-The scale factors are consistent with unity within uncertainties, showing that $b$-tagging is generally well-modelled in simulation.
+%The scale factors are consistent with unity within uncertainties, showing that $b$-tagging is generally well-modelled in simulation.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.55\linewidth, angle=0]{figs/Objects/bjets_calib_pt.png} 
+    \includegraphics[width=0.57\linewidth, angle=0]{figs/Objects/bjets_calib_pt.png} 
   \end{center}
   \vspace{-1em}
-  \caption[Ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% operating point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
+  \caption[Ratio of $b$-tagging efficiency in data and Monte Carlo simulation for MV2c10 at the 77\% operating point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
           {\label{fig:obj-bjets_calib} Ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% operating point as a function of jet-\pT{}
   in di-lepton $t\bar{t}$ events. Statistical uncertainties (black lines) and total uncertainties (green shaded region) are shown \cite{obj-bjets_calib_plots}.}
 \end{figure}
@@ -690,10 +678,10 @@ The dominant extrapolation uncertainty is from variations of the impact paramete
 \subsection{$b$-Jet Energy Scale}
 \label{sec:obj-bjets_bjes}
 
-Sections~\ref{sec:obj-jets_calib} and \ref{sec:obj-jets_uncert} described the
+Sections~\ref{sec:obj-jets_calib} described the
 jet energy scale correction applied to hadronic jets.
 For $b$-jets this correction may be different due to differences in the parton shower and hadronisation processes for a $b$-jet;
-for example during the decay of the $b$-hadron, muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
+for example during the decay of the $b$-hadron muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
 
 As a result an additional $b$-jet energy scale ($b$JES) uncertainty has been 
 specifically derived for a previous di-$b$-jet search at ATLAS~\cite{dibjet-mori16_paper}.
@@ -739,36 +727,35 @@ and TRT transition radiation (described in Section~\ref{sec:det-ID})
 are used to identify electrons.
 Three different operating points are provided for electron identification
 which are, in order of increasing background rejection:
-\textit{Loose}, \textit{Medium}, and \textit{Tight}. 
+\textit{Loose}, \textit{Medium} and \textit{Tight}. 
 
 Muons~\footnote{\ Similar to positrons, in reconstruction anti-muons are included as a subset of muons}
 are the only charged particle not to be stopped by the ATLAS calorimeter.
 Therefore muons are identified at ATLAS using hits in the sub-detector outside of the calorimeter, the Muon Spectrometer (MS), which is described in Section~\ref{sec:det-MS}.
 Two of the techniques used for muon reconstruction are combined muons and extrapolated muons.
-For both techniques trajectories are initially reconstructed from hits in the MS, which are known as muon tracks.
-Combined muons are then reconstructed by extrapolating muon tracks inwards to match tracks in the ID,
-if a match is found then a combined muon track is formed from the associated ID and MS hits.
-By using both ID and MS position measurements, a higher precision muon track is created
-and the muon tracks can be accurately assigned to a primary vertex, which is used to reduce muons from pile-up.
-Extrapolated muons are formed using only hits in the MS,
+Combined muons are reconstructed by extrapolating tracks formed in the MS inwards to match tracks formed in the ID,
+if a match is found then a muon track is reconstructed from the associated ID and MS hits.
+By using both ID and MS hits, a higher precision muon track is created
+and the muon tracks can be accurately assigned to a primary vertex, which is used to identify muons from pile-up.
+Extrapolated muons are muon tracks formed using only hits in the MS
 with a loose requirement on the track pointing to the hard-scatter primary vertex to reduce effects from pile-up;
-extrapolated muons are important in the range $2.5 < \eta < 2.7$ for which there is no ID coverage.
+extrapolated muons are important in the range $2.5 < |\eta| < 2.7$ for which there is no ID coverage.
 The four-momentum of the reconstructed muons is determined from the direction and curvature of the muon tracks.
 
-The muon identification operating points are \textit{Loose}, \textit{Medium}, \textit{Tight}, and \textit{High-\pT{}}.
+The muon identification operating points are \textit{Loose}, \textit{Medium}, \textit{Tight} and \textit{High-\pT{}}.
 Medium muons, used in Section~\ref{sec:trig-bjet_eff}, are combined or extrapolated muons that pass a quality criteria based on
 number of MS hits, track fit quality and, where relevant, compatibility between the ID and MS tracks.
 
-\section{Further objects}
-\label{sec:obj-further}
-
-In this chapter all objects used in the analyses presented in this thesis have been defined.
-However there are more objects that ATLAS can reconstruct, a subset of which are briefly outlined below.
-\textit{`Photons'} are identified using narrow clusters of energy deposits in the calorimeter similar to that of electrons,
-  except with no track associated~\cite{obj-photons}. %\vspace{em}
- Hadronically decaying \textit{`taus'} are identified and reconstructed using narrow calorimeter jets
- associated to a topologies of tracks that match their known decay chain~\cite{obj-taus}.
- \textit{`Missing Transverse Momentum'} (MET) is the negative sum of the transverse momenta of all reconstructed physics objects in an event~\cite{obj-met}.
- As momentum is conserved in the transverse plane, MET measures the sum of the $p_T$ of objects that did not interact with the ATLAS detector.
-  MET is used to identify neutrinos~\cite{obj-Hbb} and to search for dark matter~\cite{obj-met_monoJet}.
+%\section{Further objects}
+%\label{sec:obj-further}
+%
+%In this chapter all objects used in the analyses presented in this thesis have been defined.
+%However there are more objects that ATLAS can reconstruct, a subset of which are briefly outlined below.
+%\textit{`Photons'} are identified using narrow clusters of energy deposits in the calorimeter similar to that of electrons,
+%  except with no track associated~\cite{obj-photons}. %\vspace{em}
+% Hadronically decaying \textit{`taus'} are identified and reconstructed using narrow calorimeter jets
+% associated to a topologies of tracks that match their known decay chain~\cite{obj-taus}.
+% \textit{`Missing Transverse Momentum'} (MET) is the negative sum of the transverse momenta of all reconstructed physics objects in an event~\cite{obj-met}.
+% As momentum is conserved in the transverse plane, MET measures the sum of the $p_T$ of objects that did not interact with the ATLAS detector.
+%  MET is used to identify neutrinos~\cite{obj-Hbb} and to search for dark matter~\cite{obj-met_monoJet}.
 %\end{itemize}
