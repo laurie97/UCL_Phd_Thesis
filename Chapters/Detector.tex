@@ -14,7 +14,7 @@ operated by the \textit{Conseil Europ\'een pour la Recherche Nucl\'eaire (CERN)}
 Lying in a tunnel \SI{100}{\metre} beneath the Swiss/French border near Geneva,
 the LHC is a \SI{27}{\km} circumference ring of superconducting magnets and accelerating structures,
 which accelerate beams of protons to a maximum energy of \SI{6.5}{\TeV}.
-These proton beams are collided in four different locations on the LHC ring
+The proton beams are collided in four different locations on the LHC ring
 and around each collision point a different detector is constructed to observe these collisions;
 one of these detectors is the ATLAS detector.
 
@@ -24,14 +24,14 @@ Since May 2015 the LHC has been colliding bunches of protons at a centre-of-mass
 the highest energy collisions ever obtained by a particle collider
 \footnote{The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}.
 In 2015 and 2016 the LHC produced $pp$ collisions 
-with a bunch spacing of \SI{25}{\nano\second}\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
+with a bunch spacing of \SI{25}{\nano\second}~\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
 
 \textit{Integrated luminosity}, $L$, is the quantity that describes the size of a data-set from a collider experiment.
 Integrated luminosity is defined as $L = N_{evt}/\sigma$,
 where $\sigma$ is the cross-section of a particular process occurring at that collider experiment
 and $N_{evt}$ is the number of events in the data-set that occur through that process.
 Instantaneous luminosity, defined as $dL/dt$, % $\frac{dL}{dt}$,
-is the rate of data-collecting.
+is the rate of data-collection.
 An integrated luminosity of \SI{3.9}{\fb^{-1}} and \SI{35.6}{\fb^{-1}} was recorded by ATLAS in 2015 and 2016 respectively~\cite{det-ATLAS_lumi_twiki}.
 
 %Figure \ref{fig:det-lumi_2015_2016} shows the integrated luminosity delivered by the LHC and recorded by ATLAS in 2015 and 2016;
@@ -39,7 +39,7 @@ An integrated luminosity of \SI{3.9}{\fb^{-1}} and \SI{35.6}{\fb^{-1}} was recor
 To achieve high instantaneous luminosity at the LHC, bunches of protons are collided resulting in many collisions per bunch-crossing.
 %Figure \ref{fig:det-mu_2015_2016} shows the luminosity-weighted distribution of the mean number of interactions per crossing ($<\hspace{-3pt}\mu\hspace{-3pt}>$)
 %for 13~TeV proton--proton collision data collected by ATLAS in 2015 and 2016.
-The mean number of collisions per bunch-crossing ($<\hspace{-3pt}\mu\hspace{-3pt}>$) varies depending on the running conditions of the LHC.
+The mean number of collisions per bunch-crossing ($<\hspace{-3pt}\mu\hspace{-3pt}>$) depends on the running conditions of the LHC.
 For ATLAS, the luminosity weighted average of $<\hspace{-3pt}\mu\hspace{-3pt}>$ is 13.7 in 2015 data and 24.9 in 2016 data~\cite{det-ATLAS_lumi_twiki}.
 Collisions in addition to the collision of interest
 \footnote{ The position of the collision of interest is known as the primary vertex;
@@ -75,7 +75,7 @@ as the resulting particles from pile-up collisions can affect the measurement of
 The ATLAS (\textbf{A} \textbf{T}oroidal \textbf{L}arge Hadron Collider \textbf{A}pparatu\textbf{S}) detector
 design, construction and performance has been described in detail in~\cite{det-ATLAS_Exp, det-ATLAS_TDR, det-ATLAS_Perf}.
 Therefore this chapter provides a general description of the detector with a focus on the needs of di-$b$-jet searches.
-Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the detector.
+Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the ATLAS detector.
 
 \begin{figure}[!htb]
   \begin{center}
@@ -90,7 +90,7 @@ The ATLAS detector is a large closed cylindrical detector,
 consisting of a system of magnets and three sub-detectors; the Inner Detector, the Calorimeter system and the Muon Spectrometer.
 The magnets and sub-detectors sit in concentric rings around the interaction point, where the proton bunches collide.
 Combining the measurements from each of the sub-detectors allows the 
-ATLAS detector to identify and measure the key properties~\footnote{\ For example four-momentum and charge.}
+ATLAS detector to identify and measure the key properties~\footnote{\ For example four-momentum.}
 of particles that pass through its volume.
 Each component of the ATLAS detector is described in further detail below.
 
@@ -127,13 +127,13 @@ The azimuthal angle, $\phi$, is defined right-handedly around the $z$-axis start
 The polar angle, $\theta$, is defined as the angle measured from the $z$-axis,
 such that along the $z$-axis corresponds to $\theta = 0$
 and anti-aligned with the $z$-axis corresponds to $\theta = \pi$.
-From that pseudo-rapidity, $\eta$, is defined as:
+From that pseudorapidity, $\eta$, is defined as:
 \begin{equation}
  \eta = -\ln\left[\tan\left( \frac{\theta}{2} \right) \right]
 \end{equation}
 Thus, $\eta = 0$ corresponds to a particle travelling perpendicular to the beam-pipe,
 where a positive value of $\eta$ corresponds to a particle travelling with a tilt towards the positive $z$-axis.
-The quantity is called pseudo-rapidity as in the massless limit ($\lim_{E\to|\vec{p}|}$)
+The quantity is called pseudorapidity as in the massless limit (when $|\vec{p}| \to E$)
 it can be shown that $\eta$ converges to rapidity, $y$, where rapidity is defined as,
 \begin{equation}
   y = \frac{1}{2} \ln \left( \frac{E+p_{z}}{E-p_{z}} \right)
@@ -155,18 +155,18 @@ The final important quantity of the ATLAS co-ordinate system is $\Delta R$, whic
 
 The innermost ATLAS sub-detector is the Inner Detector (ID) which
 measures the trajectory of charged particles.
-The ID is constructed from many concentric layers of detector,
-and as a charged particle passes through the ID each of the layers provides a position measurement, known as a hit.
-A particle passing through the whole Inner Detector at $\eta=0$ will typically cause 44 hits. % 4+4+36
+The ID is constructed from many concentric layers of detectors.
+As a charged particle passes through the ID, each of the layers provide a position measurement known as a hit.
+A particle passing through the whole ID at $\eta=0$ will typically cause 44 hits. % 4+4+36
 The trajectory of the particle is determined using the hits from each of the layers,
 the measured trajectory is known as a track. Track reconstruction will be discussed further in Section~\ref{sec:obj-tracks}.
 The ID is immersed in a 2~T magnetic field which bends the trajectories of charged particles;
 the sign of the charge and the momentum of the particle is inferred from the sign and magnitude of the track's curvature.
 
-The ID consists of four components; the Insertable B-Layer (IBL), the pixel detector~\footnote{ Often the IBL is considered as part of the pixel detector},
+The ID consists of four components; the Insertable B-Layer (IBL), the pixel detector, %~\footnote{\ Often the IBL is considered as part of the pixel detector.},
 the Semi-Conductor Tracker (SCT) and the Transition Radiation Tracker (TRT).
 The ID measures the position of particles in the angular range $|\eta|\nobreak<\nobreak2.5$;
-to achieve this ID components are organised into the barrel, which are cylinders around the beam-pipe in the central region %\footnote{ Central here means at a low value of $|z|$}
+to achieve this the ID components are organised into the barrel, which are cylinders around the beam-pipe in the central region %\footnote{ Central here means at a low value of $|z|$}
 of the detector, and the end-caps, which are disks that lie perpendicular to beam-pipe on either end of the barrel.
 Table~\ref{tab:det-ID} summarises the key properties of the components of the ID in both the barrel and the end cap.
 Figure~\ref{fig:det-ID_slice} shows the components of the ID in the barrel and the radial positions of each of the layers.
@@ -203,7 +203,7 @@ Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap compone
 
 {\renewcommand{\arraystretch}{1.1}
   \begin{table}[!htb]
-    \vspace{-0.5em}
+    \vspace{-0.2em}
 \centering
 \begin{tabular}{|cc||c|c|rr|c|}
   \hline
@@ -229,23 +229,22 @@ Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap compone
 \end{table}
 }
 
-The components of the ID closest to the beam-pipe are the IBL and the silicon pixel detector,
+The components of the ID closest to the beam-pipe are the IBL and the pixel detector,
 which are both made out silicon based pixel modules.
 As shown in Table~\ref{tab:det-ID}, the high-granularity of the IBL and pixel detector allow for high precision position measurements
 close to the beam-pipe, the importance of this will be outlined below.
 The pixel detector consists of 3 barrel layers and 3 end-cap disks at either end of the ID.
-The IBL was added to the ID in 2014 to improve tracking efficiency,
-which had been degraded by damage to the other layers of the pixel detector in data-taking before 2014,
-and to provide an extra measurement close to the beam-pipe.
-The IBL is a single layer of pixel modules in the barrel only, which provides an angular coverage of $\eta\nobreak<$ 2.5.
+The IBL was added to the ID in 2014 to provide an extra position measurement close to the beam-pipe
+and to improve tracking efficiency,
+which had been degraded by damage to the other layers of the pixel detector in data-taking before 2014.
+The IBL is a single layer of pixel modules in the barrel only, which provides an angular coverage of $|\eta|\nobreak<$ 2.5.
 
-
-Moving radial outwards the next component of the ID is the Semi-Conductor Tracker~(SCT).
-SCT modules are made from pairs of semi-conducting strips;
-the strips are $\sim$\SI{120}{\mm} in length \footnote{ This number varies for the various parts of the SCT},
+Moving radially outwards, the next component of the ID is the Semi-Conductor Tracker~(SCT).
+The SCT modules are made from two parallel layers of semi-conducting strips.
+The strips are $\sim$\SI{120}{\mm} in length \footnote{ This number varies for the various parts of the SCT}
 and have a strip pitch (spacial separation between strips) of \SI{80}{\micro\metre}.
-The strips within each pair have a stereo angle of 40 mrad between them,
-such that each strip can produce a 3D position measurement.
+The parallel strip layers within each module have a 40 mrad angular offset along their common normal
+such that each module can produce a 3D position measurement.
 
 The outermost component of the ID is the Transition Radiation Tracker (TRT)
 constructed of many \SI{4}{\mm} radius cylindrical tubes filled with a xenon based gas mixture
@@ -255,11 +254,13 @@ with an anode wire through the central axis.
 A charged particle passing through the gas causes ionisation allowing for a measurement of its position using drift-time.
 In addition, the space between the straws is filled with polymer fibres (barrel) and foils (end-caps) to create transition radiation,
 which is emitted by relativistic charged particles as they pass a boundary between materials with different refractive indices.
-The intensity of the transition radiation is inversely proportional to mass, providing additional information for particle identification. 
+The intensity of the transition radiation is inversely proportional to the mass of the charged particle,
+which are used to discriminate between electrons and pions~\cite{det-ID_TR}.
+%% Pion vs electron is example
 
 The trajectory, momentum and transition radiation measurements provided by the Inner Detector are essential for particle identification at ATLAS.
 In particular, the high precision position measurements close to the beam-pipe from the IBL and pixel detector
-are used to identify tracks originating from $B$ hadrons, which is then used to identify $b$-jets.
+are used to identify tracks originating from hadrons containing $b$-quarks, which are then used to identify $b$-jets.
 $b$-jet identification is important for di-$b$-jet searches and is described in Section~\ref{sec:obj-bjets}.
 
 \subsection{ATLAS Calorimeter System}
@@ -268,7 +269,7 @@ $b$-jet identification is important for di-$b$-jet searches and is described in 
 The ATLAS calorimeter system is located on the outside of the solenoid magnet surrounding the ID and
 is designed to provide an energy measurement of the traversing particles.
 The ATLAS calorimeter is particularly important for di-$b$-jet searches as it measures the
-energy of hadronic jets which is used to calculate the invariant mass of jet pairs. %dijet invariant mass,
+energy of hadronic jets which are used to calculate the invariant mass of jet pairs. %dijet invariant mass,
 
 The ATLAS calorimeter consists of two different systems built in concentric rings;
 the innermost is the \textit{`Electromagnetic Calorimeter system'} (ECAL) used to measure electromagnetic objects such as photons and electrons.
@@ -286,11 +287,11 @@ Figure \ref{fig:det-calo_schem} shows a cut-away of the ATLAS calorimeter.
   \label{fig:det-calo_schem}
 \end{figure}
 
-A more detailed description of each of the calorimeter components will follow;
-however, the principle behind each detector is common so is described first.
-The calorimeters at ATLAS are sampling calorimeters, which means they consist of alternating layers of absorber and active material.
+A more detailed description of the calorimeter components will follow;
+however, the principle behind each component of the calorimeter is common so is described first.
+The calorimeters at ATLAS are sampling calorimeters, which means that they consist of alternating layers of absorber and active material.
 The role of the \textit{`absorber layer'} is to force the particle, whose energy we want to measure, to emit secondary particles.
-These secondary particles will again emit further particles and so on meaning a particle cascade is formed,
+These secondary particles will again emit further particles and so on such that a particle cascade is formed,
 the many resulting particles from the cascade are known as the cascade particles.
 The role of the \textit{`active material layer'} is to measure the energy of the cascade particles %,
 by counting electrons released by ionisation or photons emitted by excited atoms.
@@ -322,7 +323,7 @@ and 7/9 of the mean free path for a photon to produce an $e^+e^-$ pair.
 High-Z materials have a shorter radiation length; in lead $X_0$ = 0.6 cm~\cite{obj-bjets_PDG}.
 The LAr calorimeter has a depth of $>$ 22 $X_{0}$ in the barrel and $>$ 24 $X_{0}$ in the end-caps,
 meaning that almost all of the particle shower from a high-energy photon
-or electron is contained within electromagnetic calorimeter.
+or electron is contained within the electromagnetic calorimeter.
 The maximum granularity of the LAr calorimeter in the $\eta$--$\phi$ plane
 is \mbox{0.025~x~0.025} for the Barrel and 0.025~x~0.1 for the end-cap
 \footnote{Full details on the granularity of all components of the ATLAS calorimeter is found in Table 1.3 of~\cite{det-ATLAS_Exp}.}. 
@@ -383,7 +384,7 @@ The maximum granularity of the LAr calorimeter in the $\eta$--$\phi$ plane is 3.
 
 The ATLAS calorimeter is a non-compensating calorimeter;
 which means that the response of the detector to an electromagnetic particle (such as an electron)
-is larger than the response of a hadronic particle (for example a pion).
+is larger than the response to a hadronic particle (for example a pion).
 This is because some energy is lost in the hadronic cascade process;
 mainly due to the energy required to release nucleons from calorimeter nuclei during spallation \cite{det-comp_calo, det-thesis_lene}.
 %but also from the recoil energy given to the calorimeter nuclei
@@ -466,13 +467,14 @@ FCAL                   & 100\%                                      &  10\%     
 The Muon Spectrometer (MS) is the outermost part of the ATLAS detector and is designed to measure the trajectory
 of charged particles that are not stopped by the calorimeter system.
 As the muon is the only charged particle that can pass through the calorimeter system,
-measurements in the Muon Spectrometer are used to identify muons.
-The Muon Spectrometer consists of layers of detector providing positional measurements (or hits)
+measurements in the MS are used to identify muons.
+The MS consists of layers of detector providing positional measurements (or hits)
 in the presence of a magnetic field, similar to the concept used for the Inner Detector (ID).
-Furthermore, position measurements from both the Muon Spectrometer and ID are used to calculate the trajectory of muons,
-known as muon tracks, and from that the momentum of the muon can be inferred.
-By using position measurements from both the Muon Spectrometer and the ID, muon tracks have a long lever arm which improves momentum resolution.
-Muon track reconstruction is further discussed in Section~\ref{sec:obj-leptons}.
+%Furthermore, position measurements from both the MS and ID are used to calculate the trajectory of muons,
+%known as muon tracks, and from that the momentum of the muon can be inferred.
+%By using position measurements from both the MS and the ID, muon tracks have a long lever arm which improves momentum resolution.
+Therefore, the trajectory and momentum of muons can be calculated using hits from the MS.
+Details of muon reconstruction are discussed further in Section~\ref{sec:obj-leptons}.
 
 In the barrel region ($|\eta|\nobreak<\nobreak1.4$) a large barrel toroid provides the magnetic field,
 in the end-cap region ($1.6\nobreak<\nobreak|\eta|\nobreak<\nobreak2.7$) two smaller end-cap magnets  provide the magnetic field
@@ -484,100 +486,49 @@ In the barrel region,  muon chambers are arranged in three concentric cylindrica
 whilst in the transition and end-cap regions there are in three disks of chambers perpendicular to the beam-pipe either side of the barrel.
 
 There are two types of muon chambers; trigger and precision.
-The trigger muon chambers provide a position measurement in 3-dimensions within 15--\SI{25}{\nano\second} which is used to identify muons tracks in the trigger.
+The trigger muon chambers provide a position measurement in 3-dimensions within 15--\SI{25}{\nano\second} which is used to reconstruct muons in the ATLAS trigger system,
+the trigger will be discussed in Chapter~\ref{sec:trig}.
 The trigger muon chambers comprise of Resistive Plate Chambers (RPC’s) in the barrel 
 and Thin Gap Chambers (TGC’s) in the end-cap regions.
 %Only measurements for $|\eta|\nobreak<\nobreak2.0$ are used for triggering due to the high flux of muons close to the beam-pipe.
 The precision muon chambers provide a precise measurement of the muon position co-ordinates in the $R$-$z$ plane,
-the plane in which track curvature occurs in the Muon Spectrometer, allowing for precise measurements of the muon track-$p_T$. 
+the plane in which trajectory curvature occurs in the MS, allowing for precise measurements of the muon track-$p_T$. 
 In the region $|\eta|\nobreak<\nobreak2.0$, the precision muon chambers are entirely Monitored Drift Tubes (MDTs),
-whilst at large pseudo-rapidities ($2.0\nobreak<\nobreak|\eta|\nobreak<\nobreak2.7$), Cathode Strip Chambers (CSCs) are used in addition to MDTs.
-A schematic of the Muon Spectrometer is shown in Figure~\ref{fig:det-ms_schem}, the types of muon chambers are labelled.
+whilst at large pseudorapidity ($2.0\nobreak<\nobreak|\eta|\nobreak<\nobreak2.7$) Cathode Strip Chambers (CSCs) are used in addition to MDTs.
+A schematic of the MS is shown in Figure~\ref{fig:det-ms_schem}, the types of muon chambers are labelled.
 
-There is an additional use of the Muon Spectrometer that relates to high-energy jets.
+There is an additional use of the MS that relates to high-energy jets.
 Whilst for most jets the shower is fully contained within the calorimeter
 there are some jets, particularly at high-$p_T$, where a non-negligible amount of energy is not deposited in the calorimeter.
-This effect, known as \textit{`punch-through'}, is estimated using energy deposits in the Muon Spectrometer.
+This effect, known as \textit{`punch-through'}, is estimated using energy deposits in the MS.
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Detector/MS_schem.pdf}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/MS_schem.pdf}
   \end{center}
   \caption[A cut-away of the ATLAS Muon Spectrometer.]
           {A cut-away of the ATLAS Muon Spectrometer (MS). The types of muon chamber used in each part of the MS are labelled on the figure.~\cite{det-ATLAS_Exp}.}
   \label{fig:det-ms_schem}
 \end{figure}
 
+\newpage
+
 \subsection{Magnets}
 \label{sec:det-magnets}
 
-In ATLAS magnetic fields are important for obtaining the momentum and charge of particles from their observed trajectories in the ID and Muon Spectrometer.
+In ATLAS, magnetic fields are important for obtaining the momentum of particles from their observed trajectories in the ID and MS.
 The ATLAS magnet system consists of four large superconducting magnets.
-The inner solenoid surrounds the Inner Detector and provides a 2~T magnetic field within the ID.
-The barrel toroid magnet provides a magnetic field of $\sim$0.5~T in the central regions of the Muon Spectrometer and
-the two end-cap toroid magnets which produce a magnetic field of $\sim$1~T in the forward regions of the Muon Spectrometer.
-Figure~\ref{fig:det-magnet_schem} shows the layout of the magnets in ATLAS~\cite{det-magnet_fig}.
+The inner solenoid surrounds the ID and provides a 2~T magnetic field within the ID.
+The barrel toroid magnet provides a magnetic field of $\sim$0.5~T in the central regions of the MS and
+the two end-cap toroid magnets which produce a magnetic field of $\sim$1~T in the forward regions of the MS.
+Figure~\ref{fig:det-magnet_schem} shows the layout of the ATLAS magnet system~\cite{det-magnet_fig}.
 
 \vspace{1em}
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Detector/Magnet_schem.png}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/Magnet_schem.png}
   \end{center}
-  \caption[The layout of the ATLAS magnets.]{The layout of the ATLAS magnets~\cite{det-magnet_fig}.}
+  \caption[The layout of the ATLAS magnet system.]{The layout of the ATLAS magnet system~\cite{det-magnet_fig}.}
   \label{fig:det-magnet_schem}
 \end{figure}
 
-\textbf{Note for AK: Trigger to be moved entirely to trigger chapter, reduces need for repetition and hopefully will increase clarity.}
-
-  
-%%\section{Data Acquisition and Trigger}
-%\section{Trigger}
-%\label{sec:det-trig}
-%
-%In 2015 and 2016, the LHC has been colliding proton beams with a bunch spacing of \SI{25}{\nano\second},
-%meaning that the ATLAS experiment has been taking data at a rate of 40 MHz.
-%However, due to the large computing resources required to process and store each event,
-%it is not possible to record all this data for use in an analysis.
-%To resolve this problem,
-%the ATLAS experiment uses a trigger system to reduce the event rate by
-%selecting the events of interest that contain high-$p_{T}$
-%%$\footnote{$p_{T}$ refers to the component of momentum transverse to the beam-line.} 
-%physics objects, which indicate that a hard scatter has occurred in that event. 
-%
-%The ATLAS trigger-system has two levels;
-%the first level trigger (L1) and the higher level trigger (HLT) \cite{det-run2_trigger}.
-%Figure~\ref{fig:det-trigger_schem} shows a schematic outlining the trigger used in Run-2 \cite{det-run2_triggerPerf}. 
-%
-%\begin{figure}[!ht]
-%  \begin{center}
-%    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/trigger_schem.png}
-%  \end{center}
-%  \caption[A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering.]
-%          {A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering~\cite{det-run2_trigger}.}
-%  \label{fig:det-trigger_schem}
-%\end{figure}
-%
-%The first level trigger (L1) is hardware based which reduces the rate from 40~MHz to 100~kHz within a time window of \SI{2.2}{\micro\second}.
-%The L1 trigger uses custom electronics to rapidly process information directly from the
-%calorimeter and the Muon Spectrometer, searching for high-$p_{T}$ muon tracks and large calorimeter deposits.
-%The information is then passed to the central trigger processor which uses a set of pre-defined conditions
-%to decide if a L1 trigger accept is given and thus events are passed on to the next step of triggering.
-%At the same time Regions of Interests (ROIs) are constructed around the objects that have fired the L1 trigger,
-%which are passed on to the HLT. 
-%
-%The next step is the HLT, a software based trigger,
-%which further reduces the event rate to 1~kHz within a time window of ~\SI{0.2}{\second}.
-%The HLT uses the information from the full detector
-%to perform a more complete reconstruction of the physics objects within the event,
-%the most time consuming reconstruction algorithms only being run only within the ROIs taken from L1.
-%The more complex event analysis allowed within the software-based trigger includes
-%track reconstruction and therefore allows for $b$-jet identification.
-%If the content of the event reconstruction passes a pre-set criteria, a HLT accept is issued
-%meaning that the events are passed on for processing and storage. 
-%% in offline computer farms (known as tier-0). 
-%
-%A further description of triggers used in the analysis,
-%with a particular focus on the $b$-jet trigger performance
-%is found in \ref{sec:bJetTrigger}\textit{(b-jet trigger chapter)}.
-%
-%

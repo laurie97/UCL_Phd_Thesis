@@ -10,12 +10,21 @@ LaTeXSources= $(wildcard *.tex *.bib */*.tex) ucl_thesis.cls
 .PHONY: all clean superclean test
 all: Thesis.pdf
 
+quick: Thesis_quick.pdf
+
 
 Thesis.pdf: $(LaTeXSources)
 	lualatex --halt-on-error $(basename $@).tex References/*bib
 	bibtex $(basename $@)
 	lualatex --halt-on-error $(basename $@).tex References/*bib
 	lualatex --halt-on-error $(basename $@).tex References/*bib
+
+Thesis_quick.pdf: $(LaTeXSources)
+	lualatex --halt-on-error $(basename $@).tex References/*bib
+	#bibtex $(basename $@)
+	#lualatex --halt-on-error $(basename $@).tex References/*bib
+	#lualatex --halt-on-error $(basename $@).tex References/*bib
+
 
 Chapter:
 	echo "Making chapter ${chap}"

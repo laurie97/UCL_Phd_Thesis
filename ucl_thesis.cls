@@ -461,6 +461,13 @@
          \clearpage%
          I, Laurie McClymont, confirm that the work presented in this thesis is my own.
          Where information has been derived from other sources, I confirm that this has been indicated in the work.
+         \vspace{4em}
+         \begin{figure}[!htb]
+             \hspace{8cm}\includegraphics[scale=0.2, angle=0]{figs/Aux/Signature.pdf}
+          \end{figure}
+
+
+         \vspace{3em}
          \gdef \@author{}%
          \clearpage%
        }%
