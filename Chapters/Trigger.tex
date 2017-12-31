@@ -150,7 +150,6 @@ IP3D+SV1 was used by the $b$-jet trigger in 2015 data-taking.
   \label{fig:trig-bTrig_perf}
 \end{figure}
 
-
 There are several $b$-jet triggers available
 with a variety of requirements on the jet multiplicity, number of tagged jets and $b$-tag operating point used.
 As the signal considered in the low mass di-$b$-jet search is a BSM particle decaying to two $b$-quarks, a double $b$-jet trigger is used.
@@ -167,10 +166,11 @@ In 2015 data-taking the \verb|EFHist| algorithm is employed~\cite{trig-EFHist};
 which groups all tracks in a histogram based on the $z$ position of the track intersection with the beam-pipe,
 and uses the centre of the bin containing the largest sum of track-\pT{} as the hard-scatter primary vertex.
 %The \verb|xPrmVtx| algorithm is used in 2016 to align with offline tracking.
-As a result of these significant differences, data taken in 2015 and 2016 by the $b$-jet trigger are not easily combined in a di-$b$-jet search.
-Therefore, as described in Chapter~\ref{sec:evt}, the low mass di-$b$-jet search presented in this thesis uses only the 2016 data-set.
+Because of these significant differences, data taken in 2015 and 2016 by the $b$-jet trigger are not easily combined in a di-$b$-jet search.
+Therefore, the low mass di-$b$-jet search presented in this thesis
+uses only the 2016 data-set, which contains 88\% of the combined integrated luminosity and, as shown in Figure~\ref{fig:trig-bTrig_perf}, has an improved online $b$-tagging performance.
 
-In addition there are important differences between online and offline $b$-tagging.
+In addition, there are also significant difference between the $b$-tagging procedure used online and offline.
 Firstly, coarser tracking information is available online, notably online tracks are only reconstructed within the jet RoIs.
 Secondly, a different fraction of $c$-jets were present in the sample used to train the MV2 algorithm in online and offline $b$-tagging,
 specifically 10\% were used offline (MV2c10) and 20\% were used online (MV2c20).
@@ -255,9 +255,9 @@ Details of muon, electron, jet and $b$-tagged jet object definition are in Chapt
 %chapter ~\ref{sec:obj-lepton},~\ref{sec:obj-jets} and \ref{sec:obj-bjets}\textit{(sec:obj-bjet)} respectively.
 
 The triggers deployed are $b$-performance triggers, which are special triggers used in data-taking specifically for monitoring the $b$-jet trigger performance.
-They require that an online muon or an electron with $\pT{} > 26$~\GeV~is reconstructed.
-The $b$-performance triggers then run the online $b$-tagging algorithms on all trigger jets with $|\eta|<2.5$ and
-\mbox{$p_{T}>35$~\GeV} without performing any cuts on the output of the MV2c20 algorithm.
+They are passed if single electron or muon is in the event.
+The $b$-performance triggers then run and record the output of the online $b$-tagging algorithms on all trigger jets with $|\eta|<2.5$ and
+\mbox{$p_{T}>35$~\GeV}, without placing any requirements on the output of the MV2c20 algorithm.
 Therefore, $b$-performance triggers can select  di-lepton $t\bar{t}$ events at the trigger-level
 and thus provide an unbiased source of online $b$-tagged jets to measure the $b$-jet trigger efficiency.
 
@@ -269,9 +269,8 @@ Offline jets are matched to online jets if $\Delta R < 0.4$,
 the matching is exclusive meaning that online jets are only matched to offline jets with the smallest $\Delta R$ separation.
 Matching is required such that the $b$-jet trigger efficiency measurement does not have a kinematic bias
 from the online jet-$\pT$ requirement used in the $b$-performance trigger.
-The 85\% operating point is chosen for offline $b$-tagging as an event selection with a tighter event selection
+The 85\% operating point is chosen for offline $b$-tagging as a tighter event selection
 cannot be used to calibrate the 85\% operating point.
-
 
 
 %this event selection is used to calibrate all offline operating points.
@@ -346,7 +345,7 @@ In Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch} the efficiency in data is sub
 than the efficiency expected from  simulation and has a different distribution with respect to jet-$\eta$.
 The substantial differences need to be investigated and understood. 
 The drop in efficiency in the lowest $\pT$ bin (35--50~GeV) is because not all offline jets with a $p_T < 50$~GeV  will have an 
-equivalent online jet with $\pT{} > 35$~GeV required to be considered by the $b$-performance trigger. This bias is removed when offline--online matching is required.
+equivalent online jet with $\pT{} > 35$~GeV required to be considered by the $b$-performance trigger. This bias is removed when offline--online jet matching is required.
 
 
 %\subsection{Investigation}
@@ -364,7 +363,7 @@ The beam-spot position is estimated at the trigger-level using the average posit
 this is known as the online beam-spot position~\cite{trig-onlinePV}.
 Online tracks use positions with respect to the online beam-spot position
 whilst the \verb|xPrmVtx| algorithm assumes track positions with respect to the origin.
-As a result, if the online beamspot $z$-position is far from from the origin then
+As a result of this mismatch, if the online beamspot $z$-position is far from from the origin then
 a \verb|xPrmVtx| PV is often not found and a dummy PV with position at the origin is used by the $b$-jet trigger.
 The evidence for this hypothesis is discussed in the remainder of this section.
 For brevity, online beamspot $z$-position is henceforth referred to as $z_{\,\text{bs}}^{\text{\,online}}$.  
@@ -629,7 +628,9 @@ Figures~\ref{fig:Full_bslt2mm_eff}~and~\ref{fig:Full_bslt2mm_bperf} show the mea
 $b$-jet trigger efficiency and online primary vertex efficiency
 for the full 2016 data-set, combining Epochs 1, 2 and 3,
 with the $b$-jet trigger aware GRL applied.
-Data agrees with simulation within 5\%.  A residual kinematic bias with respect to leading jet-$\eta$ is still present.
+Data agrees with simulation within 5\%.
+A residual kinematic bias with respect to leading jet-$\eta$ is still present;
+a correction for this effect is derived in Section~\ref{sec:trig-eventLevelEff}.
 %This represents the raw observed data/simulation efficiencies when the full event selection has been applied.
 
 \begin{figure}[!ht]
@@ -809,6 +810,7 @@ The three fits are:
 \item \textbf{Normalisation Fit}: A \textit{`normalised simulation'} efficiency is created by applying
   a normalisation factor derived by performing a single-constant fit
   to the ratio of the $b$-jet trigger efficiency in data and simulation.
+  This accounts for the normalisation difference between the $b$-jet trigger efficiency in data and simulation for the the full jet-\pT{} range.
   The lowest \pT{} bin has an inconsistent data/simulation ratio compared to other low-\pT{} bins, so is excluded from the fit
   \footnote{\ The discrepancy is shown below in Table~\ref{tab:bTrig_jetSys}. The difference is within purity uncertainties.}.
   The normalisation fit is shown in Figure~\ref{fig:bTrig_mcExtrap}(a),
@@ -816,6 +818,7 @@ The three fits are:
   
 \item \textbf{Linear Correction Fit}:
   A \textit{`corrected simulation'} efficiency is created by applying a linear correction factor to the normalised simulation efficiency.
+  This correction accounts for a difference in slope between the $b$-jet trigger efficiency in data and simulation for the high jet-\pT{} region.
   The correction is derived by performing a linear fit to the ratio of the $b$-jet trigger efficiency in data and the normalised simulation
   in the range jet-\pT{} $>$ 240 GeV, as shown in Figure~\ref{fig:bTrig_mcExtrap}(b).
   To estimate an uncertainty on the linear correction the gradient of the fit is varied within uncertainties
@@ -861,7 +864,6 @@ The uncertainties on the high-\pT~extrapolation procedure  are summarised in Tab
         \label{fig:bTrig_mcExtrap}
 \end{figure}
 
-\vspace{0.5em}
 \begin{table}[!ht]
   \begin{center}
 \begin{tabular}{|c||c||c|c|c|c|}
@@ -903,7 +905,6 @@ For jet-\pT{} $>$ 240 GeV, the data and corrected simulation are consistent with
   }
 \end{figure}
 
-\newpage
 
 The raw measurements of the $b$-jet trigger efficiency from Figure~\ref{fig:Full_bslt2mm_eff}
 and the additional corrections and systematic uncertainties described above can be brought together.
@@ -997,18 +998,18 @@ For looser offline operating points the uncertainty becomes larger, due to incre
 
                 & \hspace{1.5mm}70\% OP\hspace{1.5mm} & \hspace{1.5mm}77\% OP\hspace{1.5mm} & \hspace{1.5mm}85\% OP\hspace{1.5mm} \\
     \hline
-    35-50.0   & 1.0\%   & 2.3\%   & 6.2\%  \\
-    50-70.0   & 0.7\%   & 1.6\%   & 4.6\%  \\
-    70-90.0   & 0.6\%   & 1.3\%   & 3.7\%  \\
-    90-120.0  & 0.7\%   & 1.3\%   & 3.7\%  \\
-    120-150.0 & 0.6\%   & 1.4\%   & 3.7\%  \\
-    150-180.0 & 0.9\%   & 1.8\%   & 4.6\%  \\
-    180-240.0 & 1.1\%   & 2.6\%   & 6.4\%  \\
+    35-50   & 1.0\%   & 2.3\%   & 6.2\%  \\
+    50-70   & 0.7\%   & 1.6\%   & 4.6\%  \\
+    70-90   & 0.6\%   & 1.3\%   & 3.7\%  \\
+    90-120  & 0.7\%   & 1.3\%   & 3.7\%  \\
+    120-150 & 0.6\%   & 1.4\%   & 3.7\%  \\
+    150-180 & 0.9\%   & 1.8\%   & 4.6\%  \\
+    180-240 & 1.1\%   & 2.6\%   & 6.4\%  \\
     \hline          
-    240-300.0 & 2.6\%   & 4.4\%   & 10.2\% \\
-    300-400.0 & 5.6\%   & 7.5\%   & 17.6\% \\
-    400-500.0 & 8.1\%   & 10.9\%  & 22.2\% \\
-    500-700.0 & 19.4\%  & 19.0\%  & 36.6\% \\
+    240-300 & 2.6\%   & 4.4\%   & 10.2\% \\
+    300-400 & 5.6\%   & 7.5\%   & 17.6\% \\
+    400-500 & 8.1\%   & 10.9\%  & 22.2\% \\
+    500-700 & 19.4\%  & 19.0\%  & 36.6\% \\
     \hline
   \end{tabular}
   \vspace{10pt}
@@ -1092,6 +1093,11 @@ The uncertainty is dominated by the shape systematic uncertainty.
     with total uncertainty and the contributions of the different systematic uncertainties considered.}
   \end{center}
 \end{table}
+
+\newpage
+
+Both the $b$-jet trigger aware GRL and the jet-level and event-level $b$-jet trigger efficiencies  presented in this section
+are used by for all analyses at ATLAS utilising the $b$-jet trigger in 2016 data as reccomended by the ATLAS $b$-jet trigger group.
 
 \vfill
 

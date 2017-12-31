@@ -1,3 +1,4 @@
+\addtocontents{toc}{\protect\pagebreak}
 \chapter{Object Definition and Reconstruction}
 \label{sec:obj}
 
@@ -47,7 +48,7 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
   %and the quality of the hits.
   %Track candidates must also pass some track quality requirements based on similar criteria.
   %that are similarly based on the track candidate's \pT{}, $\eta$ and the hit pattern.
-  The self-consistent set of track candidates that have the highest combined track-score is selected.
+  The self-consistent set of track candidates with the highest combined track-score is selected.
   Details of the track selection algorithm are found in~\cite{obj-tracks_TIDE}.\vspace{0.5em}
 \item\textbf{Add TRT Information:}
   Finally, track candidates are updated such that hits in the TRT consistent with the track candidates are included.
@@ -102,7 +103,6 @@ as this is the jet object used in di-$b$-jet searches.
 Other types of jets used %at ATLAS
 are, for example, jets constructed from tracks~\cite{obj-Hbb_exotic}.
 
-\newpage
 \subsection{Hadronic Topocluster Reconstruction}
 \label{sec:obj-jets_topo}
 
@@ -110,7 +110,6 @@ The first step of jet building at ATLAS is the formation of 3D clusters, known a
 Each topocluster represents a hadron or a set of collimated hadrons within a hadronic jet.
 The calorimeter cells can be from either the EM or hadronic calorimeter systems which are described in Section~\ref{sec:det-calo}.
 The topocluster building algorithm uses the variable \mbox{\textit{`cell signal significance'}}
-%defined as:
 , $S_{\text{cell}}$, defined as:
 \begin{equation}
   \vspace{0.2em}
@@ -444,7 +443,7 @@ The process of $b$-tagging at ATLAS in Run-2 is described in great
 detail in~\cite{obj-bjets_algo_2015,obj-bjets_algo_2016},
 so what follows is a summary of the key features of the process.
 
-\subsection{Assigning a Flavour Label}
+\subsection{Truth Flavour Label}
 \label{sec:obj-bjets_label}
 
 In simulation, the particle-level truth information is known, and hence a truth flavour label of a jet can be defined.
@@ -454,10 +453,10 @@ If a $b$-hadron is matched to a jet, the jet is then declared a $b$-jet;
 this process is then repeated for $c$-hadrons and $\tau$ leptons.
 If no match between $b$, $c$ or $\tau$ is achieved the jet is labelled as a light jet.
 %The matching is exclusive, which means that each particle is only assigned to one jet.
-This definition of truth flavour in simulation is used generally within this thesis.
+This definition of truth flavour label in simulation is used generally within this thesis.
 
    
-\subsection{Baseline $b$-tagging Algorithms}
+\subsection{Baseline $b$-Tagging Algorithms}
 
 To identify $b$-jets in data, $b$-tagging algorithms utilise the long lifetimes of the heavy-hadrons that decay through the flavour changing weak interaction.
 Weakly decaying $b$-hadrons produced at the LHC have an average lifetime of $\sim$\SI{1.6}{\pico\second} ~\cite{obj-bjets_PDG}
@@ -535,7 +534,7 @@ as illustrated in Figure \ref{fig:obj_bjets_schem}.
 Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
 for example vertex mass and number of vertices with two or more tracks.
 
-\subsection{Multi-Variate $b$-tagging Algorithm}
+\subsection{Multi-Variate $b$-Tagging Algorithm}
 \label{sec:obj-bjets_MV2}
 
 The three base algorithms are combined in a Boosted Decision Tree (BDT)~\cite{obj-bjets_bdt},
@@ -694,7 +693,7 @@ which is necessary because, as is described below, tracks are used to validate t
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.45\linewidth, angle=0]{figs/Objects/bjets_bJES_uncert_edit.pdf}
+    \includegraphics[width=0.55\linewidth, angle=0]{figs/Objects/bjets_bJES_uncert_edit.pdf}
   \vspace{-2em}
   \end{center}
   \caption[The total fractional $b$JES uncertainty shown with the various contributions.]
