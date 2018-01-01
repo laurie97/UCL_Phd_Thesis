@@ -1,5 +1,5 @@
 @article{obj-tracks_TIDE,
-      author         = "{ATLAS Collaboration}",
+      author         = "{ATLAS}",
       title          = "{Performance of the ATLAS Track Reconstruction Algorithms
                         in Dense Environments in LHC run 2}",
       collaboration  = "ATLAS",
@@ -11,16 +11,19 @@
       SLACcitation   = "%%CITATION = ARXIV:1704.07983;%%"
 }
 
-@article{obj-Hbb_exotic,
-      author         = "The ATLAS collaboration",
-      title          = "{Search for heavy resonances decaying to a $W$ or $Z$
-                        boson and a Higgs boson in final states with leptons and
-                        $b$-jets in 36.1~fb$^{-1}$ of $pp$ collision data at
-                        $\sqrt s = 13$~\TeV\ with the ATLAS detector}",
-      collaboration  = "ATLAS",
-      year           = "2017",
-      reportNumber   = "ATLAS-CONF-2017-055",
-      SLACcitation   = "%%CITATION = ATLAS-CONF-2017-055;%%"
+@techreport{obj-Hbb_exotic,
+      title         = "{Search for heavy resonances decaying to a $W$ or $Z$
+                       boson and a Higgs boson in final states with leptons and
+                       $b$-jets in 36.1~fb$^{-1}$ of $pp$ collision data at $\sqrt
+                       s = 13$~\TeV\ with the ATLAS detector}",
+      institution   = "CERN",
+      collaboration = "ATLAS",
+      address       = "Geneva",
+      number        = "ATLAS-CONF-2017-055",
+      month         = "Jul",
+      year          = "2017",
+      reportNumber  = "ATLAS-CONF-2017-055",
+      url           = "https://cds.cern.ch/record/2273871",
 }
 
 @article{obj-tracks_pv,
@@ -29,7 +32,6 @@
     booktitle      = "{Proceedings, 22nd International Conference on Computing
                       in High Energy and Nuclear Physics (CHEP2016): San
                       Francisco, CA, October 14-16, 2016}",
-    collaboration  = "ATLAS",
     journal        = "J. Phys. Conf. Ser.",
     volume         = "898",
     year           = "2017",
@@ -54,6 +56,7 @@ author = "R. Frühwirth"
 }
 
 @techreport{obj-bjets_algo_2015,
+      collaboration = "ATLAS",
       title         = "{Expected performance of the ATLAS $b$-tagging algorithms
                        in Run-2}",
       institution   = "CERN",
@@ -69,7 +72,7 @@ author = "R. Frühwirth"
       title         = "{Optimisation of the ATLAS $b$-tagging performance for the
                        2016 LHC Run}",
       institution   = "CERN",
-      collaboration = "ATLAS Collaboration",
+      collaboration = "ATLAS",
       address       = "Geneva",
       number        = "ATL-PHYS-PUB-2016-012",
       month         = "Jun",
@@ -108,6 +111,7 @@ author = "R. Frühwirth"
 }
 
 @techreport{obj-bjets_calib_tech,
+      collaboration = "ATLAS",
       title         = "{Calibration of $b$-tagging using dileptonic top pair
                        events in a combinatorial likelihood approach with the
                        ATLAS experiment}",
@@ -120,12 +124,12 @@ author = "R. Frühwirth"
       url           = "https://cds.cern.ch/record/1664335",
 }
 
-@online{obj-bjets_calib_plots,
-  author = "{ATLAS Collaboration}",
-  title = {b-tagging calibration plots using dileptonic tt events produced in pp collisions at √s=13 TeV and a combinatorial likelihood approach},
+@misc{obj-bjets_calib_plots,
+  collaboration = "{ATLAS}",
+  title = {$b$-tagging calibration plots using dileptonic $t\bar{t}$ events produced in $pp$ collisions at $\sqrt{s}$ = 13 TeV and a combinatorial likelihood approach},
   year = 2016,
+  howpublished = "ATLAS Public Website",
   url = {http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PLOTS/FTAG-2016-003/},
-  urldate = {2016-11-23}
 }
 
 @techreport{obj-bjets_calib_highPt,
@@ -139,31 +143,30 @@ author = "R. Frühwirth"
       year          = "2015",
       reportNumber  = "ATL-COM-PHYS-2015-711",
       url           = "https://cds.cern.ch/record/2034234",
-      note          = "This is for internal information only, no approval to ever
-                       be seen outside of ATLAS.",
 }
-
 
 @misc{obj-jets_schem,
   author = {Kirschenmann, H.},
   title = {Jets at CMS and the determination of their energy scale}, 
-  howpublished = {\url{http://cms.web.cern.ch/news/jets-cms-and-determination-their-energy-scale}},
+  howpublished = {CMS Public Website},
+  url           = {http://cms.web.cern.ch/news/jets-cms-and-determination-their-energy-scale},
 }
 
 @Article{obj-jets_topo,
-author="ATLAS Collaboration",
-title="Topological cell clustering in the ATLAS calorimeters and its performance in LHC Run 1",
-journal="The European Physical Journal C",
-year="2017",
-month="Jul",
-day="24",
-volume="77",
-number="7",
-pages="490",
-abstract="The reconstruction of the signal from hadrons and jets emerging from the proton--proton collisions at the Large Hadron Collider (LHC) and entering the ATLAS calorimeters is based on a three-dimensional topological clustering of individual calorimeter cell signals. The cluster formation follows cell signal-significance patterns generated by electromagnetic and hadronic showers. In this, the clustering algorithm implicitly performs a topological noise suppression by removing cells with insignificant signals which are not in close proximity to cells with significant signals. The resulting topological cell clusters have shape and location information, which is exploited to apply a local energy calibration and corrections depending on the nature of the cluster. Topological cell clustering is established as a well-performing calorimeter signal definition for jet and missing transverse momentum reconstruction in ATLAS.",
-issn="1434-6052",
-doi="10.1140/epjc/s10052-017-5004-5",
-url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
+      author         = "Aad, Georges and others",
+      title          = "{Topological cell clustering in the ATLAS calorimeters
+                        and its performance in LHC Run 1}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C77",
+      year           = "2017",
+      pages          = "490",
+      doi            = "10.1140/epjc/s10052-017-5004-5",
+      eprint         = "1603.02934",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-304",
+      SLACcitation   = "%%CITATION = ARXIV:1603.02934;%%"
 }
 
 @article{obj-jets_reco_UA2,
@@ -182,20 +185,25 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-jets_reco_salam,
-	Author = {Gavin P. Salam},
-	Date-Added = {2014-03-24 22:48:04 +0000},
-	Date-Modified = {2014-04-26 12:56:47 +0000},
-	Eprint = {0906.1833},
-	Journal = {arXiv:0906.1833},
-	Title = {Towards Jetography},
-	Url = {http://arxiv.org/abs/0906.1833},
-	Year = {2009},
-	Bdsk-Url-1 = {http://arxiv.org/abs/0906.1833}
+      author         = "Salam, Gavin P.",
+      title          = "{Towards Jetography}",
+      booktitle      = "{2008 CTEQ-MCnet Summer School on QCD Phenomenology and
+                        Monte Carlo Event Generators (MCnet 08) (CTEQ 08)
+                        Debrecen, Hungary, August 8-16, 2008}",
+      journal        = "Eur. Phys. J.",
+      volume         = "C67",
+      year           = "2010",
+      pages          = "637-686",
+      doi            = "10.1140/epjc/s10052-010-1314-6",
+      eprint         = "0906.1833",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ph",
+      SLACcitation   = "%%CITATION = ARXIV:0906.1833;%%"
 }
 
 @article{obj-jets_reco_akt,
       author         = "Cacciari, Matteo and Salam, Gavin P. and Soyez, Gregory",
-      title          = "{The Anti-k(t) jet clustering algorithm}",
+      title          = "{The Anti-$k_t$ jet clustering algorithm}",
       journal        = "JHEP",
       volume         = "04",
       year           = "2008",
@@ -209,7 +217,7 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-jets_calib_run1,
-      author         = "{ATLAS Collaboration}",
+      author         = "{ATLAS}",
       title          = "{Jet energy measurement with the ATLAS detector in
                         proton-proton collisions at $\sqrt{s}=7$ TeV}",
       collaboration  = "ATLAS",
@@ -227,12 +235,17 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-jets_calib_run2,
-      author         = "ATLAS Collaboration",
+      author         = "Aaboud, M. and others",
       title          = "{Jet energy scale measurements and their systematic
                         uncertainties in proton-proton collisions at $\sqrt{s} =
                         13$ TeV with the ATLAS detector}",
       collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D96",
       year           = "2017",
+      number         = "7",
+      pages          = "072002",
+      doi            = "10.1103/PhysRevD.96.072002",
       eprint         = "1703.09665",
       archivePrefix  = "arXiv",
       primaryClass   = "hep-ex",
@@ -241,12 +254,16 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-VVjj,
-      author         = "ATLAS Collaboration",
+      author         = "Aaboud, Morad and others",
       title          = "{Search for diboson resonances with boson-tagged jets in
                         $pp$ collisions at $\sqrt{s}=13$ TeV with the ATLAS
                         detector}",
       collaboration  = "ATLAS",
-      year           = "2017",
+      journal        = "Phys. Lett.",
+      volume         = "B777",
+      year           = "2018",
+      pages          = "91-113",
+      doi            = "10.1016/j.physletb.2017.12.011",
       eprint         = "1708.04445",
       archivePrefix  = "arXiv",
       primaryClass   = "hep-ex",
@@ -255,11 +272,15 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-Hbb,
-      author         = "ATLAS Collaboration",
-      title          = "{Evidence for the $H \to b\bar{b}$ decay with the ATLAS
-                        detector}",
+      author         = "Aaboud, M. and others",
+      title          = "{Evidence for the $ H\to b\overline{b} $ decay with the
+                        ATLAS detector}",
       collaboration  = "ATLAS",
+      journal        = "JHEP",
+      volume         = "12",
       year           = "2017",
+      pages          = "024",
+      doi            = "10.1007/JHEP12(2017)024",
       eprint         = "1708.03299",
       archivePrefix  = "arXiv",
       primaryClass   = "hep-ex",
@@ -268,7 +289,7 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 }
 
 @article{obj-ttbar,
-      author         = "ATLAS Collaboration",
+      author         = "ATLAS",
       title          = "{Measurements of top-quark pair differential
                         cross-sections in the $e\mu$ channel in $pp$ collisions at
                         $\sqrt{s} = 13$ TeV using the ATLAS detector}",
@@ -288,7 +309,7 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
 
 
 @techreport{obj-jets_calib_2015,
-      author="ATLAS Collaboration",
+      author="ATLAS",
       title         = "{Jet Calibration and Systematic Uncertainties for Jets
                        Reconstructed in the ATLAS Detector at $\sqrt{s}=13$ TeV}",
       institution   = "CERN",
@@ -300,24 +321,27 @@ url="https://doi.org/10.1140/epjc/s10052-017-5004-5"
       url           = "http://cds.cern.ch/record/2037613",
 }
 
-@Article{obj-jets_calib_JER_7TeV,
-author="ATLAS Collaboration",
-title="Jet energy resolution in proton-proton collisions at $\sqrt\mathrm{s}=7\mbox{TeV}$ recorded in 2010 with the ATLAS detector",
-journal="The European Physical Journal C",
-year="2013",
-month="Mar",
-day="02",
-volume="73",
-number="3",
-pages="2306",
-abstract="The measurement of the jet energy resolution is presented using data recorded with the ATLAS detector in proton-proton collisions at $\sqrt\mathrm{s}=7\mbox{TeV}$. The sample corresponds to an integrated luminosity of 35 pb−1. Jets are reconstructed from energy deposits measured by the calorimeters and calibrated using different jet calibration schemes. The jet energy resolution is measured with two different in situ methods which are found to be in agreement within uncertainties. The total uncertainties on these measurements range from 20\% to 10\% for jets within |y|<2.8 and with transverse momenta increasing from 30 GeV to 500 GeV. Overall, the Monte Carlo simulation of the jet energy resolution agrees with the data within 10\%.",
-issn="1434-6052",
-doi="10.1140/epjc/s10052-013-2306-0",
-url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
+@article{obj-jets_calib_JER_7TeV,
+      author         = "Aad, Georges and others",
+      title          = "{Jet energy resolution in proton-proton collisions at
+                        $\sqrt{s}=7$ TeV recorded in 2010 with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C73",
+      year           = "2013",
+      number         = "3",
+      pages          = "2306",
+      doi            = "10.1140/epjc/s10052-013-2306-0",
+      eprint         = "1210.6210",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-191",
+      SLACcitation   = "%%CITATION = ARXIV:1210.6210;%%"
 }
 
 @techreport{obj-jets_calib_JER_8TeV,
-      author="ATLAS Collaboration",
+      author="ATLAS",
       title         = "Data-driven determination of the energy scale and
                        resolution of jets reconstructed in the ATLAS calorimeters
                        using dijet and multijet events at $\sqrt{s}=8~TeV$ ",
@@ -331,7 +355,7 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
 }
 
 @article{obj-muons,
-      author         = "ATLAS Collaboration",
+      author         = "ATLAS",
       title          = "{Muon reconstruction performance of the ATLAS detector in
                         proton–proton collision data at $\sqrt{s}$ =13 TeV}",
       collaboration  = "ATLAS",
@@ -349,11 +373,11 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
 }
 
 @techreport{obj-electrons,
-      author="ATLAS Collaboration",
+      author="ATLAS",
       title         = "{Electron efficiency measurements with the ATLAS detector
                        using the 2015 LHC proton-proton collision data}",
       institution   = "CERN",
-      collaboration = "ATLAS Collaboration",
+      collaboration = "ATLAS",
       address       = "Geneva",
       number        = "ATLAS-CONF-2016-024",
       month         = "Jun",
@@ -362,14 +386,22 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
       url           = "https://cds.cern.ch/record/2157687",
 }
 
-@Article{obj-photons,
-    author         = "{ATLAS Collaboration}",
-    title          = "{Measurement of the photon identification efficiencies with the ATLAS detector using LHC Run-1 data}",
-    year           = "2016",
-    reportNumber   = "CERN-EP-2016-110",
-    eprint         = "1606.01813",
-    archivePrefix  = "arXiv",
-    primaryClass   = "hep-ex",
+@article{obj-photons,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of the photon identification efficiencies
+                        with the ATLAS detector using LHC Run-1 data}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "12",
+      pages          = "666",
+      doi            = "10.1140/epjc/s10052-016-4507-9",
+      eprint         = "1606.01813",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-110",
+      SLACcitation   = "%%CITATION = ARXIV:1606.01813;%%"
 }
 
 @techreport{obj-met_monoJet,
@@ -377,7 +409,7 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
                        with an energetic jet and large missing transverse momentum
                        using the ATLAS detector}",
       institution   = "CERN",
-      collaboration = "ATLAS Collaboration",
+      collaboration = "ATLAS",
       address       = "Geneva",
       number        = "ATLAS-CONF-2017-060",
       month         = "Jul",
@@ -386,17 +418,22 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
       url           = "https://cds.cern.ch/record/2273876",
 }
 
-@Article{obj-taus, 
-      author         = "{ATLAS Collaboration}",
-      year           = "2015",
-      title          = "{ Reconstruction, Energy Calibration, and Identification of 
-                          Hadronically Decaying Tau Leptons in the ATLAS Experiment
-                          for Run-2 of the LHC }",                                   
-     report       = "ATL-PHYS-PUB-2015-045",
+@techreport{obj-taus,
+      title         = "{Reconstruction, Energy Calibration, and Identification of
+                       Hadronically Decaying Tau Leptons in the ATLAS Experiment
+                       for Run-2 of the LHC}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "ATL-PHYS-PUB-2015-045",
+      month         = "Nov",
+      year          = "2015",
+      reportNumber  = "ATL-PHYS-PUB-2015-045",
+      url           = "https://cds.cern.ch/record/2064383",
 }
 
+
 @techreport{obj-met,
-      author        = "{ATLAS Collaboration}",
+      author        = "{ATLAS}",
       title         = "{Performance of missing transverse momentum reconstruction
                        for the ATLAS detector in the first proton-proton
                        collisions at at $\sqrt s$= 13 TeV}",
@@ -410,15 +447,11 @@ url="https://doi.org/10.1140/epjc/s10052-013-2306-0"
 }
 
 @techreport{dibjet-int_mori16,
-      author        = "Love, Jeremy and Coccaro, Andrea and Korn, Andreas and
-                       Chekanov, Sergei and Dandoy, Jeffrey Rogers and Guescini,
-                       Francesco and LeCompte, Thomas and McClymont, Laurie and
-                       Proudfoot, James and Ryu, Soo and Wang, Rui and Zhou, Ning
-                       and Facini, Gabriel and Golling, Tobias and Nishu, Nishu",
+      author        = "Love, Jeremy and others",
       title         = "{Search for Resonances in the Mass Spectrum of $b$-Tagged
                        Jets with the ATLAS Detector}",
       institution   = "CERN",
-      collaboration = "ATLAS Collaboration",
+      collaboration = "ATLAS",
       address       = "Geneva",
       number        = "ATL-PHYS-INT-2016-022",
       month         = "Oct",
