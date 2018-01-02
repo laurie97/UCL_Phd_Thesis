@@ -8,7 +8,7 @@ that each provide a different set of measurements.
 %in the form of, for example, hits in the Inner Detector or energy deposits in the calorimeter.
 The measurements from the sub-detectors are combined to reconstruct physics objects,
 which are physically meaningful and are used to study the hard-scatter process;
-for example electrons or hadronic jets containing $b$-quarks.
+for example, electrons or hadronic jets containing $b$-quarks.
 This chapter will define the physics objects used in the analyses presented in this thesis
 and describe how each physics object is identified and their 4-momenta reconstructed.
 %Tracks are described in Section~\ref{sec:obj-tracks}, jets in Section~\ref{sec:obj-jets},
@@ -24,7 +24,7 @@ using hits from the IBL, pixel detector, SCT and TRT which are described in Sect
 The reconstructed trajectories are known as tracks.
 The momentum of the charged particle can be determined from the magnitude of track curvature caused by the solenoid magnet.
 Track reconstruction is important to identify and reconstruct many other physics objects at ATLAS
-for example; $b$-jets, electrons and muons.
+for example: $b$-jets, electrons and muons.
 
 \noindent
 The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps:
@@ -60,13 +60,13 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
 \subsection{Primary Vertex Identification}
 \label{sec:obj-tracks_pv}
 
-As described in Section~\ref{sec:det-LHC} to achieve a high instantaneous luminosity the LHC collides bunches of protons leading to multiple collisions per bunch crossing;
-in $pp$ collision data collected in 2015 and 2016 by ATLAS the average number of collisions per bunch crossing is 13.7 and 24.9 respectively~\cite{det-ATLAS_lumi_twiki}.
+As described in Section~\ref{sec:det-LHC}, to achieve a high instantaneous luminosity, the LHC collides bunches of protons leading to multiple collisions per bunch crossing;
+in $pp$ collision data collected in 2015 and 2016 by ATLAS, the average number collisions per bunch crossing is 13.7 and 24.9 respectively~\cite{det-ATLAS_lumi_twiki}.
 
 A primary vertex is the position where a $pp$ collision occurred.
 The position of primary vertices in a bunch-crossing is calculated by performing
 an iterative fit using the positions that tracks intersect the centre of the region where the proton beams interact (known as the beam-spot)~\cite{obj-tracks_pv}.
-In the iterative fit procedure tracks are associated to primary vertices.
+In the iterative fit procedure, tracks are associated to primary vertices.
 The hard-scatter primary vertex is defined as the primary vertex with the highest sum of the squared transverse momenta ($\sum {\pT}^2$) of associated tracks.
 This is because a vertex with a large number of high-\pT{} tracks associated to it is likely to have been caused by a
 hard-scatter collision, which is defined as a collision in which the momentum transfer is large compared to the proton mass~\cite{trig-hard_scatter}.
@@ -223,7 +223,7 @@ The four-momentum of a final-state jet is the sum of the four-momenta of the top
 The jet width parameter, $R$, effectively gives the maximum width of a reconstructed jet
 because if $\Delta R_{ij} > R$  for a pair of clusters then
 $d_{iB} < d_{ij}$ for one of the clusters %(depending on the value of $a$)
-and the two cluster cannot be merged.
+and so the two cluster cannot be merged.
 
 The sequential reclustering algorithms described above are used as they satisfy two important %theoretically motivated
 criteria: infrared and collinear safety \footnote{\ Cone-based jet reconstruction algorithms used at some previous collider experiments,
@@ -237,7 +237,7 @@ due to an additional emission process in the parton shower.
 Anti-$k_T$ is the standard jet reconstruction algorithm used at ATLAS. %, which is typical of analyses at ATLAS.
 This is because the anti-$k_T$ algorithm provides regular jet shapes around the centre of the jet as
 the algorithm reconstructs the high-\pT{} core of the jets first and then adds in the lower \pT{} suburbs. % in later steps.
-To illustrate this point Figure~\ref{fig:obj-jets_reco_shapes} shows the jets built by the %Cambridge-Aachen,
+To illustrate this point, Figure~\ref{fig:obj-jets_reco_shapes} shows the jets built by the %Cambridge-Aachen,
 $k_T$ and anti-$k_T$ algorithm using the same set of input clusters; the anti-$k_T$ algorithm creates a more regular jet shape.
 %this illustrates that anti-$k_T$ algorithm creates more regular jet shapes than the other sequential-reclustering algorithms.
 
@@ -301,10 +301,10 @@ The key factors for the unrepresentative hadronic jet energy measurement are~\ci
 \vspace{-0.5em}
 As a result, a calibration procedure is performed to correct the energy of a jet~\cite{obj-jets_calib_run2}.
 
-For a calibration one must decide what to correct with respect to.
+For a calibration, one must decide what to correct with respect to.
 Naively one could choose the truth initial parton,
 however the correction would then strongly depend on the theoretical modelling of the parton shower and hadronisation process.
-The resulting corrected jets would then not be model-independent.
+The resulting corrected jets would then not be model-independent~\footnote{\ An explanation of why model-independent jets are desirable is found in~\cite{theo-jets_jb}}.
 Instead, jets are corrected with respect to a `truth jet';
 where a truth jet is constructed by running the anti-$k_T$ algorithm on the set of stable truth particles in a simulated event.
 A stable particle is required to have a lifetime $c\tau >$ \SI{10}{\milli\metre} and muons, neutrinos, and particles from pile-up collisions are ignored.
@@ -325,12 +325,13 @@ built from the EM-scale topoclusters using a number of steps:
 %\end{figure}
 %\noindent
 %To discuss each step in a little more detail:
-\vspace{-0.5em}
+%\vspace{-0.5em}
 \begin{enumerate}[leftmargin=*]
 \item\textbf{Origin Correction}:
-  This step changes the direction of the jets such that the four-momentum points to the hard-scatter primary vertex
+  This step changes the direction of the jets such that the four-momentum is pointing at the hard-scatter primary vertex
   rather than the centre of the detector.
   This calculation conserves the jet energy.\vspace{0.3em}
+  \newpage
 \item\textbf{Jet Area-Based Pile-up Correction}:
   This step removes unwanted energy contributions from pile-up.
   This correction subtracts the area of the jet, $A$, multiplied by the average energy density due to pile-up, $\rho$.\vspace{0.3em}
@@ -347,8 +348,10 @@ built from the EM-scale topoclusters using a number of steps:
 \item\textbf{In-situ calibration}:
   All previous steps use simulation to correct detector-level jets to truth jets.
   This step corrects for differences between simulation and data using events
-  containing a jet to be calibrated and a well-measured reference objects, including photons, $Z$ bosons, and calibrated jets.
-  Conservation of momentum provides information on the true \pT{} of the jet to be calibrated.
+  containing a jet to be calibrated and a reference object;
+  the reference objects are a photon, a $Z$ boson, or a set of calibrated jets.
+  The reference objects are calibrated such that they have a well measured $p_T$;
+  therefore, from conservation of momentum, the true \pT{} of the jet to be calibrated can be inferred.
   One can then calculate a correction factor, which is applied to the jet four-momentum in data only.
   \begin{equation}
     %\text{Correction} = \frac{1}{R(p_T, \eta)} = \frac{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{MC}} }{ < p_T^{\text{jet}}/p_T^{\text{ref}}>_{\text{Data}} }
@@ -359,7 +362,7 @@ built from the EM-scale topoclusters using a number of steps:
 
 This calibration scheme is called `EM+JES', as the topoclusters are at the EM-scale.
 There are other schemes used for calibrating jets at ATLAS,
-for example some analyses~\cite{obj-VVjj} correct each topocluster to the hadronic scale
+for example, some analyses~\cite{obj-VVjj} correct each topocluster to the hadronic scale
 before clustering the jet, in a scheme called Local Cluster Weighted (LCW)~\cite{obj-jets_topo}.
 EM+JES is generally used in ATLAS analyses as it is a simpler calibration scheme than LCW, but provides similar results.
 
@@ -381,7 +384,7 @@ to correct jets from the EM-scale to the hadronic-scale, outlined above.
 the dominant uncertainties arise from the data-driven in-situ step~\cite{obj-jets_calib_run2}.
 Figure~\ref{fig:obj-jets_calib_JES} shows the fractional JES uncertainty as a function of jet-\pT{} and jet-$\eta$.
 The increased uncertainty in the region $2 < |\eta| < 2.6$ is caused by localised data/simulation discrepancies
-caused by mis-modelling of the detector response in the EM end-cap calorimeters.
+caused by mismodelling of the detector response in the EM end-cap calorimeters.
 
 
 
@@ -464,7 +467,7 @@ Weakly decaying $b$-hadrons produced at the LHC have an average lifetime of $\si
 A $b$-jet decay chain  will typically contain two of these flavour changing interactions 
 as, at the quark level, the $b$-quark contained in the jet will decay to a $c$-quark, which will then decay into a $s$ or $d$ quark.
 Due to their long lifetimes, $b$-hadrons decay a measurable distance from the hard-scatter primary vertex;
-for example a $B_0$ meson with a \pT{} of $100$ GeV will travel approximately $10$ mm.
+for example, a $B_0$ meson with a \pT{} of $100$ GeV will travel approximately $10$ mm.
 %Note to laurie - First year talk contains this calc
 %   p = gamma m v
 %   d = vt = v gamma tau
@@ -532,7 +535,7 @@ one or more tracks and the flight axis.
 The aim is to reconstruct the secondary and tertiary vertices which correspond to the decays of the $b$ and $c$-hadron,
 as illustrated in Figure \ref{fig:obj_bjets_schem}.
 Similar to SV1, the JetFitter algorithm then calculates a number of flavour discriminating variables:
-for example vertex mass and number of vertices with two or more tracks.
+for example, vertex mass and number of vertices with two or more tracks.
 
 \subsection{Multi-Variate $b$-Tagging Algorithm}
 \label{sec:obj-bjets_MV2}
@@ -563,17 +566,18 @@ The training makes use of the truth jet flavour label scheme described in Sectio
 %whilst still obtaining a large $c$- and light-jet rejection.
 Subtly different MV2 algorithms are created using samples containing different fractions of light and $c$-jets,
 the fraction of $c$-jets used is labelled in the algorithm name;
-for example the MV2c10 algorithm has been trained on a sample containing 10\% charm-jets, which gives strong light- and $c$-jet rejection.
+for example, the MV2c10 algorithm has been trained on a sample containing 10\% charm-jets, which gives strong light- and $c$-jet rejection.
 
-%A cut is then applied to this MV2 output in order to select jets that are likely to $b$-jets.
-A $b$-tagged jet is required to have a MV2 output above a threshold cut, such that the selected jets are likely to be $b$-jets.
-The choice of cut will vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection,
-where $b$-jet efficiency is defined as the probability of accepting a true $b$-jet,
-light-jet rejection is defined as 1 divided by the probability of accepting a true light-jet, and a similar definition applies for $c$-jet rejection.
-Figure~\ref{fig:obj-bjets_perf} shows the $b$-jet efficiency against (a) light and (b) $c$-jet rejection of the MV2 algorithm for a continuous range of cuts.
+A $b$-tagged jet is required to have a MV2 output above a specific cut value, such that $b$-tagged jets are likely to be $b$-jets.
+The choice of cut value will vary the $b$-jet efficiency, light-jet rejection and $c$-jet rejection: where
+$b$-jet efficiency is defined as the probability of $b$-tagging a $b$-jet,
+light-jet rejection is defined as 1 divided by the probability of $b$-tagging a light-jet, and
+$c$-jet rejection is defined as  1 divided by the probability of $b$-tagging a $c$-jet.
+Figure~\ref{fig:obj-bjets_perf} shows the $b$-jet efficiency against (a) light jet rejection and (b) $c$-jet rejection of the MV2 algorithm for a continuous range of cut values.
 The different lines show the performance of the algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}
 and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractions of $c$-jets are used in the training;
 2016 MV2c10 is the configuration throughout this thesis as recommended in~\cite{obj-bjets_algo_2016}.
+    
     
 \begin{figure}[!ht]
   \begin{center}
@@ -581,6 +585,7 @@ and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractio
     \subcaptionbox{$b$-jet efficiency \\against light-jet rejection} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_light}}
     \subcaptionbox{$b$-jet efficiency \\against $c$-jet rejection}  { \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_charm}}
   \end{center}
+  \vspace{-1em}
   \caption[The expected $b$-jet efficiency of the $b$-tagging algorithm, MV2, with respect to
     light-jet and $c$-jet rejection in simulated $t\bar{t}$ events.]
     {The expected $b$-jet efficiency of the $b$-tagging algorithm, MV2, with respect to
@@ -590,9 +595,9 @@ and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractio
 \end{figure}
 
 There are a set of MV2 operating points, such that a communal $b$-tagging calibration can be used.
-Looser operating points have a lower cut on MV2 output, leading to a higher $b$-jet efficiency at the cost of worse light- and $c$-jet rejections.
+Looser operating points have a lower MV2 cut value, leading to a higher $b$-jet efficiency at the cost of worse light- and $c$-jet rejections.
 The inverse is true for tighter operating points.
-Table~\ref{tab:obj-MV2_WPs} shows the operating points used at ATLAS with a given cut on MV2c10 output;
+Table~\ref{tab:obj-MV2_WPs} shows the operating points used at ATLAS with a given cut on the MV2c10 output;
 shown with the corresponding benchmark values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection.
 %\footnote{\ In this thesis only the fixed-cut operating points shown above will be used,
 %  however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT{}.}.
@@ -680,10 +685,10 @@ The dominant extrapolation uncertainty is from variations of the impact paramete
 Sections~\ref{sec:obj-jets_calib} described the
 jet energy scale correction applied to hadronic jets.
 For $b$-jets this correction may be different due to differences in the parton shower and hadronisation processes for a $b$-jet;
-for example during the decay of the $b$-hadron muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
+for example, during the decay of the $b$-hadron, muons and neutrinos can be produced that will not deposit all/any of their energy in the calorimeter.
 
-As a result an additional $b$-jet energy scale ($b$JES) uncertainty has been 
-specifically derived for a previous di-$b$-jet search at ATLAS~\cite{dibjet-mori16_paper}.
+As a result, an additional $b$-jet energy scale ($b$JES) uncertainty has been 
+specifically derived in a previous di-$b$-jet search at ATLAS~\cite{dibjet-mori16_paper}.
 Figure~\ref{fig:obj-bjets_bJES_uncert} shows the derived total $b$JES uncertainty with respect to jet-\pT{},
 the components that contribute to the uncertainty are also shown.
 The contributions to the $b$JES uncertainty considered are $b$-jet modelling in simulation (referred to as fragmentation),

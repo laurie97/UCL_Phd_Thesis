@@ -21,7 +21,7 @@ the results of the limit setting phase for the \summer{} and \lm{} data-sets res
 In this analysis a Bayesian limit setting approach is used~\cite{det-thesis_kate,lim-bayes}.
 To set a limit on a particular model, one considers the hypothesis that the di-$b$-jet events
 are produced by a combination of the QCD background and the new physics process.
-A background template is produced using the estimation procedures described in the previous chapter
+A background template is produced using the background estimation procedures described in the previous chapter
 and the BSM physics model is described by a dijet mass signal template, normalised such that $\nu$ di-$b$-jet events~$^{1}$ are produced.  %%%%% This is a footnote reference. Be careful!!!!
 This signal plus background hypothesis is denoted by the symbol $H_{\nu}$.
 
@@ -60,7 +60,7 @@ likelihood has fallen to $10^{-5}$ of the maximised value.}
 which represents ignorance to the size of the signal.
 The $\Pi(D)$ term does not depend on $\nu$ and as such can be considered as a normalisation term.
 
-To accurately represent a true degree of belief in a model one must consider the systematic uncertainties
+To accurately represent a true degree of belief in a model, one must consider the systematic uncertainties
 in the values of $b_i$ and $s_i$ in Equation~\ref{eqn:lim-like}.
 The sources of systematic uncertainty considered in this analysis are listed in Section~\ref{sec:lim-syst}.
 The systematic uncertainties are incorporated by explicitly considering $s_i$ and $b_i$ as a
@@ -70,7 +70,7 @@ For example, the number of signal events in a dijet mass bin, $s_i$, is linearly
 Luminosity is a source of systematic uncertainty, so is an example of a nuisance parameter.
 
 \noindent
-Therefore, the likelihood is expressed in terms of the set of nuisance parameters, $\vec{\theta}$:
+Therefore, the likelihood can be expressed in terms of the set of nuisance parameters, $\vec{\theta}$:
 \begin{equation}
   \Like (\nu,D,\vec{\theta}) = P(D \mid \nu, \vec{\theta} ) =  \Pi_i \left( \frac{[s_i(\nu,\vec{\theta})+b_i(\vec{\theta})]^{n_i}~e^{-[s_i(\nu,\vec{\theta})+b_i(\vec{\theta})]}}{n_i!} \right)
 \end{equation}
@@ -79,7 +79,7 @@ Therefore, the likelihood is expressed in terms of the set of nuisance parameter
 %The effect of the systematic uncertainties are then propagated to the posterior. %Equation~\ref{eq:lim-conf_statOnly}.
 \newpage
 A prior probability is introduced for each of the nuisance parameters, given by $\Pi(\vec{\theta})$,
-that describes systematic uncertainty on each of the nuisance parameters.
+that describes the systematic uncertainty on each of the nuisance parameters.
 By integrating over the nuisance parameters,
 one obtains the posterior for $\nu$ that accounts for systematic uncertainties
 \begin{equation}
@@ -91,13 +91,13 @@ perform the integral over nuisance parameters
 and then normalise to calculate the probability density of $\nu$
 \footnote{\ This integral is performed using a Markov chain Monte-Carlo using the Bayesian Analysis Toolkit.
   Full details on the implementation can be found in~\cite{det-thesis_kate}.}.
-The process of integrating over nuissance parameters is known as marginalisation.
+The process of integrating over nuisance parameters is known as marginalisation.
 
 Using the posterior calculated from Equation~\ref{eq:lim-conf_syst},
 the 95\% credibility level upper limit of $\nu$, denoted by $\nu^{\,\text{up}}\,$,
 is calculated using the expression
 \begin{equation}
-\int_0^{\nu^{\,\text{up}}} P(\nu \mid D)~=~0.95
+\int_0^{\nu^{\,\text{up}}} d \nu \, \, P(\nu \mid D)~=~0.95
 \end{equation}
 Under the assumption of $H_{\nu}$ there is a 95\% probability that the value of $\nu$ lies
 within the credibility interval defined as \mbox{$0 \leq \nu < \nu^{\,\text{up}}$}.
@@ -137,7 +137,7 @@ This process is done for many pseudo-experiments; the median upper limit gives t
 and the 68\% and 95\% percentiles give the 1 and 2 $\sigma$ uncertainty bands on the expected limit.
 
 In this analysis the Bayesian approach for limit setting is used,
-while there is another widely used alternative known as the frequentist approach~\cite{lim-cowan}.
+there is another widely used alternative known as the frequentist approach~\cite{lim-cowan}.
 The Bayesian approach defines a credibility interval using the probability (or degree of belief) in a hypothesis given the observed data \mbox{( $P(\nu \mid D)$ )}.
 On the other hand, the frequentist approach calculates the probability (or fraction of trials)
 of obtaining the data assuming a given signal model is true \mbox{( $P(D \mid \nu)$ )} and rejects models that produce a low probability.
@@ -157,10 +157,10 @@ The signal systematic uncertainties considered are:
 \vspace{-0.5em}
 \begin{itemize}[leftmargin=*]
 \item\textbf{Jet Energy Scale, Jet Energy Resolution  and $b$-Jet Energy Scale} \hspace{1mm} (\textit{Signal})\\
-  Jet energy scale (JES), jet energy resolution (JER) and  $b$-jet energy scale ($b$JES) uncertainties
-  represent uncertainties in the energy measurement of a $b$-jet.
+  Jet energy scale (JES), jet energy resolution (JER) and  $b$-jet energy scale ($b$JES) are uncertainties
+  on the energy measurement of a $b$-jet.
   The JES and JER uncertainties used in this analysis were described in Section~\ref{sec:obj-jets_uncert}.
-  The ($b$JES) uncertainty used in this analysis has been described in Section~\ref{sec:obj-bjets_bjes}.
+  The $b$JES uncertainty used in this analysis has been described in Section~\ref{sec:obj-bjets_bjes}.
   The three jet energy measurement uncertainties cause an uncertainty on the dijet mass of a simulated signal event.\vspace{0.5em}
 \item\textbf{$b$-Tagging} \hspace{1mm} (\textit{Signal})\\
   The modelling of $b$-tagging in Monte-Carlo simulation is calibrated to data using measured $b$-tagging scale factors;
@@ -198,12 +198,12 @@ The uncertainties on the background estimation model are:
 \vspace{-0.5em}
 \begin{itemize}[leftmargin=*]
 \item \textbf{Fit Function Parameters} \hspace{1mm} (\textit{Background})\\
-  The choice of fit parameters is made by maximising the likelihood of the fit function with respect to our data-set.
+  The parameters of the fit function are determined by maximising the likelihood with respect to the data-set.
   However, due to the statistical fluctuations in data the optimal parameters to describe
   the true background shape may not have been chosen.
-  To estimate the uncertainty on the choice of parameters,
+  To estimate the uncertainty on the parameters of the fit function,
   the background estimation procedure is performed on pseudo-experiments created by applying Poisson fluctuations to the nominal background estimate.
-  The root mean square (rms) of the difference between the nominal background estimate and those from the pseudo-experiments is taken as a symmetric uncertainty. \vspace{0.5em}
+  The root mean square of the difference between the nominal background estimate and those from the pseudo-experiments is taken as a symmetric uncertainty. \vspace{0.5em}
 \item\textbf{Fit Function Choice}  \hspace{1mm} (\textit{Background})\\
   A different background estimation can be obtained if a different fit function is chosen.
   To obtain an uncertainty on the choice of fit function an alternate function is considered,
@@ -340,9 +340,9 @@ $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models desc
 In the mass regions where the theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
 is larger than the upper limit, it can be concluded that the model is excluded at the 95\% credibility level.
 Using the \summer{} data-set:
-the \mbox{$b^*$ quark} is excluded in the mass range of 1.4 -- 2.3~TeV,
+the \mbox{$b^*$ quark} is excluded in the mass range of 1.4~--~2.3~TeV,
 the SSM $Z'$ boson cannot be excluded,
-and the leptophobic $Z'$ boson is excluded at a generated mass of 1.5~TeV.
+and the leptophobic $Z'$ boson is excluded at a mass of 1.5~TeV.
 
 \begin{figure}[!htb]
   \centering
@@ -384,7 +384,7 @@ are the luminosity uncertainty,
 the background modelling uncertainties,
 and a 10\% flat uncertainty to account for sources of
 experimental uncertainties related to signal modelling,
-such as jet-energy scale.
+such as jet energy scale.
 
 Figure~\ref{fig:lim-summer_gauss} shows the observed 95\% credibility upper limits
 on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
@@ -462,7 +462,7 @@ The simulated and morphed signal dijet mass spectra are used as signal templates
 \label{sec:lim-full_systs}
 
 Table~\ref{tab:lim-lowmass_syst} summarises the systematic uncertainties considered for the
-signal templates used in the \lm{} data-set at three different dijet masses (\mjj{}).
+signal templates used in the \lm{} data-set at three different dijet masses.
 Figure~\ref{fig:lim-lowmass_syst}(a) shows the total $b$-jet trigger systematic uncertainty as a function of dijet  mass;
 this includes both the jet-level and event-level uncertainties described in Section~\ref{sec:trig-bjet_eff}.
 Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass.
@@ -508,8 +508,8 @@ Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the b
   \vspace{-1em}
   \caption[The $b$-jet trigger and background systematic uncertainties for the \lm{} data-set as a function of dijet mass (\mjj)]
     {Panel (a) shows the total $b$-jet trigger systematic uncertainty as a fraction for the \lm{} data-set as a function of dijet mass (\mjj).
-    Panel (b) shows the background systematic uncertainties as a fraction for the \lm{} data-set as a function of dijet mass.
-    The red shaded region shows the function parameter uncertainty and the blue line shows the function choice uncertainty.}
+    Panel (b) shows the background systematic uncertainties as a fraction for the \lm{} data-set as a function of dijet mass;
+    the red shaded region shows the function parameter uncertainty and the blue line shows the function choice uncertainty.}
   \label{fig:lim-lowmass_syst}
 \end{figure}
 
@@ -532,15 +532,15 @@ The signal plus background fit is performed in the SWiFt window in which the gen
 the fit does not use the full mass range as it has been shown in Section~\ref{sec:bkg-full_globalFit} that a global background fit is not reliable.
 A window half-width of 16 and the 5 parameter dijet fit function are chosen to match the configuration used in the search phase results shown in Section~\ref{sec:bkg-full_results}.
 The normalisation of the signal template and the parameters of the background fit function are
-chosen to maximise the likelihood (defined in Eqn.~\ref{eqn:lim-like}), the signal normalisation is required to be greater or equal to zero.
+chosen to maximise the likelihood (defined in Equation~\ref{eqn:lim-like}), the signal normalisation is required to be greater or equal to zero.
 
-The signal plus background fit provides an estimate of the signal and background components in the SWiFt window considered,
-however the framework used for limit setting requires a background estimation for the full mass range considered.
+The signal plus background fit provides an estimate of the number of signal and background events in the SWiFt window considered,
+however the framework used for limit setting phase requires a background estimation for the full mass range considered.
 To extend the background estimate to the full range, the signal template, normalised by the signal plus background fit, is subtracted from the data.
 The SWiFt background estimation procedure is then performed to the signal subtracted data,
 using the 5 parameter dijet fit function and a window half-width of 16, which is again chosen to match the configuration used in the search phase.
 The resulting background estimation is known as the \textit{`signal subtracted background estimation'} (SSB).
-The signal subtracted background estimation is created for each generated mass point and
+A signal subtracted background estimation is created for each generated mass point and
 is used as the background template in the limit setting phase for the \lm{} data-set analysis.
 
 The signal subtracted background estimate is used as it provides a simple method of using the results of the signal plus background fit
@@ -592,23 +592,17 @@ The signal induced fit bias is especially notable in the case of a SSM $Z'$ boso
 The signal induced fit bias of the signal subtracted background is small relative to the size of the injected signal,
 show by the fact that the blue line lies close to one for all dijet masses.
 Therefore, the signal subtracted background estimation is used in the limit setting phase of the \lm{} data-set analysis,
-for both the $Z'$ boson and generic Gaussian signals.
-
+for both the $Z'$ boson and generic Gaussian signals. signal subtracted background estimate is created for each signal mass point using the dijet mass spectrum observed in data.
+If the signal subtracted background estimates differ greatly from the nominal SWiFt background estimate,
+this is evidence that there may be a signal induced fit bias present in the search phase.
 Figure~\ref{fig:lim-lowmass_ssb_data} shows the ratio of the 
-signal subtracted background (SSB) estimations to the nominal SWiFt background estimate (black) performed on the full \lm{} data-set
+signal subtracted background estimations to the nominal SWiFt background estimate (black) performed on the full \lm{} data-set
 \footnote{\ The SWiFt background estimate for the full data-set is shown in comparison to the data in Figure~\ref{fig:bhFit_lm_unblind}.}.
 The grey area represents the parameter choice uncertainty of the nominal SWiFt background estimation.
 Signal subtracted background estimations are created for all generated mass points considered,
 but for clarity only those at mass points of 600, 800, 1000 and 1250~GeV are shown in the figure.
-For all generated mass points, including those not shown in the figure,
-the signal subtracted background estimate is consistent with the nominal SWiFt background estimation
-within background uncertainties.
-Therefore, the nominal SWiFt background estimate used in the search phase and the 
-signal subtracted background estimate used in the limit setting phase are consistent.
-Furthermore, this shows that there is no signal induced fit bias due to a $Z'$ boson
-in the nominal SWiFt background estimation performed to the \lm{} data-set.
 
-\begin{figure}[!ht]
+\begin{figure}[!htb]
   \begin{center}
     \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/LowMass/lim-ssb_data.pdf}
   \end{center}
@@ -621,6 +615,13 @@ in the nominal SWiFt background estimation performed to the \lm{} data-set.
     The generated mass points used in the signal subtracted background estimations are indicated in the legend.}
   \label{fig:lim-lowmass_ssb_data}
 \end{figure}
+
+For all generated mass points, including those not shown in Figure~\ref{fig:lim-lowmass_ssb_data},
+the signal subtracted background estimate is consistent with the nominal SWiFt background estimation
+within background uncertainties.
+Therefore, the background estimation used in the search phase and the limit setting phase are consistent.
+Furthermore, this shows that there is no signal induced fit bias due to a $Z'$ boson
+in the nominal SWiFt background estimation performed to the \lm{} data-set.
 
 %It is worth noting that in Figure~\ref{fig:lim-lowmass_ssb_test}(a) for the 600 GeV $Z'$ boson
 %the ratio of the signal subtracted background estimate when signal is present
@@ -655,7 +656,7 @@ Limits are set on $\sigma\,\text{x}\,\mathit{BR}$ by calculating limits for $\si
 using the same methodology used for the \summer{} data-set result,
 and dividing by the $\mathit{A}\,\text{x}\,\epsilon$ shown in Figure~\ref{fig:evt-lm_acc}(a).
 $\mathit{A}\,\text{x}\,\epsilon$ is corrected for such that limits set by the \lm{} and \hm{} data-set analyses can be shown on the same figure,
-even though different trigger and event selections are used. The \hm{} data-set analysis result is not presented in this thesis~\footnote{\ Details
+even though different trigger and event selections are used~\cite{dibjet-full_int}. The \hm{} data-set analysis result is not presented in this thesis~\footnote{\ Details
   of the \hm{} data-set are found in Section~\ref{sec:evt-datasets}.}.
 $\mathit{BR}$ is explicitly referred to for limits in the \lm{} data-set analysis to clearly identify that
 limits set on the SSM and leptophobic $Z'$ models only consider decays to pairs of $b$-quarks,
