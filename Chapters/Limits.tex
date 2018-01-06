@@ -28,7 +28,7 @@ This signal plus background hypothesis is denoted by the symbol $H_{\nu}$.
 Now let us consider this hypothesis in the context of the data, denoted by $D$,
 which in this case is one of the observed dijet mass spectra.
 For the hypothesis, $H_{\nu}$, the probability of producing the data is known as the likelihood.
-In each dijet mass bin, labelled by the index~$i$, $n_i$ is the number of events observed in data
+In each dijet mass bin, labelled by the index~$i$: $n_i$ is the number of events observed in data
 and $s_i(\nu)$ and $b_i$ are the number of signal and background events predicted by $H_{\nu}$.
 Therefore, by only considering statistical uncertainties, the likelihood for a given value of $\nu$ is given by:
 \begin{equation}
@@ -65,12 +65,12 @@ in the values of $b_i$ and $s_i$ in Equation~\ref{eqn:lim-like}.
 The sources of systematic uncertainty considered in this analysis are listed in Section~\ref{sec:lim-syst}.
 The systematic uncertainties are incorporated by explicitly considering $s_i$ and $b_i$ as a
 function of the parameters which are considered as sources of systematic uncertainty,
-the parameters used are known as nuisance parameters.
+the parameters are known as nuisance parameters.
 For example, the number of signal events in a dijet mass bin, $s_i$, is linearly dependant on luminosity ($L$) such that $s_i(L) \propto L$.
 Luminosity is a source of systematic uncertainty, so is an example of a nuisance parameter.
 
 \noindent
-Therefore, the likelihood can be expressed in terms of the set of nuisance parameters, $\vec{\theta}$:
+Therefore, the likelihood can be expressed in terms of a set of nuisance parameters, $\vec{\theta}$:
 \begin{equation}
   \Like (\nu,D,\vec{\theta}) = P(D \mid \nu, \vec{\theta} ) =  \Pi_i \left( \frac{[s_i(\nu,\vec{\theta})+b_i(\vec{\theta})]^{n_i}~e^{-[s_i(\nu,\vec{\theta})+b_i(\vec{\theta})]}}{n_i!} \right)
 \end{equation}
@@ -104,7 +104,7 @@ within the credibility interval defined as \mbox{$0 \leq \nu < \nu^{\,\text{up}}
 Therefore, any model under the hypothesis $H_{\nu}$ that predicts a $\nu$
 value above the upper limit, $\nu^{\,\text{up}}$, is excluded at the 95\% credibility level.
 
-In the di-$b$-jet analysis limits are set on the benchmark models for a range of generated mass points,
+In the di-$b$-jet analysis, limits are set on the benchmark models for a range of generated mass points,
 %the models and mass points considered
 the dijet mass signal templates used are described in Section~\ref{sec:evt-s+b}.
 Upper limits are set on the product of cross-section, detector acceptance and tagging efficiency,
@@ -120,7 +120,7 @@ $\mathit{A}$ and $\epsilon$ have been measured in Section~\ref{sec:evt-sel-acc} 
 
 
 
-Further to this many BSM models predicting a narrow resonance
+Further to this, many BSM models predicting a narrow resonance
 not explicitly considered by this analysis
 can be approximated by a Gaussian distribution,
 if low-mass off-shell tails and non-perturbative effects are neglected.
@@ -214,7 +214,7 @@ The uncertainties on the background estimation model are:
 \end{itemize}
 
 \clearpage
-\section{\summer{} Data-set Limits}
+\section{\summer{} Data-Set Limits}
 \label{sec:lim-summer}
 
 Table~\ref{tab:lim-summer_syst} summarises the systematic uncertainties
@@ -229,12 +229,12 @@ for both $b$-tagging categories as a function of dijet mass.
   \centering
   \begin{tabular}{|c||c|c|c|c|c|c|}
     \hline
-    Dijet   & \multicolumn{6}{c|}{Signal Systematic Uncertainties}                    \\ \cline{2-7} 
-    Mass    & JES   & JER   & $b$JES  & $b$-Tagging ($\geq$1 / 2) & PDF & Lumi.        \\
+    Dijet   & \multicolumn{6}{c|}{Signal Systematic Uncertainties}                             \\ \cline{2-7} 
+    Mass    & JES   & JER   & $b$JES  & $b$-Tagging ($\geq$1 / 2 $b$-tags) & PDF & Lumi.       \\
     \hline                                                                        
-    1.5~TeV & 1.2\% & 1.0\% & 2.2\%   &        20\% / 10\%        & 1\% & 2.9\%       \\
-    3~TeV   & 1.4\% & 0.7\% & 0.7\%   &        50\% / 60\%        & 1\% & 2.9\%       \\
-    5~TeV   & 2.3\% & 0.3\% & 0.3\%   &        50\% / 70\%        & 1\% & 2.9\%       \\
+    1.5~TeV & 1.2\% & 1.0\% & 2.2\%   &        20\% / 10\%                 & 1\% & 2.9\%       \\
+    3~TeV   & 1.4\% & 0.7\% & 0.7\%   &        50\% / 60\%                 & 1\% & 2.9\%       \\
+    5~TeV   & 2.3\% & 0.3\% & 0.3\%   &        50\% / 70\%                 & 1\% & 2.9\%       \\
     \hline
     % The background uncertainties
     %& \multicolumn{2}{c|}{Bkg. Uncert}             
@@ -389,16 +389,19 @@ such as jet energy scale.
 Figure~\ref{fig:lim-summer_gauss} shows the observed 95\% credibility upper limits
 on the product of cross-section, detector acceptance, tagging efficiency and branching ratio,
 $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$,
-for the full range of Gaussian signals described above in both $b$-tagging categories.
+for the full range of Gaussian signals described above in both $b$-tagging categories;
+where the branching ratio is defined as the fraction of signal events that contain 2 $b$-quarks in the 2 $b$-tag category,
+or a $b$-quark and a gluon in the $\geq1~b$-tag category.
 For the \summer{} data-set analysis an upper limit is set on the $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$
 for a generic Gaussian signal ranging from 0.2 to 0.001 pb in the mass range 1.4 to 6~TeV.
 
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-   \subcaptionbox{2 $b$-tag}      {\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_bb.pdf}}
-   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_b.pdf}}
+   \subcaptionbox{2 $b$-tag}      {\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_bb.pdf}}
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_gauss_b.pdf}}
   \end{center}
+  \vspace{-1em}
   \caption[95\% credibility observed upper limits
     on the product of cross-section, detector acceptance, tagging efficiency and branching ratio
     ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon\,\text{x}\,\mathit{BR}$)
@@ -448,7 +451,7 @@ The reverse Landau distribution provides a description of the off-shell contribu
   created using the signal morphing technique used in the \lm{} data-set limit setting phase.]
         {Simulated SSM $Z'$ boson dijet mass (\mjj) signal templates (solid points lines)
           at generated mass points of 600, 800, 1000 and 1250 GeV 
-          and the dijet mass signal templates created using the signal morphing technique (dotted lines) used in the \lm{} data-set limit setting phase~\cite{dibjet-full_int}.
+          and the dijet mass signal templates created using the signal morphing technique (dotted lines). The \lm{} event selection has been applied~\cite{dibjet-full_int}.
           \label{fig:lim-full_morphing}}
 \end{figure}
 
@@ -474,8 +477,8 @@ Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the b
   \centering
   \begin{tabular}{|c||c|c|c|c|c|c|c|}
     \hline
-    \mjj    & \multicolumn{7}{c|}{Signal Systematic Uncertainties}                    \\ \cline{2-8} 
-            & JES   & JER   & $b$JES  & $b$-Tagging & $b$-Jet Trigger & PDF & Lumi.        \\
+    Dijet   & \multicolumn{7}{c|}{Signal Systematic Uncertainties}                    \\ \cline{2-8} 
+    Mass    & JES   & JER   & $b$JES  & $b$-Tagging & $b$-Jet Trigger & PDF & Lumi.        \\
     \hline                                                                        
     0.6~TeV & 0.9\% & 1.4\% & 5\%     &     5\%     &      5.4\%   & 1\% & 2.2\%       \\
     1.0~TeV & 0.8\% & 1.2\% & 3\%     &     7\%     &       15\%   & 1\% & 2.2\%       \\
@@ -524,7 +527,7 @@ the nominal SWiFt background estimation is performed on a background-only test d
 This is particularly notable for a SSM $Z'$ boson with a generated mass of 600~GeV,
 as this is near the edge of the dijet mass spectrum considered.
 
-To remove any signal induced fit bias in the limit setting phase a signal plus background fit
+To remove any signal induced fit bias in the limit setting phase, a signal plus background fit
 is performed for each signal point considered in the limit setting phase.
 The signal is modelled using the dijet mass signal templates described in Section~\ref{sec:lim-full_morphing}
 and the background is modelled using the 5 parameter dijet fit function.
@@ -535,7 +538,7 @@ The normalisation of the signal template and the parameters of the background fi
 chosen to maximise the likelihood (defined in Equation~\ref{eqn:lim-like}), the signal normalisation is required to be greater or equal to zero.
 
 The signal plus background fit provides an estimate of the number of signal and background events in the SWiFt window considered,
-however the framework used for limit setting phase requires a background estimation for the full mass range considered.
+however the framework used for the limit setting phase requires a background estimation for the full mass range considered.
 To extend the background estimate to the full range, the signal template, normalised by the signal plus background fit, is subtracted from the data.
 The SWiFt background estimation procedure is then performed to the signal subtracted data,
 using the 5 parameter dijet fit function and a window half-width of 16, which is again chosen to match the configuration used in the search phase.
@@ -592,7 +595,9 @@ The signal induced fit bias is especially notable in the case of a SSM $Z'$ boso
 The signal induced fit bias of the signal subtracted background is small relative to the size of the injected signal,
 show by the fact that the blue line lies close to one for all dijet masses.
 Therefore, the signal subtracted background estimation is used in the limit setting phase of the \lm{} data-set analysis,
-for both the $Z'$ boson and generic Gaussian signals. signal subtracted background estimate is created for each signal mass point using the dijet mass spectrum observed in data.
+for both the $Z'$ boson and generic Gaussian signals.
+A signal subtracted background estimate is created for each signal mass point using the dijet mass spectrum observed in data.
+
 If the signal subtracted background estimates differ greatly from the nominal SWiFt background estimate,
 this is evidence that there may be a signal induced fit bias present in the search phase.
 Figure~\ref{fig:lim-lowmass_ssb_data} shows the ratio of the 
@@ -748,7 +753,7 @@ following the procedure outlined in~\cite{dijet-mori17_paper}.
 The Gaussian signal with a 0\% width in truth mass will have
 a width of the mass resolution of the detector in dijet mass.
 
-For the Gaussian limit setting the sources of systematic uncertainties
+For the Gaussian limit setting phase, the sources of systematic uncertainties
 are the luminosity uncertainty,
 the background modelling uncertainties and a flat 5\% uncertainty to cover
 the JES, JER and $b$JES systematic uncertainties.
