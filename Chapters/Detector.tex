@@ -42,8 +42,8 @@ To achieve high instantaneous luminosity at the LHC, bunches of protons are coll
 The mean number of collisions per bunch-crossing ($<\hspace{-3pt}\mu\hspace{-3pt}>$) depends on the running conditions of the LHC.
 For ATLAS, the luminosity weighted average of $<\hspace{-3pt}\mu\hspace{-3pt}>$ is 13.7 in 2015 data and 24.9 in 2016 data~\cite{det-ATLAS_lumi_twiki}.
 Collisions in addition to the collision of interest
-\footnote{ The position of the collision of interest is known as the primary vertex;
-  the experimental definitions of primary vertex (and therefore the collision of interest) is discussed in Section~\ref{sec:obj-tracks_pv}.}
+\footnote{\ The position of the collision of interest is known as the hard-scatter primary vertex;
+  the experimental definition of hard-scatter primary vertex (and therefore the collision of interest) is discussed in Section~\ref{sec:obj-tracks_pv}.}
 are collectively referred to as \textit{`pile-up'}~\cite{det-pileup}.
 Pile-up presents a challenge to physics analyses at the LHC
 as the resulting particles from pile-up collisions can affect the measurement of particles from the collision of interest.
@@ -69,7 +69,7 @@ as the resulting particles from pile-up collisions can affect the measurement of
 %\end{figure}
 
 
-\section{ATLAS Detector Description}
+\section{The ATLAS Detector}
 \label{sec:det-ATLAS}
 
 The ATLAS (\textbf{A} \textbf{T}oroidal \textbf{L}arge Hadron Collider \textbf{A}pparatu\textbf{S}) detector
@@ -113,7 +113,7 @@ Each component of the ATLAS detector is described in further detail below.
 %  \label{fig:det-ATLAS_slice}
 %\end{figure}
 
-\subsection{ATLAS Co-ordinate System}
+\subsection{Co-ordinate System}
 \label{sec:det-coordinate}
 
 %Firstly, to describe the detail of the ATLAS detector there must be a description of the co-ordinate system that is used.
@@ -142,7 +142,7 @@ A key property of rapidity is that differences in rapidity, $\Delta y$, are inva
 This is important in $pp$ colliders as each collision has  a different Lorentz boost along the $z$-axis,
 due to the effects of the Parton Distribution Functions described in Section~\ref{sec:theo-qcd_pdf}.
 This implies that, in the massless limit, $\Delta \eta$ is also invariant against Lorentz boosts along the $z$-axis.
-Therefore $\eta$ is used to define the angular direction with respect to the z-axis in the ATLAS co-ordinate system.
+Therefore $\eta$ is used to define the angular direction with respect to the $z$-axis in the ATLAS co-ordinate system.
 
 The final important quantity of the ATLAS co-ordinate system is $\Delta R$, which is defined as $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$.  
 \Delta R represents the angular separation between two vectors.
@@ -178,16 +178,17 @@ Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap compone
   \end{center}
   \caption[A schematic showing a slice of the barrel components of the ATLAS Inner Detector including the Insertable $B$-Layer.]
           {A schematic showing a slice of the barrel components of the ATLAS Inner Detector (ID) including the Insertable $B$-Layer (IBL).
-            Each component is labelled and the radial distances from the beam-pipe ($r$) is shown~\cite{obj-tracks_TIDE}.}
+            Each component is labelled and the radial distance from the beam-pipe ($r$) is shown~\cite{obj-tracks_TIDE}.}
   \label{fig:det-ID_slice}
 
   \begin{center}
     \includegraphics[width=0.9\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
   \end{center}
   \caption[A schematic showing the barrel and end-cap components of the ATLAS Inner Detector.]
-          {A schematic showing the barrel and end-cap components of the ATLAS Inner Detector (ID), the Insertable $B$-Layer is not shown.
-            Each component  is labelled and the axial distance from the beam-pipe ($z$) is shown.
-            The red lines indicate the trajectory of a particle at $\eta$ = 1.4 and 2.2 with $p_T$ = 10 GeV.~\cite{det-ATLAS_Exp}.}
+          {A schematic showing the barrel and end-cap components of the ATLAS Inner Detector (ID);
+            the Insertable $B$-Layer and the barrel TRT components are not shown.
+            The axial distance from the beam-pipe ($z$) is indicated.
+            The red lines indicate the trajectory of a particle at $\eta$ = 1.4 and 2.2 with $p_T$ = 10 GeV~\cite{det-ATLAS_Exp}.}
   \label{fig:det-ID_schem}
 \end{figure}
 
@@ -241,21 +242,21 @@ The IBL is a single layer of pixel modules in the barrel only, which provides an
 
 Moving radially outwards, the next component of the ID is the Semi-Conductor Tracker~(SCT).
 The SCT modules are made from two parallel layers of semi-conducting strips.
-The strips are $\sim$\SI{120}{\mm} in length \footnote{ This number varies for the various parts of the SCT}
+The strips are $\sim$\SI{120}{\mm} in length \footnote{\ This number varies for the various parts of the SCT.}
 and have a strip pitch (spacial separation between strips) of \SI{80}{\micro\metre}.
 The parallel strip layers within each module have a 40 mrad angular offset along their common normal
 such that each module can produce a 3D position measurement.
 
-The outermost component of the ID is the Transition Radiation Tracker (TRT)
-constructed of many \SI{4}{\mm} radius cylindrical tubes filled with a xenon based gas mixture
-\footnote{ 70\% Xe, 27\% $\text{CO}_2$ and 3\% $\text{O}_2$~\cite{det-ID_xe}.}
+The outermost component of the ID is the Transition Radiation Tracker (TRT).
+The TRT is constructed of many \SI{4}{\mm} radius cylindrical tubes filled with a xenon based gas mixture
+\footnote{\ 70\% Xe, 27\% $\text{CO}_2$ and 3\% $\text{O}_2$~\cite{det-ID_xe}.}
 %Xenon is used for its high efficiency to absorb TR photons of typical energy 6–15 keV.
 with an anode wire through the central axis.
 A charged particle passing through the gas causes ionisation allowing for a measurement of its position using drift-time.
 In addition, the space between the straws is filled with polymer fibres (barrel) and foils (end-caps) to create transition radiation,
 which is emitted by relativistic charged particles as they pass a boundary between materials with different refractive indices.
 The intensity of the transition radiation is inversely proportional to the mass of the charged particle,
-which are used to discriminate between electrons and pions~\cite{det-ID_TR}.
+which is used to discriminate between electrons and pions~\cite{det-ID_TR}.
 %% Pion vs electron is example
 
 The trajectory, momentum and transition radiation measurements provided by the Inner Detector are essential for particle identification at ATLAS.
@@ -263,7 +264,7 @@ In particular, the high precision position measurements close to the beam-pipe f
 are used to identify tracks originating from hadrons containing $b$-quarks, which are then used to identify $b$-jets.
 $b$-jet identification is important for di-$b$-jet searches and is described in Section~\ref{sec:obj-bjets}.
 
-\subsection{ATLAS Calorimeter System}
+\subsection{Calorimeter System}
 \label{sec:det-calo}
 
 The ATLAS calorimeter system is located on the outside of the solenoid magnet surrounding the ID and
@@ -351,7 +352,7 @@ which is constructed from absorber layers of steel and active material layers of
 The cascade particles produced by the absorber will excite atoms in the scintillating tiles which will then produce photons at a constant mean energy;
 therefore by measuring the intensity of the scintillating light (number of photons produced) the energy of the cascade particle can be determined.
 The Tile Calorimeter has a depth of 7.4 $\lambda$, meaning the majority of the hadronic shower is captured by the LAr and Tile calorimeter.
-The Tile Calorimeter consists of barrel and the extended barrel components;
+The Tile Calorimeter consists of barrel and extended barrel components;
 the barrel covers the region $|\eta|\nobreak<$ 1.0 and the extended barrel covers the region $0.8\nobreak<\nobreak|\eta|\nobreak<\nobreak1.7$.
 The maximum granularity of the Tile calorimeter in the $\eta$--$\phi$ plane
 is 0.1~x~0.1 for both the barrel and the extended barrel \footnote{Full details on the granularity of all components of the ATLAS calorimeter is found in Table 1.3 of~\cite{det-ATLAS_Exp}.}. 
@@ -417,7 +418,7 @@ The intrinsic energy resolution of a calorimeter is given by three terms:
 
 Table~\ref{tab:det-calo_noise} shows approximate values of $c_s$ and $c_c$ for the components of the ATLAS calorimeter.
 The noise term depends strongly on $\eta$ and pile-up conditions so is not given.
-For high-\pT{} objects ($\,\gtrsim 100$ GeV), such as the jets used in di-$b$-jet searches, the constant term is the dominant term,
+For high-\pT{} objects ($\,> 100$ GeV), such as the jets used in di-$b$-jet searches, the constant term is the dominant term,
 as the other terms are suppressed by the large values of~$E$.
 
 %{\renewcommand{\arraystretch}{1.2}
@@ -483,7 +484,7 @@ A further description of the magnets used in ATLAS is found in the next section.
 
 Muon chambers are the detectors that measure the position of the muon.
 In the barrel region,  muon chambers are arranged in three concentric cylindrical layers of chambers formed around the beam-pipe,
-whilst in the transition and end-cap regions there are in three disks of chambers perpendicular to the beam-pipe either side of the barrel.
+whilst in the transition and end-cap regions there are three disks of chambers perpendicular to the beam-pipe either side of the barrel.
 
 There are two types of muon chambers; trigger and precision.
 The trigger muon chambers provide a position measurement in 3-dimensions within 15--\SI{25}{\nano\second} which is used to reconstruct muons in the ATLAS trigger system,
@@ -518,9 +519,9 @@ This effect, known as \textit{`punch-through'}, is estimated using energy deposi
 
 In ATLAS, magnetic fields are important for obtaining the momentum of particles from their observed trajectories in the ID and MS.
 The ATLAS magnet system consists of four large superconducting magnets.
-The inner solenoid surrounds the ID and provides a 2~T magnetic field within the ID.
-The barrel toroid magnet provides a magnetic field of $\sim$0.5~T in the central regions of the MS and
-the two end-cap toroid magnets which produce a magnetic field of $\sim$1~T in the forward regions of the MS.
+The inner solenoid surrounds the ID and provides a 2~T magnetic field within the ID,
+the barrel toroid magnet provides a magnetic field of $\sim$0.5~T in the central regions of the MS and
+the two end-cap toroid magnets produce a magnetic field of $\sim$1~T in the forward regions of the MS.
 Figure~\ref{fig:det-magnet_schem} shows the layout of the ATLAS magnet system~\cite{det-magnet_fig}.
 
 \vspace{1em}
