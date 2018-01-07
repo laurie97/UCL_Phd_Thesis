@@ -140,6 +140,10 @@ def main():
     if args.dobPerfEff:
         hltJetColNames=["boffperf_split_PVEff"]
         doEff(version, mcTags, vars, grls, epochs, hltJetColNames, etaRanges, "offJets70_match_hlt60")
+        mcTags=["ttbar_tW_thesis"]
+        epochs=[""]
+        grls=["_GRL_bslt2mm_"+std]
+        doEff(version, mcTags, vars, grls, epochs, hltJetColNames, etaRanges, "offJets70_match_hlt60")
 
     if args.doPurity:
         purPlots=["effMC_uncert_purity.pdf","purityMC_variations.pdf","effMC_variations_LTrigEff.pdf","effMC_uncert_LTrigEff.pdf"]
