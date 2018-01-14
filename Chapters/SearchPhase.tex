@@ -318,7 +318,7 @@ a single fit function for the full range of the dijet mass spectra, known as a g
 A global fit strategy has been used in previous inclusive dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
 
 A dijet fit function (described in Table~\ref{tab:bkg-fit}) is selected using the following strategy.
-The 3 parameter dijet function is used as the initial nominal function and hence the 4 parameter dijet fit function function is the initial alternate function.
+The 3 parameter dijet function is used as the initial nominal function and hence the 4 parameter dijet fit function is the initial alternate function.
 If the Wilks' \mbox{$p$-value} (described in Section~\ref{sec:bkg-wilks}) is less than 0.05,
 the nominal fit function is rejected and the alternative function becomes the nominal.
 The process is iteratively run until a dijet fit function with a Wilks' \mbox{$p$-value} \gt{} 0.05 is selected.
@@ -397,7 +397,7 @@ The oscillating pattern in the effective entry distribution is caused by the mer
   \end{center}
   \vspace{-0.8em}
   \caption
-      [The scaled and effective entries dijet mass spectrum
+      [The scaled and effective entries dijet mass spectra
         from QCD dijet simulation when the \summer{} data-set event selection has been applied.]
       {The scaled dijet mass spectrum (red) compared to the
         effective entries dijet mass spectrum (green)
@@ -445,7 +445,7 @@ It can also be concluded that the 3 parameter dijet fit function will also be in
   \end{center}
   \vspace{-1em}
   \caption
-      [The scaled dijet mass spectrum from QCD dijet simulation for the 2 and $\geq$1 $b$-tag category,
+      [The scaled dijet mass spectrum from QCD dijet simulation
         fitted to using the 4 parameter dijet fit function, with the lower edge of the dijet mass spectrum at 1100 GeV.
         The \summer{} data-set event selection has been applied.]
       {The scaled dijet mass spectrum from QCD dijet simulation for the (a) 2 and (b) $\geq$1 $b$-tag category,
@@ -526,9 +526,10 @@ The study presented in this section motivates the requirement that $m_{jj}~>$~13
   \end{center}
   \vspace{-1em}
   \caption
-      [The scaled dijet mass spectrum from QCD dijet simulation for the 2 and $\geq$1 $b$-tag category,
-        fitted to using the 4 parameter dijet fit function, with the lower edge of the dijet mass spectrum at 1378 GeV.]
-     { The scaled dijet mass spectrum from QCD dijet simulation for the (a) 2 and (b) $\geq$1 $b$-tag  category,
+      [The scaled dijet mass spectrum from QCD dijet simulation
+        fitted to using the 4 parameter dijet fit function, with the lower edge of the dijet mass spectrum at 1378 GeV.
+        The \summer{} data-set event selection has been applied.]
+      { The scaled dijet mass spectrum from QCD dijet simulation for the (a) 2 and (b) $\geq$1 $b$-tag  category,
        fitted to using the 4 parameter dijet fit function, with the lower edge of the dijet mass spectrum at 1378 GeV.
        The most discrepant excess as found by the \bh{} algorithm is indicated by the vertical blue lines and the \mbox{$p$-value} of this excess is printed on the plot.
        The \summer{} data-set event selection has been applied.}
@@ -596,9 +597,8 @@ The distribution of the $\chi^{2}$ \mbox{$p$-value}s also indicates that there i
   \end{center}
   \vspace{-1em}
   \caption
-      [The scaled dijet mass spectrum compared to the
-        effective entries of the dijet mass spectrum 
-        for the 2 and $\geq$1 $b$-tag categories.]
+      [The scaled and effective entries dijet mass spectra overlaid with a data-like dijet mass spectrum
+        from QCD dijet simulation when the \summer{} data-set event selection has been applied.]
       {The scaled dijet mass spectrum (red) compared to the
         effective entries of the dijet mass spectrum (green)
         for the (a) 2 and (b) $\geq$1 $b$-tag categories.
@@ -630,9 +630,9 @@ The distribution of the $\chi^{2}$ \mbox{$p$-value}s also indicates that there i
   \end{center}
   \vspace{-1em}
   \caption
-      [An illustration of the calculation of the \bh{} $p$-value for the search phase applied to data-like dijet mass spectra from a simulated QCD dijet sample.
+      [An illustration of the calculation of the \bh{} $p$-value for the search phase applied to data-like dijet mass spectra from QCD dijet simulation.
         The \summer{} data-set event selection has been applied.]
-      {The \bh{} test statistic observed when the search phase is applied to a data-like dijet mass spectrum from a simulated QCD dijet sample
+      {The \bh{} test statistic observed when the search phase is applied to a data-like dijet mass spectrum from QCD dijet simulation
         compared to the dijet mass spectra of the \bh{} test statistic for 10,000 pseudo-experiments taken from the background estimation for
         the (a) 2 and (b) $\geq$1 $b$-tag categories.
         The fraction of pseudo-experiments with a \bh{} test statistic greater than the observed value is the \bh{} \mbox{$p$-value}.
@@ -678,10 +678,10 @@ Hence, it is concluded that the search phase using the 3 parameter dijet fit fun
   \end{center}
   \vspace{-1em}
   \caption
-      [The normalised distribution of \bh{}, \dhunt{} and $\chi^{2}$  \mbox{$p$-value}s for
+      [The normalised distributions of \bh{}, \dhunt{} and $\chi^{2}$  \mbox{$p$-value}s for
         the search phase performed on 200 data-like dijet mass spectra from QCD dijet simulation.
         The \summer{} data-set event selection has been applied.]
-      {The normalised distribution of \bh{} (top row),  \dhunt{} (middle row) and $\chi^{2}$ (bottom row) \mbox{$p$-value}s for
+      {The normalised distributions of \bh{} (top row),  \dhunt{} (middle row) and $\chi^{2}$ (bottom row) \mbox{$p$-value}s for
         the search phase using the 3 parameter dijet fit function performed on
         200 data-like dijet mass spectra from QCD dijet simulation
         for the 2 $b$-tag category (left column) and $\geq1~b$-tag category (right column).
@@ -1239,8 +1239,7 @@ small statistical precision of the subset relative to the final data-set.
 }
 %\vspace{-1em}
 \caption
-    [The SWiFt search phase run on a 3~\ifb{} subset of the \lm{} data-set using
-      the 4 and 5 parameter dijet fit function for a window half-width of 16.]
+    [The SWiFt search phase run on a 3~\ifb{} subset of the \lm{} data-set.]
     {\label{fig:bhFit_lm_subset}
       The SWiFt search phase run on a 3~\ifb{} subset of the \lm{} data-set using the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) of 16.
       The upper panel shows the data compared to the background estimate and the lower panel shows the significance of the difference between the two.
@@ -1276,8 +1275,7 @@ the full set of plots for all SWiFt configurations considered are in Appendix~\r
 
 %\vspace{-1em}
 \caption
-    [The SWiFt search phase run on the smooth dijet mass spectrum from the \lm{} fit control region
-      using the 4 and 5 parameter dijet fit function for a window half-width 10 and 16.]
+    [The SWiFt search phase run on the smooth dijet mass spectrum from the \lm{} fit control region.]
     {\label{fig:bhFit_lm_corrFitCR_smooth}
       The SWiFt search phase run on the smooth dijet mass spectrum from the \lm{} fit control region
       using the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) of 10 and 16.
@@ -1373,10 +1371,10 @@ there is no evidence that spurious signal can occur in the window half-widths co
 \subcaptionbox{5 parameter function,\\ $wHW$ = 14} {                                                    
   \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
 }                                                                                              
-\caption[The normalised distribution of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
+\caption[The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
           data-like dijet mass spectra from the \lm{} fit control region.]
         {\label{fig:bumpH_spuriousSignal}
-          The normalised distribution of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
+          The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
           data-like dijet mass spectra (seeds) from the \lm{} fit control region,
           shown for the 4 and 5 parameter dijet fit function for a selection window half-widths ($wHW$). 
           The number of data-like spectra used is given on the plot.
@@ -1553,7 +1551,7 @@ The window selection procedure has chosen the SWiFt background estimate with the
 %\vspace{-1em}
 \caption
     [The SWiFt search phase run on a data-like dijet mass spectrum
-      from the fit control region with a simulated SSM $Z'$ boson of mass 800 GeV and the nominal cross-section injected.]
+      from the fit control region with a simulated SSM $Z'$ boson of mass 800 GeV injected when a region of 705-834 GeV has been excluded from the SWiFt background estimation.]
     {\label{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_removedWindow}
       The SWiFt search phase run on a data-like dijet mass spectrum
       from the fit control region with a simulated SSM $Z'$ boson of mass 800 GeV and the nominal cross-section injected.
@@ -1570,8 +1568,8 @@ The window selection procedure has chosen the SWiFt background estimate with the
   \includegraphics[width=0.49\linewidth, angle=0,page=8]{figs/Dibjet/LowMass/FitStudy_min566/windowSel_corrFitCR_dataLike_v11_Zprimebb800_xsFactor1_removeWindow.pdf}
 }
 %\vspace{-1em}
-\caption[ An illustration of the window selection procedure for a data-like dijet mass spectrum when
-          a simulated SSM $Z'$ boson of mass 800 GeV has been injected with the nominal cross-section,
+\caption[An illustration of the window selection procedure for a data-like dijet mass spectrum when
+          a simulated SSM $Z'$ boson of mass 800 GeV has been injected
           and a region of 705-834 GeV has been excluded from the SWiFt background estimation.]
         {\label{fig:windowSel_Zprimebb800_xsFactor1}
           An illustration of the window selection procedure for a data-like dijet mass spectrum when
@@ -1627,7 +1625,7 @@ and is selected by the window selection procedure after the region exclusion pro
 %\vspace{-1em}
 \caption
     [The  \bh{} \mbox{$p$-value} when performing the SWiFt search phase to
-      a data-like dijet mass spectrum that has been injected with a sequential standard model $Z'$ with
+      a data-like dijet mass spectrum that has been injected with a SSM $Z'$ boson with
       a variety of generated masses and normalisation factors.]
     {\label{tab:bumpH_lm_sigInj}
       The  \bh{} \mbox{$p$-value} when performing the SWiFt search phase with no region exclusion applied
