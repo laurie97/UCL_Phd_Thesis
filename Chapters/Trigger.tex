@@ -76,9 +76,8 @@ In Run-2 the jet triggers are used at both the L1 and HLT level~\cite{trig-L1cal
 
 The L1 trigger is a hardware based trigger which accepts or rejects an event within \SI{2.5}{\micro\second}.
 Due to this time constraint, the L1 jet trigger uses coarser jet reconstruction techniques than are used by offline reconstruction.
-The L1 jet trigger uses trigger towers which are defined as energy deposits in a region of 0.2~x~0.2 in the $\eta-\phi$ plane integrated radially over all layers of the EM and hadronic calorimeter.
+The L1 jet trigger uses trigger towers which are defined as energy deposits in a region of 0.1~x~0.1 in the $\eta-\phi$ plane integrated radially over all layers of the EM and hadronic calorimeter.
 The L1 jet trigger accepts an event if a neighbouring group of 4~x~4 trigger towers containing energy deposits above some pre-set threshold is found.
-The $b$-jet triggers described in the following section are also seeded by a L1 jet trigger.
 
 %The di-$b$-jet searches use the L1 trigger known as \verb|L1_J100|, which requires that at least one trigger tower group with an energy deposit of \SI{100}{\GeV} has been found.
 %Other L1 triggers that search for multiple clusters are also possible to reduce the energy thresholds required.
@@ -95,6 +94,8 @@ Similar to offline jet reconstruction, in the HLT jets are reconstructed using
 hadronic topoclusters formed from EM or hadronic calorimeter cells and the anti-$k_T$ jet-reconstruction algorithm with $R$=0.4;
 topoclusters and the anti-$k_T$ algorithms are described in Section~\ref{sec:obj-jets}.
 The HLT jet trigger is passed if the reconstructed jets meet a pre-set criteria that depends on the number and $p_T$ of the jets.
+The $b$-jet triggers described in the following section also use the L1 and HLT jet trigger procedures to reconstruct jets.
+
 
 %\subsection{High-mass trigger selection}
 
@@ -119,7 +120,7 @@ Therefore, for a di-$b$-jet search to probe lower masses a different trigger str
 As described in Section~\ref{sec:obj-bjets}, $b$-jets, defined as jets containing a $b$-hadron,
 can be identified from the topology of tracks in a process known as $b$-tagging.
 $b$-Tagging can be utilised online to reduce rates of jets significantly~\footnote{\ As described in Section~\ref{sec:theo-qcd-dijet_features},
-  the QCD dijet production is dominated by light-jets.}
+  QCD dijet production is dominated by light-jets.}
 allowing for a lower jet-$p_T$ threshold than is used by the single jet trigger.
 Hence, using a $b$-jet trigger in di-$b$-jet searches means that a lower mass range can be probed.
 %$b$-Jet triggers have been used previous ATLAS analyses,
@@ -204,7 +205,7 @@ specifically, $\epsilon_{b\text{Trig}}$ is defined as the number of $b$-jets tha
 divided by the number of $b$-jets that are offline $b$-tagged and match a trigger jet.
 Or to put this in an equation;
 \begin{equation}
-  \epsilon_{b\text{Trig}} = \frac{N(\text{Offline-tagged, online-tagged, $b$-jets)}}{N(\text{Offline-tagged, trigger-matched, $b$-jets)}}
+  \epsilon_{b\text{Trig}} = \frac{N(\text{Offline $b$-tagged, online $b$-tagged, $b$-jets)}}{N(\text{Offline $b$-tagged, trigger-matched, $b$-jets)}}
   \label{eq:trig-eff}
 \end{equation}
 A $b$-jet is defined as a jet containing a $b$-hadron.
@@ -261,7 +262,7 @@ Details of muon, electron, jet and $b$-tagged jet object definition are in Chapt
 %chapter ~\ref{sec:obj-lepton},~\ref{sec:obj-jets} and \ref{sec:obj-bjets}\textit{(sec:obj-bjet)} respectively.
 
 The triggers deployed are $b$-performance triggers, which are special triggers used in data-taking specifically for monitoring the $b$-jet trigger performance.
-They are passed if single electron or muon is in the event.
+They are passed if there is an electron or a muon in the event.
 The $b$-performance triggers then run and record the output of the online $b$-tagging algorithms for all online jets with $|\eta|<2.5$ and
 \mbox{$p_{T}>35$~\GeV}, without placing any requirements on the output of the MV2c20 algorithm.
 Therefore, $b$-performance triggers can select  di-lepton $t\bar{t}$ events at the trigger-level
@@ -307,7 +308,7 @@ For both processes the parton shower, fragmentation and the underlying event are
 %% Pythia6 version 6.428
 and the corresponding Perugia 2012 tune~\cite{trig-perugia}.
 The top mass is set to 172.5 GeV.
-The EvtGen v1.2.0 program~\cite{trig-evtGen} is used to model the decays of $b$ and $c$ hadrons.
+The {\sc EvtGen} v1.2.0 program~\cite{trig-evtGen} is used to model the decays of $b$ and $c$ hadrons.
 
 \subsection{Investigation of Data-Simulation Discrepancies}
 \label{sec:trig-inv}
@@ -496,7 +497,7 @@ This is the cause of the data/simulation differences observed in Epoch~1, as sho
 
 In Epoch~2 if a \verb|xPrmVtx| PV is not found, the $b$-jet trigger procedure terminates whilst processing the event and therefore the trigger does not pass the event.
 As the $b$-jet trigger procedure terminates, the $b$-performance triggers will also not be passed when no \verb|xPrmVtx| PV is found.
-This means that events with no \verb|xPrmVtx| PV are lost in both numerator and denominator when calculating the $b$-jet trigger efficiency.
+This means that events with no \verb|xPrmVtx| PV are lost in both numerator and denominator when calculating the $b$-jet trigger efficiency, defined in Equation~\ref{eq:trig-eff}.
 Therefore, by using the $b$-performance triggers one is effectively measuring the  $b$-jet trigger efficiency when a \verb|xPrmVtx| PV is found.
 Figure~\ref{fig:Epoch2_eff} shows that the $b$-jet trigger efficiency measured in Epoch 2 is in agreement with simulation within 5\%.
 This is the reason it was necessary to relax the offline--online jet matching to accurately represent the full data-simulation discrepancy in Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch}.
@@ -574,10 +575,10 @@ This demonstrates that the use of a backup finding algorithm alleviates the $b$-
 \begin{figure}[!htb]
 \begin{center}
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_noGRL_eff_jetPt.pdf}}
-  \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_noGRL_eff_jetEta.pdf}} \\
-  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_noGRL_eff_bs_online_vz.pdf}}
-  \subcaptionbox{Vertex Class}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_noGRL_eff_vtxClass.pdf}}
+  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetPt.pdf}}
+  \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetEta.pdf}} \\
+  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_bs_online_vz.pdf}}
+  \subcaptionbox{Vertex Class}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_vtxClass.pdf}}
 \end{center}
 \vspace{-1em}
 %\caption{The 60\% operating point $b$-jet trigger efficiency with respect to the offline 70\% operating point

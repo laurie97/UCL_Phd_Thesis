@@ -168,7 +168,8 @@ ATLAS analyses use a type of jet reconstruction algorithm known as sequential re
 which selectively add together the calorimeter topoclusters to form the jet;
 these are specifically the $k_t$, anti-$k_t$ and Cambridge-Aachen (CA) algorithms.
 
-The three algorithms use a set of four-momenta (clusters), which are initially the topoclusters described above.
+The algorithms consider a set of four-momenta which are referred to as clusters;
+the initial set of clusters are the topoclusters described above.
 The algorithm makes use of two distances: the inter-jet distance between clusters $i$ and $j$ ($d_{ij}$) 
 and the particle-beam distance for cluster $i$ ($d_{ib}$). The distances are defined as
 \begin{equation}
@@ -350,7 +351,7 @@ built from the EM-scale topoclusters using a number of steps:
   This step corrects for differences between simulation and data using events
   containing a jet to be calibrated and a reference object;
   the reference object is a photon, a $Z$ boson, or a set of calibrated jets.
-  The reference objects are calibrated such that they have a well measured $p_T$;
+  The reference objects used have been calibrated such that they have a well measured $\pT$;
   therefore, from conservation of momentum, the true \pT{} of the jet to be calibrated can be inferred.
   One can then calculate a correction factor, which is applied to the jet four-momentum in data only.
   \begin{equation}
@@ -398,8 +399,8 @@ Full details on the derivation of this uncertainty can be found in~\cite{obj-jet
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_pt.png} }
-    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_eta.png} }
+    \subcaptionbox{Jet-\pT{}} {\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_pt.pdf} }
+    \subcaptionbox{Jet-\eta}{\includegraphics[width=0.4\linewidth, angle=0]{figs/Objects/jets_uncert_JES_eta.pdf} }
   \end{center}
  \vspace{-1em}
   \caption[The fractional jet energy scale uncertainty as a function of jet-\pT{} and \eta.]
@@ -585,8 +586,8 @@ and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractio
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{$b$-jet efficiency \\against light-jet rejection} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_light}}
-    \subcaptionbox{$b$-jet efficiency \\against $c$-jet rejection}  { \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_charm}}
+    \subcaptionbox{$b$-jet efficiency \\against light-jet rejection} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_light.eps}}
+    \subcaptionbox{$b$-jet efficiency \\against $c$-jet rejection}  { \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_charm.eps}}
   \end{center}
   \vspace{-1em}
   \caption[The expected $b$-jet efficiency of the $b$-tagging algorithm, MV2, with respect to
@@ -638,8 +639,8 @@ for the MV2c20 algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}. A
     \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/bjets_perf_pt.eps} 
   \end{center}
   \vspace{-1em}
-  \caption[$b$-tagging efficiency for $b$-jets, $c$-jets and light-jets as a function of jet-\pT{} for the MV2c20 algorithm at the 70\% operating point in the 2015 configuration.]
-          {\label{fig:obj-bjets_perf_pt} $b$-tagging efficiency for $b$-, $c$- and light-jets against jet-\pT{} 
+  \caption[The $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets as a function of jet-\pT{} for the MV2c20 algorithm at the 70\% operating point in the 2015 configuration.]
+          {\label{fig:obj-bjets_perf_pt}The $b$-tagging efficiency for $b$, $c$ and light-jets against jet-\pT{} 
             for the MV2c20 algorithm at the 70\% operating point using the 2015 configuration in simulated $t\bar{t}$ events~\cite{obj-bjets_algo_2015}.}
 \end{figure}
 
@@ -670,8 +671,8 @@ Figure~\ref{fig:obj-bjets_calib} shows the data/simulation scale factor measured
     \includegraphics[width=0.57\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
   \end{center}
   \vspace{-1em}
-  \caption[Ratio of $b$-tagging efficiency in data and simulation for MV2c10 at the 77\% operating point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
-          {\label{fig:obj-bjets_calib} Ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% operating point as a function of jet-\pT{}
+  \caption[The ratio of $b$-tagging efficiency in data and simulation for MV2c10 at the 77\% operating point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
+          {\label{fig:obj-bjets_calib}The ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% operating point as a function of jet-\pT{}
   in di-lepton $t\bar{t}$ events. Statistical uncertainties (black lines) and total uncertainties (green shaded region) are shown \cite{obj-bjets_calib_plots}.}
 \end{figure}
 
@@ -679,7 +680,7 @@ The $b$-tagging calibration using di-lepton $t\bar{t}$ events described above
 is unable to measure a data/simulation scale factor for jets with \pT{} greater than 300 GeV, due to low data statistics in the high-\pT{} region.
 Thus, the measured scale factors are extrapolated to cover the high jet-\pT{} region.
 To derive an uncertainty for the high-\pT{} extrapolation; $\epsilon_{\,b\text{Tag}}$ is measured in Monte-Carlo simulations of high-\pT{} $b$-jets  
-when variables known to affect the performance of $b$-tagging are varied to represent the modelling uncertainties of high-\pT{} $b$-jets~\cite{obj-bjets_calib_highPt}.
+when variables known to affect the performance of $b$-tagging are varied to represent the modelling uncertainties of high-\pT{} \mbox{$b$-jets}~\cite{obj-bjets_calib_highPt}.
 The dominant extrapolation uncertainty is from variations of the impact parameter resolution.
 
 \subsection{$b$-Jet Energy Scale}

@@ -134,14 +134,14 @@ The dijet fit functions used in this analysis are listed in Table~\ref{tab:bkg-f
 \label{tab:bkg-fit}
 \end{table}}
 
-The dijet fit functions are motivated using a theoretical understanding of the QCD dijet production
+The dijet fit functions are motivated using a theoretical understanding of QCD dijet production
 and experience from previous dijet searches~\cite{theo-dijet_harris}.
 The 3 parameter dijet fit function has been used in dijet searches beginning with CDF~\cite{dijet-CDF_3par}
 and the three components are motivated as follows:
 the $p_1$ term gives the normalisation,
 the $(1-x)^{p_2}$ term is a common parameterisation for the behaviour of the PDFs with the property of vanishing as $x$ approaches unity,
 and the $x^{p_3}$ term is motivated by the $1/m_{kl}^2$ term in the matrix element (shown in Equation~\ref{eq:theo-qcd_dijet_xs}).
-The $\sqrt{s}$ term is the centre-of-mass energy of the $pp$ collisions, which is 13 TeV for analyses in this thesis.
+The $\sqrt{s}$ term is the centre-of-mass energy of the $pp$ collisions, which is 13 TeV for the analyses in this thesis.
 Additional parameters of $x^{p_4\ln{x}}$ and $x^{p_5(\ln{x})^{2}}$ have been considered in dijet searches to give an adequate description of
 high dijet mass region when large mass ranges are considered~\cite{dijet-mori16_paper,dijet-CDF_4par}.
 Finally, the $x=m_{jj}/p_6$ term is added as an additional degree of freedom~\cite{det-thesis_kate}.
@@ -172,7 +172,7 @@ that can adequately describe the background is used, such that sensitivity to si
 \subsection{Wilks' Test Statistic} 
 \label{sec:bkg-wilks}
 
-To determine if a dijet fit function has sufficient number of parameters to adequately describe the dijet mass spectrum, an approach using the Wilks' test statistic is used,
+To determine if a dijet fit function has a sufficient number of parameters to adequately describe the dijet mass spectrum, an approach using the Wilks' test statistic is used,
 as employed in previous iterations of both inclusive dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
 
 For this test one considers the null hypothesis that a nominal dijet fit function is the true parameterisation of the dijet mass spectrum
@@ -301,7 +301,7 @@ is referred to as the search phase throughout this Chapter.
 
 This section presents the search phase for the \summer{} data-set:
 Section~\ref{sec:bkg-summer_global} describes the background modelling strategy used,
-Sections~\ref{sec:bkg-summer_fitCR}-\ref{sec:bkg-summer_spusig}
+Sections~\ref{sec:bkg-summer_fitCR}~--~\ref{sec:bkg-summer_sigInj}
 present validation studies of the search phase
 and Section~\ref{sec:bkg-summer_results} presents the results of the search phase.
 
@@ -323,9 +323,9 @@ If the Wilks' \mbox{$p$-value} (described in Section~\ref{sec:bkg-wilks}) is les
 the nominal fit function is rejected and the alternative function becomes the nominal.
 The process is iteratively run until a dijet fit function with a Wilks' \mbox{$p$-value} \gt{} 0.05 is selected.
 
-For the \summer{} data-set the choice of the dijet fit function choice was fixed using a 8.8~\ifb{} subset of data.
-A subset was used such that the function choice could be finalised before the full data-set was collected.
-This meant that the analysis strategy and search phase validation studies could be scrutinised by the other members of the ATLAS collaboration before the conference note publication.
+For the \summer{} data-set the choice of the dijet fit function was fixed using a 8.8~\ifb{} subset of data.
+A subset was used such that the function choice could be finalised before the full data-set was collected;
+this meant that the analysis strategy and search phase validation studies could be scrutinised by other members of the ATLAS collaboration before the conference note publication.
 With hindsight, I think it would have been more rigorous to calculate Wilks' \mbox{$p$-value} on the full data-set.
 
 Figure~\ref{fig:bkg-summer-wilks} shows the Wilks' \mbox{$p$-value} as a function of luminosity
@@ -558,7 +558,7 @@ As described in Section~\ref{sec:bkg-summer_fitCR},
 the simulated dijet mass spectrum contains smaller statistical fluctuations than are present in the final data-set.
 Therefore, to create a dijet mass spectrum representative of the one that is expected in data 
 Poisson fluctuations are applied to the scaled spectrum to create `data-like' dijet mass spectra;
-figure~\ref{fig:effEntDataLike} shows the scaled and effective entries spectra for both
+Figure~\ref{fig:effEntDataLike} shows the scaled and effective entries spectra for both
 $b$-tag categories overlaid with a data-like spectrum in blue.
 
 The search phase is then applied to the data-like dijet mass spectra
@@ -632,8 +632,8 @@ The distribution of the $\chi^{2}$ \mbox{$p$-value}s also indicates that there i
   \caption
       [An illustration of the calculation of the \bh{} $p$-value for the search phase applied to data-like dijet mass spectra from QCD dijet simulation.
         The \summer{} data-set event selection has been applied.]
-      {The \bh{} test statistic observed when the search phase is applied to a data-like dijet mass spectrum from QCD dijet simulation
-        compared to the dijet mass spectra of the \bh{} test statistic for 10,000 pseudo-experiments taken from the background estimation for
+      {The observed \bh{} test statistic (red arrow) when the search phase is applied to a data-like dijet mass spectrum from QCD dijet simulation
+        compared to the distribution of the \bh{} test statistic for 10,000 pseudo-experiments (blue area) taken from the background estimation for
         the (a) 2 and (b) $\geq$1 $b$-tag categories.
         The fraction of pseudo-experiments with a \bh{} test statistic greater than the observed value is the \bh{} \mbox{$p$-value}.
         The \summer{} data-set event selection has been applied.}
@@ -771,7 +771,7 @@ as described in Section~\ref{sec:bkg-summer_fitCR}.
 However, as the \lm{} data-set contains 24.3~\ifb{} of data, Monte-Carlo simulation cannot be produced with a large enough statistical
 precision to perform an adequate test of the background estimation strategy.
 
-Instead two fitting test data-sets are used:
+Instead two background representative data-sets are used:
 a 3~\ifb{} subset of data and a high statistical precision fit control region.
 The 3~\ifb{} subset of data is created from events drawn at random from the final data spectrum.
 Figure~\ref{fig:fittingDataSubset} shows the dijet mass spectrum of the 3~\ifb{} subset and the full \lm{} data-set.
@@ -855,7 +855,7 @@ Figure~\ref{fig:fittingCR}(d) shows the comparison of the smooth spectrum and a 
       A figure showing the process of obtaining the fit control region dijet mass ($m_{jj}$) spectrum
       used for the \lm{} data-set fit studies.
       Panel (a) shows the dijet mass spectrum of events before $b$-tagging is applied (0-tag) and of a 3~\ifb{} subset of \lm{} data.
-      Panel (b) shows the offline $b$-tagging efficiency with respect to online tagging estimated using the luminosity adjusted ratio of the two spectra in plot (a),
+      Panel (b) shows the offline $b$-tagging efficiency with respect to online $b$-tagging estimated using the luminosity adjusted ratio of the two spectra in plot (a),
       the lower panel shows the significance of difference between the luminosity adjusted ratio and the fit.
       Panel (c) shows the dijet mass spectrum of the fit control region and the full \lm{} data-set.
       Panel (d) shows the smooth and data-like dijet mass spectra from the fit control region.
@@ -902,8 +902,8 @@ The lower panel shows the significance of the difference between the data and th
 One would expect an excellent fit quality when an appropriate background estimation is used
 to model the smooth spectrum as the uncertainties are larger than the true statistical fluctuations present.
 The 3 parameter dijet fit function has a $\chi^{2}/\text{n.d.f.} \gg 1$,
-where $n.d.f$ represents the number of degrees of freedom, demonstrating an extremely poor fit quality.
-Hence, the 3 parameter fit is rejected as a fit function option.
+where $n.d.f.$ represents the number of degrees of freedom, demonstrating an extremely poor fit quality;
+hence, the 3 parameter dijet fit function is rejected.
 Further to this, there is a fit bias present for all dijet fit functions,
 where a fit bias is defined as a difference between the background estimation and the true underlying dijet mass spectrum of the background.
 The bias is observed as a set of peaks and troughs in the significance plot.
@@ -1055,7 +1055,7 @@ in a manner in which no personal bias can be introduced.
 %\subsubsection{Low Mass}
 %\label{sec:bkg-full_lowmass_windowSel}
 
-In the \lm{} data-set, the mass range is 566 - 1533 \GeV{}. This contains 32 bins, which in turn requires 32 windows and 32 fits.
+In the \lm{} data-set, the mass range is 566 -- 1533 \GeV{}. This contains 32 bins, which in turn requires 32 windows and 32 fits.
 A window half-width of 16 is  the widest window that is considered,
 as this configuration is similar to the size of the dijet mass spectrum.
 A window half-width of 10 is the narrowest window considered for the purposes of the SWiFt search phase validation studies,
@@ -1376,7 +1376,7 @@ there is no evidence that spurious signal can occur in the window half-widths co
         {\label{fig:bumpH_spuriousSignal}
           The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate to an ensemble of
           data-like dijet mass spectra (seeds) from the \lm{} fit control region,
-          shown for the 4 and 5 parameter dijet fit function for a selection window half-widths ($wHW$). 
+          shown for the 4 and 5 parameter dijet fit function for a selection of window half-widths ($wHW$). 
           The number of data-like spectra used is given on the plot.
 }
 \end{figure}
@@ -1460,7 +1460,7 @@ In the following section two studies with the signal injected spectra are shown:
   the \bh{} \mbox{$p$-value}s for various SWiFt configurations are studied.
   A \mbox{$p$-value} $<$ 0.01 is considered significant in this study,
   as in these cases the region exclusion procedure would be applied.
-  For comparing the sensitivity of two SWiFt configurations a comparison of
+  For comparing the sensitivity of two SWiFt configurations a comparison of the
   observed \bh{} \mbox{$p$-value}s is used, where a lower \mbox{$p$-value} indicates a better sensitivity.\vspace{1em}
   
   \item\textbf{Robustness of Window Selection Procedure}\\
@@ -1535,7 +1535,7 @@ Figure~\ref{fig:windowSel_Zprimebb800_xsFactor1} shows the fit quality measures 
 for a window half-width of 14 and 16 for the 5 parameter dijet fit function.
 Only two window half-widths are considered as these are the only windows that had a significant enough $p$-value to trigger the region exclusion procedure in
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}.
-The window selection procedure has chosen the SWiFt background estimate with the 5 parameter dijet fit function and a window half-width of 14.
+The window selection procedure would chose the SWiFt background estimate with the 5 parameter dijet fit function and a window half-width of 14.
 
 
 \begin{figure}[!tb]
@@ -1629,7 +1629,7 @@ and is selected by the window selection procedure after the region exclusion pro
       a variety of generated masses and normalisation factors.]
     {\label{tab:bumpH_lm_sigInj}
       The  \bh{} \mbox{$p$-value} when performing the SWiFt search phase with no region exclusion applied
-      on a data-like dijet mass spectrum that has been injected with a sequential standard model $Z'$ with
+      on a data-like dijet mass spectrum that has been injected with a sequential standard model $Z'$ boson with
       a variety of generated masses when the cross-section has been multiplied by a normalisation factor 1, 2 or 3 (Signal Norm.).
       The SWiFt search phase has been performed using a window half-width range of 10 to 16
       and the number of parameters used in the dijet fit function (nPars) are 4 or 5.
@@ -1649,7 +1649,7 @@ dijet mass spectrum, meaning there is no side-band to constrain the background e
 Secondly, for all signals considered that trigger the region exclusion procedure a window width can be selected;
 this shows that the region exclusion and window selection procedure is robust in the case that signal is present.
 Thirdly, by comparing \bh{} $p$-values for identical injected signals across SWiFt configurations,
-it can be seen that SWiFt configurations that use large window-half-widths are more sensitive.
+it can be seen that SWiFt configurations that use large window half-widths are more sensitive.
 Finally,
 the SWiFt search phase with a 4 parameter dijet function and window half-width of 10 is less sensitive than the
 SWiFt search phase with a 5 parameter dijet fit function and a window half-width of 16.

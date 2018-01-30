@@ -116,8 +116,8 @@ The Standard Model combines three key quantum field theories.
 The first is the electro-weak theory~\cite{theo-glashow}
 which describes the electro-magnetic force and the weak force.
 The second is Quantum Chromodynamics (QCD)~\cite{obj-bjets_PDG} which describes the strong force.
-Finally, the Higgs Mechanism~\cite{theo-higgs,theo-be}~\footnote{Also known as the Englert-Brout-Higgs mechanism.}
-describes the origin of mass in the Standard Model \footnote{With the exception of the neutrinos, whose mass is not described by the Standard Model.}.
+Finally, the Higgs Mechanism~\footnote{Also known as the Englert-Brout-Higgs mechanism.}~\cite{theo-higgs,theo-be}
+describes the origin of mass in the Standard Model~\footnote{With the exception of the neutrinos, whose mass is not described by the Standard Model.}.
 Each of the forces is discussed below.
 
 \begin{itemize}[leftmargin=*]
@@ -142,7 +142,7 @@ Each of the forces is discussed below.
     couples with weak eigenstates of fermions rather than their flavour eigenstates,
     allowing for interactions that change the generation of the quark's flavour.
     The relative amplitudes of each flavour changing interaction is described by the CKM matrix~\cite{theo-ckm};
-    the values of this matrix highly suppresses generational changing interactions involving the 3rd generation of quarks.
+    the values of this matrix highly suppress generational changing interactions involving the 3rd generation of quarks.
   %This high supprestion will prove important for identifying the presence of $b$-quarks at the ATLAS detector, which will be discussed in Section~\ref{sec:obj-bjets}.
   \end{itemize}
   At low energies ($Q < m_W$) the weak force is less strong than the EM force due to the large mass of the $W/Z$ boson
@@ -179,7 +179,7 @@ As described above, Quantum Chromodynamics (QCD) is a theory that describes the 
 Section~\ref{sec:theo-qcd_dijet_running} will describe the renormalisation of QCD, which is important for understanding how QCD works.
 Then Section~\ref{sec:theo-qcd_jets} will describe the formation of hadronic jets and
 Section~\ref{sec:theo-qcd_dijet} will describe the production of dijet events through QCD in $pp$ collisions, which is the dominant background in di-$b$-jet searches;
-these two elements of QCD that are critical to the analyses being presented in this thesis.
+these two elements of QCD are critical to the analyses being presented in this thesis.
 Quarks and gluons can often fill similar roles in hadronic jet formation and dijet production, hence I will refer to them collectively as `partons' in this section.
 
 \subsection{Renormalisation and the Running of $\alpha_S$}
@@ -194,8 +194,8 @@ The summation over all higher-order loops leads to divergences in calculations o
     \includegraphics[width=0.5\linewidth, angle=0]{figs/Theory/qcd_gluon_loop.pdf}
   \end{center}
   \vspace{-1em}
-  \caption[A schematic showing the gluon propagator with the additional first order loops.]
-  {A schematic showing the gluon propagator with the additional first order loops~\cite{det-thesis_kate}.}
+  \caption[A schematic showing the gluon propagator with additional first order loops.]
+  {A schematic showing the gluon propagator with additional first order loops~\cite{det-thesis_kate}.}
   \label{fig:theo-qcd_gluon}
 \end{figure}
 
@@ -251,7 +251,7 @@ Hadronic jet formation occurs through two distinct processes; parton shower and 
 
   The high-energy final-state quark or gluon will split into a $qg$ or $q\bar{q}$ pair respectively.
   The resulting quarks and gluons will also undergo splitting to form more partons,
-  which in turn can split. This process continues to form the parton shower.
+  which in turn can split. This process repeats to form the parton shower.
   Due to relativistic effects, each splitting will generally be at a small opening angle in the lab-frame
   and as such the partons will be highly collimated in the direction of the initial parton.
   The parton shower process occurs at high energy where the value of $\alpha_S$ is small
@@ -326,10 +326,10 @@ Momentum fraction is defined as the fraction of the proton's total momentum that
 This part of the interaction is indicated by the circles on the left of the Feynman diagram in Figure~\ref{fig:theo-qcd_dijet_feynman}.
 Further details on PDFs is found in Section~\ref{sec:theo-qcd_pdf}.
 
-The elements are combined to calculate $\sigma_{had}$;
+The elements are combined to calculate $\sigma_{\text{\,had}}$:
 \begin{equation}
 %  \sigma(p_1p_2\to q/g_k q/g_l) = \int dx_1 dx_2 F_1(x_1,\mu^2_F)F_2(x_2\mu^2_F) \sigma(q/g_1,q/g_2, \alpha_s(\mu^2_R),Q^2/\mu^2_F,Q^2/\mu^2_R)
-  \sigma_{had} = \sum_{i,j,k,l} \int dx_i\hspace{0.3mm} dx_j \hspace{1mm} F_i(x_i,Q^2)\hspace{1mm}F_j(x_j,Q^2)\hspace{1mm}\hat{\sigma}(p_i, p_j\to p_k p_l)
+  \sigma_{\text{\,had}} = \sum_{i,j,k,l} \int dx_i\hspace{0.3mm} dx_j \hspace{1mm} F_i(x_i,Q^2)\hspace{1mm}F_j(x_j,Q^2)\hspace{1mm}\hat{\sigma}(p_i, p_j\to p_k p_l)
 \end{equation}
 where there is an integral over all possible values of momentum fractions $x_i$ and $x_j$,
 a sum over all possible initial partons from the two protons labelled $i$ and $j$,
@@ -500,14 +500,15 @@ that are significant when forming the di-$b$-jet search strategy.% in Chapters~\
  
 \end{itemize}
 
-Finally, it should be noted that the above description of the QCD dijet production is not complete;
-only tree-level diagrams have been considered, but there also exist higher-order diagrams.
+Finally, it should be noted that the above description of QCD dijet production is not complete;
+only tree-level diagrams have been considered, but there are also higher-order diagrams.
 Related to that issue is the occurrence of initial state and final state radiation, known as ISR and FSR respectively.
 ISR is when an additional parton is radiated off the incoming parton and FSR is when an additional parton is radiated off an outgoing parton.
 ISR and FSR can lead to additional jets in an event, creating a multi-jet event.
 
-In addition, there is also the Underlying Event (UE) which effectively comprises of the remnants of the proton not used in the hard-scatter.
-The UE will mostly be hadronic activity and, as a result, can lead to additional jets in the event, again creating a multi-jet event.
+In addition, there is the Underlying Event (UE) which consists of the remnants of the proton not used in dijet production
+and $pp$ collisions other than the collision creating the dijet event.
+The UE can lead to additional jets in the event, again creating a multi-jet event.
 
 \subsection{$t\bar{t}$ Production}
 \label{sec:theo-ttbar}
@@ -527,7 +528,7 @@ As in dijet production, $t\bar{t}$ pairs can be pair-produced in $pp$ collisions
 The two top-quarks will both decay into a $W$ boson and a jet containing a $b$-quark.
 In the di-lepton decay mode of $t\bar{t}$, one $W$ boson decays into a $l^+~\nu_l$ pair and the other into a $l^{-}~\bar{\nu_l}$ pair.
 A Feynman diagram showing an example of a di-lepton $t\bar{t}$ event is shown in
-Figure~\ref{fig:theo-ttbar}~\footnote{\ This figure shows the $q\bar{q}$ mode of $t\bar{t}$ production. The $gg$ mode is the dominant at the LHC}.
+Figure~\ref{fig:theo-ttbar}~\footnote{\ This figure shows the $q\bar{q}$ production mode of $t\bar{t}$ production; the $gg$ mode is dominant at the LHC.}.
 
 \begin{figure}[!hbt]
   \begin{center}
@@ -598,13 +599,13 @@ It is a clear inadequacy of the Standard Model that there is no explanation of g
 %to study their dynamics in terms of both Standard Model processes
 %and, due to the large masses of galaxies, gravitational interactions.
 
-Astronomers have been able to make the remarkable observation that
+Astronomers have made the remarkable observation that
 $\sim$80\%~of the matter in universe must be so-called `dark matter'~\cite{theo-bsm_dm_peskin}.
 Dark matter is not described by the Standard Model,
 so is clear evidence of Beyond Standard Model physics.
 It is known that dark matter interacts through gravity
 and can only interact weakly, if at all, with the Standard Model,
-otherwise we would have already observed it through interactions with Standard Model particles .
+otherwise we would have already observed it through interactions with Standard Model particles.
 
 The evidence for dark matter comes from many separate astronomical observations,
 such as studies of
@@ -645,7 +646,7 @@ A wider summary of the evidence for dark matter can be found in~\cite{theo-bsm_d
 Furthermore, it is believed the dark matter couples to the Standard Model.
 This is required in many models of dark matter~\cite{theo-bsm_dm_feng} to explain the
 observed relative abundance of dark matter particles in the universe.
-As a result, this means that there may be some yet unknown mechanism that couples to both dark matter and
+As a result, this means that there may be some unknown mechanism that couples to both dark matter and
 Standard Model particles; this mechanism is referred to as a dark matter mediator.
 
 %The evidence for such a statement stems from the observed relative abundance of dark matter particles in the universe.
@@ -709,7 +710,7 @@ In particular, the third generation of quarks is somewhat special;
 the top-quark is much heavier than the $b$-quark
 and is the heaviest particle of the Standard Model.
 Furthermore, as the mass of the top-quark is close to the mass of the Higgs boson,
-the 3rd generation of quarks have a role symmetry breaking within the Higgs mechanism for some BSM models~\cite{theo-bsm_top}.
+the 3rd generation of quarks have a role in symmetry breaking within the Higgs mechanism for some BSM models~\cite{theo-bsm_top}.
 
 There is no good explanation of why there is generational structure in the Standard Model,
 why the mass hierarchy is unsymmetric 
@@ -742,7 +743,7 @@ that preferentially decay to two $b$-quarks or a $b$-quark and a gluon.
 Furthermore, the Hierarchy Problem suggests that BSM physics may exist at the TeV energy-scale.
 The observation of such a particle would be evidence of BSM physics.
 
-Two such models that predict particles with preferential decays to $b$-quarks are discussed below.
+Two such models that predict particles that preferentially decay to $b$-quarks are discussed below.
 These are used as \textit{`benchmark models'} in the analyses presented in this thesis,
 where a benchmark model is a plausible signal model that is used to form and optimise a search strategy.
 Furthermore the benchmark models are used to represent many models that decay to one or two $b$-quarks.
@@ -770,7 +771,7 @@ Three different $Z'$ boson models are considered.
 The first is known as the \textit{`Sequential Standard Model'} (SSM) $Z'$ boson in which the couplings
 of the new $Z'$ boson are the same as the Standard Model $Z$ boson.
 The strongest limits on the SSM $Z'$ boson at the TeV scale are set by searching for a $Z'$ boson decaying
-to lepton pairs~\cite{theo-bsm_dilep} \footnote{Because a di-lepton signature is distinct to the large QCD dijet backgrounds produced in $pp$ collisions}.
+to lepton pairs~\cite{theo-bsm_dilep} \footnote{Because a di-lepton signature is distinct to the large QCD dijet backgrounds produced in $pp$ collisions.}.
 
 The second model is a \textit{`leptophobic'} $Z'$ boson that does not couple to the lepton sector
 but has the same coupling to each of the quarks as the Standard Model $Z$ boson~\cite{theo-bsm_zprime_leptophobic}.
@@ -783,10 +784,10 @@ This model introduces an additional $U(1)'$ symmetry and a Dirac fermion dark ma
 The resulting DM $Z'$ boson does not couple with the lepton sector
 and couples with the DM fermion and the Standard Model quark sector with couplings $g_\chi$\hspace{0.1mm} and $g_{SM}$\hspace{0.1mm}, respectively.
 
-It is worth noting in the models considered the $Z'$ boson does not preferentially decay to $b$-quarks but rather with similar branching ratio as the other quarks.
+It is worth noting in the models considered that the $Z'$ boson does not preferentially decay to $b$-quarks, but rather with similar branching ratio as the other quarks.
 However, this can still be considered as preferential decay to $b$-quarks with respect to the dijet background
 which is dominated by gluons and quarks from the first two generations, as discussed in Section~\ref{sec:theo-qcd_dijet}.
-Furthermore, there exists $Z'$ models that do not couple to all generations equally~\cite{theo-bsm_zprime_3g},
+Furthermore, there exist $Z'$ models that do not couple to all generations equally~\cite{theo-bsm_zprime_3g},
 such that a $Z'$ boson preferentially decaying to $b$-quarks is possible.
 %For example; attempts to merge the electro-weak and strong interactions in a so-called 'Grand Unified Theory'
 %often use higher symmetries, such as $SU(5)$ or $SO(10)$.
