@@ -459,7 +459,7 @@
 %    \begin{macrocode}
        \newcommand \makedeclaration {%
          \clearpage%
-         I, Laurie McClymont, confirm that the work presented in this thesis is my own.
+         I, Laurie Iain McClymont, confirm that the work presented in this thesis is my own.
          Where information has been derived from other sources, I confirm that this has been indicated in the work.
          \vspace{4em}
          \begin{figure}[!htb]
