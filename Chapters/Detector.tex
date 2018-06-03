@@ -23,8 +23,7 @@ one of these detectors is the ATLAS detector.
 Since May 2015 the LHC has been colliding bunches of protons at a centre-of-mass energy of \SI{13}{\TeV},
 the highest energy collisions ever obtained by a particle collider
 \footnote{The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}.
-In 2015 and 2016 the LHC produced $pp$ collisions 
-with a bunch spacing of \SI{25}{\nano\second}~\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
+In 2015 and 2016 at the LHC, the time interval between colliding bunches was \SI{25}{\nano\second}~\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
 
 \textit{Integrated luminosity}, $L$, is the quantity that describes the size of a data-set from a collider experiment.
 Integrated luminosity is defined as $L = N_{evt}/\sigma$,
@@ -47,6 +46,10 @@ Collisions in addition to the collision of interest
 are collectively referred to as \textit{`pile-up'}~\cite{det-pileup}.
 Pile-up presents a challenge to physics analyses at the LHC
 as the resulting particles from pile-up collisions can affect the measurement of particles from the collision of interest.
+Pile-up collisions are then further categorised as \textit{`in-time pile-up'},
+which is defined as collision caused by the same bunch crossing as the collision of interest,
+and \textit{`out of time pile-up'},
+defined as a collision that occurred in an earlier bunch crossing than the collision of interest.
 
 %\begin{figure}[!ht]
 %  \begin{center}
@@ -243,7 +246,7 @@ The IBL is a single layer of pixel modules in the barrel only, which provides an
 Moving radially outwards, the next component of the ID is the Semi-Conductor Tracker~(SCT).
 The SCT modules are made from two parallel layers of semi-conducting strips.
 The strips are $\sim$\SI{120}{\mm} in length \footnote{\ This number varies for the various parts of the SCT.}
-and have a strip pitch (spacial separation between strips) of \SI{80}{\micro\metre}.
+and have a strip pitch (spatial separation between strips) of \SI{80}{\micro\metre}.
 The parallel strip layers within each module have a 40 mrad angular offset along their common normal
 such that each module can produce a 3D position measurement.
 
@@ -274,7 +277,7 @@ energy of hadronic jets which are used to calculate the invariant mass of jet pa
 
 The ATLAS calorimeter consists of two different systems built in concentric rings;
 the innermost is the \textit{`Electromagnetic Calorimeter system'} (ECAL) used to measure electromagnetic objects such as photons and electrons.
-Outside of that is the \textit{`Hadronic Calorimeter system'} (HCAL) that provides an energy measurement of hadronic jets.
+Outside of that is the \textit{`Hadronic Calorimeter system'} (HCAL) that, in addition to the ECAL, is used to measure the energy of hadronic jets.
 The HCAL consists of the Tile and Hadronic Endcap calorimeters.
 Both the ECAL and HCAL have barrel and end-cap components to make energy measurements at a large range of $\eta$ values.
 Figure \ref{fig:det-calo_schem} shows a cut-away of the ATLAS calorimeter.
@@ -297,8 +300,8 @@ the many resulting particles from the cascade are known as the cascade particles
 The role of the \textit{`active material layer'} is to measure the energy of the cascade particles %,
 by counting electrons released by ionisation or photons emitted by excited atoms.
 %the active layers in the ECAL and HCAL operate using different techniques so will be described below.
-The ATLAS calorimeter is designed such that the full particle shower of the initial particle occurs within
-its volume meaning that the total energy of the initial particle is observed.
+The ATLAS calorimeter is designed such that as much of the full particle shower of the initial particle will occur within its volume as possible,
+meaning that the total energy of the initial particle can be determined.
 
 \subsubsection{Electromagnetic Calorimeter (ECAL)}
 
@@ -310,8 +313,15 @@ As the energy loss per ionisation interaction is approximately the ionisation en
 the number of electrons released through ionisation is proportional to the energy of the initial particle.
 
 The electromagnetic calorimeter at ATLAS is known as the \textit{`Liquid Argon (LAr) calorimeter'}.
-The absorber material used in the LAr calorimeter is lead, due to its large density of charged particles (high Z)
-which increases the rate of the cascade processes and reduces the shower depth.
+
+The strength of the interaction of an EM particle and an absorber material
+depends on the density of charged particles (Z) of a material,
+
+The absorber material used in the LAr calorimeter is lead
+as the large number of charged particles in a lead atom (high-Z) will increase the rate of cascade processes and reduces the shower depth;
+because the EM coupling of a charged particle to a nucleus of an atom in the absorber material is proportional to $Z^2$.
+%~\footnote{It is worth noting that, as the EM interaction couples to charge,
+%it is the a large density of charged particles (high Z) that reduces shower depth rather than the density of nuclear particles (high A).}
 The active material is liquid argon (LAr);
 the electrons released through ionisation in the LAr are captured by an electric field and counted
 such that the energy of the initial particle can be calculated.
@@ -325,7 +335,7 @@ High-Z materials have a shorter radiation length; in lead $X_0$ = 0.6 cm~\cite{o
 The LAr calorimeter has a depth of $>$ 22 $X_{0}$ in the barrel and $>$ 24 $X_{0}$ in the end-caps,
 meaning that almost all of the particle shower from a high-energy photon
 or electron is contained within the electromagnetic calorimeter.
-The maximum granularity of the LAr calorimeter in the $\eta$--$\phi$ plane
+The finest granularity of the LAr calorimeter in the $\eta$--$\phi$ plane
 is \mbox{0.025~x~0.025} for the Barrel and 0.025~x~0.1 for the end-cap
 \footnote{Full details on the granularity of all components of the ATLAS calorimeter is found in Table 1.3 of~\cite{det-ATLAS_Exp}.}. 
 
@@ -354,7 +364,7 @@ therefore by measuring the intensity of the scintillating light (number of photo
 The Tile Calorimeter has a depth of 7.4 $\lambda$, meaning the majority of the hadronic shower is captured by the LAr and Tile calorimeter.
 The Tile Calorimeter consists of barrel and extended barrel components;
 the barrel covers the region $|\eta|\nobreak<$ 1.0 and the extended barrel covers the region $0.8\nobreak<\nobreak|\eta|\nobreak<\nobreak1.7$.
-The maximum granularity of the Tile calorimeter in the $\eta$--$\phi$ plane
+The finest granularity of the Tile calorimeter in the $\eta$--$\phi$ plane
 is 0.1~x~0.1 for both the barrel and the extended barrel \footnote{Full details on the granularity of all components of the ATLAS calorimeter is found in Table 1.3 of~\cite{det-ATLAS_Exp}.}. 
 
 The next component of the HCAL is the \textit{`Hadronic Endcap Calorimeter'} (HEC)
@@ -362,13 +372,13 @@ which is housed in two large wheels at either end of the ATLAS detector
 and covers a region of $1.5\nobreak<\nobreak|\eta|\nobreak<\nobreak3.2$.
 The HEC is constructed using copper as the absorber layers and liquid argon as the active material
 and has a depth of $\sim 12~\lambda$.
-The maximum granularity of the HEC calorimeter in the $\eta$--$\phi$ plane is \mbox{0.1~x~0.1.}
+The finest granularity of the HEC calorimeter in the $\eta$--$\phi$ plane is \mbox{0.1~x~0.1.}
 
 Finally, the \textit{`Forward Calorimeter'} (FCAL) covers the very forward region of $3.1\nobreak<\nobreak|\eta|\nobreak<\nobreak4.9$.
 It is constructed from absorber layers of
 copper (for EM interactions) and tungsten (for hadronic interactions)
 with liquid argon for the active material layers.
-The maximum granularity of the LAr calorimeter in the $\eta$--$\phi$ plane is 3.0~x~2.6.
+The finest granularity of the LAr calorimeter in the $x$--$y$ plane is 3.0~cm~x~2.6~cm.
 
 %Table~\ref{tab:det-calo_granularity} shows the key parameters of the ATLAS calorimeter system, including the ECAL and HCAL.
 %The table outlines the coverage in $\eta$,
@@ -417,50 +427,50 @@ The intrinsic energy resolution of a calorimeter is given by three terms:
 \end{itemize}
 
 Table~\ref{tab:det-calo_noise} shows approximate values of $c_s$ and $c_c$ for the components of the ATLAS calorimeter.
-The noise term depends strongly on $\eta$ and pile-up conditions so is not given.
+The noise term depends strongly on $\eta$ and pile-up conditions, so an approximate order of magnitude is given.
 For high-\pT{} objects ($\,> 100$ GeV), such as the jets used in di-$b$-jet searches, the constant term is the dominant term,
 as the other terms are suppressed by the large values of~$E$.
-
-%{\renewcommand{\arraystretch}{1.2}
-%\begin{table}[!htb]
-%\centering
-%\begin{tabular}{|c||c|c|c|}
-%\hline
-%Calorimeter Component  & Stochastic ($c_s$) [$\sqrt{\text{GeV}}$]  & Noise  ($c_n$) [GeV]        & Constant ($c_c$)  \\
-%\hline
-%EM Barrel              & 10\%                                  & $\sim$ 1\%-10\%                  & 0.7\%       \\
-%EM End-cap             & 10\%                                  & $\sim$ 1\%-10\%                  & 0.7\%       \\
-%Tile                   & 50\%                                  & $\sim$ 10\%-100\%                &   3\%       \\
-%HEC                    & 50\%                                  & $\sim$ 10\%-100\%                &   3\%       \\
-%FCAL                   & 100\%                                 & $\sim$ 10\%-100\%                &  10\%       \\
-%\hline
-%\end{tabular}
-%\caption[A summary of the stochastic, noise and constant terms of the intrinsic energy resolution of components of the ATLAS calorimeter.]
-%        {A summary of the stochastic, noise and constant terms of the intrinsic energy resolution of components of the ATLAS calorimeter.
-%        The noise term depends on $\eta$ and pile-up conditions so only an approximate decade is given~\cite{det-ATLAS_Exp,det-thesis_lene}}
-%\label{tab:det-calo_noise}
-%\end{table}
-%}
 
 {\renewcommand{\arraystretch}{1.2}
 \begin{table}[!htb]
 \centering
 \begin{tabular}{|c||c|c|c|}
 \hline
-\textbf{Calorimeter Component}  & \textbf{Stochastic ($c_s$) [$\sqrt{\text{GeV}}$]}  & \textbf{Constant ($c_c$)}  \\
+Calorimeter Component  & Stochastic ($c_s$) [$\sqrt{\text{GeV}}$]  & Noise  ($c_n$) [GeV]        & Constant ($c_c$)  \\
 \hline
-EM Barrel              & 10\%                                       & 0.7\%       \\
-EM End-cap             & 10\%                                       & 0.7\%       \\
-Tile                   & 50\%                                       &   3\%       \\
-HEC                    & 50\%                                       &   3\%       \\
-FCAL                   & 100\%                                      &  10\%       \\
+EM Barrel              & 10\%                                  & $\sim$ 1\%-10\%                  & 0.7\%       \\
+EM End-cap             & 10\%                                  & $\sim$ 1\%-10\%                  & 0.7\%       \\
+Tile                   & 50\%                                  & $\sim$ 10\%-100\%                &   3\%       \\
+HEC                    & 50\%                                  & $\sim$ 10\%-100\%                &   3\%       \\
+FCAL                   & 100\%                                 & $\sim$ 10\%-100\%                &  10\%       \\
 \hline
 \end{tabular}
-\caption[A summary of the stochastic and constant terms of the intrinsic energy resolution for components of the ATLAS calorimeter.]
-        {A summary of the stochastic and constant terms of the intrinsic energy resolution for components of the ATLAS calorimeter~\cite{det-ATLAS_Exp}.}
+\caption[A summary of the stochastic, noise and constant terms of the intrinsic energy resolution of components of the ATLAS calorimeter.]
+        {A summary of the stochastic, noise and constant terms of the intrinsic energy resolution of components of the ATLAS calorimeter.
+        The noise term depends on $\eta$ and pile-up conditions so only an approximate order of magnitude is given~\cite{det-ATLAS_Exp,det-thesis_lene}}
 \label{tab:det-calo_noise}
 \end{table}
 }
+
+%{\renewcommand{\arraystretch}{1.2}
+%\begin{table}[!htb]
+%\centering
+%\begin{tabular}{|c||c|c|c|}
+%\hline
+%\textbf{Calorimeter Component}  & \textbf{Stochastic ($c_s$) [$\sqrt{\text{GeV}}$]}  & \textbf{Constant ($c_c$)}  \\
+%\hline
+%EM Barrel              & 10\%                                       & 0.7\%       \\
+%EM End-cap             & 10\%                                       & 0.7\%       \\
+%Tile                   & 50\%                                       &   3\%       \\
+%HEC                    & 50\%                                       &   3\%       \\
+%FCAL                   & 100\%                                      &  10\%       \\
+%\hline
+%\end{tabular}
+%\caption[A summary of the stochastic and constant terms of the intrinsic energy resolution for components of the ATLAS calorimeter.]
+%        {A summary of the stochastic and constant terms of the intrinsic energy resolution for components of the ATLAS calorimeter~\cite{det-ATLAS_Exp}.}
+%\label{tab:det-calo_noise}
+%\end{table}
+%}
 
 \subsection{Muon Spectrometer}
 \label{sec:det-MS}

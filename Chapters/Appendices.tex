@@ -6,6 +6,8 @@
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
 \chapter{Dijet Mass Binning}
 \label{app:dijet_bins}
 
@@ -84,165 +86,209 @@ The values are rounded up in the analysis to give a safety margin.
 \label{app:lowMass_Swift}
 \vspace{-3em}
 
+\section{Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations}
+
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{4 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
 }\hspace{-3mm}                                       
 \subcaptionbox{4 parameter fit, $wHW$ = 14} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low14_high14.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low14_high14.pdf}
 }\hspace{-3mm}                                       
 \subcaptionbox{4 parameter fit, $wHW$ = 12} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low12_high12.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low12_high12.pdf}
 }\hspace{-3mm}                                       
 \subcaptionbox{4 parameter fit, $wHW$ = 10} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
-}\hspace{-3mm}                                       
-\subcaptionbox{5 parameter fit, $wHW$ = 16} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
-}\hspace{-3mm}                                       
-\subcaptionbox{5 parameter fit, $wHW$ = 14} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
-}\hspace{-3mm}                                       
-\subcaptionbox{5 parameter fit, $wHW$ = 12} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low12_high12.pdf}
-}\hspace{-3mm}                                       
-\subcaptionbox{5 parameter fit, $wHW$ = 10} {                                                    
-  \includegraphics[width=0.32\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low10_high10.pdf}
-}
-\caption[Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations.]
- {\label{fig:app-bumpH_spuriousSignal}
- Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations.
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
+}\hspace{-3mm}
+\caption[Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations using the 4 parameter dijet fit function.]
+ {\label{fig:app-bumpH_spuriousSignal_4para}
+ Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations using the 4 parameter dijet fit function.
   This figure shows the normalised distribution of \bh{} $p$-values from performing the SWiFt background estimate to an ensemble of
   data-like dijet mass spectra taken from the fit control region for the \lm{} data-set.
-  The SWiFt configurations considered use the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+  The SWiFt configurations considered use the 4 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
 }
 \end{figure}
 
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\subcaptionbox{5 parameter fit, $wHW$ = 16} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
+}\hspace{-3mm}                                       
+\subcaptionbox{5 parameter fit, $wHW$ = 14} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
+}\hspace{-3mm}                                       
+\subcaptionbox{5 parameter fit, $wHW$ = 12} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low12_high12.pdf}
+}\hspace{-3mm}                                       
+\subcaptionbox{5 parameter fit, $wHW$ = 10} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low10_high10.pdf}
+}
+\caption[Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations using the 5 parameter dijet fit function.]
+ {\label{fig:app-bumpH_spuriousSignal_5para}
+ Figure~\ref{fig:bumpH_spuriousSignal} for all SWiFt configurations using the 5 parameter dijet fit function..
+  This figure shows the normalised distribution of \bh{} $p$-values from performing the SWiFt background estimate to an ensemble of
+  data-like dijet mass spectra taken from the fit control region for the \lm{} data-set.
+  The SWiFt configurations considered use the 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+}
+\end{figure}
+
+\clearpage
+
+\section{Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations}
+\vspace{5em}
+
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{4 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low16_high16.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low16_high16.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low14_high14.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low14_high14.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low12_high12.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low12_high12.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low10_high10.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_4para_low10_high10.pdf}
 }
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations using the 4 parameter dijet fit function..]
+        {\label{fig:app-bhFit_lm_corrFitCR_smooth_4para}
+        Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations using the 4 parameter dijet fit function..
+          The SWiFt search phase run on the smooth dijet mass spectrum from the fit control region for the \lm{} data-set.
+          The SWiFt configurations considered use the 4 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+  
+}    
+\end{figure}
+\begin{figure}
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \subcaptionbox{5 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low16_high16.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low16_high16.pdf}
 }
 \subcaptionbox{5 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low14_high14.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low14_high14.pdf}
 }
 \subcaptionbox{5 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low12_high12.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low12_high12.pdf}
 }
 \subcaptionbox{5 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low10_high10.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_smooth_5para_low10_high10.pdf}
 }
 \vspace{10pt}
-\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations.]
-        {\label{fig:app-bhFit_lm_corrFitCR_smooth}
-        Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations.
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations using the 5 parameter dijet fit function..]
+        {\label{fig:app-bhFit_lm_corrFitCR_smooth_5para}
+        Figure~\ref{fig:bhFit_lm_corrFitCR_smooth} for all SWiFt configurations using the 5 parameter dijet fit function..
           The SWiFt search phase run on the smooth dijet mass spectrum from the fit control region for the \lm{} data-set.
-          The SWiFt configurations considered use the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+          The SWiFt configurations considered use the 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
   
 }    
 \end{figure}
 
+\clearpage
+
+\section{Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations}
+\vspace{5em}
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{4 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low16_high16.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low16_high16.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low14_high14.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low14_high14.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low12_high12.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low12_high12.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low10_high10.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_4para_low10_high10.pdf}
 }
-\subcaptionbox{5 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low16_high16.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low14_high14.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low12_high12.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low10_high10.pdf}
-}
-\vspace{10pt}
-\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations.]
-{\label{fig:app-bhFit_lm_corrFitCR_dataLike}
-  Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations.
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations using the 4 parameter dijet fit function..]
+{\label{fig:app-bhFit_lm_corrFitCR_dataLike_4para}
+  Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations using the 4 parameter dijet fit function..
   The SWiFt search phase run on a data-like dijet mass spectrum
   from the fit control region for the \lm{} data-set.
-  The SWiFt configurations considered use the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+  The SWiFt configurations considered use the 4 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+}
+\end{figure}
+\begin{figure}
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\subcaptionbox{5 parameter fit, $wHW$ = 16} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low16_high16.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 14} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low14_high14.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 12} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low12_high12.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 10} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_v13_5para_low10_high10.pdf}
+}
+\vspace{10pt}
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations using the 5 parameter dijet fit function..]
+{\label{fig:app-bhFit_lm_corrFitCR_dataLike_5para}
+  Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike} for all SWiFt configurations using the 5 parameter dijet fit function..
+  The SWiFt search phase run on a data-like dijet mass spectrum
+  from the fit control region for the \lm{} data-set.
+  The SWiFt configurations considered use the 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
 }
 \end{figure}
 
+\clearpage
+\section{Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations.}
+\vspace{5em}
 
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{4 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
 }
 \subcaptionbox{4 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
 }
-\subcaptionbox{5 parameter fit, $wHW$ = 16} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 14} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 12} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
-}
-\subcaptionbox{5 parameter fit, $wHW$ = 10} {
-  \includegraphics[width=0.35\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
-}
-\vspace{10pt}
-\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations.]
-{\label{fig:app-bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
-Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations.    
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations using the 4 parameter dijet fit function..]
+{\label{fig:app-bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_4para}
+Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations using the 4 parameter dijet fit function..    
   The SWiFt search phase run on a data-like dijet mass spectrum
   from the fit control region with a SSM $Z'$ of mass 800 GeV injected.
-  The SWiFt configurations considered use the 4 and 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
-
+  The SWiFt configurations considered use the 4 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
+}
+\end{figure}
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\subcaptionbox{5 parameter fit, $wHW$ = 16} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 14} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 12} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
+}
+\subcaptionbox{5 parameter fit, $wHW$ = 10} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
+}
+\vspace{10pt}
+\caption[Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations using the 5 parameter dijet fit function.]
+{\label{fig:app-bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_5para}
+Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1} for all SWiFt configurations using the 5 parameter dijet fit function.    
+  The SWiFt search phase run on a data-like dijet mass spectrum
+  from the fit control region with a SSM $Z'$ of mass 800 GeV injected.
+  The SWiFt configurations considered use the 5 parameter dijet fit function for a window half-width ($wHW$) range of 10 to 16.
 }
 \end{figure}
 
-
-%\chapter{Colophon}
-%\label{appendixlabel3}
-%\textit{This is a description of the tools you used to make your thesis. It hel%ps people make future documents, reminds you, and looks good.}
-
-%\textit{(example)} This document was set in the Times Roman typeface using \LaTeX\ and Bib\TeX , composed with a text editor. 
- % description of document, e.g. type faces, TeX used, TeXmaker, packages and things used for figures. Like a computational details section.
-% e.g. http://tex.stackexchange.com/questions/63468/what-is-best-way-to-mention-that-a-document-has-been-typeset-with-tex#63503
-
-% Side note:
-%http://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}

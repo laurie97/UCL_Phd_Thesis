@@ -5,22 +5,22 @@ In 2015 and 2016, the LHC has been colliding proton bunches every \SI{25}{\nano\
 meaning that the ATLAS experiment has been collecting data at a rate of 40 MHz.
 Due to the large computing resources required to process and store each event,
 it is not possible to record all events.
-The most interesting events to study contain a hard-scatter collision,
-defined as a collision in which the momentum transfer is large compared to the proton mass~\cite{trig-hard_scatter},
+The most interesting events to study contain a hard-scatter collision~\footnote{Defined in Chapter~\ref{sec:obj}.}
+%defined as a collision in which the momentum transfer is large compared to the proton mass~\cite{trig-hard_scatter},
 as these are the collisions that, for example, can produce a TeV scale BSM particle.
 Therefore, the ATLAS experiment uses a trigger system to select events that 
 contain a high-$p_{T}$ physics object which indicates that a hard-scatter collision has occurred.
 
-The ATLAS trigger-system consists of two levels;
-the first level trigger (L1) and the higher level trigger (HLT)~\cite{trig-run2_trigger,trig-run2_proc}.
-Figure~\ref{fig:trig-trigger_schem} shows a schematic outlining the trigger system used in Run-2
-\footnote{\ The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}~\cite{trig-run2_triggerPerf}. 
-
+The ATLAS trigger-system used in
+Run-2~\footnote{\ The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}
+consists of two levels;
+the first level trigger (L1) and the higher level trigger (HLT)~\cite{trig-run2_trigger,trig-run2_proc,trig-run2_triggerPerf}.
+%Figure~\ref{fig:trig-trigger_schem} shows a schematic outlining the trigger system used in Run-2
+ 
 The L1 trigger is hardware based and reduces the rate from 40~MHz to 100~kHz within a time window of \SI{2.5}{\micro\second}.
 The L1 trigger uses custom electronics to rapidly process information directly from the
 calorimeter and Muon Spectrometer, searching for high-$p_{T}$ muon tracks and large energy deposits in the calorimeter.
-The central trigger processor then uses a set of pre-defined conditions
-to decide if a L1 trigger accept is given. 
+If the observed muon tracks and calorimeter deposits pass a set of pre-defined conditions, a L1 trigger accept is given. 
 At the same time Regions of Interests (RoIs) are constructed around the high-\pT{} objects identified by the L1 trigger, which are utilised by the HLT. 
 
 If the L1 trigger is passed the event is processed by the HLT,
@@ -31,20 +31,20 @@ The HLT uses the information from the full detector
 to perform a more complete reconstruction of the physics objects within the event,
 the most time consuming reconstruction algorithms are only run within the RoIs taken from L1.
 The more complex event analysis within the software-based trigger includes
-track reconstruction and therefore allows for $b$-jet identification.
+track reconstruction and therefore allows for \mbox{$b$-jet} \mbox{identification}.
 If the content of the event reconstruction passes a pre-set criteria, a HLT accept is issued
 meaning that the events are passed on for processing and storage. 
 % in offline computer farms (known as tier-0).
 
-\begin{figure}[!htb]
-  \begin{center}
-    \includegraphics[width=0.75\linewidth, angle=0]{figs/Detector/trigger_schem.png}
-  \end{center}
-  \vspace{-1em}
-  \caption[A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering.]
-          {A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering~\cite{trig-run2_triggerPerf}.}
-  \label{fig:trig-trigger_schem}
-\end{figure}
+%\begin{figure}[!htb]
+%  \begin{center}
+%    \includegraphics[width=0.75\linewidth, angle=0]{figs/Detector/trigger_schem.png}
+%  \end{center}
+%  \vspace{-1em}
+%  \caption[A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering.]
+%          {A schematic of the ATLAS trigger and data-acquisition system in Run-2, with a focus on the components required for triggering~\cite{trig-run2_triggerPerf}.}
+%  \label{fig:trig-trigger_schem}
+%\end{figure}
 
 In the ATLAS trigger system there is an additional process known as pre-scaling that can be applied.
 If a trigger is pre-scaled, only a fraction of the events that pass the trigger are recorded.
@@ -68,9 +68,9 @@ Offline algorithms and objects used in this thesis are described in Chapter~\ref
 \label{sec:trig-jet}
 
 Section~\ref{sec:obj-jets} described that hadronic jets are built from energy deposits in the ATLAS calorimeter.
-Jet triggers are tasked with selecting events that contain with one or more high-\pT{} jets,
-which is challenging at hadron colliders due to the extremely high cross-sections of hadronic jet production.
-In Run-2 the jet triggers are used at both the L1 and HLT level~\cite{trig-L1calo,trig-bTrig_desc}.
+Jet triggers select events that contain one or more high-\pT{} jets;
+%which is challenging at hadron colliders due to the extremely high cross-sections of hadronic jet production.
+in Run-2 jet triggers are used at both the L1 and HLT level~\cite{trig-L1calo,trig-bTrig_desc}.
 
 %\subsection{Level 1}
 
@@ -89,10 +89,10 @@ The L1 jet trigger accepts an event if a neighbouring group of 4~x~4 trigger tow
 
 %\subsection{HLT}
 
-The HLT jet trigger is able to use more complex algorithms to reconstruct jets due to the larger time allowed for a trigger decision.
+The HLT jet trigger is able to use more complex algorithms to reconstruct jets due to the longer time allowed for a trigger decision.
 Similar to offline jet reconstruction, in the HLT jets are reconstructed using 
-hadronic topoclusters formed from EM or hadronic calorimeter cells and the anti-$k_T$ jet-reconstruction algorithm with $R$=0.4;
-topoclusters and the anti-$k_T$ algorithms are described in Section~\ref{sec:obj-jets}.
+hadronic topoclusters formed from EM or hadronic calorimeter cells and the anti-$k_T$ jet-reconstruction algorithm with $R$=0.4
+(see Section~\ref{sec:obj-jets}).
 The HLT jet trigger is passed if the reconstructed jets meet a pre-set criteria that depends on the number and $p_T$ of the jets.
 The $b$-jet triggers described in the following section also use the L1 and HLT jet trigger procedures to reconstruct jets.
 
@@ -119,13 +119,15 @@ Therefore, for a di-$b$-jet search to probe lower masses a different trigger str
 
 As described in Section~\ref{sec:obj-bjets}, $b$-jets, defined as jets containing a $b$-hadron,
 can be identified from the topology of tracks in a process known as $b$-tagging.
-$b$-Tagging can be utilised online to reduce rates of jets significantly~\footnote{\ As described in Section~\ref{sec:theo-qcd-dijet_features},
+$b$-tagging can be utilised online to reduce rates of jets significantly~\footnote{\ As described in Section~\ref{sec:theo-qcd-dijet_features},
   QCD dijet production is dominated by light-jets.}
 allowing for a lower jet-$p_T$ threshold than is used by the single jet trigger.
 Hence, using a $b$-jet trigger in di-$b$-jet searches means that a lower mass range can be probed.
 %$b$-Jet triggers have been used previous ATLAS analyses,
 %for example searches for exotic particles decaying to 4 $b$-jets via a pair of Higgs bosons~\cite{trig-H4b}.
 
+Due to the complexity of the algorithms used in $b$-tagging,
+the $b$-jet trigger is only avaliable in the HLT.
 The $b$-jet trigger utilises the regions of interest (RoI) defined by the jets reconstructed in the L1 jet trigger.
 The $b$-jet trigger procedure for 2016 data-taking contains three steps~\cite{trig-bTrig_desc}.
 Firstly, a fast-tracking algorithm is run in the RoIs and
@@ -135,8 +137,8 @@ the reconstructed tracks are used to identify the hard-scatter primary vertex (P
 Secondly, precision tracking is performed within each jet RoI.
 Finally, the precision tracks are used by the MV2c20 $b$-tagging algorithm, described in Section~\ref{sec:obj-bjets_MV2}, to identify $b$-jets.
 
-Figure~\ref{fig:trig-bTrig_perf} shows the $b$-jet efficiency against light-jet and $c$-jet rejection \footnote{\ $b$-jet efficiency and
-  light/$c$-jet rejection are defined in Section~\ref{sec:obj-bjets_MV2}.}
+Figure~\ref{fig:trig-bTrig_perf} shows the $b$-jet efficiency against light-jet and $c$-jet rejection
+%\footnote{\ $b$-jet efficiency and light/$c$-jet rejection are defined in Section~\ref{sec:obj-bjets_MV2}.}
 for online $b$-tagging in a variety of $b$-jet trigger configurations in simulated $t\bar{t}$ events.
 The black line represents the MV2c20 algorithm used in 2016 data-taking as described in Section~\ref{sec:obj-bjets_MV2}~\footnote{\ In
   Figure~\ref{fig:trig-bTrig_perf} the MV2c20 algorithm is referred to as an `offline algorithm' as it was initially developed by the offline $b$-tagging group.}.
@@ -160,7 +162,7 @@ with a variety of requirements on the jet multiplicity, number of tagged jets an
 As the signal considered in the low mass di-$b$-jet search is a BSM particle decaying to two $b$-quarks, a double $b$-jet trigger is used.
 The double $b$-jet trigger requires that there are two online jets with $p_T >$ 150 and 50 GeV respectively,
 which have been $b$-tagged at the 60\% efficiency operating point~\footnote{\ The trigger is known as \textit{HLT\_j150\_bmv2c2060\_split\_j50\_bmv2c2060\_split}.}.
-It will be shown in Chapter~\ref{sec:evt} that the low mass di-$b$-jet search is able to probe the mass range $m >$ 0.57 TeV.
+It will be shown in Chapter~\ref{sec:evt} that the low mass di-$b$-jet search is able to probe the mass range $m >$ 570~\GeV.
 
 There are significant differences in the  $b$-jet trigger configurations used in 2016 and 2015 data-taking.
 Firstly, the online $b$-tagging algorithm is MV2c20 in 2016 data-taking whilst IP3D+SV1 was used in 2015 data-taking;
@@ -235,11 +237,19 @@ Chapter~\ref{sec:evt} contains full details of the $b$-tagging operating points 
 Di-lepton $t\bar{t}$ events containing a muon and an electron are selected to provide a high purity sample of $b$-jets to measure the $b$-jet trigger efficiency.
 As discussed in Section~\ref{sec:theo-ttbar}, 
 $e\mu$ di-lepton $t\bar{t}$ events provide a distinctive signature for selection and a pure sample of $b$-jets required for the efficiency measurement.
-Furthermore, the electron and muon provide a signature that can be used to select events at the trigger-level without using a $b$-jet trigger
+Furthermore, as the electron and muon provide a signature that can be used to select events at the trigger-level without using a $b$-jet trigger
 such that no bias is introduced from online $b$-tagging.
 
+For this measurement, the triggers deployed are $b$-performance triggers,
+which are special triggers used in data-taking specifically for monitoring the $b$-jet trigger performance.
+They are passed if there is an electron or a muon in the event.
+The $b$-performance triggers then run and record the output of the online $b$-tagging algorithms for all online jets with $|\eta|<2.5$ and
+\mbox{$p_{T}>35$~\GeV}, without placing any requirements on the output of the MV2c20 algorithm.
+Therefore, $b$-performance triggers can select  di-lepton $t\bar{t}$ events at the trigger-level
+and thus provide an unbiased source of online $b$-tagged jets to measure the $b$-jet trigger efficiency.
+
 \noindent
-Specifically, events are required to:
+To be specific, events are required to:
 \vspace{-1em}
 \begin{itemize}
 \item Pass one of two single lepton $b$-performance triggers~\footnote{Known as \textit{HLT\_mu26\_imedium\_2j35\_boffperf\_split} and \textit{HLT\_e26\_tight\_iloose\_2j35\_boffperf\_split}.}
@@ -261,14 +271,13 @@ Specifically, events are required to:
 Details of muon, electron, jet and $b$-tagged jet object definition are in Chapter~\ref{sec:obj}.
 %chapter ~\ref{sec:obj-lepton},~\ref{sec:obj-jets} and \ref{sec:obj-bjets}\textit{(sec:obj-bjet)} respectively.
 
-The triggers deployed are $b$-performance triggers, which are special triggers used in data-taking specifically for monitoring the $b$-jet trigger performance.
-They are passed if there is an electron or a muon in the event.
-The $b$-performance triggers then run and record the output of the online $b$-tagging algorithms for all online jets with $|\eta|<2.5$ and
-\mbox{$p_{T}>35$~\GeV}, without placing any requirements on the output of the MV2c20 algorithm.
-Therefore, $b$-performance triggers can select  di-lepton $t\bar{t}$ events at the trigger-level
-and thus provide an unbiased source of online $b$-tagged jets to measure the $b$-jet trigger efficiency.
+As specified in the list above, for selecting di-lepton $t\bar{t}$ events 2 offline jets must be $b$-tagged at the 85\% operating point;
+the loose operating point is chosen as this provides the largest number of events.
+However, it is important to note that for a jet to be included in the set of jets to calculate of $\epsilon_{\,b\text{Trig}}$
+it must also be $b$-tagged at the offline operating point be calibrated,
+which in the studies being presented in this thesis is the 70\% operating point.
 
-The leptons are required to have a $\pT >$ 30 GeV such that there is no kinematic bias from the online lepton $\pT$ requirement. 
+The offline leptons are required to have a $\pT >$ 30 GeV such that there is no kinematic bias from the online lepton $\pT$ requirement. 
 The muon used for event selection is required to have no jet within  $\Delta R$ of 0.4 to exclude %fake $e\mu$ di-lepton $t\bar{t}$
 events where the only muon is caused by the decay of the $b$-hadron within a $b$-jet, which would increase the fraction of non-$t\bar{t}$ backgrounds.
 
@@ -290,11 +299,19 @@ cannot be used to calibrate the 85\% operating point.
 
 The data-set used is 13~TeV $pp$ collision data collected by the ATLAS detector between March and December 2016;
 the same data-set is used by the low mass di-$b$-jet search presented in this thesis. %, which is discussed in Chapter~\ref{sec:evt}.
-It is required that events are in a $b$-jet trigger aware Good Run List (GRL),
-where a GRL is list of events that pass certain data-quality requirements.
-A further discussion of GRLs is in Section~\ref{sec:evt-datasets} and 
-Section~\ref{sec:trig-grl} describes the $b$-jet trigger aware GRL and the motivations for its use.
-After the application of the GRL the data-set corresponds to an integrated luminosity of 24.3~\ifb.
+
+For any data-set, a Good Run List (GRL)
+is applied to remove events of low data-quality,
+which is typically caused by an element of the detector not operating optimally.
+For example, data-taking periods where the inner-most layer of the inner detector,
+the IBL, was not operating are removed as
+this data-taking period has a lower $b$-tagging performance.
+
+In this section it will be shown that when using data collected by ATLAS in 2016 using a $b$-jet trigger
+it is necessary to apply a $b$-jet trigger aware GRL;
+Section~\ref{sec:trig-inv} will describe the observations that lead the a requirement of a $b$-jet trigger aware GRL
+and Section~\ref{sec:trig-grl} describes the details of the $b$-jet trigger aware GRL.
+After the application of the $b$-jet trigger aware GRL the data-set corresponds to an integrated luminosity of 24.3~\ifb.
 
 Events that pass an $e\mu$ di-lepton $t\bar{t}$ selection with 2 $b$-tags
 are dominated by $t\bar{t}$ production with a small contribution from single-top production~\cite{trig-ttbar};
@@ -363,7 +380,7 @@ including checking for a dependence of the $b$-jet trigger efficiency on the ATL
 It has been discovered that the problem causing the large data-simulation discrepancies was related to hard-scatter primary vertex finding.
 
 As described in Section~\ref{sec:trig-bjet}, in 2016 data the \verb|xPrmVtx| algorithm is used to find the hard-scatter primary vertex (PV) in the $b$-jet trigger.
-It has since been uncovered that there was an error in implementation of this algorithm that relates to the online beam-spot position.
+It has since been uncovered that there was an error in the implementation of this algorithm that relates to the online beam-spot position.
 The beam-spot position is defined as the centre of the region where the two proton bunches cross in the ATLAS detector.
 The beam-spot position is estimated at the trigger-level using the average position of reconstructed primary vertices over many events,
 this is known as the online beam-spot position~\cite{trig-onlinePV}.
@@ -380,25 +397,30 @@ The epochs are summarised in Table~\ref{tab:trig-epochs}.
 %The relevant conditions of the $b$-jet trigger can be split into three regions of data-taking, which I will refer to as \textit{`epochs'}.
 The $b$-jet trigger efficiency is investigated in each epoch independently.
 
+
 \begin{table}[!htb]
    \vspace{-0.5em}
   \begin{center}
-  \begin{tabular}{ | c || c | c |}
+  \begin{tabular}{ | c || c | c | c |}
     \hline			
-    \textbf{Epoch}  & \textbf{Integrated Luminosity}    & \textbf{Effect if no \textit{xPrmVtx} PV is found} \\ \hline
-    \parbox[c]{0.2cm}{\vspace{0.5em}1}      &  \parbox[c]{1cm}{\vspace{0.5em}~0.8~\ifb{}}     & \parbox[t]{4.5cm} {An invalid primary vertex \\is used in online $b$-tagging. \vspace{0.2em}} \\
-    \hline                                                     
-    \parbox[c]{0.2cm}{\vspace{0.5em}2}      &  \parbox[c]{1.2cm}{\vspace{0.5em}15.2~\ifb{}}     & \parbox[t]{4.5cm}{The $b$-jet trigger will not \\pass the event. \vspace{0.2em} }\\
-    \hline                                                
-    \parbox[c]{0.2cm}{\vspace{0.5em}3}      &  \parbox[c]{1cm}{\vspace{0.5em}~8.3~\ifb{}}     & \parbox[t]{4.5cm} {A back-up primary vertex \\ finding algorithm is used.\vspace{0.2em}} \\
+    \textbf{Epoch}                     & \textbf{Range of}           & \textbf{Integrated} & \textbf{Effect if no } \\ 
+    \textbf{}                     & \textbf{Run Numbers}           & \textbf{Luminosity} & \textbf{\textit{xPrmVtx} PV is found} \\ \hline
+    \parbox[c]{0.2cm}{\vspace{0.5em}1} & \parbox[t]{4 cm} {296939-300571, 300655} & \parbox[c]{1cm}{\vspace{0.5em}~0.8~\ifb{}}
+    & \parbox[t]{4.5cm} {An invalid primary vertex \\is used in online $b$-tagging. \vspace{0.2em}} \\
+    \hline                                                                                                                            
+    \parbox[c]{0.2cm}{\vspace{0.5em}2} & \parbox[t]{4 cm} {300600, 300784-308084} & \parbox[c]{1.2cm}{\vspace{0.5em}15.2~\ifb{}}
+    & \parbox[t]{4.5cm}{The $b$-jet trigger will not \\pass the event. \vspace{0.2em} }\\
+    \hline                                                                                                                            
+    \parbox[c]{0.2cm}{\vspace{0.5em}3} &  \parbox[t]{4 cm} {309331-311481}        & \parbox[c]{1cm}{\vspace{0.5em}~8.3~\ifb{}}
+    & \parbox[t]{4.5cm} {A back-up primary vertex \\ finding algorithm is used.\vspace{0.2em}} \\
     \hline
   \end{tabular}
   \end{center}
   %\vspace{pt}
   \vspace{-0.5em}
-  \caption[A table summarising the three epochs of data, showing the integrated luminosity after a $b$-jet trigger GRL is applied and the
+  \caption[A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
     effect of not finding a \textit{xPrmVtx} primary vertex. ]
-          {A table summarising the three epochs of data, showing the integrated luminosity after a $b$-jet trigger GRL is applied and the
+          {A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
             effect of not finding a \textit{xPrmVtx} primary vertex (PV).}
   \label{tab:trig-epochs}
   \vspace{-0.5em}
@@ -604,7 +626,7 @@ In Epoch~3 there is reasonable data/simulation agreement due to the use of a bac
 \label{sec:trig-grl}
 
 To resolve the large data-simulation discrepancies shown in the previous section,
-a $b$-jet trigger aware GRL is applied to remove events with $|z_{\,\text{bs}}^{\text{\,online}}| >$ 2mm in Epoch~1 and 2,
+a $b$-jet trigger aware GRL is applied to remove events with $|z_{\,\text{bs}}^{\text{\,online}}| >$ 2 mm in Epoch~1 and 2,
 such that the events with low efficiency are removed. No such requirement is necessary for Epoch~3 due to the use of a backup primary vertex finding algorithm.
 To retain as much data as possible, the cut value is chosen to be the widest value of $|z_{\,\text{bs}}^{\text{\,online}}|$
 that corresponds to an efficiency not significantly reduced by the \verb|xPrmVtx| algorithm performance issue.
@@ -880,10 +902,10 @@ The uncertainties on the high-\pT~extrapolation procedure  are summarised in Tab
   \hline
   Jet pT [GeV] & MC Extrap. & Normalisation & Linear Fit  & Quadratic Fit \\
   \hline
-  240-300 &  0.8\% & 0.0\% & 0.8\% &  0.3\% \\
-  300-400 &  4.0\% & 0.0\% & 2.9\% &  4.0\% \\
-  400-500 &  5.6\% & 0.0\% & 5.6\% &  1.7\% \\
-  500-700 & 18.0\% & 0.0\% & 9.6\% & 18.0\% \\
+  240-300 &  0.8\% & $<$0.1\% & 0.8\% &  0.3\% \\
+  300-400 &  4.0\% & $<$0.1\% & 2.9\% &  4.0\% \\
+  400-500 &  5.6\% & $<$0.1\% & 5.6\% &  1.7\% \\
+  500-700 & 18.0\% & $<$0.1\% & 9.6\% & 18.0\% \\
   \hline
 \end{tabular}
 %  \vspace{}

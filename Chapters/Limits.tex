@@ -118,15 +118,15 @@ $\mathit{A}$ and $\epsilon$ have been measured in Section~\ref{sec:evt-sel-acc} 
 %for other signal models with a similar width to the benchmark models,
 %using the measurents of $\epsilon$ and a calculation of acceptance using the event-selection calculated in Section~\ref{sec:evt-sel}.
 
+Further to this, limits are set on a signal shape of a Gaussian distribution with a range of different signal widths,
+these limits are referred to as Gaussian limits.
+In Gaussian limits, it is assumed that, for an unspecified signal,
+when low-mass off-shell tails and non-perturbative effects are neglected the convolution of the signal shape, detector effects and PDF effects
+can be approximated by a Gaussian distribution.
+Using this assumption Gaussian limits can be reinterpreted for a range of BSM models predicting resonances not explicitly considered by this analysis;
+a detailed method of how one can reinterpret the limits for a specific model is given in Appendix A of~\cite{lim-dijet-gaussian}.
+%Gaussian limits have been set by many previous dijet and di-$b$-jet searches at ATLAS
 
-
-Further to this, many BSM models predicting a narrow resonance
-not explicitly considered by this analysis
-can be approximated by a Gaussian distribution,
-if low-mass off-shell tails and non-perturbative effects are neglected.
-Therefore, limits are also set on a signal template with a Gaussian shape,
-which can be reinterpreted for a wider range of models.
-  
 The di-$b$-jet analysis will present two limits.
 The first is the observed limit, which is set using the observed dijet mass spectra, as described above.
 The second is the expected limit, which is the upper limit that would be set if there is no signal present in the dijet mass spectrum;
@@ -160,28 +160,32 @@ The signal systematic uncertainties considered are:
   Jet energy scale (JES), jet energy resolution (JER) and  $b$-jet energy scale ($b$JES) are uncertainties
   on the energy measurement of a $b$-jet.
   The JES and JER uncertainties used in this analysis were described in Section~\ref{sec:obj-jets_uncert}.
-  The $b$JES uncertainty used in this analysis has been described in Section~\ref{sec:obj-bjets_bjes}.
+  The $b$JES uncertainty used is 2.6\% for all jets, which, 
+  as described in Section~\ref{sec:obj-bjets_bjes}, corresponds to the $b$JES uncertainty for jets with $p_T >$ 60 GeV,
+  covering jet-$p_T$ considered in this thesis.
   The three jet energy measurement uncertainties cause an uncertainty on the dijet mass of a simulated signal event.\vspace{0.5em}
+
 \item\textbf{$b$-Tagging} \hspace{1mm} (\textit{Signal})\\
   The modelling of $b$-tagging in Monte-Carlo simulation is corrected to data using measured $b$-tagging scale factors;
   the scale factors and associated uncertainties are discussed in Section~\ref{sec:obj-bjets_calib}.
   The uncertainty on the $b$-tagging scale factors cause an uncertainty on the normalisation of each bin in the dijet mass signal template.
   %The $b$-tagging systematic uncertainty is large at high values of jet-\pT.%, and as such is the dominant uncertainty in this analysis.
-  \vspace{0.5em}
+  \vspace{0.3em}
 
+\newpage
 \item\textbf{$b$-Jet Trigger} \hspace{1mm} (\textit{Signal}) - \lm{} data-set only\\
   Similarly, when using the $b$-jet trigger,
   the modelling of the online $b$-tagging efficiency in simulation is corrected to data using $b$-jet trigger scale factors.
   The $b$-jet trigger scale factors and relevant uncertainties are derived in Section~\ref{sec:trig-bjet_eff}.
   The uncertainty on the $b$-jet trigger scale factors cause an uncertainty on the normalisation of each point in the dijet mass signal template.
   This systematic uncertainty is only used in the \lm{} data-set, as this is the only data-set using a $b$-jet trigger.
-  \vspace{0.5em}
+  \vspace{0.3em}
 \item\textbf{Luminosity} \hspace{1mm} (\textit{Signal})\\
   The luminosity uncertainty is determined using the methodology outlined in~\cite{lim-syst_lumi}.
   %from van der Meer scans performed in August 2015 and May 2016.
   The luminosity uncertainties used are 2.9\% in the \summer{} data-set and 2.2\% in the \lm{} data-set.
   The uncertainty on luminosity causes an uncertainty on the normalisation of the dijet mass signal template.
-  \vspace{0.5em}
+  \vspace{0.3em}
 \item\textbf{Parton Distribution Functions (PDFs) } \hspace{1mm}  (\textit{Signal})\\
   The PDFs are important in calculating the cross-section of any process at the LHC.
   As shown in Section~\ref{sec:theo-qcd_pdf} there are uncertainties on the measurements of the PDFs
@@ -189,28 +193,28 @@ The signal systematic uncertainties considered are:
   A flat 1\% uncertainty on the normalisation of the dijet mass signal templates is applied,
   which has been found at previous dijet searches to conservatively cover
   the effect of the PDF uncertainties~\cite{dijet-mori16_paper,dijet-isr}.
-  \vspace{0.5em}
 \end{itemize}
 
+\vspace{-0.3em}
 The second group are systematic uncertainties on the background estimation.
 As the background estimate is data-driven, the set of uncertainties related to modelling in simulation are not required.
 The uncertainties on the background estimation model are:
-\vspace{-0.5em}
+\vspace{-0.3em}
 \begin{itemize}[leftmargin=*]
 \item \textbf{Fit Function Parameters} \hspace{1mm} (\textit{Background})\\
   The parameters of the fit function are determined by maximising the likelihood with respect to the data-set.
-  However, due to the statistical fluctuations in data the optimal parameters to describe
-  the true background shape may not have been chosen.
+  However, due to the statistical fluctuations in data the optimal parameters
+  %to describe the %true background shape
+  may not have been chosen.
   To estimate the uncertainty on the parameters of the fit function,
   the background estimation procedure is performed on pseudo-experiments created by applying Poisson fluctuations to the nominal background estimate.
-  The root mean square of the difference between the nominal background estimate and those from the pseudo-experiments is taken as a symmetric uncertainty. \vspace{0.5em}
+  The root mean square of the difference between the nominal background estimate and those from the pseudo-experiments is taken as a symmetric uncertainty. \vspace{0.3em}
 \item\textbf{Fit Function Choice}  \hspace{1mm} (\textit{Background})\\
   A different background estimation can be obtained if a different fit function is chosen.
   To obtain an uncertainty on the choice of fit function an alternate function is considered,
   which is the dijet fit function with one extra degree of freedom than the nominal function.
   The alternate function is then used to fit to the pseudo-experiments described in the previous bullet point.
   The mean of the difference between the nominal and alternate functions is taken as a one-sided uncertainty.
-  \vspace{0.5em}
 \end{itemize}
 
 \clearpage
@@ -443,7 +447,7 @@ The reverse Landau distribution provides a description of the off-shell contribu
 \begin{figure}[!b]
   \vspace{-1.2em}
 \begin{center}
-  \includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing.pdf} 
+  \includegraphics[width=0.55\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing.pdf} 
 \end{center}
 \vspace{-2em}
 \caption[Simulated SSM $Z'$ boson dijet mass signal templates and the intermediate dijet mass signal templates
@@ -687,31 +691,23 @@ will be excluded in the generated mass range 0.6 -- 1.25~TeV at the 95\% credibi
 Additionally, it is anticipated that the DM $Z'$ boson will be excluded in the generated mass range
 0.6 -- 1.0~TeV  at the 95\% credibility level.
 
-%\begin{figure}[!ht]
-%  \centering
-%  \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-lowmass_zprime_mjjcut.png}
-%  \caption[95\% credibility level upper limits on
-%           cross-section times acceptance times tagging efficiency
-%           ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$)
-%           for the $Z'$ boson and as a function of generated mass using the \lm{} data-set.]
-%          {95\% credibility level upper limits on cross-section times acceptance times tagging efficiency
-%            ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$)
-%             for the $Z'$ boson and as a function of generated mass using the \lm{} data-set.
-%             The observed limit is shown by the solid black line, the expected limit is shown by the dotted black line
-%             and the 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
-%             The theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
-%             for the Sequential Standard Model (SSM) and leptophobic Z' models decaying to a pair $b$-quarks
-%             and the DM $Z'$ boson decaying to $u$, $d$, $s$, $c$ and $b$ quarks are overlaid~\cite{dibjet-full_int}.
-%          }
-%  \label{fig:lim-lowmass_benchmark}
-%\end{figure}
+It should be noted that the largest $Z'$ boson mass considered in the limits for the \lm{} data-set is
+1.25~\TeV (as shown in Figure~\ref{fig:lim-lowmass_benchmark}),
+whereas largest dijet mass considered in the search phase results
+for the \lm{} data-set is 1.53~\TeV (as shown in Section~\ref{}).
+The largest mass considered in the limits is not higher than 1.25~\TeV because the \hm{} data-set
+analysis~\footnote{ The \hm{} data-set analysis is not presented in this thesis.},
+published together with the \lm{} data-set analysis in~\cite{dibjet-full_paper},
+is able to set stricter limits in the mass region 1.25 -- 1.5~\GeV{}
+than can be set using the \lm{} data-set analysis.
+Furthermore, this means that there is not a gap between the limits set by the \lm{} and \hm{} data-set analyses in the mass region 1 and 1.5~\TeV, as presented in~\cite{dibjet-full_paper};
+the desire for no such gap to exist was an important factor in selecting the dijet mass range considered by the \lm{} data-set, as discussed in Section~\ref{sec:evt-sel-event}.
 
 \begin{figure}[!ht]
   \centering
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}
-  
-  \subcaptionbox{DM $Z'$ Boson}                  {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
+  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}  
+  \subcaptionbox{DM $Z'$ Boson}                               {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
   \caption
       [95\% credibility level upper limits on the product of cross-section and branching ratio 
         for the SSM, leptophobic and DM $Z'$ boson and as a function of generated mass using the \lm{} data-set.]
@@ -730,14 +726,19 @@ Additionally, it is anticipated that the DM $Z'$ boson will be excluded in the g
 
 \clearpage
 
-For the generic Gaussian limit setting phase there is a significant difference
-with respect to the \summer{} data-set analysis.
+For the generic Gaussian limit setting phase there is a significant difference with respect to the \summer{} data-set analysis.
 In the \summer{} data-set analysis a signal template with a Gaussian distribution in dijet mass is used,
-whilst for the \lm{} data-set analysis a signal template with a Gaussian distribution in the truth mass distribution is used.
-The truth mass is defined as the invariant mass of the leading and subleading truth jets,
-using the definition of truth jet from Section~\ref{sec:obj-jets_calib}.
-Limits placed on a Gaussian signal shape in truth mass can be interpreted for a range of signal models without
-further information on the dijet mass resolution of the detector.
+however, this approach relies on an assumption that the convolution of the signal shape and the detector response can be modelled by a Gaussian distribution.
+Therefore, for the \lm{} data-set analysis a new approach is taken, which was first used in~\cite{dijet-mori17_paper}.
+In the \lm{} data-set analysis a signal template with a Gaussian distribution in the truth mass distribution is used,
+where the truth mass is defined as the invariant mass of the leading and subleading truth jets using the definition of truth jet from Section~\ref{sec:obj-jets_calib}.
+
+The Gaussian limit setting method used in the \lm{} data-set analysis is preferred,
+as in this approach the limits can be interpreted for a range of signal models without
+any assumption of the effect of the response of the detector on the signal shape.
+It should be noted that the \lm{} data-set analysis is published
+together with the \hm{} data-set analysis~\footnote{ The \hm{} data-set analysis is not presented in this thesis.}
+in~\cite{dibjet-full_paper}, and in this publication both analyses use the same generic Gaussian limit setting methodology.
 
 The centre of the truth mass Gaussian distribution is referred to as the generated mass,
 the generated mass points used are in the range 0.65--1.45~TeV with a spacing of 0.05~TeV.

@@ -1,5 +1,5 @@
-\chapter{Di-$b$-Jet Search: Outline and Event Selection}
-\label{sec:evt}
+\chapter{Di-$b$-Jet Search: Analysis Introduction}
+\label{sec:ana}
 
 In Chapter~\ref{sec:theo} it was shown that many Beyond Standard Model theories
 predict new particles decaying to one or two $b$-quarks that could be produced by the LHC.
@@ -11,15 +11,16 @@ Such analyses are known as di-$b$-jet searches.
 
 Chapters~\ref{sec:evt},~\ref{sec:bkg}~and~\ref{sec:lim} present two di-$b$-jet searches performed
 at the ATLAS detector using a high-mass data-set and a low-mass data-set.
-As the analysis structure for the both di-$b$-jet searches is similar the analyses are presented together.
+As the analysis structure for both di-$b$-jet searches is similar the analyses are presented together.
+This chapter contains an outline of the analysis strategy and describes how the analysis will be presented within this thesis.
 
 %\vspace{-1em}
 \section{Analysis Outline}
-\label{sec:evt-outline}
+\label{sec:ana-outline}
 
-The strategy used for di-$b$-jet searches
+The strategy used for both di-$b$-jet searches
 can be split up into three parts,
-which form the three di-$b$-jet search chapters.
+which form three proceeding chapters.
 A brief outline of the parts is given here,
 and full detail can be found in the relevant chapter.
 
@@ -29,26 +30,26 @@ and full detail can be found in the relevant chapter.
   in a way such that the number of background events is minimised.
   Briefly, two high-momentum jets are required and two $b$-tag categories are considered;
   a category in which both jets have been $b$-tagged (2 $b$-tag) and a category where at least one jet has been $b$-tagged ($\geq$1~$b$-tag).
-  This chapter will focus on event selection;
-  Section~\ref{sec:evt-datasets} will describe the data-sets used,
-  Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
-  considered when defining the selections
-  and Section~\ref{sec:evt-sel} will set out
-  the details of the event selection used for both di-$b$-jet searches.  \vspace{0.8em}
+  Chapter~\ref{sec:evt} will provide details on the data-sets considered and the event selection used in the two di-$b$-jet searches.
+  \vspace{0.8em}
 
   \vfill \newpage
 \item\textbf{Search Phase:} (\textit{Chapter~\ref{sec:bkg}})\\
   Once events have been selected the next part of the analysis aims to determine if there
   is evidence of a new particle in the selected events; this step is known as the `search phase'.
-  This step uses the dijet mass (\mjj)~spectrum, where dijet mass is the invariant mass of the two highest \pT{} jets
-  \footnote{The two highest \pT{} jets are selected before $b$-tagging is applied.}.
+  This step uses the dijet mass (\mjj)~spectrum, where dijet mass is the invariant mass of the two highest \pT{} jets;
+  note that the two highest \pT{} jets are selected before $b$-tagging is applied.
   %The production of a new particle is dominated by resonant r
   A new particle will appear as a resonance (or `bump') on the smoothly falling background
   dijet mass distribution from QCD dijet production, as illustrated in Figure~\ref{fig:evt-dijet_schem}.
   The background is modelled using a smoothly falling function and a
   model-independent search for resonances is performed using the {\sc BumpHunter} algorithm~\cite{dibjet-bh}.
-  Chapter~\ref{sec:bkg} contains a full description of the search phase strategy and the results of the search phase for both di-$b$-jet searches.
-  %including tests of the fitting functions used and the results of the search phase in the data-sets considered.
+  Chapter~\ref{sec:bkg} contains a full description of the search phase strategy and the results of the search phase for both di-$b$-jet searches,
+  including studies that validate the background estimation strategy used.
+  It is useful to note that as part of these validation studies,
+  it is shown that some regions of phase space cannot be adequetely described by the background estimation strategy.
+  Hence, the validation studies shown in Chapter~\ref{sec:bkg} have an impact on the event selection used in Chapter~\ref{sec:evt},
+  this will be clearly noted at the appropriate points in the text. 
  
   \begin{figure}[!hbt]
   \begin{center}
@@ -71,6 +72,23 @@ and full detail can be found in the relevant chapter.
 
 \end{itemize}
 
+
+\chapter{Di-$b$-Jet Search: Event Selection}
+\label{sec:evt}
+
+Event selection is the first part of the di-$b$-jet analysis strategy.
+The aim of the event selection is to select events that are consistent with a BSM particle decaying to one or two $b$-quarks
+whilst minimising the number of background events selected,
+such that the sensitivity of the di-$b$-jet search to a new resonance is maximised.
+
+This chapter is organised in the following structure:
+Section~\ref{sec:evt-datasets} will describe the data-sets used,
+Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
+considered when defining the selections
+and Section~\ref{sec:evt-sel} will set out
+the details of the event selection used for both di-$b$-jet searches.
+\vspace{0.8em}
+
 \section{List of Data-Sets Used}
 \label{sec:evt-datasets}
 
@@ -90,13 +108,8 @@ However, there are some significant differences in the details;
 as such during the analysis description it will be clearly labelled
 which data-set is being referred to.
 
-For any data-set, a Good Run List (GRL)
-is applied to remove events of low data-quality,
-which is typically caused by an element of the detector not operating optimally.
-For example, data-taking periods where the inner-most layer of the inner detector,
-the IBL, was not operating are removed as
-this data-taking period has a lower $b$-tagging performance.
-A GRL is applied to all data-sets considered in this analysis.
+For each data-set considered in this analysis a Good Run List (GRL) is applied to remove events of low data quality;
+a further discussion of GRLs is found in Section~\ref{sec:trig-evtSel}.
 
 The data-sets are listed below, the trigger used in each data-set is described.
 All quoted luminosities are given after the GRL has been applied.
@@ -141,6 +154,9 @@ In addition there is another data-set being analysed that is not described in th
   A single jet trigger is used.
   The analysis on this data-set is to be published together with the \lm{} data-set.
   This analysis is not presented in this thesis.
+  However, as this analysis is to be published together with the \lm{} data-set,
+  some analysis presentation decisions are affected by the \hm{} data-set analysis.
+  
 \end{itemize}
 \vspace{-1em}
 
@@ -171,7 +187,7 @@ the detector response is modelled using the ATLAS detector simulation package~\c
   relative strength of the strong force compared to other forces
   of the Standard Model means that QCD dijet production dominates all other backgrounds in a di-$b$-jet event selection.
   %Hence, this will be considered as the only background.
-  A description of how the QCD dijet background is modelled in this analysis is described in Chapter~\ref{sec:bkg}.
+  %A description of how the QCD dijet background is modelled in this analysis is described in Chapter~\ref{sec:bkg}.
   A simulated QCD dijet sample is also used in this analysis
   for background studies and background modelling validation.
   \end{itemize}
@@ -922,7 +938,7 @@ as a function of the dijet mass,~\mjj.
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/LowMass/evt-acc_generated.pdf} }
+    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/LowMass/evt-acc_ppt.pdf} }
     \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/evt-tagEff.pdf} }
   \end{center}
   \vspace{-1em}
