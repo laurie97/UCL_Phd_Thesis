@@ -9,10 +9,16 @@ Hence the motivation and tools required to perform a  search
 for resonances decaying to one or two $b$-jets has been outlined.
 Such analyses are known as di-$b$-jet searches.
 
-Chapters~\ref{sec:evt},~\ref{sec:bkg}~and~\ref{sec:lim} present two di-$b$-jet searches performed
+This thesis will present two di-$b$-jet searches performed
 at the ATLAS detector using a high-mass data-set and a low-mass data-set.
-As the analysis structure for both di-$b$-jet searches is similar the analyses are presented together.
-This chapter contains an outline of the analysis strategy and describes how the analysis will be presented within this thesis.
+As the analysis structure for both di-$b$-jet searches is similar the analyses are presented together
+in Chapters~\ref{sec:ana},~\ref{sec:evt},~\ref{sec:bkg}~and~\ref{sec:lim}.
+
+This chapter is organised as follows:
+Section~\ref{sec:ana-outline} contains an outline of the analysis strategy and describes how the analysis will be presented within this thesis,
+Section~\ref{sec:evt-datasets} outlines the data-sets used in the two di-$b$-jets searches
+and Section~\ref{sec:evt-s+b} will describe the backgrounds and benchmark signal models considered.
+%Chapters~\ref{sec:evt},~\ref{sec:bkg}~and~\ref{sec:lim}
 
 %\vspace{-1em}
 \section{Analysis Outline}
@@ -20,7 +26,7 @@ This chapter contains an outline of the analysis strategy and describes how the 
 
 The strategy used for both di-$b$-jet searches
 can be split up into three parts,
-which form three proceeding chapters.
+which form the three proceeding chapters.
 A brief outline of the parts is given here,
 and full detail can be found in the relevant chapter.
 
@@ -30,10 +36,11 @@ and full detail can be found in the relevant chapter.
   in a way such that the number of background events is minimised.
   Briefly, two high-momentum jets are required and two $b$-tag categories are considered;
   a category in which both jets have been $b$-tagged (2 $b$-tag) and a category where at least one jet has been $b$-tagged ($\geq$1~$b$-tag).
-  Chapter~\ref{sec:evt} will provide details on the data-sets considered and the event selection used in the two di-$b$-jet searches.
-  \vspace{0.8em}
+  Chapter~\ref{sec:evt} will provide details on %the data-sets considered and
+  the event selection used in the two di-$b$-jet searches.
+  \vspace{1.5em}
 
-  \vfill \newpage
+  %\vfill \newpage
 \item\textbf{Search Phase:} (\textit{Chapter~\ref{sec:bkg}})\\
   Once events have been selected the next part of the analysis aims to determine if there
   is evidence of a new particle in the selected events; this step is known as the `search phase'.
@@ -45,15 +52,16 @@ and full detail can be found in the relevant chapter.
   The background is modelled using a smoothly falling function and a
   model-independent search for resonances is performed using the {\sc BumpHunter} algorithm~\cite{dibjet-bh}.
   Chapter~\ref{sec:bkg} contains a full description of the search phase strategy and the results of the search phase for both di-$b$-jet searches,
-  including studies that validate the background estimation strategy used.
-  It is useful to note that as part of these validation studies,
+  including studies that validate the background estimation strategy used.\\
+  
+  It is useful to note that as part of the search phase validation studies,
   it is shown that some regions of phase space cannot be adequetely described by the background estimation strategy.
   Hence, the validation studies shown in Chapter~\ref{sec:bkg} have an impact on the event selection used in Chapter~\ref{sec:evt},
   this will be clearly noted at the appropriate points in the text. 
  
   \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.6\linewidth, angle=0]{figs/Dibjet/Gen/dijet_schem.pdf}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/Gen/dijet_schem.pdf}
   \end{center}
   \vspace{-3mm}
   \caption[A cartoon illustrating the use of the dijet mass distribution in the search phase of a di-$b$-jet search.]
@@ -63,7 +71,9 @@ and full detail can be found in the relevant chapter.
           \label{fig:evt-dijet_schem}
   \end{figure}
   \vspace{-2mm}
- 
+
+  \newpage
+  
 \item\textbf{Limit Setting:} (\textit{Chapter~\ref{sec:lim}})\\
   If, in the search phase of the analysis, no significant evidence of a resonance is found
   then 95\% credibility level limits are set on the cross-section of the benchmark signal models as a function of mass.
@@ -71,23 +81,6 @@ and full detail can be found in the relevant chapter.
   a description of the systematic uncertainties and the limit setting results for both di-$b$-jet searches.
 
 \end{itemize}
-
-
-\chapter{Di-$b$-Jet Search: Event Selection}
-\label{sec:evt}
-
-Event selection is the first part of the di-$b$-jet analysis strategy.
-The aim of the event selection is to select events that are consistent with a BSM particle decaying to one or two $b$-quarks
-whilst minimising the number of background events selected,
-such that the sensitivity of the di-$b$-jet search to a new resonance is maximised.
-
-This chapter is organised in the following structure:
-Section~\ref{sec:evt-datasets} will describe the data-sets used,
-Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
-considered when defining the selections
-and Section~\ref{sec:evt-sel} will set out
-the details of the event selection used for both di-$b$-jet searches.
-\vspace{0.8em}
 
 \section{List of Data-Sets Used}
 \label{sec:evt-datasets}
@@ -145,7 +138,7 @@ All quoted luminosities are given after the GRL has been applied.
 \end{itemize}
 
 \noindent
-In addition there is another data-set being analysed that is not described in this thesis.
+In addition there is another relevant data-set being analysed that is not described in this thesis.
 \vspace{-0.5em}
 \begin{itemize}[leftmargin=*]
 \item\textbf{\hm{}}:\\
@@ -156,19 +149,21 @@ In addition there is another data-set being analysed that is not described in th
   This analysis is not presented in this thesis.
   However, as this analysis is to be published together with the \lm{} data-set,
   some analysis presentation decisions are affected by the \hm{} data-set analysis.
-  
+
 \end{itemize}
 \vspace{-1em}
 
 \section{Background and Signals}
 \label{sec:evt-s+b}
 
-In the di-$b$-jet event selection two
-benchmark signal models and one dominant background are considered.
-The signal models and dominant background are
-used to optimise event selection.
+In the di-$b$-jet analyses two benchmark signal models and one dominant background are considered.
+The background and signal models are utilised in optimisation and validation studies
+of the event selection and search phase of the analyses (presented in Chapters~\ref{sec:evt}~and~\ref{sec:bkg} respectively).
+The signal models are also are used in the limit setting phase presented in Chapter~\ref{sec:lim}.
+%The signal models and dominant background are
+%used to optimise event selection.
 
-Monte-Carlo simulations of the background and the signal processes are produced.
+Monte-Carlo simulations of the considered background and signal processes are produced.
 Unless specified, all Monte-Carlo simulations are produced using
 the \textsc{Pythia8}~\cite{dibjet-pythia8} program for event generation,
 the \textsc{EvtGen} package~\cite{trig-evtGen} to model the decays of the $b$ and $c$ hadrons,
@@ -180,6 +175,7 @@ the detector response is modelled using the ATLAS detector simulation package~\c
 %where minimum-bias events are events collected with a loose trigger requirement
 %and are dominated by inelastic scattering.
 
+\newpage
 \begin{itemize}[leftmargin=*]
 \item\textbf{Background: QCD Dijet Production}:  \\
   Section~\ref{sec:theo-qcd} discussed the details of QCD dijet production.
@@ -258,23 +254,22 @@ The two differ due to uncertainties in jet energy measurements.
   as only the 2 $b$-tag category is used.
 \end{itemize}
 
-\section{Event Selection}
-\label{sec:evt-sel}
 
-The overall aim when designing the di-$b$-jet event selection
-is two-fold.
-Firstly, events are selected to
-maximise sensitivity to signal;
-which is approximated in terms of $S$/$\sqrt{B}$,
+\chapter{Di-$b$-Jet Search: Event Selection}
+\label{sec:evt}
+
+Event selection is the first part of the di-$b$-jet analysis strategy.
+The aim of the event selection is to select events that are consistent with a BSM particle decaying to one or two $b$-quarks
+whilst minimising the number of background events selected, such that the sensitivity of the di-$b$-jet search to a new resonance is maximised.
+
+The event selection of the di-$b$-jet analyses is designed with two specific objectives.
+Firstly, the event selection is constructed maximise sensitivity to signal:
+in the event selection optimisation studies shown in this chapter the sensitivity is approximated in terms of $S$/$\sqrt{B}$,
 where $S$ is the number of benchmark signal events and $B$ is the number of background events.
 Secondly, the smoothly falling nature of the background needs to be maintained
 as this is the underlying assumption of the background estimation strategy,
 which will be described in Chapter~\ref{sec:bkg}.
 Here, smooth means that the spectrum is monotonically decreasing with no discontinuities.
-%In addition, it is desirable that the event selection for the
-%\hm{} and \lm{} data-set are
-%harmonised where possible as the two analyses are to be published together.
-%Any differences in event selection between the two must be well motivated.
 
 The di-$b$-jet event selection is split up into three parts, with each part described in a separate section.
 Firstly, a pair of jets are selected (Section~\ref{sec:evt-sel-jets}),
@@ -286,7 +281,30 @@ the signal acceptance is evaluated.
 The event selection is different for the two data-sets considered,
 these differences will be noted and discussed in the text.
 
-\subsection{Jet Selection}
+%This chapter is organised in the following structure:
+%Section~\ref{sec:evt-datasets} will describe the data-sets used,
+%Section~\ref{sec:evt-s+b} will describe the signal and backgrounds
+%considered when defining the selections
+%and Section~\ref{sec:evt-sel} will set out
+%the details of the event selection used for both di-$b$-jet searches.
+%\vspace{0.8em}
+%\section{Event Selection}
+%\label{sec:evt-sel}
+%
+%The overall aim when designing the di-$b$-jet event selection is two-fold.
+%Firstly, events are selected to
+%maximise sensitivity to signal;
+%
+%Secondly, the smoothly falling nature of the background needs to be maintained
+%as this is the underlying assumption of the background estimation strategy,
+%which will be described in Chapter~\ref{sec:bkg}.
+%Here, smooth means that the spectrum is monotonically decreasing with no discontinuities.
+%In addition, it is desirable that the event selection for the
+%\hm{} and \lm{} data-set are
+%harmonised where possible as the two analyses are to be published together.
+%Any differences in event selection between the two must be well motivated.
+
+\section{Jet Selection}
 \label{sec:evt-sel-jets}
 
 Jets are reconstructed using the anti-$k_T$ algorithm~\cite{obj-jets_reco_akt} with $R=0.4$
@@ -307,6 +325,25 @@ also pass the online jet-\pT{} requirements of the trigger.
 To be on the trigger plateau of a single jet trigger the offline jet-\pT{} must be above some threshold value,
 which is referred to as the threshold jet-\pT{}.
 
+\begin{figure}[!b]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \hspace{-2mm}
+    \subcaptionbox{Leading Jet-\pT{}} {\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}}
+    \subcaptionbox{\mjj}              {\includegraphics[width=0.46\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-mjj.pdf}}
+  \end{center}
+  \vspace{-1em}
+  \caption[Derivations of the leading jet-\pT{} and \mjj{} cuts for the \summer{} data-set event selection using events that pass an
+            unprescaled L1\_J75 trigger compared to events that pass a range of single-jet triggers in one run of 2016 data.]
+          {The distributions of (a) leading jet-\pT{} ($\pT^{\text{lead}}$) and (b) dijet mass (\mjj{})~of events that pass an
+            unprescaled L1\_J75 trigger (black) compared to events that pass a range of single-jet triggers (coloured) in one run of 2016 data.
+            As shown in the legend, the single-jet triggers considered are HLT\_j380, HLT\_j400 and, in plot (a), HLT\_j360.
+            In plot (b) the \summer{} event selection (excluding $b$-tagging) is applied with a leading jet-\pT{} cut as described in the legend.
+            The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
+     \label{fig:evt-ICHEP_turnon}
+\end{figure}
+
+
 For the \summer{} data-set; it is required that the leading jet has \pT{}~$>$~430~GeV to be on the trigger plateau of \verb|HLT_j380|.
 This cut is derived by comparing the leading jet-\pT{} distributions of jets that pass the trigger, \verb|HLT_j380|,
 relative to a reference trigger with a lower jet-\pT{} threshold, \verb|L1_J75|.
@@ -325,23 +362,6 @@ Both jets  are required to have $|\eta| <$ 2.4
 such that the jets lie within the volume of the ATLAS pixel detector,
 which is essential for optimal $b$-tagging performance.
 
-\begin{figure}[!ht]
-  \begin{center}
-    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \hspace{-2mm}
-    \subcaptionbox{Leading Jet-\pT{}} {\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-jet_pt.pdf}}
-    \subcaptionbox{\mjj}              {\includegraphics[width=0.46\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-mjj.pdf}}
-  \end{center}
-  \vspace{-1em}
-  \caption[Derivations of the leading jet-\pT{} and \mjj{} cuts for the \summer{} data-set event selection using events that pass an
-            unprescaled L1\_J75 trigger compared to events that pass a range of single-jet triggers in one run of 2016 data.]
-          {The distributions of (a) leading jet-\pT{} ($\pT^{\text{lead}}$) and (b) dijet mass (\mjj{})~of events that pass an
-            unprescaled L1\_J75 trigger (black) compared to events that pass a range of single-jet triggers (coloured) in one run of 2016 data.
-            As shown in the legend, the single-jet triggers considered are HLT\_j380, HLT\_j400 and, in plot (a), HLT\_j360.
-            In plot (b) the \summer{} event selection (excluding $b$-tagging) is applied with a leading jet-\pT{} cut as described in the legend.
-            The ratio with respect to L1\_J75 is shown in the lower panel~\cite{dibjet-ichep_conf}.}
-     \label{fig:evt-ICHEP_turnon}
-\end{figure}
 
 %For the \hm{} data-set the trigger \verb|HLT_j380| is also used,
 %and as such the leading jet is again required to have \pT{}~$>$~430~GeV.
@@ -380,7 +400,7 @@ $b$-jet energy scale uncertainty is significantly increased at large values of j
 %  \label{fig:evt-jet_pt}
 %\end{figure}
 
-\subsection{Event-Level Selection}
+\section{Event-Level Selection}
 \label{sec:evt-sel-event}
 
 The next part of the event selection is a set of event-level requirements using the two selected jets.
@@ -529,7 +549,7 @@ This value is chosen such that there is no gap in the mass range searched by the
 %There is no need for the \lm{} analysis to consider higher masses as in this mass range the \hm{} data-set
 %analysis will be more sensitive to signal.% due to the looser $b$-tagging requirements.
 
-\subsection{$b$-Tagging}
+\section{$b$-Tagging}
 \label{sec:evt-sel-btag}
 
 The selection of $b$-jets, known as $b$-tagging,
@@ -606,6 +626,35 @@ has been applied (inclusive) and in the $\geq1$ and 2 $b$-tag categories.
 Figure~\ref{fig:evt-lowmass_flavcomp} shows the dijet flavour composition of the QCD dijet background
 when the \lm{} data-set event selection has been applied.
 
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=1.0\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-summer_flavcomp.pdf}
+  \end{center}
+  \vspace{-1.25em}
+  \caption
+      [The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \summer{} data-set.]
+      {The dijet flavour composition of simulated QCD dijet production as a function of dijet mass (\mjj{}) for the \summer{} data-set
+        shown without applying $b$-tagging (inclusive) and for the $\geq1$ $b$-tag and 2 $b$-tag categories.
+        In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
+        The \summer{} data-set event selection has been applied.}
+      \label{fig:evt-summer_flavcomp}
+\end{figure}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth, angle=0]{figs/Dibjet/LowMass/evt-flavcomp.pdf}
+  \end{center}
+  \vspace{-1.25em}
+  \caption[The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \lm{} data-set.]
+          {The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \lm{} data-set
+            shown after the application of online and offline $b$-tagging requirements.
+            In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
+            The \lm{} data-set event selection has been applied~\cite{dibjet-full_int}.}
+  \label{fig:evt-lowmass_flavcomp}
+\end{figure}
+
+\clearpage
+
 There are a few features of the dijet flavour composition that should be noted.
 Firstly, the background before $b$-tagging is dominated by light-jets
 for the reasons outlined in~Section~\ref{sec:theo-qcd-dijet_features}.
@@ -629,31 +678,6 @@ This is evidence that the effect of $b$-tagging on the background does not produ
 a non-smooth feature in the background dijet mass spectra.
 
 
-\begin{figure}[!hb]
-  \begin{center}
-    \includegraphics[width=0.86\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-summer_flavcomp.pdf}
-  \end{center}
-  \vspace{-1.25em}
-  \caption
-      [The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \summer{} data-set.]
-      {The dijet flavour composition of simulated QCD dijet production as a function of dijet mass (\mjj{}) for the \summer{} data-set
-        shown without applying $b$-tagging (inclusive) and for the $\geq1$ $b$-tag and 2 $b$-tag categories.
-        In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
-        The \summer{} data-set event selection has been applied.}
-      \label{fig:evt-summer_flavcomp}
-%\end{figure}
-%\begin{figure}[!ht]
-  \begin{center}
-    \includegraphics[width=0.4\linewidth, angle=0]{figs/Dibjet/LowMass/evt-flavcomp.pdf}
-  \end{center}
-  \vspace{-1.25em}
-  \caption[The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \lm{} data-set.]
-          {The dijet flavour composition of simulated QCD dijet production as a function of dijet mass for the \lm{} data-set
-            shown after the application of online and offline $b$-tagging requirements.
-            In the legend b, c and l refer to a truth matched $b$-jet, $c$-jet and light jet respectively.
-            The \lm{} data-set event selection has been applied~\cite{dibjet-full_int}.}
-  \label{fig:evt-lowmass_flavcomp}
-\end{figure}
 
 
 \subsection{Effect of $b$-Jet Trigger Matching in the \lm{} Data-Set}
@@ -743,6 +767,7 @@ The ratio shows that there is a deficit of events in the dijet mass spectrum fro
         (b) A comparison of the dijet mass spectra of all events and $b$-jet trigger matched events using the \textit{FTAG1} derivation.
         For both plots the full \lm{} event selection is applied. Details of the derivation containers is given in the text. }
       \label{fig:evt-btrig_match}
+      \vspace{-1em}
 \end{figure}
 
 Figure~\ref{fig:evt-btrig_match}(b) shows the comparison of the dijet mass spectrum from \textit{FTAG1}
@@ -767,7 +792,9 @@ Finally it should be noted that for future iterations of the di-$b$-jet search
 the full information required for $b$-jet trigger matching will be included in the \textit{EXOT2} derivation,
 and as such trigger matching can be applied such that analyses can search a dijet mass range beginning at 500~GeV.
 
-\subsection{Summary of Event Selection}
+\vfill
+
+\section{Summary of Event Selection}
 \label{sec:evt-sel-acc}
 
 A summary of the  key components of the di-$b$-jet event selection
@@ -806,9 +833,7 @@ is listed in Table~\ref{tab:evt}.
 \label{tab:evt}
 \end{table}}
 
-\newpage
-
-To visualise events that pass the event selection,
+Furhtermore, to visualise events that pass the event selection,
 Figure~\ref{fig:evt-vp1} show events displays for high dijet mass events that pass
 the $\geq$1 and 2 $b$-tag event selection respectively.
 The figure was made using the VP1 event display package~\cite{evt-vp1}.
@@ -836,7 +861,7 @@ These events pass the \summer{} data-set event selection.
   \label{fig:evt-vp1}
 \end{figure}
 
-\newpage 
+%\newpage 
 With the event selection now defined,
 the signal acceptance of the di-$b$-jet event selection is studied
 to understand the performance of the analysis selection.
@@ -849,35 +874,17 @@ the $b$-tagging requirements given that the event has passed all other aspects o
 Signal acceptance and event tagging efficiency are estimated using the
 Monte-Carlo signal templates discussed in Section~\ref{sec:evt-s+b}.
 
+\newpage 
 For the \summer{} data-set event selection;
 Figure~\ref{fig:evt-ichep_acc}(a) shows the signal acceptance multiplied by trigger efficiency
 for the $b^*$ quark and SSM $Z'$ boson signal models
 as a function of the generated mass
-in the case that $b$-tagging is applied and when it is not applied.
+with and without the application of $b$-tagging.
 Figure~\ref{fig:evt-ichep_acc}(b) shows the event tagging efficiency
 for the $b^*$ quark and SSM $Z'$ boson for a range of generated mass points
 as a function of the dijet mass.
 For the SSM $Z'$ boson only decays to $b$-quarks are considered.
-In both plots the $b$-tagging category used is labelled in the legend.
-
-\begin{figure}[!ht]
-  \begin{center}
-    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-acc_generated.pdf} }
-    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-tagEff.pdf} }
-  \end{center}
-  \vspace{-1em}
-  \caption[Plots to show the acceptance of the \summer{} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.]
-          {Plots to show the acceptance of the \summer{} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.
-            Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
-            function of the generated mass of the signal model, in the case where $b$-tagging has been applied and not.
-            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{})
-            for a range of generated masses, $m$, as indicated on the plot.
-            In both figures the $b$-tagging categories used are indicated in the legend.
-            %Details of the \summer{} data-set event selection are described in the text.
-            Figures taken from~\cite{dibjet-ichep_conf}.} 
-  \label{fig:evt-ichep_acc}
-\end{figure}
+In both plots the $b$-tagging category used is labelled.
 
 %For the \hm{} data-set event selection;
 %Figure~\ref{fig:evt-hm_acc}(a) shows the signal acceptance multiplied by trigger efficiency
@@ -922,20 +929,25 @@ In both plots the $b$-tagging category used is labelled in the legend.
 %  \label{fig:evt-hm_acc}
 %\end{figure}
 
-For the \lm{} data-set event selection;
-Figure~\ref{fig:evt-lm_acc}(a) shows the signal acceptance multiplied by trigger efficiency
-for the SSM $Z'$ boson and  Dark Matter inspired (DM) $Z'$ boson signal models as a function of the generated mass.
-For both models the signal acceptance is shown before and after the
-dijet mass and offline $b$-tagging requirements are applied.
-The signal acceptance is considerably lower for the DM $Z'$ boson model in the \lm{} data-set
-as decays to light, $c$ and $b$ quarks are considered
-whilst for the SSM model only decays to $b$-quarks are considered.
-Figure~\ref{fig:evt-lm_acc}(b) shows the event tagging efficiency
-of just online $b$-tagging and the combination of online and offline $b$-tagging
-for the SSM $Z'$ boson for a range of generated mass points
-as a function of the dijet mass,~\mjj.
-
-\begin{figure}[!htb]
+\begin{figure}[!b]
+  \begin{center}
+    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-acc_generated.pdf} }
+    \subcaptionbox{Event tagging efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/ICHEP/evt-tagEff.pdf} }
+  \end{center}
+  \vspace{-1em}
+  \caption[Plots to show the acceptance of the \summer{} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.]
+          {Plots to show the acceptance of the \summer{} data-set event selection for the $b^*$ quark and SSM $Z'$ boson signal models.
+            Panel (a) shows the signal acceptance multiplied by trigger efficiency as a
+            function of the generated mass of the signal model, in the case where $b$-tagging has been applied and not.
+            Panel (b) shows the event tagging efficiency as a function of the dijet mass (\mjj{})
+            for a range of generated masses, $m$, as indicated on the plot.
+            In both figures the $b$-tagging categories used are indicated in the legend.
+            %Details of the \summer{} data-set event selection are described in the text.
+            Figures taken from~\cite{dibjet-ichep_conf}.} 
+  \label{fig:evt-ichep_acc}
+\end{figure}
+\begin{figure}[!b]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
     \subcaptionbox{Signal acceptance multiplied \\by trigger efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Dibjet/LowMass/evt-acc_ppt.pdf} }
@@ -955,6 +967,19 @@ as a function of the dijet mass,~\mjj.
             Figures taken from~\cite{dibjet-full_int}.} 
   \label{fig:evt-lm_acc}
 \end{figure}
+
+For the \lm{} data-set event selection;
+Figure~\ref{fig:evt-lm_acc}(a) shows the signal acceptance multiplied by trigger efficiency
+for the SSM $Z'$ boson and  Dark Matter inspired (DM) $Z'$ boson signal models as a function of the generated mass.
+For both models the signal acceptance is shown before and after the
+dijet mass and offline $b$-tagging requirements are applied.
+The signal acceptance is considerably lower for the DM $Z'$ boson model in the \lm{} data-set
+as decays to light, $c$ and $b$ quarks are considered
+whilst for the SSM model only decays to $b$-quarks are considered.
+Figure~\ref{fig:evt-lm_acc}(b) shows the event tagging efficiency
+of just online $b$-tagging and the combination of online and offline $b$-tagging
+for the SSM $Z'$ boson for a range of generated mass points
+as a function of the dijet mass,~\mjj.
 
 There are a few features of the signal acceptance and tagging efficiency that should be commented on.
 There is a reduced signal acceptance at lower generated masses

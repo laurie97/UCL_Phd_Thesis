@@ -176,8 +176,9 @@ that can adequately describe the background is used, such that sensitivity to si
 \subsection{Wilks' Test Statistic} 
 \label{sec:bkg-wilks}
 
-To determine if a dijet fit function has a sufficient number of parameters to adequately describe the dijet mass spectrum, an approach using the Wilks' test statistic is used,
-as employed in previous iterations of both inclusive dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
+To determine if a dijet fit function has a sufficient number of parameters to adequately describe the dijet mass spectrum
+an approach using the Wilks' test statistic is used,
+as employed in previous inclusive dijet and di-$b$-jet searches at ATLAS~\cite{dijet-mori16_paper,dibjet-mori16_paper}.
 
 For this test one considers the null hypothesis that a nominal dijet fit function is the true parameterisation of the dijet mass spectrum
 and the alternative hypothesis that a dijet fit function with an additional parameter is required.
@@ -354,6 +355,8 @@ The weighted dijet mass spectrum is then scaled to 10~\ifb{}
 this is referred to as the \textit{`scaled'} dijet mass spectrum, and is the expected number of background events in a specific dijet mass bin. 
 The statistical precision of the scaled spectrum in each dijet mass bin is represented by the number of \textit{`effective entries'};
 defined as the number of events in data that would be required to give the same statistical precision.
+
+\noindent
 The number of effective entries, $N_{\text{eff}}$, can be calculated from the event weights:
 \begin{equation}
   N_{\text{eff}} = (\sum{w_i})^2 / \sum{w_i^2}
