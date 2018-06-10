@@ -23,7 +23,7 @@ one of these detectors is the ATLAS detector.
 Since May 2015 the LHC has been colliding bunches of protons at a centre-of-mass energy of \SI{13}{\TeV},
 the highest energy collisions ever obtained by a particle collider
 \footnote{The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}.
-In 2015 and 2016 at the LHC, the time interval between colliding bunches was \SI{25}{\nano\second}~\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
+In 2015 and 2016 at the LHC, the time interval between colliding bunches, known as the bunch spacing, was \SI{25}{\nano\second}~\footnote{A small amount of data in 2015 was collected with a bunch spacing of \SI{50}{\nano\second}}.
 
 \textit{Integrated luminosity}, $L$, is the quantity that describes the size of a data-set from a collider experiment.
 Integrated luminosity is defined as $L = N_{evt}/\sigma$,
@@ -78,17 +78,7 @@ defined as a collision that occurred in an earlier bunch crossing than the colli
 The ATLAS (\textbf{A} \textbf{T}oroidal \textbf{L}arge Hadron Collider \textbf{A}pparatu\textbf{S}) detector
 design, construction and performance has been described in detail in~\cite{det-ATLAS_Exp, det-ATLAS_TDR, det-ATLAS_Perf}.
 Therefore this chapter provides a general description of the detector with a focus on the needs of di-$b$-jet searches.
-Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the ATLAS detector.
 
-\begin{figure}[!htb]
-  \begin{center}
-    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/ATLAS_schem.jpg}
-  \end{center}
-  \caption[A cut-away schematic of the ATLAS detector.]{ A cut-away schematic of the ATLAS detector~\cite{det-ATLAS_Exp}.}
-  \label{fig:det-ATLAS_schem}
-\end{figure}
-
-\clearpage
 The ATLAS detector is a large closed cylindrical detector,
 consisting of a system of magnets and three sub-detectors; the Inner Detector, the Calorimeter system and the Muon Spectrometer.
 The magnets and sub-detectors sit in concentric rings around the interaction point, where the proton bunches collide.
@@ -96,6 +86,16 @@ Combining the measurements from each of the sub-detectors allows the
 ATLAS detector to identify and measure the key properties~\footnote{\ For example four-momentum.}
 of particles that pass through its volume.
 Each component of the ATLAS detector is described in further detail below.
+
+Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the ATLAS detector.
+
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/ATLAS_schem.jpg}
+  \end{center}
+  \caption[A cut-away schematic of the ATLAS detector.]{ A cut-away schematic of the ATLAS detector~\cite{det-ATLAS_Exp}.}
+  \label{fig:det-ATLAS_schem}
+\end{figure}
 
 %and Figure~\ref{fig:det-ATLAS_slice} shows a slice of the detector in the plane perpendicular to the beam-pipe,
 %overlaid are simplified illustrations how the detector responds to a range of particles~\cite{det-thesis_gutchow}.
@@ -116,6 +116,7 @@ Each component of the ATLAS detector is described in further detail below.
 %  \label{fig:det-ATLAS_slice}
 %\end{figure}
 
+\newpage
 \subsection{Co-ordinate System}
 \label{sec:det-coordinate}
 
@@ -172,38 +173,6 @@ The ID measures the position of particles in the angular range $|\eta|\nobreak<\
 to achieve this the ID components are organised into the barrel, which are cylinders around the beam-pipe in the central region %\footnote{ Central here means at a low value of $|z|$}
 of the detector, and the end-caps, which are disks that lie perpendicular to beam-pipe on either end of the barrel.
 Table~\ref{tab:det-ID} summarises the key properties of the components of the ID in both the barrel and the end cap.
-Figure~\ref{fig:det-ID_slice} shows the components of the ID in the barrel and the radial positions of each of the layers.
-Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap components of the ID (except the IBL) in one half of the detector.
-
-\begin{figure}[!b]
-  \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Detector/ID_slice.png}
-  \end{center}
-  \caption[A schematic showing a slice of the barrel components of the ATLAS Inner Detector including the Insertable $B$-Layer.]
-          {A schematic showing a slice of the barrel components of the ATLAS Inner Detector (ID) including the Insertable $B$-Layer (IBL).
-            Each component is labelled and the radial distance from the beam-pipe ($r$) is shown~\cite{obj-tracks_TIDE}.}
-  \label{fig:det-ID_slice}
-
-  \begin{center}
-    \includegraphics[width=0.9\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
-  \end{center}
-  \caption[A schematic showing the barrel and end-cap components of the ATLAS Inner Detector.]
-          {A schematic showing the barrel and end-cap components of the ATLAS Inner Detector (ID);
-            the Insertable $B$-Layer and the barrel TRT components are not shown.
-            The axial distance from the beam-pipe ($z$) is indicated.
-            The red lines indicate the trajectory of a particle at $\eta$ = 1.4 and 2.2 with $p_T$ = 10 GeV~\cite{det-ATLAS_Exp}.}
-  \label{fig:det-ID_schem}
-\end{figure}
-
-
-%\begin{figure}[!ht]
-%  \begin{center}
-%    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
-%  \end{center}
-%  \caption[A cut-away schematic of the ATLAS Inner Detector (ID).]
-%          {A cut-away schematic of the ATLAS Inner Detector (ID)~\cite{det-ATLAS_Exp}.}
-%  \label{fig:det-ID_schem}
-%\end{figure}
 
 {\renewcommand{\arraystretch}{1.1}
   \begin{table}[!htb]
@@ -233,6 +202,41 @@ Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap compone
 \end{table}
 }
 
+Figure~\ref{fig:det-ID_slice} shows the components of the ID in the barrel and the radial positions of each of the layers.
+Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap components of the ID (except the IBL) in one half of the detector.
+
+\begin{figure}[!b]
+  \begin{center}
+    \includegraphics[width=0.7\linewidth, angle=0]{figs/Detector/ID_slice.png}
+  \end{center}
+  \caption[A schematic showing a slice of the barrel components of the ATLAS Inner Detector including the Insertable $B$-Layer.]
+          {A schematic showing a slice of the barrel components of the ATLAS Inner Detector (ID) including the Insertable $B$-Layer (IBL).
+            Each component is labelled and the radial distance from the beam-pipe ($r$) is shown~\cite{obj-tracks_TIDE}.}
+  \label{fig:det-ID_slice}
+\end{figure}
+
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
+  \end{center}
+  \caption[A schematic showing the barrel and end-cap components of the ATLAS Inner Detector.]
+          {A schematic showing the barrel and end-cap components of the ATLAS Inner Detector (ID);
+            the Insertable $B$-Layer and the barrel TRT components are not shown.
+            The axial distance from the beam-pipe ($z$) is indicated.
+            The red lines indicate the trajectory of a particle at $\eta$ = 1.4 and 2.2 with $p_T$ = 10 GeV~\cite{det-ATLAS_Exp}.}
+  \label{fig:det-ID_schem}
+\end{figure}
+
+%\begin{figure}[!ht]
+%  \begin{center}
+%    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/ID_schem.pdf}
+%  \end{center}
+%  \caption[A cut-away schematic of the ATLAS Inner Detector (ID).]
+%          {A cut-away schematic of the ATLAS Inner Detector (ID)~\cite{det-ATLAS_Exp}.}
+%  \label{fig:det-ID_schem}
+%\end{figure}
+
+\newpage
 The components of the ID closest to the beam-pipe are the IBL and the pixel detector,
 which are both made out silicon based pixel modules.
 As shown in Table~\ref{tab:det-ID}, the high-granularity of the IBL and pixel detector allow for high precision position measurements
@@ -267,6 +271,7 @@ In particular, the high precision position measurements close to the beam-pipe f
 are used to identify tracks originating from hadrons containing $b$-quarks, which are then used to identify $b$-jets.
 $b$-jet identification is important for di-$b$-jet searches and is described in Section~\ref{sec:obj-bjets}.
 
+\newpage
 \subsection{Calorimeter System}
 \label{sec:det-calo}
 
@@ -284,7 +289,7 @@ Figure \ref{fig:det-calo_schem} shows a cut-away of the ATLAS calorimeter.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/Calo_schem.png}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/Calo_schem.png}
   \end{center}
   \caption[A cut-away schematic of the ATLAS calorimeter system.]
           {A cut-away schematic of the ATLAS calorimeter system~\cite{det-ATLAS_Exp}.}
@@ -313,13 +318,9 @@ As the energy loss per ionisation interaction is approximately the ionisation en
 the number of electrons released through ionisation is proportional to the energy of the initial particle.
 
 The electromagnetic calorimeter at ATLAS is known as the \textit{`Liquid Argon (LAr) calorimeter'}.
-
-The strength of the interaction of an EM particle and an absorber material
-depends on the density of charged particles (Z) of a material,
-
-The absorber material used in the LAr calorimeter is lead
-as the large number of charged particles in a lead atom (high-Z) will increase the rate of cascade processes and reduces the shower depth;
-because the EM coupling of a charged particle to a nucleus of an atom in the absorber material is proportional to $Z^2$.
+The absorber material used is the LAr calorimeter is lead;
+lead is chosen because the EM coupling of a charged particle to a nucleus of an atom in the absorber material is proportional to $Z^2$
+meaning that the large number of charged particles in a lead atom (high-Z) will increase the rate of cascade processes and reduces the shower depth.
 %~\footnote{It is worth noting that, as the EM interaction couples to charge,
 %it is the a large density of charged particles (high Z) that reduces shower depth rather than the density of nuclear particles (high A).}
 The active material is liquid argon (LAr);
@@ -413,14 +414,16 @@ The intrinsic energy resolution of a calorimeter is given by three terms:
   \left(\frac{\Delta E}{E}\right)^2 = \left(\frac{c_s}{\sqrt{E}}\right)^2 + \left(\frac{c_n}{E}\right)^2 + c_c^2
 \end{equation}
 
+\noindent
+In more detail the three terms are:
 \begin{itemize}[leftmargin=*]
 \item\textbf{Stochastic Term ($c_s$):}
   This term represents random fluctuations in the cascade shower process.
   $\Delta E_s$ is proportional to the square root of the number of photons/electrons counted in the active layer,
-  which means that $\Delta E_s \propto \sqrt{E}$. \vspace{0.5em}
+  which means that $\Delta E_s \propto \sqrt{E}$. \vspace{1em}
 \item\textbf{Noise Term ($c_n$):}
   This term represents uncertainties that are a constant size in units of energy, such that $\Delta E_n = c_n$.
-  Contributions to the noise term include electronic noise and effects from pile-up. \vspace{0.5em} % or radioactivity
+  Contributions to the noise term include electronic noise and effects from pile-up. \vspace{1em} % or radioactivity
 \item\textbf{Constant Term ($c_c$):}
   This term represents uncertainties that are independent of the energy measurement, such that $\Delta E_c/E = c_c$.
   This uncertainty is mainly caused by the geometry of the calorimeter such as regions of inactive material (detector cracks, material before the calorimeter) and dead modules.
@@ -472,6 +475,7 @@ FCAL                   & 100\%                                 & $\sim$ 10\%-100
 %\end{table}
 %}
 
+\FloatBarrier
 \subsection{Muon Spectrometer}
 \label{sec:det-MS}
 
@@ -522,8 +526,6 @@ This effect, known as \textit{`punch-through'}, is estimated using energy deposi
   \label{fig:det-ms_schem}
 \end{figure}
 
-\newpage
-
 \subsection{Magnets}
 \label{sec:det-magnets}
 
@@ -537,7 +539,7 @@ Figure~\ref{fig:det-magnet_schem} shows the layout of the ATLAS magnet system~\c
 \vspace{1em}
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/Magnet_schem.png}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/Magnet_schem.png}
   \end{center}
   \caption[The layout of the ATLAS magnet system.]{The layout of the ATLAS magnet system~\cite{det-magnet_fig}.}
   \label{fig:det-magnet_schem}
