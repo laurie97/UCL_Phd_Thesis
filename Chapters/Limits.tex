@@ -443,35 +443,50 @@ The Gaussian + reverse Landau fit function is therefore defined as:
 \end{equation}
 The Gaussian distribution models the convolution of a Breit-Wigner resonance distribution and detector mass resolution effects.
 The reverse Landau distribution provides a description of the off-shell contributions to the dijet mass signal templates which are enhanced at low mass by PDF effects.
+The parameters of the Gaussian + reverse Landau fits are interpolated to produce dijet mass signal templates at intermediary generated mass points
+in the range 600 to 1250 GeV with a separation of 50 GeV.
 
-\begin{figure}[!b]
+Figure~\ref{fig:lim-full_morphing} shows the simulated SSM $Z'$ boson dijet mass signal templates
+compared to the dijet mass signal templates created using the signal morphing technique.
+The lower panel of Figure~\ref{fig:lim-full_morphing} shows the ratio of the simulated signal templates to the morphed signal templates;
+for clarity the ratios for each mass point are truncated such that only one point is shown for each dijet mass bin.
+
+For each generated mass point considered it is shown that,
+in the mass region where the signal is largest,
+the simulated and morphed signal templates are consistent within the
+statistical uncertainties on the simulated dijet mass signal templates.
+For the generated mass point of 600 GeV,
+there is a large disagreement between the morphed and simulated signal templates at dijet masses greater than 650 \GeV,
+however this does not impact the analysis as the fraction of events with a dijet mass greater than 650 \GeV is small for the 600 GeV simulated signal template.
+
+In the limit setting phase for the \lm{} data-set analysis
+the simulated signal dijet mass spectra are used at generated mass points of 600, 800, 1000 and 1250 GeV and
+morphed signal templates are created at generated mass points of 650, 700, 750, 850, 900, 950, 1050, 1100, 1150 and 1200 GeV.
+
+\begin{figure}[!htb]
   \vspace{-1.2em}
 \begin{center}
-  \includegraphics[width=0.55\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing.pdf} 
+  \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing_mine.pdf} 
 \end{center}
 \vspace{-2em}
-\caption[Simulated SSM $Z'$ boson dijet mass signal templates and the intermediate dijet mass signal templates
+\caption[Simulated SSM $Z'$ boson dijet mass signal templates and dijet mass signal templates
   created using the signal morphing technique used in the \lm{} data-set limit setting phase.]
-        {Simulated SSM $Z'$ boson dijet mass (\mjj) signal templates (solid points lines)
-          at generated mass points of 600, 800, 1000 and 1250 GeV 
-          and the dijet mass signal templates created using the signal morphing technique (dotted lines). The \lm{} event selection has been applied~\cite{dibjet-full_int}.
+        {The simulated SSM $Z'$ boson dijet mass (\mjj) signal templates (coloured points) compared to the
+          dijet mass signal templates created using the signal morphing technique (black lines)
+          at generated mass points of 600, 800, 1000 and 1250 GeV.
+          The error bars represent the statistical uncertainties on the simulated dijet mass signal templates.
+          The \lm{} event selection has been applied~\cite{dibjet-full}.
+          %The upper panel shows the number of events for both the generated and morphed signal templates.
+          The lower panel shows the ratio of the generated to the morphed dijet mass signal template; the ratios for each mass point are truncateS.
           \label{fig:lim-full_morphing}}
 \end{figure}
 
-The parameters of the Gaussian + reverse Landau fits are interpolated to produce dijet mass signal templates at intermediary generated mass points
-in the range 600 to 1250 GeV with a separation of 50 GeV \footnote{\ Explicitly morphed signal templates are created at generated mass points of 650, 700, 750, 850, 900, 950, 1050, 1100, 1150 and 1200 GeV.}.
-Figure~\ref{fig:lim-full_morphing} shows the simulated SSM $Z'$ boson dijet mass signal templates and the intermediate dijet mass signal templates produced using the morphing procedure.
-The simulated and morphed signal dijet mass spectra are used as signal templates in the limit setting phase for the \lm{} data-set analysis.
-
-
+\FloatBarrier
 \subsection{Summary of Systematic Uncertainties}
 \label{sec:lim-full_systs}
 
 Table~\ref{tab:lim-lowmass_syst} summarises the systematic uncertainties considered for the
 signal templates used in the \lm{} data-set at three different dijet masses.
-Figure~\ref{fig:lim-lowmass_syst}(a) shows the total $b$-jet trigger systematic uncertainty as a function of dijet  mass;
-this includes both the jet-level and event-level uncertainties described in Section~\ref{sec:trig-bjet_eff}.
-Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass.
 %Reconstructed mass is defined as invariant mass of the two observed jets.
 %$b$-tagging, $b$-jet trigger and $b$-jet energy scale are the dominant sources of systematic uncertainties at the lowest mass point,
 %whilst for the remaining dijet mass range $b$-jet trigger uncertainties are dominant.
@@ -501,9 +516,14 @@ Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the b
           Jet Energy Scale (JES), Jet Energy Resolution (JER) and $b$-jet Energy Scale ($b$JES)
           are uncertainties on the dijet mass of a simulated event,
           whilst $b$-tagging, $b$-jet trigger, PDF and luminosity uncertainties are uncertainties on simulated event weight.
-          All values except the $b$-jet trigger uncertainty are taken from~\cite{dibjet-full_int}.}
+          All values except the $b$-jet trigger uncertainty are taken from~\cite{dibjet-full}.}
   \label{tab:lim-lowmass_syst}
   \end{table}
+
+\newpage
+Figure~\ref{fig:lim-lowmass_syst}(a) shows the total $b$-jet trigger systematic uncertainty as a function of dijet  mass;
+this includes both the jet-level and event-level uncertainties described in Section~\ref{sec:trig-bjet_eff}.
+Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -519,6 +539,7 @@ Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the b
   \label{fig:lim-lowmass_syst}
 \end{figure}
 
+\FloatBarrier
 \subsection{Signal Subtracted Background Estimation}
 \label{sec:lim-full_ssb}
 
@@ -655,6 +676,7 @@ the reduced sensitivity is accepted to maintain model independence.
 In Chapter~\ref{sec:fut} I will discuss how a signal plus background fit
 could be employed differently to benefit both the search phase and the limit setting phase in future analyses.
 
+\newpage
 \subsection{Results}
 \label{sec:lim-full_results}
 
@@ -664,7 +686,7 @@ Limits are set on $\sigma\,\text{x}\,\mathit{BR}$ by calculating limits for $\si
 using the same methodology used for the \summer{} data-set result,
 and dividing by the $\mathit{A}\,\text{x}\,\epsilon$ shown in Figure~\ref{fig:evt-lm_acc}(a).
 $\mathit{A}\,\text{x}\,\epsilon$ is corrected for such that limits set by the \lm{} and \hm{} data-set analyses can be shown on the same figure,
-even though different trigger and event selections are used~\cite{dibjet-full_int}; the \hm{} data-set analysis result is not presented in this thesis~\footnote{\ Details
+even though different trigger and event selections are used~\cite{dibjet-full}; the \hm{} data-set analysis result is not presented in this thesis~\footnote{\ Details
   of the \hm{} data-set are found in Section~\ref{sec:evt-datasets}.}.
 $\mathit{BR}$ is explicitly referred to for limits in the \lm{} data-set analysis to clearly identify that
 limits set on the SSM and leptophobic $Z'$ models only consider decays to pairs of $b$-quarks,
@@ -706,8 +728,8 @@ the desire for no such gap to exist was an important factor in selecting the dij
 \begin{figure}[!ht]
   \centering
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}  
-  \subcaptionbox{DM $Z'$ Boson}                               {\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
+  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.85\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}  
+  \subcaptionbox{DM $Z'$ Boson}                               {\includegraphics[width=0.85\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
   \caption
       [95\% credibility level upper limits on the product of cross-section and branching ratio 
         for the SSM, leptophobic and DM $Z'$ boson and as a function of generated mass using the \lm{} data-set.]
@@ -719,7 +741,7 @@ the desire for no such gap to exist was an important factor in selecting the dij
         The observed limit is shown by the solid black line, the expected limit is shown by the dotted black line
         and the associated 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
         The theoretical predictions of $\sigma\,\text{x}\,\mathit{BR}$
-        for the  SSM, leptophobic and DM $Z'$ models are overlaid~\cite{dibjet-full_int}.
+        for the  SSM, leptophobic and DM $Z'$ models are overlaid~\cite{dibjet-full}.
       }
   \label{fig:lim-lowmass_benchmark}
 \end{figure}
@@ -788,7 +810,7 @@ for a generic Gaussian signal ranging from 0.05 to 0.003 pb in the mass range 0.
     widths of 15\%, 10\%, 7\%, 5\%, 3\% and 0\% of the generated mass.
     The Gaussian distribution with 0\% width in truth mass represents the width of the detector resolution in dijet mass.
     Also shown are the expected 95\% credibility expected upper limit on the Gaussian signal shape with a 0\% width (dotted line)
-    and the associated 1 and 2~\sigma{} uncertainty bands (green and yellow)~\cite{dibjet-full_int}.
+    and the associated 1 and 2~\sigma{} uncertainty bands (green and yellow)~\cite{dibjet-full}.
   }
   \label{fig:lim-lowmass_gauss}
 \end{figure}
