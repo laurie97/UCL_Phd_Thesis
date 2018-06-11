@@ -46,6 +46,7 @@ Collisions in addition to the collision of interest
 are collectively referred to as \textit{`pile-up'}~\cite{det-pileup}.
 Pile-up presents a challenge to physics analyses at the LHC
 as the resulting particles from pile-up collisions can affect the measurement of particles from the collision of interest.
+
 Pile-up collisions are then further categorised as \textit{`in-time pile-up'},
 which is defined as collision caused by the same bunch crossing as the collision of interest,
 and \textit{`out of time pile-up'},
@@ -91,8 +92,9 @@ Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the ATLAS detecto
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/ATLAS_schem.jpg}
+    \includegraphics[width=0.9\linewidth, angle=0]{figs/Detector/ATLAS_schem.jpg}
   \end{center}
+  \vspace{-1em}
   \caption[A cut-away schematic of the ATLAS detector.]{ A cut-away schematic of the ATLAS detector~\cite{det-ATLAS_Exp}.}
   \label{fig:det-ATLAS_schem}
 \end{figure}
@@ -116,7 +118,8 @@ Figure~\ref{fig:det-ATLAS_schem} shows a cut-away schematic of the ATLAS detecto
 %  \label{fig:det-ATLAS_slice}
 %\end{figure}
 
-\newpage
+\FloatBarrier
+\vspace{-1em}
 \subsection{Co-ordinate System}
 \label{sec:det-coordinate}
 
@@ -147,7 +150,6 @@ This is important in $pp$ colliders as each collision has  a different Lorentz b
 due to the effects of the Parton Distribution Functions described in Section~\ref{sec:theo-qcd_pdf}.
 This implies that, in the massless limit, $\Delta \eta$ is also invariant against Lorentz boosts along the $z$-axis.
 Therefore $\eta$ is used to define the angular direction with respect to the $z$-axis in the ATLAS co-ordinate system.
-
 The final important quantity of the ATLAS co-ordinate system is $\Delta R$, which is defined as $\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$.  
 \Delta R represents the angular separation between two vectors.
 
@@ -205,7 +207,7 @@ Table~\ref{tab:det-ID} summarises the key properties of the components of the ID
 Figure~\ref{fig:det-ID_slice} shows the components of the ID in the barrel and the radial positions of each of the layers.
 Figure~\ref{fig:det-ID_schem} shows the layout of the barrel and end-cap components of the ID (except the IBL) in one half of the detector.
 
-\begin{figure}[!b]
+\begin{figure}[!htb]
   \begin{center}
     \includegraphics[width=0.7\linewidth, angle=0]{figs/Detector/ID_slice.png}
   \end{center}
@@ -305,7 +307,7 @@ the many resulting particles from the cascade are known as the cascade particles
 The role of the \textit{`active material layer'} is to measure the energy of the cascade particles %,
 by counting electrons released by ionisation or photons emitted by excited atoms.
 %the active layers in the ECAL and HCAL operate using different techniques so will be described below.
-The ATLAS calorimeter is designed such that as much of the full particle shower of the initial particle will occur within its volume as possible,
+The ATLAS calorimeter is designed such that as much as possible of the full particle shower of the initial particle will occur within its volume,
 meaning that the total energy of the initial particle can be determined.
 
 \subsubsection{Electromagnetic Calorimeter (ECAL)}
@@ -318,9 +320,9 @@ As the energy loss per ionisation interaction is approximately the ionisation en
 the number of electrons released through ionisation is proportional to the energy of the initial particle.
 
 The electromagnetic calorimeter at ATLAS is known as the \textit{`Liquid Argon (LAr) calorimeter'}.
-The absorber material used is the LAr calorimeter is lead;
+The absorber material used in the LAr calorimeter is lead;
 lead is chosen because the EM coupling of a charged particle to a nucleus of an atom in the absorber material is proportional to $Z^2$
-meaning that the large number of charged particles in a lead atom (high-Z) will increase the rate of cascade processes and reduces the shower depth.
+meaning that the large number of charged particles in a lead atom (high-Z) will increase the rate of the cascade processes and reduce the shower depth.
 %~\footnote{It is worth noting that, as the EM interaction couples to charge,
 %it is the a large density of charged particles (high Z) that reduces shower depth rather than the density of nuclear particles (high A).}
 The active material is liquid argon (LAr);
@@ -429,7 +431,7 @@ In more detail the three terms are:
   This uncertainty is mainly caused by the geometry of the calorimeter such as regions of inactive material (detector cracks, material before the calorimeter) and dead modules.
 \end{itemize}
 
-Table~\ref{tab:det-calo_noise} shows approximate values of $c_s$ and $c_c$ for the components of the ATLAS calorimeter.
+Table~\ref{tab:det-calo_noise} shows approximate values of $c_s$, $c_n$  and $c_c$ for the components of the ATLAS calorimeter.
 The noise term depends strongly on $\eta$ and pile-up conditions, so an approximate order of magnitude is given.
 For high-\pT{} objects ($\,> 100$ GeV), such as the jets used in di-$b$-jet searches, the constant term is the dominant term,
 as the other terms are suppressed by the large values of~$E$.
@@ -517,15 +519,17 @@ Whilst for most jets the shower is fully contained within the calorimeter
 there are some jets, particularly at high-$p_T$, where a non-negligible amount of energy is not deposited in the calorimeter.
 This effect, known as \textit{`punch-through'}, is estimated using energy deposits in the MS.
 
+\vspace{1em}
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Detector/MS_schem.pdf}
+    \includegraphics[width=1\linewidth, angle=0]{figs/Detector/MS_schem.pdf}
   \end{center}
   \caption[A cut-away of the ATLAS Muon Spectrometer.]
           {A cut-away of the ATLAS Muon Spectrometer (MS). The types of muon chamber used in each part of the MS are labelled on the figure.~\cite{det-ATLAS_Exp}.}
   \label{fig:det-ms_schem}
 \end{figure}
 
+\newpage
 \subsection{Magnets}
 \label{sec:det-magnets}
 
