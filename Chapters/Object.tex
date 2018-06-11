@@ -59,7 +59,7 @@ The tracking reconstruction procedure~\cite{obj-tracks_TIDE} follows these steps
 %Tracks ar
 
 \noindent
-The momentum resolution of reconstructed, $\sigma(\pT)/\pT$, as a function of track~$\pT$ is:
+The momentum resolution of reconstructed tracks, $\sigma(\pT)/\pT$, as a function of track~$\pT$ is given by~\cite{det-ATLAS_Exp}:
 \begin{equation}
 %\left(\frac{\sigma}{\pT}\right) = 0.05\% \left(\frac{\pT}{\GeV}\right) \, \oplus 1\%
 %\left(\frac{\sigma(\pT)}{\pT}\right) = 0.05\% \frac{\pT}{\GeV} \, \oplus 1\%
@@ -150,7 +150,7 @@ and a set of energy deposits that would not form a topocluster, as no seed cell 
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.35\linewidth, angle=0]{figs/Objects/topo_schem.png}
+    \includegraphics[width=0.44\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
   \caption[A schematic illustrating the algorithm used to form a topocluster.]
           {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label~\cite{det-magnet_fig}.}
@@ -218,9 +218,9 @@ In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are 
 %and  $a = 0$ for the Cambridge-Aachen algorithm.
 %$d_{ij}$ and $d_{iB}$ are not physical distances, but are instead dimensional measures of how likely it is that
 %clusters $i$ and $j$ represent clusters caused by hadrons from the same jet.
- 
+
 \noindent Sequential reclustering algorithms then proceed using the following steps:
-\vspace{-0.5em}
+\vspace{-1em}
 \begin{enumerate}[nolistsep,leftmargin=*]
   \item Calculate $d_{ij}$ and $d_{iB}$ for all combinations of clusters and find the minimum.
   %\item Find the minimum of the $d_{ij}$ and $d_{iB}$.
@@ -321,6 +321,7 @@ where a truth jet is constructed by running the anti-$k_T$ algorithm on the set 
 A stable particle is required to have a lifetime $c\tau >$ \SI{10}{\milli\metre} and muons, neutrinos, and particles from pile-up collisions are ignored.
 Truth jets are a good choice as they are well-defined and model-independent objects representing the jets that would have been reconstructed if one had a perfect detector.
 
+%\newpage
 The calibration process uses Monte-Carlo simulation and data to correct the jets initially
 built from the EM-scale topoclusters using a number of steps:
 
@@ -352,7 +353,7 @@ built from the EM-scale topoclusters using a number of steps:
   This step further reduces effects from pile-up utilising the linear dependence of pile-up effects on
   the number of primary vertices, $N_{\text{PV}}$,
   and the mean number of $pp$ collisions per bunch crossing, $<\hspace{-3pt}\mu\hspace{-3pt}>$.
-  This correction can hence be written as \hspace{2mm}$\pT^{\text{Pile-up Corrected}} = \pT^{\text{Inital}}  - \alpha * (N_{PV}-1) - \beta * \mu\,$,\hspace{2mm}
+  This correction can hence be written as \hspace{2mm}$\pT^{\text{Pile-up Corrected}} = \pT^{\text{Initial}}  - \alpha * (N_{PV}-1) - \beta * \mu\,$,\hspace{2mm}
   where $\alpha$ and $\beta$ are constants derived using simulated events. \vspace{0.3em}
   %%% Does not depend on A:
   % pcorr = preco −ρ×A−α×(NPV −1)−β×μ,
@@ -518,13 +519,13 @@ the details of this figure are referred to in the following three sections.
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{figs/Objects/bjets_schem_no_beam.pdf}
+    \includegraphics[width=0.85\textwidth]{figs/Objects/bjets_schem_no_beam.pdf}
     \caption
     [The key features of a $b$-jet utilised by the base $b$-tagging algorithms.]
     {An illustration of the key features of a $b$-jet utilised by the base $b$-tagging algorithms.}
     \label{fig:obj_bjets_schem}
   \end{center}
-  \vspace{-0.5cm}
+  \vspace{-1cm}
 \end{figure}
 
 \subsubsection{Impact Parameter Based Algorithm}
@@ -539,7 +540,7 @@ and longitudinal (parallel to beam-line) direction, which are referred to as $d_
 The IP3D algorithm calculates a likelihood of the jet having a specific flavour, 
 based on the distributions of the impact parameters ($d_{0}$, $z_{0}$) and their significances ($d_{0}/\sigma _{d0}$ and  $z_{0}/\sigma_{z0}$). 
 The IP2D algorithm calculates the jet flavour likelihood from just the transverse distributions, ($d_{0}$ and $d_{0}$ significance), which is more robust to pile-up;
-because tracks originating from a pile-up primary vertex that occured at a different position on the $z$-axis are likely to have large $z_{0}$ significance values.
+because tracks originating from a pile-up primary vertex that occurred at a different position on the $z$-axis are likely to have large $z_{0}$ significance values.
 
 
 \subsubsection{Secondary Vertex Based Algorithm}
@@ -569,14 +570,7 @@ for example, vertex mass and number of vertices with two or more tracks.
 \subsection{Multi-Variate $b$-Tagging Algorithm}
 \label{sec:obj-bjets_MV2}
 
-The three base algorithms are combined in a Boosted Decision Tree (BDT)~\cite{obj-bjets_bdt},
-a machine-learning technique for combining the many flavour discriminating variables, resulting in the MV2 algorithm.
-A BDT is able to use the complex correlations between the input variables to maximise $b$-tagging performance.
-As shown in Figure~\ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
-with the flavour discriminating variables of SV1 and JF discussed in the preceding sections.
-The MV2 output is a variable between -1 and 1, where 1 indicates that the jet is likely to be a $b$-jet and -1 indicates the inverse.
-
-\begin{figure}[!htb]
+\begin{figure}[!b]
   \begin{center}
     \includegraphics[width=1.0\textwidth]{figs/Objects/MV2_schem.pdf}
     \caption[An illustration of how the three base flavour tagging algorithms are combined in the MV2 algorithm.]
@@ -586,6 +580,13 @@ The MV2 output is a variable between -1 and 1, where 1 indicates that the jet is
   \end{center}
   \vspace{-1em}
 \end{figure}
+
+The three base algorithms are combined in a Boosted Decision Tree (BDT)~\cite{obj-bjets_bdt},
+a machine-learning technique for combining the many flavour discriminating variables, resulting in the MV2 algorithm.
+A BDT is able to use the complex correlations between the input variables to maximise $b$-tagging performance.
+As shown in Figure~\ref{fig:obj-MV2_schem}, MV2 combines the likelihood output of IP3D and IP2D
+with the flavour discriminating variables of SV1 and JF discussed in the preceding sections.
+The MV2 output is a variable between -1 and 1, where 1 indicates that the jet is likely to be a $b$-jet and -1 indicates the inverse.
 
 The BDT is trained using a simulated sample of $t\bar{t}$ events that will contain a mix of  $b$-, $c$- and light-jets,
 in addition to a sample containing a $Z'$ boson decaying to $b$-quarks to increase statistics in the high jet-\pT{} region.
@@ -607,31 +608,33 @@ The different lines show the performance of the algorithm in the 2015 configurat
 and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractions of $c$-jets are used in the training;
 2016 MV2c10 is the configuration used throughout this thesis as recommended in~\cite{obj-bjets_algo_2016}.
     
-    
+\vspace{-0.5em}    
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
     \subcaptionbox{$b$-jet efficiency \\against light-jet rejection} {\includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_light.eps}}
     \subcaptionbox{$b$-jet efficiency \\against $c$-jet rejection}  { \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_charm.eps}}
   \end{center}
-  \vspace{-1em}
+  \vspace{-0.5em}
   \caption[The expected $b$-jet efficiency of the $b$-tagging algorithm, MV2, with respect to
     light-jet and $c$-jet rejection in simulated $t\bar{t}$ events.]
     {The expected $b$-jet efficiency of the $b$-tagging algorithm, MV2, with respect to
     (a) light-jet and (b) $c$-jet rejection in simulated $t\bar{t}$ events.
     The various lines show the performance of the algorithm for different configurations and training setups~\cite{obj-bjets_algo_2016}.}
   \label{fig:obj-bjets_perf}
+  \vspace{-0.5em}
 \end{figure}
 
-There are four standard choices of MV2c10 cut value used in ATLAS analyes, these standard choices are known as $b$-tagging operating points.
-Table~\ref{tab:obj-MV2_WPs} shows the four working points
-with the cut value on the MV2c10 output and corresponding values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection
+There are four standard choices of MV2c10 cut value used in ATLAS analyses,
+these standard choices are known as $b$-tagging operating points.
+Table~\ref{tab:obj-MV2_WPs} shows the MV2c10 cut value of the four operating points
+and the corresponding values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection
 measured using simulated $t\bar{t}$ events for jets with a $\pT$ greater than 20 GeV.
 
 %Looser operating points have a lower MV2c10 cut value, leading to a higher $b$-jet efficiency at the cost of worse light- and $c$-jet rejections.
 %The inverse is true for tighter operating points.
 
-The $b$-jet efficiencies given in Table~\ref{tab:obj-MV2_WPs} are used to name the corrosponding $b$-tagging operating points,
+The $b$-jet efficiencies given in Table~\ref{tab:obj-MV2_WPs} are used to name the corresponding $b$-tagging operating points,
 as such the operating points are known as the 60\%, 70\%, 77\% and 85\% $b$-tagging operating points.
 To be specific, for a jet to be $b$-tagged at the 70\% operating point
 the output of the MV2c10 algorithm performed on that jet must be greater than 0.8244.
@@ -640,7 +643,8 @@ the output of the MV2c10 algorithm performed on that jet must be greater than 0.
 %  however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT{}.}.
 
 \begin{table}[!htb]
-  \begin{center}
+\vspace{-0.5em}
+\begin{center}
     \begin{tabular}{|c||c|c|c|c|}
       \hline
       MV2c10 Cut Value  &  $b$-jet efficiency   &     $c$-jet rejection   &   Light-jet rejection  &    $\tau$ rejection  \\
@@ -653,30 +657,35 @@ the output of the MV2c10 algorithm performed on that jet must be greater than 0.
     \end{tabular}
     \caption[The MV2c10 $b$-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.]
             {The MV2c10 $b$-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.
-             These values have been derived using simulated $t\bar{t}$ events, with jet-\pT above 20 GeV.~\cite{obj-bjets_algo_2016}.}
+             These values have been derived using simulated $t\bar{t}$ events, with jet-\pT{} above 20 GeV.~\cite{obj-bjets_algo_2016}.}
             \label{tab:obj-MV2_WPs}
   \end{center}
   \vspace{-2em}
 \end{table}
 
-$b$-tagging performance decreases at high jet-\pT{} due to a number of factors.
-Firstly, high-\pT{} jets are more collimated meaning that reconstructed vertices
-will have a larger positional uncertainty and fake vertices become more common.
-Secondly, the fraction of tracks in a $b$-jet that do not come from the decay of a $b$-hadron increases,
-meaning that the flavour discriminating variables are diluted.
-Finally, at high-\pT{} the $b$-hadron can decay on the far side of the IBL, leading to a reduced vertex and impact parameter resolution.
+$b$-tagging performance is known to decrease at high jet-\pT{}.
 To illustrate this trend, Figure~\ref{fig:obj-bjets_perf_pt} shows the $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets in $t\bar{t}$ simulation as a function of jet-\pT{}
 for the MV2c20 algorithm in the 2015 configuration~\cite{obj-bjets_algo_2015}. A similar trend is also found for the MV2c10 using the 2016 configuration~\cite{obj-bjets_algo_2016}.
 
 \begin{figure}[!htb]
-  \begin{center}
-    \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/bjets_perf_pt.eps} 
+  \vspace{-0.5em}
+\begin{center}
+    \includegraphics[width=0.48\linewidth, angle=0]{figs/Objects/bjets_perf_pt.eps} 
   \end{center}
   \vspace{-1em}
   \caption[The $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets as a function of jet-\pT{} for the MV2c20 algorithm at the 70\% operating point in the 2015 configuration.]
           {\label{fig:obj-bjets_perf_pt}The $b$-tagging efficiency for $b$, $c$ and light-jets against jet-\pT{} 
             for the MV2c20 algorithm at the 70\% operating point using the 2015 configuration in simulated $t\bar{t}$ events~\cite{obj-bjets_algo_2015}.}
+\vspace{-1em}
 \end{figure}
+
+The decrease $b$-tagging performance at high $p_T$ is due to a number of factors.
+Firstly, high-\pT{} jets are more collimated meaning that reconstructed vertices
+will have a larger positional uncertainty and fake vertices become more common.
+Secondly, the fraction of tracks in a $b$-jet that do not come from the decay of a $b$-hadron increases,
+meaning that the flavour discriminating variables are diluted.
+Finally, at high-\pT{} the $b$-hadron can decay on the far side of the IBL, leading to a reduced vertex and impact parameter resolution.
+
 
 \subsection{Calibration and Uncertainties}
 \label{sec:obj-bjets_calib}
@@ -702,9 +711,10 @@ Figure~\ref{fig:obj-bjets_calib} shows the data/simulation scale factor measured
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.57\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
-  \end{center}
   \vspace{-1em}
+    \includegraphics[width=0.55\linewidth, angle=0]{figs/Objects/bjets_calib_pt.pdf} 
+  \end{center}
+  \vspace{-1.3em}
   \caption[The ratio of $b$-tagging efficiency in data and simulation for MV2c10 at the 77\% operating point as a function of jet-\pT{} in di-lepton $t\bar{t}$ events.]
           {\label{fig:obj-bjets_calib}The ratio of $b$-tagging efficiency in data and Monte Carlo for MV2c10 at the 77\% operating point as a function of jet-\pT{}
   in di-lepton $t\bar{t}$ events. Statistical uncertainties (black lines) and total uncertainties (green shaded region) are shown \cite{obj-bjets_calib_plots}.}
@@ -749,7 +759,7 @@ for example, during the decay of the $b$-hadron, muons and neutrinos can be prod
 As a result, an additional $b$-jet energy scale ($b$JES) uncertainty has been 
 specifically derived in a previous di-$b$-jet search at ATLAS~\cite{dibjet-mori16_paper}.
 The $b$JES uncertainty is found to be within 2.6\% for all jets with a \pT{} greater than 60~\GeV.
-The dominant source of the $b$JES uncertainty is the 
+The dominant source of the $b$JES uncertainty is from the 
 modelling of the detector response to $b$-jets in simulation;
 other contributions to the $b$JES uncertainty considered are
 the modelling of $b$-jet formation in simulation,
@@ -761,6 +771,8 @@ The $b$JES uncertainty is validated by comparing jet energy measurements to inde
 It is found that the energy of $b$-tagged jets is consistent with the energy of jets with no $b$-tagging applied
 within the 2.6\% $b$JES uncertainty considered. Therefore no additional $b$JES correction is required.
 
+\vfill
+\newpage
 \section{Electrons and Muons}
 \label{sec:obj-leptons}
 
