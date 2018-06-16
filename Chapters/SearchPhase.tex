@@ -402,7 +402,7 @@ and an upper mass edge at the lowest dijet mass bin which contains less than one
 
 When performing the dijet mass range validation studies
 the dijet fit function that would be used in the final data-set was not known.
-Therefore, it was neccesary to make a choice of the dijet fit function used to perform this study;
+Therefore, it was necessary to make a choice of the dijet fit function used to perform this study;
 the 4 parameter dijet fit function was selected.
 The 3 parameter dijet fit function was not chosen as it represents a special case
 of the 4 parameter dijet fit function when one parameter ($p_4$) is set to zero.
@@ -716,10 +716,12 @@ there is a good fit quality observed in both $b$-tag categories.
 %Similar tests were performed for the 4 parameter dijet fit function but are not presented here because,
 %as shown in Section~\ref{sec:bkg-summer_global},
 %the 3 parameter dijet fit function is chosen in both categories for this data-set.
+\vspace{-0.25em}
 
 \subsection{Validation Studies: Signal Injection}
 \label{sec:bkg-summer_sigInj}
 
+\vspace{-0.25em}
 If an excess with a  \bh{} $p$-value $<$ 0.01 is observed then the background estimation is
 performed again with an exclusion region applied.
 The exclusion region is defined as the mass range of the excess with one additional bin on the low mass side.
@@ -741,12 +743,10 @@ will not produce large signal induced fit biases.
 Hence, the 3 parameter dijet fit function
 provides a valid background estimation in both $b$-tag categories.
 
-
-\clearpage
-
 \subsection{Search Phase Results}
 \label{sec:bkg-summer_results}
 
+\vspace{-0.5em}
 Figure~\ref{fig:bkg-summer_searchPhase} shows the dijet mass spectrum of the
 \summer{} data-set and the background estimate created using the 3 parameter dijet fit function
 in the 2 and $\geq1$ $b$-tag categories.
@@ -759,7 +759,7 @@ in the figure using vertical blue lines;
 the \bh{} \mbox{$p$-value} has been calculated using 10,000 pseudo-experiments.
 The \bh{} \mbox{$p$-value} is 0.60 in the 2 $b$-tag category
 and 0.44 in the $\geq1$ $b$-tag category;
-this shows that no significant excess is found in either $b$-tag category and it is therefore concluded
+this shows that no significant excess is found in either \mbox{$b$-tag} category and it is therefore concluded
 that there is no evidence of a BSM resonance in the \summer{} data-set.
 As no significant excess is found, limits on the benchmark signal models are set using the \summer{} data-set,
 which will be shown in Chapter~\ref{sec:lim}.
@@ -768,10 +768,10 @@ which will be shown in Chapter~\ref{sec:lim}.
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-   \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-SearchPhase_bb.png}}
-   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-SearchPhase_b.png}}
+   \subcaptionbox{2 $b$-tag\vspace{1em}}{\includegraphics[width=0.65\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-SearchPhase_bb.png}}
+
+   \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.65\linewidth, angle=0]{figs/Dibjet/ICHEP/bkg-SearchPhase_b.png}}
   \end{center}
-  \vspace{-1em}
   \caption
       [The dijet mass spectrum of the \summer{} data-set in the 2 and the $\geq$1 $b$-tag category
         compared to the background estimation created using the 3 parameter dijet fit function.
@@ -1036,7 +1036,7 @@ Figure~\ref{fig:bkg-lm_swiftBins} shows the SWiFt windows used in the \lm{} data
   The bin centre is indicated by the black mark and the corresponding window is indicated by the coloured squares.}
 \end{figure}
 
-Windows symmetric in the number of dijet mass bins either side of the center are chosen
+Windows symmetric in the number of dijet mass bins either side of the centre are chosen
 as this ensures that there will be an adequate side band on either side of the window centre where possible
 and reduces the number of parameters that have to be tested.
 For clarity, it should be noted that because the width of the dijet mass bins is not uniform, the windows used are not exactly symmetric with respect to dijet mass;
@@ -1407,31 +1407,6 @@ as there are small statistical fluctuations present in the 0-tag dijet mass spec
 Therefore, it is concluded that for SWiFt configurations using the 5 parameter dijet fit function
 there is no evidence that spurious signal can occur in the window half-widths considered.
 
-\begin{figure}[!b]
-\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-\centering
-\subcaptionbox{4 parameter function,\\ $wHW$ = 16} {
-  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
-}                                                                                              
-\subcaptionbox{4 parameter function,\\ $wHW$ = 10} {                                                    
-  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter function,\\ $wHW$ = 16} {                                                    
-  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
-}                                                                                              
-\subcaptionbox{5 parameter function,\\ $wHW$ = 14} {                                                    
-  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
-}                                                                                              
-\caption[The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate on an ensemble of
-          data-like dijet mass spectra from the \lm{} fit control region.]
-        {\label{fig:bumpH_spuriousSignal}
-          The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate on an ensemble of
-          data-like dijet mass spectra (seeds) from the \lm{} fit control region,
-          shown for the 4 and 5 parameter dijet fit function for a selection of window half-widths ($wHW$). 
-          The number of data-like spectra used is given on the plot.
-}
-\end{figure}
-
 \begin{table}[!htb]
 \centering
 \begin{tabular}{|c|c||c|c|c|c|}
@@ -1465,22 +1440,49 @@ there is no evidence that spurious signal can occur in the window half-widths co
       The number of seeds used for each SWiFt configuration is shown in the table.}
     \vspace{-0.5em}
 \end{table}
-\newpage
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+\centering
+\subcaptionbox{4 parameter function,\\ $wHW$ = 16} {
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low16_high16.pdf}
+}                                                                                              
+\subcaptionbox{4 parameter function,\\ $wHW$ = 10} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_4para_low10_high10.pdf}
+}                                                                                              
+\subcaptionbox{5 parameter function,\\ $wHW$ = 16} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low16_high16.pdf}
+}                                                                                              
+\subcaptionbox{5 parameter function,\\ $wHW$ = 14} {                                                    
+  \includegraphics[width=0.48\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/pVal_bumpHunter_corrFitCR_5para_low14_high14.pdf}
+}                                                                                              
+\caption[The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate on an ensemble of
+          data-like dijet mass spectra from the \lm{} fit control region.]
+        {\label{fig:bumpH_spuriousSignal}
+          The normalised distributions of \bh{} \mbox{$p$-value}s from performing the SWiFt background estimate on an ensemble of
+          data-like dijet mass spectra (seeds) from the \lm{} fit control region,
+          shown for the 4 and 5 parameter dijet fit function for a selection of window half-widths ($wHW$). 
+          The number of data-like spectra used is given on the plot.
+}
+\vspace{-1em}
+\end{figure}
 
 \subsection{SWiFt Validation Studies: Signal Injection}
 \label{sec:bkg-full_signalInj}
+\vspace{-0.5em}
 
 In the previous two subsections it is shown that the SWiFt background estimate procedure is effective in the case that there is no signal.
 However, it is also required to test the SWiFt search phase in the case that signal is present to show that signal can be identified and the remaining background estimate is valid.
 
 To identify signal, the SWiFt search phase uses the \bh{} algorithm to identify the most discrepant excess region and assigns that region a \mbox{$p$-value}.
-If the \mbox{$p$-value} is $<$ 0.01 then an exclusion region procedure is used to remove any signal induced fit bias in the background estimation.
+If the \mbox{$p$-value} is \mbox{$<$ 0.01} then an exclusion region procedure is used to remove any signal induced fit bias in the background estimation.
 The exclusion region procedure is as follows.
-\vspace{-0.25em}
+\vspace{-0.5em}
 \begin{enumerate}[leftmargin=*]
 \item If a discrepant excess is found, define an exclusion region as the excess region identified by the \bh{} algorithm
       extended on the low mass side by including the dijet mass bin adjacent to the excess region.
       It has been shown that the additional dijet mass bin is required to remove signal induced fit bias~\cite{dijet-mori16_paper}.
+      
 \item Create an updated background estimate 
       by performing the SWiFt fitting procedure to the dijet mass spectrum, ignoring the exclusion region in all fits and fit quality measures.
 \item Identify an updated excess, by performing the \bh{} algorithm to the dijet mass spectrum using the updated background estimate created in Step 3.
@@ -1508,7 +1510,8 @@ for example `xs*2' means that a normalisation factor of 2 is used.
 
 \noindent
 In the following section two studies with the signal injected spectra are shown:
-\begin{enumerate}
+\vspace{-0.5em}
+\begin{enumerate}[leftmargin=*]
   \item\textbf{Sensitivity Studies}\\
   Studies are performed to show that the SWiFt search phase is sensitive to signal,
   and to determine which choices of window half-width and fit function are most sensitive.
@@ -1518,45 +1521,20 @@ In the following section two studies with the signal injected spectra are shown:
   as in these cases the region exclusion procedure would be applied.
   For comparing the sensitivity of two SWiFt configurations a comparison of the
   observed \bh{} \mbox{$p$-value}s is used, where a lower \mbox{$p$-value} indicates a better sensitivity.\vspace{1em}
-  
-  \item\textbf{Robustness of Window Selection Procedure}\\
+\item\textbf{Robustness of Window Selection Procedure}\\
     Studies are performed to show that, if signal is present, the window selection procedure is able to select a window and
     the SWiFt search phase can create an adequate description of the background.
     In these studies, the region exclusion and window selection procedure described above is applied
     to SWiFt search phases that find a \bh{} \mbox{$p$-value} $<$ 0.01 in the sensitivity studies.
 \end{enumerate}
-
 %\noindent
 %Again, the low mass and high mass sections of the analysis are described separately for clarity.
 
 %\subsubsection{Low Mass}
 %\label{sec:bkg-full_lowmass_signalInj}
-
-
-As an example let's first consider the $Z'$ boson with mass of 800 GeV.
-The SWiFt search phase is performed on a data-like dijet mass spectrum
-with an injected  $Z'$ boson with mass of 800 GeV and the nominal cross section.
-Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
-shows the results of the SWiFt search phase
-using the 5 parameter dijet fit function and a range of window half-widths of 16 to 10.
-For all window widths, the \bh{} algorithm has correctly identified the signal region location
-and, in the case of the window half-width of 14 and 16, has assigned a significant \mbox{\mbox{$p$-value}} ($<$ 0.01).
-
-\begin{figure}[!htb]
+\begin{figure}[!b]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
-%\subcaptionbox{4 parameter function,\\ $wHW$ = 16} {
-%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
-%}
-%\subcaptionbox{4 parameter function,\\ $wHW$ = 14} {
-%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low14_high14_inj_Zprimebb800_xsFactor1.pdf}
-%}\\
-%\subcaptionbox{4 parameter function,\\ $wHW$ = 12} {
-%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low12_high12_inj_Zprimebb800_xsFactor1.pdf}
-%}
-%\subcaptionbox{4 parameter function,\\ $wHW$ = 10} {
-%  \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_4para_low10_high10_inj_Zprimebb800_xsFactor1.pdf}
-%}
 \subcaptionbox{5 parameter function,\\ $wHW$ = 16} {
   \includegraphics[width=0.45\linewidth, angle=0]{figs/Dibjet/LowMass/FitStudy_min566/bhFit_corrFitCR_dataLike_5para_low16_high16_inj_Zprimebb800_xsFactor1.pdf}
 }
@@ -1580,6 +1558,16 @@ and, in the case of the window half-width of 14 and 16, has assigned a significa
 \vspace{-0.7em}
 \end{figure}
 
+As an example let's first consider the $Z'$ boson with mass of 800 GeV.
+The SWiFt search phase is performed on a data-like dijet mass spectrum
+with an injected  $Z'$ boson with mass of 800 GeV and the nominal cross section.
+Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}
+shows the results of the SWiFt search phase
+using the 5 parameter dijet fit function and a range of window half-widths of 16 to 10.
+For all window widths, the \bh{} algorithm has correctly identified the signal region location
+and, in the case of the window half-width of 14 and 16, has assigned a significant \mbox{\mbox{$p$-value}} ($<$ 0.01).
+
+
 Therefore, in the case of the window half-width of 14 and 16 the region exclusion procedure is applied.
 The region excluded is 705-834~GeV, derived by adding one bin on the low mass side of the excess region identified by the \bh{} algorithm (730-834~GeV).
 Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1_removedWindow} shows the SWiFt search phase
@@ -1587,14 +1575,7 @@ performed on the same spectrum when a region exclusion of 705-834 GeV is applied
 The new excess found lies within the exclusion region which indicates that any signal induced fit bias has been removed
 and therefore the exclusion region does not need to be widened.
 
-Figure~\ref{fig:windowSel_Zprimebb800_xsFactor1} shows the fit quality measures used in the window selection procedure after the region exclusion of 705-834 GeV is applied,
-for a window half-width of 14 and 16 for the 5 parameter dijet fit function.
-Only two window half-widths are considered as these are the only windows that had a significant enough $p$-value to trigger the region exclusion procedure in
-Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}.
-The window selection procedure would chose the SWiFt background estimate with the 5 parameter dijet fit function and a window half-width of 14.
-
-
-\begin{figure}[!tb]
+\begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
 \subcaptionbox{Exclusion Region 705-807 GeV,\\ $wHW$ = 16} {
@@ -1614,6 +1595,19 @@ The window selection procedure would chose the SWiFt background estimate with th
       The SWiFt search phase is run for the 5 parameter dijet fit function for a window half-width ($wHW$) of (a) 16 and (b) 14
       with an exclusion region of 705-834~GeV.}
 \end{figure}
+
+
+Figure~\ref{fig:windowSel_Zprimebb800_xsFactor1} shows the fit quality measures used in the window selection procedure after the region exclusion of 705-834 GeV is applied,
+for a window half-width of 14 and 16 for the 5 parameter dijet fit function.
+Only two window half-widths are considered as these are the only windows that had a significant enough $p$-value to trigger the region exclusion procedure in
+Figure~\ref{fig:bhFit_lm_corrFitCR_dataLike_inj_Zprimebb800_xsFactor1}.
+The window selection procedure would chose the SWiFt background estimate with the 5 parameter dijet fit function and a window half-width of 14.
+
+Hence, it can be concluded that the SWiFt search phase and region exclusion procedure can identify
+a $Z'$ boson with a mass of 800 GeV at the nominal cross-section.
+The \bh{} $p$-value assigned after region exclusion is applied is $<$ 0.001 using 10,000 pseudo-experiments;
+this shows that the excess has a significance greater than 3~$\sigma$.
+
 \begin{figure}[!htb]
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
 \centering
@@ -1638,13 +1632,7 @@ The window selection procedure would chose the SWiFt background estimate with th
 }
 \end{figure}
 
-Hence, it can be concluded that the SWiFt search phase and region exclusion procedure can identify
-a $Z'$ boson with a mass of 800 GeV at the nominal cross-section.
-The \bh{} $p$-value assigned after region exclusion is applied is $<$ 0.001 using 10,000 pseudo-experiments;
-this shows that the excess has a significance greater than 3~$\sigma$.
-
 \FloatBarrier
-
 Similar tests are performed for a data-like dijet mass spectrum
 with a SSM $Z'$ boson injected at masses of 600, 800 and 1000 GeV.
 The SWiFt configurations considered use the 4 and 5 parameter dijet fit function and window half-widths ranging from 10 to 16.
@@ -1656,8 +1644,36 @@ A dash indicates that the largest excess found by the \bh{} algorithm is not con
 Bold text indicates that the SWiFt configuration has a \bh{} $p$-value $<$ 0.01
 and is selected by the window selection procedure after the region exclusion procedure has been applied.
 
+\noindent
+There are four important conclusions that are taken from Table~\ref{tab:bumpH_lm_sigInj}.
 
-\begin{table}[!ht]
+Firstly, all SWiFt configurations are able to obtain a \bh{} $p$-value $<$ 0.01 if the cross-section is high enough.
+At 800 GeV the cross-section required is that of the nominal Monte-Carlo simulation, whilst for the 600 and 1000 GeV points
+the cross-section needs to be increased to 3 and 2 times respectively.
+For the $Z'$ boson at 600 GeV, a large cross-section is required indicating that
+there is a signal induced fit bias in this case;
+this is due to the fact that the generated mass is close to the low mass edge of the 
+dijet mass spectrum, meaning there is no side-band to constrain the background estimate at a dijet mass of 600 GeV.
+
+Secondly, for all signals considered that trigger the region exclusion procedure a window width can be selected;
+this shows that the region exclusion and window selection procedure is robust in the case that signal is present.
+
+Thirdly, SWiFt configurations that use large window half-widths are more sensitive;
+which can be seen by comparing \bh{} $p$-values for identical injected signals across SWiFt configurations in Table~\ref{tab:bumpH_lm_sigInj}.
+Take for example the case when the simulated mass is 800~\GeV{},
+the signal normalisation is 1 and the 5 parameter dijet fit function is used;
+we see that the $p$-value observed for the widest window considered ($wHW = 16$)
+is notably lower than the narrowest window considered ($wHW = 10$),
+indicating that the wider window is more sensitive to signal.
+This case is particularly notable as only for the two widest widths considered
+($wHW =$ 16 or 14) is the $p$-value
+below the threshold to trigger the window exclusion procedure.
+Furthermore, in all but one of the rows shown in Table~\ref{tab:bumpH_lm_sigInj}
+the widest window considered has a $p$-value $<$ 0.01 which would trigger the exclusion region procedure
+or has a $p$-value lower than or equal to the $p$-value of the narrowest window considered;
+this shows that overall the best sensitivity to signal is found by using a large window-half-width. 
+
+\begin{table}[!hb]
 \centering
 \begin{tabular}{|c|c|c||c|c|c|c|}
 \hline
@@ -1694,42 +1710,15 @@ and is selected by the window selection procedure after the region exclusion pro
       and is selected by the window selection procedure after the region exclusion procedure has been applied. }
 \end{table}
 
-
-There are four important conclusions that are taken from Table~\ref{tab:bumpH_lm_sigInj}.
-
-Firstly, all SWiFt configurations are able to obtain a \bh{} $p$-value $<$ 0.01 if the cross-section is high enough.
-At 800 GeV the cross-section required is that of the nominal Monte-Carlo simulation, whilst for the 600 and 1000 GeV points
-the cross-section needs to be increased to 3 and 2 times respectively.
-For the $Z'$ boson at 600 GeV, a large cross-section is required indicating that
-there is a signal induced fit bias in this case;
-this is due to the fact that the generated mass is close to the low mass edge of the 
-dijet mass spectrum, meaning there is no side-band to constrain the background estimate at a dijet mass of 600 GeV.
-
-Secondly, for all signals considered that trigger the region exclusion procedure a window width can be selected;
-this shows that the region exclusion and window selection procedure is robust in the case that signal is present.
-
-Thirdly, SWiFt configurations that use large window half-widths are more sensitive;
-which can be seen by comparing \bh{} $p$-values for identical injected signals across SWiFt configurations in Table~\ref{tab:bumpH_lm_sigInj}.
-Take for example the case when the simulated mass is 800~\GeV{},
-the signal normalisation is 1 and the 5 paramater dijet fit function is used;
-we see that the $p$-value observed for the widest window considered ($wHW = 16$)
-is notably lower than the narrowest window considered ($wHW = 10$),
-indicating that the wider window is more sensitive to signal.
-This case is particularly notable as only for the two widest widths considered
-($wHW =$ 16 or 14) is the $p$-value
-below the threshold to trigger the window exclusion procedure.
-Furthermore, in all but one of the rows shown in Table~\ref{tab:bumpH_lm_sigInj}
-the widest window considered has a $p$-value < 0.01 which would trigger the exclusion region procedure
-or has a $p$-value lower than or equal to the $p$-value of the narrowest window considered;
-showing that it is generally true that the best sensitivity to signal is found by using a large window-half-width. 
-
+\newpage
 The fourth conclusion is that the SWiFt search phase
 with a 4 parameter dijet function and window half-width of 10 provides better sensitivity
 than the SWiFt search phase with a 5 parameter dijet fit function and a window half-width of 16.
-This can be concluded from Table~\ref{tab:bumpH_lm_sigInj} by noting that for all signals considered
+This can be concluded from Table~\ref{tab:bumpH_lm_sigInj} by noting that,
+for all signals considered,
 the 5 parameter dijet fit function and window half-width of 16
-has a $p$-value that can trigger the exclusion region procedure (< 0.01)
-or has a $p$-value lower than or equal to the $p$-value of the narrowest window considered. 
+has a $p$-value that can trigger the exclusion region procedure (\mbox{$<$ 0.01})
+or has a $p$-value lower than or equal to the $p$-value when using the 4 parameter dijet fit function and window half-width of 10. 
 The final two conclusions are important factors in the development of the window selection procedure, described in Section~\ref{sec:bkg-full_windowSel}.
 
 It should also be noted that all \bh{} $p$-values shown in Table~\ref{tab:bumpH_lm_sigInj} are before region exclusion is applied.
