@@ -12,7 +12,7 @@ Therefore, the ATLAS experiment uses a trigger system to select events that
 contain a high-$p_{T}$ physics object which indicates that a hard-scatter collision has occurred.
 
 The ATLAS trigger-system used in
-Run-2~\footnote{\ The period of data-taking starting in 2015 and scheduled to continue until the end 2018 is known as Run-2.}
+Run-2~\footnote{\ The period of data-taking starting in 2015 and scheduled to continue until the end of 2018 is known as Run-2.}
 consists of two levels;
 the first level trigger (L1) and the higher level trigger (HLT)~\cite{trig-run2_trigger,trig-run2_proc,trig-run2_triggerPerf}.
 %Figure~\ref{fig:trig-trigger_schem} shows a schematic outlining the trigger system used in Run-2
@@ -28,11 +28,11 @@ If the L1 trigger is passed the event is processed by the HLT,
 a software based trigger,
 which further reduces the event rate to 1~kHz within a time window of ~\SI{0.2}{\second}.
 The HLT uses the information from the full detector
-to perform a more complete reconstruction of the physics objects within the event,
+to perform a more complete reconstruction of the physics objects within the event;
 the most time consuming reconstruction algorithms are only run within the RoIs taken from L1.
 The more complex event analysis within the software-based trigger includes
 track reconstruction and therefore allows for \mbox{$b$-jet} \mbox{identification}.
-If the content of the event reconstruction passes a pre-set criteria, a HLT accept is issued
+If the content of the event reconstruction passes pre-set criteria, a HLT accept is issued
 meaning that the events are passed on for processing and storage. 
 % in offline computer farms (known as tier-0).
 
@@ -93,7 +93,7 @@ The HLT jet trigger is able to use more complex algorithms to reconstruct jets d
 Similar to offline jet reconstruction, in the HLT jets are reconstructed using 
 hadronic topoclusters formed from EM or hadronic calorimeter cells and the anti-$k_T$ jet-reconstruction algorithm with $R$=0.4
 (see Section~\ref{sec:obj-jets}).
-The HLT jet trigger is passed if the reconstructed jets meet a pre-set criteria that depends on the number and $p_T$ of the jets.
+The HLT jet trigger is passed if the reconstructed jets meet pre-set criteria that depend on the number and $p_T$ of the jets.
 The $b$-jet triggers described in the following section also use the L1 and HLT jet trigger procedures to reconstruct jets.
 
 
@@ -112,8 +112,6 @@ In the mass region $m < 1.1$~TeV a kinematic bias from the online jet $p_T$ thre
 such that the backgrounds from the Standard Model cannot be modelled. 
 Therefore, for a di-$b$-jet search to probe lower masses a different trigger strategy is required.
 
-\vfill
-
 \section{$b$-Jet Triggers}
 \label{sec:trig-bjet}
 
@@ -127,7 +125,7 @@ Hence, using a $b$-jet trigger in di-$b$-jet searches means that a lower mass ra
 %for example searches for exotic particles decaying to 4 $b$-jets via a pair of Higgs bosons~\cite{trig-H4b}.
 
 Due to the complexity of the algorithms used in $b$-tagging,
-the $b$-jet trigger is only avaliable in the HLT.
+the $b$-jet trigger is only available in the HLT.
 The $b$-jet trigger utilises the regions of interest (RoI) defined by the jets reconstructed in the L1 jet trigger.
 The $b$-jet trigger procedure for 2016 data-taking contains three steps~\cite{trig-bTrig_desc}.
 Firstly, a fast-tracking algorithm is run in the RoIs and
@@ -140,10 +138,10 @@ Finally, the precision tracks are used by the MV2c20 $b$-tagging algorithm, desc
 Figure~\ref{fig:trig-bTrig_perf} shows the $b$-jet efficiency against light-jet and $c$-jet rejection
 %\footnote{\ $b$-jet efficiency and light/$c$-jet rejection are defined in Section~\ref{sec:obj-bjets_MV2}.}
 for online $b$-tagging in a variety of $b$-jet trigger configurations in simulated $t\bar{t}$ events.
-The black line represents the MV2c20 algorithm used in 2016 data-taking as described in Section~\ref{sec:obj-bjets_MV2}~\footnote{\ In
+The black line represents the MV2c20 algorithm used in 2016 data as described in Section~\ref{sec:obj-bjets_MV2}~\footnote{\ In
   Figure~\ref{fig:trig-bTrig_perf} the MV2c20 algorithm is referred to as an `offline algorithm' as it was initially developed by the offline $b$-tagging group.}.
 The blue line represents the IP3D+SV1 algorithm that combines two of the base $b$-tagging algorithms described in Section~\ref{sec:obj-bjets_base};
-IP3D+SV1 was used by the $b$-jet trigger in 2015 data-taking.
+IP3D+SV1 was used by the $b$-jet trigger in 2015 data.
 
 \begin{figure}[!ht]
   \begin{center}
@@ -188,7 +186,7 @@ had to be determined before the start of data-taking in March 2016,
 whilst the recommendation to use MV2c10 was announced internally in May 2016~\cite{obj-bjets_algo_2016}.
 As offline and online $b$-tagging are significantly different, online $b$-tagging must have an independent calibration, which is described in the following section.
 
-
+\vspace{-1em}
 \section{ Measurement of the $b$-Jet Trigger Efficiency in 2016 Data}
 \label{sec:trig-bjet_eff}
 
@@ -252,7 +250,7 @@ and thus provide an unbiased source of online $b$-tagged jets to measure the $b$
 To be specific, events are required to:
 \vspace{-1em}
 \begin{itemize}
-\item Pass one of two single lepton $b$-performance triggers~\footnote{Known as \textit{HLT\_mu26\_imedium\_2j35\_boffperf\_split} and \textit{HLT\_e26\_tight\_iloose\_2j35\_boffperf\_split}.}
+\item Pass one of two single lepton $b$-performance triggers~\footnote{\ Known as \textit{HLT\_mu26\_imedium\_2j35\_boffperf\_split} and \textit{HLT\_e26\_tight\_iloose\_2j35\_boffperf\_split}.}
   that require
     \begin{itemize}[label={$-$}]
     \item An online reconstructed medium muon with $\pT >$ 26 GeV.
@@ -313,12 +311,12 @@ Section~\ref{sec:trig-inv} will describe the observations that lead the a requir
 and Section~\ref{sec:trig-grl} describes the details of the $b$-jet trigger aware GRL.
 After the application of the $b$-jet trigger aware GRL the data-set corresponds to an integrated luminosity of 24.3~\ifb.
 
-Events that pass an $e\mu$ di-lepton $t\bar{t}$ selection with 2 $b$-tags
+Events that pass the event selection 
 are dominated by $t\bar{t}$ production with a small contribution from single-top production~\cite{trig-ttbar};
 the remaining backgrounds are negligible and are not considered in this efficiency measurement.
-For the simulated sample; a Monte-Carlo simulated $t\bar{t}$ sample is produced using the
+For the simulated sample, a Monte-Carlo simulated $t\bar{t}$ sample is produced using the
 Powheg-Box v2~\cite{trig-powheg} generator with the CT10 PDF sets~\cite{trig-CT10} in the matrix element calculations.
-For the simulated single-top sample electro-weak t-channel, s-channel and $Wt$-channel single top-quark events are generated using the Powheg-Box v1 generator and CT10 PDF sets.
+For the simulated single-top sample electro-weak $t$-channel, $s$-channel and $Wt$-channel single top-quark events are generated using the Powheg-Box v1 generator and CT10 PDF sets.
 %This generator uses the 4-flavour scheme for the NLO matrix elements calculations together with the fixed four-flavour PDF
 %For all top processes, top-quark spin correlations are preserved (for t-channel, top quarks are decayed using MadSpin[10a]).
 For both processes the parton shower, fragmentation and the underlying event are simulated using the {\sc Pythia6}~\cite{trig-pythia6} generator with the CTEQ6L1~\cite{trig-CTEQ6L1} PDF sets
@@ -351,8 +349,8 @@ The reason for relaxing this requirement is described later in this section.
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetPt.pdf} }
-    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetEta.pdf}}
+    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetPt.pdf} }
+    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetEta.pdf}}
   \end{center}
   \vspace{-1em}
   \caption[The $b$-jet trigger efficiency in data and simulation
@@ -363,7 +361,6 @@ The reason for relaxing this requirement is described later in this section.
   \label{fig:trig-Full_noGRL_eff_noHLTMatch}
 \end{figure}
 
-
 In Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch} the efficiency in data is substantially lower
 than the efficiency expected from  simulation and has a different distribution with respect to jet-$\eta$.
 The substantial differences need to be investigated and understood. 
@@ -373,7 +370,6 @@ equivalent online jet with $\pT{} > 35$~GeV required to be considered by the $b$
 
 %\subsection{Investigation}
 %\label{sec:trig-inv}
-\newpage
 
 A number of cross-checks were performed to investigate the discrepancy between data and simulation shown in Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch}:
 including checking for a dependence of the $b$-jet trigger efficiency on the ATLAS detector conditions and the number of pile-up collisions.
@@ -399,7 +395,6 @@ The $b$-jet trigger efficiency is investigated in each epoch independently.
 
 
 \begin{table}[!htb]
-   \vspace{-0.5em}
   \begin{center}
   \begin{tabular}{ | c || c | c | c |}
     \hline			
@@ -417,7 +412,6 @@ The $b$-jet trigger efficiency is investigated in each epoch independently.
   \end{tabular}
   \end{center}
   %\vspace{pt}
-  \vspace{-0.5em}
   \caption[A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
     effect of not finding a \textit{xPrmVtx} primary vertex. ]
           {A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
@@ -438,8 +432,9 @@ but as $|z_{\,\text{bs}}^{\text{\,online}}|$ increases efficiency falls off stee
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_jetPt.pdf} }
-    \subcaptionbox{ $z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_bs_online_vz.pdf} }
+    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_jetPt.pdf} }
+    \hspace{-0.5cm}
+    \subcaptionbox{ $z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_bs_online_vz.pdf} }
   \end{center}
   \vspace{-1em}
   \caption[The $b$-jet trigger efficiency 
@@ -475,8 +470,9 @@ This is the cause of the data/simulation differences observed in Epoch~1, as sho
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{$\epsilon_{b\text{Trig}}$ against Vertex Class}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_vtxClass.pdf}}
-    \subcaptionbox{Freq. of Offline Jets against Vertex Class}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_nOff_vtxClass.pdf}}
+    \subcaptionbox{$\epsilon_{b\text{Trig}}$ against Vertex Class}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_vtxClass.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{Freq. of Offline Jets against Vertex Class}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_nOff_vtxClass.pdf}}
   \end{center}
     \vspace{-1em}
   \caption[The $b$-jet trigger efficiency and the number of offline jets against vertex class for data from Epoch~1 and simulation.
@@ -487,12 +483,13 @@ This is the cause of the data/simulation differences observed in Epoch~1, as sho
     Vertex class is defined as 0 when a \textit{xPrmVtx} vertex is found and 1 if not.
     The $b$-jet trigger aware GRL is not applied.}
     \label{fig:Epoch1_vtxClass}
-%\end{figure}
-%\begin{figure}[!ht]
+\end{figure}
+\begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT{},\\ \textit{xPrmVtx} vertex found}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_PVFound_jetPt.pdf}}
-    \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$,\\ \textit{xPrmVtx} vertex found}{\includegraphics[width=0.45\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_PVFound_bs_online_vz.pdf}}
+    \subcaptionbox{Jet-\pT{},\\ \textit{xPrmVtx} vertex found}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_PVFound_jetPt.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$,\\ \textit{xPrmVtx} vertex found}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_noGRL_eff_PVFound_bs_online_vz.pdf}}
   \end{center}
   \vspace{-1em}
   \caption[The $b$-jet trigger efficiency for data from Epoch~1 and simulation against jet-\pT{} and online beamspot $z$-position when a \textit{xPrmVtx} vertex has been found.
@@ -507,8 +504,8 @@ This is the cause of the data/simulation differences observed in Epoch~1, as sho
 
 %\begin{figure}[!ht]
 %\begin{center}
-%  \includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch1_bPerfEff_leadingJet_jetPt.pdf}
-%  \includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch1_bPerfEff_leadingJet_bs_online_vz.pdf}
+%  \includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_bPerfEff_leadingJet_jetPt.pdf}
+%  \includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_bPerfEff_leadingJet_bs_online_vz.pdf}
 %\end{center}
 %\caption{online primary vertex efficiency, $\epsilon_{\text{PV}}$, for data from Period A (black) and simulation (red) against jet-pT~(left) and online beamspot $z$-position (right).}
 %\label{fig:Epoch1_bperf}
@@ -527,10 +524,11 @@ This is the reason it was necessary to relax the offline--online jet matching to
 \begin{figure}[!htb]
 \begin{center}
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_jetPt.pdf}}     
-  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_bs_online_vz.pdf}}
-  %\subcaptionbox{??}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_jetEta.pdf}} \\
-  %\subcaptionbox{??}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_vtxClass.pdf}}
+  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_jetPt.pdf}}     
+  \hspace{-0.5cm}
+  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_bs_online_vz.pdf}}
+  %\subcaptionbox{??}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_jetEta.pdf}} \\
+  %\subcaptionbox{??}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_eff_vtxClass.pdf}}
 \end{center}
 \vspace{-1em}
 \caption[
@@ -563,9 +561,10 @@ this shows that the inefficiency in finding a \verb|xPrmVtx| PV causes a kinemat
 \begin{figure}[!ht]
 \begin{center}
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_jetPt.pdf}}
-  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_bs_online_vz.pdf}}\\
-  \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_jetEta.pdf}}
+  \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_jetPt.pdf}}
+  \hspace{-0.5cm}
+  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_bs_online_vz.pdf}}\\
+  \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_noGRL_bPerfEff_leadingJet_jetEta.pdf}}
 \end{center}
 \vspace{-1em}
 \caption[The online primary vertex efficiency for data from Epoch~2 and simulation against leading-jet \pT{}, online beamspot $z$-position
@@ -597,10 +596,12 @@ This demonstrates that the use of a backup finding algorithm alleviates the $b$-
 \begin{figure}[!htb]
 \begin{center}
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetPt.pdf}}
-  \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetEta.pdf}} \\
-  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_bs_online_vz.pdf}}
-  \subcaptionbox{Vertex Class}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_vtxClass.pdf}}
+  \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetPt.pdf}}
+    \hspace{-0.5cm}
+  \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_jetEta.pdf}} \\
+  \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_bs_online_vz.pdf}}
+    \hspace{-0.5cm}
+  \subcaptionbox{Vertex Class}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch3_GRL_bslt2mm_eff_vtxClass.pdf}}
 \end{center}
 \vspace{-1em}
 %\caption{The 60\% operating point $b$-jet trigger efficiency with respect to the offline 70\% operating point
@@ -648,8 +649,9 @@ Figure~\ref{fig:Epoch2_bslt2mm_bperf} shows that the \mbox{$b$-performance} trig
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch1_GRL_bslt2mm_eff_jetPt.pdf} }
-    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch1_GRL_bslt2mm_eff_jetEta.pdf}}
+    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_GRL_bslt2mm_eff_jetPt.pdf} }
+    \hspace{-0.5cm}
+    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch1_GRL_bslt2mm_eff_jetEta.pdf}}
   \end{center}
 \vspace{-1em}
   \caption[
@@ -664,8 +666,9 @@ Figure~\ref{fig:Epoch2_bslt2mm_bperf} shows that the \mbox{$b$-performance} trig
 %\begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_GRL_bslt2mm_bPerfEff_leadingJet_jetPt.pdf} }
-    \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Epoch2_GRL_bslt2mm_bPerfEff_leadingJet_jetEta.pdf}}
+    \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_GRL_bslt2mm_bPerfEff_leadingJet_jetPt.pdf} }
+    \hspace{-0.5cm}
+    \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Epoch2_GRL_bslt2mm_bPerfEff_leadingJet_jetEta.pdf}}
   \end{center}
 \vspace{-1em}
   \caption[
@@ -689,10 +692,12 @@ a correction for this effect is derived in Section~\ref{sec:trig-eventLevelEff}.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_jetPt.pdf}}
-    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_jetEta.pdf}}\\
-    \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_bs_online_vz.pdf}}
-    \subcaptionbox{Vertex Class}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_vtxClass.pdf}}
+    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_jetPt.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_jetEta.pdf}}\\
+    \subcaptionbox{$z_{\,\text{bs}}^{\text{\,online}}$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_bs_online_vz.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{Vertex Class}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_eff_vtxClass.pdf}}
   \end{center}
 \vspace{-1em}
 \caption[
@@ -710,8 +715,9 @@ a correction for this effect is derived in Section~\ref{sec:trig-eventLevelEff}.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_bPerfEff_leadingJet_jetPt.pdf}}
-    \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_bPerfEff_leadingJet_jetEta.pdf}}
+    \subcaptionbox{Leading jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_bPerfEff_leadingJet_jetPt.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{Leading jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_bPerfEff_leadingJet_jetEta.pdf}}
   \end{center}
 \vspace{-1em}
 \caption[
@@ -785,8 +791,9 @@ The bin-by-bin maximum fractional difference in efficiency due to systematic var
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{$b$-jet purity}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/purityMC_variations.pdf}}
-    \subcaptionbox{$b$-jet trigger efficiency}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/effMC_uncert_purity.pdf}}
+    \subcaptionbox{$b$-jet purity}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/purityMC_variations.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{$b$-jet trigger efficiency}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/effMC_uncert_purity.pdf}}
   \end{center}
 \vspace{-1em}
   \caption[The $b$-jet purity and $b$-jet trigger efficiency when the size of the non-$b$-jet contamination is systematically varied.]
@@ -817,8 +824,9 @@ is taken as a symmetric uncertainty.
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Non-$b$-jets}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/effMC_variations_LTrigEff.pdf}}
-    \subcaptionbox{Inclusive jets}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/effMC_uncert_LTrigEff.pdf}}
+    \subcaptionbox{Non-$b$-jets}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/effMC_variations_LTrigEff.pdf}}
+    \hspace{-0.5cm}
+    \subcaptionbox{Inclusive jets}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/effMC_uncert_LTrigEff.pdf}}
   \end{center}
 \vspace{-1em}
   \caption[The $b$-jet trigger efficiency for  non-$b$-jets and inclusive jets for systematic variations of the non-$b$-jet efficiency.]
@@ -834,8 +842,8 @@ is taken as a symmetric uncertainty.
 %\begin{figure}[!ht]
 %  \begin{center}
 %    \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-%    \subcaptionbox{}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/effMC_jetPt_lowLTrigEff.pdf}}
-%    \subcaptionbox{}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/effMC_jetPt_upLTrigEff.pdf}}
+%    \subcaptionbox{}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/effMC_jetPt_lowLTrigEff.pdf}}
+%    \subcaptionbox{}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/effMC_jetPt_upLTrigEff.pdf}}
 %  \end{center}
 %  \caption{The 60\% operating point $b$-jet trigger efficiency with respect to the offline 70\% operating point
 %    for nominal inclusive case (black) compared to varied inclusive case (red) and just non $b$-jets (blue)
@@ -924,11 +932,13 @@ For jet-\pT{} $>$ 240 GeV, the data and corrected simulation are consistent with
 \begin{figure}[!ht]
 \begin{center}
 \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{Normalisation fit} {\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effFit_jetPt.pdf} }
-  \subcaptionbox{Linear correction fit} {\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effNormFit_jetPt.pdf}} \\
-  \subcaptionbox{Linear correction uncertainties} {\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effCorrShapeErr_jetPt.pdf}}
-  \subcaptionbox{Quadratic fit } {\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effCorrFitQuad_jetPt.pdf}}
-  %\subcaptionbox{Extrapolation closure}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Trigger/fullSys_EfficiencyComp_jetPt.pdf}}
+  \subcaptionbox{Normalisation fit} {\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effFit_jetPt.pdf} }
+    \hspace{-0.5cm}
+  \subcaptionbox{Linear correction fit} {\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effNormFit_jetPt.pdf}} \\
+  \subcaptionbox{Linear correction uncertainties} {\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effCorrShapeErr_jetPt.pdf}}
+    \hspace{-0.5cm}
+  \subcaptionbox{Quadratic fit } {\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/Full_GRL_bslt2mm_effCorrFitQuad_jetPt.pdf}}
+  %\subcaptionbox{Extrapolation closure}{\includegraphics[width=0.49\linewidth, angle=0]{figs/Trigger/fullSys_EfficiencyComp_jetPt.pdf}}
 \end{center}
 \vspace{-0.8em}
 \caption[A figure to demonstrate the stages of the high-\pT~extrapolation procedure for the $b$-jet trigger efficiency measurement.]
@@ -942,10 +952,10 @@ For jet-\pT{} $>$ 240 GeV, the data and corrected simulation are consistent with
           %Panel (e) compares data and corrected simulation with the high-\pT{} extroplation uncertainties (red area) and total uncertainties (green area) shown in the ratio.
         }
         \label{fig:bTrig_mcExtrap}
-%\end{figure}
-%\begin{figure}[!ht]
+\end{figure}
+\begin{figure}[!ht]
 \begin{center}
-    \includegraphics[width=0.57\linewidth, angle=0]{figs/Trigger/fullSys_EfficiencyComp_jetPt.pdf}
+    \includegraphics[width=0.65\linewidth, angle=0]{figs/Trigger/fullSys_EfficiencyComp_jetPt.pdf}
   \end{center}
 \vspace{-1.2em}
 \caption[The $b$-jet trigger efficiency measured in data and the corrected simulation as a function of offline jet-\pT.
@@ -972,11 +982,10 @@ the jet-level data/simulation scale factors are shown in Figure~\ref{fig:bTrig_j
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{$b$-jet trigger efficiency measured in data}{\includegraphics[width=0.5\linewidth, angle=0]{figs/Trigger/fullSyst_Efficiency_jetPt.pdf}} \hspace{-5mm}
-    \subcaptionbox{Data/simulation scale factor}{\includegraphics[width=0.5\linewidth, angle=0]{figs/Trigger/fullSyst_ScaleFactor_jetPt.pdf}}
-
+    \subcaptionbox{$b$-jet trigger efficiency measured in data \vspace{1em}}{\includegraphics[width=0.7\linewidth, angle=0]{figs/Trigger/fullSyst_Efficiency_jetPt.pdf}}
+   
+    \subcaptionbox{Data/simulation scale factor}{\includegraphics[width=0.7\linewidth, angle=0]{figs/Trigger/fullSyst_ScaleFactor_jetPt.pdf}}
   \end{center}
-\vspace{-1em}
   \caption[
     The $b$-jet trigger efficiency measured in data and the associated data/simulation scale factors as a function of offline jet-\pT.]
           {\label{fig:bTrig_jetSys}
@@ -984,8 +993,15 @@ the jet-level data/simulation scale factors are shown in Figure~\ref{fig:bTrig_j
     and (b) the associated data/simulation scale factors as a function of offline jet-\pT.
     The central values and statistical uncertainties are shown in black and the green bands represent the total uncertainty.}
 \end{figure}
+
+Table~\ref{tab:bTrig_jetSys} summarises the uncertainties on the jet-level data/simulation scale factor.
+Purity, non-$b$-jet efficiency and simulation statistical uncertainties are considered for the full $\pT$ range.
+The statistical uncertainty of data is considered for jet-$p_T <$ 240 \GeV{}
+whilst the high-\pT{} extrapolation uncertainty is applied for jet-$p_T >$ 240 \GeV.
+The $b$-jet purity and non-$b$-jet efficiency uncertainties dominate for jet-\pT{} $<$ 300 GeV and the high-\pT{} extrapolation uncertainty dominates for jet-$p_T >$ 300 \GeV.
+
+\vspace{1em}
 \begin{table}[!ht]
-  \vspace{-1em}
   \begin{tabular}{|c||c|c||c|c|c|c|}
     \hline
     \multirow{2}{*}{Jet $p_T$ [GeV]} & Scale  & Total       & \multicolumn{4}{c|}{Sources of Uncertainty} \\ \cline{4-7} 
@@ -1012,13 +1028,8 @@ the jet-level data/simulation scale factors are shown in Figure~\ref{fig:bTrig_j
     specifically statistical, high-\pT~extrapolation, $b$-jet purity and non-$b$-jet trigger efficiency.}
 \label{tab:bTrig_jetSys}
 \end{table}
+\vspace{1em}
 
-
-Table~\ref{tab:bTrig_jetSys} summarises the uncertainties on the jet-level data/simulation scale factor.
-Purity, non-$b$-jet efficiency and simulation statistical uncertainties are considered for the full $\pT$ range.
-The statistical uncertainty of data is considered for jet-$p_T <$ 240 \GeV{}
-whilst the high-\pT{} extrapolation uncertainty is applied for jet-$p_T >$ 240 \GeV.
-The $b$-jet purity and non-$b$-jet efficiency uncertainties dominate for jet-\pT{} $<$ 300 GeV and the high-\pT{} extrapolation uncertainty dominates for jet-$p_T >$ 300 \GeV.
 
 %\begin{figure}[!ht]
 %  \begin{center}
@@ -1047,7 +1058,8 @@ jet-level efficiencies and uncertainties are calculated for all combinations of 
 Table~\ref{tab:trig-bTrig_jetSys_opComp} shows a comparison of the jet level uncertainties for the 60\% online operating point with respect to the 70\%, 77\% and 85\% offline operating point.
 For looser offline operating points the uncertainty becomes larger, due to increased non-$b$-jet contamination.
 
-\begin{table}[ht]
+
+\begin{table}[!bht]
   \begin{center}
   \begin{tabular}{|c||c|c|c|}
     \hline
@@ -1082,8 +1094,7 @@ For looser offline operating points the uncertainty becomes larger, due to incre
   \label{tab:trig-bTrig_jetSys_opComp}
   \end{table}
 
-\clearpage
-
+\newpage
 \subsubsection{Event-Level Efficiency and Uncertainties}
 \label{sec:trig-eventLevelEff}
 
@@ -1120,7 +1131,6 @@ The uncertainty is dominated by the shape systematic uncertainty.
 The $b$-jet trigger aware GRL and $b$-jet trigger efficiencies presented in this section
 are used by all analyses at ATLAS utilising the $b$-jet trigger in 2016 data as recommended by the ATLAS $b$-jet trigger group.
 
-
 \begin{figure}[!ht]
   \begin{center}
     \includegraphics[width=0.8\linewidth, angle=0]{figs/Trigger/fullSyst_EventEfficiency_leadingJetEta.pdf}
@@ -1154,8 +1164,6 @@ are used by all analyses at ATLAS utilising the $b$-jet trigger in 2016 data as 
     with total uncertainty and the contributions from the different sources of uncertainty considered.}    
   \end{center}
 \end{table}
-
-\vfill
 
 %\FloatBarrier
 %
