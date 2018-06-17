@@ -162,7 +162,7 @@ The signal systematic uncertainties considered are:
   The JES and JER uncertainties used in this analysis were described in Section~\ref{sec:obj-jets_uncert}.
   The $b$JES uncertainty used is 2.6\% for all jets, which, 
   as described in Section~\ref{sec:obj-bjets_bjes}, corresponds to the $b$JES uncertainty for jets with $p_T >$ 60 GeV,
-  covering jet-$p_T$ considered in this thesis.
+  covering the jet-$p_T$ range considered in this thesis.
   The three jet energy measurement uncertainties cause an uncertainty on the dijet mass of a simulated signal event.\vspace{0.5em}
 
 \item\textbf{$b$-Tagging} \hspace{1mm} (\textit{Signal})\\
@@ -214,21 +214,28 @@ The uncertainties on the background estimation model are:
   To obtain an uncertainty on the choice of fit function an alternate function is considered,
   which is the dijet fit function with one extra degree of freedom than the nominal function.
   The alternate function is then used to fit to the pseudo-experiments described in the previous bullet point.
-  The mean of the difference between the nominal and alternate functions is taken as a one-sided uncertainty.
+  The mean of the difference between the nominal and alternate functions is taken as the uncertainty.
+  This uncertainty is treated as a single-sided uncertainty
+  meaning that the nuisance parameter describing this uncertainty can
+  only vary the background template created by the nominal function towards that of the alternate function;
+  this is based on the assumption that it is unreasonable that the true background
+  would lie outside of the envelope created by the two reliable descriptions of the background~\cite{dijet-mori16_paper}.
 \end{itemize}
 
-\clearpage
 \section{\summer{} Data-Set Limits}
 \label{sec:lim-summer}
 
 Table~\ref{tab:lim-summer_syst} summarises the systematic uncertainties
 on the signal templates used in the \summer{} data-set at
-three different dijet masses.
-Figure~\ref{fig:lim-summer_systBkg} shows the systematic uncertainties on the background estimate
-for both $b$-tagging categories as a function of dijet mass.
+three different dijet masses. Figure~\ref{fig:lim-summer_systBkg} shows the systematic uncertainties on the background estimate
+for both $b$-tagging categories as a function of dijet mass;
+the parameter uncertainty is shown as a dashed area representing that this is a two sided uncertainty
+whilst the function choice uncertainty is shown as a line representing that this is a one sided uncertainty.
 %Reconstructed mass is defined as invariant mass of the two observed jets.
 %$b$-tagging is the dominant systematic uncertainty for the full range of~\mjj.
 
+
+\vspace{-0.5em}
 \begin{table}[!htb]
   \centering
   \begin{tabular}{|c||c|c|c|c|c|c|}
@@ -256,22 +263,23 @@ for both $b$-tagging categories as a function of dijet mass.
           Values taken from~\cite{dibjet-ichep_conf}.}
   \label{tab:lim-summer_syst}
   \end{table}
-
+\vspace{-1.5em}
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_systBkg_bb.pdf}}
-    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_systBkg_b.pdf}}
+    \subcaptionbox{2 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_systBkg_rel_bb.pdf}}
+    \subcaptionbox{$\geq$1 $b$-tag}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-summer_systBkg_rel_b.pdf}}
   \end{center}
   \vspace{-1em}
   \caption[The background systematic uncertainties as a function of dijet mass
     in the \summer{} data-set analysis.]
-          {The fractional background systematic uncertainties for the (a) 2 and (b) $\geq$1 $b$-tag categories
+          {The relative background systematic uncertainties shown as a fraction for the (a) 2 and (b) $\geq$1 $b$-tag categories
             as a function of dijet mass,~\mjj, for the \summer{} data-set analysis.
             The red shaded region shows the function parameter uncertainty and
             the blue line shows the function choice uncertainty.  }
           \label{fig:lim-summer_systBkg}
 \end{figure}
+\vspace{-0.7em}
 
 %Figure~\ref{fig:lim-summer_zprime} and \ref{fig:lim-summer_bstar} show the %% When there was two
 Figure~\ref{fig:lim-summer_benchmark} shows the
@@ -340,19 +348,11 @@ $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$ for the benchmark models desc
 %The signal cross-section is smaller at high mass because of PDF and matrix element effects,
 %similar to those that caused a smaller QCD dijet production at high mass as described in
 % Section~\ref{sec:theo-qcd-dijet_features}. 
-
-In the mass regions where the theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
-is larger than the upper limit, it can be concluded that the model is excluded at the 95\% credibility level.
-Using the \summer{} data-set:
-the \mbox{$b^*$ quark} is excluded in the mass range of 1.4~--~2.3~TeV,
-the SSM $Z'$ boson cannot be excluded,
-and the leptophobic $Z'$ boson is excluded at a mass of 1.5~TeV.
-
-\begin{figure}[!htb]
+\begin{figure}[!b]
   \centering
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{$Z'$ boson,\hspace{1mm} 2 $b$-tag\vspace{12pt}}{\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-zprime.pdf}\vspace{-8pt}}
-  \subcaptionbox{$b^*$ quark,\hspace{1mm} $\geq$1 $b$-tag}{\includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-bstar.pdf}\vspace{-8pt}}
+  \subcaptionbox{$Z'$ boson,\hspace{1mm} 2 $b$-tag\vspace{12pt}}{\includegraphics[width=0.75\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-zprime.pdf}\vspace{-8pt}}
+  \subcaptionbox{$b^*$ quark,\hspace{1mm} $\geq$1 $b$-tag}{\includegraphics[width=0.75\linewidth, angle=0]{figs/Dibjet/ICHEP/lim-bstar.pdf}\vspace{-8pt}}
   \caption
       [95\% credibility level upper limits on the product of cross-section, detector acceptance and tagging efficiency
         for the $Z'$ boson and $b^*$ quark as a function of generated mass
@@ -360,7 +360,7 @@ and the leptophobic $Z'$ boson is excluded at a mass of 1.5~TeV.
       {95\% credibility level upper limits on
         the product of cross-section, detector acceptance and tagging efficiency ($\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$)
         for the (a) $Z'$ boson and (b) $b^*$ quark  as a function of generated mass
-        using the \summer{} data-set in the 2 and $\geq$1 $b$-tag category respectively.
+        using the \summer{} data-set in the 2 and \mbox{$\geq$1} $b$-tag category respectively.
         The observed limit is shown by the solid black line,
         the expected limit is shown by the dotted black line,
         and the associated 1 and 2 $\sigma$ uncertainty bands on the expected limit are shown by the green and yellow bands.
@@ -369,6 +369,14 @@ and the leptophobic $Z'$ boson is excluded at a mass of 1.5~TeV.
       }
   \label{fig:lim-summer_benchmark}
 \end{figure}
+
+In the mass regions where the theoretical prediction of $\sigma\,\text{x}\,\mathit{A}\,\text{x}\,\epsilon$
+is larger than the upper limit, it can be concluded that the model is excluded at the 95\% credibility level.
+Using the \summer{} data-set,
+the \mbox{$b^*$ quark} is excluded in the mass range of 1.4~--~2.3~TeV,
+the SSM $Z'$ boson cannot be excluded,
+and the leptophobic $Z'$ boson is excluded at a mass of 1.5~TeV.
+
 
 \newpage 
 To produce generic Gaussian limits,
@@ -425,9 +433,11 @@ for a generic Gaussian signal ranging from 0.2 to 0.001 pb in the mass range 1.4
 
 \section{\lm{} Data-set Limits}
 \label{sec:lim-full}
+\vspace{-0.5em}
 
 \subsection{Signal Morphing}
 \label{sec:lim-full_morphing}
+\vspace{-0.3em}
 
 The limit setting phase requires dijet mass signal templates as an input.
 For the \lm{} data-set analysis, simulated dijet mass signal templates of the SSM $Z'$ boson are created at generated mass points of
@@ -449,24 +459,23 @@ in the range 600 to 1250 GeV with a separation of 50 GeV.
 Figure~\ref{fig:lim-full_morphing} shows the simulated SSM $Z'$ boson dijet mass signal templates
 compared to the dijet mass signal templates created using the signal morphing technique.
 The lower panel of Figure~\ref{fig:lim-full_morphing} shows the ratio of the simulated signal templates to the morphed signal templates;
-for clarity the ratios for each mass point are truncated such that only one point is shown for each dijet mass bin.
+for clarity the ratios for each generated mass point are truncated such that only one point is shown for each dijet mass bin.
 
 For each generated mass point considered it is shown that,
-in the mass region where the signal is largest,
-the simulated and morphed signal templates are consistent within the
-statistical uncertainties on the simulated dijet mass signal templates.
+in the mass region where the signal peak occurs,
+the simulated and morphed signal templates have reasonable agreement within the
+statistical uncertainties of the simulated dijet mass signal templates.
 For the generated mass point of 600 GeV,
-there is a large disagreement between the morphed and simulated signal templates at dijet masses greater than 650 \GeV,
-however this does not impact the analysis as the fraction of events with a dijet mass greater than 650 \GeV is small for the 600 GeV simulated signal template.
+there is a large disagreement between the morphed and simulated signal templates at dijet masses greater than 650 \GeV{},
+however this does not impact the analysis as the fraction of events with a dijet mass greater than 650 \GeV{} is small.
 
 In the limit setting phase for the \lm{} data-set analysis
 the simulated signal dijet mass spectra are used at generated mass points of 600, 800, 1000 and 1250 GeV and
 morphed signal templates are created at generated mass points of 650, 700, 750, 850, 900, 950, 1050, 1100, 1150 and 1200 GeV.
 
 \begin{figure}[!htb]
-  \vspace{-1.2em}
 \begin{center}
-  \includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing_mine.pdf} 
+  \includegraphics[width=0.9\linewidth, angle=0]{figs/Dibjet/LowMass/lim-morphing_mine.pdf} 
 \end{center}
 \vspace{-2em}
 \caption[Simulated SSM $Z'$ boson dijet mass signal templates and dijet mass signal templates
@@ -475,13 +484,14 @@ morphed signal templates are created at generated mass points of 650, 700, 750, 
           dijet mass signal templates created using the signal morphing technique (black lines)
           at generated mass points of 600, 800, 1000 and 1250 GeV.
           The error bars represent the statistical uncertainties on the simulated dijet mass signal templates.
-          The \lm{} event selection has been applied~\cite{dibjet-full}.
+          The \lm{} event selection has been applied.
           %The upper panel shows the number of events for both the generated and morphed signal templates.
           The lower panel shows the ratio of the generated to the morphed dijet mass signal template; the ratios for each mass point are truncated.
           \label{fig:lim-full_morphing}}
 \end{figure}
 
 \FloatBarrier
+\vspace{2em}
 \subsection{Summary of Systematic Uncertainties}
 \label{sec:lim-full_systs}
 
@@ -523,18 +533,20 @@ signal templates used in the \lm{} data-set at three different dijet masses.
 \newpage
 Figure~\ref{fig:lim-lowmass_syst}(a) shows the total $b$-jet trigger systematic uncertainty as a function of dijet  mass;
 this includes both the jet-level and event-level uncertainties described in Section~\ref{sec:trig-bjet_eff}.
-Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass.
+Figure~\ref{fig:lim-lowmass_syst}(b) shows the systematic uncertainties on the background estimate as a function of dijet  mass;
+the parameter uncertainty is shown as a dashed area representing that this is a two sided uncertainty
+whilst the function choice uncertainty is shown as a line representing that this is a one sided uncertainty.
 
 \begin{figure}[!ht]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
     \subcaptionbox{$b$-Jet Trigger Uncertainty}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/LowMass/lim-bTrigUncert.pdf}}
-    \subcaptionbox{Background Uncertainties}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/LowMass/lim-lowmass_systBkg.pdf}}
+    \subcaptionbox{Background Uncertainties}{\includegraphics[width=0.47\linewidth, angle=0]{figs/Dibjet/LowMass/lim-lowmass_systBkg_rel.pdf}}
   \end{center}
   \vspace{-1em}
   \caption[The $b$-jet trigger and background systematic uncertainties for the \lm{} data-set as a function of dijet mass.]
     {Panel (a) shows the total $b$-jet trigger systematic uncertainty as a fraction for the \lm{} data-set as a function of dijet mass (\mjj).
-    Panel (b) shows the background systematic uncertainties as a fraction for the \lm{} data-set as a function of dijet mass;
+    Panel (b) shows the relative background systematic uncertainties as a fraction for the \lm{} data-set as a function of dijet mass;
     the red shaded region shows the function parameter uncertainty and the blue line shows the function choice uncertainty.}
   \label{fig:lim-lowmass_syst}
 \end{figure}
@@ -715,21 +727,22 @@ Additionally, the DM $Z'$ boson is excluded in the generated mass range
 
 It should be noted that the largest $Z'$ boson mass considered in the limits for the \lm{} data-set is
 1.25~\TeV{} (as shown in Figure~\ref{fig:lim-lowmass_benchmark}),
-whereas largest dijet mass considered in the search phase results
+whereas the largest dijet mass considered in the search phase results
 for the \lm{} data-set is 1.53~\TeV{} (as shown in Section~\ref{sec:bkg-full_results}).
-The largest mass considered in the limits is not higher than 1.25~\TeV{} because the \hm{} data-set
-analysis~\footnote{ The \hm{} data-set analysis is not presented in this thesis.},
+The upper bound of the dijet mass spectrum was chosen to be 1.53~\TeV{} such that
+there would be no gap in the limits set by the low-mass and high-mass di-$b$-jet searches, as discussed in Section~\ref{sec:evt-sel-event}.
+However, the largest mass considered in the limits set by the \lm{} data-set analysis is 1.25~\TeV{}
+because the \hm{} data-set analysis~\footnote{ The \hm{} data-set analysis is not presented in this thesis.},
 to be published together with the \lm{} data-set analysis~\cite{dibjet-full},
 is able to set stricter limits in the mass region 1.25 -- 1.5~\GeV{}
 than can be set using the \lm{} data-set analysis.
-Therefore, there is no gap in the limits set by the \lm{} and \hm{} data-set analyses in the mass region 1 and 1.5~\TeV, as presented in~\cite{dibjet-full},
-the desire for no such gap to exist was an important factor in selecting the dijet mass range considered by the \lm{} data-set, as discussed in Section~\ref{sec:evt-sel-event}.
+Therefore, there is no gap in the limits set by the \lm{} and \hm{} data-set analyses in the mass region \mbox{0.6~--~5~\TeV}, as presented in~\cite{dibjet-full}.
 
 \begin{figure}[!ht]
   \centering
   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.85\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}  
-  \subcaptionbox{DM $Z'$ Boson}                               {\includegraphics[width=0.85\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
+  \subcaptionbox{SSM and Leptophobic $Z'$ Boson\vspace{12pt}} {\includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_SSM_BR.pdf}\vspace{-4pt}}  
+  \subcaptionbox{DM $Z'$ Boson}                               {\includegraphics[width=0.8\linewidth, angle=0]{figs/Dibjet/LowMass/lim-zprime_DM_BR.pdf}}
   \caption
       [95\% credibility level upper limits on the product of cross-section and branching ratio 
         for the SSM, leptophobic and DM $Z'$ boson and as a function of generated mass using the \lm{} data-set.]
@@ -749,7 +762,7 @@ the desire for no such gap to exist was an important factor in selecting the dij
 \clearpage
 
 For the generic Gaussian limit setting phase there is a significant difference with respect to the \summer{} data-set analysis.
-In the \summer{} data-set analysis a signal template with a Gaussian distribution in dijet mass is used,
+In the \summer{} data-set analysis a signal template with a Gaussian distribution in dijet mass is used;
 however, this approach relies on an assumption that the convolution of the signal shape and the detector response can be modelled by a Gaussian distribution.
 Therefore, for the \lm{} data-set analysis a new approach is taken, which was first used in~\cite{dijet-mori17_paper}.
 In the \lm{} data-set analysis a signal template with a Gaussian distribution in the truth mass distribution is used,
@@ -758,9 +771,9 @@ where the truth mass is defined as the invariant mass of the leading and sublead
 The Gaussian limit setting method used in the \lm{} data-set analysis is preferred,
 as in this approach the limits can be interpreted for a range of signal models without
 any assumption of the effect of the response of the detector on the signal shape.
-It should be noted that the \lm{} data-set analysis is published
+It should be noted that the \lm{} data-set analysis is to be published
 together with the \hm{} data-set analysis~\footnote{ The \hm{} data-set analysis is not presented in this thesis.}
-in~\cite{dibjet-full_paper}, and in this publication both analyses use the same generic Gaussian limit setting methodology.
+in~\cite{dibjet-full}, and in this publication both analyses use the same generic Gaussian limit setting methodology.
 
 The centre of the truth mass Gaussian distribution is referred to as the generated mass,
 the generated mass points used are in the range 0.65--1.45~TeV with a spacing of 0.05~TeV.
