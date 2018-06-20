@@ -324,7 +324,7 @@ The \summer{} data-set search phase will be presented as follows:
 Section~\ref{sec:bkg-summer_fitCR} describes the data-sets used for validation studies,
 Section~\ref{sec:bkg-summer_range} presents the selection of the dijet mass range,
 Section~\ref{sec:bkg-summer_wilks} presents the selection of the dijet fit function,
-Sections~\ref{sec:bkg-summer_spusig} and \ref{sec:bkg-summer_sigInj} present validation studies of the search phase using the chosen fit function and dijet mass range
+Sections~\ref{sec:bkg-summer_spusig} and \ref{sec:bkg-summer_sigInj} present validation studies of the search phase using the chosen fit function and dijet mass range,
 and Section~\ref{sec:bkg-summer_results} presents the results of the search phase.
 
 %\subsection{Background Modelling Strategy}
@@ -393,7 +393,7 @@ The first validation study performed is to show that the dijet fit functions are
 To perform this study the search phase is applied to the scaled dijet mass spectra from simulation, as described in the previous section.
 
 For this validation study the dijet mass spectrum uses 
-he statistical uncertainties of the simulated sample,
+the statistical uncertainties of the simulated sample,
 which are given by the square root of the number of effective entries.
 10,000 pseudo-experiments are used to calculate \bh{} and \dhunt{} $p$-values, as will be done in all \summer{} search phase validation studies.
 The initial dijet mass spectra are considered with the lower edge of the dijet mass spectrum at $m_{jj}$ = 1100 GeV,
@@ -536,11 +536,11 @@ The study presented in this section motivates the requirement that $m_{jj}~>$~13
 \label{sec:bkg-summer_wilks}
 
 With the range of the dijet mass spectrum selected using Monte-Carlo, shown in the previous section,
-the dijet fit function is then selected using final dijet mass spectrum from data and the Wilks' $p$-value described in Section~\ref{sec:bkg-wilks}.
+the dijet fit function is then selected using the final dijet mass spectrum from data and the Wilks' $p$-value described in Section~\ref{sec:bkg-wilks}.
 The exact function selection procedure is as follows:
-using the dijet mass spectrum the  Wilks' \mbox{$p$-value} is calculated with
+using the dijet mass spectrum the Wilks' \mbox{$p$-value} is calculated with
 the 3 parameter dijet function as the nominal function and the 4 parameter dijet fit function as the alternate function.
-If the Wilks' \mbox{$p$-value} is less than 0.05, the nominal fit function is rejected and the alternative function becomes the nominal.
+If the Wilks' \mbox{$p$-value} is less than 0.05, the nominal fit function is rejected and the alternate function becomes the nominal.
 The process is iteratively run until a dijet fit function with a Wilks' \mbox{$p$-value} \gt{} 0.05 is selected.
 
 For the \summer{} data-set the choice of the dijet fit function was fixed using a 8.8~\ifb{} subset of data.
@@ -915,7 +915,7 @@ All search phase validation studies for the \lm{} data-set are performed in the 
 However, the fit control region is created in the dijet mass region 500-1533 GeV
 because the fit control region was created before the bias due to non-leading jets, described in Section~\ref{sec:evt-sel_btrigMatch}, was observed.
 As the fit control region is created by applying a smoothed efficiency to each independent dijet mass bin,
-the bias will not affect events with the \mjj{} $>$ 566 GeV.
+the bias will not affect events with \mjj{} $>$ 566 GeV.
 
 The use of the subset of data and the fit control region gives two complementary dijet mass spectra to perform search phase validation studies.
 The subset is representative of the same underlying dijet mass spectrum as the full \lm{} data-set but has lower precision.
@@ -1041,7 +1041,6 @@ as this ensures that there will be an adequate side band on either side of the w
 and reduces the number of parameters that have to be tested.
 For clarity, it should be noted that because the width of the dijet mass bins is not uniform, the windows used are not exactly symmetric with respect to dijet mass;
 this effect can be seen in Figure~\ref{fig:bkg-lm_swiftBins}.
-
 Furthermore, it must be noted that enforcing the requirement that the lower mass bound is $\geq566$~\GeV{}
 means that for the lowest mass windows $n_{\text{Low}} < n_{\text{High}}$;
 again this effect can be clearly seen in Figure~\ref{fig:bkg-lm_swiftBins}.
@@ -1073,6 +1072,7 @@ The chosen window half-width and fit function is referred to as the SWiFt config
 The best sensitivity to signal is achieved by using the largest window width and the dijet fit function with the fewest number of parameters, whilst still obtaining sufficient fit quality.
 Sensitivity studies that demonstrate this statement are shown below in Section~\ref{sec:bkg-full_signalInj}.
 
+\newpage
 \noindent
 To define `sufficient fit quality' the following fit quality criteria is used:
 \begin{itemize}[leftmargin=*]  
