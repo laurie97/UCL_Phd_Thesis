@@ -1,4 +1,5 @@
 ## What should git be ignoring
+.gitignore
 
 # Pesky ~ files
 *~
@@ -16,6 +17,7 @@
 ## Folders I don't want
 Examples/
 Output/
+figs/Aux/
 
 ## More specific
 *.key
