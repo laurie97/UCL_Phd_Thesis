@@ -539,7 +539,7 @@ For all tracks associated to a jet, the impact parameter is calculated in both t
 and longitudinal (parallel to beam-line) direction, which are referred to as $d_{0}$ and $z_{0}$.
 The IP3D algorithm calculates a likelihood of the jet having a specific flavour, 
 based on the distributions of the impact parameters ($d_{0}$, $z_{0}$) and their significances ($d_{0}/\sigma _{d0}$ and  $z_{0}/\sigma_{z0}$). 
-The IP2D algorithm calculates the jet flavour likelihood from just the transverse distributions, ($d_{0}$ and $d_{0}$ significance), which is more robust to pile-up;
+The IP2D algorithm calculates the jet flavour likelihood from just the transverse distributions, ($d_{0}$ and $d_{0}$ significance), which is more robust to pile-up
 because tracks originating from a pile-up primary vertex that occurred at a different position on the $z$-axis are likely to have large $z_{0}$ significance values.
 
 
@@ -626,21 +626,10 @@ and in the 2016 configuration~\cite{obj-bjets_algo_2016} where different fractio
 \end{figure}
 
 There are four standard choices of MV2c10 cut value used in ATLAS analyses,
-these standard choices are known as $b$-tagging operating points.
+these standard choices are known as \mbox{$b$-tagging} operating points.
 Table~\ref{tab:obj-MV2_WPs} shows the MV2c10 cut value of the four operating points
 and the corresponding values of $b$-jet efficiency, $c$-jet rejection, light-jet rejection and $\tau$ rejection
-measured using simulated $t\bar{t}$ events for jets with a $\pT$ greater than 20 GeV.
-
-%Looser operating points have a lower MV2c10 cut value, leading to a higher $b$-jet efficiency at the cost of worse light- and $c$-jet rejections.
-%The inverse is true for tighter operating points.
-
-The $b$-jet efficiencies given in Table~\ref{tab:obj-MV2_WPs} are used to name the corresponding $b$-tagging operating points,
-as such the operating points are known as the 60\%, 70\%, 77\% and 85\% $b$-tagging operating points.
-To be specific, for a jet to be $b$-tagged at the 70\% operating point
-the output of the MV2c10 algorithm performed on that jet must be greater than 0.8244.
-
-%\footnote{\ In this thesis only the fixed-cut operating points shown above will be used,
-%  however, there also exists a set of flat efficiency operating points where the MV2 cut depends on jet-\pT{}.}.
+measured using simulated $t\bar{t}$ events for jets with $\pT$ greater than 20 GeV.
 
 \begin{table}[!htb]
 \vspace{-0.5em}
@@ -657,11 +646,17 @@ the output of the MV2c10 algorithm performed on that jet must be greater than 0.
     \end{tabular}
     \caption[The MV2c10 $b$-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.]
             {The MV2c10 $b$-tagging algorithm operating points; with the corresponding $b$-jet~efficiency, $c$-jet~rejection, light-jet~rejection and $\tau$~rejection.
-             These values have been derived using simulated $t\bar{t}$ events, with jet-\pT{} above 20 GeV.~\cite{obj-bjets_algo_2016}.}
+             These values have been derived using simulated $t\bar{t}$ events for jets with \pT{} above 20 GeV~\cite{obj-bjets_algo_2016}.}
             \label{tab:obj-MV2_WPs}
   \end{center}
   \vspace{-2em}
 \end{table}
+
+The $b$-jet efficiencies given in Table~\ref{tab:obj-MV2_WPs} are used to name the corresponding $b$-tagging operating points,
+as such the operating points are known as the 60\%, 70\%, 77\% and 85\% \mbox{$b$-tagging} operating points.
+To be specific, for a jet to be $b$-tagged at the 70\% operating point
+the output of the MV2c10 algorithm performed on that jet must be greater than 0.8244.
+
 
 $b$-tagging performance is known to decrease at high jet-\pT{}.
 To illustrate this trend, Figure~\ref{fig:obj-bjets_perf_pt} shows the $b$-tagging efficiency for $b$-jets, $c$-jets and light-jets in $t\bar{t}$ simulation as a function of jet-\pT{}

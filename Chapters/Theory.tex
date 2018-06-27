@@ -229,7 +229,7 @@ because the virtual quark/gluon can take an infinite range of energy values with
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.8\linewidth, angle=0]{figs/Theory/qcd_gluon_loop.pdf}
+    \includegraphics[width=0.75\linewidth, angle=0]{figs/Theory/qcd_gluon_loop.pdf}
   \end{center}
   \vspace{-1em}
   \caption[A schematic showing the gluon propagator with additional first order loops.]
@@ -240,10 +240,10 @@ because the virtual quark/gluon can take an infinite range of energy values with
 
 \FloatBarrier
 To avoid these divergences, there is a well accepted mathematical procedure~\cite{obj-bjets_PDG,theo-zee}.
-The first step of the procedure, known as regularisation,
-introduces an arbitrarily large upper limit, $\Lambda$, to the energy that the internal gluon/quark can have.
-Therefore cross-section calculations involving an integral over all phase space will no longer diverge,
-but will depend some unknown and large parameter $\Lambda$.
+The first step of the procedure, known as regularisation, seperates the divergent and non-divergent terms of the cross-section calculation.
+One method of regularisation introduces an arbitrarily large upper limit, $\Lambda$, to the energy that the internal gluon/quark can have
+such that cross-section calculations involving an integral over all phase space no longer contain divergent terms,
+however the cross-section will now depend on some unknown and large parameter $\Lambda$.
 %known as the \textit{`cut-off mass scale'}
 %This step removes the divergences, but has 
 %There is now a finite range of energy values that the internal quark or gluon can take and hence divergences no longer appear in cross-section calculations.
@@ -256,7 +256,7 @@ a new arbitrary energy must be introduced, known as the renormalisation scale, $
 The result is that the cross-section can be calculated using the renormalised parameters of QCD, where each parameter depends on $\mu_R$.
 This is a powerful statement as if, through experimental measurement, we know the parameters of the
 renormalised QCD theory for a specific value of $\mu_R$ then we are able to calculate the parameters of QCD,
-and hence physical observables such as cross-sections, at any value of $mu_R$ without having any knowledge of the value of $\Lambda$.
+and hence physical observables such as cross-sections, at any value of $\mu_R$ without having any knowledge of the value of $\Lambda$.
 
 When applying the renormalised QCD theory to a specific process the renormalisation scale is chosen to be the momentum transfer, $Q$, of the process being considered.
 This is because the cross-section of the process is typically calculated by performing perturbative expansions of the renormalised QCD theory
@@ -822,10 +822,12 @@ The $Z'$ boson can decay to a pair of $b$-quarks, as shown in Figure~\ref{fig:th
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_zprime.png}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Theory/bsm_zprime.png}
   \end{center}
   \caption{The leading-order Feynman diagram of the process $q\bar{q} \to Z' \to b\bar{b}$.}
   \label{fig:theo-bsm_zprime}
+  \vspace{0.5em}
+
 \end{figure}
 
 Three different $Z'$ boson models are considered.
@@ -853,15 +855,19 @@ such that a $Z'$ boson preferentially decaying to $b$-quarks is possible.
 %For example; attempts to merge the electro-weak and strong interactions in a so-called 'Grand Unified Theory'
 %often use higher symmetries, such as $SU(5)$ or $SO(10)$.
 
+\vspace{0.3em}
 \subsubsection{Excited Third-Generation Quark}
 \label{sec:theo-bsm_bstar}
+\vspace{0.3em}
 
 To explain the generational and mass structure of the quark sector, discussed in Section~\ref{sec:theo-bsm_3g},
 quark compositeness models describe quarks not as fundamental particles, but instead constructed of other fundamental particles.
 One consequence of quark compositeness models is the prediction of excited quarks, $q^{*}$, which can be observed as heavy resonances.
 
+\newpage
+
 In particular we consider an excited 3rd generation quark, the $b^{*}$ quark~\cite{theo-bsm_bstar}.
-In the regime that the mass of the $b^{*}$ quark is much larger than the sum of the masses of the top quark and the $W$ boson,
+In the regime that the mass of the $b^{*}$ quark is much larger than the sum of the masses of the \mbox{top-quark} and the $W$ boson,
 as considered by the searches for the $b^{*}$ quark presented in this thesis,
 the dominant decay mode of a $b^{*}$ quark is to $bg$ with a branching ratio of 85\%
 while the remaining decay modes are to $Wt$, $bZ$ and $b\gamma$ with branching ratios of 10\%, 4.5\% and 0.5\% respectively
@@ -870,7 +876,7 @@ A Feynman diagram showing the  dominant production and decay mode of a $b^*$ qua
 
 \begin{figure}[!hbt]
   \begin{center}
-    \includegraphics[width=0.7\linewidth, angle=0]{figs/Theory/bsm_bstar.png}
+    \includegraphics[width=0.8\linewidth, angle=0]{figs/Theory/bsm_bstar.png}
   \end{center}
   \caption{The leading-order Feynman diagram of the process $bg \to b^* \to bg$}
   %\caption{A Feynman diagram showing the dominant production and decay mode of a $b^{*}$ quark.}

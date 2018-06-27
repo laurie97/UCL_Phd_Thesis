@@ -145,8 +145,9 @@ IP3D+SV1 was used by the $b$-jet trigger in 2015 data.
 
 \begin{figure}[!ht]
   \begin{center}
-    \includegraphics[width=0.48\linewidth, angle=0]{figs/Trigger/trig-bTrig_perf_light.eps}
-    \includegraphics[width=0.48\linewidth, angle=0]{figs/Trigger/trig-bTrig_perf_charm.eps}
+   \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
+    \subcaptionbox{$b$-jet efficiency against light-jet rejection.}{\includegraphics[width=0.55\linewidth, angle=0]{figs/Trigger/trig-bTrig_perf_light.eps}}
+    \subcaptionbox{$b$-jet efficiency against $c$-jet rejection.}{\includegraphics[width=0.55\linewidth, angle=0]{figs/Trigger/trig-bTrig_perf_charm.eps}}
   \end{center}
   \vspace{-1em}
   \caption[The expected $b$-jet efficiency of $b$-jet triggers in Run-2 compared to the set-up used in 2012 data-taking.]
@@ -186,7 +187,7 @@ had to be determined before the start of data-taking in March 2016,
 whilst the recommendation to use MV2c10 was announced internally in May 2016~\cite{obj-bjets_algo_2016}.
 As offline and online $b$-tagging are significantly different, online $b$-tagging must have an independent calibration, which is described in the following section.
 
-\vspace{-1em}
+\newpage
 \section{ Measurement of the $b$-Jet Trigger Efficiency in 2016 Data}
 \label{sec:trig-bjet_eff}
 
@@ -228,13 +229,13 @@ Only the 70\% offline and 60\% online operating point combination is presented i
 as this is set of operating points used in the low mass di-$b$-jet search;
 Chapter~\ref{sec:evt} contains full details of the $b$-tagging operating points used in di-$b$-jet searches.
 
-%\newpage
+\newpage
 \subsection{Description of Event Selection and Data-Sets}
 \label{sec:trig-evtSel}
 
 Di-lepton $t\bar{t}$ events containing a muon and an electron are selected to provide a high purity sample of $b$-jets to measure the $b$-jet trigger efficiency.
 As discussed in Section~\ref{sec:theo-ttbar}, 
-$e\mu$ di-lepton $t\bar{t}$ events provide a distinctive signature for selection and a pure sample of $b$-jets required for the efficiency measurement.
+\mbox{$e\mu$ di-lepton} $t\bar{t}$ events provide a distinctive signature for selection and a high purity sample of $b$-jets required for the efficiency measurement.
 Furthermore, the electron and muon provide a signature that can be used to select events at the trigger-level without using a $b$-jet trigger
 such that no bias is introduced from online $b$-tagging.
 
@@ -246,9 +247,17 @@ The $b$-performance triggers then run and record the output of the online $b$-ta
 Therefore, $b$-performance triggers can select  di-lepton $t\bar{t}$ events at the trigger-level
 and thus provide an unbiased source of online $b$-tagged jets to measure the $b$-jet trigger efficiency.
 
+Furthermore, using a $b$-performance trigger allows us to monitor and accurately measure
+the actual online $b$-jet trigger performance in real time.
+This is important as if there is unexpected behaviour at any point in the $b$-jet trigger procedure,
+for instance if there is a hardware outage,
+then we are able firstly to identify that there is an issue
+and later to apply corrections to any affected regions of data.
+
+%\newpage
 \noindent
-To be specific, events are required to:
-\vspace{-1em}
+For an event to be selected they are required to:
+\vspace{-0.5em}
 \begin{itemize}
 \item Pass one of two single lepton $b$-performance triggers~\footnote{\ Known as \textit{HLT\_mu26\_imedium\_2j35\_boffperf\_split} and \textit{HLT\_e26\_tight\_iloose\_2j35\_boffperf\_split}.}
   that require
@@ -266,6 +275,7 @@ To be specific, events are required to:
      \item The offline jet must be matched to an online jet.
     \end{itemize}
 \end{itemize}
+\vspace{-0.5em}
 Details of muon, electron, jet and $b$-tagged jet object definition are in Chapter~\ref{sec:obj}.
 %chapter ~\ref{sec:obj-lepton},~\ref{sec:obj-jets} and \ref{sec:obj-bjets}\textit{(sec:obj-bjet)} respectively.
 
@@ -349,7 +359,7 @@ The reason for relaxing this requirement is described later in this section.
 \begin{figure}[!htb]
   \begin{center}
     \captionsetup[subfigure]{aboveskip=0pt,justification=centering}
-    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetPt.pdf} }
+    \subcaptionbox{Jet-\pT}{\includegraphics[width=0.49\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetPt.pdf} } \hspace{-5mm}
     \subcaptionbox{Jet-$\eta$}{\includegraphics[width=0.49\linewidth, angle=0]{figs/trigger/Full_noGRL_eff_noHLTMatch_jetEta.pdf}}
   \end{center}
   \vspace{-1em}
@@ -370,6 +380,7 @@ equivalent online jet with $\pT{} > 35$~GeV required to be considered by the $b$
 
 %\subsection{Investigation}
 %\label{sec:trig-inv}
+\newpage
 
 A number of cross-checks were performed to investigate the discrepancy between data and simulation shown in Figure~\ref{fig:trig-Full_noGRL_eff_noHLTMatch}:
 including checking for a dependence of the $b$-jet trigger efficiency on the ATLAS detector conditions and the number of pile-up collisions.
@@ -412,9 +423,9 @@ The $b$-jet trigger efficiency is investigated in each epoch independently.
   \end{tabular}
   \end{center}
   %\vspace{pt}
-  \caption[A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
+  \caption[A table summarising the three epochs of data, showing the constituent run numbers, the integrated luminosity after a $b$-jet trigger GRL is applied and the
     effect of not finding a \textit{xPrmVtx} primary vertex. ]
-          {A table summarising the three epochs of data, showing the constituent run numbers and integrated luminosity after a $b$-jet trigger GRL is applied and the
+          {A table summarising the three epochs of data, showing the constituent run numbers, the integrated luminosity after a $b$-jet trigger GRL is applied and the
             effect of not finding a \textit{xPrmVtx} primary vertex (PV).}
   \label{tab:trig-epochs}
   \vspace{-0.5em}
