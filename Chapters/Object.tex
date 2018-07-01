@@ -150,12 +150,12 @@ and a set of energy deposits that would not form a topocluster, as no seed cell 
 
 \begin{figure}[!htb]
   \begin{center}
-    \includegraphics[width=0.44\linewidth, angle=0]{figs/Objects/topo_schem.png}
+    \includegraphics[width=0.5\linewidth, angle=0]{figs/Objects/topo_schem.png}
   \end{center}
   \caption[A schematic illustrating the algorithm used to form a topocluster.]
           {A schematic illustrating the algorithm used to form a topocluster. The numbers on the grid represent $|S_{\text{cell}}|$ and the colours represent the cell label~\cite{det-magnet_fig}.}
   \label{fig:obj-topo_schem}
-\vspace{-0.5em}
+\vspace{-0.2em}
 \end{figure}
 
 The topoclusters are treated as massless objects \footnote{\ As no particle identification is possible in the hadronic calorimeter an assumption of the mass is required.}
@@ -219,6 +219,7 @@ In contrast, if $d_{ij} > d_{iB}$ then it is unlikely that the two clusters are 
 %$d_{ij}$ and $d_{iB}$ are not physical distances, but are instead dimensional measures of how likely it is that
 %clusters $i$ and $j$ represent clusters caused by hadrons from the same jet.
 
+\newpage
 \noindent Sequential reclustering algorithms then proceed using the following steps:
 \vspace{-1em}
 \begin{enumerate}[nolistsep,leftmargin=*]
@@ -321,9 +322,9 @@ where a truth jet is constructed by running the anti-$k_T$ algorithm on the set 
 A stable particle is required to have a lifetime $c\tau >$ \SI{10}{\milli\metre} and muons, neutrinos, and particles from pile-up collisions are ignored.
 Truth jets are a good choice as they are well-defined and model-independent objects representing the jets that would have been reconstructed if one had a perfect detector.
 
-%\newpage
+\newpage
 The calibration process uses Monte-Carlo simulation and data to correct the jets initially
-built from the EM-scale topoclusters using a number of steps:
+built from the EM-scale topoclusters using a number of steps: \vspace{-0.5em}
 
 %These steps are outlined in Figure~\ref{fig:obj-jets_calib_schem}.
 %\begin{figure}[!htb]
@@ -371,7 +372,7 @@ built from the EM-scale topoclusters using a number of steps:
 
 \item\textbf{Absolute JES Correction}:
   This step corrects the jet four-momentum from the EM-scale, at which they were initially built, to the truth jet energy.
-  This correction is derived using truth jets and reconstructed detector-level jets in Monte-Carlo simulated dijet events.\vspace{0.3em}
+  This correction is derived using truth jets and reconstructed jets in Monte-Carlo simulated dijet events.\vspace{0.3em}
 \item\textbf{Global Sequential Calibration}:
   This step uses information from the calorimeter, muon spectrometer and track-based variables
   to refine the reconstructed energy and reduce the overall uncertainties.\vspace{0.3em}
@@ -396,6 +397,7 @@ for example, some analyses~\cite{obj-VVjj} correct each topocluster to the hadro
 before clustering the jet, in a scheme called Local Cluster Weighted (LCW)~\cite{obj-jets_topo}.
 EM+JES is generally used in ATLAS analyses as it is a simpler calibration scheme than LCW, but provides similar results.
 
+%\newpage
 The end result of the processes described in this section is a jet
 reconstructed from EM-scale topoclusters using an anti-$k_T$ algorithm with a jet width parameter $R$=0.4
 that is calibrated using the EM+JES calibration scheme.

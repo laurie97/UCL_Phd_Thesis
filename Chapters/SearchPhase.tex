@@ -396,7 +396,7 @@ For this validation study the dijet mass spectrum uses
 the statistical uncertainties of the simulated sample,
 which are given by the square root of the number of effective entries.
 10,000 pseudo-experiments are used to calculate \bh{} and \dhunt{} $p$-values, as will be done in all \summer{} search phase validation studies.
-The initial dijet mass spectra are considered with the lower edge of the dijet mass spectrum at $m_{jj}$ = 1100 GeV,
+The initial dijet mass spectra are considered with the lower edge of the dijet mass spectrum at $m_{jj}$~=~1100~GeV,
 selected such that there is no kinematic bias from the single jet trigger,
 and an upper mass edge at the lowest dijet mass bin which contains less than one entry.
 
@@ -406,9 +406,9 @@ Therefore, it was necessary to select a dijet fit function to perform this study
 the 4 dijet fit function was chosen.
 The 3 parameter dijet fit function was not selected as it represents a special case
 of the 4 parameter dijet fit function when one parameter ($p_4$) is set to zero;
-hence if the 4 parameter dijet fit function cannot adequetely describe the background neither can the 3 parameter dijet fit function.
+hence if the 4 parameter dijet fit function cannot adequately describe the background neither can the 3 parameter dijet fit function.
 The 5 parameter dijet fit function was not chosen as, at the time,
-it had not been used or validated at previous dijet searches.
+it had not been used or validated at previous di-$b$-jet searches.
 
 %Figure~\ref{fig:Short_4para_1100_figure1} and \ref{fig:Short_5para_1100_figure1} show the search phase
 Figure~\ref{fig:Short_4para_1100_figure1} shows the search phase
@@ -1048,7 +1048,7 @@ and reduces the number of parameters that have to be tested.
 For clarity, it should be noted that because the width of the dijet mass bins is not uniform, the windows used are not exactly symmetric with respect to dijet mass;
 this effect can be seen in Figure~\ref{fig:bkg-lm_swiftBins}.
 Furthermore, it must be noted that enforcing the requirement that the lower mass bound is $\geq566$~\GeV{}
-means that for the lowest mass windows $n_{\text{Low}} < n_{\text{High}}$;
+means that for the lowest mass windows $n_{\text{Low}}$ is less than $n_{\text{High}}$;
 again this effect can be clearly seen in Figure~\ref{fig:bkg-lm_swiftBins}.
 
 In each window a fit to the data is performed using one of the dijet fit functions listed in Table~\ref{tab:bkg-fit}.
@@ -1500,14 +1500,14 @@ The exclusion region procedure is as follows.
       
 \item Create an updated background estimate 
       by performing the SWiFt fitting procedure to the dijet mass spectrum, ignoring the exclusion region in all fits and fit quality measures.
-\item Identify an updated excess, by performing the \bh{} algorithm to the dijet mass spectrum using the updated background estimate created in Step 2.
+\item Identify an updated excess region, by performing the \bh{} algorithm to the dijet mass spectrum using the updated background estimate created in Step 2.
       For this step the exclusion region is not ignored.
 %\item A new excess is found using the new background estimate and the \bh{} algorithm,
 %  the excess can include bins in the exclusion region.
-\item If the updated excess is \textit{not} contained within the initial exclusion region,
-      then the procedure returns to Step 1 using the updated excess region as the discrepant excess region.
+\item If the updated excess region is \textit{not} contained within the initial exclusion region,
+      then the procedure returns to Step 1 using the updated excess region.
       This step ensures that the full effect of the signal induced fit bias is removed.
-\item If the updated excess is contained within the initial exclusion region,
+\item If the updated excess region is contained within the initial exclusion region,
       the updated background estimate is tested using the fit quality criteria outlined in Section~\ref{sec:bkg-full_windowSel}.
       If the fit quality criteria are passed, the updated background estimation is used.
       If the fit quality criteria are failed, then a narrower window is tested.
@@ -1673,7 +1673,7 @@ dijet mass spectrum, meaning there is no side-band to constrain the background e
 Secondly, for all signals considered that trigger the region exclusion procedure a window width can be selected;
 this shows that the region exclusion and window selection procedure is robust in the case that signal is present.
 
-Thirdly, SWiFt configurations that use large window half-widths are more sensitive,
+Thirdly, SWiFt configurations that use large window half-widths are more sensitive to signal,
 this can be seen by comparing \bh{} $p$-values for identical injected signals across SWiFt configurations in Table~\ref{tab:bumpH_lm_sigInj}.
 Take for example the case when the simulated mass is 800~\GeV{},
 the signal normalisation is 1 and the 5 parameter dijet fit function is used;
@@ -1684,8 +1684,8 @@ This case is particularly notable as only for the two widest widths considered
 ($wHW =$ 16 or 14) is the $p$-value
 below the threshold to trigger the window exclusion procedure.
 Furthermore, in all but one of the rows shown in Table~\ref{tab:bumpH_lm_sigInj}
-the widest window considered has a $p$-value $<$ 0.01 which would trigger the exclusion region procedure
-or has a $p$-value lower than or equal to the $p$-value of the narrowest window considered;
+the widest window considered has a $p$-value $<$ 0.01, which would trigger the exclusion region procedure,
+or has a $p$-value lower than the $p$-value of the narrowest window considered;
 this shows that overall the best sensitivity to signal is found by using a large window-half-width. 
 
 \begin{table}[!hb]
@@ -1734,7 +1734,7 @@ This can be concluded from Table~\ref{tab:bumpH_lm_sigInj} by noting that,
 for all signals considered,
 the 5 parameter dijet fit function and window half-width of 16
 has a $p$-value that can trigger the exclusion region procedure (\mbox{$<$ 0.01})
-or has a $p$-value lower than or equal to the $p$-value when using the 4 parameter dijet fit function and window half-width of 10. 
+or has a $p$-value lower than the $p$-value when using the 4 parameter dijet fit function and window half-width of 10. 
 The final two conclusions are important factors in the development of the window selection procedure, described in Section~\ref{sec:bkg-full_windowSel}.
 
 It should also be noted that all \bh{} $p$-values shown in Table~\ref{tab:bumpH_lm_sigInj} are before region exclusion is applied.
